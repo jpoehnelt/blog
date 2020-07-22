@@ -4,6 +4,7 @@ import Expand from "./Expand";
 import Item from "./Item";
 import PropTypes from "prop-types";
 import React from "react";
+
 require("core-js/fn/array/from");
 
 
@@ -17,7 +18,7 @@ class Menu extends React.Component {
       { to: "/", label: "Home", icon: FaHome },
       { to: "/tags/", label: "Tags", icon: FaTag },
       //{ to: "/search/", label: "Search", icon: FaSearch },
-      { to: "/follow/", label: "Follow", icon: FaRss },
+      { to: "/rss.xml", label: "Follow", icon: FaRss },
       // { to: "/contact/", label: "Contact", icon: FaEnvelope },
       { to: "/about/", label: "About", icon: FaUser }
     ];
