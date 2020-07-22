@@ -135,7 +135,7 @@ class Layout extends React.Component {
               width: 100%;
               height: 405px;
               max-width: 590px;
-              margin: 0 auto 5px 0;
+              margin: 0 auto 5px auto;
             }
           `}</style>
         </ScreenWidthContext.Provider>
