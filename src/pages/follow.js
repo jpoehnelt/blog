@@ -1,11 +1,12 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
-import theme from "../theme/theme.yaml";
+import { FaPaperPlane, FaRss, FaTag } from "react-icons/fa";
+import { StaticQuery, graphql } from "gatsby";
+
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
+import React from "react";
 import Seo from "../components/Seo";
-import { FaTag , FaRss , FaPaperPlane } from "react-icons/fa";
 import config from "../../content/meta/config";
+import theme from "../theme/theme.yaml";
 
 const FollowPage = props => {
 
@@ -28,7 +29,7 @@ const FollowPage = props => {
               <header>
                 <Headline title="Follow" theme={theme} />
               </header>
-              <p>Hear about new posts by either RSS or Email.</p>
+              <p>Hear about new posts by RSS.</p>
 
               <a href="../rss.xml" target="_blank">
                 <section className="subContainer">
@@ -37,12 +38,12 @@ const FollowPage = props => {
                 </section>
               </a>
 
-              <a href={emailSubLink} target="_blank">
+              {/* <a href={emailSubLink} target="_blank">
                 <section className="subContainer">
                   <span className="subIcon"><FaPaperPlane/></span>
                   <span className="subText">Email</span>
                 </section>
-              </a>
+              </a> */}
 
               <style jsx>{`
                 p {
