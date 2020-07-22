@@ -1,16 +1,15 @@
-import PropTypes from "prop-types";
-import React from "react";
+import "typeface-open-sans/index.css";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
+
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
+import PropTypes from "prop-types";
+import React from "react";
+import themeObjectFromYaml from "../theme/theme.yaml";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
-
-import themeObjectFromYaml from "../theme/theme.yaml";
-
-import 'typeface-open-sans/index.css'
 
 class Layout extends React.Component {
   constructor() {
@@ -57,10 +56,7 @@ class Layout extends React.Component {
       <ThemeContext.Provider value={this.state.theme}>
         <ScreenWidthContext.Provider value={this.state.screenWidth}>
           <div className="highest-container">
-            <Header
-              path={this.props.location.pathname}
-              theme={this.state.theme}
-            />
+            <Header path={this.props.location.pathname} theme={this.state.theme} />
             <main>{children}</main>
             <Footer theme={this.state.theme} />
           </div>
@@ -77,7 +73,8 @@ class Layout extends React.Component {
             html {
               box-sizing: border-box;
             }
-            html, body {
+            html,
+            body {
               height: 100%;
             }
             #___gatsby {
@@ -94,14 +91,14 @@ class Layout extends React.Component {
               padding: 0;
             }
             body {
-              font-family: 'Open Sans', 'Arial', 'sans-serif';
+              font-family: "Open Sans", "Arial", "sans-serif";
               font-weight: 400;
             }
             h1,
             h2,
             h3 {
               font-weight: 600;
-              font-family: 'Open Sans', 'Arial', 'sans-serif';
+              font-family: "Open Sans", "Arial", "sans-serif";
               line-height: 1.1;
               letter-spacing: -0.03em;
               margin: 0;
@@ -113,7 +110,7 @@ class Layout extends React.Component {
               margin: 0;
             }
             strong {
-              font-family: 'Open Sans', 'Arial', 'sans-serif';
+              font-family: "Open Sans", "Arial", "sans-serif";
               font-weight: 600;
             }
             a {
@@ -124,16 +121,26 @@ class Layout extends React.Component {
               width: auto;
               display: block;
             }
-            table, th, td {
-              border: 1px solid #DDD;
+            table,
+            th,
+            td {
+              border: 1px solid #ddd;
             }
-            th, td {
+            th,
+            td {
               padding: 5px;
+            }
+            .strava {
+              display: block;
+              width: 100%;
+              height: 405px;
+              max-width: 590px;
+              margin: 0 auto 5px 0;
             }
           `}</style>
         </ScreenWidthContext.Provider>
       </ThemeContext.Provider>
-    )
+    );
   }
 }
 
