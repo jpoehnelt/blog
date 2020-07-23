@@ -1,5 +1,5 @@
 ---
-title: Bear Attack in Durango, Colorado
+title: Bear Conflict(Attack?) in Durango, Colorado
 tags: ["wildlife", "bear", "Falls Creek"]
 cover: IMG_20200624_194714.jpg
 author: justin poehnelt
@@ -31,4 +31,4 @@ Some thoughts:
 
 The hike in question is below.
 
-<iframe class="strava" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/3788347161/embed/0cc533077519485502a1d515f90ea83cee777cc0'></iframe>
+<iframe class="strava" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/3803740897/embed/0cc533077519485502a1d515f90ea83cee777cc0'></iframe>
