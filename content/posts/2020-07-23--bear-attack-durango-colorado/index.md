@@ -1,5 +1,5 @@
 ---
-title: Bear Conflict(Attack?) in Durango, Colorado
+title: Bear Conflict (Attack?) in Durango, Colorado
 tags: ["wildlife", "bear", "Falls Creek"]
 cover: IMG_20200624_194714.jpg
 author: justin poehnelt
