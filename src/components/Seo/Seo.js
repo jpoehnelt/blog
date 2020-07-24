@@ -9,7 +9,7 @@ const Seo = props => {
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = (data && data.frontmatter && data.frontmatter.cover)
-    ? data.frontmatter.cover.childImageSharp.resize.src
+    ? `${config.siteUrl}${config.pathPrefix}${data.frontmatter.cover.childImageSharp.resize.src}`
     : '';
   const postSlug = ((data || {}).fields || {}).slug;
 
