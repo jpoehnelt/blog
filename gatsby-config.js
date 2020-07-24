@@ -116,7 +116,7 @@ module.exports = {
           },
           `gatsby-plugin-sharp`,
           {
-            resolve: `gatsby-remark-images`,
+            resolve: `gatsby-remark-images-anywhere`,
             options: {
               maxWidth: 800,
               backgroundColor: "transparent",
