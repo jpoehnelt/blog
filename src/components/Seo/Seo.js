@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+import React from "react";
 import config from "../../../content/meta/config";
 
 const Seo = props => {
@@ -8,10 +8,12 @@ const Seo = props => {
   const pageTitle = props.pageTitle;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
-  const postCover = ((data || {}).frontmatter || {}).cover;
+  const postCover = (data && data.frontmatter && data.frontmatter.cover)
+    ? data.frontmatter.cover.childImageSharp.resize.src
+    : '';
   const postSlug = ((data || {}).fields || {}).slug;
 
-  const title = config.shortSiteTitle + " - " + (postTitle || pageTitle)
+  const title = config.shortSiteTitle + " - " + (postTitle || pageTitle);
   const description = postDescription ? postDescription : config.siteDescription;
   const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;

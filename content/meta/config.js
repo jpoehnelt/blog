@@ -2,8 +2,8 @@ module.exports = {
   siteTitle: "Justin Poehnelt", // <title>
   shortSiteTitle: "Justin Poehnelt", // <title> ending for posts and pages
   siteDescription: "Justin Poehnelt",
-  siteUrl: "https://jpoehnelt.dev",
-  // pathPrefix: "",
+  siteUrl: "https://jpoehnelt.me",
+  pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "en",
 

@@ -1,5 +1,6 @@
 ---
 title: About
+cover: avatar-large.jpeg
 ---
 <re-img src="avatar-large.jpeg" hovereffect=true></re-img>
 
