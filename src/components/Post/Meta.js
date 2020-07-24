@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { FaCalendar, FaTag, FaUser } from "react-icons/fa/";
+
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 import { currDate } from "../../utils/helpers";
-import { FaUser, FaTag, FaCalendar } from "react-icons/fa/";
 
 const Meta = props => {
   const { author: authorName, tags, theme, lastEdit } = props;
@@ -23,7 +24,7 @@ const Meta = props => {
       {tags && tags.map(tag => 
         <span key={tag}>
           
-          <Link to={`/tag/${tag.split(" ").join("-")}`}>
+          <Link to={`/tag/${tag.split(" ").join("-").toLowerCase()}`}>
             <span>
               <FaTag size={18} />
               {tag}
