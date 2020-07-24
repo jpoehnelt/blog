@@ -27,7 +27,7 @@ At this point, I hoped the bear would take the opportunity to get away, but mayb
 
 ## A tramatized dog
 
-Once we had gotten a hundred or so yards from where it happened, I stopped so that I could run my hands over Luna, expecting to find blood. There was none! We kept going and Luna ran even faster, leaving us behind. As we reached the start of the, we saw Luna far ahead of us running down the road back to our house, completely ignoring any call. She was tramatized, but without any physical injury. The only injuries seemed to be scratches on my leg and a tear of my sock, probably from the brush, but could have easily been from the bear.
+Once we had gotten a hundred or so yards from where it happened, I stopped so that I could run my hands over Luna, expecting to find blood. There was none! We kept going and Luna ran even faster, leaving us behind. As we reached the start of the trail, we saw Luna far ahead of us running down the road back to our house, completely ignoring any call we made. She was tramatized, but without any physical injury. The only injuries seemed to be scratches on my leg and a tear of my sock, probably from the brush, but could have easily been from the bear given our distance.
 
 ## Closing thoughts
 
