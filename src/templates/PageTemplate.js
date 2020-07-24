@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Page from "../components/Page";
+import PropTypes from "prop-types";
+import React from "react";
+import Seo from "../components/Seo";
 import { ThemeContext } from "../layouts";
+import { graphql } from "gatsby";
 
 const PageTemplate = props => {
   const page = props.data.page;
@@ -39,6 +39,14 @@ export const pageQuery = graphql`
       htmlAst
       frontmatter {
         title
+        cover {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
+        tags
       }
     }
   }
