@@ -3,7 +3,7 @@ module.exports = {
     extend: {
       colors: {
         brand: "#d85612",
-        secondary: "#1294d8",
+        secondary: "#1085c2",
       },
       container: {
         center: true,
