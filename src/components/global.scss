@@ -57,7 +57,8 @@ p {
   }
 }
 
-p, article {
+p,
+article {
   a {
     @apply text-secondary;
 
