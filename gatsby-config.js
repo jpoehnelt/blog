@@ -1,230 +1,58 @@
-require("dotenv").config();
-const config = require("./content/meta/config");
-const transformer = require("./src/utils/algolia");
-
-const query = `{
-  allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
-    edges {
-      node {
-        objectID: fileAbsolutePath
-        fields {
-          slug
-        }
-        internal {
-          content
-        }
-        frontmatter {
-          title
-        }
-      }
-    }
-  }
-}`;
-
-const queries = [
-  {
-    query,
-    transformer: ({ data }) => {
-      return data.allMarkdownRemark.edges.reduce(transformer, []);
-    }
-  }
-];
-
 module.exports = {
-  // pathPrefix: config.pathPrefix,
-
-  // If you want a Search page, put this back in plugins:
-  /*
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : "",
-        apiKey: process.env.ALGOLIA_ADMIN_API_KEY ? process.env.ALGOLIA_ADMIN_API_KEY : "",
-        indexName: process.env.ALGOLIA_INDEX_NAME ? process.env.ALGOLIA_INDEX_NAME : "",
-        queries,
-        chunkSize: 10000 // default: 1000
-      }
-    },
-  */
-
   siteMetadata: {
-    title: config.siteTitle,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
-    contactPostAddress: process.env.CONTACT_POST_ADDRESS || "",
-    emailSubLink: process.env.EMAIL_SUB_LINK || "",
-    algolia: {
-      appId: process.env.ALGOLIA_APP_ID || "",
-      searchOnlyApiKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-        ? process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-        : "",
-      indexName: process.env.ALGOLIA_INDEX_NAME ? process.env.ALGOLIA_INDEX_NAME : ""
-    }
+    title: `Justin Poehnelt`,
+    description: `Personal blog and site of Justin Poehnelt.`,
+    siteUrl: `https://justin.poehnelt.com`,
+    social: {
+      twitter: `jpoehnelt`,
+    },
   },
   plugins: [
-    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    `gatsby-plugin-styled-jsx-postcss`, // as above
+    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        isTSX: true, // defaults to false
-        //jsxPragma: `jsx`, // defaults to "React" ??
-        allExtensions: true
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/layouts/`)
-      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts/`,
-        name: "posts"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/pages/`,
-        name: "pages"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `parts`,
-        path: `${__dirname}/content/parts/`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-component-parent2div",
-            options: { components: ["re-icons", "re-img", "re-tracedsvg-gallery"] }
-          },
-          `gatsby-plugin-sharp`,
-          {
-            resolve: `gatsby-remark-images-anywhere`,
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              backgroundColor: "transparent",
-              tracedSVG: { color: '#005082' }
-            }
+              maxWidth: 630,
+            },
           },
-          {
-            resolve: `gatsby-remark-rehype-images`,
-            options: {
-              tag: 're-img',
-              maxWidth: 600,
-              quality: 90,
-              webP: true,
-              toFormat: 'WEBP',
-              tracedSVG: { color: '#005082' },
-              generateTracedSVG: true
-            }
-          },
-
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 2em`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          {
-            resolve: "gatsby-remark-emojis",
-            options: {
-              // Deactivate the plugin globally (default: true)
-              active: true,
-              // Add a custom css class
-              class: "emoji-icon",
-              // Select the size (available size: 16, 24, 32, 64)
-              size: 64,
-              // Add custom styles
-              styles: {
-                display: "inline",
-                margin: "0",
-                "margin-top": "1px",
-                position: "relative",
-                top: "5px",
-                width: "25px"
-              }
-            }
-          }
-        ]
-      }
+        ],
+      },
     },
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: config.manifestName,
-        short_name: config.manifestShortName,
-        start_url: config.manifestStartUrl,
-        background_color: config.manifestBackgroundColor,
-        theme_color: config.manifestThemeColor,
-        display: config.manifestDisplay,
-        icons: [
-          {
-            src: "/icons/icon-48x48.png",
-            sizes: "48x48",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-96x96.png",
-            sizes: "96x96",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-144x144.png",
-            sizes: "144x144",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-256x256.png",
-            sizes: "256x256",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-384x384.png",
-            sizes: "384x384",
-            type: "image/png"
-          },
-          {
-            src: "/icons/icon-512x512.png",
-            sizes: "512x512",
-            type: "image/png"
-          }
-        ]
-      }
-    },
+    `gatsby-plugin-sharp`,
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -243,57 +71,62 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.fields.prefix,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                });
-              });
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
             },
             query: `
               {
                 allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [fields___prefix] },
-                  filter: {
-                    fields: {
-                      prefix: { regex: "/[0-9]{4}.*/" },
-                      slug: { ne: null }
-                    }
-                  }
+                  sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        slug
-                        prefix
-                      }
-                      frontmatter {
-                        title
-                      }
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
                     }
                   }
                 }
               }
             `,
-            output: "/rss.xml"
-          }
-        ]
-      }
+            output: "/rss.xml",
+          },
+        ],
+      },
     },
     {
-      resolve: `gatsby-plugin-sitemap`
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        include: /svg-icons/
-      }
-    }
-  ]
-};
+        name: `Justin Poehnelt`,
+        short_name: `jpoehnelt`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#d85612`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [require("tailwindcss")],
+      },
+    },
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-react-helmet`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+  ],
+}
