@@ -6,7 +6,7 @@ keywords:
     - Colorado Trail
     - Weminuche Wilderness
 author: justin poehnelt
-date: '2021-09-18T05:31:22.346Z'
+date: '2020-020-20T05:31:22.346Z'
 lastmod: '2021-09-18T05:31:22.346Z'
 type: run
 ---
