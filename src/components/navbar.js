@@ -35,6 +35,7 @@ export default ({ title }) => {
               <div className="ml-3">{title}</div>
             </Link>
             <button
+              aria-label="Toggle navigation"
               className="cursor-pointer leading-none px-3 py-1 rounded bg-transparent block md:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
