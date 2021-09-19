@@ -19,11 +19,27 @@ const RunIndex = ({ data, location }) => {
         competed in about 15 ultras, with distances up to 100 miles.
       </p>
 
+      <h2>Upcoming races</h2>
+      <ul>
+        <li>2021-10-02 Crested Butte 50k</li>
+        <li>2021-11-20 Dead Horse Ultra 50m</li>
+        <li>2022-01-29 Arches Ultra 50k</li>
+        <li>2022-02-19 Moab Red Hot 50k</li>
+        <li>2022-03-26 Behind the Rocks 50k</li>
+      </ul>
       <h2>Notable races</h2>
       <ul>
-        <li>2021 Mogollon Monster 100m - 11th</li>
-        <li>2021 Silverton Ultra 100m - DNF</li>
-        <li>2021 Bears Ears Ultra 50m - 3rd</li>
+        <li>
+          2021-09-11 Mogollon Monster 100m - 11th (
+          <a
+            href="https://justin.poehnelt.com/mogollon-monster-100/"
+            title="Race report for Mogollon Monster 100"
+          >
+            Race report
+          </a>
+          )
+        </li>
+        <li>2021-06-26 Bears Ears Ultra 50m - 3rd</li>
       </ul>
       <h2>Recent activity</h2>
       <p>I track all my runs on Strava!</p>
