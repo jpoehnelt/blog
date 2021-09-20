@@ -1,16 +1,20 @@
 import Container from "./container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 
 export default ({ title }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const links = ["Code", "Run"].map((l) => (
-      <Link key={l} to={`/${l.toLowerCase()}`} className={"px-3 tracking-wide hover:underline w-full md:w-auto text-center md:text-right"}>
-        {l}
-      </Link>
+    <Link
+      key={l}
+      to={`/${l.toLowerCase()}`}
+      className={
+        "px-3 tracking-wide hover:underline w-full md:w-auto text-center md:text-right"
+      }
+    >
+      {l}
+    </Link>
   ));
 
   return (
@@ -40,7 +44,11 @@ export default ({ title }) => {
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <FontAwesomeIcon icon={faBars} />
+              <svg viewBox="0 0 100 80" width="40" height="40" className={"fill-current"}>
+                <rect width="100" height="8" rx="8"></rect>
+                <rect y="30" width="100" height="8" rx="8"></rect>
+                <rect y="60" width="100" height="8" rx="8"></rect>
+              </svg>
             </button>
           </div>
 
