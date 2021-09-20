@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 
 export default ({ title }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
