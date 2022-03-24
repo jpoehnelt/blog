@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +33,7 @@
     <title>{% if metaTitle %}{{ metaTitle }}{% else %}{{ title }}{% endif %}{% if metaTitle or title %} | {% endif %}{{ site.name }}</title>
 
     <link rel="stylesheet" href="{{ site.baseUrl }}assets/main.bundle.css">
-
+  
   </head>
   <body class="flex flex-col min-h-screen">
     {% include 'top-notice.njk' %}
@@ -39,7 +42,7 @@
       {{ content | safe }}
     </main>
     {% include 'footer.njk' %}
-    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
-    <script src="{{ site.baseUrl }}assets/main.bundle.js"></script>
+    <script async src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script async src="{{ site.baseUrl }}assets/main.bundle.js"></script>
   </body>
 </html>
