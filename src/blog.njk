@@ -1,0 +1,17 @@
+---
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+  reverse: true
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+layout: base
+---
+
+{% block body %}
+  {% include "posts.njk" %}
+
+  {% include "nav.njk" %}
+
+  {% include "tags.njk" %}
+{% endblock %}

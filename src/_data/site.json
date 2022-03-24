@@ -1,0 +1,24 @@
+{
+  "name": "Justin Poehnelt",
+  "description": "Personal website and blog of Justin Poehnelt",
+  "url": "https://justin.poehnelt.com",
+  "baseUrl": "/",
+  "author": {
+    "handle": "@jpoehnelt",
+    "name": "Justin Poehnelt"
+  },
+  "images": {
+    "twitter": "twitter.jpg",
+    "og": "og.jpg"
+  },
+  "feed": {
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://justin.poehnelt.com/"
+  },
+  "jsonfeed": {
+    "filename": "feed.json",
+    "path": "/feed/feed.json",
+    "url": "https://justin.poehnelt.com/feed/feed.json"
+  }
+}

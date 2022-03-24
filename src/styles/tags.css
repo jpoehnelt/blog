@@ -1,0 +1,28 @@
+@keyframes tag-hover {
+  100% {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+.tag {
+  @apply inline-block px-2 py-2 mx-1 mb-1 text-xs font-bold rounded lowercase text-white;
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  animation: tag-hover 500ms both;
+}
+
+.tag:before {
+  content: "#";
+}
+
+.tag.run {
+  @apply bg-red-700;
+}
+
+.tag.code {
+  @apply bg-sky-700;
+}

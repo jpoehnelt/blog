@@ -1,0 +1,37 @@
+---
+permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug }}{% endif %}/index.html"
+layout: base
+---
+    <div>
+        {% if excerpt %}
+            <p class="excerpt">{{ excerpt }}</p>
+        {% endif %}
+
+        {% if tags %}
+            <div class="mb-2">
+                {% for tag in tags %}
+                    {%- if tag !== "post" -%}
+                        <a class="tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+                    {%- endif -%}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if date %}
+            {% if updatedDate and (date|string) !== (updatedDate|string) %}
+              <p class="text-sm italic">Last updated on
+                    <span datetime="{{ date }}">{{ updatedDate | dateDisplay }}</span>. Created on
+                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</p>
+            {% else %}
+                <p class="text-sm italic">Created on
+                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</p>
+            {% endif %}
+        {% endif %}
+
+        <div class="flex gap-8">
+            <div class="content grow">
+            {{ content | safe }}
+            </div>
+            {% if not hideToc %}{% include 'toc.njk' %}{% endif %}
+        </div>
+    </div>
