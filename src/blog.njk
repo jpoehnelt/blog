@@ -8,10 +8,6 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 layout: base
 ---
 
-{% block body %}
-  {% include "posts.njk" %}
-
-  {% include "nav.njk" %}
-
-  {% include "tags.njk" %}
-{% endblock %}
+{% include "posts.njk" %}
+{% include "nav.njk" %}
+{% include "rss-feed.njk" %}

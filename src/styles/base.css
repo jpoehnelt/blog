@@ -109,6 +109,7 @@ hr {
 .content > ul,
 .content > ol,
 .content > p,
+hr,
 p {
   @apply mb-6;
 }

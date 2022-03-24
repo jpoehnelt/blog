@@ -19,3 +19,7 @@ I might also be active on these sites, but probably not.
 * [LinkedIn](https://www.linkedin.com/in/justin-poehnelt)
 * [Medium](https://jpoehnelt.medium.com/)
 * [Dev.to](https://dev.to/jpoehnelt)
+
+## Misc
+
+{% include "rss-feed.njk" %}
