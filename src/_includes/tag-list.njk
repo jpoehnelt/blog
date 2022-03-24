@@ -1,0 +1,9 @@
+{% if tags %}
+    <div class="mb-2">
+        {% for tag in tags %}
+            {%- if tag !== "post" -%}
+                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+            {%- endif -%}
+        {% endfor %}
+    </div>
+{% endif %}

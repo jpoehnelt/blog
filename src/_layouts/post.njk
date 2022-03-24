@@ -1,29 +1,13 @@
 ---
 layout: base
 ---
-<div>
-    <h2>{{ title }}</h2>
-    {% if date %}
-        {% if updatedDate and (date|string) !== (updatedDate|string) %}
-            <p class="text-sm italic">Last updated on
-                <span datetime="{{ date }}">{{ updatedDate | dateDisplay }}</span>. Created on
-                <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</p>
-        {% else %}
-            <p class="text-sm italic">
-                <span datetime="{{ date }}">{{ date | dateDisplay }}</span>
-            </p>
-        {% endif %}
-    {% endif %}
-        {% if tags %}
-        <div class="mb-2">
-            {% for tag in tags %}
-                {%- if tag !== "post" -%}
-                    <a class="tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
-                {%- endif -%}
-            {% endfor %}
-        </div>
-    {% endif %}
+<arcticle class="h-entry">
+    <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
+    <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
 
+    <h2>{{ title }}</h2>
+    {% include 'date.njk' %}
+        
     <div class="flex gap-8">
         <div class="content grow">
         {{ content | safe }}
@@ -52,6 +36,4 @@ layout: base
         </div>
         {% if not hideToc %}{% include 'toc.njk' %}{% endif %}
     </div>
-
-
-</div>
+</article>
