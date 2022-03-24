@@ -4,12 +4,17 @@
 			<article class="h-entry mb-8 border-b pb-8 border-gray-300">
 				<a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
 				<h2>
-					<a class="block u-url p-name" href="{{ site.url }}{{ post.url | url }}">{{ post.data.title }}</a>
+                	<a class="hidden u-url p-name" href="{{ site.url }}{{ post.url | url }}">{{ post.data.title }}</a>
+					<a class="block" href="{{ post.url | url }}">{{ post.data.title }}</a>
 				</h2>
 
 				<p class="excerpt p-summary">{{ post.data.excerpt }}</p>
 
-				{% include 'tag-list.njk' %}
+                {% for tag in post.data.tags %}
+                    {%- if tag !== "post" -%}
+                        <a class="tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+                    {%- endif -%}
+                {% endfor %}
 
 				<time class="dt-published block md:inline md:float-right md:pt-4 pt-2 created-date" datetime="{{ post.data.date }}">
 					{{ post.data.date | dateDisplay }}
