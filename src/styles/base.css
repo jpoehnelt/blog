@@ -124,17 +124,17 @@ p {
   min-height: 400px;
 }
 
-.content > ul {
+ul {
   list-style-type: disc;
 }
 
-.content > ol {
+ol {
   list-style-type: decimal;
 }
 
-.content > ol > li,
-.content > ul > li {
-  @apply text-lg mr-12 ml-12 pr-2 pl-2 mb-1;
+ol > li,
+ul > li {
+  @apply text-lg ml-12 mb-1;
 }
 
 .content > .note {

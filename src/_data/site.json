@@ -11,14 +11,21 @@
     "twitter": "twitter.jpg",
     "og": "og.jpg"
   },
-  "feed": {
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://justin.poehnelt.com/"
-  },
-  "jsonfeed": {
-    "filename": "feed.json",
-    "path": "/feed/feed.json",
-    "url": "https://justin.poehnelt.com/feed/feed.json"
+  "feeds": {
+    "all": {
+      "filename": "all.xml",
+      "path": "/feed/all.xml",
+      "id": "https://justin.poehnelt.com/blog"
+    },
+    "run": {
+      "filename": "run.xml",
+      "path": "/feed/run.xml",
+      "id": "https://justin.poehnelt.com/run"
+    },
+    "code": {
+      "filename": "code.xml",
+      "path": "/feed/code.xml",
+      "id": "https://justin.poehnelt.com/code"
+    }
   }
 }

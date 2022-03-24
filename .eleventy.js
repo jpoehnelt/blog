@@ -67,6 +67,18 @@ module.exports = (config) => {
     )
   );
 
+  config.addCollection("postsTaggedRun", (collection) =>
+    [...collection.getFilteredByGlob("src/posts/*.md")].filter(
+      (post) => !post.data.draft && post.data.tags.includes("run")
+    )
+  );
+
+  config.addCollection("postsTaggedCode", (collection) =>
+    [...collection.getFilteredByGlob("src/posts/*.md")].filter(
+      (post) => !post.data.draft && post.data.tags.includes("code")
+    )
+  );
+
   return {
     pathPrefix: require("./src/_data/site.json").baseUrl,
     dir: {
