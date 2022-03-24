@@ -1,5 +1,3 @@
-// Adapted from https://codepen.io/wilbo/pen/xRVLOj by Wilbert Schepenaar.
-
 const handleCodeCopying = () => {
   const preTags = document.getElementsByTagName('pre');
 

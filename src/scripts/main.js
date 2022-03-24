@@ -1,4 +1,6 @@
-import '../styles/tailwind.css';
-import { handleCodeCopying } from './copy.js';
+import "../styles/tailwind.css";
+import { handleCodeCopying } from "./copy.js";
 
-handleCodeCopying();
+window.addEventListener("load", () => {
+  handleCodeCopying();
+});
