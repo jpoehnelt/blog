@@ -14,11 +14,13 @@ Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/ru
 
 I might also be active on these sites, but probably not.
 
-* [GitHub](https://github.com/jpoehnelt)
-* [Twitter](https://twitter.com/jpoehnelt)
-* [LinkedIn](https://www.linkedin.com/in/justin-poehnelt)
-* [Medium](https://jpoehnelt.medium.com/)
-* [Dev.to](https://dev.to/jpoehnelt)
+<ul>
+    <li><a href="https://github.com/jpoehnelt" target="_blank" rel="me">GitHub</a></li>
+    <li><a href="https://twitter.com/jpoehnelt" target="_blank" rel="me">Twitter</a></li>
+    <li><a href="https://www.linkedin.com/in/justin-poehnelt" target="_blank" rel="me">LinkedIn</a></li>
+    <li><a href="https://jpoehnelt.medium.com/" target="_blank" rel="me">Medium</a></li>
+    <li><a href="https://dev.to/jpoehnelt" target="_blank" rel="me">Dev</a></li>
+</ul>
 
 ## Misc
 
