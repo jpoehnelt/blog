@@ -37,4 +37,4 @@ After a DNF at the Silverton Ultra Dirty 100 mile, this felt really good to brin
 
 {% image "src/images/mogollon-monster-100/buckle.jpeg", "Mogollon Monster 100 mile race finisher belt buckle" %}
 
-<iframe class="strava activity" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/5950424975/embed/4bfbd007527e4c2ee862c679ae5274a9a4e9e1ef'></iframe>
+{% strava "5950424975", "4bfbd007527e4c2ee862c679ae5274a9a4e9e1ef" %}

@@ -115,13 +115,8 @@ p {
 }
 
 .content > iframe {
-  display: block;
-  margin: 0 auto;
-
-  @apply mt-4 mb-8;
-  max-width: 100%;
-  min-width: 400px;
-  min-height: 400px;
+  @apply block m-0 mt-4 mb-8 min-w-fit min-h-fit max-w-full;
+  
 }
 
 ul {

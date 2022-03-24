@@ -16,4 +16,4 @@ At about 8 AM I departed Molas Lake, heading down to the Animas River. My route 
 
 {% image "src/images/molas-to-vallecito.jpeg", "Looking down Elk Creek Drainage in the Weminuche Wilderness" %}
 
-<iframe title="Strava activity" class="h-96 w-96" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/3788347161/embed/e5c2f1df3ce2e7aaca81c61707e357842c43d2c1'></iframe>
+{% strava "3788347161", "e5c2f1df3ce2e7aaca81c61707e357842c43d2c1" %}

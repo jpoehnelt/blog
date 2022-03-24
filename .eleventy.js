@@ -1,11 +1,11 @@
 const Image = require("@11ty/eleventy-img");
-const mdContainer = require('markdown-it-container');
+const mdContainer = require("markdown-it-container");
 
 async function imageShortcode(
   src,
   alt,
   class_ = "rounded-sm mx-auto",
-  sizes = "(min-width: 30em) 50vw, 100vw",
+  sizes = "(min-width: 30em) 50vw, 100vw"
 ) {
   let metadata = await Image(src, {
     widths: [200, 400, 600],
@@ -22,15 +22,25 @@ async function imageShortcode(
     class: class_,
   };
 
-  console.log(imageAttributes)
+  console.log(imageAttributes);
 
-  return Image.generateHTML(metadata, imageAttributes) + `<p class="text-xs italics text-center -mt-2">${alt}</p>`;
+  return (
+    Image.generateHTML(metadata, imageAttributes) +
+    `<p class="text-xs italics text-center -mt-2">${alt}</p>`
+  );
 }
+
+const strava = (activity, embed) =>
+  `<div class="flex justify-center"><iframe loading="lazy" title="strava activity" class="w-full max-w-sm h-96" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/${activity}/embed/${embed}'></iframe></div>`;
 
 module.exports = (config) => {
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
+
+  config.addNunjucksAsyncShortcode("strava", strava);
+  config.addLiquidShortcode("strava", strava);
+  config.addJavaScriptFunction("strava", strava);
 
   const markdownIt = new require("markdown-it")({
     typographer: true,
@@ -38,7 +48,7 @@ module.exports = (config) => {
     html: true,
   });
 
-  markdownIt.use(mdContainer, 'note');
+  markdownIt.use(mdContainer, "note");
 
   const markdownItAnchor = require("markdown-it-anchor");
   markdownIt.use(markdownItAnchor);

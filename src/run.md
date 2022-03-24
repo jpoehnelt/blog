@@ -56,5 +56,3 @@ In 2022, I began my current run streak of 70+ days. I'll see what happens after 
 ## Strava
 
 You can follow me on [Strava](https://www.strava.com/athletes/2170160).
-
-<iframe height='454' class="w-full" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/2170160/latest-rides/013e1f953c1f06d6e2bd44ea49d7aedc43324cd9'></iframe>
