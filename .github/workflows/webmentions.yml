@@ -30,11 +30,11 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
-        run: npm install
+        run: npm i
       - name: Fetch webmentions
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-        run: node ./automations/webmentions.mjs
+        run: npm run webmentions
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
