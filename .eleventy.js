@@ -1,5 +1,7 @@
 const Image = require("@11ty/eleventy-img");
 const mdContainer = require("markdown-it-container");
+const CleanCSS = require("clean-css");
+const htmlmin = require("html-minifier");
 
 async function imageShortcode(
   src,
@@ -41,6 +43,22 @@ module.exports = (config) => {
   config.addNunjucksAsyncShortcode("strava", strava);
   config.addLiquidShortcode("strava", strava);
   config.addJavaScriptFunction("strava", strava);
+
+  config.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+
+  config.addTransform("htmlmin", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      return htmlmin.minify(content, {
+        collapseWhitespace: true,
+        removeComments: true,  
+        useShortDoctype: true,
+      });
+    }
+
+    return content;
+  });
 
   const markdownIt = new require("markdown-it")({
     typographer: true,
