@@ -7,8 +7,8 @@
     "build:11ty": "eleventy --quiet",
     "build:rollup": "rollup -c",
     "clean": "rimraf public",
-    "dev": "npm-run-all clean build:* -p dev:*",
-    "dev:11ty": "eleventy --serve --quiet",
+    "dev": "npm-run-all clean build:rollup build:11ty -p dev:*",
+    "dev:11ty": "eleventy --serve --quiet --incremental",
     "dev:rollup": "rollup -c -w"
   },
   "devDependencies": {
