@@ -13,18 +13,18 @@ tags:
 date: '2022-03-26T15:31:22.346Z'
 ---
 :::tldr
-tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes (unofficial). It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered with a time I am proud of!
+tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes (unofficial). It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered!
 :::
 
 {% image "src/images/2022-behind-the-rocks/PXL_20220326_154628435.jpg", "Canyons and desert along the Moab Behind the Rocks 50k race course" %}
 
 ## Triple Crown of Moab
 
-The Behind the Rocks Ultra 50k race was my final race of the Moab Triple Crown in 2022, which also includes the Dead Horse Ultra, Arches Ultra, and Moab Red Hot Ultra. (I actually ran all four!) To qualify for the longer version of the Triple Crown, I completed one as 50 miler (Dead Horse) and the rest as 50ks. For me, the Behind the Rocks 50k course might was the most difficult.
+The Behind the Rocks Ultra 50k race is the final race of the Moab Triple Crown in 2022, which also includes the Dead Horse Ultra, Arches Ultra, and Moab Red Hot Ultra. (I actually ran all four!) To qualify for the longer version of the Triple Crown, I completed one as 50 miler (Dead Horse) and the rest in the 50 km length.
 
 ## Prerace
 
-This was probably my worst week and morning leading up to a race. I was 50/50 on whether I was going to run when I woke up at 4:30 am. I kept thinking about a recent podcast episode of Some Work All Play and DNFs.
+This was probably my worst week and morning leading up to a race. I was truly 50/50 on whether I was going to run when I woke up at 4:30 am. I kept thinking about a recent podcast episode of Some Work All Play and DNFs.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">New SWAP podcast! <a href="https://twitter.com/Meg_Runs_Happy?ref_src=twsrc%5Etfw">@Meg_Runs_Happy</a> and I talked about some wildly cool studies on speed training science, how simple training changes can improve performance for most athletes, caffeine, and the power of DNFs in racing and in life. Thank you all! WOOHOO! <a href="https://t.co/akvofpc7cE">https://t.co/akvofpc7cE</a></p>&mdash; David Roche (@MountainRoche) <a href="https://twitter.com/MountainRoche/status/1504195775525363716?ref_src=twsrc%5Etfw">March 16, 2022</a></blockquote>
 
@@ -32,15 +32,15 @@ This was probably my worst week and morning leading up to a race. I was 50/50 on
 
 This was the first race where I took a pain killer, Tylenol ([never take NSAIDs](https://med.stanford.edu/news/all-news/2017/07/pain-reliever-linked-to-kidney-injury-in-endurance-runners.html)). It all started when I randomly had a spasm in the medial head of the Gastrocnemius (upper calf muscle) getting out of bed the weekend before the race. Yes really, I was in bed when it happened after two easy recovery days. The "Charley Horse" was so intense that it led to muscle tear and significant [DOMS](https://doi.org/10.2165/00007256-200333020-00005).
 
-Once the immediate soreness retreated and the muscles gained some mobility again, I still had some significant pain related to other muscles having to compensate. The Soleus was extremely tight and everything was out of balance. I basically hobbled a few 5ks the week of the race just to keep things moving.
+Once the immediate soreness retreated and the muscles gained back some mobility, I still had some significant pain related to other muscles having to compensate. The Soleus was extremely tight and everything was completely out of balance. I basically hobbled a few 5ks this week just to keep things moving. It was my lowest mileage in a couple months. Forced me to taper, but the injury definitely cost me more than the minimal benefit from tapering.
 
 :::note
-This was day 80 or so of my run streak, so I might only have myself to blame!
+This was day 80 or so of my run streak, so I might only have myself to blame?! I do take rest days in my run streak in the form of easy 5ks.
 :::
 
 ### Work stress
 
-Yeah, not going to say much here but it makes it difficult to focus, especially when the Friday business carries into the weekend.
+Yeah, not going to say much here but it makes it difficult to focus, especially when the Friday business carries into the weekend. My own fault though.
 
 ### No prerace poop
 
@@ -96,7 +96,7 @@ If I had my current fitness in January, I would probably been fastest on the Arc
 
 ## Summary
 
-Even with the range of emotions I felt through the duration course, I did find some motivation once I started moving; maybe not the first couple miles though! I've never thought about quitting so early in the race as I did today.
+Even with the range of emotions I felt through the duration of the race, I did find some motivation once I started moving; maybe not the first couple miles though! (I've never thought about quitting so early in the race as I did today.)
 
 Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort, probably a 95% effort. 
 
