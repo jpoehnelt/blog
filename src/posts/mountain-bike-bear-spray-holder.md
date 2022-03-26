@@ -18,11 +18,11 @@ When I run, it goes in my vest pocket or I carry it in my hand. The bear spray c
 
 1. *Buy bear spray and holder with belt attachment*
 
-   {% image "src/images/mountain-bike-bear-spray-holder/bear-spray.jpg", "Bear spray with belt attachment" %}
+   {% image "src/images/mountain-bike-bear-spray-holder/PXL_20210508_182247473.PORTRAIT.jpg", "Bear spray with belt attachment" %}
 
 2. *Cut off the belt attachment*
 
-   {% image "src/images/mountain-bike-bear-spray-holder/bear-spray-no-attachment.jpg", "Bear spray without belt attachment" %}
+   {% image "src/images/mountain-bike-bear-spray-holder/PXL_20210508_182626502.PORTRAIT.jpg", "Bear spray without belt attachment" %}
 
 3. *Drill holes matching that of my bike frame mounts*
 
@@ -30,7 +30,7 @@ When I run, it goes in my vest pocket or I carry it in my hand. The bear spray c
 
 4. *Attach the bear spray can holder to the bike frame*
 
-   {% image "src/images/mountain-bike-bear-spray-holder/bear-spray-holder-mtb.jpg", "Bear spray mountain bike attachment" %}
+   {% image "src/images/mountain-bike-bear-spray-holder/PXL_20210508_184843375.PORTRAIT.jpg", "Bear spray mountain bike attachment" %}
    
 5. *Get out and ride!*
 
