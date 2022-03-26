@@ -27,8 +27,7 @@ async function imageShortcode(
   console.log(imageAttributes);
 
   return (
-    Image.generateHTML(metadata, imageAttributes) +
-    `<p class="text-xs italics text-center -mt-2">${alt}</p>`
+    `<div>${Image.generateHTML(metadata, imageAttributes)}<p class="text-xs italic text-center -mt-4">${alt}</p></div>`
   );
 }
 
@@ -67,6 +66,7 @@ module.exports = (config) => {
   });
 
   markdownIt.use(mdContainer, "note");
+  markdownIt.use(mdContainer, "tldr");
 
   const markdownItAnchor = require("markdown-it-anchor");
   markdownIt.use(markdownItAnchor);

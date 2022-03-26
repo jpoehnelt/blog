@@ -132,6 +132,7 @@ ul > li {
   @apply text-lg ml-12 mb-1;
 }
 
+.content > .tldr,
 .content > .note {
   @apply border-l-2 border-orange-300 p-4 ml-4 my-4 text-xl;
 }
