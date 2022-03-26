@@ -20,7 +20,7 @@ tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevent
 
 ## Triple Crown of Moab
 
-The Behind the Rocks Ultra 50k race is the final race of the Moab Triple Crown in 2022, which also includes the Dead Horse Ultra, Arches Ultra, and Moab Red Hot Ultra. (I actually ran all four!) To qualify for the longer version of the Triple Crown, I completed one as 50 miler (Dead Horse) and the rest in the 50 km length.
+The Behind the Rocks Ultra 50k race is the final race of the Moab Triple Crown in 2022, which also includes the Dead Horse Ultra, Arches Ultra, and Moab Red Hot Ultra. (I actually ran all four!) To qualify for the longer version of the Triple Crown, I completed one as 50 miler (Dead Horse) and the rest in the 50 km distance.
 
 ## Prerace
 
