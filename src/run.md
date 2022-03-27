@@ -3,6 +3,9 @@ layout: page
 title: Ultra Running
 path: run
 ---
+
+{% image "src/images/mogollon-monster-100/_DSC7023.jpeg", "Sometimes trail running is walking", "max-w-xs rounded-sm" %}
+
 ## Running
 
 I started running sometime around 2015 and have significantly increased my mileage over the years!
