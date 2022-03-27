@@ -30,10 +30,9 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 * Mace’s Hideout 100 - 100 Miler - Beulah, CO Jun 4, 2022
 * Cocodona 250 - 250 Miler - Black Canyon City, AZ May 2, 2022
 * Red Rocks of Sedona | 2 Day Stage Race - 50K Sat/50K Sun - Sedona, AZ Apr 2, 2022
-* Behind the Rocks Ultra - 50K - Moab, UT Mar 26, 2022
 
 ### Past results
-
+- **2022** - Behind the Rocks Ultra - 50K - Moab, UT - [Race Report](/posts/2022-behind-the-rocks-50k/)
 - **2022** - Moab Red Hot Ultra - 55K - Moab, UT Overall:26 235:29:01
 - **2022** - Arches Ultra - 50K - Moab, UT - Overall:32 255:12:35
 - **2021** - Dead Horse Ultra - 50 Miler - Moab, UT - Overall:11 117:59:57

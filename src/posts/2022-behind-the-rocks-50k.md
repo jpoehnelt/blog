@@ -74,6 +74,28 @@ Do not underestimate how difficult it is running on slick rock and in loose sand
 
 Although, I hardly changed places throughout the race (+- 3-4 spots), there were so many other runners on the course for the other distances. This kept the race feeling more lively and less of the solitary experience of some other races I have run; although, the pace differences are just too great to really have a conversation with the back half of the runners in these other distances. While it feels great passing other runners, I can't help but think it is probably a little demotivating for them as they are passed by me when they had an hour head start (50 milers) or were 10 miles less into their race.
 
+### Always running
+
+My total time in aid states was probably less than a minute total. I started with a 100 fl oz bladder and two bottles in my vest front pockets. Here is what I did at each aid station.
+
+1. Behind the Rocks Aid Station- mile 6.1
+    1. Did not stop
+2. Gatherer Canyon Aid Station - mile 16.2
+    1. < 10 seconds, gained considerable time on others
+    1. Refilled 500ml bottle with sports drink
+3. Kane Creek Trail Aid Station - mile 25.3
+    1. Drank full 500ml bottle
+    1. Refilled 500ml bottle with sports drink
+4. Unknown - mile 27
+    1. Drank full 500ml bottle water
+    1. Refilled 500ml bottle with water
+
+Unfortunately, I did have an unplanned bathroom stop around mile 20 that cost me nearly 5 minutes.
+
+My quick turnarounds in aid stations, especially Gatherer Canyon made a substantial difference. It also seems the front of the pack struggled later in the race.
+
+{% image "src/images/2022-behind-the-rocks/Screenshot 2022-03-26 7.31.23 PM.png", "Strava 'Flyby'" %}
+
 ### Compared to the other Moab races
 
 This was probably my least favorite course of the Triple Crown. The most Jeep roads, limited single track, and the sand. Even with the sand and heat, this was my fastest of the bunch.
@@ -103,3 +125,7 @@ Definitely lacked a little kick in my right leg, but I pushed hard and gave a st
 As always, whenever I finish a race in Moab, I vow to never run another one due to the slickrock and sand. Lucky for me, I have a short memory when it comes to racing and can't pass up these off season races!
 
 {% image "src/images/2022-behind-the-rocks/PXL_20220326_183359912.PORTRAIT.jpg", "Finisher medals for the the Moab Behind the Rocks 50k race and Moab Triple Crown" %}
+
+Next up: 
+- [Sedona Stage Race](http://www.trailrunningescapes.com/races2.html) - next weekend
+- [Cocodona 250](http://cocodona.com/) May 2-???
