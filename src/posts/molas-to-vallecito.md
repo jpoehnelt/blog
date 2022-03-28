@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Molas Lake to Vallecito Reservoir
-excerpt: Running 36 miles from Molas Lake to Vallecito Reservoir
+excerpt: A solo adventure running 36 miles from Molas Lake to Vallecito Reservoir in the Weminuche Wilderness
 tags:
     - post
     - run
