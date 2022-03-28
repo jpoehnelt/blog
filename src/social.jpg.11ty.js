@@ -53,7 +53,7 @@ function wrapText(title, rowLength, maxRows) {
 }
 
 function svg({ title, excerpt, tags, page, date }) {
-    const svgTitle = `<text x="50" y="120" fill="#ffffff" font-size="${Math.ceil(1700 / title.length)}px" font-weight="700">${title}</text>`;
+    const svgTitle = `<text x="75" y="120" fill="#ffffff" font-size="${Math.ceil(1650 / title.length)}px" font-weight="700">${title}</text>`;
 
     const excerptLines = wrapText(excerpt, 40, 4)
     const svgExcerpt = excerptLines.reduce((p, c, i) => {
@@ -95,8 +95,8 @@ function svg({ title, excerpt, tags, page, date }) {
             ${svgExcerpt}
             <rect x="100" y="${bottomOfExcerpt}" width="1000" height="2" style="fill:white;" />
             ${svgTags}
-			<text x="50" y="580" fill="#fff" font-size="20px" font-weight="500">justin.poehnelt.com${page.url}</text>
-			<text x="1150" y="580" fill="#fff" font-size="20px" text-anchor="end" font-weight="500">${this.dateDisplay(date)}</text>
+			<text x="75" y="580" fill="#fff" font-size="20px" font-weight="500">justin.poehnelt.com${page.url}</text>
+			<text x="1125" y="580" fill="#fff" font-size="20px" text-anchor="end" font-weight="500">${this.dateDisplay(date)}</text>
 		</g>
 	</svg>`;
 }
