@@ -4,7 +4,22 @@ path: /
 hideToc: true
 ---
 
-{% image "src/images/justin-poehnelt.jpg", "Justin Poehnelt", "rounded-full max-w-full sm:max-w-sm mx-auto" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "CO",
+  },
+
+  "jobTitle": "Software Engineer",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}"
+}
+</script>
+
+{% image "src/images/justin-poehnelt.jpg", site.author.name, "rounded-full max-w-full sm:max-w-sm mx-auto" %}
 
 # Hello. 👋
 
