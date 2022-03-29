@@ -1,0 +1,27 @@
+{%- set mentions = webmentions[page.url].all -%}
+
+<div class="webmentions" id="webmentions">
+	<h3>Webmentions</h3>
+
+	{% if mentions | length %}
+		<div class="webmentions__facepile">
+			{% for webmention in mentions | reverse  %}
+				<img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}" title="{{ webmention.author.name }}" alt="" class="w-8 h-8 rounded-full webmentions__face"/>
+			{% endfor %}
+			{% if mentions.length > 5 %}
+				<span>+{{ mentions.length - 5 }}</span>
+			{% endif %}
+		</div>
+
+		<ul class="webmentions__list">
+			{% for webmention in mentions | reverse %}
+				<li class="webmentions__item">
+					{% include 'webmention.njk' %}
+				</li>
+			{% endfor %}
+		</ul>
+
+	{% else %}
+		<p>No mentions yet.</p>
+	{% endif %}
+</div>

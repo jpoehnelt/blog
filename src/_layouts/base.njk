@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+
+    {# Google Schema #}
+    <meta itemprop="name" content="{% if metaTitle %}{{ metaTitle }}{{ ' | '}}{% endif %}{% if title %}{{ title }}{{ ' | '}}{% endif %}{% if site.name %}{{ site.name }}{% endif %}">
+    <meta itemprop="description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+
+    {# Twitter #}
+    <meta name="twitter:title" content="{% if metaTitle %}{{ metaTitle }}{{ ' | '}}{% endif %}{% if title %}{{ title }}{{ ' | '}}{% endif %}{% if site.name %}{{ site.name }}{% endif %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:site" content="{{ site.author.handle }}">
+    <meta name="twitter:creator" content="{{ site.author.handle }}">
+    {% if layout == 'post' %}<meta name="twitter:image" content="{{ site.url }}/images/social/{{page.fileSlug}}.png">{% endif %}
+
+    {# Open Graph #}
+    <meta name="og:title" content="{% if metaTitle %}{{ metaTitle }}{{ ' | '}}{% endif %}{% if title %}{{ title }}{{ ' | '}}{% endif %}{% if site.name %}{{ site.name }}{% endif %}">
+    <meta name="og:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="og:url" content="{{ site.url }}{{ site.baseUrl }}">
+    <meta name="og:site_name" content="{{ site.name }}">
+    <meta name="og:locale" content="en_GB">
+    <meta name="og:type" content="website">
+    {% if layout == 'post' %}
+      <meta name="og:image" content="{{ site.url }}/images/social/{{page.fileSlug}}.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="683"/>
+    {% endif %}
+
+    <link rel="icon" type="image/x-icon" href="{{ site.baseUrl }}favicon.ico" />
+
+    <title>{% if metaTitle %}{{ metaTitle }}{% else %}{{ title }}{% endif %}{% if metaTitle or title %} | {% endif %}{{ site.name }}</title>
+
+    {% set css %}
+      {% include "public/assets/main.bundle.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+    
+    {# https://webmention.io/settings #}
+    <link rel="webmention" href="https://webmention.io/justin.poehnelt.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/justin.poehnelt.com/xmlrpc" />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    {% include 'top-notice.njk' %}
+    {% include 'header.njk' %}
+    <main class="container mx-auto max-w-5xl p-8 grow">
+      {{ content | safe }}
+    </main>
+    {% include 'footer.njk' %}
+    <script async src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script async src="{{ site.baseUrl }}assets/main.bundle.js"></script>
+  </body>
+</html>

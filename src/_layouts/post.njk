@@ -1,0 +1,47 @@
+---
+layout: base
+---
+<arcticle class="h-entry">
+    <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
+    <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
+
+    <h2>{{ title }}</h2>
+    {% include 'date.njk' %}
+
+    <div class="mb-2"> 
+        {% for tag in tags %}
+            {%- if tag !== "post" -%}
+                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+            {%- endif -%}
+        {% endfor %}
+    </div>
+
+    <div class="flex gap-8">
+        <div class="content grow">
+        {{ content | safe }}
+        
+        <hr>
+
+        {%- set nextPost = collections['postsWithoutDrafts'] | getNextCollectionItem(page) %}
+        {%- if nextPost %}
+            <p class="uppercase text-xs mt-6">Next</p>
+            <p class="font-bold mb-2">
+                <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+            </p>
+        {% endif %}
+        {%- set previousPost = collections['postsWithoutDrafts'] | getPreviousCollectionItem(page) %}
+        {%- if previousPost %}
+            <p class="uppercase text-xs mt-6">Previous</p>
+
+            <p class="font-bold">
+                <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+            </p>
+        {% endif %}
+
+        <hr>
+
+        {% include "rss-feed.njk" %}
+        </div>
+        {% if not hideToc %}{% include 'toc.njk' %}{% endif %}
+    </div>
+</article>
