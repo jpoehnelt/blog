@@ -18,3 +18,13 @@
 
 	# Maximum number of feed entries to check for mentions (optional, default: 1)
 	limit = 1
+
+[[plugins]]
+ package = "netlify-plugin-visual-diff"
+ [plugins.inputs]
+   ignoreSelector = ".build-date"
+
+   [[plugins.inputs.browser]]
+     name = "chrome"
+     width = 1024
+     height = 768
