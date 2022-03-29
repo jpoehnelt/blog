@@ -1,7 +1,9 @@
 ---
 layout: base
 ---
-<arcticle class="h-entry">
+{% include 'schema-blog-post.njk' %}
+
+<article class="h-entry">
     <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
     <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
 

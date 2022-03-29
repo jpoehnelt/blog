@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "image": "{{ site.url }}/images/social/{{page.fileSlug}}.png",
+  "keywords": "{{ tags | join(' ')}}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "datePublished": "{{ date }}",
+  "dateCreated": "{{ date }}",
+  "description": "{{ excerpt }}",
+  "author": {
+    "@type": "Person",
+    "name": "Justin Poehnelt"
+  }
+}
+</script>
