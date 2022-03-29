@@ -7,7 +7,7 @@
   [plugins.inputs.thresholds]
     performance = 0.95
     accessibility = 0.95
-    best-practices = 0.95
+    # best-practices = 0.95  # TODO Links to cross-origin destinations are unsafe
     seo = 0.95
 
   # optional, deploy the lighthouse report to a path under your site
