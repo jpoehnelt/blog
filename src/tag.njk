@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: false
+  filter:
+    - all
+    - post
+    - draft
+eleventyComputed:
+  title: "Posts having tag: {{ tag }}"
+permalink: /tag/{{ tag }}/
+layout: base
+---
+
+{% block body %}
+  {% set posts = collections[tag] | reverse %}
+
+  {% include "posts.njk" %}
+
+  {% include "tags.njk" %}
+{% endblock %}
