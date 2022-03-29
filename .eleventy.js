@@ -35,6 +35,8 @@ const strava = (activity, embed) =>
   `<div class="flex justify-center"><iframe loading="lazy" title="strava activity" class="w-full max-w-sm h-96" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/${activity}/embed/${embed}'></iframe></div>`;
 
 module.exports = (config) => {
+  config.addPassthroughCopy({ "src/static/*": "/" });
+
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
@@ -43,7 +45,7 @@ module.exports = (config) => {
   config.addLiquidShortcode("strava", strava);
   config.addJavaScriptFunction("strava", strava);
 
-  config.addFilter("cssmin", function(code) {
+  config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
 
@@ -51,7 +53,7 @@ module.exports = (config) => {
     if (outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
         collapseWhitespace: true,
-        removeComments: true,  
+        removeComments: true,
         useShortDoctype: true,
       });
     }
