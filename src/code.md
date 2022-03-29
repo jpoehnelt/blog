@@ -13,4 +13,4 @@ Approximately two thirds of my work is supporting open source and much of that i
 ## Open Source Development Stats
 I am active on GitHub and track some of my development activity for open source.
 
-<img src="https://github-readme-stats.vercel.app/api?username=jpoehnelt&show_icons=true&&theme=nord&hide_border=true&count_private=true&hide=issues&custom_title=Github%20Stats"/>
+<img src="https://github-readme-stats.vercel.app/api?username=jpoehnelt&show_icons=true&&theme=nord&hide_border=true&count_private=true&hide=issues&custom_title=Github%20Stats" width="495" height="170" alt="jpoehnelt GitHub stats"/>
