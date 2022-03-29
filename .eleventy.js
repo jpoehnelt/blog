@@ -81,6 +81,7 @@ module.exports = (config) => {
 
   config.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
   config.addPlugin(require("@11ty/eleventy-plugin-rss"));
+  config.addPlugin(require('eleventy-plugin-time-to-read'));
 
   config.addFilter("dateDisplay", require("./filters/date-display.js"));
 

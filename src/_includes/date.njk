@@ -1,10 +1,10 @@
 {% if date %}
     {% if updatedDate and (date|string) !== (updatedDate|string) %}
-        <p class="text-sm italic">Last updated on
+        <p>Last updated on
             <time class="dt-updated" datetime="{{ updatedDate }}">{{ updatedDate | dateDisplay }}</time>. Created on
             <time class="dt-published" datetime="{{ date }}">{{ date | dateDisplay }}</time>.</p>
     {% else %}
-        <p class="text-sm italic">Created on
+        <p>Created on
             <time datetime="{{ date }}">{{ date | dateDisplay }}</time>.</p>
     {% endif %}
 {% endif %}
