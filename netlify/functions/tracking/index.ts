@@ -71,6 +71,8 @@ export const handler: Handler = (event, _, callback): void => {
             data.aip = '1';
             data.npa = '1';
 
+            console.log(data);
+            
             switch (data.t) {
                 case 'pageview':
                     visitor.pageview(data).send()
