@@ -2,6 +2,7 @@
 layout: page
 path: /
 hideToc: true
+title: Home
 ---
 
 <script type="application/ld+json">

@@ -15,3 +15,18 @@
 
 	# Maximum number of feed entries to check for mentions (optional, default: 1)
 	limit = 1
+
+[[redirects]]
+  from = "/secure.svg"
+  to = "/.netlify/functions/tracking"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/secure.svg"
+  [headers.values]
+  cache-control = '''
+  max-age=0,
+  no-cache,
+  no-store,
+  must-revalidate'''
