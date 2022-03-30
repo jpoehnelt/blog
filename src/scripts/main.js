@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
   }
 
   if (!cid) {
-    cid = crypto.randomUUID().slice(1, 4);
+    cid = crypto.randomUUID();
     document.cookie = `cid=${cid}; path=/`;
   }
 
