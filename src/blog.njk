@@ -6,6 +6,7 @@ pagination:
   reverse: true
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 layout: base
+title: Blog
 ---
 
 {% include "posts.njk" %}
