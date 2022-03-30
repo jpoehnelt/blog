@@ -65,9 +65,7 @@ export const handler: Handler = (event, _, callback): void => {
     try {
         if (queryStringParameters && queryStringParameters.q) {
 
-            console.log(queryStringParameters);
             const data = JSON.parse(Buffer.from(queryStringParameters.q, 'base64url').toString())
-            console.log(data);
 
             data.ds = 'web';
             data.aip = '1';
