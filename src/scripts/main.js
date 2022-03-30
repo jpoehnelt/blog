@@ -21,6 +21,7 @@ window.addEventListener("load", () => {
   const el = document.getElementById('secure');
   const img = document.createElement('img')
   img.classList.add('h-4', 'w-4', 'inline');
+  img.alt = 'privacy badge';
 
   const send = (params) => {
     params = {
