@@ -4,7 +4,6 @@ import type { Handler } from "@netlify/functions";
 const visitor = ua('UA-224282906-1')
 
 export const handler: Handler = (event, _, callback): void => {
-    console.log('hello')
     callback(null, {
         statusCode: 200,
         headers: {
@@ -65,16 +64,15 @@ export const handler: Handler = (event, _, callback): void => {
     }
     try {
         if (queryStringParameters && queryStringParameters.q) {
-            
+
             console.log(queryStringParameters);
-             const data = JSON.parse(atob(queryStringParameters.q.replace(/[-_.]/g, (m) => DEC[m])))
-            
+            const data = JSON.parse(Buffer.from(queryStringParameters.q, 'base64url').toString())
+            console.log(data);
+
             data.ds = 'web';
             data.aip = '1';
             data.npa = '1';
 
-            console.log(data);
-            
             switch (data.t) {
                 case 'pageview':
                     visitor.pageview(data).send()
