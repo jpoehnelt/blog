@@ -110,6 +110,8 @@ module.exports = (config) => {
     )
   );
 
+  config.addWatchTarget("./public/assets/*");
+
   return {
     pathPrefix: require("./src/_data/site.json").baseUrl,
     dir: {
