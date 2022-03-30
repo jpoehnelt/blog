@@ -57,11 +57,7 @@ export const handler: Handler = (event, _, callback): void => {
     })
 
     const { queryStringParameters } = event
-    const DEC = {
-        '-': '+',
-        _: '/',
-        '.': '='
-    }
+
     try {
         if (queryStringParameters && queryStringParameters.q) {
 
@@ -72,7 +68,7 @@ export const handler: Handler = (event, _, callback): void => {
             data.npa = '1';
 
             console.log(data);
-            
+
             switch (data.t) {
                 case 'pageview':
                     visitor.pageview(data).send()
