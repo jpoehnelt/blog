@@ -10,7 +10,7 @@ tags:
     - race
     - Arizona
     - Mogollon Monster
-date: 2021-09-18T07:02:38.495Z
+date: '2021-09-18T07:02:38.495Z'
 ---
 
 A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 mile. This was one of the **<u>most brutal races</u>** I have competed in, but somehow **I finished 11th**!
