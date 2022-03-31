@@ -3,6 +3,7 @@ const mdContainer = require("markdown-it-container");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
+const workbox = require("workbox-build");
 
 async function imageShortcode(
   src,
@@ -83,7 +84,7 @@ module.exports = (config) => {
   config.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
   config.addPlugin(require("@11ty/eleventy-plugin-rss"));
   config.addPlugin(require('eleventy-plugin-time-to-read'));
-  config.addPlugin(externalLinks, {'url': 'https://justin.poehnelt.com', target: "_self"});
+  config.addPlugin(externalLinks, { 'url': 'https://justin.poehnelt.com', target: "_self" });
 
   config.addFilter("dateDisplay", require("./filters/date-display.js"));
 
@@ -113,6 +114,31 @@ module.exports = (config) => {
   );
 
   config.addWatchTarget("./public/assets/*");
+
+  config.on('eleventy.after', async () => {
+    // Run me after the build 
+    const options = {
+      cacheId: 'sw',
+      skipWaiting: true,
+      clientsClaim: true,
+      swDest: `public/sw.js`,
+      globDirectory: 'public',
+      globPatterns: [
+        '**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}',
+      ],
+      runtimeCaching: [
+        {
+          urlPattern: /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+          handler: `StaleWhileRevalidate`,
+        },
+
+      ],
+    };
+
+    const genSW = await workbox.generateSW(options);
+    const size = (genSW.size / 1048576).toFixed(2);
+    console.log(`${genSW.count} files will be cached, totaling ${size} MB.`);
+  });
 
   return {
     pathPrefix: require("./src/_data/site.json").baseUrl,
