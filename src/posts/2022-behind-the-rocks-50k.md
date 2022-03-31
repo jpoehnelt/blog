@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2022 Behind the Rocks 50k Race
-excerpt: Race Report for the 2022 Behind the Rocks Ultra 50k in Moab, Utah.
+excerpt: Race Report for the 2022 Behind the Rocks Ultra 50k in Moab, Utah. I finished 8th in 4:55.
 tags:
     - post
     - run
@@ -13,7 +13,7 @@ tags:
 date: '2022-03-26T15:31:22.346Z'
 ---
 :::tldr
-tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes (unofficial). It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered!
+tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes, good for 8th place. It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered!
 :::
 
 {% image "src/images/2022-behind-the-rocks/PXL_20220326_154628435.jpg", "Canyons and desert along the Moab Behind the Rocks 50k race course" %}
