@@ -69,4 +69,13 @@ window.addEventListener("load", () => {
     }
     return false;
   }, { wait: 300 });
+
+  function scrollPercentage(el) {
+    var p = el.parentNode
+    return Math.round((el.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight) * 100)
+  }
+
+  window.onscroll = debounce(() => {
+    send({ t: 'event', ec: 'interact', ea: 'scroll', el: String(scrollPercentage(document.body)) });
+  }, { wait: 500 })
 });
