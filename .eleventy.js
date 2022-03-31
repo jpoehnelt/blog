@@ -2,6 +2,7 @@ const Image = require("@11ty/eleventy-img");
 const mdContainer = require("markdown-it-container");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
+const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 
 async function imageShortcode(
   src,
@@ -82,6 +83,7 @@ module.exports = (config) => {
   config.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
   config.addPlugin(require("@11ty/eleventy-plugin-rss"));
   config.addPlugin(require('eleventy-plugin-time-to-read'));
+  config.addPlugin(externalLinks, {'url': 'https://justin.poehnelt.com', target: "_self"});
 
   config.addFilter("dateDisplay", require("./filters/date-display.js"));
 

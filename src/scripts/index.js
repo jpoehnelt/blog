@@ -1,5 +1,4 @@
-import "../styles/tailwind.css";
-
+import debounce from 'debounce-fn';
 
 window.addEventListener("load", () => {
   let cid;
@@ -52,4 +51,19 @@ window.addEventListener("load", () => {
   window.onerror = function (message) {
     send({ t: 'exception', ni: '1', exd: message });
   }
+
+  for (let a of document.getElementsByTagName('a')) {
+    a.addEventListener('click', () => {
+      send({ t: 'event', ec: 'outbound', ea: 'click', el: a.href }); return false;
+    })
+  }
+
+  document.onselectionchange = debounce(() => {
+    const el = document.getSelection().toString();
+
+    if (el.length > 4) {
+      send({ t: 'event', ec: 'interact', ea: 'select', el });
+    }
+    return false;
+  }, { wait: 300 });
 });

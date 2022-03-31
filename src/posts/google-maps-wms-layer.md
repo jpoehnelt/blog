@@ -19,8 +19,6 @@ A [Web Map Service(WMS)](https://en.wikipedia.org/wiki/Web_Map_Service) is a 20 
 
 Before jumping into JavaScript, we need to explore some XML and learn more about the WMS standard and tiled map numbering.
 
-_tl;dr: Checkout the jsfiddle at_ [_https://jsfiddle.net/jwpoehnelt/1ph0wen3_](https://jsfiddle.net/jwpoehnelt/1ph0wen3)_._
-
 ## About the Web Map Service Standard
 
 The WMS standard exposes many options such as coordinate reference systems(CRS), bounding box, and style selection. These parameters are specified in an XML document that can be queried by sending a [GetCapabilities](https://en.wikipedia.org/wiki/Web_Map_Service#Requests) request to the WMS. Below is a extract of the response for the [National Land Cover Database](https://www.mrlc.gov/data/nlcd-2016-land-cover-conus) server.
