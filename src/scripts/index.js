@@ -54,7 +54,10 @@ window.addEventListener("load", () => {
 
   for (let a of document.getElementsByTagName('a')) {
     a.addEventListener('click', () => {
-      send({ t: 'event', ec: 'outbound', ea: 'click', el: a.href }); return false;
+      if (!a.href.startsWith('/') && !a.href.startsWith("https://justin.poehnelt.com")) {
+        send({ t: 'event', ec: 'outbound', ea: 'click', el: a.href });
+      }
+      return false;
     })
   }
 
