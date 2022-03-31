@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What about the cows...
-excerpt: Don't bust the crust unless (you are a cow). A greenwashing campaign by our public land management agencies.
+excerpt: Don't bust the crust (unless you are a cow). A greenwashing campaign by our public land management agencies.
 tags:
     - post
     - cryptobiotic crust
