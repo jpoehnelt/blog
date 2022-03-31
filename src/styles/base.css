@@ -98,6 +98,10 @@ hr {
   padding: 0.5em 1em;
 }
 
+blockquote p:last-child {
+  @apply mb-0;
+}
+
 .content picture {
   @apply flex justify-center;
 }
