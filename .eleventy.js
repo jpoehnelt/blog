@@ -116,7 +116,6 @@ module.exports = (config) => {
   config.addWatchTarget("./public/assets/*");
 
   config.on('eleventy.after', async () => {
-    // Run me after the build 
     const options = {
       cacheId: 'sw',
       skipWaiting: true,
@@ -135,9 +134,7 @@ module.exports = (config) => {
       ],
     };
 
-    const genSW = await workbox.generateSW(options);
-    const size = (genSW.size / 1048576).toFixed(2);
-    console.log(`${genSW.count} files will be cached, totaling ${size} MB.`);
+     await workbox.generateSW(options);
   });
 
   return {

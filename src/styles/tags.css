@@ -6,23 +6,23 @@
   }
 }
 
-.tag {
+div > .tag {
   @apply bg-orange-800 inline-block px-2 py-2 mx-1 mb-1 text-sm font-bold rounded lowercase text-white;
   border: 1px solid transparent;
 }
 
-.tag:hover {
+div > .tag:hover {
   animation: tag-hover 500ms both;
 }
 
-.tag:before {
+div > .tag:before {
   content: "#";
 }
 
-.tag.run {
+div > .tag.run {
   @apply bg-green-700;
 }
 
-.tag.code {
+div > .tag.code {
   @apply bg-sky-700;
 }
