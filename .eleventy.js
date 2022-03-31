@@ -26,8 +26,6 @@ async function imageShortcode(
     class: class_,
   };
 
-  console.log(imageAttributes);
-
   return (
     `<div>${Image.generateHTML(metadata, imageAttributes)}<p class="text-xs italic text-center -mt-4">${alt}</p></div>`
   );

@@ -3,6 +3,15 @@
   command = "npm run build"
 
 [[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [
+    "public/images", # Eleventy Image Disk Cache
+    ".cache" # Remote Asset Cache
+  ]
+
+[[plugins]]
   package = "netlify-plugin-webmentions"
 
 	[plugins.inputs]
