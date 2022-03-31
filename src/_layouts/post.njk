@@ -13,7 +13,7 @@ layout: base
         <p>Read in {{ content | timeToRead }}.</p>
     </div>
 
-    <div class="mb-2"> 
+    <div class="mb-4"> 
         {% for tag in tags %}
             {%- if tag !== "post" -%}
                 <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
