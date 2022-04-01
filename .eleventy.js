@@ -4,6 +4,7 @@ const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
+const htmlParser = require("node-html-parser");
 
 async function imageShortcode(
   src,
@@ -26,9 +27,10 @@ async function imageShortcode(
     class: class_,
   };
 
-  return (
-    `<div>${Image.generateHTML(metadata, imageAttributes)}<p class="text-xs italic text-center -mt-4">${alt}</p></div>`
-  );
+  return `<div>${Image.generateHTML(
+    metadata,
+    imageAttributes
+  )}<p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
 }
 
 const strava = (activity, embed) =>
@@ -61,6 +63,23 @@ module.exports = (config) => {
     return content;
   });
 
+  config.addFilter("simplifyCodeHighlightingForRSS", function (value) {
+    const prefix = "language-";
+    const root = htmlParser.parse(value.replace(/  /g, "&nbsp;&nbsp;"));
+
+    root.querySelectorAll("pre").forEach((el) => {
+      const language = [...el.classList.values()].filter((c) =>
+        c.startsWith(prefix)
+      )[0];
+
+      el.innerHTML = `<code class="${language}">${el.innerText
+        .replace(/<\/*(span|code).*?>/g, "")
+        .replace(/<br>/g, "&#13;&#10;")}</code>`;
+    });
+
+    return root.toString();
+  });
+
   const markdownIt = new require("markdown-it")({
     typographer: true,
     linkify: true,
@@ -81,8 +100,11 @@ module.exports = (config) => {
 
   config.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
   config.addPlugin(require("@11ty/eleventy-plugin-rss"));
-  config.addPlugin(require('eleventy-plugin-time-to-read'));
-  config.addPlugin(externalLinks, { 'url': 'https://justin.poehnelt.com', target: "_self" });
+  config.addPlugin(require("eleventy-plugin-time-to-read"));
+  config.addPlugin(externalLinks, {
+    url: "https://justin.poehnelt.com",
+    target: "_self",
+  });
 
   config.addFilter("dateDisplay", require("./filters/date-display.js"));
 
@@ -113,26 +135,26 @@ module.exports = (config) => {
 
   config.addWatchTarget("./public/assets/*");
 
-  config.on('eleventy.after', async () => {
+  config.on("eleventy.after", async () => {
     const options = {
-      cacheId: 'sw',
+      cacheId: "sw",
       skipWaiting: true,
       clientsClaim: true,
       swDest: `public/sw.js`,
-      globDirectory: 'public',
+      globDirectory: "public",
       globPatterns: [
-        '**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}',
+        "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
       ],
       runtimeCaching: [
         {
-          urlPattern: /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+          urlPattern:
+            /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
           handler: `StaleWhileRevalidate`,
         },
-
       ],
     };
 
-     await workbox.generateSW(options);
+    await workbox.generateSW(options);
   });
 
   return {
