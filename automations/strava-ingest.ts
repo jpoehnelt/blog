@@ -7,7 +7,7 @@ import fs from 'fs';
 const main = async () => {
 
     const after = getUnixTime(process.env.STRAVA_AFTER ? parseISO(process.env.STRAVA_AFTER) : subDays(endOfToday(), 10));
-    const file = path.join(__dirname, '..', 'src', 'data', 'strava.json', 'utf8');
+    const file = path.join('src', 'data', 'strava.json', 'utf8');
 
     let page = 1;
 
@@ -39,7 +39,7 @@ const main = async () => {
         page++;
     }
 
-    const existing = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', '_data', 'strava.json'), 'utf8'));
+    const existing = JSON.parse(fs.readFileSync(file, 'utf8'));
     const updated = { ...existing, ...activities };
 
     fs.writeFileSync(file, JSON.stringify(updated, null, 2))
