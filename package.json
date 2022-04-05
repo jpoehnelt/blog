@@ -12,7 +12,9 @@
     "dev:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --watch",
     "dev:css": "postcss src/styles/tailwind.css -o public/assets/index.css",
     "dev": "npm-run-all clean build:js build:css build:11ty -p dev:*",
-    "prepare": "esbuild automations/strava-refresh.ts --outfile=dist/strava-refresh.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
+    "prepare": "run-p prepare:*",
+    "prepare:refresh": "esbuild automations/strava-refresh.ts --outfile=dist/strava-refresh.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
+    "prepare:ingest": "esbuild automations/strava-ingest.ts --outfile=dist/strava-ingest.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
     "webmentions": "node automations/mentions.mjs"
   },
   "devDependencies": {
@@ -31,6 +33,7 @@
     "axios": "^0.26.1",
     "clean-css": "^5.2.4",
     "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
     "dotenv": "^16.0.0",
     "eleventy-plugin-nesting-toc": "^1.3.0",
     "eleventy-plugin-time-to-read": "^1.2.0",
