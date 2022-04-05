@@ -29,7 +29,7 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: npm i
-      - name: Fetch webmentions
+      - name: Refresh token
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
