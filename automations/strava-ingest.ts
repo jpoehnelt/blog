@@ -7,7 +7,7 @@ import fs from 'fs';
 const main = async () => {
 
     const after = getUnixTime(process.env.STRAVA_AFTER ? parseISO(process.env.STRAVA_AFTER) : subDays(endOfToday(), 10));
-    const file = path.join('src', 'data', 'strava.json');
+    const file = path.join('src', '_data', 'strava.json');
 
     let page = 1;
 
