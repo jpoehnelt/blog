@@ -42,12 +42,12 @@ package = "netlify-plugin-cache"
 
 [[redirects]]
   from = "/api/strava/callback"
-  to = "/.netlify/functions/strava/callback"
+  to = "/.netlify/functions/strava-callback"
   status = 200
   force = true
   
 [[redirects]]
   from = "/_strava/oauth"
-  to = "/.netlify/functions/strava/oauth"
+  to = "/.netlify/functions/strava-oauth"
   status = 200
   force = true
