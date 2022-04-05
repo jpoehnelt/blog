@@ -40,7 +40,7 @@ export const handler: Handler = async (event): Promise<HandlerResponse> => {
 
     return {
         statusCode: 200,
-        body: JSON.stringify(response.data)
+        body: JSON.stringify(response.data, null, 2)
     };
 
 }
