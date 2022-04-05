@@ -29,7 +29,6 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: npm i
-      - name: 
       - name: Fetch webmentions
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
