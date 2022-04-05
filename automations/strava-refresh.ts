@@ -1,5 +1,5 @@
 import axios from "axios";
-import libsodium from "libsodium-wrappers";
+import sodium from "tweetsodium";
 import { Octokit } from "octokit";
 
 const owner = "jpoehnelt";
@@ -28,18 +28,25 @@ const main = async () => {
 
   console.log(`Public key fetched: ${publicKeyId}`);
 
-  await libsodium.ready;
 
   await Promise.all(
     ["access_token", "refresh_token"].map(async (field) => {
       const secretName = `STRAVA_${field.toUpperCase()}`;
 
+      // // Encrypt using LibSodium.
+      // const encrypted_value = libsodium.crypto_box_seal(
+      //   response.data[field],
+      //   Buffer.from(publicKey, "base64"),
+      //   "base64"
+      // );
+
+      // Convert the message and key to Uint8Array (Buffer implements that interface)
+      const messageBytes = Buffer.from(response.data[field]);
+      const keyBytes = Buffer.from(publicKey, 'base64');
       // Encrypt using LibSodium.
-      const encrypted_value = libsodium.crypto_box_seal(
-        response.data[field],
-        Buffer.from(publicKey, "base64"),
-        "base64"
-      );
+      const encryptedBytes = sodium.seal(messageBytes, keyBytes);
+      // Base64 the encrypted secret
+      const encrypted_value = Buffer.from(encryptedBytes).toString('base64');
 
       await octokit.request(
         "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}",
