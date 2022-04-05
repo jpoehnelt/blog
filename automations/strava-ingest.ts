@@ -28,6 +28,8 @@ const main = async () => {
             })
         ).data;
 
+        console.log(data);
+
         data.forEach(d => {
             activities[String(d.id)] = d;
         })
