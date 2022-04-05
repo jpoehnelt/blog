@@ -2,6 +2,9 @@ name: Strava Ingest
 
 on:
   workflow_dispatch:
+    inputs:
+      after:
+        type: string
   schedule:
     - cron: "0 */6 * * *"
 
@@ -32,6 +35,7 @@ jobs:
       - name: Ingest Strava Activities
         env:
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+          STRAVA_AFTER: ${{ github.event.inputs.after }}
         run: node dist/strava-ingest.mjs
       - name: Commit changes
         run: |
