@@ -43,3 +43,5 @@ jobs:
           git config --local user.name "Justin Poehnelt"
           git add src/_data/strava.json
           git commit -m "chore: update strava data" || true
+          git push
+
