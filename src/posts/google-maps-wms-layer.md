@@ -82,7 +82,7 @@ It is important to note that the coordinates for the `BBOX` parameter must be in
 
 Now that we have a basic understanding how the HTTP request to retrieve imagery from a WMS, we can begin exploring the interface Google Maps exposes for its map types, specifically the `google.maps.ImageMapType` and `google.maps.ImageMapTypeOptions`.
 
-{% image "src/images/wms/interface.png", "Interface for google.maps.ImageMapType" %}
+{% image "src/images/wms/image-map-type-options-interface.png", "Interface for google.maps.ImageMapType" %}
 
 Your `getTileUrl` is the option required to enable a WMS layer in Google Maps and how we create that tile URL must follow the WMS standard discussed above.
 
