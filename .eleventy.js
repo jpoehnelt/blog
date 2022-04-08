@@ -43,7 +43,7 @@ module.exports = (config) => {
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
 
-  config.addNunjucksAsyncShortcode("strava", strava);
+  config.addNunjucksShortcode("strava", strava);
   config.addLiquidShortcode("strava", strava);
   config.addJavaScriptFunction("strava", strava);
 
@@ -78,6 +78,10 @@ module.exports = (config) => {
     });
 
     return root.toString();
+  });
+
+  config.addFilter("limit", function (arr, limit) {
+    return arr.slice(0, limit);
   });
 
   const markdownIt = new require("markdown-it")({
@@ -158,6 +162,7 @@ module.exports = (config) => {
   });
 
   return {
+    markdownTemplateEngine: "njk",
     pathPrefix: require("./src/_data/site.json").baseUrl,
     dir: {
       input: "src",
