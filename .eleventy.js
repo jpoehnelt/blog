@@ -5,6 +5,8 @@ const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
+const path = require("path");
+const slugify = require("slugify");
 
 async function imageShortcode(
   src,
@@ -12,25 +14,43 @@ async function imageShortcode(
   class_ = "rounded-sm mx-auto",
   sizes = "(min-width: 30em) 50vw, 100vw"
 ) {
+  if (alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
   let metadata = await Image(src, {
-    widths: [200, 400, 600],
-    formats: ["avif", "jpeg"],
+    widths: [200, 400, 600, 1200],
+    formats: ["webp", "avif", "jpeg"],
     outputDir: "./public/images",
     urlPath: "/images",
+    filenameFormat: function (id, src, width, format, options) {
+      return `${slugify(path.basename(src, path.extname(src)))}-${id}-${width}.${format}`;
+    }
   });
 
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-    class: class_,
-  };
+  let low = metadata.jpeg[0];
+  let high = metadata.jpeg[metadata.jpeg.length - 1];
 
-  return `<div>${Image.generateHTML(
-    metadata,
-    imageAttributes
-  )}<p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
+  return `<div><a href="${high.url}"><picture>
+    ${Object.values(metadata)
+      .map((imageFormat) => {
+        return `  <source type="${
+          imageFormat[0].sourceType
+        }" srcset="${imageFormat
+          .map((entry) => entry.srcset)
+          .join(", ")}" sizes="${sizes}">`;
+      })
+      .join("\n")}
+      <img
+        src="${low.url}"
+        width="${high.width}"
+        height="${high.height}"
+        alt="${alt}"
+        loading="lazy"
+        class="${class_}"
+        decoding="async">
+    </picture></a><p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
 }
 
 const strava = (activity, embed) =>
