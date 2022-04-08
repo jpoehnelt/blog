@@ -24,17 +24,18 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 
 ### Upcoming events
 
-* Moab 240 Endurance Run - 240 Miler - Moab, UT Oct 7, 2022
-* Rio Grande 100 - Rio Grande 100 - South Fork, CO Oct 1, 2022
-* The Bear - 100 Miler - Logan, UT Sep 23, 2022
-* Creede 100 - 100 Miler - Creede, CO Aug 27, 2022
-* Ute 100 Mile & 50 Mile - 100 Miler - La Sal, UT Aug 12, 2022
-* San Juan Solstice 50 - 50 Miler - Lake City, CO Jun 25, 2022
-* Mace’s Hideout 100 - 100 Miler - Beulah, CO Jun 4, 2022
-* Cocodona 250 - 250 Miler - Black Canyon City, AZ May 2, 2022
-* Red Rocks of Sedona | 2 Day Stage Race - 50K Sat/50K Sun - Sedona, AZ Apr 2, 2022
+- Moab 240 Endurance Run - 240 Miler - Moab, UT Oct 7, 2022
+- Rio Grande 100 - Rio Grande 100 - South Fork, CO Oct 1, 2022
+- The Bear - 100 Miler - Logan, UT Sep 23, 2022
+- Creede 100 - 100 Miler - Creede, CO Aug 27, 2022
+- Ute 100 Mile & 50 Mile - 100 Miler - La Sal, UT Aug 12, 2022
+- San Juan Solstice 50 - 50 Miler - Lake City, CO Jun 25, 2022
+- Mace’s Hideout 100 - 100 Miler - Beulah, CO Jun 4, 2022
+- Cocodona 250 - 250 Miler - Black Canyon City, AZ May 2, 2022
 
 ### Past results
+
+- **2022** - Red Rocks of Sedona | 2 Day Stage Race - 50K/50K - Overall: 2
 - **2022** - Behind the Rocks Ultra - 50K - Moab, UT - [Race Report](/posts/2022-behind-the-rocks-50k/)
 - **2022** - Moab Red Hot Ultra - 55K - Moab, UT Overall:26 235:29:01
 - **2022** - Arches Ultra - 50K - Moab, UT - Overall:32 255:12:35
@@ -51,9 +52,12 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - **2019** - Jemez Mountain - 50K - Los Alamos, NM - Overall:30 266:46:52
 - **2019** - Moab Red Hot Ultra - 33K - Moab, UT - Overall:36 293:09:14
 
-## Run streaks
+## Recent runs
 
-In 2022, I began my current run streak of 70+ days. I'll see what happens after the Cocodona 250.
+<ul>{% for activity in activities | sort(true, false, 'start_date') | limit(20) %}
+<li>{{ activity.start_date_local | dateDisplay }}: <a href="https://www.strava.com/activities/{{ activity.id}}">{{ activity.name }}</a>, {{ (activity.distance / 1000) | round(1) }} km</li>
+{% endfor %}
+</ul>
 
 ## Strava
 
