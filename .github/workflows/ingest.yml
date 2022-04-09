@@ -2,12 +2,8 @@ name: Strava Ingest
 
 on:
   workflow_dispatch:
-    inputs:
-      after:
-        type: string
   schedule:
     - cron: "0 */6 * * *"
-
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -37,11 +33,14 @@ jobs:
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
           STRAVA_AFTER: ${{ github.event.inputs.after }}
         run: node dist/strava-ingest.mjs
+      - name: Ingest NPM Packages
+        run: node dist/npm.mjs
       - name: Commit changes
         run: |
           git config --local user.email "justin.poehnelt@gmail.com"
           git config --local user.name "Justin Poehnelt"
           git add src/_data/strava.json
+          git add src/_data/npm.json
           git commit -m "chore: update strava data" || true
           git push
 

@@ -14,3 +14,15 @@ Approximately two thirds of my work is supporting open source and much of that i
 I am active on GitHub and track some of my development activity for open source.
 
 <img src="https://github-readme-stats.vercel.app/api?username=jpoehnelt&show_icons=true&&theme=nord&hide_border=true&count_private=true&hide=issues&custom_title=Github%20Stats" width="495" height="170" alt="jpoehnelt GitHub stats"/>
+
+### NPM Packages
+
+I maintain numerous packages including the following on NPM.
+
+{% for entry in npm | sort(true, false, 'score.detail.popularity') -%}
+- [{{ entry.package.name }}](https://www.npmjs.com/package/{{ entry.package.name }})
+{% endfor -%}
+
+:::note
+I also write in other languages, but I have only ingested data from NPM my [11ty.dev](https://11ty.dev) personal site.
+:::

@@ -1,0 +1,930 @@
+[
+  {
+    "package": {
+      "name": "@googlemaps/google-maps-services-js",
+      "scope": "googlemaps",
+      "version": "3.3.12",
+      "description": "Node.js client library for Google Maps API Web Services",
+      "keywords": [
+        "google",
+        "maps",
+        "googlemaps",
+        "geo",
+        "geocode",
+        "timezone",
+        "api",
+        "client",
+        "roads",
+        "directions",
+        "navigation"
+      ],
+      "date": "2022-03-28T22:08:55.500Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fgoogle-maps-services-js",
+        "homepage": "https://github.com/googlemaps/google-maps-services-js",
+        "repository": "https://github.com/googlemaps/google-maps-services-js",
+        "bugs": "https://github.com/googlemaps/google-maps-services-js/issues"
+      },
+      "author": {
+        "name": "Google Inc."
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.7661308480437119,
+      "detail": {
+        "quality": 0.9433135120677348,
+        "popularity": 0.3804288953429254,
+        "maintenance": 0.9999619458667646
+      }
+    },
+    "searchScore": 0.094931774
+  },
+  {
+    "package": {
+      "name": "@googlemaps/js-api-loader",
+      "scope": "googlemaps",
+      "version": "1.13.11",
+      "description": "Wrapper for the loading of Google Maps JavaScript API script in the browser",
+      "keywords": [
+        "google",
+        "maps"
+      ],
+      "date": "2022-04-05T03:16:00.001Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjs-api-loader",
+        "homepage": "https://github.com/googlemaps/js-api-loader",
+        "repository": "https://github.com/googlemaps/js-api-loader",
+        "bugs": "https://github.com/googlemaps/js-api-loader/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.7291708791112382,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.3484792277044398,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.04603616
+  },
+  {
+    "package": {
+      "name": "@googlemaps/react-wrapper",
+      "scope": "googlemaps",
+      "version": "1.1.30",
+      "description": "React component that wraps the loading of Google Maps JavaScript API.",
+      "keywords": [
+        "google",
+        "maps",
+        "react"
+      ],
+      "date": "2022-04-07T04:15:37.964Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Freact-wrapper",
+        "homepage": "https://github.com/googlemaps/react-wrapper",
+        "repository": "https://github.com/googlemaps/react-wrapper",
+        "bugs": "https://github.com/googlemaps/react-wrapper/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6775517133933577,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.20099589708192417,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.011142252
+  },
+  {
+    "package": {
+      "name": "@googlemaps/markerclustererplus",
+      "scope": "googlemaps",
+      "version": "1.2.10",
+      "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
+      "keywords": [
+        "cluster",
+        "google",
+        "maps",
+        "marker"
+      ],
+      "date": "2021-11-30T02:11:38.945Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclustererplus",
+        "homepage": "https://github.com/googlemaps/js-markerclustererplus",
+        "repository": "https://github.com/googlemaps/js-markerclustererplus",
+        "bugs": "https://github.com/googlemaps/js-markerclustererplus/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6735986552178391,
+      "detail": {
+        "quality": 0.8364556389013833,
+        "popularity": 0.20764585826166218,
+        "maintenance": 0.9999597518738355
+      }
+    },
+    "searchScore": 0.010546975
+  },
+  {
+    "package": {
+      "name": "@googlemaps/url-signature",
+      "scope": "googlemaps",
+      "version": "1.0.19",
+      "description": "Sign a URL for Google Maps Platform requests.",
+      "keywords": [
+        "google",
+        "maps",
+        "polyline"
+      ],
+      "date": "2022-04-04T05:40:26.673Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Furl-signature",
+        "homepage": "https://github.com/googlemaps/js-url-signature",
+        "repository": "https://github.com/googlemaps/js-url-signature",
+        "bugs": "https://github.com/googlemaps/js-url-signature/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6668065479773182,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.17029542446466833,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.008131174
+  },
+  {
+    "package": {
+      "name": "@googlemaps/jest-mocks",
+      "scope": "googlemaps",
+      "version": "2.7.0",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)](https://www.npmjs.com/package/@googlemaps/jest-mocks) ![Build](https://github.com/googlemaps/js-jest-mocks/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-jest-mocks/work",
+      "keywords": [
+        "google",
+        "maps",
+        "jest"
+      ],
+      "date": "2022-04-07T22:02:49.082Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjest-mocks",
+        "homepage": "https://github.com/googlemaps/js-jest-mocks",
+        "repository": "https://github.com/googlemaps/js-jest-mocks",
+        "bugs": "https://github.com/googlemaps/js-jest-mocks/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6618631003060481,
+      "detail": {
+        "quality": 0.8496140033162238,
+        "popularity": 0.16279685517480286,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0071783685
+  },
+  {
+    "package": {
+      "name": "@googlemaps/js-samples",
+      "scope": "googlemaps",
+      "version": "2.20.9",
+      "description": "Samples for Google Maps JavaScript",
+      "keywords": [
+        "google",
+        "javascript",
+        "maps",
+        "samples"
+      ],
+      "date": "2021-06-18T16:49:54.148Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjs-samples",
+        "homepage": "https://github.com/googlemaps/js-samples#readme",
+        "repository": "https://github.com/googlemaps/js-samples",
+        "bugs": "https://github.com/googlemaps/js-samples/issues"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6527616949063937,
+      "detail": {
+        "quality": 0.8011304543457183,
+        "popularity": 0.1821943541683221,
+        "maintenance": 0.9961558132679014
+      }
+    },
+    "searchScore": 0.0063961544
+  },
+  {
+    "package": {
+      "name": "@googlemaps/markerwithlabel",
+      "scope": "googlemaps",
+      "version": "2.0.9",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/markerwithlabel)](https://www.npmjs.com/package/@googlemaps/markerwithlabel) ![Build](https://github.com/googlemaps/js-markerwithlabel/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-",
+      "keywords": [
+        "label",
+        "google",
+        "maps",
+        "marker"
+      ],
+      "date": "2022-04-07T11:12:49.212Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerwithlabel",
+        "homepage": "https://github.com/googlemaps/js-markerwithlabel",
+        "repository": "https://github.com/googlemaps/js-markerwithlabel",
+        "bugs": "https://github.com/googlemaps/js-markerwithlabel/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6491199986308295,
+      "detail": {
+        "quality": 0.8487884305893514,
+        "popularity": 0.1270956270114974,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0048869383
+  },
+  {
+    "package": {
+      "name": "@googlemaps/polyline-codec",
+      "scope": "googlemaps",
+      "version": "1.0.24",
+      "description": "Encode and decode polyines in Nodejs or the browser using this package.",
+      "keywords": [
+        "google",
+        "maps",
+        "polyline"
+      ],
+      "date": "2022-04-04T12:39:17.772Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fpolyline-codec",
+        "homepage": "https://github.com/googlemaps/js-polyline-codec",
+        "repository": "https://github.com/googlemaps/js-polyline-codec",
+        "bugs": "https://github.com/googlemaps/js-polyline-codec/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6445101985636611,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.10659156899707653,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0041270275
+  },
+  {
+    "package": {
+      "name": "@googlemaps/typescript-guards",
+      "scope": "googlemaps",
+      "version": "1.0.12",
+      "description": "TypeScript guards for Google Maps Platform JavaScript.",
+      "keywords": [
+        "google",
+        "maps",
+        "typescript"
+      ],
+      "date": "2022-04-01T23:21:41.772Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Ftypescript-guards",
+        "homepage": "https://github.com/googlemaps/js-typescript-guards",
+        "repository": "https://github.com/googlemaps/js-typescript-guards",
+        "bugs": "https://github.com/googlemaps/js-typescript-guards/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6425416875357776,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.100967251774552,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0038806992
+  },
+  {
+    "package": {
+      "name": "@googlemaps/three",
+      "scope": "googlemaps",
+      "version": "2.0.8",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/three)](https://www.npmjs.com/package/@googlemaps/three) ![Build](https://github.com/googlemaps/js-three/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-three/workflows/Release/badge.",
+      "keywords": [
+        "google",
+        "maps",
+        "webgl",
+        "threejs"
+      ],
+      "date": "2022-04-04T18:29:40.829Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fthree",
+        "homepage": "https://github.com/googlemaps/js-three",
+        "repository": "https://github.com/googlemaps/js-three",
+        "bugs": "https://github.com/googlemaps/js-three/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6378588764691837,
+      "detail": {
+        "quality": 0.8498199950649838,
+        "popularity": 0.09403679414196744,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.003427843
+  },
+  {
+    "package": {
+      "name": "@googlemaps/markermanager",
+      "scope": "googlemaps",
+      "version": "1.0.24",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/markermanager)](https://www.npmjs.com/package/@googlemaps/markermanager) ![Build](https://github.com/googlemaps/js-markermanager/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-marker",
+      "keywords": [
+        "google",
+        "maps",
+        "marker"
+      ],
+      "date": "2022-04-04T07:19:30.598Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkermanager",
+        "homepage": "https://github.com/googlemaps/js-markermanager",
+        "repository": "https://github.com/googlemaps/js-markermanager",
+        "bugs": "https://github.com/googlemaps/js-markermanager/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6290632787575636,
+      "detail": {
+        "quality": 0.8556218101992317,
+        "popularity": 0.06393353056512598,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0025406296
+  },
+  {
+    "package": {
+      "name": "@googlemaps/ogc",
+      "scope": "googlemaps",
+      "version": "1.0.22",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/ogc)](https://www.npmjs.com/package/@googlemaps/ogc) ![Build](https://github.com/googlemaps/js-ogc/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-ogc/workflows/Release/badge.svg) [![",
+      "keywords": [
+        "google",
+        "maps",
+        "wms"
+      ],
+      "date": "2022-04-04T20:26:20.145Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fogc",
+        "homepage": "https://github.com/googlemaps/js-ogc",
+        "repository": "https://github.com/googlemaps/js-ogc",
+        "bugs": "https://github.com/googlemaps/js-ogc/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6272408281749322,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.057250510743565415,
+        "maintenance": 1
+      }
+    },
+    "searchScore": 0.0023817802
+  },
+  {
+    "package": {
+      "name": "in-solidarity-bot",
+      "scope": "unscoped",
+      "version": "1.8.3",
+      "description": "A Probot app",
+      "keywords": [
+        "probot",
+        "github",
+        "probot-app"
+      ],
+      "date": "2021-08-26T19:53:55.953Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/in-solidarity-bot",
+        "homepage": "https://github.com/jpoehnelt/in-solidarity-bot",
+        "repository": "https://github.com/jpoehnelt/in-solidarity-bot",
+        "bugs": "https://github.com/jpoehnelt/in-solidarity-bot/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt",
+        "email": "justin.poehnelt@gmail.com",
+        "username": "jpoehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        },
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6216040379400316,
+      "detail": {
+        "quality": 0.8524841546047979,
+        "popularity": 0.045354378287256136,
+        "maintenance": 0.9999564547372934
+      }
+    },
+    "searchScore": 0.0020125457
+  },
+  {
+    "package": {
+      "name": "@googlemaps/loader",
+      "scope": "googlemaps",
+      "version": "0.0.10",
+      "description": "Wrapper for the loading of Google Maps script in the browser",
+      "keywords": [
+        "google",
+        "maps"
+      ],
+      "date": "2020-06-03T16:05:51.609Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Floader",
+        "homepage": "https://github.com/googlemaps/v3-utility-library/tree/master/packages/loader",
+        "repository": "https://github.com/googlemaps/v3-utility-library",
+        "bugs": "https://github.com/googlemaps/v3-utility-library/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        },
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "flags": {
+      "unstable": true
+    },
+    "score": {
+      "final": 0.526622758450475,
+      "detail": {
+        "quality": 0.8500177470346949,
+        "popularity": 0.23112926279394702,
+        "maintenance": 0.5449205496062434
+      }
+    },
+    "searchScore": 0.00056561804
+  },
+  {
+    "package": {
+      "name": "@googlemaps/map-loader",
+      "scope": "googlemaps",
+      "version": "0.2.0",
+      "description": "Automatic initialization and loading of the Maps JS API base map into the DOM",
+      "keywords": [
+        "google",
+        "maps"
+      ],
+      "date": "2021-01-20T22:48:22.034Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmap-loader",
+        "homepage": "https://github.com/googlemaps/js-map-loader#readme",
+        "repository": "https://github.com/googlemaps/js-map-loader",
+        "bugs": "https://github.com/googlemaps/js-map-loader/issues"
+      },
+      "author": {
+        "name": "Alex Muramoto"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "flags": {
+      "unstable": true
+    },
+    "score": {
+      "final": 0.5534950543887249,
+      "detail": {
+        "quality": 0.7918911785289755,
+        "popularity": 0.08964544948166618,
+        "maintenance": 0.8130051243184262
+      }
+    },
+    "searchScore": 0.000535268
+  },
+  {
+    "package": {
+      "name": "@googlemaps/types",
+      "scope": "googlemaps",
+      "version": "3.44.4",
+      "description": "Automatically generated types for the Google Maps Platform JavaScript API.",
+      "keywords": [
+        "google",
+        "maps",
+        "typescript"
+      ],
+      "date": "2021-02-19T01:09:53.774Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Ftypes",
+        "homepage": "https://github.com/googlemaps/js-types",
+        "repository": "https://github.com/googlemaps/js-types",
+        "bugs": "https://github.com/googlemaps/js-types/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.5299628310374964,
+      "detail": {
+        "quality": 0.5232869564529817,
+        "popularity": 0.06613490903181413,
+        "maintenance": 0.999512931258477
+      }
+    },
+    "searchScore": 0.00024603013
+  },
+  {
+    "package": {
+      "name": "@googlemaps/semantic-release-config",
+      "scope": "googlemaps",
+      "version": "1.4.1",
+      "description": "Shared semantic release configuration.",
+      "keywords": [
+        "google",
+        "maps",
+        "semantic release",
+        "config"
+      ],
+      "date": "2021-11-24T17:51:09.156Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fsemantic-release-config",
+        "homepage": "https://github.com/googlemaps/semantic-release-config",
+        "repository": "https://github.com/googlemaps/semantic-release-config",
+        "bugs": "https://github.com/googlemaps/semantic-release-config/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.5234247590012485,
+      "detail": {
+        "quality": 0.5214660043951557,
+        "popularity": 0.048542435481248564,
+        "maintenance": 0.9999860150407567
+      }
+    },
+    "searchScore": 0.00019179766
+  },
+  {
+    "package": {
+      "name": "@googlemaps/markerclusterer",
+      "scope": "googlemaps",
+      "version": "2.0.3",
+      "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
+      "keywords": [
+        "cluster",
+        "google",
+        "maps",
+        "marker"
+      ],
+      "date": "2022-04-07T20:34:42.550Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclusterer",
+        "homepage": "https://github.com/googlemaps/js-markerclusterer",
+        "repository": "https://github.com/googlemaps/js-markerclusterer",
+        "bugs": "https://github.com/googlemaps/js-markerclusterer/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.43360150447350776,
+      "detail": {
+        "quality": 0.8532990770930735,
+        "popularity": 0.17412889908262588,
+        "maintenance": 0.3333333333333333
+      }
+    },
+    "searchScore": 0.000040250994
+  },
+  {
+    "package": {
+      "name": "@googlemaps/empty",
+      "scope": "googlemaps",
+      "version": "1.0.1",
+      "description": "An empty package",
+      "date": "2022-03-22T23:59:17.272Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fempty"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "jpoehnelt",
+        "email": "justin.poehnelt@gmail.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.2529124041371463,
+      "detail": {
+        "quality": 0.44347676995790464,
+        "popularity": 0.009150589951737738,
+        "maintenance": 0.3333333333333333
+      }
+    },
+    "searchScore": 1.0612415e-8
+  }
+]
