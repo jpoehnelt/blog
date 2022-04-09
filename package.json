@@ -15,6 +15,7 @@
     "prepare": "run-p prepare:*",
     "prepare:refresh": "esbuild automations/strava-refresh.ts --outfile=dist/strava-refresh.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
     "prepare:ingest": "esbuild automations/strava-ingest.ts --outfile=dist/strava-ingest.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
+    "prepare:npm": "esbuild automations/npm.ts --outfile=dist/npm.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
     "webmentions": "node automations/mentions.mjs"
   },
   "devDependencies": {
