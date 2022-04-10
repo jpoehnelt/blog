@@ -135,10 +135,14 @@ ol > li,
 ul > li {
   @apply text-lg ml-12 mb-1;
 }
+.content > .tldr p:last-child,
+.content > .note p:last-child {
+  @apply mb-0;
+}
 
 .content > .tldr,
 .content > .note {
-  @apply border-l-2 border-orange-300 p-4 ml-4 my-4 text-xl;
+  @apply border-l-2 border-orange-300 p-4 ml-4 my-6 text-xl;
 }
 
 .excerpt {
