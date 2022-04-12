@@ -66,6 +66,7 @@ module.exports = (config) => {
   config.addNunjucksShortcode("strava", strava);
   config.addLiquidShortcode("strava", strava);
   config.addJavaScriptFunction("strava", strava);
+  config.addShortcode('barChart', require('./shortcodes/bar-chart.js'));
 
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
@@ -158,6 +159,7 @@ module.exports = (config) => {
   );
 
   config.addWatchTarget("./public/assets/*");
+  config.addWatchTarget("./shortcodes/*");
 
   config.on("eleventy.after", async () => {
     const options = {

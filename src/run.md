@@ -10,13 +10,7 @@ path: run
 
 I started running sometime around 2015 and have significantly increased my mileage over the years!
 
-- **2015**: 195 miles
-- **2016**: 389 miles
-- **2017**: 540 miles
-- **2018**: 643 miles
-- **2019**: 946 miles
-- **2020**: 1114 miles
-- **2021**: 1717 miles
+{% barChart data=stravaYearlyRunTotals %}
 
 ## Ultra marathons
 
