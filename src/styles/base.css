@@ -114,7 +114,8 @@ blockquote p:last-child {
 .content > ol,
 .content > p,
 hr,
-p {
+p,
+svg {
   @apply mb-6;
 }
 
@@ -195,4 +196,8 @@ ul > li {
 
 #privacy-notice-button-container:hover {
   @apply bg-gray-500 rounded cursor-pointer;
+}
+
+.bar-chart {
+  @apply fill-gray-200 text-3xl;
 }
