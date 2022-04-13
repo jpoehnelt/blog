@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Fetch webmentions
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
@@ -43,3 +43,5 @@ jobs:
           assignees: petergoes
           title: 'chore: update mentions'
           body: 'This PR updates the list of mentions in the repository.'
+          add-paths: |
+            src/_data/*
