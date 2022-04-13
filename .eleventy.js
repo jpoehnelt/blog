@@ -12,7 +12,7 @@ async function imageShortcode(
   src,
   alt,
   class_ = "rounded-sm mx-auto",
-  sizes = "(min-width: 30em) 50vw, 100vw"
+  sizes = "(min-width: 30em) 33vw, 100vw"
 ) {
   if (alt === undefined) {
     // You bet we throw an error on missing alt (alt="" works okay)
@@ -20,7 +20,7 @@ async function imageShortcode(
   }
 
   let metadata = await Image(src, {
-    widths: [200, 400, 600, 1200],
+    widths: [480, 600, 900, 1200],
     formats: ["webp", "avif", "jpeg"],
     outputDir: "./public/images",
     urlPath: "/images",
@@ -44,8 +44,6 @@ async function imageShortcode(
       .join("\n")}
       <img
         src="${low.url}"
-        width="${high.width}"
-        height="${high.height}"
         alt="${alt}"
         loading="lazy"
         class="${class_}"
