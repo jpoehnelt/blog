@@ -43,9 +43,30 @@ layout: base
             </p>
         {% endif %}
 
+        {% set post = {
+            data: {
+                title: title,
+                excerpt: excerpt,
+                tags: tags
+            }
+        } %}
+
+        {% set related = post | relatedPosts(collections['postsWithoutDrafts']) %}
+        
+        {% if related | length %}
+            <p class="uppercase text-xs mt-6">Related</p>
+            <ul>
+
+            {% for other in related %}
+                <li><a data-relative="{{other.relative}}" href="{{ other.document.url}}">{{ other.document.data.title }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
         <hr>
 
         {% include "rss-feed.njk" %}
+        
         </div>
         {% if not hideToc %}{% include 'toc.njk' %}{% endif %}
     </div>

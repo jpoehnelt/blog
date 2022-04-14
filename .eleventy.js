@@ -25,8 +25,10 @@ async function imageShortcode(
     outputDir: "./public/images",
     urlPath: "/images",
     filenameFormat: function (id, src, width, format, options) {
-      return `${slugify(path.basename(src, path.extname(src)))}-${id}-${width}.${format}`;
-    }
+      return `${slugify(
+        path.basename(src, path.extname(src))
+      )}-${id}-${width}.${format}`;
+    },
   });
 
   let low = metadata.jpeg[0];
@@ -64,10 +66,22 @@ module.exports = (config) => {
   config.addNunjucksShortcode("strava", strava);
   config.addLiquidShortcode("strava", strava);
   config.addJavaScriptFunction("strava", strava);
-  config.addShortcode('barChart', require('./shortcodes/bar-chart.js'));
+  config.addShortcode("barChart", require("./shortcodes/bar-chart.js"));
 
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
+  });
+
+  const related = require("eleventy-plugin-related").related({
+    serializer: ({ data: { title, excerpt, tags } }) => [
+      [title, excerpt].join(" "),
+      (tags || []).join(" "),
+    ],
+    weights: [1, 1],
+  });
+
+  config.addFilter("relatedPosts", function (doc, docs) {
+    return related(doc, docs).filter(({ relative }) => relative > 0.1);
   });
 
   config.addTransform("htmlmin", (content, outputPath) => {
