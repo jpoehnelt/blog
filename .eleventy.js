@@ -12,15 +12,10 @@ async function imageShortcode(
   src,
   alt,
   class_ = "rounded-sm mx-auto",
-  sizes = "(min-width: 30em) 33vw, 100vw"
+  sizes = "(min-width: 30em) 50vw, 100vw"
 ) {
-  if (alt === undefined) {
-    // You bet we throw an error on missing alt (alt="" works okay)
-    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-  }
-
   let metadata = await Image(src, {
-    widths: [480, 600, 900, 1200],
+    widths: [200, 400, 600, 1200],
     formats: ["webp", "avif", "jpeg"],
     outputDir: "./public/images",
     urlPath: "/images",
@@ -31,26 +26,19 @@ async function imageShortcode(
     },
   });
 
-  let low = metadata.jpeg[0];
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+    class: class_,
+  };
   let high = metadata.jpeg[metadata.jpeg.length - 1];
 
-  return `<div><a href="${high.url}"><picture>
-    ${Object.values(metadata)
-      .map((imageFormat) => {
-        return `  <source type="${
-          imageFormat[0].sourceType
-        }" srcset="${imageFormat
-          .map((entry) => entry.srcset)
-          .join(", ")}" sizes="${sizes}">`;
-      })
-      .join("\n")}
-      <img
-        src="${low.url}"
-        alt="${alt}"
-        loading="lazy"
-        class="${class_}"
-        decoding="async">
-    </picture></a><p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
+  return `<div><a href="${high.url}">${Image.generateHTML(
+    metadata,
+    imageAttributes
+  )}</a><p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
 }
 
 const strava = (activity, embed) =>
