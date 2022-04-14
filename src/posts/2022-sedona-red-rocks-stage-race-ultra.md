@@ -16,7 +16,7 @@ date: '2022-04-09T00:00:00.000Z'
 tl;dr I finished the [2022 Red Rocks Stage Race 50k/50k](http://www.trailrunningescapes.com/races2.html) in second place overall. Picturesque Sedona made for a great backdrop if you can look up while running the very technical trails.
 :::
 
-{% image "src/images/chicken-point-sedona-az.jpg", "Looking west from Little Horse Trail near Chicken Point in Sedona, Arizona" %}
+{% image src="src/images/chicken-point-sedona-az.jpg", alt="Looking west from Little Horse Trail near Chicken Point in Sedona, Arizona", lazy=false %}
 
 ### Saturday 50k - West Sedona
 

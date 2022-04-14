@@ -15,7 +15,7 @@ date: '2021-09-18T07:02:38.495Z'
 
 A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 mile. This was one of the **most brutal races** I have competed in, but somehow **I finished 11th**!
 
-{% image "src/images/mogollon-monster-100/trail.jpeg", "rugged trails of the Mogollon Rim" %}
+{% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim", lazy=false %}
 
 ## About the Mogollon Monster
 
@@ -35,6 +35,6 @@ Trail was super rugged and washed out almost everywhere, but pro, Jeff Browning,
 
 After a DNF at the Silverton Ultra Dirty 100 mile, this felt really good to bring home!
 
-{% image "src/images/mogollon-monster-100/buckle.jpeg", "Mogollon Monster 100 mile race finisher belt buckle" %}
+{% image src="src/images/mogollon-monster-100/buckle.jpeg", alt="Mogollon Monster 100 mile race finisher belt buckle" %}
 
 {% strava "5950424975", "4bfbd007527e4c2ee862c679ae5274a9a4e9e1ef" %}
