@@ -100,6 +100,6 @@ I said there were only two steps, but there is a third! You will need a [Web Man
 
 And here it is!
 
-{% image "src/images/pwa-lighthouse.png", "Perfect Lighthouse score with PWA" %}
+{% image src="src/images/pwa-lighthouse.png", alt="Perfect Lighthouse score with PWA" %}
 
 The service worker preloading and caching almost the entire site makes for an amazingly responsive experience. The obsession is worth it!

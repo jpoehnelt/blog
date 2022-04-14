@@ -8,12 +8,13 @@ const htmlParser = require("node-html-parser");
 const path = require("path");
 const slugify = require("slugify");
 
-async function imageShortcode(
+async function imageShortcode({
   src,
   alt,
   class_ = "rounded-sm mx-auto",
-  sizes = "(min-width: 30em) 50vw, 100vw"
-) {
+  sizes = "(min-width: 30em) 33vw, 100vw",
+  lazy = true,
+}) {
   let metadata = await Image(src, {
     widths: [200, 400, 600],
     formats: ["webp", "avif", "jpeg"],
@@ -29,10 +30,10 @@ async function imageShortcode(
   let imageAttributes = {
     alt,
     sizes,
-    loading: "lazy",
-    decoding: "async",
     class: class_,
+    ...(lazy ? { loading: "lazy", decoding: "async" } : {}),
   };
+
   let high = metadata.jpeg[metadata.jpeg.length - 1];
 
   return `<div><a href="${high.url}">${Image.generateHTML(

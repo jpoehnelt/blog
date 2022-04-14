@@ -16,7 +16,7 @@ date: '2022-03-26T15:31:22.346Z'
 tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes, good for 8th place. It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered!
 :::
 
-{% image "src/images/2022-behind-the-rocks/moab-red-rock-canyon.jpg", "Canyons and desert along the Moab Behind the Rocks 50k race course" %}
+{% image src="src/images/2022-behind-the-rocks/moab-red-rock-canyon.jpg", alt="Canyons and desert along the Moab Behind the Rocks 50k race course", lazy=false %}
 
 ## Triple Crown of Moab
 
@@ -52,17 +52,17 @@ I'm not sure how this happened and is really not common for me; normally some ho
 
 ## The Race
 
-{% image "src/images/2022-behind-the-rocks/behind-the-rocks-50k-race-bib.jpg", "My race bib" %}
+{% image src="src/images/2022-behind-the-rocks/behind-the-rocks-50k-race-bib.jpg", alt="My race bib" %}
 
 The race started at 7 am on a cool morning with about 200 racers in the 50k. It was warm enough that I had no extra layers and left my gloves behind. By this time, I had committed and was loaded up on caffeine.
 
-{% image "src/images/2022-behind-the-rocks/behind-the-rocks-ultra-starting-line.jpg", "Start and finish of the Behind the Rocks race course" %}
+{% image src="src/images/2022-behind-the-rocks/behind-the-rocks-ultra-starting-line.jpg", alt="Start and finish of the Behind the Rocks race course" %}
 
 ### About the course
 
 **SAND!** There was so much deep sand along the course and if I wasn't in sand, I was navigating the undulating slick rock and large rock steps. Almost the entire course is on Jeep roads with a mile or two of single track with some parts of this requiring all climbing boulders to get up and down. This was at the midpoint and was even more sketchy as runners were moving in both directions.
 
-{% image "src/images/2022-behind-the-rocks/behind-the-rocks-jeep-road.jpg", "Sandy Jeep road along the Moab Behind the Rocks 50k race course" %}
+{% image src="src/images/2022-behind-the-rocks/behind-the-rocks-jeep-road.jpg", alt="Sandy Jeep road along the Moab Behind the Rocks 50k race course" %}
 
 At mile 17, I started to feel the sun for the first time as the runners were heading back up out of the canyon. As I made the climb up to mile 23 or so, it started to get hot and got increasingly unbearable until the finish! This was my first hot run of the year and I was struggling.
 
@@ -94,7 +94,7 @@ Unfortunately, I did have an unplanned bathroom stop around mile 20 that cost me
 
 My quick turnarounds in aid stations, especially Gatherer Canyon made a substantial difference. It also seems the front of the pack struggled later in the race.
 
-{% image "src/images/2022-behind-the-rocks/strava-flyby.png", "Strava 'Flyby'" %}
+{% image src="src/images/2022-behind-the-rocks/strava-flyby.png", alt="Strava 'Flyby'" %}
 
 ### Compared to the other Moab races
 
@@ -124,7 +124,7 @@ Definitely lacked a little kick in my right leg, but I pushed hard and gave a st
 
 As always, whenever I finish a race in Moab, I vow to never run another one due to the slickrock and sand. Lucky for me, I have a short memory when it comes to racing and can't pass up these off season races!
 
-{% image "src/images/2022-behind-the-rocks/behind-the-rocks-triple-crown-finisher-medal.jpg", "Finisher medals for the the Moab Behind the Rocks 50k race and Moab Triple Crown" %}
+{% image src="src/images/2022-behind-the-rocks/behind-the-rocks-triple-crown-finisher-medal.jpg", alt="Finisher medals for the the Moab Behind the Rocks 50k race and Moab Triple Crown" %}
 
 Next up: 
 - [Sedona Stage Race](http://www.trailrunningescapes.com/races2.html) - next weekend
