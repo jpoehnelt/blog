@@ -51,7 +51,7 @@
         "maintenance": 0.9999619458667646
       }
     },
-    "searchScore": 0.10090031
+    "searchScore": 0.099983156
   },
   {
     "package": {
@@ -96,7 +96,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.04900486
+    "searchScore": 0.048559424
   },
   {
     "package": {
@@ -142,7 +142,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.011842785
+    "searchScore": 0.0117351385
   },
   {
     "package": {
@@ -189,20 +189,20 @@
         "maintenance": 0.9999597518738355
       }
     },
-    "searchScore": 0.011210082
+    "searchScore": 0.011108186
   },
   {
     "package": {
       "name": "@googlemaps/url-signature",
       "scope": "googlemaps",
-      "version": "1.0.19",
+      "version": "1.0.20",
       "description": "Sign a URL for Google Maps Platform requests.",
       "keywords": [
         "google",
         "maps",
         "polyline"
       ],
-      "date": "2022-04-04T05:40:26.673Z",
+      "date": "2022-04-14T05:33:17.843Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Furl-signature",
         "homepage": "https://github.com/googlemaps/js-url-signature",
@@ -228,14 +228,14 @@
       ]
     },
     "score": {
-      "final": 0.6668065479773182,
+      "final": 0.6682013869892894,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.17029542446466833,
+        "popularity": 0.17428067878458608,
         "maintenance": 1
       }
     },
-    "searchScore": 0.008642396
+    "searchScore": 0.008925049
   },
   {
     "package": {
@@ -281,7 +281,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.007629685
+    "searchScore": 0.007560334
   },
   {
     "package": {
@@ -325,7 +325,7 @@
         "maintenance": 0.9961558132679014
       }
     },
-    "searchScore": 0.006798292
+    "searchScore": 0.006736498
   },
   {
     "package": {
@@ -372,7 +372,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.005194189
+    "searchScore": 0.0051469756
   },
   {
     "package": {
@@ -418,7 +418,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.004386501
+    "searchScore": 0.004346629
   },
   {
     "package": {
@@ -464,7 +464,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0042206333
+    "searchScore": 0.0041822693
   },
   {
     "package": {
@@ -511,7 +511,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0037587206
+    "searchScore": 0.003724555
   },
   {
     "package": {
@@ -557,7 +557,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0027013896
+    "searchScore": 0.002676835
   },
   {
     "package": {
@@ -603,7 +603,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.002532526
+    "searchScore": 0.0025095062
   },
   {
     "package": {
@@ -651,7 +651,50 @@
         "maintenance": 0.9999564547372934
       }
     },
-    "searchScore": 0.002139078
+    "searchScore": 0.0021196345
+  },
+  {
+    "package": {
+      "name": "related-documents",
+      "scope": "unscoped",
+      "version": "1.0.4",
+      "description": "Find related text documents.",
+      "keywords": [
+        "documents",
+        "nlp",
+        "related",
+        "tfidf"
+      ],
+      "date": "2022-04-14T05:53:43.285Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/related-documents",
+        "homepage": "https://github.com/jpoehnelt/related-documents",
+        "repository": "https://github.com/jpoehnelt/related-documents",
+        "bugs": "https://github.com/jpoehnelt/related-documents/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "jpoehnelt",
+        "email": "justin.poehnelt@gmail.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6088771295656439,
+      "detail": {
+        "quality": 0.8364556389013833,
+        "popularity": 0.022735707356270705,
+        "maintenance": 0.9999512580586689
+      }
+    },
+    "searchScore": 0.0014614848
   },
   {
     "package": {
@@ -699,7 +742,7 @@
         "maintenance": 0.5449205496062434
       }
     },
-    "searchScore": 0.0006011795
+    "searchScore": 0.00059571496
   },
   {
     "package": {
@@ -747,7 +790,7 @@
         "maintenance": 0.8130051243184262
       }
     },
-    "searchScore": 0.0005689212
+    "searchScore": 0.0005637499
   },
   {
     "package": {
@@ -793,7 +836,7 @@
         "maintenance": 0.999512931258477
       }
     },
-    "searchScore": 0.0002614985
+    "searchScore": 0.00025912156
   },
   {
     "package": {
@@ -840,7 +883,7 @@
         "maintenance": 0.9999860150407567
       }
     },
-    "searchScore": 0.00020385633
+    "searchScore": 0.00020200334
   },
   {
     "package": {
@@ -887,7 +930,7 @@
         "maintenance": 0.3333333333333333
       }
     },
-    "searchScore": 0.000042781645
+    "searchScore": 0.000042392774
   },
   {
     "package": {
@@ -925,6 +968,6 @@
         "maintenance": 0.3333333333333333
       }
     },
-    "searchScore": 1.1279636e-8
+    "searchScore": 1.1177108e-8
   }
 ]
