@@ -14,6 +14,6 @@ Last Sunday, July 19th, I decided to go for a long run in the Weminuche Wilderne
 
 At about 8 AM I departed Molas Lake, heading down to the Animas River. My route took me up Elk Creek on the Colorado Trail, along the Continental Divide Trail, and finally down Vallecito Creek for a total of 36 miles!
 
-{% image "src/images/molas-to-vallecito.jpeg", "Looking down Elk Creek Drainage in the Weminuche Wilderness" %}
+{% image src="src/images/molas-to-vallecito.jpeg", alt="Looking down Elk Creek Drainage in the Weminuche Wilderness" %}
 
 {% strava "3788347161", "e5c2f1df3ce2e7aaca81c61707e357842c43d2c1" %}

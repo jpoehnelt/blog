@@ -23,7 +23,7 @@ Last weekend, I [ran an ultramarathon]({{ site.url}}/posts/2022-behind-the-rocks
 
 I don't and am incredibly careful to avoid impacts. It drives me crazy seeing footprints or tire tracks going through the crust. It's amazing stuff and incredibly important.
 
-{% image "https://upload.wikimedia.org/wikipedia/commons/9/9a/Cryptobiotic_soil_crust_in_Natural_Bridges_National_Monument_near_Sipapu_20100906_-_number_5.png", "Cryptobiotic soil crust - Nihonjoe, CC BY-SA 3.0" %}
+{% image src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Cryptobiotic_soil_crust_in_Natural_Bridges_National_Monument_near_Sipapu_20100906_-_number_5.png", alt="Cryptobiotic soil crust - Nihonjoe, CC BY-SA 3.0" %}
 
 This is reinforced by signs from the BLM and Arches National Park has a [page](https://www.nps.gov/arch/learn/kidsyouth/biologicalsoilcrust.htm) dedicated to discussing the importance of the cryptobiotic crust or biological soil.
 
@@ -35,7 +35,7 @@ This is good and I support protecting the environment, but **what about the cows
 
 This isn't unique to Moab. I'm writing this from Sedona, AZ where livestock no longer graze the area immediately around the beautiful red rocks, but if you go a few miles in almost any direction, the desert landscape will be trampled by livestock. It's disgusting and the laws and policies of our federal government that permit it must be changed.
 
-{% image "src/images/what-about-the-cows.jpg", "Hypocrisy of a sign telling hikers to stay on trail where cattle are grazing. &copy; Justin Poehnelt" %}
+{% image src="src/images/what-about-the-cows.jpg", alt="Hypocrisy of a sign telling hikers to stay on trail where cattle are grazing. &copy; Justin Poehnelt" %}
 
 The greenwashing by public land management agencies is ridiculous.
 
