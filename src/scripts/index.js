@@ -1,10 +1,10 @@
-import debounce from 'debounce-fn';
+import debounce from "debounce-fn";
 
 window.addEventListener("load", () => {
   let cid;
 
   if (document.cookie) {
-    cid = document.cookie.split(";")[0].split("=").pop()
+    cid = document.cookie.split(";")[0].split("=").pop();
   }
 
   if (!cid) {
@@ -17,10 +17,10 @@ window.addEventListener("load", () => {
   const dl = window.location.href;
   const dt = document.title;
 
-  const el = document.getElementById('secure');
-  const img = document.createElement('img')
-  img.classList.add('h-4', 'w-4', 'inline');
-  img.alt = 'privacy badge';
+  const el = document.getElementById("secure");
+  const img = document.createElement("img");
+  img.classList.add("h-4", "w-4", "inline");
+  img.alt = "privacy badge";
 
   const send = (params) => {
     params = {
@@ -29,53 +29,50 @@ window.addEventListener("load", () => {
       dl,
       dt,
       z: rand(),
-      ...params
-    }
+      ...params,
+    };
     const ENC = {
-      '+': '-',
-      '/': '_',
-      '=': '.'
-    }
+      "+": "-",
+      "/": "_",
+      "=": ".",
+    };
 
-    const qs = btoa(JSON.stringify(params)).replace(/[+/=]/g, (m) => ENC[m])
+    const qs = btoa(JSON.stringify(params)).replace(/[+/=]/g, (m) => ENC[m]);
 
-    img.src = `/secure.svg?q=${qs}`
+    img.src = `/secure.svg?q=${qs}`;
 
     if (el.childElementCount === 0) {
       el.appendChild(img);
     }
-  }
+  };
 
-  send({ t: 'pageview' });
+  send({ t: "pageview" });
 
   window.onerror = function (message) {
-    send({ t: 'exception', ni: '1', exd: message });
-  }
+    send({ t: "exception", ni: "1", exd: message });
+  };
 
-  for (let a of document.getElementsByTagName('a')) {
-    a.addEventListener('click', () => {
-      if (!a.href.startsWith('/') && !a.href.startsWith("https://justin.poehnelt.com")) {
-        send({ t: 'event', ec: 'outbound', ea: 'click', el: a.href });
+  for (let a of document.getElementsByTagName("a")) {
+    a.addEventListener("click", () => {
+      if (
+        !a.href.startsWith("/") &&
+        !a.href.startsWith("https://justin.poehnelt.com")
+      ) {
+        send({ t: "event", ec: "outbound", ea: "click", el: a.href });
       }
       return false;
-    })
+    });
   }
 
-  document.onselectionchange = debounce(() => {
-    const el = document.getSelection().toString();
+  document.onselectionchange = debounce(
+    () => {
+      const el = document.getSelection().toString();
 
-    if (el.length > 4) {
-      send({ t: 'event', ec: 'interact', ea: 'select', el });
-    }
-    return false;
-  }, { wait: 300 });
-
-  function scrollPercentage(el) {
-    var p = el.parentNode
-    return Math.round((el.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight) * 100)
-  }
-
-  window.onscroll = debounce(() => {
-    send({ t: 'event', ec: 'interact', ea: 'scroll', el: String(scrollPercentage(document.body)) });
-  }, { wait: 500 })
+      if (el.length > 4) {
+        send({ t: "event", ec: "interact", ea: "select", el });
+      }
+      return false;
+    },
+    { wait: 300 }
+  );
 });
