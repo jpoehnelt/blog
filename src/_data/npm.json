@@ -51,7 +51,7 @@
         "maintenance": 0.9999619458667646
       }
     },
-    "searchScore": 0.099983156
+    "searchScore": 0.099709064
   },
   {
     "package": {
@@ -96,7 +96,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.048559424
+    "searchScore": 0.048426304
   },
   {
     "package": {
@@ -142,7 +142,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0117351385
+    "searchScore": 0.011702968
   },
   {
     "package": {
@@ -189,7 +189,7 @@
         "maintenance": 0.9999597518738355
       }
     },
-    "searchScore": 0.011108186
+    "searchScore": 0.011077735
   },
   {
     "package": {
@@ -235,7 +235,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.008925049
+    "searchScore": 0.008900582
   },
   {
     "package": {
@@ -281,7 +281,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.007560334
+    "searchScore": 0.0075396085
   },
   {
     "package": {
@@ -325,7 +325,7 @@
         "maintenance": 0.9961558132679014
       }
     },
-    "searchScore": 0.006736498
+    "searchScore": 0.0067180307
   },
   {
     "package": {
@@ -372,7 +372,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0051469756
+    "searchScore": 0.0051328656
   },
   {
     "package": {
@@ -418,7 +418,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.004346629
+    "searchScore": 0.0043347133
   },
   {
     "package": {
@@ -464,7 +464,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0041822693
+    "searchScore": 0.0041708043
   },
   {
     "package": {
@@ -511,7 +511,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.003724555
+    "searchScore": 0.0037143447
   },
   {
     "package": {
@@ -557,7 +557,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.002676835
+    "searchScore": 0.0026694967
   },
   {
     "package": {
@@ -603,7 +603,7 @@
         "maintenance": 1
       }
     },
-    "searchScore": 0.0025095062
+    "searchScore": 0.0025026267
   },
   {
     "package": {
@@ -651,13 +651,13 @@
         "maintenance": 0.9999564547372934
       }
     },
-    "searchScore": 0.0021196345
+    "searchScore": 0.0021138238
   },
   {
     "package": {
       "name": "related-documents",
       "scope": "unscoped",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "description": "Find related text documents.",
       "keywords": [
         "documents",
@@ -665,7 +665,7 @@
         "related",
         "tfidf"
       ],
-      "date": "2022-04-14T05:53:43.285Z",
+      "date": "2022-04-14T06:36:44.830Z",
       "links": {
         "npm": "https://www.npmjs.com/package/related-documents",
         "homepage": "https://github.com/jpoehnelt/related-documents",
@@ -687,14 +687,60 @@
       ]
     },
     "score": {
-      "final": 0.6088771295656439,
+      "final": 0.6088781400706649,
       "detail": {
         "quality": 0.8364556389013833,
         "popularity": 0.022735707356270705,
-        "maintenance": 0.9999512580586689
+        "maintenance": 0.999954145215872
       }
     },
-    "searchScore": 0.0014614848
+    "searchScore": 0.00145751
+  },
+  {
+    "package": {
+      "name": "eleventy-plugin-related",
+      "scope": "unscoped",
+      "version": "1.0.1",
+      "description": "Find related documents in eleventy.",
+      "keywords": [
+        "eleventy",
+        "eleventy-plugin",
+        "11ty",
+        "documents",
+        "nlp",
+        "related",
+        "tfidf"
+      ],
+      "date": "2022-04-14T06:41:25.456Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/eleventy-plugin-related",
+        "homepage": "https://github.com/jpoehnelt/eleventy-plugin-related",
+        "repository": "https://github.com/jpoehnelt/eleventy-plugin-related",
+        "bugs": "https://github.com/jpoehnelt/eleventy-plugin-related/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "jpoehnelt",
+        "email": "justin.poehnelt@gmail.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6088524811302938,
+      "detail": {
+        "quality": 0.8364556389013833,
+        "popularity": 0.022735707356270705,
+        "maintenance": 0.9998808339576686
+      }
+    },
+    "searchScore": 0.0014567055
   },
   {
     "package": {
@@ -742,7 +788,7 @@
         "maintenance": 0.5449205496062434
       }
     },
-    "searchScore": 0.00059571496
+    "searchScore": 0.0005940819
   },
   {
     "package": {
@@ -790,7 +836,7 @@
         "maintenance": 0.8130051243184262
       }
     },
-    "searchScore": 0.0005637499
+    "searchScore": 0.00056220446
   },
   {
     "package": {
@@ -836,7 +882,7 @@
         "maintenance": 0.999512931258477
       }
     },
-    "searchScore": 0.00025912156
+    "searchScore": 0.00025841122
   },
   {
     "package": {
@@ -883,7 +929,7 @@
         "maintenance": 0.9999860150407567
       }
     },
-    "searchScore": 0.00020200334
+    "searchScore": 0.00020144957
   },
   {
     "package": {
@@ -930,7 +976,7 @@
         "maintenance": 0.3333333333333333
       }
     },
-    "searchScore": 0.000042392774
+    "searchScore": 0.000042276562
   },
   {
     "package": {
@@ -968,6 +1014,6 @@
         "maintenance": 0.3333333333333333
       }
     },
-    "searchScore": 1.1177108e-8
+    "searchScore": 1.1146467e-8
   }
 ]
