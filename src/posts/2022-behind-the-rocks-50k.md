@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 2022 Behind the Rocks 50k Race
+title: 2022 Behind the Rocks 50k Race Report
 excerpt: Race Report for the 2022 Behind the Rocks Ultra 50k in Moab, Utah. I finished 8th in 4:55.
 tags:
     - post
     - run
-    - race
+    - race report
     - ultramarathon
     - 50k
     - Moab

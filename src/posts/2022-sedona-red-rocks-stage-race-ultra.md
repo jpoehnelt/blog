@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 2022 Sedona Stage Race
+title: 2022 Sedona Stage Race Report
 excerpt: Race Report for the 2022 Red Rocks Stage Race in Sedona, AZ. I finished the 50k Saturday, 50k Sunday version second overall in a little over 11 hours total.
 tags:
     - post
     - run
-    - race
+    - race report
     - ultramarathon
     - 50k
     - Sedona
