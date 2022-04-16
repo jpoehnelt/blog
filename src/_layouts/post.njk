@@ -27,14 +27,14 @@ layout: base
         
         <hr>
 
-        {%- set nextPost = collections['postsWithoutDrafts'] | getNextCollectionItem(page) %}
+        {%- set nextPost = collections['post'] | getNextCollectionItem(page) %}
         {%- if nextPost %}
             <p class="uppercase text-xs mt-6">Next</p>
             <p class="font-bold mb-2">
                 <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
             </p>
         {% endif %}
-        {%- set previousPost = collections['postsWithoutDrafts'] | getPreviousCollectionItem(page) %}
+        {%- set previousPost = collections['post'] | getPreviousCollectionItem(page) %}
         {%- if previousPost %}
             <p class="uppercase text-xs mt-6">Previous</p>
 
