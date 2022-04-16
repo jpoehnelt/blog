@@ -51,7 +51,7 @@ layout: base
             }
         } %}
 
-        {% set related = post | relatedPosts(collections['postsWithoutDrafts']) %}
+        {% set related = post | relatedPosts(collections['post']) %}
         
         {% if related | length %}
             <p class="uppercase text-xs mt-6">Related</p>

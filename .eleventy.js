@@ -142,24 +142,6 @@ module.exports = (config) => {
 
   config.setDataDeepMerge(true);
 
-  config.addCollection("postsWithoutDrafts", (collection) =>
-    [...collection.getFilteredByGlob("src/posts/*.md")].filter(
-      (post) => !post.data.draft
-    )
-  );
-
-  config.addCollection("postsTaggedRun", (collection) =>
-    [...collection.getFilteredByGlob("src/posts/*.md")].filter(
-      (post) => !post.data.draft && post.data.tags.includes("run")
-    )
-  );
-
-  config.addCollection("postsTaggedCode", (collection) =>
-    [...collection.getFilteredByGlob("src/posts/*.md")].filter(
-      (post) => !post.data.draft && post.data.tags.includes("code")
-    )
-  );
-
   config.addWatchTarget("./public/assets/*");
   config.addWatchTarget("./shortcodes/*");
 
