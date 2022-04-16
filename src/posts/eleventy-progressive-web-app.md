@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Eleventy Progressive Web App
-excerpt: Catching the Eleventy Lighthouse obsession bug!
+excerpt: "Catching the Eleventy Lighthouse obsession bug!"
 tags:
     - post
     - code
@@ -11,6 +11,7 @@ tags:
     - service worker
     - performance
     - lighthouse
+    - blog
 date: '2022-03-31T00:00:00.000Z'
 ---
 

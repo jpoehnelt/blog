@@ -7,7 +7,6 @@ const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
 const path = require("path");
 const slugify = require("slugify");
-const twemoji = require('twemoji')
 
 async function imageShortcode({
   src,
