@@ -3,14 +3,13 @@ pagination:
   data: collections
   size: 1
   alias: tag
-  addAllPagesToCollections: false
+  addAllPagesToCollections: true
   filter:
     - all
     - post
-    - draft
 eleventyComputed:
   title: "Posts having tag: {{ tag }}"
-permalink: /tag/{{ tag }}/
+permalink: /tag/{{ tag | lower | slugify }}/
 layout: base
 ---
 
