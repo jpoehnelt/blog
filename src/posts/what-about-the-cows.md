@@ -37,8 +37,8 @@ This isn't unique to Moab. I'm writing this from Sedona, AZ where livestock no l
 
 {% image src="src/images/what-about-the-cows.jpg", alt="Hypocrisy of a sign telling hikers to stay on trail where cattle are grazing. &copy; Justin Poehnelt" %}
 
-The greenwashing by public land management agencies is ridiculous.
+The greenwashing by public land management agencies is ridiculous. :rage:
 
-To make real change, please support your local environmental advocates. For a more regional approach to stop this abuse of our public lands, support organizations such as [Western Watersheds Project](https://www.westernwatersheds.org/).
+To make real change, please support your local environmental advocates. For a more regional approach to stop this abuse of our public lands, support organizations such as [Western Watersheds Project](https://www.westernwatersheds.org/). :dollar:
 
 > Western Watersheds Project is a non-profit environmental conservation group that works to influence and improve public lands management throughout the western United States in order to protect native species and conserve and restore the habitats they depend on.  **Our primary focus is on the negative impacts of livestock grazing, including harm to ecological, biological, cultural, historic, archeological, scenic resources, wilderness values, roadless areas, Wilderness Study Areas and designated Wilderness.**

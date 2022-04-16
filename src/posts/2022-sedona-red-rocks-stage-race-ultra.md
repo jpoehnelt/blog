@@ -13,7 +13,7 @@ tags:
 date: '2022-04-09T00:00:00.000Z'
 ---
 :::tldr
-tl;dr I finished the [2022 Red Rocks Stage Race 50k/50k](http://www.trailrunningescapes.com/races2.html) in second place overall. Picturesque Sedona made for a great backdrop if you can look up while running the very technical trails.
+tl;dr I finished the [2022 Red Rocks Stage Race 50k/50k](http://www.trailrunningescapes.com/races2.html) in second place overall. :medal_sports: Picturesque Sedona made for a great backdrop if you can look up while running the very technical trails.
 :::
 
 {% image src="src/images/chicken-point-sedona-az.jpg", alt="Looking west from Little Horse Trail near Chicken Point in Sedona, Arizona", lazy=false %}
@@ -38,7 +38,7 @@ I missed the short out and back to the aid station at Yavapai Vista (3rd aid sta
 
 ### Overall finish
 
-It was a small field and my 4th place finish on Saturday and 2nd place finish on Sunday netted me a 2nd place finish overall a few minutes behind the leader.
+It was a small field and my 4th place finish on Saturday and 2nd place finish on Sunday netted me a 2nd place finish overall a few minutes behind the leader. :2nd_place_medal:
 
 Next up: 
 - [Cocodona 250](http://cocodona.com/) May 2-???

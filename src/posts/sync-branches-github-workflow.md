@@ -6,6 +6,8 @@ tags:
     - post
     - code
     - GitHub
+    - automation
+    - workflows
 date: '2022-04-12T00:00:00.000Z'
 ---
 

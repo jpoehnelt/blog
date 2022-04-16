@@ -36,4 +36,4 @@ When I run, it goes in my vest pocket or I carry it in my hand. The bear spray c
 
 ## Does it work?
 
-So far, I have had no issues with the mount. It hasn't fallen out, been hit by my foot, etc. Let's just hope I never need to use it!
+So far, I have had no issues with the mount. It hasn't fallen out, been hit by my foot, etc. Let's just hope I never need to use it! :crossed_fingers:
