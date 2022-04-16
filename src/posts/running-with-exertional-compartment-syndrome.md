@@ -5,6 +5,7 @@ excerpt: Understanding and treating a new running injury, Chronic Exertional Com
 tags:
     - post
     - run
+    - ultramarathon
     - injury
     - therapy
     - cocodona
@@ -13,7 +14,7 @@ date: '2022-04-15T07:02:38.495Z'
 ---
 
 :::note
-I am not a doctor and you should see a doctor to diagnose and treat any conditions you may have.
+:exclamation: I am not a doctor and you should see a doctor to diagnose and treat any conditions you may have.
 :::
 
 I have been running for [a few years now](/run), but have never had such a strange injury as the one I currently have a "working diagnosis" for, Chronic Exertional Compartment Syndrome (CECS).
@@ -47,11 +48,13 @@ The symptoms were present after only a couple minutes of running (mostly trail).
 
 ### Possible cause
 
-My non-expert opinion is that this was all caused by a charley horse, or a muscle spasm or cramp that occurred about 4 weeks ago. This led to imbalance and tightness throughout my lower leg. A week later, I ran a 50k and struggled a bit, but didn't feel that much of a setback. You can read my [Behind the Rocks 50k Race Report](/posts/2022-behind-the-rocks-50k) for more information on that.
+My non-expert opinion is that this was all caused by a charley horse, or a muscle spasm or cramp that occurred about 4 weeks ago. This led to imbalance and tightness throughout my lower leg. A week later, I ran a 50k and struggled a bit, but didn't feel that much of a setback. :innocent:
 
-### Diagnosis
+You can read my [Behind the Rocks 50k Race Report](/posts/2022-behind-the-rocks-50k) for more information on the outcome.
 
-So after some additional long runs, and another race, I finally went to the doctor to see what was going on. I can only take so many days off running before something must change; I made it 7 days! (Prior to these injuries I had a 70+ day run streak going back to the beginning of the year.)
+### Diagnosis :stethoscope:
+
+So after some additional long runs, and another race, I finally went to the doctor to see what was going on. I can only take so many days off running before something must change; I made it 7 days! :grimace: (Prior to these injuries I had a 70+ day run streak going back to the beginning of the year.)
 
 When going to the orthopedic office, it always feels like I shouldn't be there and need to go back home. I think this is because of the nature of a chronic injury due to activities that I chose to partake in. I don't have an acute injury. I don't have a job that causes me a repetitive stress injury. I just run a lot and for very long distances.
 
@@ -95,7 +98,7 @@ So back to my predicament. I have an injury that I didn't know existed. I haven'
 
 ### Non invasive treatment
 
-1. Stop taking creatine. Not regular taken anyway. Big muscles == bad.
+1. Stop taking creatine. Not regular taken anyway. Big muscles == bad. :muscle:
 
 1. Get into see a physical therapist ASAP. My normal PT, which I haven't been seeing, is booked out for two weeks, but I picked another for an appointment Monday at 8:30 (its Friday now and I saw the doctor Thursday).
 
@@ -105,11 +108,11 @@ So back to my predicament. I have an injury that I didn't know existed. I haven'
 
 1. Get a better understanding of risk factors and how chronic and acute compartment syndrome differ. I can always stop activity to relieve pressure in the lower leg.
 
-1. Decide on the race two days before (when I need to load up the travel trailer and drive to Arizona). This a [multi-day event](http://cocodona.com/), 250+ miles, but at very low intensity with lots of walking. Maybe it will be possible?! I'm going to be in pain anyway!
+1. Decide on the race two days before (when I need to load up the travel trailer and drive to Arizona). This a [multi-day event](http://cocodona.com/), 250+ miles, but at very low intensity with lots of walking. Maybe it will be possible?! :crossed_fingers: I'm going to be in pain anyway! :grimacing:
 
 This [literature review of Chronic Extertional Compartment Syndrome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3109896) defines some treatment options and this [case study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5159639/) lays out some other management approaches.
 
-### Surgery
+### Surgery :knife:
 
 I think it is way too early to consider a fasciotomy. 
 
@@ -121,4 +124,4 @@ And continues to list the improvement from surgery as the following.
 
 ## Outcome
 
-TBD
+TBD :pray:

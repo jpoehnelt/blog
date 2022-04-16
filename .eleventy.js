@@ -7,6 +7,7 @@ const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
 const path = require("path");
 const slugify = require("slugify");
+const twemoji = require('twemoji')
 
 async function imageShortcode({
   src,
@@ -114,9 +115,10 @@ module.exports = (config) => {
 
   markdownIt.use(mdContainer, "note");
   markdownIt.use(mdContainer, "tldr");
-
-  const markdownItAnchor = require("markdown-it-anchor");
-  markdownIt.use(markdownItAnchor);
+  
+  // https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json
+  markdownIt.use(require("markdown-it-emoji"))
+  markdownIt.use(require("markdown-it-anchor"))
 
   config.setLibrary("md", markdownIt);
 

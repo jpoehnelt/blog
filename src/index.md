@@ -22,7 +22,7 @@ title: Home
 
 {% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full max-w-full sm:max-w-sm mx-auto", lazy=false %}
 
-# Hello. 👋
+# Hello. :wave:
 
 Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/run">run</a> and <a class="tag code" href="/tag/code">code</a> and sometimes <a href="/blog">write</a> about it.
 

@@ -10,6 +10,7 @@ tags:
     - race
     - Arizona
     - Mogollon Monster
+    - aravaipa running
 date: '2021-09-18T07:02:38.495Z'
 ---
 
@@ -25,9 +26,9 @@ A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 m
 
 Heat was killer the first day and during the finish on the second. Took about five hours to get hydrated again after the 10 miles below the rim and the difficult climb during mid afternoon.
 
-Horrible nausea kicked in around mile 85; tried to blast through, but heat, dehydration, and nausea are a tough combination. Was definitely close to 100F on the slopes.
+Horrible nausea kicked in around mile 85; tried to blast through, but heat, dehydration, and nausea are a tough combination. Was definitely close to 100F on the slopes. :nauseated_face:
 
-Also had horrible gastro issues of a different kind in the first 20 miles. Lost about 20 minutes making unplanned stops.
+Also had horrible gastro issues of a different kind in the first 20 miles. Lost about 20 minutes making unplanned stops. :shit:
 
 Trail was super rugged and washed out almost everywhere, but pro, Jeff Browning, blew the field away by hours.
 

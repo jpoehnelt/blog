@@ -5,7 +5,7 @@ excerpt: Instructions for adding a WMS Layer to Google Maps
 tags:
     - post
     - code
-    - google-maps
+    - google maps
     - wms
     - javascript
 date: 2019-10-19T07:02:38.495Z

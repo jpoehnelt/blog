@@ -10,6 +10,7 @@ tags:
     - 50k
     - Moab
     - Utah
+    - Mad Moose Events
 date: '2022-03-26T15:31:22.346Z'
 ---
 :::tldr
@@ -90,7 +91,7 @@ My total time in aid states was probably less than a minute total. I started wit
     1. Drank full 500ml bottle water
     1. Refilled 500ml bottle with water
 
-Unfortunately, I did have an unplanned bathroom stop around mile 20 that cost me nearly 5 minutes.
+Unfortunately, I did have an unplanned bathroom stop around mile 20 that cost me nearly 5 minutes. :shit:
 
 My quick turnarounds in aid stations, especially Gatherer Canyon made a substantial difference. It also seems the front of the pack struggled later in the race.
 
@@ -120,7 +121,11 @@ If I had my current fitness in January, I would probably been fastest on the Arc
 
 Even with the range of emotions I felt through the duration of the race, I did find some motivation once I started moving; maybe not the first couple miles though! (I've never thought about quitting so early in the race as I did today.)
 
-Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort, probably a 95% effort. 
+Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort. :100: 
+
+::: note
+:heavy_exclamation_mark: Update: Read more about my injury, [extertional compartment syndrome](/posts/running-with-exertional-compartment-syndrome).
+:::
 
 As always, whenever I finish a race in Moab, I vow to never run another one due to the slickrock and sand. Lucky for me, I have a short memory when it comes to racing and can't pass up these off season races!
 
