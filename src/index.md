@@ -38,6 +38,13 @@ I might also be active on these sites, but probably not.
     <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev</a></li>
 </ul>
 
+## Recent posts
+
+{% for recent in collections.postsWithoutDrafts | reverse | limit(5) -%}
+* {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
+{% endfor %}
+
+See more at [/blog](/blog).
 ## Misc
 
 {% include "rss-feed.njk" %}
