@@ -7,8 +7,7 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
         <url>
             <loc>{{ site.url }}{{ page.url | url }}</loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-            <priority>{% if r/^\/tag\/*/g.test(page.url) %}0.5{% else %}1{% endif %}</priority>
+            <priority>{% if r/^\/(tag|blog)\/*/g.test(page.url) %}0.5{% else %}1{% endif %}</priority>
         </url>
     {% endfor %}
 </urlset>
