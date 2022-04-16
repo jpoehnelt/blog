@@ -12,6 +12,14 @@ I started running sometime around 2015 and have significantly increased my milea
 
 {% barChart data=stravaYearlyRunTotals %}
 
+## Recent posts
+
+{% for recent in collections.postsTaggedRun | reverse | limit(10) -%}
+* {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
+{% endfor %}
+
+See more at <a class="tag run" href="/tag/run">run</a>.
+
 ## Ultra marathons
 
 In 2017, I ran my first ultra marathon and have since completed many 50km races and a single 50 miler and 100 miler. In 2022, I will be attempting the Cocodona 250 and Moab 240. You can follow my results at [ultrasignup.com](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt).
