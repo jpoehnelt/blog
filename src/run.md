@@ -8,7 +8,7 @@ path: run
 
 ## Running
 
-I started running sometime around 2015 and have significantly increased my mileage over the years!
+I started running sometime around 2015 and have significantly increased my mileage over the years! :chart_with_upwards_trend:
 
 {% barChart data=stravaYearlyRunTotals %}
 
@@ -53,6 +53,8 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - **2019** - Dragon's Back Ultra and Trail Races - 38.4K - San Ysidro, NM - Overall:2 23:24:42
 - **2019** - Jemez Mountain - 50K - Los Alamos, NM - Overall:30 266:46:52
 - **2019** - Moab Red Hot Ultra - 33K - Moab, UT - Overall:36 293:09:14
+
+Read more at <a class="tag run" href="/tag/race report">race report</a>.
 
 ## Recent runs
 

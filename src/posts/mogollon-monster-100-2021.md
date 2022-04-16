@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 2021 Mogollon Monster 100
+title: 2021 Mogollon Monster 100 Mile Race Report
 excerpt: Race report for the 2021 Mogollon Monster 100 mile
 tags:
     - post
     - run
     - ultramarathon
     - 100 mile
-    - race
+    - race report
     - Arizona
     - Mogollon Monster
     - aravaipa running
