@@ -24,7 +24,7 @@ Here are a couple examples of approaches for more manual implementations.
 
 ## Term Frequency-Inverse Document Frequency
 
-I am far from a natural language expert, but tf-idf basically computes the importance of a word across a particular collection. For example, the word "the" is going to be incredible common and not significant to any particular document. The inverse of this is that a word that is not rare, but shared across documents, would provide a good indicator of similarity. Getting there requires a couple steps though.
+I am far from a natural language expert, but tf-idf basically computes the importance of a word across a particular collection. For example, the word "the" is going to be incredible common and not significant to any particular document. The inverse of this is that a word that is rare, but shared across documents, would provide a good indicator of similarity. Getting there requires a few steps though.
 
 ## Steps from document to related
 
