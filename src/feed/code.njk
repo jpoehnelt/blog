@@ -9,12 +9,12 @@ eleventyExcludeFromCollections: true
 	{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(site.url) }}{% endset %}
 	<link href="{{ absoluteUrl }}" rel="self"/>
 	<link href="{{ site.url }}"/>
-	<updated>{{ collections['postsTaggedCode'] | rssLastUpdatedDate }}</updated>
+	<updated>{{ collections['code'] | rssLastUpdatedDate }}</updated>
 	<id>{{ site.feed.id }}</id>
 	<author> 
 		<name>{{ site.author.name }}</name>
 	</author>
-	{%- for post in collections['postsTaggedCode'] | reverse %}
+	{%- for post in collections['code'] | reverse %}
 	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
 	<entry>
 		<title>{{ post.data.title }}</title>
