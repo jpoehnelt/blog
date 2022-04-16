@@ -6,8 +6,9 @@ const main = async () => {
   fs.writeFileSync(
     path.join("src", "_data", "npm.json"),
     JSON.stringify(
-      (await axios.get("https://api.npms.io/v2/search?q=maintainer:jpoehnelt"))
-        .data.results,
+      (
+        await axios.get("https://api.npms.io/v2/search?q=maintainer:jpoehnelt")
+      ).data.results.map(({ searchScore, ...rest }) => rest),
       null,
       2
     )
