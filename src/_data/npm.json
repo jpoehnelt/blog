@@ -56,13 +56,13 @@
     "package": {
       "name": "@googlemaps/js-api-loader",
       "scope": "googlemaps",
-      "version": "1.14.0",
+      "version": "1.14.1",
       "description": "Wrapper for the loading of Google Maps JavaScript API script in the browser",
       "keywords": [
         "google",
         "maps"
       ],
-      "date": "2022-04-11T19:05:23.710Z",
+      "date": "2022-04-20T06:10:14.728Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjs-api-loader",
         "homepage": "https://github.com/googlemaps/js-api-loader",
@@ -88,10 +88,10 @@
       ]
     },
     "score": {
-      "final": 0.7292290632038739,
+      "final": 0.7373942353084189,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.34864546796911305,
+        "popularity": 0.37197453112495565,
         "maintenance": 1
       }
     }
@@ -506,7 +506,7 @@
     "package": {
       "name": "@googlemaps/three",
       "scope": "googlemaps",
-      "version": "2.0.9",
+      "version": "2.0.10",
       "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/three)](https://www.npmjs.com/package/@googlemaps/three) ![Build](https://github.com/googlemaps/js-three/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-three/workflows/Release/badge.",
       "keywords": [
         "google",
@@ -514,7 +514,7 @@
         "webgl",
         "threejs"
       ],
-      "date": "2022-04-12T11:13:23.919Z",
+      "date": "2022-04-20T06:22:18.970Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fthree",
         "homepage": "https://github.com/googlemaps/js-three",
@@ -540,10 +540,10 @@
       ]
     },
     "score": {
-      "final": 0.6388457545498418,
+      "final": 0.6398674899528451,
       "detail": {
         "quality": 0.8498199950649838,
-        "popularity": 0.0968564458009908,
+        "popularity": 0.09977568980957166,
         "maintenance": 1
       }
     }
