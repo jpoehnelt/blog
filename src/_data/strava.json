@@ -95618,5 +95618,71 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 8
+  },
+  "7010222827": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Evening Run",
+    "distance": 1936.7,
+    "moving_time": 705,
+    "elapsed_time": 767,
+    "total_elevation_gain": 22,
+    "type": "Run",
+    "workout_type": null,
+    "id": 7010222827,
+    "start_date": "2022-04-20T02:13:19Z",
+    "start_date_local": "2022-04-19T20:13:19Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 2,
+    "photo_count": 0,
+    "map": {
+      "id": "a7010222827",
+      "summary_polyline": "mwdcF`ojqSvAe@@k@CGa@TICeAEa@FmAJIAMIOCU@uAOSJSBZ\\j@d@F`@MnA]z@W^SV_Ax@sA}@YGgAEMA[K_@WIYCWg@o@c@_@m@s@MIOSYQaAHWAGE]_@c@Um@j@m@RKL?BDBT@DCVIXS`A_@RDl@Md@Ab@HX^VPr@jA\\Zp@nA`@X\\JzAPJB^`@ZHXIXOZk@X_@Vu@JaAIg@KM[QOMIOHKd@SNC\\Cj@?`@G|@DTCX@xALVILMZMf@EXOVCBB",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.38503183238208,
+      -107.86560231819749
+    ],
+    "end_latlng": [
+      37.38412189297378,
+      -107.86477762274444
+    ],
+    "average_speed": 2.747,
+    "max_speed": 4.03,
+    "average_cadence": 80.1,
+    "average_temp": 26,
+    "has_heartrate": true,
+    "average_heartrate": 126.8,
+    "max_heartrate": 147,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2284.4,
+    "elev_low": 2260.8,
+    "upload_id": 7461126027,
+    "upload_id_str": "7461126027",
+    "external_id": "garmin_push_8671074104",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 3
   }
 }
