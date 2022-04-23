@@ -414,6 +414,51 @@
   },
   {
     "package": {
+      "name": "@googlemaps/typescript-guards",
+      "scope": "googlemaps",
+      "version": "1.0.14",
+      "description": "TypeScript guards for Google Maps Platform JavaScript.",
+      "keywords": [
+        "google",
+        "maps",
+        "typescript"
+      ],
+      "date": "2022-04-22T23:35:30.761Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Ftypescript-guards",
+        "homepage": "https://github.com/googlemaps/js-typescript-guards",
+        "repository": "https://github.com/googlemaps/js-typescript-guards",
+        "bugs": "https://github.com/googlemaps/js-typescript-guards/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6450678038894879,
+      "detail": {
+        "quality": 0.8573438313822812,
+        "popularity": 0.10818472707086756,
+        "maintenance": 1
+      }
+    }
+  },
+  {
+    "package": {
       "name": "@googlemaps/polyline-codec",
       "scope": "googlemaps",
       "version": "1.0.26",
@@ -453,51 +498,6 @@
       "detail": {
         "quality": 0.8573438313822812,
         "popularity": 0.10686330681619022,
-        "maintenance": 1
-      }
-    }
-  },
-  {
-    "package": {
-      "name": "@googlemaps/typescript-guards",
-      "scope": "googlemaps",
-      "version": "1.0.13",
-      "description": "TypeScript guards for Google Maps Platform JavaScript.",
-      "keywords": [
-        "google",
-        "maps",
-        "typescript"
-      ],
-      "date": "2022-04-12T00:07:13.463Z",
-      "links": {
-        "npm": "https://www.npmjs.com/package/%40googlemaps%2Ftypescript-guards",
-        "homepage": "https://github.com/googlemaps/js-typescript-guards",
-        "repository": "https://github.com/googlemaps/js-typescript-guards",
-        "bugs": "https://github.com/googlemaps/js-typescript-guards/issues"
-      },
-      "author": {
-        "name": "Justin Poehnelt"
-      },
-      "publisher": {
-        "username": "google-wombot",
-        "email": "node-team-npm+wombot@google.com"
-      },
-      "maintainers": [
-        {
-          "username": "jpoehnelt",
-          "email": "justin.poehnelt@gmail.com"
-        },
-        {
-          "username": "google-wombot",
-          "email": "node-team-npm+wombot@google.com"
-        }
-      ]
-    },
-    "score": {
-      "final": 0.6432761797661828,
-      "detail": {
-        "quality": 0.8573438313822812,
-        "popularity": 0.10306580100428109,
         "maintenance": 1
       }
     }
