@@ -95911,7 +95911,7 @@
     "achievement_count": 1,
     "kudos_count": 1,
     "comment_count": 0,
-    "athlete_count": 1,
+    "athlete_count": 2,
     "photo_count": 0,
     "map": {
       "id": "a7025430244",
@@ -95977,7 +95977,7 @@
     "location_state": null,
     "location_country": "United States",
     "achievement_count": 0,
-    "kudos_count": 0,
+    "kudos_count": 1,
     "comment_count": 0,
     "athlete_count": 1,
     "photo_count": 0,
@@ -96022,5 +96022,70 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 3
+  },
+  "7030781273": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "trail work",
+    "distance": 10980,
+    "moving_time": 11267,
+    "elapsed_time": 36117,
+    "total_elevation_gain": 306,
+    "type": "Hike",
+    "id": 7030781273,
+    "start_date": "2022-04-23T15:52:33Z",
+    "start_date_local": "2022-04-23T09:52:33Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 1,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a7030781273",
+      "summary_polyline": "kmgcFrbhqSMZ@@FOgBjAHe@r@K`@_@_Bc@Qg@jA^dBCJS\\GUUkACs@g@Wy@q@R_@a@]Lo@SaCuBRc@UTxDnCfBGRHHh@lCdA@h@i@NsDUxBt@?VIS^@KJNEANwAm@K@FOICWDU]NMdA^@LDKSRbA_@^NVYX@_@a@j@@k@INAZd@c@NARwBAeAa@t@j@`APCLKKLBFWQ`@FJyBuAxDVd@M@UkC_A[{@yBDM_@o@WsBqBvBhBhAd@pBNNh@xBt@INaAUIKJLCc@BRODTGYBFIGTc@cAYMi@NmAU_D{BGo@lA@jAv@VGXl@p@g@zAJ@TZKu@i@HGeB@GSz@_Bz@UpAr@Rv@fC^NdAz@O~@NRn@ZDCVrAKXBZJERJJlAIFfA`@M^p@r@WWGHx@s@v@FOvAV?n@f@Ug@Tw@]g@i@[FDIUGXEGPQa@_@FPCBS]^o@KCL\\q@DMH^f@GB[XQMb@]JNe@XRUD@QHNo@`@_@gAg@b@a@Ye@DPMHV[Nb@OFb@l@]RJB^RKWFBST^PWPPIDFUDJUCl@J?ZgALw@g@Q\\_@g@m@@A]QT[SJd@e@@jAq@vABVRGXZ}Af@OBYa@MYN}C[i@}@k@KS]S\\[?Sy@q@_@_AC}BuB}@Bk@`BvAAb@VLb@_AZaAIg@V_@c@}Cw@jDpCtBDZz@fC|@?Tq@RqD_@|BjAOBkBuAtD`@h@_@oCkAa@u@iBBwD}CHWHZ`@UzBn@Pj@TTFo@vBLQPJ[\\@_@i@eBKKU|@_Bx@?dAj@IBx@v@vBf@Lr@JJj@S`ALPj@tARd@b@LCj@@CZD[?TFIAO@XHIMDRSIFT?AN\\KIFLZU[q@Az@ILx@Z@Zl@Z?KBTa@VRKZH?KSLVYd@RYEi@LEI~@w@LDLu@Qo@TNg@f@R_ANQWETNa@YL@SLBGNq@Od@IITF[^j@P??XCS{@[R]EQRVQZb@V`C[Ri@GM]Vc@i@a@AIy@qB[qBG]s@q@_@]RAS_@DMq@_Cg@sBkBw@Ju@tAbBGf@r@CXiCD[RqAg@iAq@[GGN|AxAxAp@hBB`@z@fC`A@Nk@XuDa@xBpADa@e@l@a@TMb@xAPXb@`CJ?S",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.39878117106855,
+      -107.85337898880243
+    ],
+    "end_latlng": [
+      37.397978184744716,
+      -107.85405834205449
+    ],
+    "average_speed": 0.975,
+    "max_speed": 4.919,
+    "average_cadence": 49,
+    "average_temp": 22,
+    "has_heartrate": true,
+    "average_heartrate": 97.8,
+    "max_heartrate": 136,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2197.8,
+    "elev_low": 2127.4,
+    "upload_id": 7483397174,
+    "upload_id_str": "7483397174",
+    "external_id": "garmin_push_8694656355",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 28
   }
 }
