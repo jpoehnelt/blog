@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message Result {
+  uint32 age = 1;
+  // uint32 age_rank = 2;
+  // string agegroup = 3;
+  // string bib = 4;
+  string city = 5;
+  // uint32 drilldown = 6;
+  string firstname = 7;
+  // string formattime = 8;
+  string gender = 9;
+  // uint32 gender_place = 10;
+  string lastname = 11;
+  uint32 participant_id = 12;
+  uint32 photo_count = 13;
+  uint32 place = 14;
+  uint32 prior_count = 15;
+  uint32 race_count = 16;
+  double runner_rank = 17;
+  string state = 18;
+  uint32 status = 19;
+  string time = 20;
+}
+
+message Results {
+    repeated Result results = 1;
+}
