@@ -959,6 +959,52 @@
   },
   {
     "package": {
+      "name": "@googlemaps/github-policy-bot",
+      "scope": "googlemaps",
+      "version": "1.0.10",
+      "description": "Enforce policies for github.com/googlemaps repositories",
+      "keywords": [
+        "googlemaps",
+        "github",
+        "policy",
+        "probot"
+      ],
+      "date": "2022-04-28T01:52:53.232Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fgithub-policy-bot",
+        "homepage": "https://github.com/googlemaps/js-github-policy-bot",
+        "repository": "https://github.com/googlemaps/js-github-policy-bot",
+        "bugs": "https://github.com/googlemaps/js-github-policy-bot/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        },
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.512270693867585,
+      "detail": {
+        "quality": 0.5052421158999657,
+        "popularity": 0.030634977748539717,
+        "maintenance": 0.9999309053874468
+      }
+    }
+  },
+  {
+    "package": {
       "name": "@googlemaps/empty",
       "scope": "googlemaps",
       "version": "1.0.1",
