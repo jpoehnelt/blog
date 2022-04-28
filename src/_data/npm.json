@@ -100,7 +100,7 @@
     "package": {
       "name": "@googlemaps/markerclusterer",
       "scope": "googlemaps",
-      "version": "2.0.4",
+      "version": "2.0.5",
       "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
       "keywords": [
         "cluster",
@@ -108,7 +108,7 @@
         "maps",
         "marker"
       ],
-      "date": "2022-04-18T20:37:18.491Z",
+      "date": "2022-04-27T21:22:27.903Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclusterer",
         "homepage": "https://github.com/googlemaps/js-markerclusterer",
@@ -134,10 +134,10 @@
       ]
     },
     "score": {
-      "final": 0.6937100534983434,
+      "final": 0.6962978883297324,
       "detail": {
         "quality": 0.8532990770930735,
-        "popularity": 0.25062951534406086,
+        "popularity": 0.2580233291480296,
         "maintenance": 1
       }
     }
@@ -506,7 +506,7 @@
     "package": {
       "name": "@googlemaps/three",
       "scope": "googlemaps",
-      "version": "2.0.10",
+      "version": "2.0.11",
       "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/three)](https://www.npmjs.com/package/@googlemaps/three) ![Build](https://github.com/googlemaps/js-three/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-three/workflows/Release/badge.",
       "keywords": [
         "google",
@@ -514,7 +514,7 @@
         "webgl",
         "threejs"
       ],
-      "date": "2022-04-20T06:22:18.970Z",
+      "date": "2022-04-27T21:23:12.568Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fthree",
         "homepage": "https://github.com/googlemaps/js-three",
@@ -540,10 +540,10 @@
       ]
     },
     "score": {
-      "final": 0.6398674899528451,
+      "final": 0.6403505003044736,
       "detail": {
         "quality": 0.8498199950649838,
-        "popularity": 0.09977568980957166,
+        "popularity": 0.1011557193856531,
         "maintenance": 1
       }
     }
