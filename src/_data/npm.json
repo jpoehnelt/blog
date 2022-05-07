@@ -550,6 +550,53 @@
   },
   {
     "package": {
+      "name": "in-solidarity-bot",
+      "scope": "unscoped",
+      "version": "1.8.3",
+      "description": "A Probot app",
+      "keywords": [
+        "probot",
+        "github",
+        "probot-app"
+      ],
+      "date": "2021-08-26T19:53:55.953Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/in-solidarity-bot",
+        "homepage": "https://github.com/jpoehnelt/in-solidarity-bot",
+        "repository": "https://github.com/jpoehnelt/in-solidarity-bot",
+        "bugs": "https://github.com/jpoehnelt/in-solidarity-bot/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt",
+        "email": "justin.poehnelt@gmail.com",
+        "username": "jpoehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        },
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6289584581152698,
+      "detail": {
+        "quality": 0.8466405087756715,
+        "popularity": 0.07138786397362609,
+        "maintenance": 0.9999444374051407
+      }
+    }
+  },
+  {
+    "package": {
       "name": "@googlemaps/markermanager",
       "scope": "googlemaps",
       "version": "1.0.26",
@@ -635,53 +682,6 @@
         "quality": 0.8573438313822812,
         "popularity": 0.05555949483013498,
         "maintenance": 1
-      }
-    }
-  },
-  {
-    "package": {
-      "name": "in-solidarity-bot",
-      "scope": "unscoped",
-      "version": "1.8.3",
-      "description": "A Probot app",
-      "keywords": [
-        "probot",
-        "github",
-        "probot-app"
-      ],
-      "date": "2021-08-26T19:53:55.953Z",
-      "links": {
-        "npm": "https://www.npmjs.com/package/in-solidarity-bot",
-        "homepage": "https://github.com/jpoehnelt/in-solidarity-bot",
-        "repository": "https://github.com/jpoehnelt/in-solidarity-bot",
-        "bugs": "https://github.com/jpoehnelt/in-solidarity-bot/issues"
-      },
-      "author": {
-        "name": "Justin Poehnelt",
-        "email": "justin.poehnelt@gmail.com",
-        "username": "jpoehnelt"
-      },
-      "publisher": {
-        "username": "google-wombot",
-        "email": "node-team-npm+wombot@google.com"
-      },
-      "maintainers": [
-        {
-          "username": "google-wombot",
-          "email": "node-team-npm+wombot@google.com"
-        },
-        {
-          "username": "jpoehnelt",
-          "email": "justin.poehnelt@gmail.com"
-        }
-      ]
-    },
-    "score": {
-      "final": 0.6216040379400316,
-      "detail": {
-        "quality": 0.8524841546047979,
-        "popularity": 0.045354378287256136,
-        "maintenance": 0.9999564547372934
       }
     }
   },
