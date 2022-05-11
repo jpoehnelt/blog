@@ -237,14 +237,14 @@
     "package": {
       "name": "@googlemaps/url-signature",
       "scope": "googlemaps",
-      "version": "1.0.21",
+      "version": "1.0.22",
       "description": "Sign a URL for Google Maps Platform requests.",
       "keywords": [
         "google",
         "maps",
         "polyline"
       ],
-      "date": "2022-04-25T05:35:32.340Z",
+      "date": "2022-05-10T13:38:59.958Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Furl-signature",
         "homepage": "https://github.com/googlemaps/js-url-signature",
@@ -270,11 +270,11 @@
       ]
     },
     "score": {
-      "final": 0.6681411728499032,
+      "final": 0.6671256897247766,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.1741086383863397,
-        "maintenance": 1
+        "popularity": 0.171219275325378,
+        "maintenance": 0.9999879827034572
       }
     }
   },
@@ -282,14 +282,14 @@
     "package": {
       "name": "@googlemaps/jest-mocks",
       "scope": "googlemaps",
-      "version": "2.7.2",
+      "version": "2.7.3",
       "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/jest-mocks)](https://www.npmjs.com/package/@googlemaps/jest-mocks) ![Build](https://github.com/googlemaps/js-jest-mocks/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-jest-mocks/work",
       "keywords": [
         "google",
         "maps",
         "jest"
       ],
-      "date": "2022-04-27T18:11:44.668Z",
+      "date": "2022-05-10T13:37:59.097Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjest-mocks",
         "homepage": "https://github.com/googlemaps/js-jest-mocks",
@@ -315,11 +315,11 @@
       ]
     },
     "score": {
-      "final": 0.6619716197746541,
+      "final": 0.660409509967981,
       "detail": {
         "quality": 0.8496140033162238,
-        "popularity": 0.16310691079939163,
-        "maintenance": 1
+        "popularity": 0.15865575721972514,
+        "maintenance": 0.9999879827034572
       }
     }
   },
@@ -461,14 +461,14 @@
     "package": {
       "name": "@googlemaps/polyline-codec",
       "scope": "googlemaps",
-      "version": "1.0.26",
+      "version": "1.0.27",
       "description": "Encode and decode polyines in Nodejs or the browser using this package.",
       "keywords": [
         "google",
         "maps",
         "polyline"
       ],
-      "date": "2022-04-22T12:10:42.615Z",
+      "date": "2022-05-10T13:38:28.947Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fpolyline-codec",
         "homepage": "https://github.com/googlemaps/js-polyline-codec",
@@ -494,11 +494,11 @@
       ]
     },
     "score": {
-      "final": 0.6446053068003509,
+      "final": 0.6439279520611575,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.10686330681619022,
-        "maintenance": 1
+        "popularity": 0.10494002485789465,
+        "maintenance": 0.9999879827034572
       }
     }
   },
@@ -644,14 +644,14 @@
     "package": {
       "name": "@googlemaps/ogc",
       "scope": "googlemaps",
-      "version": "1.0.24",
+      "version": "1.0.25",
       "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/ogc)](https://www.npmjs.com/package/@googlemaps/ogc) ![Build](https://github.com/googlemaps/js-ogc/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-ogc/workflows/Release/badge.svg) [![",
       "keywords": [
         "google",
         "maps",
         "wms"
       ],
-      "date": "2022-04-25T20:26:10.480Z",
+      "date": "2022-05-10T13:38:57.770Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fogc",
         "homepage": "https://github.com/googlemaps/js-ogc",
@@ -677,11 +677,11 @@
       ]
     },
     "score": {
-      "final": 0.6266489726052316,
+      "final": 0.6252265319630086,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.05555949483013498,
-        "maintenance": 1
+        "popularity": 0.05150739600604054,
+        "maintenance": 0.9999879827034572
       }
     }
   },
