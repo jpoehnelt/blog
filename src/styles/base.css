@@ -201,3 +201,7 @@ ul > li {
 .bar-chart {
   @apply fill-gray-200 text-3xl;
 }
+
+.twitter-tweet {
+  margin: 20px auto;
+}
