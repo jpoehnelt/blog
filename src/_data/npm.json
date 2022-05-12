@@ -56,13 +56,13 @@
     "package": {
       "name": "@googlemaps/js-api-loader",
       "scope": "googlemaps",
-      "version": "1.14.1",
+      "version": "1.14.2",
       "description": "Wrapper for the loading of Google Maps JavaScript API script in the browser",
       "keywords": [
         "google",
         "maps"
       ],
-      "date": "2022-04-20T06:10:14.728Z",
+      "date": "2022-05-10T17:26:51.866Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjs-api-loader",
         "homepage": "https://github.com/googlemaps/js-api-loader",
@@ -88,10 +88,10 @@
       ]
     },
     "score": {
-      "final": 0.7373942353084189,
+      "final": 0.7415662288997701,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.37197453112495565,
+        "popularity": 0.3838945128145308,
         "maintenance": 1
       }
     }
@@ -146,14 +146,14 @@
     "package": {
       "name": "@googlemaps/react-wrapper",
       "scope": "googlemaps",
-      "version": "1.1.32",
+      "version": "1.1.33",
       "description": "React component that wraps the loading of Google Maps JavaScript API.",
       "keywords": [
         "google",
         "maps",
         "react"
       ],
-      "date": "2022-04-22T04:19:01.581Z",
+      "date": "2022-05-10T17:27:06.930Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Freact-wrapper",
         "homepage": "https://github.com/googlemaps/react-wrapper",
@@ -179,11 +179,11 @@
       ]
     },
     "score": {
-      "final": 0.6822073353446422,
+      "final": 0.685357684767626,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.21429767408559378,
-        "maintenance": 1
+        "popularity": 0.22331068973351909,
+        "maintenance": 0.9999879827034572
       }
     }
   },
@@ -416,14 +416,14 @@
     "package": {
       "name": "@googlemaps/typescript-guards",
       "scope": "googlemaps",
-      "version": "1.0.14",
+      "version": "1.0.15",
       "description": "TypeScript guards for Google Maps Platform JavaScript.",
       "keywords": [
         "google",
         "maps",
         "typescript"
       ],
-      "date": "2022-04-22T23:35:30.761Z",
+      "date": "2022-05-10T17:27:29.666Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Ftypescript-guards",
         "homepage": "https://github.com/googlemaps/js-typescript-guards",
@@ -449,11 +449,11 @@
       ]
     },
     "score": {
-      "final": 0.6450678038894879,
+      "final": 0.6461778330947701,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.10818472707086756,
-        "maintenance": 1
+        "popularity": 0.11136825638250222,
+        "maintenance": 0.9999879827034572
       }
     }
   },
