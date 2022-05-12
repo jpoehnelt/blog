@@ -205,3 +205,8 @@ ul > li {
 .twitter-tweet {
   margin: 20px auto;
 }
+
+p > code {
+  background: #282a36;
+  @apply px-1;
+}
