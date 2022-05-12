@@ -96895,5 +96895,73 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 20
+  },
+  "7128221005": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Evening Ride",
+    "distance": 8647.1,
+    "moving_time": 3182,
+    "elapsed_time": 3882,
+    "total_elevation_gain": 194,
+    "type": "Ride",
+    "workout_type": null,
+    "id": 7128221005,
+    "start_date": "2022-05-12T01:36:41Z",
+    "start_date_local": "2022-05-11T19:36:41Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 2,
+    "photo_count": 0,
+    "map": {
+      "id": "a7128221005",
+      "summary_polyline": "modcFdljqSp@[`@IbBHb@Y?GSu@Ca@ECEFyA\\_@BYLq@PgATUL{@Fg@XkVtDeLyTB?G?DAAGMKy@]_@a@[Qe@ISUEKWMKMSOMm@CUQs@FY?MKMGOAcB@SL_@q@{@e@]e@Ui@e@IQg@_@QWg@Wk@IWMWGe@YQESRO@WLKAQDSCMDMXMF?NEDAYVs@F{@d@g@BOGW}@cBQc@SOAKNy@Su@MQc@?UPAPFl@Nl@BXHjA?TFb@?b@Ff@?NYQCQWa@Gc@OOe@eAU[e@a@e@GqBg@WOc@_@o@Ws@Oo@@uBo@s@]cAQi@UyBg@s@Fo@G_@HUEkAISF[b@ELGDIAQJOTq@h@EN_@d@_@Ha@TOVc@XYB_@SY?WFKRE@KCCKIGCM?UEQME_Aw@IMQs@e@[MA]DkAEY]i@SUL]AMGUFWOIAY@MDu@YIK]Ec@TYv@Q@KPWHq@IwANk@Ay@NYLw@|@k@fBMVCJGHOh@?H@BN?`@SPArB_ATIP?XOn@?^HXJfAG\\Mv@?x@b@VDt@f@`@Bn@l@Rb@JNT?`@NT^b@ETBLJb@z@NfAD\\^hAJRD@t@UTQn@GXSb@Sl@K^OX?VKh@e@FAfAHHFL@d@Rh@n@H@XJ\\Af@[LDZ?TGRKhAcAL?\\Rh@l@RJ^`@DALYb@Qh@K`@STBTVPf@?\\DZBr@IX@LZn@^fA\\d@RDVXRHJNCJg@ZEPC@KAi@Wo@Go@M_@Aw@FWFUCMB_@NMLO`AEpA@^H`@`@t@Zv@r@pAt@|ADRn@nAXVVNHL|@LRJ`AUnBIfBYDG?KUaAEk@AwBK_CHc@nAuAXi@TY^?^XXHh@Ct@Qd@F\\RT\\HA?GKIs@[U?w@R_@Ey@_@UA]Pu@hAg@b@YZI`@AtBHrCDp@DTPd@LJtAT\\Xx@NtAl@CNg@jAAXDR\\bAb@bAZn@RVLHZDx@Of@ATBl@b@|FpCh@@`AOrAg@PSbAqD?c@a@eAAIFKN@l@Z`AMNMT?PKRB~@O`@A^DTZvBtBj@dAJHZRvBZFD`@`@l@JXMTYHSl@s@N]H[A}@Sy@KU]c@BIl@I\\AtBHx@CjBJJCd@]r@Ih@QJBl@|@?VAC",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.383753173053265,
+      -107.8651459235698
+    ],
+    "end_latlng": [
+      37.383887618780136,
+      -107.86526033654809
+    ],
+    "average_speed": 2.717,
+    "max_speed": 6.212,
+    "average_temp": 22,
+    "average_watts": 62.2,
+    "kilojoules": 198,
+    "device_watts": false,
+    "has_heartrate": true,
+    "average_heartrate": 100.2,
+    "max_heartrate": 131,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2317.4,
+    "elev_low": 2203.2,
+    "upload_id": 7589202251,
+    "upload_id_str": "7589202251",
+    "external_id": "garmin_push_8806617839",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 8
   }
 }
