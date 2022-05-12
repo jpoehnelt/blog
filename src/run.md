@@ -14,7 +14,7 @@ I started running sometime around 2015 and have significantly increased my milea
 
 ## Recent posts
 
-{% for recent in collections.postsTaggedRun | reverse | limit(10) -%}
+{% for recent in collections.run | reverse | limit(10) -%}
 * {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
 {% endfor %}
 

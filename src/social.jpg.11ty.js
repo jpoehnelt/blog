@@ -7,7 +7,7 @@ module.exports = {
         return {
             eleventyExcludeFromCollections: true,
             pagination: {
-                data: 'collections.postsWithoutDrafts',
+                data: 'collections.post',
                 size: 1,
                 alias: 'post'
             },

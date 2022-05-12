@@ -11,9 +11,8 @@ title: Home
   "@type": "Person",
   "address": {
     "@type": "PostalAddress",
-    "addressRegion": "CO",
+    "addressRegion": "CO"
   },
-
   "jobTitle": "Software Engineer",
   "name": "{{ site.author.name }}",
   "url": "{{ site.url }}"
@@ -40,7 +39,7 @@ I might also be active on these sites, but probably not.
 
 ## Recent posts
 
-{% for recent in collections.postsWithoutDrafts | reverse | limit(5) -%}
+{% for recent in collections.post | reverse | limit(5) -%}
 * {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
 {% endfor %}
 
