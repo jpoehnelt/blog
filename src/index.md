@@ -27,7 +27,7 @@ Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/ru
 
 ## Socials
 
-I might also be active on these sites, but probably not.
+You can follow me on these other sites.
 
 <ul>
     <li><a rel="noopener noreferrer" href="https://github.com/jpoehnelt" rel="me">GitHub</a></li>
