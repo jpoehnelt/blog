@@ -16,7 +16,7 @@ date: '2022-05-12T00:00:00.000Z'
 I've recently been using a combination of GitHub apps to automate the approval and merging of Dependabot pull requests, but wanted to simplify this into a GitHub workflow, using branch protection and GitHub's auto merge feature.
 
 The GitHub workflow looks something like:
-
+{% raw %}
 ```yml
 name: Dependabot
 on: pull_request
@@ -37,6 +37,8 @@ jobs:
       - name: merge
         run: gh pr merge --auto --squash --delete-branch "$PR_URL"
 ```
+{% endraw %}
+
 :::note
 :heavy_exclamation_mark: **Warning**: I wouldn't implement this without branch protection and required status checks.
 :::
