@@ -56,13 +56,13 @@
     "package": {
       "name": "@googlemaps/js-api-loader",
       "scope": "googlemaps",
-      "version": "1.14.2",
+      "version": "1.14.3",
       "description": "Wrapper for the loading of Google Maps JavaScript API script in the browser",
       "keywords": [
         "google",
         "maps"
       ],
-      "date": "2022-05-10T17:26:51.866Z",
+      "date": "2022-05-19T19:30:29.689Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fjs-api-loader",
         "homepage": "https://github.com/googlemaps/js-api-loader",
@@ -88,10 +88,10 @@
       ]
     },
     "score": {
-      "final": 0.7415662288997701,
+      "final": 0.7386894692521653,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.3838945128145308,
+        "popularity": 0.37567519953565975,
         "maintenance": 1
       }
     }
@@ -100,7 +100,7 @@
     "package": {
       "name": "@googlemaps/markerclusterer",
       "scope": "googlemaps",
-      "version": "2.0.6",
+      "version": "2.0.7",
       "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
       "keywords": [
         "cluster",
@@ -108,7 +108,7 @@
         "maps",
         "marker"
       ],
-      "date": "2022-04-28T16:39:42.401Z",
+      "date": "2022-05-19T18:31:03.149Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclusterer",
         "homepage": "https://github.com/googlemaps/js-markerclusterer",
@@ -134,10 +134,10 @@
       ]
     },
     "score": {
-      "final": 0.6968762525684414,
+      "final": 0.7004178505091034,
       "detail": {
         "quality": 0.8532990770930735,
-        "popularity": 0.2596757984014839,
+        "popularity": 0.26979464966051836,
         "maintenance": 1
       }
     }
@@ -415,14 +415,14 @@
     "package": {
       "name": "@googlemaps/polyline-codec",
       "scope": "googlemaps",
-      "version": "1.0.27",
+      "version": "1.0.28",
       "description": "Encode and decode polyines in Nodejs or the browser using this package.",
       "keywords": [
         "google",
         "maps",
         "polyline"
       ],
-      "date": "2022-05-10T13:38:28.947Z",
+      "date": "2022-05-19T19:29:45.890Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fpolyline-codec",
         "homepage": "https://github.com/googlemaps/js-polyline-codec",
@@ -448,11 +448,11 @@
       ]
     },
     "score": {
-      "final": 0.6439279520611575,
+      "final": 0.64558443521997,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.10494002485789465,
-        "maintenance": 0.9999879827034572
+        "popularity": 0.10966081658653068,
+        "maintenance": 1
       }
     }
   },
@@ -598,14 +598,14 @@
     "package": {
       "name": "@googlemaps/ogc",
       "scope": "googlemaps",
-      "version": "1.0.25",
-      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/ogc)](https://www.npmjs.com/package/@googlemaps/ogc) ![Build](https://github.com/googlemaps/js-ogc/workflows/Build/badge.svg) ![Release](https://github.com/googlemaps/js-ogc/workflows/Release/badge.svg) [![",
+      "version": "1.0.27",
+      "description": "[![npm](https://img.shields.io/npm/v/@googlemaps/ogc)](https://www.npmjs.com/package/@googlemaps/ogc) ![Build](https://github.com/googlemaps/js-ogc/workflows/Test/badge.svg) ![Release](https://github.com/googlemaps/js-ogc/workflows/Release/badge.svg) [![c",
       "keywords": [
         "google",
         "maps",
         "wms"
       ],
-      "date": "2022-05-10T13:38:57.770Z",
+      "date": "2022-05-20T20:34:33.658Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fogc",
         "homepage": "https://github.com/googlemaps/js-ogc",
@@ -631,11 +631,11 @@
       ]
     },
     "score": {
-      "final": 0.6252265319630086,
+      "final": 0.6276012194351002,
       "detail": {
         "quality": 0.8573438313822812,
-        "popularity": 0.05150739600604054,
-        "maintenance": 0.9999879827034572
+        "popularity": 0.05828020005833089,
+        "maintenance": 1
       }
     }
   },
@@ -918,7 +918,7 @@
     "package": {
       "name": "@googlemaps/semantic-release-config",
       "scope": "googlemaps",
-      "version": "1.4.2",
+      "version": "1.4.4",
       "description": "Shared semantic release configuration.",
       "keywords": [
         "google",
@@ -926,7 +926,7 @@
         "semantic release",
         "config"
       ],
-      "date": "2022-05-10T23:55:25.619Z",
+      "date": "2022-05-19T20:46:11.429Z",
       "links": {
         "npm": "https://www.npmjs.com/package/%40googlemaps%2Fsemantic-release-config",
         "homepage": "https://github.com/googlemaps/semantic-release-config",
@@ -952,11 +952,11 @@
       ]
     },
     "score": {
-      "final": 0.524498022327456,
+      "final": 0.5281047095885805,
       "detail": {
         "quality": 0.5298873287773211,
-        "popularity": 0.04438877820614537,
-        "maintenance": 0.9999878609203108
+        "popularity": 0.05468154357729412,
+        "maintenance": 0.9999999162952321
       }
     }
   },
