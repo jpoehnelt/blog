@@ -189,52 +189,6 @@
   },
   {
     "package": {
-      "name": "@googlemaps/markerclustererplus",
-      "scope": "googlemaps",
-      "version": "1.2.10",
-      "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
-      "keywords": [
-        "cluster",
-        "google",
-        "maps",
-        "marker"
-      ],
-      "date": "2021-11-30T02:11:38.945Z",
-      "links": {
-        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclustererplus",
-        "homepage": "https://github.com/googlemaps/js-markerclustererplus",
-        "repository": "https://github.com/googlemaps/js-markerclustererplus",
-        "bugs": "https://github.com/googlemaps/js-markerclustererplus/issues"
-      },
-      "author": {
-        "name": "Justin Poehnelt"
-      },
-      "publisher": {
-        "username": "google-wombot",
-        "email": "node-team-npm+wombot@google.com"
-      },
-      "maintainers": [
-        {
-          "username": "jpoehnelt",
-          "email": "justin.poehnelt@gmail.com"
-        },
-        {
-          "username": "google-wombot",
-          "email": "node-team-npm+wombot@google.com"
-        }
-      ]
-    },
-    "score": {
-      "final": 0.6735986552178391,
-      "detail": {
-        "quality": 0.8364556389013833,
-        "popularity": 0.20764585826166218,
-        "maintenance": 0.9999597518738355
-      }
-    }
-  },
-  {
-    "package": {
       "name": "@googlemaps/url-signature",
       "scope": "googlemaps",
       "version": "1.0.22",
@@ -769,6 +723,55 @@
         "quality": 0.8364556389013833,
         "popularity": 0.022735707356270705,
         "maintenance": 0.999954145215872
+      }
+    }
+  },
+  {
+    "package": {
+      "name": "@googlemaps/markerclustererplus",
+      "scope": "googlemaps",
+      "version": "1.2.10",
+      "description": "Creates and manages per-zoom-level clusters for large amounts of markers.",
+      "keywords": [
+        "cluster",
+        "google",
+        "maps",
+        "marker"
+      ],
+      "date": "2021-11-30T02:11:38.945Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/%40googlemaps%2Fmarkerclustererplus",
+        "homepage": "https://github.com/googlemaps/js-markerclustererplus",
+        "repository": "https://github.com/googlemaps/js-markerclustererplus",
+        "bugs": "https://github.com/googlemaps/js-markerclustererplus/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "google-wombot",
+        "email": "node-team-npm+wombot@google.com"
+      },
+      "maintainers": [
+        {
+          "username": "google-wombot",
+          "email": "node-team-npm+wombot@google.com"
+        },
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "flags": {
+      "deprecated": "It is recommended to use @googlemaps/markerclusterer instead of this package."
+    },
+    "score": {
+      "final": 0.5692556586251651,
+      "detail": {
+        "quality": 0.4964094502755721,
+        "popularity": 0.20131198327256464,
+        "maintenance": 0.9996389411345596
       }
     }
   },
