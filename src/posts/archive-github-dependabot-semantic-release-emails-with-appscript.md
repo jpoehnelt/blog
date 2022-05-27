@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automatically archiving Dependabot and Semantic Release emails
+title: Automatically Archiving Dependabot and Semantic Release Emails
 excerpt: "Using Google Apps Script as part of my open source workflow."
 tags:
     - post
@@ -11,7 +11,7 @@ tags:
     - dependabot
     - snippet
     - open source
-date: '2022-05-12T00:00:00.000Z'
+date: '2022-05-26T00:00:00.000Z'
 ---
 
 As an Open Source maintainer, I get hundreds of emails a day from Dependabot and Semantic Release. A while back, I put together the below [Google Apps Script](https://developers.google.com/apps-script) snippet to automatically archive the emails based upon some simple regex patterns to accomplish the following tasks:
