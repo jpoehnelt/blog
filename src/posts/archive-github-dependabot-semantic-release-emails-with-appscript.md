@@ -16,8 +16,8 @@ date: '2022-05-26T00:00:00.000Z'
 
 As an Open Source maintainer, I get hundreds of emails a day from Dependabot and Semantic Release. A while back, I put together the below [Google Apps Script](https://developers.google.com/apps-script) snippet to automatically archive the emails based upon some simple regex patterns to accomplish the following tasks:
 
-* Archive Dependabot emails that are merged or closed
-* Archive Semantic Release publish notifications on
+* Archive Dependabot emails that are merged or closed.
+* Archive Semantic Release publish notifications on issues and pull requests.
 
 Currently this is running in a cron every 5 minutes.
 
