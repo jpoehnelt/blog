@@ -99014,5 +99014,70 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 17
+  },
+  "7246184314": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Evening Hike",
+    "distance": 2077.3,
+    "moving_time": 1700,
+    "elapsed_time": 1843,
+    "total_elevation_gain": 25,
+    "type": "Hike",
+    "id": 7246184314,
+    "start_date": "2022-06-03T02:22:32Z",
+    "start_date_local": "2022-06-02T20:22:32Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a7246184314",
+      "summary_polyline": "qrdcFvkjqSKGEIYAa@JIAUNUFM?CHMGgDA[Ik@@g@AUNOA?BD?HHRBHHFLLFJ^@t@MjA_@d@EL}@bAg@^SFGEKOKKCEHAGBKAIK?Q@IB?c@GY@w@IKCUQUI}@yA[WsAwAMGUCq@JYBSI@COQSKSQQEwAz@OFEHTJL?PC~@_@XGHGN?ZIVCJBTAl@?VNJVRRt@~@NNPTd@dADB\\NVFx@Hn@NNNXHFF`@BXSl@s@\\m@HQHaASw@o@y@@ONMJALWNCP@NGf@DPHXEZBp@GZ?p@HVLWH^CCAA@F?NINQh@SDFH?TERMTAJFHJRJHLPX?DC?D?DHN?CNIH",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.384250639006495,
+      -107.8650748450309
+    ],
+    "end_latlng": [
+      37.38373649306595,
+      -107.86533636040986
+    ],
+    "average_speed": 1.222,
+    "max_speed": 2.291,
+    "average_cadence": 51.6,
+    "average_temp": 23,
+    "has_heartrate": true,
+    "average_heartrate": 81.1,
+    "max_heartrate": 101,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2266,
+    "elev_low": 2243,
+    "upload_id": 7717777906,
+    "upload_id_str": "7717777906",
+    "external_id": "garmin_push_8943352079",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 2
   }
 }
