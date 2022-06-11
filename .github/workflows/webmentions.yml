@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
-        run: npm ci
+        run: npm i
       - name: Fetch webmentions
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
