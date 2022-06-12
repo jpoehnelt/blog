@@ -100912,5 +100912,71 @@
     "pr_count": 0,
     "total_photo_count": 0,
     "has_kudoed": false
+  },
+  "7293645428": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Afternoon Stand Up Paddling",
+    "distance": 1822.3,
+    "moving_time": 1716,
+    "elapsed_time": 6621,
+    "total_elevation_gain": 14.4,
+    "type": "StandUpPaddling",
+    "sport_type": "StandUpPaddling",
+    "id": 7293645428,
+    "start_date": "2022-06-11T22:09:43Z",
+    "start_date_local": "2022-06-11T16:09:43Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a7293645428",
+      "summary_polyline": "o_bcFjwjqSa@ZQHi@FWAo@c@e@IYMMOa@IYKIGKQ[OIQAOCKMGKC[@OCg@QIAQDWNE@GG@QRg@Fu@Xm@Ds@Lm@@QGwAISKM][MWGSY_@GYEa@Dk@Li@NUJEJ?DLFd@BFNLRDV@\\TJ?TAXDf@XVTHLCBEADGLBIAE??BAA?CPER@VX\\PZ^t@Nd@VXXZ@l@RXVBFNHHHL\\`@ZJLn@RLEHKZaAJODEHALIPW`@_@^QVAb@VBPDLClAIb@Ht@?v@LJBFJFj@v@Lb@ATONSFMNELE\\ENORm@RiAj@[XMHe@DUAg@WUk@FF?HED",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.37096699886024,
+      -107.8669367171824
+    ],
+    "end_latlng": [
+      37.37024171277881,
+      -107.86714877933264
+    ],
+    "average_speed": 1.062,
+    "max_speed": 1.688,
+    "average_cadence": 17.8,
+    "average_temp": 35,
+    "has_heartrate": true,
+    "average_heartrate": 87.9,
+    "max_heartrate": 105,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2184.8,
+    "elev_low": 2173,
+    "upload_id": 7769522325,
+    "upload_id_str": "7769522325",
+    "external_id": "garmin_push_8998824929",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 3
   }
 }
