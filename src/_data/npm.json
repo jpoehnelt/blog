@@ -641,54 +641,9 @@
   },
   {
     "package": {
-      "name": "eleventy-plugin-related",
-      "scope": "unscoped",
-      "version": "1.0.2",
-      "description": "Find related documents in eleventy.",
-      "keywords": [
-        "eleventy",
-        "eleventy-plugin",
-        "11ty",
-        "documents",
-        "nlp",
-        "related",
-        "tfidf"
-      ],
-      "date": "2022-04-16T06:56:26.329Z",
-      "links": {
-        "npm": "https://www.npmjs.com/package/eleventy-plugin-related",
-        "homepage": "https://github.com/jpoehnelt/eleventy-plugin-related",
-        "repository": "https://github.com/jpoehnelt/eleventy-plugin-related",
-        "bugs": "https://github.com/jpoehnelt/eleventy-plugin-related/issues"
-      },
-      "author": {
-        "name": "Justin Poehnelt"
-      },
-      "publisher": {
-        "username": "jpoehnelt",
-        "email": "justin.poehnelt@gmail.com"
-      },
-      "maintainers": [
-        {
-          "username": "jpoehnelt",
-          "email": "justin.poehnelt@gmail.com"
-        }
-      ]
-    },
-    "score": {
-      "final": 0.6133918650747123,
-      "detail": {
-        "quality": 0.8364556389013833,
-        "popularity": 0.0356618305061891,
-        "maintenance": 0.9999243792203749
-      }
-    }
-  },
-  {
-    "package": {
       "name": "related-documents",
       "scope": "unscoped",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "description": "Find related text documents.",
       "keywords": [
         "documents",
@@ -696,7 +651,7 @@
         "related",
         "tfidf"
       ],
-      "date": "2022-04-14T06:36:44.830Z",
+      "date": "2022-06-01T20:37:27.365Z",
       "links": {
         "npm": "https://www.npmjs.com/package/related-documents",
         "homepage": "https://github.com/jpoehnelt/related-documents",
@@ -718,11 +673,56 @@
       ]
     },
     "score": {
-      "final": 0.6088781400706649,
+      "final": 0.616605294275304,
       "detail": {
         "quality": 0.8364556389013833,
-        "popularity": 0.022735707356270705,
-        "maintenance": 0.999954145215872
+        "popularity": 0.04477951564488186,
+        "maintenance": 0.9999879203690865
+      }
+    }
+  },
+  {
+    "package": {
+      "name": "eleventy-plugin-related",
+      "scope": "unscoped",
+      "version": "1.0.3",
+      "description": "Find related documents in eleventy.",
+      "keywords": [
+        "eleventy",
+        "eleventy-plugin",
+        "11ty",
+        "documents",
+        "nlp",
+        "related",
+        "tfidf"
+      ],
+      "date": "2022-06-01T20:48:56.751Z",
+      "links": {
+        "npm": "https://www.npmjs.com/package/eleventy-plugin-related",
+        "homepage": "https://github.com/jpoehnelt/eleventy-plugin-related",
+        "repository": "https://github.com/jpoehnelt/eleventy-plugin-related",
+        "bugs": "https://github.com/jpoehnelt/eleventy-plugin-related/issues"
+      },
+      "author": {
+        "name": "Justin Poehnelt"
+      },
+      "publisher": {
+        "username": "jpoehnelt",
+        "email": "justin.poehnelt@gmail.com"
+      },
+      "maintainers": [
+        {
+          "username": "jpoehnelt",
+          "email": "justin.poehnelt@gmail.com"
+        }
+      ]
+    },
+    "score": {
+      "final": 0.6149867807591971,
+      "detail": {
+        "quality": 0.8364556389013833,
+        "popularity": 0.0401696412308072,
+        "maintenance": 0.9999734704514276
       }
     }
   },
