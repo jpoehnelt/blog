@@ -16,7 +16,7 @@ layout: base
     <div class="mb-4"> 
         {% for tag in tags %}
             {%- if tag !== "post" -%}
-                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag | slugify}}">{{ tag }}</a>
             {%- endif -%}
         {% endfor %}
     </div>
