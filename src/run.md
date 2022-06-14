@@ -22,7 +22,7 @@ See more at <a class="tag run" href="/tag/run">run</a>.
 
 ## Ultra marathons
 
-In 2017, I ran my first ultra marathon and have since completed many 50km races and a single 50 miler and 100 miler. In 2022, I will be attempting the Cocodona 250 and Moab 240. You can follow my results at [ultrasignup.com](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt).
+In 2017, I ran my first ultra marathon and have since completed many 50km races and a single 50 miler and 100 miler. You can follow my results at [ultrasignup.com](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt).
 
 ### Upcoming events
 
@@ -33,10 +33,11 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - Ute 100 Mile & 50 Mile - 100 Miler - La Sal, UT Aug 12, 2022
 - San Juan Solstice 50 - 50 Miler - Lake City, CO Jun 25, 2022
 - Mace’s Hideout 100 - 100 Miler - Beulah, CO Jun 4, 2022
-- Cocodona 250 - 250 Miler - Black Canyon City, AZ May 2, 2022
 
 ### Past results
 
+- **2022** - Mace’s Hideout 100 - 100 Miler - Beulah - Overall: 3 29:20:53 - [Race Report](/posts/2022-maces-hideout-100m/)
+- **2022** - Cocodona 250 - DNF (injury)
 - **2022** - Red Rocks of Sedona | 2 Day Stage Race - 50K/50K - Overall: 2
 - **2022** - Behind the Rocks Ultra - 50K - Moab, UT - [Race Report](/posts/2022-behind-the-rocks-50k/)
 - **2022** - Moab Red Hot Ultra - 55K - Moab, UT Overall:26 235:29:01
@@ -56,7 +57,7 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 
 Read more at <a class="tag run" href="/tag/race report">race report</a>.
 
-## Recent runs
+## Recent activities
 
 <ul>{% for activity in activities | sort(true, false, 'start_date') | limit(20) %}
 <li>{{ activity.start_date_local | dateDisplay }}: <a href="https://www.strava.com/activities/{{ activity.id}}">{{ activity.name }}</a>, {{ (activity.distance / 1000) | round(1) }} km</li>
