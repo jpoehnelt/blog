@@ -101317,5 +101317,72 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 36
+  },
+  "7315784324": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Afternoon Trail Run",
+    "distance": 2555.9,
+    "moving_time": 817,
+    "elapsed_time": 817,
+    "total_elevation_gain": 34,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": 0,
+    "id": 7315784324,
+    "start_date": "2022-06-15T23:44:04Z",
+    "start_date_local": "2022-06-15T17:44:04Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a7315784324",
+      "summary_polyline": "mndcFvkjqSVMb@KxACh@KFWW[MWCMEaAGM]Ua@Mi@_@_@a@[USGK?q@VWCo@UMAIBGRu@v@]Vc@j@_@PaAx@g@Z_A^y@f@ETLVj@x@Hb@Br@Cb@Kl@KRo@r@cAv@_@\\GJWlBa@nAWPm@P_@D_@Ki@[m@WsDy@_AYo@]_A_@cCu@IKCUFWTs@V}@NiAIWUc@A_@FAR@l@Vd@Kn@S`AOJ?x@Ot@@HF`@j@^^x@dA`@p@BJZ\\h@V^BfARHDZb@\\BXUn@eATe@Nm@@aAGe@S]Ma@\\MVClAB`BGd@D^?d@DRCb@WXIRAr@QPH",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.38359643146396,
+      -107.86507224664092
+    ],
+    "end_latlng": [
+      37.38412147387862,
+      -107.86482514813542
+    ],
+    "average_speed": 3.128,
+    "max_speed": 4.346,
+    "average_cadence": 79.6,
+    "average_temp": 30,
+    "has_heartrate": true,
+    "average_heartrate": 140.5,
+    "max_heartrate": 152,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2271.4,
+    "elev_low": 2239.6,
+    "upload_id": 7793663718,
+    "upload_id_str": "7793663718",
+    "external_id": "garmin_push_9024724093",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 12
   }
 }
