@@ -2,13 +2,6 @@
 layout: base
 ---
 {% include 'schema-blog-post.njk' %}
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830"
-    crossorigin="anonymous"></script>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 <article class="h-entry">
     <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
     <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
@@ -68,6 +61,8 @@ layout: base
             {% endfor %}
             </ul>
         {% endif %}
+        
+        {% linkAd %}
 
         <hr>
 
