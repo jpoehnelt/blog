@@ -202,3 +202,8 @@ p > code {
   background: #282a36;
   @apply px-1;
 }
+
+/* https://stackoverflow.com/a/72135921 */
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
