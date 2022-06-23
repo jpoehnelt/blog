@@ -32,6 +32,8 @@ Also had horrible gastro issues of a different kind in the first 20 miles. Lost 
 
 Trail was super rugged and washed out almost everywhere, but pro, Jeff Browning, blew the field away by hours.
 
+{% inlineAd %}
+
 ## First 100 mile finish
 
 After a DNF at the Silverton Ultra Dirty 100 mile, this felt really good to bring home!

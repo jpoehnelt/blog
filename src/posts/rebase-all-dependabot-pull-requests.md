@@ -26,3 +26,5 @@ gh search prs \
 | xargs -n 1 -I{} \
   gh pr comment -b "@dependabot rebase" {}
 ```
+
+{% inlineAd %}
