@@ -82,6 +82,7 @@ let blocklist = [
   "http://techfans.co.uk",
   "http://pikopong.com",
   "http://marketingsolution.com.au",
+  "https://brid.gy/comment/twitter/jpoehnelt/1535308812822802432/1537800564465184768",
 ];
 
 fetch(`${apiEndpoint}?${apiOptions.join("&")}`)
