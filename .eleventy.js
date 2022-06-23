@@ -57,6 +57,12 @@ module.exports = (config) => {
   config.addJavaScriptFunction("strava", strava);
   config.addShortcode("barChart", require("./shortcodes/bar-chart.js"));
 
+  config.addShortcode(
+    "inlineAd",
+    () =>
+      `<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1251836334060830" data-ad-slot="4574002733"></ins>`
+  );
+
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
@@ -114,10 +120,10 @@ module.exports = (config) => {
 
   markdownIt.use(mdContainer, "note");
   markdownIt.use(mdContainer, "tldr");
-  
+
   // https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json
-  markdownIt.use(require("markdown-it-emoji"))
-  markdownIt.use(require("markdown-it-anchor"))
+  markdownIt.use(require("markdown-it-emoji"));
+  markdownIt.use(require("markdown-it-anchor"));
 
   config.setLibrary("md", markdownIt);
 
