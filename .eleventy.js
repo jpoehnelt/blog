@@ -60,7 +60,7 @@ module.exports = (config) => {
   config.addShortcode(
     "inlineAd",
     () =>
-      `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
+      `<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
 <ins 
   class="adsbygoogle" 
   style="display:block;text-align:center;" 
@@ -69,13 +69,13 @@ module.exports = (config) => {
   data-ad-client="ca-pub-1251836334060830" 
   data-ad-slot="4574002733"
 ></ins>
-<script> (adsbygoogle = window.adsbygoogle || []).push({});</script>`
+<script> (adsbygoogle = window.adsbygoogle || []).push({});</script></div>`
   );
 
   config.addShortcode(
     "linkAd",
     () =>
-      `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
+      `<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
   style="display:block"
   data-matched-content-ui-type="text"
@@ -84,7 +84,7 @@ module.exports = (config) => {
   data-ad-format="autorelaxed"
   data-ad-client="ca-pub-1251836334060830"
   data-ad-slot="1370955012"></ins>
-<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>`
+<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div>`
   );
 
   config.addFilter("cssmin", function (code) {
