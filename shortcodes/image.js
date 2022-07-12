@@ -48,7 +48,7 @@ module.exports = async function imageShortcode({
       <picture>
         ${source}
         <img alt="${alt}" 
-            loading="lazy" 
+            ${lazy ? 'loading="lazy"' : ""}
             decoding="async" 
             class="blur lazyload ${class_}" 
             src="${placeholder}" 

@@ -210,7 +210,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 .blur {
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  transition: filter 100ms, -webkit-filter 100ms;
+  transition: filter 400ms, -webkit-filter 400ms;
 }
 
 .blur.lazyloaded {
