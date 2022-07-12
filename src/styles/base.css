@@ -113,7 +113,6 @@ svg {
 
 .content > iframe {
   @apply block m-0 mt-4 mb-8 min-w-fit min-h-fit max-w-full;
-  
 }
 
 ul {
@@ -206,4 +205,15 @@ p > code {
 /* https://stackoverflow.com/a/72135921 */
 ins.adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 100ms, -webkit-filter 100ms;
+}
+
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
