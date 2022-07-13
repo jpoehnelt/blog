@@ -7,7 +7,6 @@ module.exports = async function imageShortcode({
   src,
   alt,
   class_ = "rounded-sm mx-auto",
-  lazy = true,
 }) {
   const sizes = "(min-width: 30em) 33vw, 100vw";
 
@@ -48,7 +47,6 @@ module.exports = async function imageShortcode({
       <picture>
         ${source}
         <img alt="${alt}" 
-            ${lazy ? 'loading="lazy"' : ""}
             decoding="async" 
             class="blur lazyload ${class_}" 
             src="${placeholder}" 
