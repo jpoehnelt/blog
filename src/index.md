@@ -19,7 +19,7 @@ title: Home
 }
 </script>
 
-{% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full max-w-full sm:max-w-sm mx-auto", lazy=false %}
+{% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full max-w-full sm:max-w-sm mx-auto" %}
 
 # Hello. :wave:
 

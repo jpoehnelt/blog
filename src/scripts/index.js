@@ -1,4 +1,5 @@
 import debounce from "debounce-fn";
+import "lazysizes";
 
 window.addEventListener("load", () => {
   let cid;

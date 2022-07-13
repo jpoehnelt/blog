@@ -1,62 +1,16 @@
-const Image = require("@11ty/eleventy-img");
 const mdContainer = require("markdown-it-container");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
-const path = require("path");
-const slugify = require("slugify");
-
-async function imageShortcode({
-  src,
-  alt,
-  class_ = "rounded-sm mx-auto",
-  sizes = "(min-width: 30em) 33vw, 100vw",
-  lazy = true,
-}) {
-  let metadata = await Image(src, {
-    widths: [200, 400, 600],
-    formats: ["webp", "avif", "jpeg"],
-    outputDir: "./public/images",
-    urlPath: "/images",
-    filenameFormat: function (id, src, width, format, options) {
-      return `${slugify(
-        path.basename(src, path.extname(src))
-      )}-${id}-${width}.${format}`;
-    },
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes,
-    class: class_,
-    ...(lazy ? { loading: "lazy", decoding: "async" } : {}),
-  };
-
-  let high = metadata.jpeg[metadata.jpeg.length - 1];
-
-  return `<div><a href="${high.url}">${Image.generateHTML(
-    metadata,
-    imageAttributes
-  )}</a><p class="text-xs italic text-center -mt-4">${alt}</p></div>`;
-}
-
-const strava = (activity, embed) =>
-  `<div class="flex justify-center"><iframe loading="lazy" title="strava activity" class="w-full max-w-sm h-96" frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/${activity}/embed/${embed}'></iframe></div>`;
 
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
 
-  config.addNunjucksAsyncShortcode("image", imageShortcode);
-  config.addLiquidShortcode("image", imageShortcode);
-  config.addJavaScriptFunction("image", imageShortcode);
-
-  config.addNunjucksShortcode("strava", strava);
-  config.addLiquidShortcode("strava", strava);
-  config.addJavaScriptFunction("strava", strava);
-  config.addShortcode("barChart", require("./shortcodes/bar-chart.js"));
-
+  config.addAsyncShortcode("image", require("./shortcodes/image"));
+  config.addShortcode("strava", require("./shortcodes/strava"));
+  config.addShortcode("barChart", require("./shortcodes/bar-chart"));
   config.addShortcode(
     "inlineAd",
     () =>

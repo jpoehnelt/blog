@@ -17,7 +17,7 @@ date: '2022-03-26T15:31:22.346Z'
 tl;dr I finished the [2022 Behind the Rocks Ultra 50k](https://www.madmooseevents.com/behind-the-rocks-home) in 4 hours and 55 minutes, good for 8th place. It was a hot day with a course dominated by deep sand. It was an emotional roller coaster (injury, stress, DNS??) for me but I persevered!
 :::
 
-{% image src="src/images/2022-behind-the-rocks/moab-red-rock-canyon.jpg", alt="Canyons and desert along the Moab Behind the Rocks 50k race course", lazy=false %}
+{% image src="src/images/2022-behind-the-rocks/moab-red-rock-canyon.jpg", alt="Canyons and desert along the Moab Behind the Rocks 50k race course" %}
 
 ## Triple Crown of Moab
 

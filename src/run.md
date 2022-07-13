@@ -4,7 +4,7 @@ title: Ultra Running
 path: run
 ---
 
-{% image src="src/images/mogollon-monster-100/justin-poehnelt-during-ultramarathon.jpeg", alt="Sometimes trail running is walking", class_="max-w-xs rounded-sm", lazy=false %}
+{% image src="src/images/mogollon-monster-100/justin-poehnelt-during-ultramarathon.jpeg", alt="Sometimes trail running is walking", class_="max-w-xs rounded-sm" %}
 
 ## Running
 
