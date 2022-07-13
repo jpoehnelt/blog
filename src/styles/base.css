@@ -207,13 +207,14 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
 }
 
-.blur {
+.blur-img {
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  transition: filter 400ms, -webkit-filter 400ms;
+  padding: 5px;
+  transition: filter 800ms, -webkit-filter 800ms;
 }
 
-.blur.lazyloaded {
+.blur-img.lazyloaded {
   -webkit-filter: blur(0);
-  filter: blur(0);
+  filter: blur(0);  
 }
