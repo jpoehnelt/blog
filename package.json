@@ -10,7 +10,7 @@
     "clean": "rimraf public/assets public/blog public/code public/feed public/posts public/run public/tag public/*.*",
     "dev:11ty": "eleventy --serve --quiet --incremental",
     "dev:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --watch",
-    "dev:css": "postcss src/styles/tailwind.css -o public/assets/index.css",
+    "dev:css": "postcss src/styles/tailwind.css -o public/assets/index.css --watch",
     "dev": "npm-run-all clean build:js build:css build:11ty -p dev:*",
     "prepare": "run-p prepare:*",
     "prepare:refresh": "esbuild automations/strava-refresh.ts --outfile=dist/strava-refresh.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
@@ -68,6 +68,7 @@
   "dependencies": {
     "@netlify/functions": "^1.0.0",
     "debounce-fn": "^5.1.0",
+    "lazysizes": "^5.3.2",
     "netlify-plugin-cache": "^1.0.3",
     "universal-analytics": "^0.5.3"
   }

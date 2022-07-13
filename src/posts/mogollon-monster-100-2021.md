@@ -16,7 +16,7 @@ date: '2021-09-18T07:02:38.495Z'
 
 A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 mile. This was one of the **most brutal races** I have competed in, but somehow **I finished 11th**!
 
-{% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim", lazy=false %}
+{% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim" %}
 
 ## About the Mogollon Monster
 
