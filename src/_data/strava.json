@@ -103661,5 +103661,72 @@
     "total_photo_count": 7,
     "has_kudoed": false,
     "suffer_score": 130
+  },
+  "7497240417": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Evening Trail Run",
+    "distance": 5178.2,
+    "moving_time": 1989,
+    "elapsed_time": 2303,
+    "total_elevation_gain": 61,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "id": 7497240417,
+    "start_date": "2022-07-20T02:07:56Z",
+    "start_date_local": "2022-07-19T20:07:56Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -21600,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a7497240417",
+      "summary_polyline": "}odcFrljqSNObAg@n@AZE^@h@QPZ@QGMQUUm@k@\\e@Pg@VQNKDUBe@RUFO?OAQJa@Da@?u@d@u@IM@SAqABq@Gi@@a@Ig@C]D@Bn@`@RXHb@Bj@Ep@]t@a@j@{@x@[Dm@KWg@SIs@Mo@Ea@Qc@a@c@{@_@a@c@i@e@a@U[[Kw@Bs@LSAa@JULcAPs@SMG?FLL@HPZFh@Op@Yn@e@vAYZqAd@q@Lm@BmAc@iAs@wBiAm@Qm@G_@@m@Ja@So@oA[u@Qm@Wk@Ye@sB}BmAgAMCK@o@Jm@Nm@Dq@@oAVs@Ic@Qc@W}@{ASu@m@{Am@iAc@iAWg@Ki@Ag@By@LiAJSDCL@EFIDINObAEjAHz@v@nA^|@x@zAd@hA`ApA^Xh@Vz@DdAMp@?f@E~@On@Gb@Dd@JNAb@NFJrAZz@\\NDb@D~@Kb@?\\QPQL[RQXGL@NEb@C^GVBZJF?RUt@_@\\?HAE[]eAi@s@CQAUHMNKNDh@fAFb@d@fBJTDd@Nn@XZh@r@NZJJVJh@`@|@`@TTd@Gv@QVO`@C^GnAC\\p@n@p@dAxAXn@^Zb@Nf@B~@P^^b@JNAZQdAsAN]Fk@C_AG[g@u@GO@ALALI`AUn@Bf@A\\Bn@Eh@DfABt@_@XCz@S",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.383833387866616,
+      -107.8652164991945
+    ],
+    "end_latlng": [
+      37.384123569354415,
+      -107.86474166437984
+    ],
+    "average_speed": 2.603,
+    "max_speed": 3.67,
+    "average_cadence": 78.5,
+    "average_temp": 27,
+    "has_heartrate": true,
+    "average_heartrate": 121.2,
+    "max_heartrate": 146,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2287.2,
+    "elev_low": 2239.2,
+    "upload_id": 7992831191,
+    "upload_id_str": "7992831191",
+    "external_id": "garmin_push_9237209202",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 8
   }
 }
