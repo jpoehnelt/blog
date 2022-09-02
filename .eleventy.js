@@ -14,7 +14,7 @@ module.exports = (config) => {
   config.addShortcode(
     "inlineAd",
     () =>
-      `<div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
+      `<div class="my-4"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
 <ins 
   class="adsbygoogle" 
   style="display:block;text-align:center;" 
