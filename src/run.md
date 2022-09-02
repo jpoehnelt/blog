@@ -30,6 +30,8 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - Rio Grande 100 - Rio Grande 100 - South Fork, CO Oct 1, 2022
 - The Bear - 100 Miler - Logan, UT Sep 23, 2022
 
+{% linkAd %}
+
 ### Past results
 - **2022** - Creede 100 - Creede, CO Aug 27, 2022 - 2nd place :2nd_place_medal:
 - **2022** - Ute 50 Mile - 50 Miler - La Sal, UT - 1st Place :1st_place_medal:
