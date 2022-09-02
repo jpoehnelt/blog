@@ -18,6 +18,8 @@ A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 m
 
 {% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim" %}
 
+{% inlineAd %}
+
 ## About the Mogollon Monster
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HIiR5fmgYLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
