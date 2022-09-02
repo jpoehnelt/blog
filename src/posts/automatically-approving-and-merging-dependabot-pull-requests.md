@@ -15,6 +15,8 @@ date: '2022-05-12T00:00:00.000Z'
 
 I've recently been using a combination of GitHub apps to automate the approval and merging of Dependabot pull requests, but wanted to simplify this into a GitHub workflow, using branch protection and GitHub's auto merge feature.
 
+{% inlineAd %}
+
 The GitHub workflow looks something like:
 {% raw %}
 ```yml
@@ -45,7 +47,9 @@ jobs:
 
 And it works! :tada: 
 
-The pull request no looks like the following:
+{% inlineAd %}
+
+The pull request now looks like the following:
 
 {% image src="src/images/automating-dependabot-pull-requests.png", alt="Automating DependaBot pull request approval and merging" %}
 
