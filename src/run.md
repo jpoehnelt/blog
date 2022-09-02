@@ -20,6 +20,8 @@ I started running sometime around 2015 and have significantly increased my milea
 
 See more at <a class="tag run" href="/tag/run">run</a>.
 
+{% inlineAd %}
+
 ## Ultra marathons
 
 In 2017, I ran my first ultra marathon and have since completed many 50km races and a single 50 miler and 100 miler. You can follow my results at [ultrasignup.com](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt).
@@ -30,7 +32,7 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - Rio Grande 100 - Rio Grande 100 - South Fork, CO Oct 1, 2022
 - The Bear - 100 Miler - Logan, UT Sep 23, 2022
 
-{% linkAd %}
+{% inlineAd %}
 
 ### Past results
 - **2022** - Creede 100 - Creede, CO Aug 27, 2022 - 2nd place :2nd_place_medal:
