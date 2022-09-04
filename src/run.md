@@ -35,7 +35,7 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 {% inlineAd %}
 
 ### Past results
-- **2022** - Creede 100 - Creede, CO Aug 27, 2022 - 2nd place :2nd_place_medal:
+- **2022** - Creede 100 - Creede, CO Aug 27, 2022 - 2nd place :2nd_place_medal: - [Race Report](/posts/2022-creede-100-race-report/)
 - **2022** - Ute 50 Mile - 50 Miler - La Sal, UT - 1st Place :1st_place_medal:
 - **2022** - San Juan Solstice 50 - 50 Miler - Lake City, CO 
 - **2022** - Mace’s Hideout 100 - 100 Miler - Beulah - Overall: 3 29:20:53 - [Race Report](/posts/2022-maces-hideout-100m/)

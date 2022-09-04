@@ -8,6 +8,7 @@ tags:
     - ultrarun
     - Colorado Trail
     - Weminuche Wilderness
+    - Colorado
 date: '2020-07-20T05:31:22.346Z'
 ---
 Last Sunday, July 19th, I decided to go for a long run in the Weminuche Wilderness to make up for the lack of ultra marathons this year.
