@@ -9,6 +9,7 @@ tags:
     - ultramarathon
     - 100mile    
     - Tempest Adventures
+    - Colorado
 date: '2022-06-13T15:31:22.346Z'
 ---
 
