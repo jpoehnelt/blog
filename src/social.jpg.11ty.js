@@ -62,7 +62,7 @@ function svg({ title, excerpt, tags, page, date }) {
     const bottomOfExcerpt = 250 + 50 * (excerptLines.length -1) + 50;
 
     const tagString = tags.filter(t => t !== 'post').map(t => `#${t}`).join(" ");
-    const svgTags = wrapText(tagString, 70, 4).reduce((p, c, i) => {
+    const svgTags = wrapText(tagString, 65, 4).reduce((p, c, i) => {
         return p + `<text x="100" y="${bottomOfExcerpt + 60 + i * 40}" fill="#ffffff" font-size="30px" font-weight="500">${c}</text>`;
     }, '');
 
