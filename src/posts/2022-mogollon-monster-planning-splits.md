@@ -56,11 +56,11 @@ Below are the [splits for my 2021 run](https://live.aravaiparunning.com/#/mogoll
 
 ## Changes for 2022
 
-- No gut/nausea issues. I better at managing this now. :poop: :no_entry_sign:
-- Cooler temperatures - It is forecast to be cloudy and 10 degrees cooler than last year. :sun_behind_large_cloud:
-- The earlier start (1 hour) and a slightly faster pace means I will be running in the pines more for the hottest part of the day. :sunrise_over_mountains:
+- No gut/nausea issues. I am better at managing this now. :poop: :no_entry_sign:
+- Cooler temperatures. It is forecast to be cloudy and 10 degrees cooler than last year. :sun_behind_large_cloud:
+- The earlier start (1 hour) and a slightly faster pace means I will be running in the pines for the hottest part of the day. :sunrise_over_mountains:
 - Better fitness :anatomical_heart: :lungs: :muscle:
 - More experience with 100 milers. The 2021 Mogollon Monster was my first 100 miler that I finished. :brain:
 - My luck shoes that have gotten me a 1st and 2nd in my last two races :athletic_shoe:
-- I know the course. :world_map:
+- I know the course. :compass:
 - Luck :four_leaf_clover:
