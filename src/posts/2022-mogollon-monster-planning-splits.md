@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mogollon Monster 100 Mile Planning
-excerpt: Planning for the 2022 Mogollon Monster 100 mile ultra marathon
+excerpt: Planning and splits for the 2022 Mogollon Monster 100
 tags:
     - post
     - run
