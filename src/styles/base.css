@@ -216,5 +216,9 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 
 .blur-img.lazyloaded {
   -webkit-filter: blur(0);
-  filter: blur(0);  
+  filter: blur(0);
+}
+
+table td {
+  text-align: center;
 }
