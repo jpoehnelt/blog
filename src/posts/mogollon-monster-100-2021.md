@@ -14,6 +14,11 @@ tags:
 date: '2021-09-18T07:02:38.495Z'
 ---
 
+:::note
+I am running this race again in 2022. See my target splits and other planning at [Mogollon Monster 100 Mile Planning
+](/posts/2022-mogollon-monster-planning-splits/).
+:::
+
 A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 mile. This was one of the **most brutal races** I have competed in, but somehow **I finished 11th**!
 
 {% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim" %}
