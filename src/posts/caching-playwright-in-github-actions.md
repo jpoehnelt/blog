@@ -9,6 +9,7 @@ tags:
   - playwright
   - workflows
 date: "2022-09-22T00:00:00.000Z"
+hideToc: true
 ---
 
 I've always enjoyed using Playwright, but never want to wait for the binaries to download. I've tried a few different strategies to speed this up, but the one I've settled on is to cache the binaries in GitHub Actions.
@@ -16,7 +17,6 @@ I've always enjoyed using Playwright, but never want to wait for the binaries to
 The primary issue that I've had with caching the binaries is that while the binaries can easily be cached, the operating system dependencies must also be installed if not present. The key bits are in the following steps of my GitHub workflow.
 
 {% raw %}
-
 ```yml
 - uses: actions/cache@v2
   id: playwright-cache
@@ -35,6 +35,8 @@ The primary issue that I've had with caching the binaries is that while the bina
 And it works! :tada:
 
 {% image src="src/images/playwright-caching.png", alt="Output for the GitHub action with Playwright browser binaries cached" %}
+
+{% inlineAd %}
 
 If you don't do this properly, you might run into the following error.
 
