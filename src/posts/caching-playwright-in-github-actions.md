@@ -44,6 +44,6 @@ If you don't do this properly, you might run into the following error.
 
 {% image src="src/images/playwright-missing-dependencies-to-run-browsers.png", alt="Missing dependencies to run browsers" %}
 
-Without any caching, the build took 1 minute and 43 seconds. With caching, but still installing the host dependencies, the time was 45 seconds, a reduction of nearly 1 minute for every build.
+Without any caching, the build took 1 minute and 43 seconds. With caching, but still installing the host dependencies, the time was 45 seconds, minus about 17 seconds for cache loading/saving, leads to a reduction of about 40 seconds for every build.
 
 {% image src="src/images/playwright-build-time-without-caching.png", alt="Build time without caching" %}
