@@ -3,7 +3,7 @@ name: Strava Refresh Token
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "50 4 * * *"
 
 jobs:
   ingest:
