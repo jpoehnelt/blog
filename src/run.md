@@ -15,8 +15,9 @@ I started running sometime around 2015 and have significantly increased my milea
 ## Recent posts
 
 {% for recent in collections.run | reverse | limit(10) -%}
-* {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
-{% endfor %}
+
+- {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
+  {% endfor %}
 
 See more at <a class="tag run" href="/tag/run">run</a>.
 
@@ -28,16 +29,15 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 
 ### Upcoming events
 
-- Moab 240 Endurance Run - 240 Miler - Moab, UT Oct 7, 2022
-- Rio Grande 100 - Rio Grande 100 - South Fork, CO Oct 1, 2022
-- The Bear - 100 Miler - Logan, UT Sep 23, 2022
-
 {% inlineAd %}
 
 ### Past results
+
+- **2022** - Moab 240 - Moab, UT - October 7, 2022 - DNF - [Race Report](/posts/2022-moab-240-race-report/)
+- **2022** - Mogollon Monster - 100 Miler - Pine, AZ - September 2022 - 15th - [Race Report](/posts/2022-mogollon-monster-race-report/)
 - **2022** - Creede 100 - Creede, CO Aug 27, 2022 - 2nd place :2nd_place_medal: - [Race Report](/posts/2022-creede-100-race-report/)
 - **2022** - Ute 50 Mile - 50 Miler - La Sal, UT - 1st Place :1st_place_medal:
-- **2022** - San Juan Solstice 50 - 50 Miler - Lake City, CO 
+- **2022** - San Juan Solstice 50 - 50 Miler - Lake City, CO
 - **2022** - Mace’s Hideout 100 - 100 Miler - Beulah - Overall: 3 29:20:53 - [Race Report](/posts/2022-maces-hideout-100m/)
 - **2022** - Cocodona 250 - DNF (injury)
 - **2022** - Red Rocks of Sedona | 2 Day Stage Race - 50K/50K - Overall: 2 :2nd_place_medal:
