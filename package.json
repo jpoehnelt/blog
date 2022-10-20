@@ -3,7 +3,7 @@
   "author": "Justin Poehnelt",
   "license": "MIT",
   "scripts": {
-    "build:11ty": "eleventy --quiet",
+    "build:11ty": "NODE_OPTIONS=\"--max-old-space-size=4096\" eleventy --quiet",
     "build:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --minify ",
     "build:css": "postcss src/styles/tailwind.css -o public/assets/index.css",
     "build": "cross-env NODE_ENV=production npm-run-all clean build:js build:css build:11ty",
