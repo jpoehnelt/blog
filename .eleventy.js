@@ -115,6 +115,7 @@ module.exports = (config) => {
   config.addPlugin(externalLinks, {
     url: "https://justin.poehnelt.com",
     target: "_self",
+    overwrite: false,
   });
 
   config.addFilter("dateDisplay", require("./filters/date-display.js"));
