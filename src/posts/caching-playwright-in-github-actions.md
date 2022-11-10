@@ -18,7 +18,7 @@ The primary issue that I've had with caching the binaries is that while the bina
 
 {% raw %}
 ```yml
-- uses: actions/cache@v2
+- uses: actions/cache@v3
   id: playwright-cache
   with:
     path: |
