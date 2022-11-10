@@ -3,6 +3,11 @@ import path from "path";
 import fetch from "node-fetch";
 import get from "lodash/fp/get.js";
 import dotenv from "dotenv";
+import { JSDOM } from "jsdom";
+import DOMPurify from "dompurify";
+
+const window = new JSDOM("").window;
+const purify = DOMPurify(window);
 
 const BLOCKLIST = [
   "https://brid.gy/comment/twitter/jpoehnelt/1535308812822802432/1537800564465184768",
@@ -38,7 +43,9 @@ const main = async () => {
   function writeMentionsToFile(mentions) {
     const all = {};
     mentions
-      .filter((mention) => BLOCKLIST.every((url) => !mention["wm-source"].includes(url)))
+      .filter((mention) =>
+        BLOCKLIST.every((url) => !mention["wm-source"].includes(url))
+      )
       .forEach((mention) => {
         let target = mention["wm-target"].replace(domain, "");
 
@@ -49,16 +56,23 @@ const main = async () => {
         if (!all[target]) {
           all[target] = {
             all: [],
-            likes: [],
-            replies: [],
-            mention: [],
-            repost: [],
-            bookmark: [],
+            "like-of": [],
+            "in-reply-to": [],
+            "repost-of": [],
+            "bookmark-of": [],
+            "mention-of": [],
             rsvp: [],
           };
         }
 
+        if (mention.content?.html) {
+          mention.content.html = purify.sanitize(mention.content.html, {
+            USE_PROFILES: { html: true },
+          });
+        }
+
         all[target].all.push(mention);
+        all[target][mention["wm-property"]].push(mention);
       });
 
     fs.writeFileSync(

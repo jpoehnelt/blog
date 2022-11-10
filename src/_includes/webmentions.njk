@@ -1,0 +1,50 @@
+{%- set likes = webmentions[page.url]['like-of'] -%}
+{%- set replies = webmentions[page.url]['in-reply-to'] -%}
+
+
+{% macro avatar(webmention) %}
+	<img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}" title="{{ webmention.author.name }}" alt="" class="w-12 h-12 border-2 border-grey-300 !mb-0 rounded-full"/>
+{% endmacro %}
+<div class="webmentions">
+	<div class="flex flex-col gap-4">
+		{% if likes | length %}
+			<div>
+				<p class="uppercase text-xs">Likes</p>
+
+				<div class="flex py-2 px-2 items-center flex-wrap mb-2">
+					{% for webmention in likes | reverse  %}
+						<a class="-mx-2 -my-2" href="{{webmention.url}}">
+							{{ avatar(webmention) }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+
+
+		{% if replies | length %}
+			<div>
+				<p class="uppercase text-xs">Replies</p>
+
+				<div class="flex gap-2 flex-col">
+					{% for webmention in replies | reverse  %}
+						<div class="border bg-gray-800/75 border-gray-800 px-2 pt-4 pb-2 rounded-sm">
+							<div class="flex items-center gap-4">
+								<a href="{{webmention.url}}" class="shrink-0">{{ avatar(webmention) }}</a>
+								<div>{{ webmention.content.html | safe }}</div>
+							</div>
+							<p class="text-right !mb-0">
+								<a href="{{webmention.url}}" class="text-xs text-gray-500 !font-normal">
+									<span class="max-w-xs truncate">{{webmention.url}}</span>
+									|
+									{{ webmention.published }}</a>
+							</p>
+						</div>
+					</a>
+				{% endfor %}
+
+			</div>
+		</div>
+
+	{% endif %}
+</div></div>

@@ -30,6 +30,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
+    "@types/dompurify": "^2.3.4",
     "@types/libsodium-wrappers": "^0.7.9",
     "@types/universal-analytics": "^0.4.5",
     "autoprefixer": "^10.4.2",
@@ -71,7 +72,9 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "@netlify/functions": "^1.0.0",
     "debounce-fn": "^5.1.0",
+    "dompurify": "^2.4.0",
     "fast-xml-parser": "^4.0.11",
+    "jsdom": "^20.0.2",
     "lazysizes": "^5.3.2",
     "netlify-plugin-cache": "^1.0.3",
     "universal-analytics": "^0.5.3"

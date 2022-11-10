@@ -34,7 +34,7 @@
         "wm-source": "https://brid.gy/comment/twitter/jpoehnelt/1584959439723171840/1584974129639620610",
         "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
         "content": {
-          "html": "I like it! 👏\n<a class=\"u-mention\" href=\"https://justin.poehnelt.com/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/jpoehnelt\"></a>",
+          "html": "I like it! 👏\n<a href=\"https://justin.poehnelt.com/\" class=\"u-mention\"></a>\n<a href=\"https://twitter.com/jpoehnelt\" class=\"u-mention\"></a>",
           "text": "I like it! 👏"
         },
         "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
@@ -59,7 +59,7 @@
           "https://pbs.twimg.com/media/Ff7nuXyVQAAXD1U.png"
         ],
         "content": {
-          "html": "My apps script solution 😎\n<a href=\"https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/\">justin.poehnelt.com/posts/automate…</a>\n\nCould customize with \"-in:starred\" or similar.\n<a class=\"u-mention\" href=\"https://twitter.com/benlcollins\"></a>",
+          "html": "My apps script solution 😎\n<a href=\"https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/\">justin.poehnelt.com/posts/automate…</a>\n\nCould customize with \"-in:starred\" or similar.\n<a href=\"https://twitter.com/benlcollins\" class=\"u-mention\"></a>",
           "text": "My apps script solution 😎\njustin.poehnelt.com/posts/automate…\n\nCould customize with \"-in:starred\" or similar."
         },
         "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
@@ -67,11 +67,78 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Ben Collins",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/04c24853c26d2deff5fce14866988e79ef0ef19a9edd2e39c4100d4698b1c870.jpg",
+          "url": "https://twitter.com/benlcollins"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1584959439723171840#favorited-by-19338407",
+        "published": null,
+        "wm-received": "2022-10-25T21:31:46Z",
+        "wm-id": 1544790,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1584959439723171840/19338407",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "like-of": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Ben Collins",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/04c24853c26d2deff5fce14866988e79ef0ef19a9edd2e39c4100d4698b1c870.jpg",
+          "url": "https://twitter.com/benlcollins"
+        },
+        "url": "https://twitter.com/benlcollins/status/1584974129639620610",
+        "published": "2022-10-25T18:24:14+00:00",
+        "wm-received": "2022-10-25T21:31:44Z",
+        "wm-id": 1544789,
+        "wm-source": "https://brid.gy/comment/twitter/jpoehnelt/1584959439723171840/1584974129639620610",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "content": {
+          "html": "I like it! 👏\n<a href=\"https://justin.poehnelt.com/\" class=\"u-mention\"></a>\n<a href=\"https://twitter.com/jpoehnelt\" class=\"u-mention\"></a>",
+          "text": "I like it! 👏"
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Justin Poehnelt",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/ae24c5faa7c7459b0e20ecef19ce2c3723ab7fb7bcaf8df1b9272a814b32025c.jpg",
+          "url": "https://twitter.com/jpoehnelt"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1584959439723171840",
+        "published": "2022-10-25T17:25:52+00:00",
+        "wm-received": "2022-10-25T21:31:44Z",
+        "wm-id": 1544788,
+        "wm-source": "https://brid.gy/comment/twitter/jpoehnelt/1584959439723171840/1584959439723171840",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "photo": [
+          "https://pbs.twimg.com/media/Ff7nuXyVQAAXD1U.png"
+        ],
+        "content": {
+          "html": "My apps script solution 😎\n<a href=\"https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/\">justin.poehnelt.com/posts/automate…</a>\n\nCould customize with \"-in:starred\" or similar.\n<a href=\"https://twitter.com/benlcollins\" class=\"u-mention\"></a>",
+          "text": "My apps script solution 😎\njustin.poehnelt.com/posts/automate…\n\nCould customize with \"-in:starred\" or similar."
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      }
+    ],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/2022-mogollon-monster-planning-splits/": {
@@ -113,11 +180,48 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Jamil",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/11d0a9f90ea21543b5d31bb6366e34621f09f0487bc26ff1087bd27b705efd11.jpg",
+          "url": "https://twitter.com/JamilCoury"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1567305868382990342#favorited-by-156760775",
+        "published": null,
+        "wm-received": "2022-10-07T05:33:04Z",
+        "wm-id": 1534135,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1567305868382990342/156760775",
+        "wm-target": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
+        "like-of": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
+        "wm-property": "like-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Kirk",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/915b7092b97144657d27069a459a83bf97fae9592e0f9df657d8e764097e5872.jpg",
+          "url": "https://twitter.com/dreamsitup"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1567305868382990342#favorited-by-407521576",
+        "published": null,
+        "wm-received": "2022-09-12T10:41:22Z",
+        "wm-id": 1516667,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1567305868382990342/407521576",
+        "wm-target": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
+        "like-of": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/": {
@@ -141,11 +245,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Matthias Ott",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/a34d0a855d4336e07245950e108a3d322445dabff46cfb01e805208ca3d8abcc.jpg",
+          "url": "https://twitter.com/m_ott"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1544777432770588673#favorited-by-58448784",
+        "published": null,
+        "wm-received": "2022-07-07T01:04:23Z",
+        "wm-id": 1429169,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1544777432770588673/58448784",
+        "wm-target": "https://justin.poehnelt.com/",
+        "like-of": "https://justin.poehnelt.com/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/unwatching-all-repos-in-github-org/": {
@@ -169,11 +292,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Mike Pegg",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/5e085f71c61bdca332e46e5a5eca2b9ccd75a4b2694c41f4f233298b310dbdd5.jpg",
+          "url": "https://twitter.com/Mpegg"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1534583030097973249#favorited-by-1221351",
+        "published": null,
+        "wm-received": "2022-06-09T00:24:51Z",
+        "wm-id": 1411858,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1534583030097973249/1221351",
+        "wm-target": "https://justin.poehnelt.com/posts/unwatching-all-repos-in-github-org/",
+        "like-of": "https://justin.poehnelt.com/posts/unwatching-all-repos-in-github-org/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/what-is-devrel/": {
@@ -197,11 +339,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Martin Kleppe",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/6336206c87feda07c2fc996c21e08ea436eac5e6e2b7d0c935c27ed9d420410b.jpg",
+          "url": "https://twitter.com/aemkei"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1524542062678450176#favorited-by-807289",
+        "published": null,
+        "wm-received": "2022-05-12T21:09:43Z",
+        "wm-id": 1397238,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1524542062678450176/807289",
+        "wm-target": "https://justin.poehnelt.com/posts/what-is-devrel/",
+        "like-of": "https://justin.poehnelt.com/posts/what-is-devrel/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/2022-cocodona-250-aid-drop-bags/": {
@@ -225,11 +386,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Cocodona 250",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/01800f79c28b460620d316b21f862d1d94cba23a60b710a1a900bebcf8da2e19.jpg",
+          "url": "https://twitter.com/Cocodona250"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1519153721300631553#favorited-by-1234876708462874624",
+        "published": null,
+        "wm-received": "2022-04-28T07:07:11Z",
+        "wm-id": 1388316,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1519153721300631553/1234876708462874624",
+        "wm-target": "https://justin.poehnelt.com/posts/2022-cocodona-250-aid-drop-bags/",
+        "like-of": "https://justin.poehnelt.com/posts/2022-cocodona-250-aid-drop-bags/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/running-with-exertional-compartment-syndrome/": {
@@ -253,11 +433,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Jeff Garmire",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/05ed637e124ee7c78d3d3a68026db01d5171fc69fe2a48cd3830c52be2e3af43.jpg",
+          "url": "https://twitter.com/JeffGarmire"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1515088248162316290#favorited-by-1240123364",
+        "published": null,
+        "wm-received": "2022-04-18T03:57:42Z",
+        "wm-id": 1382604,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1515088248162316290/1240123364",
+        "wm-target": "https://justin.poehnelt.com/posts/running-with-exertional-compartment-syndrome/",
+        "like-of": "https://justin.poehnelt.com/posts/running-with-exertional-compartment-syndrome/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/sync-branches-github-workflow/": {
@@ -281,11 +480,30 @@
         "wm-private": false
       }
     ],
-    "likes": [],
-    "replies": [],
-    "mention": [],
-    "repost": [],
-    "bookmark": [],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Vijon",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/7519dfc5dc6295614cdb121c8b50a74bccedd61c1bc263cbf427f31c7c52fa66.jpg",
+          "url": "https://twitter.com/vijooooooo"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1513934627249000453#favorited-by-783767408427360258",
+        "published": null,
+        "wm-received": "2022-04-18T03:57:15Z",
+        "wm-id": 1382603,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1513934627249000453/783767408427360258",
+        "wm-target": "https://justin.poehnelt.com/posts/sync-branches-github-workflow/",
+        "like-of": "https://justin.poehnelt.com/posts/sync-branches-github-workflow/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   }
 }
