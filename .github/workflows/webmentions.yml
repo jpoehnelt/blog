@@ -5,7 +5,7 @@ on:
   repository_dispatch:
     types: [Received Webmention]
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 * * * *"
 
 jobs:
   webmentions:
