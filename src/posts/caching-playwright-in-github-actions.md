@@ -36,8 +36,6 @@ And it works! :tada:
 
 {% image src="src/images/playwright-caching.png", alt="Output for the GitHub action with Playwright browser binaries cached" %}
 
-{% inlineAd %}
-
 If you don't do this properly, you might run into the following error.
 
 > Host system is missing dependencies to run browsers.

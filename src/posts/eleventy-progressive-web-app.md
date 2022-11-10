@@ -48,7 +48,6 @@ Install the [workbox-build](https://www.npmjs.com/package/workbox-build) package
 
 > The workbox-build module integrates into a node-based build process and can generate an entire service worker, or just generate a list of assets to precache that could be used within an existing service worker.
 
-
 ```bash
 npm i -D workbox-build
 ```

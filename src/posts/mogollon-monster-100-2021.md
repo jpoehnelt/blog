@@ -23,8 +23,6 @@ A week ago I attempted my second 100 mile ultra race, the Mogollon Monster 100 m
 
 {% image src="src/images/mogollon-monster-100/trail.jpeg", alt="rugged trails of the Mogollon Rim" %}
 
-{% inlineAd %}
-
 ## About the Mogollon Monster
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HIiR5fmgYLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -38,8 +36,6 @@ Horrible nausea kicked in around mile 85; tried to blast through, but heat, dehy
 Also had horrible gastro issues of a different kind in the first 20 miles. Lost about 20 minutes making unplanned stops. :shit:
 
 Trail was super rugged and washed out almost everywhere, but pro, Jeff Browning, blew the field away by hours.
-
-{% inlineAd %}
 
 ## First 100 mile finish
 

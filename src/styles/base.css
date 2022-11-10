@@ -202,11 +202,6 @@ p > code {
   @apply px-1;
 }
 
-/* https://stackoverflow.com/a/72135921 */
-ins.adsbygoogle[data-ad-status="unfilled"] {
-  display: none !important;
-}
-
 .blur-img {
   -webkit-filter: blur(5px);
   filter: blur(5px);

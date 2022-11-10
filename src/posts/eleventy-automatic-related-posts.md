@@ -64,8 +64,6 @@ tfidf.tfidfs('node ruby', function(i, measure) {
 });
 ```
 
-{% inlineAd %}
-
 ## Wrapping it into two libraries
 
 While the package, [natural](https://www.npmjs.com/package/natural), is great for natural language processing, it didn't really offer the interface and abstraction that I wanted to share.

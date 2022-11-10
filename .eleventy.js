@@ -11,35 +11,6 @@ module.exports = (config) => {
   config.addAsyncShortcode("image", require("./shortcodes/image"));
   config.addShortcode("strava", require("./shortcodes/strava"));
   config.addShortcode("barChart", require("./shortcodes/bar-chart"));
-  config.addShortcode(
-    "inlineAd",
-    () =>
-      `<div class="my-4"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
-<ins 
-  class="adsbygoogle" 
-  style="display:block;text-align:center;" 
-  data-ad-layout="in-article" 
-  data-ad-format="fluid" 
-  data-ad-client="ca-pub-1251836334060830" 
-  data-ad-slot="4574002733"
-></ins>
-<script> (adsbygoogle = window.adsbygoogle || []).push({});</script></div>`
-  );
-
-  config.addShortcode(
-    "linkAd",
-    () =>
-      `<div class="my-4"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830" crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-  style="display:block"
-  data-matched-content-ui-type="text"
-  data-matched-content-rows-num="4"
-  data-matched-content-columns-num="1"
-  data-ad-format="autorelaxed"
-  data-ad-client="ca-pub-1251836334060830"
-  data-ad-slot="1370955012"></ins>
-<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div>`
-  );
 
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
