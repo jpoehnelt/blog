@@ -3,6 +3,9 @@ import path from "path";
 import fs from "fs";
 import { XMLParser } from "fast-xml-parser";
 
+const toObject = (arr: { guid: string; pubDate: string }[]) =>
+  Object.fromEntries(arr.map((item) => [item.guid, item]));
+
 const main = async () => {
   const file = path.join("src", "_data", "mastodon.json");
 
@@ -12,12 +15,11 @@ const main = async () => {
 
   const parser = new XMLParser();
   const parsed = parser.parse(data);
-  const posts = Object.fromEntries(
-    parsed.rss.channel.item.map((item) => [item.guid, item])
+  const posts = toObject(parsed.rss.channel.item);
+  const existing = toObject(JSON.parse(fs.readFileSync(file, "utf8")));
+  const updated = Object.values({ ...existing, ...posts }).sort((a, b) =>
+    b.guid.localeCompare(a.guid)
   );
-
-  const existing = JSON.parse(fs.readFileSync(file, "utf8"));
-  const updated = { ...existing, ...posts };
 
   fs.writeFileSync(file, JSON.stringify(updated, null, 2));
 };

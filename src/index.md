@@ -30,10 +30,10 @@ Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/ru
 You can follow me on these other sites.
 
 <ul>
+    <li>Fediverse: <a href="https://mastodon.thbps.com/@jpoehnelt" rel="me">@jpoehnelt@mastodon.thbps.com</a></li>
     <li><a rel="noopener noreferrer" href="https://github.com/jpoehnelt" rel="me">GitHub</a></li>
-    <li><a rel="noopener noreferrer" href="https://twitter.com/jpoehnelt" rel="me">Twitter</a></li>
+    <li class="line-through"><a rel="noopener noreferrer" href="https://twitter.com/jpoehnelt" rel="me">Twitter</a></li>
     <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/justin-poehnelt" rel="me">LinkedIn</a></li>
-    <li><a rel="noopener noreferrer" href="https://jpoehnelt.medium.com/" rel="me">Medium</a></li>
     <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev</a></li>
 </ul>
 
@@ -44,6 +44,7 @@ You can follow me on these other sites.
 {% endfor %}
 
 See more at [/blog](/blog).
+
 ## Misc
 
 {% include "rss-feed.njk" %}
