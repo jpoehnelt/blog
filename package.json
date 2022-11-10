@@ -14,7 +14,8 @@
     "dev": "npm-run-all clean build:js build:css build:11ty -p dev:*",
     "prepare": "run-p prepare:*",
     "prepare:refresh": "esbuild automations/strava-refresh.ts --outfile=dist/strava-refresh.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
-    "prepare:ingest": "esbuild automations/strava-ingest.ts --outfile=dist/strava-ingest.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
+    "prepare:strava": "esbuild automations/strava-ingest.ts --outfile=dist/strava-ingest.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
+    "prepare:mastodon": "esbuild automations/mastodon-ingest.ts --outfile=dist/mastodon-ingest.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
     "prepare:npm": "esbuild automations/npm.ts --outfile=dist/npm.mjs --bundle --platform=node --format=esm --external:./node_modules/*",
     "webmentions": "node automations/mentions.mjs"
   },
@@ -66,8 +67,10 @@
     "workbox-build": "^6.5.2"
   },
   "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@netlify/functions": "^1.0.0",
     "debounce-fn": "^5.1.0",
+    "fast-xml-parser": "^4.0.11",
     "lazysizes": "^5.3.2",
     "netlify-plugin-cache": "^1.0.3",
     "universal-analytics": "^0.5.3"
