@@ -12,9 +12,7 @@ tags:
 date: '2022-05-12T00:00:00.000Z'
 ---
 
-The [GitHub cli tool](https://cli.github.com/) `gh` now has a search feature! I recently had a use case requiring DependaBot to rebase all pull requests across the GitHub organization repositories. 
-
-{% inlineAd %}
+The [GitHub cli tool](https://cli.github.com/) `gh` now has a search feature! I recently had a use case requiring DependaBot to rebase all pull requests across the GitHub organization repositories.
 
 The following shell command did the trick by piping the output of `gh search prs` to `gh pr comment`:
 
@@ -29,4 +27,3 @@ gh search prs \
   gh pr comment -b "@dependabot rebase" {}
 ```
 
-{% inlineAd %}
