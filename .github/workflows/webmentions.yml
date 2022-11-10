@@ -30,13 +30,13 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Fetch webmentions
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
         run: npm run webmentions
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           commit-message: 'chore: update mentions'
           branch: chore/webmentions
