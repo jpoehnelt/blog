@@ -5,6 +5,54 @@
         "type": "entry",
         "author": {
           "type": "card",
+          "name": "Justin Poehnelt",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/f941228875439912398bdaabbbe1a8df9bc667dcb35c389c6f0d715334436bea.jpg",
+          "url": "https://mastodon.thbps.com/@jpoehnelt"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/109320430886795649",
+        "published": "2022-11-10T16:23:15",
+        "wm-received": "2022-11-10T19:15:43Z",
+        "wm-id": 1555197,
+        "wm-source": "https://brid.gy/comment/mastodon/@jpoehnelt@mastodon.thbps.com/109318255432272442/109320430886795649",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "photo": [
+          "https://mastodon.thbps.com/system/media_attachments/files/109/320/417/976/656/514/original/8e46bcb6e2d28d52.png",
+          "https://mastodon.thbps.com/system/media_attachments/files/109/320/425/984/189/545/original/5aee1abcfe808174.png"
+        ],
+        "content": {
+          "html": "<p><span class=\"h-card\"><a class=\"u-url\" href=\"https://front-end.social/@sia\">@<span>sia</span></a></span> </p><p>And it worked!</p>\n<a href=\"https://brid.gy/\" class=\"u-mention\"></a>",
+          "text": "@sia And it worked!"
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Sia Karamalegos",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/dd2375b7c4a416d75821e7bd0e718ae5cfaba7f85ba833b1018c8dbe3f18ae0c.jpg",
+          "url": "https://front-end.social/@sia"
+        },
+        "url": "https://front-end.social/@sia/109320657797657924",
+        "published": "2022-11-10T17:20:57",
+        "wm-received": "2022-11-10T19:15:41Z",
+        "wm-id": 1555196,
+        "wm-source": "https://brid.gy/comment/mastodon/@jpoehnelt@mastodon.thbps.com/109318255432272442/109320657818780603",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "content": {
+          "html": "<p><span class=\"h-card\"><a class=\"u-url\" href=\"https://mastodon.thbps.com/@jpoehnelt\">@<span>jpoehnelt</span></a></span> 🙌</p>\n<a href=\"https://brid.gy/\" class=\"u-mention\"></a>",
+          "text": "@jpoehnelt 🙌"
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
           "name": "Sia Karamalegos",
           "photo": "https://webmention.io/avatar/mastodon.thbps.com/dd2375b7c4a416d75821e7bd0e718ae5cfaba7f85ba833b1018c8dbe3f18ae0c.jpg",
           "url": "https://front-end.social/@sia"
@@ -124,6 +172,54 @@
       }
     ],
     "in-reply-to": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Justin Poehnelt",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/f941228875439912398bdaabbbe1a8df9bc667dcb35c389c6f0d715334436bea.jpg",
+          "url": "https://mastodon.thbps.com/@jpoehnelt"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/109320430886795649",
+        "published": "2022-11-10T16:23:15",
+        "wm-received": "2022-11-10T19:15:43Z",
+        "wm-id": 1555197,
+        "wm-source": "https://brid.gy/comment/mastodon/@jpoehnelt@mastodon.thbps.com/109318255432272442/109320430886795649",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "photo": [
+          "https://mastodon.thbps.com/system/media_attachments/files/109/320/417/976/656/514/original/8e46bcb6e2d28d52.png",
+          "https://mastodon.thbps.com/system/media_attachments/files/109/320/425/984/189/545/original/5aee1abcfe808174.png"
+        ],
+        "content": {
+          "html": "<p><span class=\"h-card\"><a class=\"u-url\" href=\"https://front-end.social/@sia\">@<span>sia</span></a></span> </p><p>And it worked!</p>\n<a href=\"https://brid.gy/\" class=\"u-mention\"></a>",
+          "text": "@sia And it worked!"
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Sia Karamalegos",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/dd2375b7c4a416d75821e7bd0e718ae5cfaba7f85ba833b1018c8dbe3f18ae0c.jpg",
+          "url": "https://front-end.social/@sia"
+        },
+        "url": "https://front-end.social/@sia/109320657797657924",
+        "published": "2022-11-10T17:20:57",
+        "wm-received": "2022-11-10T19:15:41Z",
+        "wm-id": 1555196,
+        "wm-source": "https://brid.gy/comment/mastodon/@jpoehnelt@mastodon.thbps.com/109318255432272442/109320657818780603",
+        "wm-target": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "content": {
+          "html": "<p><span class=\"h-card\"><a class=\"u-url\" href=\"https://mastodon.thbps.com/@jpoehnelt\">@<span>jpoehnelt</span></a></span> 🙌</p>\n<a href=\"https://brid.gy/\" class=\"u-mention\"></a>",
+          "text": "@jpoehnelt 🙌"
+        },
+        "in-reply-to": "https://justin.poehnelt.com/posts/automate-email-bankruptcy-using-apps-script/",
+        "wm-property": "in-reply-to",
+        "wm-private": false
+      },
       {
         "type": "entry",
         "author": {
