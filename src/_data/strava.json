@@ -50295,7 +50295,7 @@
     "achievement_count": 18,
     "kudos_count": 2,
     "comment_count": 0,
-    "athlete_count": 98,
+    "athlete_count": 99,
     "photo_count": 0,
     "map": {
       "id": "a3020691900",
@@ -109270,5 +109270,72 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 34
+  },
+  "8114868876": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Afternoon Trail Run",
+    "distance": 8363.9,
+    "moving_time": 3315,
+    "elapsed_time": 3484,
+    "total_elevation_gain": 202,
+    "type": "Run",
+    "sport_type": "TrailRun",
+    "workout_type": null,
+    "id": 8114868876,
+    "start_date": "2022-11-13T23:34:37Z",
+    "start_date_local": "2022-11-13T16:34:37Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -25200,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a8114868876",
+      "summary_polyline": "gqdcFxkjqS?MQUMINLk@Ng@ASBUZYJg@AODgAB[JWGCE[?kAIQEe@F?BBGLJ`@r@FbAAz@STGNORSf@WTc@R@HMNSFg@OSYWMaBWq@_@s@wAoBmB[_@OCiAL[Ko@q@EK@Q@IfA}APa@NkAKo@GKa@YKBs@?y@S]g@YSk@o@_@Mk@e@OWIa@SYCQ_@u@SUO?Q_@K_@CYQq@?MHYQ[@g@E{@B[JW?IUKS[a@_@m@_@g@s@e@YSUMCKIaAEaB}@MBa@PIHw@I[b@AHGDCCCQ?SBSFSAKBIES@M@CPIROFM@MGUQ_@e@kAOUMCCGBg@J[I]S]GGa@BMFGJLTDh@FPDb@J`@Bx@Fd@@z@J^KPWGOc@UUGy@MSo@iAu@o@kAM{@O_@UYYWOmAWa@Bw@Oe@SkCq@s@_@m@Q[M?CUA_@Mw@Hq@EYL[Io@?k@FKHIXKJ[F[`@_@NKLGRORc@NMLYHMVOHQVKDUGS?c@K[?UHURGIIs@IQq@[SQIQQ{@IK[OSCa@Fs@EMGW[g@QWH]@QIQD]Km@@u@QMOWCSFMLIX?PKFSBILUH_AIsARm@?cATSRGNSPAJ_@h@EVMTCNMR[|@?DFHLG^g@h@GHMj@Of@YTCZMr@@PHd@LdACXM`@ER@x@f@d@Fj@f@\\@JBl@f@NRJX`@H^PRTN@VMZLJLZn@`@jB\\v@J`@JFZIb@c@b@AJERSTI|@Q^OZ@b@O^_@TEl@?b@PDFb@Rn@f@ZLZ@RMPQr@DRCVSNSj@[TGd@XLTd@ZPXFBLQb@Q`AQ\\MNDZZL`@A\\FT?`@BNEDGp@Zb@`@nAd@^j@ZLTOb@MFKVC@YBi@MWByAUiBBk@RMNENMx@Ch@?d@Fh@Zh@l@xAvAtCVp@`ArAh@Tx@P\\?j@OvAEzAQj@ML@^h@jBhBb@f@Zj@`@bAR^d@bAp@fAZFvAKd@J`Bt@f@`@~BfA^Fh@@f@CtAWf@GNHJAdAR\\B|Br@hAh@|Cp@b@LlAn@H?v@[^YH[@KHSHs@JYB]RUp@c@^[|@sAFg@AI@eAGe@S]OIEO@In@SxAKpB@xBLHAVYRKt@CLEFKLAJ@X^",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.38404016941786,
+      -107.8650833107531
+    ],
+    "end_latlng": [
+      37.38395291380584,
+      -107.86488583311439
+    ],
+    "average_speed": 2.523,
+    "max_speed": 4.354,
+    "average_cadence": 77,
+    "average_temp": 13,
+    "has_heartrate": true,
+    "average_heartrate": 142,
+    "max_heartrate": 158,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2325.2,
+    "elev_low": 2205.2,
+    "upload_id": 8688788685,
+    "upload_id_str": "8688788685",
+    "external_id": "garmin_ping_247014119305",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 51
   }
 }
