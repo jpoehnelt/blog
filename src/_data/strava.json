@@ -51764,7 +51764,7 @@
     "achievement_count": 14,
     "kudos_count": 5,
     "comment_count": 0,
-    "athlete_count": 3,
+    "athlete_count": 2,
     "photo_count": 0,
     "map": {
       "id": "a3102887043",
@@ -109404,5 +109404,72 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 26
+  },
+  "8124261382": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "Short hill workout",
+    "distance": 5371.5,
+    "moving_time": 1850,
+    "elapsed_time": 1859,
+    "total_elevation_gain": 133.5,
+    "type": "Run",
+    "sport_type": "TrailRun",
+    "workout_type": 0,
+    "id": 8124261382,
+    "start_date": "2022-11-16T01:10:20Z",
+    "start_date_local": "2022-11-15T18:10:20Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -25200,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 0,
+    "kudos_count": 1,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a8124261382",
+      "summary_polyline": "epdcF|ljqSAA@EPMJCZOXQh@KL@PLNEPBt@a@FBJJFP@xAAj@K|@EXENQXGJSJSDg@Tu@^u@r@ODU@SLKNQPWd@Sf@Gd@@zABJHDFLNP`@JRBNAv@Uh@Yz@QdAa@|@MR?^D~@b@NDu@C_@KUAeBZw@JmA^SBQFu@PbAi@|@_@n@OXMr@O`AG\\DlAb@a@Oq@IcA@_B^_Cx@[DU@r@_@jBm@`@QzAYX?`@DrAd@MAe@Mg@Ia@AYBwA^}@\\iCn@`Ae@n@WnBm@`ASn@@d@DXHf@ZoAYSCm@B_BZw@Va@RgATg@FXGpDyAdASf@Cd@Br@P^PG@i@Oo@GoAF{@TWNYDKJoBb@KFTOz@_@lBk@b@Qt@Od@?`@D^J`Ab@^H`@Fr@BdCAxCq@fAI\\BB??Fw@NY@o@JUHe@HWHs@H]?iDMc@KSI]GqAc@aA?i@Ly@\\wC|@c@Pu@T]Lu@JiA^k@Rs@NUHO@_@FyAGaAQoAo@WGe@WSSOg@IkADm@d@_BL{@FQLSr@m@t@aAd@y@HUBW@YEo@O_@_@c@CQJCZSZ?ZCLBp@@f@Fr@EpBNTKLQLEx@IRMJ?LH",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.38387395627797,
+      -107.8652703948319
+    ],
+    "end_latlng": [
+      37.38410437479615,
+      -107.86486462689936
+    ],
+    "average_speed": 2.903,
+    "max_speed": 4.634,
+    "average_cadence": 81.2,
+    "average_temp": 23,
+    "has_heartrate": true,
+    "average_heartrate": 142.6,
+    "max_heartrate": 168,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2270.4,
+    "elev_low": 2209.3,
+    "upload_id": 8699398211,
+    "upload_id_str": "8699398211",
+    "external_id": "garmin_ping_247285033808",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 28
   }
 }
