@@ -1,0 +1,23 @@
+{
+  "subject": "acct:jpoehnelt@mastodon.thbps.com",
+  "aliases": [
+    "https://mastodon.thbps.com/@jpoehnelt",
+    "https://mastodon.thbps.com/users/jpoehnelt"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.thbps.com/@jpoehnelt"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.thbps.com/users/jpoehnelt"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.thbps.com/authorize_interaction?uri={uri}"
+    }
+  ]
+}
