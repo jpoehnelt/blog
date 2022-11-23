@@ -7,6 +7,7 @@ const htmlParser = require("node-html-parser");
 
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
+  config.addPassthroughCopy({ "src/static/.well-known/*": "/.well-known/" });
 
   config.addAsyncShortcode("image", require("./shortcodes/image"));
   config.addShortcode("strava", require("./shortcodes/strava"));
