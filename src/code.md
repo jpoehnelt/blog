@@ -12,7 +12,7 @@ Approximately two thirds of my work is supporting open source and remainder of m
 
 ## Recent posts
 
-{% for recent in collections.code | reverse | limit(10) -%}
+{% for recent in collections.code | reverse | limit(20) -%}
 * {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
 {% endfor %}
 
