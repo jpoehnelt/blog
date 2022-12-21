@@ -27,8 +27,6 @@ The Behind the Rocks Ultra 50k race is the final race of the Moab Triple Crown i
 
 This was probably my worst week and morning leading up to a race. I was truly 50/50 on whether I was going to run when I woke up at 4:30 am. I kept thinking about a recent podcast episode of Some Work All Play and DNFs.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New SWAP podcast! <a href="https://twitter.com/Meg_Runs_Happy?ref_src=twsrc%5Etfw">@Meg_Runs_Happy</a> and I talked about some wildly cool studies on speed training science, how simple training changes can improve performance for most athletes, caffeine, and the power of DNFs in racing and in life. Thank you all! WOOHOO! <a href="https://t.co/akvofpc7cE">https://t.co/akvofpc7cE</a></p>&mdash; David Roche (@MountainRoche) <a href="https://twitter.com/MountainRoche/status/1504195775525363716?ref_src=twsrc%5Etfw">March 16, 2022</a></blockquote>
-
 ### Running injured
 
 This was the first race where I took a pain killer, Tylenol ([never take NSAIDs](https://med.stanford.edu/news/all-news/2017/07/pain-reliever-linked-to-kidney-injury-in-endurance-runners.html)). It all started when I randomly had a spasm in the medial head of the Gastrocnemius (upper calf muscle) getting out of bed the weekend before the race. Yes really, I was in bed when it happened after two easy recovery days. The "Charley Horse" was so intense that it led to muscle tear and significant [DOMS](https://doi.org/10.2165/00007256-200333020-00005).

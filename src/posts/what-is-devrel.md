@@ -13,9 +13,11 @@ tags:
 date: "2022-05-11T15:31:22.346Z"
 ---
 
-There was a short discussion about DevRel on Twitter that got me thinking about my role and what I do as DevRel.
+There was a short discussion about DevRel that got me thinking about my role and what I do as DevRel. I removed the link to Birdsite. It was a meme stating:
 
-<div class="mb-8"><blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">Let’s do this! <a href="https://t.co/0cTDWDgKCZ">pic.twitter.com/0cTDWDgKCZ</a></p>&mdash; Corey Quinn (@QuinnyPig) <a href="https://twitter.com/QuinnyPig/status/1524230834898669568?ref_src=twsrc%5Etfw">May 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+:::note
+DevRel is marketing
+:::
 
 Some aspects of developer relations can certainly be considered marketing, but I think it can and should be far more. 
 
@@ -42,7 +44,9 @@ I'm going to define developer relations by what I do in my work.
 - Capture friction logs and other proposals based upon a deep understanding of the dev ecosystem -> **DevRel is Product**
 - Write tutorials, samples, documentation -> **DevRel is Tech Writing**
 
-<div class="mb-8"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sometimes it&#39;s about bringing knowledge of the general developer ecosystem back to pm/eng. For example, identifying challenges in using modern web frameworks for a 10+ year old JS product. This requires experience beyond what pm has and what eng is often familiar with.</p>&mdash; Justin Poehnelt (@jpoehnelt) <a href="https://twitter.com/jpoehnelt/status/1524435793401434112?ref_src=twsrc%5Etfw">May 11, 2022</a></blockquote></script></div>
+:::note
+Sometimes it is about bringing knowledge of the general developer ecosystem back to pm/eng. For example, identifying challenges in using modern web frameworks for a 10+ year old JS product. This requires experience beyond what pm has and what eng is often familiar with.
+:::
 
 ## Staying technical
 
