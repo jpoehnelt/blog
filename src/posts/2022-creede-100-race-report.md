@@ -65,11 +65,7 @@ At mile 82, my lungs wanted to give up. I was still motivated and my legs felt g
 
 I decided to keep going, but keep the exertion down. While walking across the mesa at 12,000 ft, the second place runner and his pacer passed me. It was demoralizing, but I had already decided I wasn't quitting. Instead I put a buff around my face to warm and moisten the air I was breathing and slowly keep moving until the sun came up and warmed my lungs up!
 
-Apparently, ultras are really hard on the respiratory system. More so at elevation and even worse in the cold. 
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/jasonkoop?ref_src=twsrc%5Etfw">@jasonkoop</a> I&#39;d be interested in a podcast on lung function during ultras and strategies to mitigate the reduction in function if any are available.<br> <a href="https://t.co/UTALZjUCSI">https://t.co/UTALZjUCSI</a></p>&mdash; Justin Poehnelt (@jpoehnelt) <a href="https://twitter.com/jpoehnelt/status/1564079547972292609?ref_src=twsrc%5Etfw">August 29, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Basically, protect your lungs from cold, dry, dusty air. Wear a buff or face mask. I'll be doing this for the Moab 240 in a few weeks! 
+Apparently, ultras are really hard on the respiratory system. More so at elevation and even worse in the cold. Basically, protect your lungs from cold, dry, dusty air. Wear a buff or face mask. I'll be doing this for the Moab 240 in a few weeks! 
 
 ## Leading a race
 
