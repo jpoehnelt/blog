@@ -11,7 +11,7 @@ tags:
   - utmb
   - dnf
   - canyons
-date: "2023-12-31T00:00:00.000Z"
+date: "2022-12-31T00:00:00.000Z"
 ---
 
 In 2022 I ran nearly 2400 miles and have big plans for 2023!
