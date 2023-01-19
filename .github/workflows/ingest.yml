@@ -33,8 +33,8 @@ jobs:
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
           STRAVA_AFTER: ${{ github.event.inputs.after }}
         run: node dist/strava-ingest.mjs
-      - name: Ingest NPM Packages
-        run: node dist/npm.mjs
+      #- name: Ingest NPM Packages
+      #  run: node dist/npm.mjs
       - name: Ingest Mastodon
         run: node dist/mastodon.mjs
       - name: Commit changes
