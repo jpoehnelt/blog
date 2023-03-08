@@ -48893,7 +48893,7 @@
     "achievement_count": 74,
     "kudos_count": 11,
     "comment_count": 0,
-    "athlete_count": 62,
+    "athlete_count": 61,
     "photo_count": 0,
     "map": {
       "id": "a2940315843",
@@ -116727,5 +116727,72 @@
     "total_photo_count": 0,
     "has_kudoed": false,
     "suffer_score": 29
+  },
+  "8678397192": {
+    "resource_state": 2,
+    "athlete": {
+      "id": 2170160,
+      "resource_state": 1
+    },
+    "name": "3 x 20 minutes, turned around at the mountain lion ",
+    "distance": 25772.7,
+    "moving_time": 7630,
+    "elapsed_time": 8241,
+    "total_elevation_gain": 163,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": 0,
+    "id": 8678397192,
+    "start_date": "2023-03-07T22:25:44Z",
+    "start_date_local": "2023-03-07T15:25:44Z",
+    "timezone": "(GMT-07:00) America/Denver",
+    "utc_offset": -25200,
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "achievement_count": 2,
+    "kudos_count": 2,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a8678397192",
+      "summary_polyline": "c_aaFfbesSAC]EmADwAAm@Is@Yw@q@o@u@Yc@}EwFqAeBm@i@i@]c@Qy@QkBQ{@YYSy@y@gEuFiD_E}ByCk@o@aI}JsBcDkCwEo@oAaA_C}@cDSaBOiCGcBBaCb@_MCo@Oq@m@qA_AaAgCiBcHoEw@m@[g@Yu@Ow@oAoJqAwHYeAu@yAs@eAwAiBkNcN_EaE{AiB}LePuAsBuNmReQ}U]o@kBgFwG}OkA_CsBiDmB_CuAyAmGaGgKcKuF}F{ByBu@{@{C{CkAsAcAsAaFcIyKuPWYq@kAiCqDg@e@}@m@}LcIsAaAm@o@s@}@wE{GuAgBiIiIuCqCeEkE{BuBeAy@oEsCaBu@kJeDoAk@mBkAg@_@[c@Wk@YcAYu@q@aA_@][Os@S}J}@mBUoAWoLeE_C_AaAc@q@c@qAeAk@g@_AeAyB_EwBmDk@w@i@g@_@YwBkAw@k@_EoEkBkBcBoBu@oAaAyCq@aBeA{AaC{CgAoASSyC}BiEyCaKwHaC_Ba@a@a@g@e@u@e@m@s@oA_@e@F?{@iAs@iAh@r@~@xAr@~@bBhCfAnA`DxBbIbGfA|@jFtDfAz@^^~DdFpAjBZr@pAzDVf@^l@j@p@vBxBbFrFzAhAbBz@z@r@Z^Zf@jFbJz@bAtAjAfAx@dBz@~LpE|Af@lAVtMrAdAN\\Lh@b@b@j@\\r@p@xBXf@f@d@|AdAr@^`OpFjBjApCnBnCfC|EdFxApAf@l@|CzC|CvCfAnAxClEn@z@z@nAfAnAfD|BzBrArDhCrAz@f@^bAdAjCvDpBbDxIzM~@|AhBrC|ClE`C`CxGbH~IbJ`DvC~JxJhAnAtAdBdC~Dp@nAdEvJxEzLj@bAjFhHpA`BzLlPt@~@dE|FtCrDxMnQ~AfBfEhEbB|AlIhIx@bAfA~Av@vAPd@Tz@pBfMl@fEP`ATt@\\b@h@h@v@h@dB`AvDbCnBvA^d@`@l@NZNd@Jn@Bz@c@nN?~APdDRxB`@jBl@dBf@nAxDfHxAbCdBbCxChDnAbBd@d@~@rAjBxBn@|@b@d@~DfFvBhCf@Zh@Vx@L|@Fv@NTF`Ah@h@f@lCjD|DtEbAfAt@h@h@Rl@FtCAb@B@Ee@CaBBqACi@O[O}@s@yDqEaDyDBHr@~@vClDvCfDl@b@v@Zn@JlDC",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      37.03810025006533,
+      -108.16563564352691
+    ],
+    "end_latlng": [
+      37.038186667487025,
+      -108.16556883975863
+    ],
+    "average_speed": 3.378,
+    "max_speed": 4.784,
+    "average_cadence": 87.3,
+    "average_temp": 17,
+    "has_heartrate": true,
+    "average_heartrate": 161.3,
+    "max_heartrate": 192,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 2100.6,
+    "elev_low": 1954.2,
+    "upload_id": 9315561990,
+    "upload_id_str": "9315561990",
+    "external_id": "garmin_ping_263344886287",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "suffer_score": 284
   }
 }
