@@ -102,27 +102,27 @@ module.exports = (config) => {
   config.addWatchTarget("./public/assets/*");
   config.addWatchTarget("./shortcodes/*");
 
-  // config.on("eleventy.after", async () => {
-  //   const options = {
-  //     cacheId: "sw",
-  //     skipWaiting: true,
-  //     clientsClaim: true,
-  //     swDest: `public/sw.js`,
-  //     globDirectory: "public",
-  //     globPatterns: [
-  //       "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
-  //     ],
-  //     runtimeCaching: [
-  //       {
-  //         urlPattern:
-  //           /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-  //         handler: `CacheFirst`,
-  //       },
-  //     ],
-  //   };
+  config.on("eleventy.after", async () => {
+    const options = {
+      cacheId: "sw",
+      skipWaiting: true,
+      clientsClaim: true,
+      swDest: `public/sw.js`,
+      globDirectory: "public",
+      globPatterns: [
+        "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
+      ],
+      runtimeCaching: [
+        {
+          urlPattern:
+            /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+          handler: `NetworkOnly`,
+        },
+      ],
+    };
 
-  //   await workbox.generateSW(options);
-  // });
+    await workbox.generateSW(options);
+  });
 
   return {
     markdownTemplateEngine: "njk",
