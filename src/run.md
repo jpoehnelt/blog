@@ -25,6 +25,8 @@ See more at <a class="tag run" href="/tag/run">run</a>.
 In 2017, I ran my first ultra marathon and have since completed many 50km races and a single 50 miler and 100 miler. You can follow my results at [ultrasignup.com](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt).
 
 ### Upcoming events
+- [Canyons 100 mile](https://canyons.utmb.world/races/100m) - April 28, 2023
+- [Moab 240](https://www.destinationtrailrun.com/moab) - October 13, 2023
 
 ### Past results
 
