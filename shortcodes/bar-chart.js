@@ -6,7 +6,7 @@ module.exports = function ({data, margin}) {
 
   //set up svg using margin conventions - we'll need plenty of room on the left for labels
   margin = margin ?? {
-    right: 80,
+    right: 100,
     left: 80,
   };
 
