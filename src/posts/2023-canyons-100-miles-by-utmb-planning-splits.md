@@ -17,13 +17,13 @@ date: '2023-03-28T00:00:00.000Z'
 
 I'm running the Canyons 100 mile race in April! This will be my first experience on these iconic trails and I am using this blog post to capture some of my planning. I'll be making updates as the race approaches!
 
+:::note
+All information here has been updated for the alternate 2023 course.
+:::
+
 ## 24 hour splits :clock1:
 
-Here are my roughly estimates splits for a 24 hour finish of the Canyons 100 mile. There are likely mistakes in the table and I'll update this page in the future. UTMB has some discrepancies between the [Aid Station Chart](https://res.cloudinary.com/utmb-world/image/upload/v1678114879/canyons/PDFs/2023_Canyons_Endurance_Runs_by_UTMB_100_mile_Aid_Station_Elevation_Chart_b4e00198ec.pdf.pdf) and the [Time Charts](https://canyons.utmb.world/races/100M) on their website and I did a bunch of manual calculations and conversions.
-
-:::note
-All values in miles and feet.
-:::
+Here are my roughly estimates splits for a 21.5 hour finish of the Canyons 100 mile. 
 
 <div class="mb-6">
     <table class="w-full">
@@ -31,8 +31,8 @@ All values in miles and feet.
     <tr class="font-bold bg-gray-800 text-xl border-b-2 mb-2">
     <th>Aid Station</th>
     <th>Distance</th>
-    <th>Average Gain</th>
-    <th>Pace</th>
+    <th>Avg Gain</th>
+    <th>Avg Pace</th>
     <th>Aid</th>
     <th>Clock</th>
     </tr>
@@ -52,37 +52,23 @@ All values in miles and feet.
     </table>
 </div>
 
-I'm not counting on any crew and will be using drop bags at the aid stations. I'm also not planning to have a pacer. If you have a crew, you will likely spend less time at some of the aid stations than I am and more at others.
+I'm not counting on any crew and will be using drop bags at the aid stations. I'm also not planning to have a pacer.
 
 You can see some of my [latest runs and past race reports here](/run/#recent-activities). This would be my fastest 100 mile finish time, but also the [most runnable course I have done](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt#) and fifth 100 miler!
 
 ## Sunset, sunrise :sunrise:
 
-- Sunset is at 7:54 -> I need to grab extra night gear from my drop bag at Mammoth Bar.
-- Sunrise is at 6:09 -> I can stash extra night gear at Mitchell Mine.
-
-## Conditions: :fire: :snowflake:
-
-Snow and trail conditions resulting from the Mosquito fire could slow things down. Here is the latest map from Sentinel 2 imagery on March 25:
-
-{% image src="src/images/canyons-by-utmb-snow-map-2023-03-25.png", alt="Latest map showing snow along the Canyons course" %}
-
-You can also get some updates on the trail work being done at the [Western States website](https://www.wser.org/2023/03/25/update-mosquito-fire-trail-restoration/). Follow the Canyons 100 mile by UTMB on [Facebook](https://www.facebook.com/runcanyons/) for more updates.
+- Sunset is at 7:54 -> I will pick up additional night gear at Driver's Flat.
+- Sunrise is at 6:09 -> I can stash extra night gear at Foresthill.
 
 ## Other estimates :hourglass:
 
-- "Fastest" time according to UTMB: 21:02
-- Strava estimated **moving** time: 19:48 :man_shrugging: I uploaded the GPX file to Strava at the end of February and you can check it out [at Strava](https://www.strava.com/routes/3065772647029620938) or in the embed below.
+- "Fastest" time according to UTMB: 20:56 :thinking: This is only a few minutes less than the original course which doesn't seem right.
+- Strava estimated **moving** time: 18:37 :man_shrugging: I uploaded the GPX file to Strava and you can check it out [at Strava](https://www.strava.com/routes/3076999906543797568) or in the embed below. I think this estimate is closer to what the winners will finish in than what my time will be.
 
-<div class="max-w-lg m-auto mb-4"><div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3065772647029620938" data-full-width="true"></div><script src="https://strava-embeds.com/embed.js"></script></div>
+<div class="max-w-lg m-auto mb-4"><div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3076999906543797568" data-full-width="true"></div><script src="https://strava-embeds.com/embed.js"></script></div>
 
-## Aid station chart :chart_with_upwards_trend:
-
-This aid station chart [accessed March 29](https://res.cloudinary.com/utmb-world/image/upload/v1678114879/canyons/PDFs/2023_Canyons_Endurance_Runs_by_UTMB_100_mile_Aid_Station_Elevation_Chart_b4e00198ec.pdf.pdf) is missing the Deadwood aid stations.
-
-{% image src="src/images/canyons-100-mile-aid-station-chart.png", alt="Aid station chart" %}
-
-## Ultrasignup rating distribution
+## Ultrasignup rating distribution :trophy:
 
 As everyone knows, there is some direct placement into UTMB for top finishers. Here is a quick graph showing all runners in the 100 mile distance with bucketed by their UltraSignup rating.
 
