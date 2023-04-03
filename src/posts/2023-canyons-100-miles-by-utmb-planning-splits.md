@@ -70,7 +70,7 @@ You can see some of my [latest runs and past race reports here](/run/#recent-act
 
 ## Ultrasignup rating distribution :trophy:
 
-As everyone knows, there is some direct placement into UTMB for top finishers. Here is a quick graph showing all runners in the 100 mile distance with bucketed by their UltraSignup rating.
+As everyone knows, there is some direct placement into UTMB for top finishers. Here is a quick graph showing all runners in the 100 mile distance bucketed by their UltraSignup rating.
 
 {% image src="src/images/canyons-by-utmb-ultrasignup-rating-distribution.png", alt="UltraSignup rating distribution" %}
 
