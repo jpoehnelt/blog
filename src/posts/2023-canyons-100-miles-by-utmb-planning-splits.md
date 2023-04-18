@@ -21,9 +21,9 @@ I'm running the Canyons 100 mile race in April! This will be my first experience
 All information here has been updated for the alternate 2023 course.
 :::
 
-## Sub 24 hour splits :clock1:
+## 22 hour splits :clock1:
 
-Here are my roughly estimates splits for a 21.5 hour finish of the Canyons 100 mile. 
+Here are my roughly estimates splits for a 22 hour finish of the Canyons 100 mile. 
 
 <div class="mb-6">
     <table class="w-full">
@@ -59,7 +59,7 @@ You can see some of my [latest runs and past race reports here](/run/#recent-act
 ## Sunset, sunrise :sunrise:
 
 - Sunset is at 7:54 -> I will pick up additional night gear at Driver's Flat.
-- Sunrise is at 6:09 -> I can stash extra night gear at Foresthill.
+- Sunrise is at 6:09
 
 ## Other estimates :hourglass:
 
@@ -70,7 +70,7 @@ You can see some of my [latest runs and past race reports here](/run/#recent-act
 
 ## Ultrasignup rating distribution :trophy:
 
-As everyone knows, there is some direct placement into UTMB for top finishers. Here is a quick graph showing all runners in the 100 mile distance bucketed by their UltraSignup rating.
+Here is a quick graph showing all runners in the 100 mile distance bucketed by their UltraSignup rating.
 
 {% image src="src/images/canyons-by-utmb-ultrasignup-rating-distribution.png", alt="UltraSignup rating distribution" %}
 
