@@ -21,7 +21,7 @@ I'm running the Canyons 100 mile race in April! This will be my first experience
 All information here has been updated for the alternate 2023 course.
 :::
 
-## 24 hour splits :clock1:
+## Sub 24 hour splits :clock1:
 
 Here are my roughly estimates splits for a 21.5 hour finish of the Canyons 100 mile. 
 
