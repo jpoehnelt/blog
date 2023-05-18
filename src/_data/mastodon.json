@@ -1,5 +1,54 @@
 [
   {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110386543313940534",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110386543313940534",
+    "pubDate": "Wed, 17 May 2023 23:09:39 +0000",
+    "description": "<p>I worked from a public space in the first time in what seems like forever while waiting on service for my truck. Ska Brewing of Durango, CO is great! </p><p>Also my first drink in nearly two months with lunch! 🍺  (I had the Checkered Future IPA)</p><p>Normally this would mess up my heart rate variability (HRV), but it still hasn&#39;t really been stable since running my last ultramarathon 2.5 weeks ago.</p><p><a href=\"https://mastodon.thbps.com/tags/Durango\" class=\"mention hashtag\" rel=\"tag\">#<span>Durango</span></a> <a href=\"https://mastodon.thbps.com/tags/beer\" class=\"mention hashtag\" rel=\"tag\">#<span>beer</span></a> <a href=\"https://mastodon.thbps.com/tags/ultramarathon\" class=\"mention hashtag\" rel=\"tag\">#<span>ultramarathon</span></a></p>",
+    "media:content": {
+      "media:rating": "nonadult",
+      "media:description": "Beer glass on a table"
+    },
+    "category": [
+      "Durango",
+      "beer",
+      "ultramarathon"
+    ]
+  },
+  {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110386504494334164",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110386504494334164",
+    "pubDate": "Wed, 17 May 2023 22:59:47 +0000",
+    "description": "<p>The greatest challenge in making sense of all the feedback... distilling the bugs and feature requests into a variety of reports for different stakeholders. Should probably use the LLM for that too!</p><p><a href=\"https://mastodon.thbps.com/tags/devrel\" class=\"mention hashtag\" rel=\"tag\">#<span>devrel</span></a> <a href=\"https://mastodon.thbps.com/tags/llm\" class=\"mention hashtag\" rel=\"tag\">#<span>llm</span></a></p>",
+    "category": [
+      "devrel",
+      "llm"
+    ]
+  },
+  {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110386486129878299",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110386486129878299",
+    "pubDate": "Wed, 17 May 2023 22:55:07 +0000",
+    "description": "<p>So much easier to do much of this now, compared to implementing this a few years ago: <a href=\"https://doi.org/10.1016/j.cviu.2019.07.010\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">doi.org/10.1016/j.cviu.2019.07</span><span class=\"invisible\">.010</span></a></p><p>That used BigTable and multiple buckets to approximately search the vector space. Now you can use Google Cloud Vertex AI Matching Engine: <a href=\"https://cloud.google.com/vertex-ai/docs/matching-engine/overview\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">cloud.google.com/vertex-ai/doc</span><span class=\"invisible\">s/matching-engine/overview</span></a></p><p><a href=\"https://mastodon.thbps.com/tags/gcp\" class=\"mention hashtag\" rel=\"tag\">#<span>gcp</span></a> <a href=\"https://mastodon.thbps.com/tags/vertexAI\" class=\"mention hashtag\" rel=\"tag\">#<span>vertexAI</span></a></p>",
+    "category": [
+      "gcp",
+      "vertexAI"
+    ]
+  },
+  {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110386469795400058",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110386469795400058",
+    "pubDate": "Wed, 17 May 2023 22:50:57 +0000",
+    "description": "<p>I had to write my first SQL queries in a couple years and I think I still remember how it works. Also Python... what are these type things?! 😀 </p><p>All of this is because I&#39;m doing some data analysis of feature requests, bugs, etc. Some fun stuff to play with:</p><p>- vector similarity search<br />- tfidf as a secondary search<br />- LLMs for a bunch of steps, extracting lists, some categorization, etc<br />- random forest for categorization</p><p><a href=\"https://mastodon.thbps.com/tags/llm\" class=\"mention hashtag\" rel=\"tag\">#<span>llm</span></a> <a href=\"https://mastodon.thbps.com/tags/devrel\" class=\"mention hashtag\" rel=\"tag\">#<span>devrel</span></a> <a href=\"https://mastodon.thbps.com/tags/ml\" class=\"mention hashtag\" rel=\"tag\">#<span>ml</span></a> <a href=\"https://mastodon.thbps.com/tags/sql\" class=\"mention hashtag\" rel=\"tag\">#<span>sql</span></a> <a href=\"https://mastodon.thbps.com/tags/python\" class=\"mention hashtag\" rel=\"tag\">#<span>python</span></a> <a href=\"https://mastodon.thbps.com/tags/data\" class=\"mention hashtag\" rel=\"tag\">#<span>data</span></a></p>",
+    "category": [
+      "llm",
+      "devrel",
+      "ml",
+      "sql",
+      "python",
+      "data"
+    ]
+  },
+  {
     "guid": "https://mastodon.thbps.com/@jpoehnelt/110317023170434965",
     "link": "https://mastodon.thbps.com/@jpoehnelt/110317023170434965",
     "pubDate": "Fri, 05 May 2023 16:29:46 +0000",
