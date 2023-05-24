@@ -1,6 +1,6 @@
 <div class="h-feed">
 	{% for post in posts %}
-		<article class="h-entry mb-6 border-b pb-6 border-gray-300">
+		<article class="h-entry mb-6 border-b pb-6 border-gray-300" style="view-transition-name: {{ post.url | slugify }}">
 			<a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
 			<h2>
 				<a class="hidden u-url p-name" href="{{ site.url }}{{ post.url | url }}">{{ post.data.title }}</a>
