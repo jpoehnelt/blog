@@ -2,7 +2,7 @@
 layout: base
 ---
 {% include 'schema-blog-post.njk' %}
-<article class="h-entry">
+<article class="h-entry" style="view-transition-name: {{ page.url | slugify }}">
     <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
     <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
 
