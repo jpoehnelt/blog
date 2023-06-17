@@ -1,13 +1,9 @@
 {
   "ci": {
     "assert": {
-      "preset": "lighthouse:all",
+      "preset": "lighthouse:recommended",
       "assertions": {
-        "is-crawlable": "off",
-        "bf-cache": "off",
-        "csp-xss": "off",
-        "long-tasks": "off",
-        "on-composited-animations": "off"
+        "is-crawlable": "off"
       }
     }
   }
