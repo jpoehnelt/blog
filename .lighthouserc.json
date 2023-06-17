@@ -1,10 +1,7 @@
 {
   "ci": {
     "assert": {
-      "preset": "lighthouse:recommended",
-      "assertions": {
-        "is-crawlable": "off"
-      }
+      "preset": "lighthouse:recommended"
     }
   }
 }
