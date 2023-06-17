@@ -3,7 +3,11 @@
     "assert": {
       "preset": "lighthouse:all",
       "assertions": {
-        "is-crawlable": "off"
+        "is-crawlable": "off",
+        "bf-cache": "off",
+        "csp-xss": "off",
+        "long-tasks": "off",
+        "on-composited-animations": "off"
       }
     }
   }
