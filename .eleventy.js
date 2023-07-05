@@ -5,6 +5,8 @@ const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
 
+require('dotenv').config()
+
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
   config.addPassthroughCopy({ "src/static/.well-known/*": "/.well-known/" });
