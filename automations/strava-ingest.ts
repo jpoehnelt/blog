@@ -19,7 +19,6 @@ const main = async () => {
 
         const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${per_page}`;//&after=${after}`;
 
-        console.log(url);
         // eslint-disable-next-line
         const data: any[] = (
             await axios.get(url, {
@@ -28,8 +27,6 @@ const main = async () => {
                 },
             })
         ).data;
-
-        console.log(data);
 
         data.forEach(d => {
             activities[String(d.id)] = d;

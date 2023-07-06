@@ -32,13 +32,6 @@ const main = async () => {
     ["access_token", "refresh_token"].map(async (field) => {
       const secretName = `STRAVA_${field.toUpperCase()}`;
 
-      // // Encrypt using LibSodium.
-      // const encrypted_value = libsodium.crypto_box_seal(
-      //   response.data[field],
-      //   Buffer.from(publicKey, "base64"),
-      //   "base64"
-      // );
-
       // Convert the message and key to Uint8Array (Buffer implements that interface)
       const messageBytes = Buffer.from(response.data[field]);
       const keyBytes = Buffer.from(publicKey, "base64");
