@@ -5,6 +5,24 @@
         "type": "entry",
         "author": {
           "type": "card",
+          "name": "Nicolas (greenman)",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/2681e321f696b25e0cec8bb52888cf182849213b52813f32a639563bacf9e334.jpg",
+          "url": "https://fosstodon.org/@greenman"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110668784840520998#reblogged-by-109431468651710680",
+        "published": null,
+        "wm-received": "2023-07-07T05:48:10Z",
+        "wm-id": 1693437,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/110668784840520998/109431468651710680",
+        "wm-target": "https://justin.poehnelt.com/posts/email-magiclink-with-cloudflare-functions/",
+        "repost-of": "https://justin.poehnelt.com/posts/email-magiclink-with-cloudflare-functions/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
           "name": "Eleventy 🎈 v2.0.1",
           "photo": "https://webmention.io/avatar/mastodon.thbps.com/0f6c0e1d5a979a0eaa7d09b97e46a3200b3671f07777b7a36e0fd9b01ad9ba47.png",
           "url": "https://fosstodon.org/@eleventy"
@@ -60,6 +78,24 @@
     ],
     "in-reply-to": [],
     "repost-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Nicolas (greenman)",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/2681e321f696b25e0cec8bb52888cf182849213b52813f32a639563bacf9e334.jpg",
+          "url": "https://fosstodon.org/@greenman"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110668784840520998#reblogged-by-109431468651710680",
+        "published": null,
+        "wm-received": "2023-07-07T05:48:10Z",
+        "wm-id": 1693437,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/110668784840520998/109431468651710680",
+        "wm-target": "https://justin.poehnelt.com/posts/email-magiclink-with-cloudflare-functions/",
+        "repost-of": "https://justin.poehnelt.com/posts/email-magiclink-with-cloudflare-functions/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      },
       {
         "type": "entry",
         "author": {
