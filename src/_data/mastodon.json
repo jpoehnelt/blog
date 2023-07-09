@@ -1,5 +1,30 @@
 [
   {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110680567597196320",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110680567597196320",
+    "pubDate": "Sat, 08 Jul 2023 21:23:54 +0000",
+    "description": "<p>Exploring <a href=\"https://mastodon.thbps.com/tags/rust\" class=\"mention hashtag\" rel=\"tag\">#<span>rust</span></a> and creating a terminal ui for <a href=\"https://mastodon.thbps.com/tags/plexamp\" class=\"mention hashtag\" rel=\"tag\">#<span>plexamp</span></a> with ratatui and tokio. Seems like a proper challenge to learn the language and the intricacies around async/threads/tasks, borrowing/moving, locks, etc.</p><p>So far I have tokio spawning tasks for updating the Model of MVC to keep track of all the plexamp players on the network. This required porting some python(<a href=\"https://python-plexapi.readthedocs.io/en/latest/_modules/plexapi/gdm.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">python-plexapi.readthedocs.io/</span><span class=\"invisible\">en/latest/_modules/plexapi/gdm.html</span></a>) code I found documenting the multicast protocol used by <a href=\"https://mastodon.thbps.com/tags/Plex\" class=\"mention hashtag\" rel=\"tag\">#<span>Plex</span></a>.</p>",
+    "media:content": [
+      {
+        "media:rating": "nonadult"
+      },
+      {
+        "media:rating": "nonadult"
+      }
+    ],
+    "category": [
+      "rust",
+      "plexamp",
+      "Plex"
+    ]
+  },
+  {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110679323305027936",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110679323305027936",
+    "pubDate": "Sat, 08 Jul 2023 16:07:27 +0000",
+    "description": "<p>Learning a new programming language is much different today with Copilot and other Gen AI tools! It enables me to skip the earlier steps of understanding the language for better or worse.</p>"
+  },
+  {
     "guid": "https://mastodon.thbps.com/@jpoehnelt/110668858618493874",
     "link": "https://mastodon.thbps.com/@jpoehnelt/110668858618493874",
     "pubDate": "Thu, 06 Jul 2023 19:46:09 +0000",
