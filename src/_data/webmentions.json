@@ -1,4 +1,134 @@
 {
+  "/posts/rust-whack-a-mole/": {
+    "all": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "geier@mastodon.online",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/db1d635fb4356e493a52ae26f48c9f875d733a757cb82141ea43b0221d79f2d5.png",
+          "url": "https://mastodon.online/@geier"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176#favorited-by-110693521843220526",
+        "published": null,
+        "wm-received": "2023-07-11T04:19:35Z",
+        "wm-id": 1694348,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/110692836774582176/110693521843220526",
+        "wm-target": "https://justin.poehnelt.com/posts/rust-whack-a-mole/",
+        "like-of": "https://justin.poehnelt.com/posts/rust-whack-a-mole/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "geier@mastodon.online",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/db1d635fb4356e493a52ae26f48c9f875d733a757cb82141ea43b0221d79f2d5.png",
+          "url": "https://mastodon.online/@geier"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176#favorited-by-110693521843220526",
+        "published": null,
+        "wm-received": "2023-07-11T04:19:35Z",
+        "wm-id": 1694348,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/110692836774582176/110693521843220526",
+        "wm-target": "https://justin.poehnelt.com/posts/rust-whack-a-mole/",
+        "like-of": "https://justin.poehnelt.com/posts/rust-whack-a-mole/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
+    "rsvp": []
+  },
+  "/": {
+    "all": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "geier@mastodon.online",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/db1d635fb4356e493a52ae26f48c9f875d733a757cb82141ea43b0221d79f2d5.png",
+          "url": "https://mastodon.online/@geier"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176#favorited-by-110693521843220526",
+        "published": null,
+        "wm-received": "2023-07-11T04:19:35Z",
+        "wm-id": 1694347,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/110692836774582176/110693521843220526",
+        "wm-target": "https://justin.poehnelt.com/",
+        "like-of": "https://justin.poehnelt.com/",
+        "wm-property": "like-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Matthias Ott",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/a34d0a855d4336e07245950e108a3d322445dabff46cfb01e805208ca3d8abcc.jpg",
+          "url": "https://twitter.com/m_ott"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1544777432770588673#favorited-by-58448784",
+        "published": null,
+        "wm-received": "2022-07-07T01:04:23Z",
+        "wm-id": 1429169,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1544777432770588673/58448784",
+        "wm-target": "https://justin.poehnelt.com/",
+        "like-of": "https://justin.poehnelt.com/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "geier@mastodon.online",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/db1d635fb4356e493a52ae26f48c9f875d733a757cb82141ea43b0221d79f2d5.png",
+          "url": "https://mastodon.online/@geier"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176#favorited-by-110693521843220526",
+        "published": null,
+        "wm-received": "2023-07-11T04:19:35Z",
+        "wm-id": 1694347,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/110692836774582176/110693521843220526",
+        "wm-target": "https://justin.poehnelt.com/",
+        "like-of": "https://justin.poehnelt.com/",
+        "wm-property": "like-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Matthias Ott",
+          "photo": "https://webmention.io/avatar/pbs.twimg.com/a34d0a855d4336e07245950e108a3d322445dabff46cfb01e805208ca3d8abcc.jpg",
+          "url": "https://twitter.com/m_ott"
+        },
+        "url": "https://twitter.com/jpoehnelt/status/1544777432770588673#favorited-by-58448784",
+        "published": null,
+        "wm-received": "2022-07-07T01:04:23Z",
+        "wm-id": 1429169,
+        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1544777432770588673/58448784",
+        "wm-target": "https://justin.poehnelt.com/",
+        "like-of": "https://justin.poehnelt.com/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [],
+    "bookmark-of": [],
+    "mention-of": [],
+    "rsvp": []
+  },
   "/posts/email-magiclink-with-cloudflare-functions/": {
     "all": [
       {
@@ -1576,53 +1706,6 @@
         "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1567305868382990342/407521576",
         "wm-target": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
         "like-of": "https://justin.poehnelt.com/posts/2022-mogollon-monster-planning-splits/",
-        "wm-property": "like-of",
-        "wm-private": false
-      }
-    ],
-    "in-reply-to": [],
-    "repost-of": [],
-    "bookmark-of": [],
-    "mention-of": [],
-    "rsvp": []
-  },
-  "/": {
-    "all": [
-      {
-        "type": "entry",
-        "author": {
-          "type": "card",
-          "name": "Matthias Ott",
-          "photo": "https://webmention.io/avatar/pbs.twimg.com/a34d0a855d4336e07245950e108a3d322445dabff46cfb01e805208ca3d8abcc.jpg",
-          "url": "https://twitter.com/m_ott"
-        },
-        "url": "https://twitter.com/jpoehnelt/status/1544777432770588673#favorited-by-58448784",
-        "published": null,
-        "wm-received": "2022-07-07T01:04:23Z",
-        "wm-id": 1429169,
-        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1544777432770588673/58448784",
-        "wm-target": "https://justin.poehnelt.com/",
-        "like-of": "https://justin.poehnelt.com/",
-        "wm-property": "like-of",
-        "wm-private": false
-      }
-    ],
-    "like-of": [
-      {
-        "type": "entry",
-        "author": {
-          "type": "card",
-          "name": "Matthias Ott",
-          "photo": "https://webmention.io/avatar/pbs.twimg.com/a34d0a855d4336e07245950e108a3d322445dabff46cfb01e805208ca3d8abcc.jpg",
-          "url": "https://twitter.com/m_ott"
-        },
-        "url": "https://twitter.com/jpoehnelt/status/1544777432770588673#favorited-by-58448784",
-        "published": null,
-        "wm-received": "2022-07-07T01:04:23Z",
-        "wm-id": 1429169,
-        "wm-source": "https://brid.gy/like/twitter/jpoehnelt/1544777432770588673/58448784",
-        "wm-target": "https://justin.poehnelt.com/",
-        "like-of": "https://justin.poehnelt.com/",
         "wm-property": "like-of",
         "wm-private": false
       }
