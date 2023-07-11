@@ -1,5 +1,15 @@
 [
   {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/110692836774582176",
+    "pubDate": "Tue, 11 Jul 2023 01:24:07 +0000",
+    "description": "<p>Playing whack-a-mole with the <a href=\"https://mastodon.thbps.com/tags/rust\" class=\"mention hashtag\" rel=\"tag\">#<span>rust</span></a> compiler is both frustrating and a great <a href=\"https://mastodon.thbps.com/tags/learning\" class=\"mention hashtag\" rel=\"tag\">#<span>learning</span></a> experience. </p><p>Currently combining a MVC pattern having an `tokio::sync::mpsc` channel for the TUI and plexamp(world) events to the controller with a `tokio::sync::broadcast` to get the model back to the view/tasks.</p><p><a href=\"https://justin.poehnelt.com/posts/rust-whack-a-mole/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">justin.poehnelt.com/posts/rust</span><span class=\"invisible\">-whack-a-mole/</span></a></p>",
+    "category": [
+      "rust",
+      "learning"
+    ]
+  },
+  {
     "guid": "https://mastodon.thbps.com/@jpoehnelt/110680567597196320",
     "link": "https://mastodon.thbps.com/@jpoehnelt/110680567597196320",
     "pubDate": "Sat, 08 Jul 2023 21:23:54 +0000",
