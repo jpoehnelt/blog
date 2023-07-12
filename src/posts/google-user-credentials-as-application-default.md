@@ -49,7 +49,7 @@ The `--scopes` flag is optional and should be set to the scopes required by the 
 
 The `credentials.json` file will have contents similar to the following:
 
-```json
+```js
 {
   "client_id": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
   "client_secret": "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9sLvLS",
@@ -81,7 +81,7 @@ curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth 
 
 The output of this command should return the following info:
 
-```
+```js
 {
   "issued_to": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
   "audience": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
