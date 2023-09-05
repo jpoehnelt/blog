@@ -2,8 +2,7 @@ const D3Node = require("d3-node");
 const d3 = require("d3");
 const prettier = require("prettier");
 
-module.exports = function ({data, margin}) {
-
+module.exports = async function ({ data, margin }) {
   //set up svg using margin conventions - we'll need plenty of room on the left for labels
   margin = margin ?? {
     right: 100,
@@ -15,9 +14,7 @@ module.exports = function ({data, margin}) {
 
   const d3n = new D3Node();
   const svg = d3n.createSVG();
-  svg
-    .attr("class", "bar-chart")
-    .attr("viewBox", `0 0 ${width}, ${height}`)
+  svg.attr("class", "bar-chart").attr("viewBox", `0 0 ${width}, ${height}`);
 
   const x = d3
     .scaleLinear()
@@ -74,10 +71,10 @@ module.exports = function ({data, margin}) {
       return x(d.value) + 5 + margin.left;
     })
     .text(function (d) {
-      return `${Math.round(d.value * 0.000621371).toLocaleString(
-        "en-US"
-      )}`;
+      return `${Math.round(d.value * 0.000621371).toLocaleString("en-US")}`;
     });
 
-  return `<div>${prettier.format(d3n.svgString(), { parser: "html" })}</div>`;
+  const formatted = await prettier.format(d3n.svgString(), { parser: "html" });
+
+  return `<div>${formatted}</div>`;
 };
