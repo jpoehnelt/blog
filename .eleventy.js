@@ -4,6 +4,7 @@ const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
+const qrCode = require("qrcode");
 
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
@@ -26,7 +27,11 @@ module.exports = (config) => {
   });
 
   config.addFilter("relatedPosts", function (doc, docs) {
-    return related(doc, docs).filter(({ relative }) => relative > 0.1);
+    return []; //related(doc, docs).filter(({ relative }) => relative > 0.1);
+  });
+
+  config.addFilter("qrcode", async function (value) {
+    return await qrCode.toDataURL(value);
   });
 
   config.addTransform("htmlmin", (content, outputPath) => {
@@ -47,7 +52,7 @@ module.exports = (config) => {
 
     root.querySelectorAll("pre").forEach((el) => {
       const language = [...el.classList.values()].filter((c) =>
-        c.startsWith(prefix)
+        c.startsWith(prefix),
       )[0];
 
       el.innerHTML = `<code class="${language}">${el.innerText
@@ -77,6 +82,10 @@ module.exports = (config) => {
 
   config.setLibrary("md", markdownIt);
 
+  config.addFilter("markdownit", function (value) {
+    return markdownIt.renderInline(value);
+  });
+
   config.addPlugin(require("eleventy-plugin-nesting-toc"), {
     tags: ["h2", "h3", "h4"],
   });
@@ -102,27 +111,27 @@ module.exports = (config) => {
   config.addWatchTarget("./public/assets/*");
   config.addWatchTarget("./shortcodes/*");
 
-  config.on("eleventy.after", async () => {
-    const options = {
-      cacheId: "sw",
-      skipWaiting: true,
-      clientsClaim: true,
-      swDest: `public/sw.js`,
-      globDirectory: "public",
-      globPatterns: [
-        "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
-      ],
-      runtimeCaching: [
-        {
-          urlPattern:
-            /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-          handler: `NetworkOnly`,
-        },
-      ],
-    };
+  // config.on("eleventy.after", async () => {
+  //   const options = {
+  //     cacheId: "sw",
+  //     skipWaiting: true,
+  //     clientsClaim: true,
+  //     swDest: `public/sw.js`,
+  //     globDirectory: "public",
+  //     globPatterns: [
+  //       "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
+  //     ],
+  //     runtimeCaching: [
+  //       {
+  //         urlPattern:
+  //           /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+  //         handler: `NetworkOnly`,
+  //       },
+  //     ],
+  //   };
 
-    await workbox.generateSW(options);
-  });
+  //   await workbox.generateSW(options);
+  // });
 
   return {
     markdownTemplateEngine: "njk",

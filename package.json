@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build:11ty": "NODE_OPTIONS=\"--max-old-space-size=4096\" eleventy --quiet",
-    "build:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --minify ",
+    "build:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --minify && esbuild src/scripts/alpine.js --outfile=public/assets/alpine.js --bundle --minify ",
     "build:css": "postcss src/styles/tailwind.css -o public/assets/index.css",
     "build": "cross-env NODE_ENV=production npm-run-all clean build:js build:css build:11ty",
     "clean": "rimraf public/assets public/blog public/code public/feed public/posts public/run public/tag public/*.*",
@@ -73,16 +73,18 @@
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.0",
-    "@netlify/functions": "^1.6.0",
     "@egoist/tailwindcss-icons": "^1.4.0",
     "@iconify-json/ic": "^1.1.14",
     "@iconify-json/logos": "^1.1.37",
+    "@netlify/functions": "^1.6.0",
+    "alpinejs": "^3.13.3",
     "debounce-fn": "^5.1.2",
     "dompurify": "^3.0.4",
     "fast-xml-parser": "^4.2.5",
     "jsdom": "^22.1.0",
     "lazysizes": "^5.3.2",
     "netlify-plugin-cache": "^1.0.3",
+    "qrcode": "^1.5.3",
     "universal-analytics": "^0.5.3"
   }
 }

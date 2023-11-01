@@ -1,11 +1,41 @@
 {
   "name": "Justin Poehnelt",
   "description": "Personal website and blog of Justin Poehnelt",
-  "url": "https://justin.poehnelt.com",
+  "url": {
+    "href": "https://justin.poehnelt.com",
+    "text": "justin.poehnelt.com"
+  },
   "baseUrl": "/",
   "author": {
     "handle": "@jpoehnelt",
-    "name": "Justin Poehnelt"
+    "name": "Justin Poehnelt",
+    "contacts": {
+      "email": {
+        "href": "mailto:hi@jpoehnelt.dev",
+        "text": "hi@jpoehnelt.dev",
+        "icon": "i-ic-baseline-email"
+      },
+      "website": {
+        "href": "https://justin.poehnelt.com",
+        "text": "justin.poehnelt.com",
+        "icon": "i-ic-baseline-html"
+      },
+      "linkedin": {
+        "href": "https://www.linkedin.com/in/justin-poehnelt",
+        "text": "linkedin.com/in/justin-poehnelt",
+        "icon": "i-logos-linkedin-icon"
+      },
+      "github": {
+        "href": "https://github.com/jpoehnelt",
+        "text": "github.com/jpoehnelt",
+        "icon": "i-logos-github-icon"
+      },
+      "fediverse": {
+        "href": "https://mastodon.thbps.com/@jpoehnelt",
+        "text": "mastodon.thbps.com/@jpoehnelt",
+        "icon": "i-logos-mastodon-icon"
+      }
+    }
   },
   "images": {
     "og": "og.jpg"

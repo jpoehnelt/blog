@@ -2,7 +2,9 @@ html {
   @apply antialiased text-slate-800 bg-slate-50 dark:text-slate-200 dark:bg-slate-800 font-sans;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   @apply border-slate-500 dark:border-slate-100;
 }
 
@@ -18,7 +20,6 @@ h5,
 h6 {
   @apply font-bold mb-2;
 }
-
 
 h1 {
   @apply text-5xl;
@@ -167,15 +168,17 @@ ul > li {
   margin: 20px auto;
 }
 
-p > code {  
-  @apply px-1 bg-slate-200 dark:bg-slate-800;
+p > code {
+  @apply px-1 bg-slate-800 dark:bg-slate-200;
 }
 
 .blur-img {
   -webkit-filter: blur(5px);
   filter: blur(5px);
   padding: 5px;
-  transition: filter 800ms, -webkit-filter 800ms;
+  transition:
+    filter 800ms,
+    -webkit-filter 800ms;
 }
 
 .blur-img.lazyloaded {
@@ -203,4 +206,12 @@ table tr:not(:first-child) {
 
 table thead tr {
   @apply border-b-2 border-orange-300 border-opacity-50;
+}
+
+.resume-section {
+  @apply font-bold tracking-widest print:tracking-wide print:text-sm uppercase;
+}
+
+input[type="range"] {
+  @apply rounded-lg appearance-none cursor-pointer bg-slate-800 dark:bg-slate-200;
 }

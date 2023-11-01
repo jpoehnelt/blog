@@ -33,14 +33,19 @@ You can follow me on these other sites.
     <li>Fediverse: <a href="https://mastodon.thbps.com/@jpoehnelt" rel="me">@jpoehnelt@mastodon.thbps.com</a></li>
     <li><a rel="noopener noreferrer" href="https://github.com/jpoehnelt" rel="me">GitHub</a></li>
     <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/justin-poehnelt" rel="me">LinkedIn</a></li>
-    <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev</a></li>
+    <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev.to</a></li>
 </ul>
+
+## Opportunities
+
+If you are interested in working with me, please contact at <a target="_blank" href="{{ site.author.contacts.email.href }}">{{ site.author.contacts.email.text }}</a> or one of the above socials. You can also [view me resume](/resume/generic/).
 
 ## Recent posts
 
 {% for recent in collections.post | reverse | limit(5) -%}
-* {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
-{% endfor %}
+
+- {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
+  {% endfor %}
 
 See more at [/blog](/blog).
 
