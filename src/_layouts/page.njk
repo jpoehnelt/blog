@@ -2,7 +2,7 @@
 permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug }}{% endif %}/index.html"
 layout: base
 ---
-<arcticle class="h-entry">
+<article class="h-entry">
     <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
     <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
     <div>
