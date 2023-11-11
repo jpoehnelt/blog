@@ -15,8 +15,6 @@ layout: base
 
 {% block body %}
   {% set posts = collections[tag] | reverse %}
-
   {% include "posts.njk" %}
-
   {% include "tags.njk" %}
 {% endblock %}
