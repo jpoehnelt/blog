@@ -74,6 +74,9 @@
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.0",
     "@netlify/functions": "^1.6.0",
+    "@egoist/tailwindcss-icons": "^1.4.0",
+    "@iconify-json/ic": "^1.1.14",
+    "@iconify-json/logos": "^1.1.37",
     "debounce-fn": "^5.1.2",
     "dompurify": "^3.0.4",
     "fast-xml-parser": "^4.2.5",
