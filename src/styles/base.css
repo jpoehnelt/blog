@@ -1,6 +1,13 @@
-html,
-body {
-  @apply antialiased text-gray-200 bg-gray-900 font-sans;
+html {
+  @apply antialiased text-slate-800 bg-slate-50 dark:text-slate-200 dark:bg-slate-800 font-sans;
+}
+
+*, ::after, ::before {
+  @apply border-slate-500 dark:border-slate-100;
+}
+
+html .text-light * {
+  @apply text-slate-800;
 }
 
 h1,
@@ -12,21 +19,6 @@ h6 {
   @apply font-bold mb-2;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a,
-a {
-  @apply text-white;
-}
 
 h1 {
   @apply text-5xl;
@@ -88,6 +80,7 @@ hr {
   border-left: 0.5rem solid #718096;
   margin: 1.5em 1.5em;
   padding: 0.5em 1em;
+  @apply border-slate-200;
 }
 
 blockquote p:last-child {
@@ -125,8 +118,9 @@ ol {
 
 ol > li,
 ul > li {
-  @apply text-lg ml-12 mb-1;
+  @apply ml-12 mb-1;
 }
+
 .content > .tldr p:last-child,
 .content > .note p:last-child {
   @apply mb-0;
@@ -164,42 +158,16 @@ ul > li {
   content: " |";
 }
 
-.top-notice {
-  @apply sticky top-0 flex justify-center bg-blue-600 py-1 -mt-1 text-sm;
-}
-
-.top-notice > a::before {
-  content: "🔥 ";
-}
-
-.top-notice > a::after {
-  content: " 🔥";
-}
-
-#privacy-notice-button {
-  fill: #fff;
-}
-
-#privacy-notice-button-container {
-  margin-top: 2px;
-  @apply p-2;
-}
-
-#privacy-notice-button-container:hover {
-  @apply bg-gray-500 rounded cursor-pointer;
-}
-
 .bar-chart {
-  @apply fill-gray-200 text-3xl;
+  @apply fill-slate-800 dark:fill-slate-200 text-3xl;
 }
 
 .twitter-tweet {
   margin: 20px auto;
 }
 
-p > code {
-  background: #282a36;
-  @apply px-1;
+p > code {  
+  @apply px-1 bg-slate-800 dark:bg-slate-200;
 }
 
 .blur-img {
