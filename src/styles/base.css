@@ -98,6 +98,7 @@ blockquote p:last-child {
 .content > ul,
 .content > ol,
 .content > p,
+table,
 hr,
 p,
 svg {
@@ -167,7 +168,7 @@ ul > li {
 }
 
 p > code {  
-  @apply px-1 bg-slate-800 dark:bg-slate-200;
+  @apply px-1 bg-slate-200 dark:bg-slate-800;
 }
 
 .blur-img {
@@ -182,6 +183,24 @@ p > code {
   filter: blur(0);
 }
 
-table td {
+table {
+  width: 100%;
+}
+
+table td,
+table th {
   text-align: center;
+  padding: 0.25rem;
+}
+
+table tr td:first-child {
+  text-align: left;
+}
+
+table tr:not(:first-child) {
+  @apply border-t border-orange-300 border-opacity-50;
+}
+
+table thead tr {
+  @apply border-b-2 border-orange-300 border-opacity-50;
 }
