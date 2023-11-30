@@ -21,7 +21,7 @@ A Workspace Add-on can create and manage a container bound script to combine the
 
 ## Comparing Workspace Add-ons and Editor Add-ons
 
-Workspace Add-ons and Editor Add-ons are two different ways to extend Google Workspace. A couple key differences are:
+Workspace Add-ons and Editor Add-ons are two different ways to extend Google Workspace. Some key differences are:
 
 | Feature                          | Workspace Add-ons | Editor Add-ons |
 | -------------------------------- | ----------------- | -------------- |
@@ -29,7 +29,7 @@ Workspace Add-ons and Editor Add-ons are two different ways to extend Google Wor
 | `onEdit`, `onSelection` triggers | ❌                | ✅             |
 | Top level menu                   | ❌                | ✅             |
 
-For a complete list of differences see [this table](https://developers.google.com/workspace/add-ons/concepts/addon-types#comparison_of_add-on_types).
+For a complete list see [this table](https://developers.google.com/workspace/add-ons/concepts/addon-types#comparison_of_add-on_types).
 
 ## Combining Workspace Add-ons and Editor Add-ons
 
