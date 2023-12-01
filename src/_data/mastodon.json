@@ -1,5 +1,24 @@
 [
   {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/111502001614053580",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/111502001614053580",
+    "pubDate": "Thu, 30 Nov 2023 23:05:22 +0000",
+    "description": "<p>And back. 😀 </p><p>Had an issue with the lxc containers and disk with `acl=0`, which I believe I had set because of vzdump? Will investigate later.</p><p>ext4: Unknown parameter &#39;noacl&#39;</p>"
+  },
+  {
+    "guid": "https://mastodon.thbps.com/@jpoehnelt/111501604403136381",
+    "link": "https://mastodon.thbps.com/@jpoehnelt/111501604403136381",
+    "pubDate": "Thu, 30 Nov 2023 21:24:21 +0000",
+    "description": "<p>Updating my homelab server from bullseye to bookwork and updating <a href=\"https://mastodon.thbps.com/tags/proxmox\" class=\"mention hashtag\" rel=\"tag\">#<span>proxmox</span></a>. 🤞 </p><p>Runs everything including <a href=\"https://mastodon.thbps.com/tags/Plex\" class=\"mention hashtag\" rel=\"tag\">#<span>Plex</span></a>, <a href=\"https://mastodon.thbps.com/tags/Mastodon\" class=\"mention hashtag\" rel=\"tag\">#<span>Mastodon</span></a>, <a href=\"https://mastodon.thbps.com/tags/n8n\" class=\"mention hashtag\" rel=\"tag\">#<span>n8n</span></a>, TIG stack, tailscale, cloudflared, <a href=\"https://mastodon.thbps.com/tags/homeassistant\" class=\"mention hashtag\" rel=\"tag\">#<span>homeassistant</span></a>  etc. Most backed up to my NAS.</p>",
+    "category": [
+      "proxmox",
+      "Plex",
+      "mastodon",
+      "n8n",
+      "homeassistant"
+    ]
+  },
+  {
     "guid": "https://mastodon.thbps.com/@jpoehnelt/111355447152711257",
     "link": "https://mastodon.thbps.com/@jpoehnelt/111355447152711257",
     "pubDate": "Sun, 05 Nov 2023 01:54:39 +0000",
