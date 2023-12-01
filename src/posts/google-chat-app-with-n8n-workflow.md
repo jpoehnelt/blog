@@ -11,11 +11,12 @@ tags:
     - n8n
     - workflow
     - google translate
+    - visual coding
 date: '2023-12-01T00:00:00.000Z'
 hideToc: true
 ---
 
-This afternoon I updated my homelab server from Bullseye to Bookworm and the lates version of Proxmox. This went off without much excitement and I decided to install [n8n](https://n8n.io/) on the server. I've always enjoyed mashing these tools together to do something useful and I decided to build a Google Chat App in the visual workflow editor.
+This afternoon I updated my homelab server from Bullseye to Bookworm and the latest version of Proxmox. This went off without too much excitement and I decided to install [n8n](https://n8n.io/) on the server. I've always enjoyed mashing tools together to do something useful and I decided to build a [Google Chat App](https://developers.google.com/chat) in the visual workflow editor.
 
 ## The Workflow
 
