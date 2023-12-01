@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Google Chat App with n8n
-excerpt: I created a n8n workflow to implement a Google Chat App that translates messages using the Cloud Translation API.
+excerpt: I created a n8n workflow to build a Google Chat App that translates messages using the Cloud Translation API.
 tags:
     - post
     - code
@@ -11,7 +11,6 @@ tags:
     - n8n
     - workflow
     - google translate
-    - homelab
 date: '2023-12-01T00:00:00.000Z'
 hideToc: true
 ---
@@ -28,15 +27,15 @@ The workflow is pretty simple, but also incomplete.
 4. Use the Cloud Translation API to translate the message to the target language.
 5. Send the translated message back to the user via the Webhook Response Node.
 
-![n8n workflow for a Google Chat App](src/images/n8n-google-chat-app-workflow.png)
+{% image src="src/images/n8n-google-chat-app-workflow.png", alt="n8n workflow for a Google Chat App", class_="" %}
 
-You can download the workflow source from: [https://gist.github.com/jpoehnelt/b8327c11c77a3228e9f2ef1727d48a8f](https://gist.github.com/jpoehnelt/b8327c11c77a3228e9f2ef1727d48a8f)
+You can download the workflow source from: https://gist.github.com/jpoehnelt/b8327c11c77a3228e9f2ef1727d48a8f
 
 Here are the settings for the Chat node.
 
-![n8n Google Chat App node settings](src/images/n8n-chat-app-node.png)
+{% image src="src/images/n8n-chat-app-node.png", alt="n8n Google Chat App node settings", class_="" %}
 
-The final node in the slash command path responds with JSON matching the following, which is basically a concatenation of the [Cloud Translation API response](https://cloud.google.com/translate/docs/reference/rest/v3/TranslateTextResponse#Translation):
+The finally node in the slash command path responds with JSON matching the following, which is basically a concatenation of the [Cloud Translation API response](https://cloud.google.com/translate/docs/reference/rest/v3/TranslateTextResponse#Translation):
 
 ```js
 {% raw %}{ "text":  "Translates to: '{{ $json.translatedText }}' from {{ $json.detectedSourceLanguage }}."}{% endraw %}
