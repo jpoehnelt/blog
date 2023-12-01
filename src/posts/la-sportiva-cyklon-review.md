@@ -42,6 +42,8 @@ You can see that the treads for these shoes are designed to accommodate screw in
 
 {% image src="src/images/la-sportiva-cyklon-ice-studs.jpg", alt="Screw in ice studs for running shoes" %}
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6s0-82R3C7U?si=99sYr75Fu3m5cM6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mx-auto w-full"></iframe>
+
 ## Snowshoeing
 
 These shoes should have enough rigidity to use with snowshoes. I haven't tried this yet but I'm looking forward to it. I will update this review when I do! I have both traditional snowshoes with more float and smaller running snowshoes to try them with.
