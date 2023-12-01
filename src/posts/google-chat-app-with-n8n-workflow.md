@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Google Chat App with n8n
-excerpt: I created a n8n workflow to build a Google Chat App that translates messages using the Cloud Translation API.
+excerpt: I created a n8n workflow to implement a Google Chat App that translates messages.
 tags:
     - post
     - code
