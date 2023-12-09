@@ -7,6 +7,7 @@ module.exports = {
   content: [
     "./src/**/*.njk",
     "./src/**/*.js",
+    "./src/**/*.json",
     "./src/**/*.svg",
     "./src/**/*.md",
     "./shortcodes/*.js",

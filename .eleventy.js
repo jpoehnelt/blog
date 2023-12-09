@@ -4,6 +4,7 @@ const htmlmin = require("html-minifier");
 const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
+const qrCode = require("qrcode");
 
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
@@ -29,6 +30,10 @@ module.exports = (config) => {
     return related(doc, docs).filter(({ relative }) => relative > 0.1);
   });
 
+  config.addFilter("qrcode", async function (value) {
+    return await qrCode.toDataURL(value);
+  });
+
   config.addTransform("htmlmin", (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
@@ -47,7 +52,7 @@ module.exports = (config) => {
 
     root.querySelectorAll("pre").forEach((el) => {
       const language = [...el.classList.values()].filter((c) =>
-        c.startsWith(prefix)
+        c.startsWith(prefix),
       )[0];
 
       el.innerHTML = `<code class="${language}">${el.innerText
@@ -76,6 +81,10 @@ module.exports = (config) => {
   markdownIt.use(require("markdown-it-anchor"));
 
   config.setLibrary("md", markdownIt);
+
+  config.addFilter("markdownit", function (value) {
+    return markdownIt.renderInline(value);
+  });
 
   config.addPlugin(require("eleventy-plugin-nesting-toc"), {
     tags: ["h2", "h3", "h4"],
