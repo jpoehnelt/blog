@@ -27,7 +27,7 @@ module.exports = (config) => {
   });
 
   config.addFilter("relatedPosts", function (doc, docs) {
-    return []; //related(doc, docs).filter(({ relative }) => relative > 0.1);
+    return related(doc, docs).filter(({ relative }) => relative > 0.1);
   });
 
   config.addFilter("qrcode", async function (value) {
