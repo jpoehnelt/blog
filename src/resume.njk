@@ -31,16 +31,16 @@ alpinejs: true
         >{{ href | replace("/resume/", "") | replace("/", "") }}</a
       >{% if not loop.last %}|{% endif %}
     {% endfor %}
-    <div class="flex-grow flex items-center justify-end gap-2">
-      <label for="default-range">Length</label>
+    <div class="flex-grow flex items-center lg:justify-end gap-2">
+      <label for="length-range">Length:</label>
       <input
-        id="default-range"
+        id="length-range"
         type="range"
-        min="5"
+        min="3"
         max="15"
         value="15"
         step="1"
-        class="w-24 rounded-lg appearance-none cursor-pointer"
+        class="w-36"
         x-model="length"
       />
     </div>
@@ -51,10 +51,10 @@ alpinejs: true
     <div
       class="flex flex-row flex-wrap items-end mb-4 border-b-2 whitespace-nowrap"
     >
-      <h1 class="text-5xl print:text-4xl m-0 font-semibold flex-grow">
+      <h1 class="text-4xl md:text-5xl print:text-4xl m-0 font-semibold flex-grow">
         {{ site.author.name }}
       </h1>
-      <h2 class="text-2xl print:text-xl m-0 font-mono">{{ resume.role }}</h2>
+      <h2 class="text-xl md:text-2xl print:text-xl m-0 font-mono">{{ resume.role }}</h2>
     </div>
     <div class="mb-4">
       <ul
@@ -106,7 +106,7 @@ alpinejs: true
           </div>
         {% endfor %}
       </section>
-      <div class="col-span-1 flex flex-col gap-2">
+      <div class="col-span-3 md:col-span-1 flex flex-col gap-2">
         <section>
           <h2 class="resume-section">Skills</h2>
           {% for category in resume.skills %}
