@@ -30,22 +30,25 @@ Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/ru
 You can follow me on these other sites.
 
 <ul>
-    <li>Fediverse: <a href="https://mastodon.thbps.com/@jpoehnelt" rel="me">@jpoehnelt@mastodon.thbps.com</a></li>
+    <li><a href="{{ site.author.contacts.email.href }}" rel="me">{{ site.author.contacts.email.text }}</a></li>
+    <li><a href="https://mastodon.thbps.com/@jpoehnelt" rel="me">@jpoehnelt@mastodon.thbps.com</a></li>
     <li><a rel="noopener noreferrer" href="https://github.com/jpoehnelt" rel="me">GitHub</a></li>
     <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/justin-poehnelt" rel="me">LinkedIn</a></li>
     <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev.to</a></li>
+
 </ul>
 
 ## Opportunities
 
-If you are interested in working with me, please contact at <a target="_blank" href="{{ site.author.contacts.email.href }}">{{ site.author.contacts.email.text }}</a> or one of the above socials. You can also [view me resume](/resume/generic/).
+If you are interested in working with me, please contact at <a target="_blank" href="{{ site.author.contacts.email.href }}">{{ site.author.contacts.email.text }}</a> or one of the above socials. You can also [view me resume](/resume/generic/). I am only open to remote opportunities at this time. I have specific interest and experiences in the following areas: {% for area in resume.versions %}{% if area != "generic"%}[{{ area }}](/resume/{{area}}/){% if not loop.last %}, {% endif %}{% endif %}{% endfor %}.
 
 ## Recent posts
 
-{% for recent in collections.post | reverse | limit(5) -%}
-
-- {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
-  {% endfor %}
+<ul>
+  {% for recent in collections.post | reverse | limit(10) -%}
+  <li>{{ recent.data.date | dateDisplay }} - <a href="{{ recent.url }}">{{ recent.data.title }}</a></li>
+  {%- endfor %}
+</ul
 
 See more at [/blog](/blog).
 
