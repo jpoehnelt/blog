@@ -168,10 +168,6 @@ ul > li {
   margin: 20px auto;
 }
 
-p > code {
-  @apply px-1 bg-slate-800 dark:bg-slate-200;
-}
-
 .blur-img {
   -webkit-filter: blur(5px);
   filter: blur(5px);
