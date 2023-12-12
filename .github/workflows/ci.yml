@@ -56,7 +56,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: preview
     steps:
-      - uses: roc/link-checker@0f3f6f07d7c0ab247d73468ae5c277c441c596a3
-        with:
-          url: ${{ needs.preview.outputs.url }}
-          blc_args: --follow --recursive --ordered --filter-level 3 --exclude "https://www.linkedin.com" --exclude "https://reddit.com" --exclude "https://mastodon.thbps.com" --exclude "https://twitter.com"
+      - run: npx broken-link-checker ${{ needs.preview.outputs.url }} --follow --recursive --ordered --filter-level 3 --exclude "https://www.linkedin.com" --exclude "https://reddit.com" --exclude "https://mastodon.thbps.com" --exclude "https://twitter.com"
