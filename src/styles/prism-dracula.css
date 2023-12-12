@@ -43,8 +43,14 @@ pre[class*="language-"] {
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata {
-  color: #6272a4;
+.token.cdata,
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-green-400;
 }
 
 .token.punctuation {
@@ -66,15 +72,6 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number {
   color: #bd93f9;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #50fa7b;
 }
 
 .token.operator,
