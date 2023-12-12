@@ -50,7 +50,7 @@ If you are interested in working with me, please contact at <a target="_blank" h
   {%- endfor %}
 </ul
 
-See more at [/blog](/blog).
+See more at [/blog](/blog/).
 
 ## Misc
 
