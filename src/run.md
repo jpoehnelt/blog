@@ -18,7 +18,7 @@ I started running sometime around 2015 and have significantly increased my milea
 * {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
 {% endfor %}
 
-See more at <a class="tag run" href="/tag/run">run</a>.
+See more at <a class="tag run" href="/tag/run/">run</a>.
 
 ## Ultra marathons
 
