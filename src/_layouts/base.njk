@@ -12,12 +12,12 @@
     {# Open Graph #}
     <meta name="og:title" content="{% if metaTitle %}{{ metaTitle }}{{ ' | '}}{% endif %}{% if title %}{{ title }}{{ ' | '}}{% endif %}{% if site.name %}{{ site.name }}{% endif %}">
     <meta name="og:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="og:url" content="{{ site.url }}{{ site.baseUrl }}">
+    <meta name="og:url" content="{{ site.url.href }}{{ site.baseUrl }}">
     <meta name="og:site_name" content="{{ site.name }}">
     <meta name="og:locale" content="en_GB">
     <meta name="og:type" content="website">
     {% if layout == 'post' %}
-      <meta name="og:image" content="{{ site.url }}/images/social/{{page.fileSlug}}.png">
+      <meta name="og:image" content="{{ site.href }}/images/social/{{page.fileSlug}}.png">
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="683"/>
     {% endif %}
