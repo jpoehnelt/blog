@@ -42,6 +42,10 @@ module.exports = (config) => {
         useShortDoctype: true,
       });
     }
+    if (outputPath.endsWith(".xml")) {
+      // remove empty lines
+      return content.replace(/^\s*[\r\n]/gm, "");
+    }
 
     return content;
   });
