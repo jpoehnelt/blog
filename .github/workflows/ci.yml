@@ -59,4 +59,4 @@ jobs:
       - uses: roc/link-checker@0f3f6f07d7c0ab247d73468ae5c277c441c596a3
         with:
           url: ${{ needs.preview.outputs.url }}
-          blc_args: --follow --recursive --ordered --filter-level 3 
+          blc_args: --follow --recursive --ordered --filter-level 3 --exclude "linkedin.com" --exclude "reddit.com"
