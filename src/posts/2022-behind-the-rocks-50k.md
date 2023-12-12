@@ -122,7 +122,7 @@ Even with the range of emotions I felt through the duration of the race, I did f
 Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort. :100: 
 
 ::: note
-:heavy_exclamation_mark: Update: Read more about my injury, [extertional compartment syndrome](/posts/running-with-exertional-compartment-syndrome).
+:heavy_exclamation_mark: Update: Read more about my injury, [extertional compartment syndrome](/posts/running-with-exertional-compartment-syndrome/).
 :::
 
 As always, whenever I finish a race in Moab, I vow to never run another one due to the slickrock and sand. Lucky for me, I have a short memory when it comes to racing and can't pass up these off season races!

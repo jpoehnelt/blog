@@ -13,7 +13,7 @@ tags:
 date: '2022-04-16T00:00:00.000Z'
 ---
 
-One of the key features I was missing from my new blog written with [Eleventy](11ty.dev) was a widget for related posts. I had already implemented tags, which can serve a similar purpose, but I wanted to experiment with something more automated based upon the content of the post.
+One of the key features I was missing from my new blog written with [Eleventy](https://11ty.dev) was a widget for related posts. I had already implemented tags, which can serve a similar purpose, but I wanted to experiment with something more automated based upon the content of the post.
 
 ## Manual implementations
 

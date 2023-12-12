@@ -17,7 +17,7 @@ date: '2022-04-15T07:02:38.495Z'
 :exclamation: I am not a doctor and you should see a doctor to diagnose and treat any conditions you may have.
 :::
 
-I have been running for [a few years now](/run), but have never had such a strange injury as the one I currently have a "working diagnosis" for, Chronic Exertional Compartment Syndrome (CECS).
+I have been running for [a few years now](/run/), but have never had such a strange injury as the one I currently have a "working diagnosis" for, Chronic Exertional Compartment Syndrome (CECS).
 
 > Chronic exertional compartment syndrome is an exercise-induced muscle and nerve condition that causes pain, swelling and sometimes disability in the affected muscles of the legs or arms. Anyone can develop the condition, but it's more common in young adult runners and athletes who participate in activities that involve repetitive impact. [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/chronic-exertional-compartment-syndrome/symptoms-causes/syc-20350830)
 
@@ -50,7 +50,7 @@ The symptoms were present after only a couple minutes of running (mostly trail).
 
 My non-expert opinion is that this was all caused by a charley horse, or a muscle spasm or cramp that occurred about 4 weeks ago. This led to imbalance and tightness throughout my lower leg. A week later, I ran a 50k and struggled a bit, but didn't feel that much of a setback. :innocent:
 
-You can read my [Behind the Rocks 50k Race Report](/posts/2022-behind-the-rocks-50k) for more information on the outcome.
+You can read my [Behind the Rocks 50k Race Report](/posts/2022-behind-the-rocks-50k/) for more information on the outcome.
 
 ### Diagnosis :stethoscope:
 
