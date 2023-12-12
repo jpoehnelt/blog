@@ -3,8 +3,8 @@ layout: base
 ---
 {% include 'schema-blog-post.njk' %}
 <article class="h-entry" style="view-transition-name: {{ page.url | slugify }}">
-    <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
-    <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
+    <a class="p-name u-url hidden" href="{{ site.url.href }}{{page.url}}">{{ title }}</a>
+    <a class="p-author h-card hidden" rel="author" href="{{ site.url.href }}">{{ site.author.name}}</a>
 
     <h2>{{ title }}</h2>
     <div class="flex text-sm italic gap-4">
@@ -15,7 +15,7 @@ layout: base
     <div class="mb-4"> 
         {% for tag in tags %}
             {%- if tag !== "post" -%}
-                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag | slugify}}">{{ tag }}</a>
+                <a class="p-category tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag | slugify}}/">{{ tag }}</a>
             {%- endif -%}
         {% endfor %}
     </div>
