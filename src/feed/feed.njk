@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
 	<subtitle>{{ site.description }}</subtitle>
 	{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(site.url) }}{% endset %}
 	<link href="{{ absoluteUrl }}" rel="self"/>
-	<link href="{{ site.url }}"/>
+	<link href="{{ site.url.href }}"/>
 	<updated>{{ collections['post'] | rssLastUpdatedDate }}</updated>
 	<id>{{ site.feed.id }}</id>
 	<author> 

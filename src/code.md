@@ -16,7 +16,7 @@ Approximately two thirds of my work is supporting open source and remainder of m
 * {{ recent.data.date | dateDisplay }} - [{{ recent.data.title }}]({{ recent.url }})
 {% endfor %}
 
-See more at <a class="tag code" href="/tag/code">code</a>.
+See more at <a class="tag code" href="/tag/code/">code</a>.
 ## Open Source Development Stats
 I am active on GitHub and track some of my development activity for open source.
 

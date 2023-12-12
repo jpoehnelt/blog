@@ -3,8 +3,8 @@ permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug 
 layout: base
 ---
 <article class="h-entry">
-    <a class="p-name u-url hidden" href="{{ site.url }}{{page.url}}">{{ title }}</a>
-    <a class="p-author h-card hidden" rel="author" href="{{ site.url }}">{{ site.author.name}}</a>
+    <a class="p-name u-url hidden" href="{{ site.url.href }}{{page.url}}">{{ title }}</a>
+    <a class="p-author h-card hidden" rel="author" href="{{ site.url.href }}">{{ site.author.name}}</a>
     <div>
         {% if excerpt %}
             <p class="excerpt p-summary">{{ excerpt }}</p>
