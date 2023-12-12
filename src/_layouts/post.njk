@@ -57,7 +57,7 @@ layout: base
             <ul>
 
             {% for other in related %}
-                <li><a data-relative="{{other.relative}}" href="{{ other.document.url}}">{{ other.document.data.title }}</a></li>
+                <li><a data-relative="{{other.relative}}" href="{{ other.document.url}}/">{{ other.document.data.title }}</a></li>
             {% endfor %}
             </ul>
         {% endif %}

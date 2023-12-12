@@ -54,7 +54,7 @@ In 2017, I ran my first ultra marathon and have since completed many 50km races 
 - **2019** - Jemez Mountain - 50K - Los Alamos, NM - Overall:30 266:46:52
 - **2019** - Moab Red Hot Ultra - 33K - Moab, UT - Overall:36 293:09:14
 
-Read more at <a class="tag run" href="/tag/race report">race report</a>.
+Read more at <a class="tag run" href="/tag/race-report/">race report</a>.
 
 ## Recent activities
 
