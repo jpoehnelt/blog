@@ -1,8 +1,0 @@
----
-permalink: /urls.txt
-eleventyExcludeFromCollections: true
----
-
-{%- for page in collections.all -%}
-  {{ site.url.href }}{{ page.url | url }}
-{% endfor %}
