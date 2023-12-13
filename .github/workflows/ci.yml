@@ -62,7 +62,9 @@ jobs:
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
       - id: urls
-        run: echo "urls=`curl ${{ needs.preview.outputs.url }}/urls.txt | sed 's/^/${{ needs.preview.outputs.url }}/' | tr '\n' ' '`" >> $GITHUB_OUTPUT
+        env:
+          BASE: ${{ needs.preview.outputs.url }}
+        run: echo "urls=`curl $BASE/urls.txt | sed -e 's/^/$BASE/' | tr '\n' ' '`" >> $GITHUB_OUTPUT
       - uses: lycheeverse/lychee-action@v1.8.0
         with:
           args: "--base ${{ needs.preview.outputs.url }} --verbose --cache --max-cache-age 1d --exclude '(reddit|linkedin|twitter|npmjs)\\.com' --exclude 'mas\\.to' ${{ steps.urls.outputs.urls }}"
