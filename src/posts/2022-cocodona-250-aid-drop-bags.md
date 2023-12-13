@@ -41,7 +41,7 @@ The aid stations (allowing drop bags) for the 2022 Cocodona 250 will be located 
 - AS18 - Fort Tuthill - 213.6 miles - Bag B
 - AS19 - Walnut Canyon - 229.4 miles - Bag C
 
-This adds up to 8 unique drop bags as some are shuttled between aid stations as runners pass through. See the map at https://caltopo.com/m/U0V1G and [Runner's Guide for more details](http://cocodona.com/wp-content/uploads/2022/04/ALT-Runner-Guide-Cocodona250_220425.pdf).
+This adds up to 8 unique drop bags as some are shuttled between aid stations as runners pass through. See the map at https://caltopo.com/m/U0V1G and [Runner's Guide for more details](https://www.cocodona.com).
 
 ## Gear kits
 

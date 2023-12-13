@@ -29,7 +29,7 @@ Workspace Add-ons and Editor Add-ons are two different ways to extend Google Wor
 | `onEdit`, `onSelection` triggers | ❌                | ✅             |
 | Top level menu                   | ❌                | ✅             |
 
-For a complete list see [this table](https://developers.google.com/workspace/add-ons/concepts/addon-types#comparison_of_add-on_types).
+For a complete list see [this table](https://developers.google.com/apps-script/add-ons/concepts/types).
 
 ## Combining Workspace Add-ons and Editor Add-ons
 
