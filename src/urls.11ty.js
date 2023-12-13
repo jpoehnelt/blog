@@ -5,6 +5,6 @@ exports.data = {
 
 exports.render = function (data) {
   return data.collections.all
-    .map((post) => `${data.site.url.href}${post.url}`.trim())
+    .map((post) => `${post.url}`.trim())
     .join("\n");
 };
