@@ -3,7 +3,7 @@
 
 
 {% macro avatar(webmention) %}
-	<img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}" title="{{ webmention.author.name }}" alt="" class="w-12 h-12 border-2 border-grey-300 !mb-0 rounded-full"/>
+	<img src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}" alt="" class="w-12 h-12 border-2 border-grey-300 !mb-0 rounded-full"/>
 {% endmacro %}
 <div class="webmentions">
 	<div class="flex flex-col gap-4">

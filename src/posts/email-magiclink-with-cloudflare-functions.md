@@ -16,7 +16,7 @@ tags:
 date: "2023-07-06T00:00:00.000Z"
 ---
 
-I recently migrated a site from Wordpress to Eleventy and I wanted to add a login page that would send magic link to an email address. I was able to accomplish this using [Cloudflare Functions](https://developers.cloudflare.com/pages/platform/cloudflare-functions) and [Sendgrid](https://sendgrid.com/).
+I recently migrated a site from Wordpress to Eleventy and I wanted to add a login page that would send magic link to an email address. I was able to accomplish this using [Cloudflare Functions](https://developers.cloudflare.com/pages/platform/functions/) and [Sendgrid](https://sendgrid.com/).
 
 :::note
 The code here is for a hobby site and should be evaluated for security before using in production.
