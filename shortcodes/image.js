@@ -3,12 +3,10 @@ const path = require("path");
 const slugify = require("slugify");
 const sharp = require("sharp");
 const fs = require("fs");
+const htmlmin = require("html-minifier");
+const { ht } = require("date-fns/locale");
 
-module.exports = async function imageShortcode({
-  src,
-  alt,
-  class_ = "rounded-sm mx-auto",
-}) {
+async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
   if (src.endsWith(".gif")) {
     await fs.promises.mkdir("./public/images", { recursive: true });
     await fs.promises.copyFile(src, `./public/images/${path.basename(src)}`);
@@ -64,4 +62,11 @@ module.exports = async function imageShortcode({
     </a>
     <p class="text-xs italic text-center -mt-4">${alt}</p>
     </div>`;
-};
+}
+
+module.exports = async (...args) =>
+  htmlmin.minify(await imageShortcode(...args), {
+    collapseWhitespace: true,
+    removeComments: true,
+    useShortDoctype: true,
+  });
