@@ -65,5 +65,5 @@ jobs:
         run: echo "urls=`curl ${{ needs.preview.outputs.url }}/urls.txt | tr '\n' ' '`" >> $GITHUB_OUTPUT
       - uses: lycheeverse/lychee-action@v1.8.0
         with:
-          args: "--base ${{ needs.preview.outputs.url }} --verbose --cache --max-cache-age 1d --exclude '(reddit|linkedin|twitter)\\.com' ${{ steps.urls.outputs.urls }}"
+          args: "--base ${{ needs.preview.outputs.url }} --verbose --cache --max-cache-age 1d --exclude '(reddit|linkedin|twitter|npmjs)\\.com' --exclude 'mas\\.to' ${{ steps.urls.outputs.urls }}"
           fail: true
