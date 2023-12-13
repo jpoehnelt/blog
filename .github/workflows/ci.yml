@@ -56,4 +56,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: preview
     steps:
-      - run: npx broken-link-checker ${{ needs.preview.outputs.url }} --follow --recursive --ordered --filter-level 3 --exclude "https://www.linkedin.com" --exclude "https://reddit.com" --exclude "https://mastodon.thbps.com" --exclude "https://twitter.com"
+      - uses: actions/cache@v2
+        with:
+          path: .lycheecache
+          key: ${{ runner.os }}-lychee-${{ needs.preview.outputs.url }}
+      - run: curl ${{ needs.preview.outputs.url }}/urls.txt | xargs lychee --cache --exclude "(reddit|linkedin|twitter)\.com"
