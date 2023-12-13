@@ -29,7 +29,7 @@ This was probably my worst week and morning leading up to a race. I was truly 50
 
 ### Running injured
 
-This was the first race where I took a pain killer, Tylenol ([never take NSAIDs](https://med.stanford.edu/news/all-news/2017/07/pain-reliever-linked-to-kidney-injury-in-endurance-runners.html)). It all started when I randomly had a spasm in the medial head of the Gastrocnemius (upper calf muscle) getting out of bed the weekend before the race. Yes really, I was in bed when it happened after two easy recovery days. The "Charley Horse" was so intense that it led to muscle tear and significant [DOMS](https://doi.org/10.2165/00007256-200333020-00005).
+This was the first race where I took a pain killer, Tylenol ([never take NSAIDs](https://med.stanford.edu/news/all-news/2017/07/pain-reliever-linked-to-kidney-injury-in-endurance-runners.html)). It all started when I randomly had a spasm in the medial head of the Gastrocnemius (upper calf muscle) getting out of bed the weekend before the race. Yes really, I was in bed when it happened after two easy recovery days. The "Charley Horse" was so intense that it led to muscle tear and significant [DOMS](https://link.springer.com/article/10.2165/00007256-200333020-00005).
 
 Once the immediate soreness retreated and the muscles gained back some mobility, I still had some significant pain related to other muscles having to compensate. The Soleus was extremely tight and everything was completely out of balance. I basically hobbled a few 5ks this week just to keep things moving. It was my lowest mileage in a couple months. Forced me to taper, but the injury definitely cost me more than the minimal benefit from tapering.
 
@@ -130,5 +130,5 @@ As always, whenever I finish a race in Moab, I vow to never run another one due 
 {% image src="src/images/2022-behind-the-rocks/behind-the-rocks-triple-crown-finisher-medal.jpg", alt="Finisher medals for the the Moab Behind the Rocks 50k race and Moab Triple Crown" %}
 
 Next up: 
-- [Sedona Stage Race](http://www.trailrunningescapes.com/races2.html) - next weekend
+- [Sedona Stage Race](http://www.trailrunningescapes.com/) - next weekend
 - [Cocodona 250](http://cocodona.com/) May 2-???
