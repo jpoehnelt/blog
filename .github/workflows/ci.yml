@@ -64,7 +64,7 @@ jobs:
       - id: urls
         env:
           BASE: ${{ needs.preview.outputs.url }}
-        run: echo "urls=`curl $BASE/urls.txt | sed -e 's/^/$BASE/' | tr '\n' ' '`" >> $GITHUB_OUTPUT
+        run: echo "urls=`curl "$BASE/urls.txt" | sed -e "s/^/$BASE/" | tr '\n' ' '`" >> $GITHUB_OUTPUT
       - uses: lycheeverse/lychee-action@v1.8.0
         with:
           args: "--base ${{ needs.preview.outputs.url }} --verbose --cache --max-cache-age 1d --exclude '(reddit|linkedin|twitter|npmjs)\\.com' --exclude 'mas\\.to' ${{ steps.urls.outputs.urls }}"
