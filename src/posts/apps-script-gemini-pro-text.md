@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Generating Text with Gemini Pro in Apps SCript
+title: Generating Text with Gemini Pro in Apps Script
 excerpt: A short code snippet demonstrating how to generate text with the Gemini Pro Rest API in Apps Script.
 tags:
   - post
