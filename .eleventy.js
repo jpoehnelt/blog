@@ -127,9 +127,17 @@ module.exports = (config) => {
       ],
       runtimeCaching: [
         {
+          urlPattern: /\/$/,
+          handler: "NetworkFirst",
+        },
+        {
+          urlPattern: /\.html$/,
+          handler: "NetworkFirst",
+        },
+        {
           urlPattern:
-            /^.*\.(jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-          handler: `NetworkOnly`,
+            /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+          handler: "StaleWhileRevalidate",
         },
       ],
     };
