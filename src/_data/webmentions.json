@@ -1,84 +1,45 @@
 {
-  "/posts/google-chat-app-with-n8n-workflow/": {
+  "/posts/apps-script-memoization/": {
     "all": [
       {
         "type": "entry",
         "author": {
           "type": "card",
-          "name": "ctrg190",
-          "photo": "https://webmention.io/avatar/mastodon.thbps.com/9f09a8f3532b8d70534c45d76840715bf8d193de8d5f3b091d1e45ba90812391.png",
-          "url": "https://techhub.social/@inno4295"
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
         },
-        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#reblogged-by-111531015433639508",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111569353883828169#reblogged-by-111609624586554433",
         "published": null,
-        "wm-received": "2023-12-06T02:29:02Z",
-        "wm-id": 1749624,
-        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/111531015433639508",
-        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-received": "2023-12-20T03:19:30Z",
+        "wm-id": 1756313,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111569353883828169/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-memoization/",
         "wm-protocol": "webmention",
-        "repost-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "repost-of": "https://justin.poehnelt.com/posts/apps-script-memoization/",
         "wm-property": "repost-of",
         "wm-private": false
-      },
-      {
-        "type": "entry",
-        "author": {
-          "type": "card",
-          "name": "dominic ????",
-          "photo": "https://webmention.io/avatar/mastodon.thbps.com/eefc8da7ea71c6a1b1661bd237977b7e6e5e448fe9899dce81cdd19d5117f60a.png",
-          "url": "https://mountains.social/@dominicvfx"
-        },
-        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#favorited-by-109824661315756589",
-        "published": null,
-        "wm-received": "2023-12-02T06:51:48Z",
-        "wm-id": 1747807,
-        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/109824661315756589",
-        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
-        "wm-protocol": "webmention",
-        "like-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
-        "wm-property": "like-of",
-        "wm-private": false
       }
     ],
-    "like-of": [
-      {
-        "type": "entry",
-        "author": {
-          "type": "card",
-          "name": "dominic ????",
-          "photo": "https://webmention.io/avatar/mastodon.thbps.com/eefc8da7ea71c6a1b1661bd237977b7e6e5e448fe9899dce81cdd19d5117f60a.png",
-          "url": "https://mountains.social/@dominicvfx"
-        },
-        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#favorited-by-109824661315756589",
-        "published": null,
-        "wm-received": "2023-12-02T06:51:48Z",
-        "wm-id": 1747807,
-        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/109824661315756589",
-        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
-        "wm-protocol": "webmention",
-        "like-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
-        "wm-property": "like-of",
-        "wm-private": false
-      }
-    ],
+    "like-of": [],
     "in-reply-to": [],
     "repost-of": [
       {
         "type": "entry",
         "author": {
           "type": "card",
-          "name": "ctrg190",
-          "photo": "https://webmention.io/avatar/mastodon.thbps.com/9f09a8f3532b8d70534c45d76840715bf8d193de8d5f3b091d1e45ba90812391.png",
-          "url": "https://techhub.social/@inno4295"
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
         },
-        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#reblogged-by-111531015433639508",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111569353883828169#reblogged-by-111609624586554433",
         "published": null,
-        "wm-received": "2023-12-06T02:29:02Z",
-        "wm-id": 1749624,
-        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/111531015433639508",
-        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-received": "2023-12-20T03:19:30Z",
+        "wm-id": 1756313,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111569353883828169/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-memoization/",
         "wm-protocol": "webmention",
-        "repost-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "repost-of": "https://justin.poehnelt.com/posts/apps-script-memoization/",
         "wm-property": "repost-of",
         "wm-private": false
       }
@@ -89,6 +50,25 @@
   },
   "/": {
     "all": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111569353883828169#reblogged-by-111609624586554433",
+        "published": null,
+        "wm-received": "2023-12-20T03:19:29Z",
+        "wm-id": 1756312,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111569353883828169/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/",
+        "wm-protocol": "webmention",
+        "repost-of": "https://justin.poehnelt.com/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      },
       {
         "type": "entry",
         "author": {
@@ -589,6 +569,25 @@
         "type": "entry",
         "author": {
           "type": "card",
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111569353883828169#reblogged-by-111609624586554433",
+        "published": null,
+        "wm-received": "2023-12-20T03:19:29Z",
+        "wm-id": 1756312,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111569353883828169/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/",
+        "wm-protocol": "webmention",
+        "repost-of": "https://justin.poehnelt.com/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
           "name": "ctrg190",
           "photo": "https://webmention.io/avatar/mastodon.thbps.com/9f09a8f3532b8d70534c45d76840715bf8d193de8d5f3b091d1e45ba90812391.png",
           "url": "https://techhub.social/@inno4295"
@@ -631,6 +630,94 @@
         "wm-private": false
       }
     ],
+    "rsvp": []
+  },
+  "/posts/google-chat-app-with-n8n-workflow/": {
+    "all": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "ctrg190",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/9f09a8f3532b8d70534c45d76840715bf8d193de8d5f3b091d1e45ba90812391.png",
+          "url": "https://techhub.social/@inno4295"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#reblogged-by-111531015433639508",
+        "published": null,
+        "wm-received": "2023-12-06T02:29:02Z",
+        "wm-id": 1749624,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/111531015433639508",
+        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-protocol": "webmention",
+        "repost-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "dominic ????",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/eefc8da7ea71c6a1b1661bd237977b7e6e5e448fe9899dce81cdd19d5117f60a.png",
+          "url": "https://mountains.social/@dominicvfx"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#favorited-by-109824661315756589",
+        "published": null,
+        "wm-received": "2023-12-02T06:51:48Z",
+        "wm-id": 1747807,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/109824661315756589",
+        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-protocol": "webmention",
+        "like-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "dominic ????",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/eefc8da7ea71c6a1b1661bd237977b7e6e5e448fe9899dce81cdd19d5117f60a.png",
+          "url": "https://mountains.social/@dominicvfx"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#favorited-by-109824661315756589",
+        "published": null,
+        "wm-received": "2023-12-02T06:51:48Z",
+        "wm-id": 1747807,
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/109824661315756589",
+        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-protocol": "webmention",
+        "like-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "repost-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "ctrg190",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/9f09a8f3532b8d70534c45d76840715bf8d193de8d5f3b091d1e45ba90812391.png",
+          "url": "https://techhub.social/@inno4295"
+        },
+        "url": "https://mastodon.thbps.com/@jpoehnelt/111507794126430187#reblogged-by-111531015433639508",
+        "published": null,
+        "wm-received": "2023-12-06T02:29:02Z",
+        "wm-id": 1749624,
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111507794126430187/111531015433639508",
+        "wm-target": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-protocol": "webmention",
+        "repost-of": "https://justin.poehnelt.com/posts/google-chat-app-with-n8n-workflow/",
+        "wm-property": "repost-of",
+        "wm-private": false
+      }
+    ],
+    "bookmark-of": [],
+    "mention-of": [],
     "rsvp": []
   },
   "/posts/moab-240-training-camp/": {
