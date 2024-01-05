@@ -38,10 +38,6 @@ You can follow me on these other sites.
 
 </ul>
 
-## Opportunities
-
-If you are interested in working with me, please contact at <a target="_blank" href="{{ site.author.contacts.email.href }}">{{ site.author.contacts.email.text }}</a> or one of the above socials. You can also [view me resume](/resume/generic/). I am only open to remote opportunities at this time. I have specific interest and experiences in the following areas: {% for area in resume.versions %}{% if area != "generic"%}[{{ area }}](/resume/{{area}}/){% if not loop.last %}, {% endif %}{% endif %}{% endfor %}.
-
 ## Recent posts
 
 <ul>
