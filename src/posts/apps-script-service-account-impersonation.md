@@ -42,7 +42,7 @@ A more detailed explanation of these steps can be found in the [Create short-liv
 
 ## IAM Service Account Credentials API and impersonation
 
-To generate the OAuth token for the service account, the [`generateAccessToken`](https://cloud.google.com/iam/docs/reference/credentials/rest/v1/projects.serviceAccounts/generateAccessToken) endpoint of the IAM Credentials API is used. Calling this endpoint requires code similar to the following using [UrlFetchApp] and [`ScriptApp.getOAuthToken()`]:
+To generate the an access token for the service account, the [`generateAccessToken`](https://cloud.google.com/iam/docs/reference/credentials/rest/v1/projects.serviceAccounts/generateAccessToken) endpoint of the IAM Credentials API is used. Calling this endpoint requires code similar to the following using [UrlFetchApp] and [`ScriptApp.getOAuthToken()`]:
 
 ```js
 /**
