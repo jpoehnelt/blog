@@ -21,8 +21,8 @@ jobs:
         run: node dist/strava-ingest.mjs
       #- name: Ingest NPM Packages
       #  run: node dist/npm.mjs
-      - name: Ingest Mastodon
-        run: node dist/mastodon.mjs
+      # - name: Ingest Mastodon
+      #   run: node dist/mastodon.mjs
       - name: Commit changes
         run: |
           git config --local user.email "jpoehnelt@users.noreply.github.com"
