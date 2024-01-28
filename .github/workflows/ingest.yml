@@ -23,12 +23,13 @@ jobs:
       #  run: node dist/npm.mjs
       # - name: Ingest Mastodon
       #   run: node dist/mastodon.mjs
+      - run: |
+          git status
+          git add -all src/_data/
       - name: Commit changes
+        if: github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "jpoehnelt@users.noreply.github.com"
           git config --local user.name "Justin Poehnelt"
-          git add src/_data/strava.json
-          git add src/_data/mastodon.json
-          git add src/_data/npm.json
           git commit -m "chore: update data" || true
           git push
