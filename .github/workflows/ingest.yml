@@ -27,6 +27,23 @@ jobs:
           STRAVA_AFTER: ${{ github.event.inputs.after }}
           STRAVA_BEFORE: ${{ github.event.inputs.before }}
         run: node dist/strava-ingest.mjs
+      - name: Ingest data from strava on random date
+        env:
+          STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+        run: |          
+          YEAR=$(shuf -i 2020-$(date +%Y) -n 1)
+          MONTH=$(shuf -i 1-12 -n 1)
+          DAY=$(shuf -i 1-$(date -d "$YEAR-$MONTH-01 +1 month -1 day" +%d) -n 1)
+
+          echo "Ingesting data from $YEAR-$MONTH-$DAY"
+          STRAVA_AFTER="$YEAR-$MONTH-$DAY"
+          STRAVA_BEFORE=$(date -d "$YEAR-$MONTH-$DAY +1 day" +%Y-%m-%d)
+
+          echo "STRAVA_AFTER=$STRAVA_AFTER"
+          echo "STRAVA_BEFORE=$STRAVA_BEFORE"
+          
+          node dist/strava-ingest.mjs
+      
       #- name: Ingest NPM Packages
       #  run: node dist/npm.mjs
       # - name: Ingest Mastodon
