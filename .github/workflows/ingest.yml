@@ -27,7 +27,7 @@ jobs:
           STRAVA_AFTER: ${{ github.event.inputs.after }}
           STRAVA_BEFORE: ${{ github.event.inputs.before }}
         run: node dist/strava-ingest.mjs
-      - name: Ingest data from strava on random date
+      - name: Ingest Strava Activities (random)
         env:
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
         run: |          
@@ -37,7 +37,7 @@ jobs:
 
           echo "Ingesting data from $YEAR-$MONTH-$DAY"
           STRAVA_AFTER="$YEAR-$MONTH-$DAY"
-          STRAVA_BEFORE=$(date -d "$YEAR-$MONTH-$DAY +1 day" +%Y-%m-%d)
+          STRAVA_BEFORE=$(date -d "$YEAR-$MONTH-$DAY +10 day" +%Y-%m-%d)
 
           echo "STRAVA_AFTER=$STRAVA_AFTER"
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
