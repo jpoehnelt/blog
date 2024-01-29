@@ -2,6 +2,13 @@ name: Ingest
 
 on:
   workflow_dispatch:
+    inputs:
+      after:
+        description: 'After date'
+        type: string
+      before:
+        description: 'Before date'
+        type: string        
   schedule:
     - cron: "0 5 * * *"
 jobs:
@@ -18,6 +25,7 @@ jobs:
         env:
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
           STRAVA_AFTER: ${{ github.event.inputs.after }}
+          STRAVA_BEFORE: ${{ github.event.inputs.before }}
         run: node dist/strava-ingest.mjs
       #- name: Ingest NPM Packages
       #  run: node dist/npm.mjs
