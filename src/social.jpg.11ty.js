@@ -12,7 +12,7 @@ module.exports = {
                 alias: 'post'
             },
             permalink: (data) => {
-                return `images/social/${data.post.fileSlug}.png`
+                return `images/social/${data.post.url}.png`
             }
         }
     },
