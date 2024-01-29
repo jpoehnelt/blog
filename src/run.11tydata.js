@@ -1,7 +1,7 @@
 module.exports = {
   eleventyComputed: {
     stravaYearlyRunTotals: ({ activities }) => {
-      activities = activities.filter(({ type }) => type === "Run");
+      activities = activities.runs;
 
       let grouped = Object.values(
         activities.reduce((acc, { start_date, distance }) => {

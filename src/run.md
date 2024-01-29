@@ -58,7 +58,7 @@ Read more at <a class="tag run" href="/tag/race-report/">race report</a>.
 
 ## Recent activities
 
-<ul>{% for activity in activities | sort(true, false, 'start_date') | limit(20) %}
+<ul>{% for activity in activities.all | sort(true, false, 'start_date') | limit(20) %}
 <li>{{ activity.start_date_local | dateDisplay }}: <a href="https://www.strava.com/activities/{{ activity.id}}">{{ activity.name }}</a>, {{ (activity.distance / 1000) | round(1) }} km</li>
 {% endfor %}
 </ul>
