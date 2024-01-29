@@ -17,7 +17,7 @@ const main = async () => {
     while (true) {
         const per_page = 100;
 
-        const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${per_page}&after=${after}`;
+        const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${per_page}`;
 
         // eslint-disable-next-line
         const data: any[] = (
