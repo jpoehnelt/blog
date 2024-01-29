@@ -6,7 +6,8 @@ import fs from 'fs';
 
 const main = async () => {
 
-    const after = getUnixTime(process.env.STRAVA_AFTER ? parseISO(process.env.STRAVA_AFTER) : subDays(endOfToday(), 30)) / 1000;
+    const before = getUnixTime(process.env.STRAVA_BEFORE ? parseISO(process.env.STRAVA_BEFORE) : endOfToday());
+    const after = getUnixTime(process.env.STRAVA_AFTER ? parseISO(process.env.STRAVA_AFTER) : subDays(endOfToday(), 5));
     const file = path.join('src', '_data', 'strava.json');
 
     let page = 1;
@@ -16,8 +17,9 @@ const main = async () => {
     // eslint-disable-next-line
     while (true) {
         const per_page = 100;
+        const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${per_page}&before=${before}&after=${after}`;
 
-        const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&per_page=${per_page}`;
+        console.log({ url })
 
         // eslint-disable-next-line
         const data: any[] = (
