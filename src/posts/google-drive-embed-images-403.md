@@ -15,10 +15,6 @@ date: "2024-01-11T00:00:00.000Z"
 hideToc: true
 ---
 
-:::note
-Looks like someone made a service to embed google drive files: [https://lienuc.com/](https://lienuc.com/). I haven't tried it yet. Should solve the 403 issue though.
-:::
-
 Recently the ability to embed Google Drive images with the `/uc` path started failing. For example, the following `<img>` would have worked in the past with the export view link:
 
 ```html
@@ -69,4 +65,5 @@ width="600"
 
 ### Long term fix
 
-I would move the files to a different host optimized for serving public images behind a CDN.
+- I would move the files to a different host optimized for serving public images behind a CDN.
+- Looks like someone made a service to embed google drive files: [https://lienuc.com/](https://lienuc.com/).
