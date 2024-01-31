@@ -4,14 +4,14 @@
     "id": 2170160,
     "resource_state": 1
   },
-  "name": "Evening Trail Run",
+  "name": "Joshua Tree National Park - Burro Loop",
   "distance": 14494.6,
   "moving_time": 6471,
   "elapsed_time": 6549,
   "total_elevation_gain": 513,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 0,
   "id": 10657901698,
   "start_date": "2024-01-30T02:27:54Z",
   "start_date_local": "2024-01-29T18:27:54Z",
@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": "United States",
   "achievement_count": 0,
-  "kudos_count": 0,
+  "kudos_count": 2,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -65,10 +65,10 @@
   "total_photo_count": 0,
   "has_kudoed": false,
   "suffer_score": 39,
-  "description": null,
+  "description": "Tired legs.",
   "calories": 1081,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3187273783920554000,
@@ -728,7 +728,7 @@
   ],
   "best_efforts": [
     {
-      "id": 32038260067,
+      "id": 32039449826,
       "resource_state": 2,
       "name": "400m",
       "activity": {
@@ -751,7 +751,7 @@
       "end_index": 2011
     },
     {
-      "id": 32038260072,
+      "id": 32039449842,
       "resource_state": 2,
       "name": "1/2 mile",
       "activity": {
@@ -774,7 +774,7 @@
       "end_index": 2020
     },
     {
-      "id": 32038260077,
+      "id": 32039449863,
       "resource_state": 2,
       "name": "1k",
       "activity": {
@@ -797,7 +797,7 @@
       "end_index": 2042
     },
     {
-      "id": 32038260081,
+      "id": 32039449880,
       "resource_state": 2,
       "name": "1 mile",
       "activity": {
@@ -820,7 +820,7 @@
       "end_index": 541
     },
     {
-      "id": 32038260085,
+      "id": 32039449903,
       "resource_state": 2,
       "name": "2 mile",
       "activity": {
@@ -843,7 +843,7 @@
       "end_index": 2063
     },
     {
-      "id": 32038260088,
+      "id": 32039449922,
       "resource_state": 2,
       "name": "5k",
       "activity": {
@@ -866,7 +866,7 @@
       "end_index": 2062
     },
     {
-      "id": 32038260095,
+      "id": 32039449941,
       "resource_state": 2,
       "name": "10k",
       "activity": {
@@ -918,6 +918,7 @@
   "hide_from_home": false,
   "device_name": "Garmin Enduro",
   "embed_token": "ab28a19e5f7fb753028ebeb1272be4398ccef247",
+  "private_note": "",
   "similar_activities": {
     "effort_count": 1,
     "average_speed": 2.239930434824602,
