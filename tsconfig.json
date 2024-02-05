@@ -3,7 +3,8 @@
         "module": "esnext",
         "target": "esnext",
         "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "lib": ["esnext", "dom"],
     },
     "include": [
         "automations/**/*.ts"

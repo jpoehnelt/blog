@@ -6,6 +6,19 @@ import dotenv from "dotenv";
 import { JSDOM } from "jsdom";
 import DOMPurify from "dompurify";
 
+interface WebMention {
+  "wm-id": string;
+  "wm-source": string;
+  "wm-target": string;
+  "wm-property": string;
+  "wm-received": string;
+  content?: {
+    text: string;
+    html: string;
+  };
+  url: string;
+}
+
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 
@@ -40,12 +53,13 @@ const main = async () => {
     .then(get("children"))
     .then(writeMentionsToFile);
 
-  function writeMentionsToFile(mentions) {
+  function writeMentionsToFile(mentions: WebMention[]) {
     const all = {};
     mentions
       .filter((mention) =>
         BLOCKLIST.every((url) => !mention["wm-source"].includes(url))
       )
+      .filter((mention) => mention.content?.text !== "[deleted]")
       .forEach((mention) => {
         let target = mention["wm-target"].replace(domain, "");
 
