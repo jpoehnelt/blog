@@ -38,7 +38,8 @@ const main = async () => {
   ];
 
   fetch(`${apiEndpoint}?${apiOptions.join("&")}`)
-    .then(r => r.json().children)
+    .then(r => r.json())
+    .then(({ children }) => children)
     .then(writeMentionsToFile);
 
   function writeMentionsToFile(mentions: WebMention[]) {
