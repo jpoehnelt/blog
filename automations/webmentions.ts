@@ -55,7 +55,7 @@ const main = async () => {
 
   function writeMentionsToFile(mentions: WebMention[]) {
     const filePath = path.join("src", "_data", `webmentions.json`);
-    const all = fs.readFileSync(filePath, "utf-8");
+    const all = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     mentions
       .filter((mention) =>
         BLOCKLIST.every((url) => !mention["wm-source"].includes(url))
