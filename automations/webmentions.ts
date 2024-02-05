@@ -87,8 +87,19 @@ const main = async () => {
         }
 
         all[target].all.push(mention);
-        all[target][mention["wm-property"]].push(mention);
+        all[target][mention["wm-property"]].push(mention);        
       });
+
+    // remove duplicates by keeping the last duplicate
+    Object.keys(all).forEach((key) => {
+      Object.keys(all[key]).forEach((property) => {
+        const unique = {};
+        for ( let mention of all[key][property]) {
+          unique[mention["wm-id"]] = mention
+        }
+        all[key][property] = Object.values(unique);
+      });
+    });
 
     fs.writeFileSync(
       filePath,
