@@ -211,3 +211,7 @@ table thead tr {
 input[type="range"] {
   @apply rounded-lg appearance-none cursor-pointer bg-slate-800 dark:bg-slate-200;
 }
+
+code span.token.table {
+  display: inline;
+}
