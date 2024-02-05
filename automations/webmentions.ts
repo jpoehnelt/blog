@@ -27,16 +27,6 @@ const BLOCKLIST = [
   "https://webmention.rocks",
 ];
 
-function convertResponseToJson(response) {
-  return response.json();
-}
-
-function checkDataValidity(data) {
-  if ("children" in data) return data;
-
-  throw new Error("Invalid webmention.io response.");
-}
-
 const main = async () => {
   dotenv.config();
 
@@ -48,9 +38,7 @@ const main = async () => {
   ];
 
   fetch(`${apiEndpoint}?${apiOptions.join("&")}`)
-    .then(convertResponseToJson)
-    .then(checkDataValidity)
-    .then(_.get("children"))
+    .then(r => r.json().children)
     .then(writeMentionsToFile);
 
   function writeMentionsToFile(mentions: WebMention[]) {
