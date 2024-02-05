@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
-import get from "lodash/fp/get.js";
 import dotenv from "dotenv";
 import { JSDOM } from "jsdom";
 import DOMPurify from "dompurify";
+import _ from "lodash";
 
 interface WebMention {
   "wm-id": string;
@@ -50,7 +50,7 @@ const main = async () => {
   fetch(`${apiEndpoint}?${apiOptions.join("&")}`)
     .then(convertResponseToJson)
     .then(checkDataValidity)
-    .then(get("children"))
+    .then(_.get("children"))
     .then(writeMentionsToFile);
 
   function writeMentionsToFile(mentions: WebMention[]) {
@@ -58,7 +58,7 @@ const main = async () => {
     const all = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     mentions
       .filter((mention) =>
-        BLOCKLIST.every((url) => !mention["wm-source"].includes(url))
+        BLOCKLIST.every((url) => !mention["wm-source"].includes(url)),
       )
       .filter((mention) => mention.content?.text !== "[deleted]")
       .forEach((mention) => {
@@ -87,25 +87,38 @@ const main = async () => {
         }
 
         all[target].all.push(mention);
-        all[target][mention["wm-property"]].push(mention);        
+        all[target][mention["wm-property"]].push(mention);
       });
 
     // remove duplicates by keeping the last duplicate
     Object.keys(all).forEach((key) => {
       Object.keys(all[key]).forEach((property) => {
         const unique = {};
-        for ( let mention of all[key][property]) {
-          unique[mention["wm-id"]] = mention
+        for (let mention of all[key][property]) {
+          unique[mention["wm-id"]] = mention;
         }
-        all[key][property] = Object.values(unique);
+        all[key][property] = Object.values(unique).sort(
+          (a, b) => a["wm-id"] - b["wm-id"],
+        );
       });
     });
 
-    fs.writeFileSync(
-      filePath,
-      JSON.stringify(all, null, 2),
-      { encoding: "utf-8" }
-    );
+    function jsonSorter(key, value) {
+      if (value === null) {
+        return null;
+      }
+      if (Array.isArray(value)) {
+        return value;
+      }
+      if (typeof value === "object") {
+        return Object.fromEntries(Object.entries(value).sort());
+      }
+      return value;
+    }
+
+    fs.writeFileSync(filePath, JSON.stringify(all, jsonSorter, 2), {
+      encoding: "utf-8",
+    });
   }
 };
 
