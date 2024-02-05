@@ -32,9 +32,9 @@ You can follow me on these other sites.
 <ul>
     <li><a href="{{ site.author.contacts.email.href }}" rel="me">{{ site.author.contacts.email.text }}</a></li>
     <li><a href="https://mastodon.thbps.com/@jpoehnelt" rel="me">@jpoehnelt@mastodon.thbps.com</a></li>
-    <li><a rel="noopener noreferrer" href="https://github.com/jpoehnelt" rel="me">GitHub</a></li>
-    <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/justin-poehnelt" rel="me">LinkedIn</a></li>
-    <li><a rel="noopener noreferrer" href="https://dev.to/jpoehnelt" rel="me">Dev.to</a></li>
+    <li><a rel="noopener noreferrer me" href="https://github.com/jpoehnelt">GitHub</a></li>
+    <li><a rel="noopener noreferrer me" href="https://www.linkedin.com/in/justin-poehnelt">LinkedIn</a></li>
+    <li><a rel="noopener noreferrer me" href="https://dev.to/jpoehnelt">Dev.to</a></li>
 
 </ul>
 
