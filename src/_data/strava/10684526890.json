@@ -132,7 +132,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 6
+          "effort_count": 7
         }
       ],
       "visibility": "everyone",
@@ -675,7 +675,7 @@
     {
       "id": 32129452301,
       "resource_state": 2,
-      "name": "1k",
+      "name": "1K",
       "activity": {
         "id": 10684526890,
         "visibility": "everyone",
@@ -744,7 +744,7 @@
     {
       "id": 32129452323,
       "resource_state": 2,
-      "name": "5k",
+      "name": "5K",
       "activity": {
         "id": 10684526890,
         "visibility": "everyone",
@@ -767,7 +767,7 @@
     {
       "id": 32129452329,
       "resource_state": 2,
-      "name": "10k",
+      "name": "10K",
       "activity": {
         "id": 10684526890,
         "visibility": "everyone",
@@ -818,21 +818,22 @@
   "device_name": "Garmin Enduro",
   "embed_token": "6aa7a09e15ba12eacb3faf6de86a3abfae75ae97",
   "similar_activities": {
-    "effort_count": 2,
-    "average_speed": 2.705247996550056,
-    "min_average_speed": 2.6885291112283976,
-    "mid_average_speed": 2.7057820479003634,
+    "effort_count": 3,
+    "average_speed": 2.632766869284427,
+    "min_average_speed": 2.4948954650571484,
+    "mid_average_speed": 2.60407973725504,
     "max_average_speed": 2.723257847207531,
     "pr_rank": 1,
     "frequency_milestone": null,
     "trend": {
       "speeds": [
         2.723257847207531,
-        2.7057820479003634
+        2.7057820479003634,
+        2.6316338159713832
       ],
       "current_activity_index": 0,
-      "min_speed": 2.6885291112283976,
-      "mid_speed": 2.7057820479003634,
+      "min_speed": 2.4948954650571484,
+      "mid_speed": 2.60407973725504,
       "max_speed": 2.723257847207531,
       "direction": 0
     },
