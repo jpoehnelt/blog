@@ -31,7 +31,7 @@ jobs:
       - name: wait
         id: preview
         uses: WalshyDev/cf-pages-await@v1
-        with:
+        wipsiTth:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN  }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID  }}
           project: jpoehnelt
@@ -51,6 +51,7 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
           configPath: .lighthouserc.json
+          runs: 3
   lychee:
     if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
