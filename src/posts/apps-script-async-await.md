@@ -17,11 +17,11 @@ date: "2024-02-07T00:00:00.000Z"
 
 Google Apps Script is based on the V8 engine and supports the use of Promises, async and await. However, there are almost no APIs available that are asynchronous except for the WebAssembly API.
 
-The [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) API used to run compiled WASM binaries. This is a very niche use case and not something that is commonly used in Apps Script. WebAssembly is explicitly called out for the [V8 engine](https://v8.dev/):
+The [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) API used to run compiled WASM binaries. This is a very niche use case and not something that is commonly used in Apps Script. WebAssembly is explicitly called out for in the [V8 engine](https://v8.dev/):
 
 > v8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Chrome and in Node.js, among others. It implements ECMAScript and WebAssembly...
 
-I'm not going to get into the specifics of WebAssembly in this post, but I wanted to call it out as the only place I've seen async and await actually useful in Apps Script.
+I'm not going to get into the specifics of WebAssembly in this post, but I wanted to identify it as the only place I've seen async and await actually useful in Apps Script.
 
 ## Syntax of Promises, async and await in Apps Script
 
