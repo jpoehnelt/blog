@@ -31,7 +31,7 @@ jobs:
       - name: wait
         id: preview
         uses: WalshyDev/cf-pages-await@v1
-        wipsiTth:
+        with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN  }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID  }}
           project: jpoehnelt
