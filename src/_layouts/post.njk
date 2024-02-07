@@ -26,6 +26,16 @@ layout: base
         
         <hr>
 
+        {% if 'post' in tags %}
+            <p class="uppercase text-xs mt-6">About the author</p>
+            <div class="flex items-center gap-8">
+                <div class="w-24">{% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full w-full p-0" %}</div>
+                <div class="text-base">
+                    {% include 'post-author.njk' %}             
+                </div>
+            </div>
+        {% endif %}
+
         {%- set nextPost = collections['post'] | getNextCollectionItem(page) %}
         {%- if nextPost %}
             <p class="uppercase text-xs mt-6">Next</p>
