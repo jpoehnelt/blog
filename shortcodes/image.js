@@ -49,7 +49,7 @@ async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
     .join(", ")}" data-sizes="${sizes}">`;
 
   return `
-  <div>
+  <div class="flex flex-col gap-2">
     <a href="${high.url}">
       <picture>
         ${source}
@@ -60,7 +60,7 @@ async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
             width="${high.width}" height="${high.height}">
       </picture>
     </a>
-    <p class="text-xs italic text-center -mt-4">${alt}</p>
+    <p class="text-xs italic text-center mt-0">${alt}</p>
     </div>`;
 }
 
