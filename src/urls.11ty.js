@@ -6,5 +6,6 @@ exports.data = {
 exports.render = function (data) {
   return data.collections.all
     .map((post) => `${post.url}`.trim())
+    .sort()
     .join("\n");
 };
