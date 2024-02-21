@@ -3,10 +3,10 @@
     {
       "url": "https://stackoverflow.com/questions/5878682/node-js-hash-string",
       "title": "node.js hash string? - Stack Overflow",
-      "comment": "One liner for getting #MD5 #hash of #JavaScript string.",
-      "selection": "Woot woot, if you do require('crypto').createHash('md5').update(STRING_TO_BE_HASHED).digest(\"hex\") you got a one-liner. ",
-      "hash": "b7e8e7980a90a455e7d1b7c4e2e5f848",
-      "image": "https://storage.googleapis.com/download/storage/v1/b/jpoehnelt-blog/o/n8n%2Fb7e8e7980a90a455e7d1b7c4e2e5f848.png?generation=1708508443663635&alt=media"
+      "comment": "Easy one liner for #MD5 #hash of string in #JavaScript. #commonjs",
+      "selection": "require('crypto').createHash('md5').update(STRING_TO_BE_HASHED).digest(\"hex\")",
+      "hash": "694d1054fc9fa9b03dd4869dfaa7a599",
+      "image": "https://storage.googleapis.com/download/storage/v1/b/jpoehnelt-blog/o/n8n%2F694d1054fc9fa9b03dd4869dfaa7a599.png?generation=1708508914897927&alt=media"
     }
   ]
 }
