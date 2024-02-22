@@ -7,9 +7,10 @@ pagination:
   filter:
     - all
     - post
+    - link
 eleventyComputed:
-  title: "Posts having tag: {{ tag }}"
-permalink: /tag/{{ tag | lower | slugify }}/
+  title: "Pages having tag: {{ tag }}"
+permalink: /tag/{{ tag | slugifyTag  }}/
 layout: base
 ---
 

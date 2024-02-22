@@ -5,6 +5,7 @@ const externalLinks = require("@aloskutov/eleventy-plugin-external-links");
 const workbox = require("workbox-build");
 const htmlParser = require("node-html-parser");
 const qrCode = require("qrcode");
+const slugify = require("slugify");
 
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
@@ -16,6 +17,13 @@ module.exports = (config) => {
 
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
+  });
+
+  config.addFilter("slugifyTag", function (str) {
+    return slugify(str.replace(/\./g, "-"), {
+      remove: /[*+~()'"!:@]/g,
+      lower: false,
+    });
   });
 
   const related = require("eleventy-plugin-related").related({
