@@ -3890,6 +3890,71 @@
     "repost-of": [],
     "rsvp": []
   },
+  "/posts/apps-script-firestore/": {
+    "all": [
+      {
+        "author": {
+          "name": "Martin Hawksey",
+          "photo": "",
+          "type": "card",
+          "url": "https://pulse.appsscript.info/p/author/admin/"
+        },
+        "content": {
+          "html": "<blockquote>\n<a href=\"https://developers.google.com/workspace/chat/tutorial-project-management\"><img height=\"561\" width=\"1200\" alt=\"\" src=\"https://developers.google.com/static/workspace/chat/images/tutorial-project-management-architecture-diagram.svg\"></a><p>Image credit: CC-BY Google</p>\n<p>This tutorial shows how to make a Google Chat app that a team can use to manage projects in real time. The Chat app uses Vertex AI to help teams write user stories (which represent features of a software system from the point of view of a user for the team to develop) and persists the stories in a Firestore database.</p></blockquote>\n<p>A recent episode of Totally Unscripted delved into “going beyond basic bots”, highlighting a couple of Google Chat app tutorials from the Google Developer documentation. One example, the “project management” Chat App, is worth mentioning in a Pulse post.</p>\n<p>While this example uses Google Cloud Functions instead of Google Apps Script, as <a href=\"https://www.youtube.com/live/UGwj4dVTe4A?si=8mZi8HAFHGrOg5oP&amp;t=1456\">discussed in the episode<i></i></a>, both approaches share many similarities. Deploying the project management app involves several steps, but I believe it’s a worthwhile investment to learn how to combine different solutions for building Google Workspace integrations. For developers seeking to expand their Google Workspace Add-on capabilities, this example serves as a valuable reference.</p>\n<p>If you’re interested in using Firestore for data management but prefer Google Apps Script, Justin Poehnelt’s post on “<a href=\"https://justin.poehnelt.com/posts/apps-script-firestore/\">Using Firestore in Apps Script.<i></i></a>” is a great resource. This post provides a basic Firestore wrapper and links to other relevant Apps Script/Firestore libraries.</p>\n<p>Source: <em><a href=\"https://developers.google.com/workspace/chat/tutorial-project-management\">Manage projects with Google Chat, Vertex AI, and Firestore  |  Google for Developers<i></i></a></em></p><img alt=\"\" height=\"100\" width=\"100\" src=\"https://pulse.appsscript.info/files/2022/06/2022-GDE-Workspace-Profile-Badge.jpg\"><a class=\"p-author h-card\" href=\"https://pulse.appsscript.info/p/author/admin/\"><span class=\"p-name\">Martin Hawksey</span></a><p>Member of <a href=\"https://developers.google.com/community/experts/\">Google Developers Experts Program<i></i></a> for Google Workspace (Google Apps Script) and interested in supporting Google Workspace Devs.</p>\n<a href=\"https://mashe.hawksey.info\">mashe.hawksey.info<i></i></a><a href=\"https://twitter.com/mhawksey\" title=\"Twitter\"><i></i></a><a href=\"https://mashe.hawksey.info\" title=\"Wordpress\"><i></i></a><a href=\"https://www.linkedin.com/in/mhawksey/\" title=\"Linkedin\"><i></i></a><a href=\"https://github.com/mhawksey\" title=\"Github\"><i></i></a>\n\n<h3>Related Posts:</h3>\n<ul><li><a href=\"https://pulse.appsscript.info/p/2023/11/tutorial-respond-to-incidents-with-google-chat-vertex-ai-and-apps-script/\"><span>Tutorial: Respond to incidents with Google Chat, Vertex AI, and Apps Script</span></a></li>\n<li><a href=\"https://pulse.appsscript.info/p/2021/11/totally-unscripted-whats-new-in-the-world-of-chat-apps-17-november-at-1200-pt-1500-et-2000-gmt/\"><span>Totally Unscripted: What’s new in the world of Chat Apps? – 17 November at 1200 PT / 1500 ET / 2000 GMT</span></a></li>\n<li><a href=\"https://pulse.appsscript.info/p/2024/02/totally-unscripted-beyond-basic-bots-building-intelligent-assistants-with-google-chat-and-vertex-ai-21-february-2024-2024-at-1200-pt-1500-et-2000-gmt/\"><span>Totally Unscripted: Beyond Basic Bots – Building Intelligent Assistants with Google Chat and Vertex AI 21…</span></a></li>\n</ul>",
+          "text": "Image credit: CC-BY Google\nThis tutorial shows how to make a Google Chat app that a team can use to manage projects in real time. The Chat app uses Vertex AI to help teams write user stories (which represent features of a software system from the point of view of a user for the team to develop) and persists the stories in a Firestore database.\nA recent episode of Totally Unscripted delved into “going beyond basic bots”, highlighting a couple of Google Chat app tutorials from the Google Developer documentation. One example, the “project management” Chat App, is worth mentioning in a Pulse post.\nWhile this example uses Google Cloud Functions instead of Google Apps Script, as discussed in the episode, both approaches share many similarities. Deploying the project management app involves several steps, but I believe it’s a worthwhile investment to learn how to combine different solutions for building Google Workspace integrations. For developers seeking to expand their Google Workspace Add-on capabilities, this example serves as a valuable reference.\nIf you’re interested in using Firestore for data management but prefer Google Apps Script, Justin Poehnelt’s post on “Using Firestore in Apps Script.” is a great resource. This post provides a basic Firestore wrapper and links to other relevant Apps Script/Firestore libraries.\nSource: Manage projects with Google Chat, Vertex AI, and Firestore  |  Google for DevelopersMartin HawkseyMember of Google Developers Experts Program for Google Workspace (Google Apps Script) and interested in supporting Google Workspace Devs.\nmashe.hawksey.info\n\nRelated Posts:\nTutorial: Respond to incidents with Google Chat, Vertex AI, and Apps Script\nTotally Unscripted: What’s new in the world of Chat Apps? – 17 November at 1200 PT / 1500 ET / 2000 GMT\nTotally Unscripted: Beyond Basic Bots – Building Intelligent Assistants with Google Chat and Vertex AI 21…"
+        },
+        "mention-of": "https://justin.poehnelt.com/posts/apps-script-firestore/",
+        "name": "“going beyond basic bots” – Tutorial: managing projects with Google Chat, Vertex AI, and Firestore  ",
+        "published": "2024-02-27T00:00:00",
+        "rels": {
+          "canonical": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/"
+        },
+        "type": "entry",
+        "url": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/",
+        "wm-id": 1786176,
+        "wm-private": false,
+        "wm-property": "mention-of",
+        "wm-protocol": "pingback",
+        "wm-received": "2024-02-27T21:15:19Z",
+        "wm-source": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-firestore/"
+      }
+    ],
+    "bookmark-of": [],
+    "in-reply-to": [],
+    "like-of": [],
+    "mention-of": [
+      {
+        "author": {
+          "name": "Martin Hawksey",
+          "photo": "",
+          "type": "card",
+          "url": "https://pulse.appsscript.info/p/author/admin/"
+        },
+        "content": {
+          "html": "<blockquote>\n<a href=\"https://developers.google.com/workspace/chat/tutorial-project-management\"><img height=\"561\" width=\"1200\" alt=\"\" src=\"https://developers.google.com/static/workspace/chat/images/tutorial-project-management-architecture-diagram.svg\"></a><p>Image credit: CC-BY Google</p>\n<p>This tutorial shows how to make a Google Chat app that a team can use to manage projects in real time. The Chat app uses Vertex AI to help teams write user stories (which represent features of a software system from the point of view of a user for the team to develop) and persists the stories in a Firestore database.</p></blockquote>\n<p>A recent episode of Totally Unscripted delved into “going beyond basic bots”, highlighting a couple of Google Chat app tutorials from the Google Developer documentation. One example, the “project management” Chat App, is worth mentioning in a Pulse post.</p>\n<p>While this example uses Google Cloud Functions instead of Google Apps Script, as <a href=\"https://www.youtube.com/live/UGwj4dVTe4A?si=8mZi8HAFHGrOg5oP&amp;t=1456\">discussed in the episode<i></i></a>, both approaches share many similarities. Deploying the project management app involves several steps, but I believe it’s a worthwhile investment to learn how to combine different solutions for building Google Workspace integrations. For developers seeking to expand their Google Workspace Add-on capabilities, this example serves as a valuable reference.</p>\n<p>If you’re interested in using Firestore for data management but prefer Google Apps Script, Justin Poehnelt’s post on “<a href=\"https://justin.poehnelt.com/posts/apps-script-firestore/\">Using Firestore in Apps Script.<i></i></a>” is a great resource. This post provides a basic Firestore wrapper and links to other relevant Apps Script/Firestore libraries.</p>\n<p>Source: <em><a href=\"https://developers.google.com/workspace/chat/tutorial-project-management\">Manage projects with Google Chat, Vertex AI, and Firestore  |  Google for Developers<i></i></a></em></p><img alt=\"\" height=\"100\" width=\"100\" src=\"https://pulse.appsscript.info/files/2022/06/2022-GDE-Workspace-Profile-Badge.jpg\"><a class=\"p-author h-card\" href=\"https://pulse.appsscript.info/p/author/admin/\"><span class=\"p-name\">Martin Hawksey</span></a><p>Member of <a href=\"https://developers.google.com/community/experts/\">Google Developers Experts Program<i></i></a> for Google Workspace (Google Apps Script) and interested in supporting Google Workspace Devs.</p>\n<a href=\"https://mashe.hawksey.info\">mashe.hawksey.info<i></i></a><a href=\"https://twitter.com/mhawksey\" title=\"Twitter\"><i></i></a><a href=\"https://mashe.hawksey.info\" title=\"Wordpress\"><i></i></a><a href=\"https://www.linkedin.com/in/mhawksey/\" title=\"Linkedin\"><i></i></a><a href=\"https://github.com/mhawksey\" title=\"Github\"><i></i></a>\n\n<h3>Related Posts:</h3>\n<ul><li><a href=\"https://pulse.appsscript.info/p/2023/11/tutorial-respond-to-incidents-with-google-chat-vertex-ai-and-apps-script/\"><span>Tutorial: Respond to incidents with Google Chat, Vertex AI, and Apps Script</span></a></li>\n<li><a href=\"https://pulse.appsscript.info/p/2021/11/totally-unscripted-whats-new-in-the-world-of-chat-apps-17-november-at-1200-pt-1500-et-2000-gmt/\"><span>Totally Unscripted: What’s new in the world of Chat Apps? – 17 November at 1200 PT / 1500 ET / 2000 GMT</span></a></li>\n<li><a href=\"https://pulse.appsscript.info/p/2024/02/totally-unscripted-beyond-basic-bots-building-intelligent-assistants-with-google-chat-and-vertex-ai-21-february-2024-2024-at-1200-pt-1500-et-2000-gmt/\"><span>Totally Unscripted: Beyond Basic Bots – Building Intelligent Assistants with Google Chat and Vertex AI 21…</span></a></li>\n</ul>",
+          "text": "Image credit: CC-BY Google\nThis tutorial shows how to make a Google Chat app that a team can use to manage projects in real time. The Chat app uses Vertex AI to help teams write user stories (which represent features of a software system from the point of view of a user for the team to develop) and persists the stories in a Firestore database.\nA recent episode of Totally Unscripted delved into “going beyond basic bots”, highlighting a couple of Google Chat app tutorials from the Google Developer documentation. One example, the “project management” Chat App, is worth mentioning in a Pulse post.\nWhile this example uses Google Cloud Functions instead of Google Apps Script, as discussed in the episode, both approaches share many similarities. Deploying the project management app involves several steps, but I believe it’s a worthwhile investment to learn how to combine different solutions for building Google Workspace integrations. For developers seeking to expand their Google Workspace Add-on capabilities, this example serves as a valuable reference.\nIf you’re interested in using Firestore for data management but prefer Google Apps Script, Justin Poehnelt’s post on “Using Firestore in Apps Script.” is a great resource. This post provides a basic Firestore wrapper and links to other relevant Apps Script/Firestore libraries.\nSource: Manage projects with Google Chat, Vertex AI, and Firestore  |  Google for DevelopersMartin HawkseyMember of Google Developers Experts Program for Google Workspace (Google Apps Script) and interested in supporting Google Workspace Devs.\nmashe.hawksey.info\n\nRelated Posts:\nTutorial: Respond to incidents with Google Chat, Vertex AI, and Apps Script\nTotally Unscripted: What’s new in the world of Chat Apps? – 17 November at 1200 PT / 1500 ET / 2000 GMT\nTotally Unscripted: Beyond Basic Bots – Building Intelligent Assistants with Google Chat and Vertex AI 21…"
+        },
+        "mention-of": "https://justin.poehnelt.com/posts/apps-script-firestore/",
+        "name": "“going beyond basic bots” – Tutorial: managing projects with Google Chat, Vertex AI, and Firestore  ",
+        "published": "2024-02-27T00:00:00",
+        "rels": {
+          "canonical": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/"
+        },
+        "type": "entry",
+        "url": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/",
+        "wm-id": 1786176,
+        "wm-private": false,
+        "wm-property": "mention-of",
+        "wm-protocol": "pingback",
+        "wm-received": "2024-02-27T21:15:19Z",
+        "wm-source": "https://pulse.appsscript.info/p/2024/02/going-beyond-basic-bots-tutorial-for-managing-projects-with-google-chat-vertex-ai-and-firestore/",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-firestore/"
+      }
+    ],
+    "repost-of": [],
+    "rsvp": []
+  },
   "/posts/apps-script-memoization/": {
     "all": [
       {
