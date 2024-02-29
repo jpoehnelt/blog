@@ -1,0 +1,283 @@
+[
+  {
+    "name": "AbortController",
+    "available": false,
+    "error": "AbortController is not defined"
+  },
+  {
+    "name": "AbortSignal",
+    "available": false,
+    "error": "AbortSignal is not defined"
+  },
+  {
+    "name": "Blob",
+    "available": false,
+    "error": "Blob is not defined"
+  },
+  {
+    "name": "ByteLengthQueuingStrategy",
+    "available": false,
+    "error": "ByteLengthQueuingStrategy is not defined"
+  },
+  {
+    "name": "CompressionStream",
+    "available": false,
+    "error": "CompressionStream is not defined"
+  },
+  {
+    "name": "CountQueuingStrategy",
+    "available": false,
+    "error": "CountQueuingStrategy is not defined"
+  },
+  {
+    "name": "Crypto",
+    "available": false,
+    "error": "Crypto is not defined"
+  },
+  {
+    "name": "CryptoKey",
+    "available": false,
+    "error": "CryptoKey is not defined"
+  },
+  {
+    "name": "DecompressionStream",
+    "available": false,
+    "error": "DecompressionStream is not defined"
+  },
+  {
+    "name": "DOMException",
+    "available": false,
+    "error": "DOMException is not defined"
+  },
+  {
+    "name": "Event",
+    "available": false,
+    "error": "Event is not defined"
+  },
+  {
+    "name": "EventTarget",
+    "available": false,
+    "error": "EventTarget is not defined"
+  },
+  {
+    "name": "File",
+    "available": false,
+    "error": "File is not defined"
+  },
+  {
+    "name": "FormData",
+    "available": false,
+    "error": "FormData is not defined"
+  },
+  {
+    "name": "Headers",
+    "available": false,
+    "error": "Headers is not defined"
+  },
+  {
+    "name": "ReadableByteStreamController",
+    "available": false,
+    "error": "ReadableByteStreamController is not defined"
+  },
+  {
+    "name": "ReadableStream",
+    "available": false,
+    "error": "ReadableStream is not defined"
+  },
+  {
+    "name": "ReadableStreamBYOBReader",
+    "available": false,
+    "error": "ReadableStreamBYOBReader is not defined"
+  },
+  {
+    "name": "ReadableStreamBYOBRequest",
+    "available": false,
+    "error": "ReadableStreamBYOBRequest is not defined"
+  },
+  {
+    "name": "ReadableStreamDefaultController",
+    "available": false,
+    "error": "ReadableStreamDefaultController is not defined"
+  },
+  {
+    "name": "ReadableStreamDefaultReader",
+    "available": false,
+    "error": "ReadableStreamDefaultReader is not defined"
+  },
+  {
+    "name": "Request",
+    "available": false,
+    "error": "Request is not defined"
+  },
+  {
+    "name": "Response",
+    "available": false,
+    "error": "Response is not defined"
+  },
+  {
+    "name": "SubtleCrypto",
+    "available": false,
+    "error": "SubtleCrypto is not defined"
+  },
+  {
+    "name": "TextDecoder",
+    "available": false,
+    "error": "TextDecoder is not defined"
+  },
+  {
+    "name": "TextDecoderStream",
+    "available": false,
+    "error": "TextDecoderStream is not defined"
+  },
+  {
+    "name": "TextEncoder",
+    "available": false,
+    "error": "TextEncoder is not defined"
+  },
+  {
+    "name": "TextEncoderStream",
+    "available": false,
+    "error": "TextEncoderStream is not defined"
+  },
+  {
+    "name": "TransformStream",
+    "available": false,
+    "error": "TransformStream is not defined"
+  },
+  {
+    "name": "TransformStreamDefaultController",
+    "available": false,
+    "error": "TransformStreamDefaultController is not defined"
+  },
+  {
+    "name": "URL",
+    "available": false,
+    "error": "URL is not defined"
+  },
+  {
+    "name": "URLSearchParams",
+    "available": false,
+    "error": "URLSearchParams is not defined"
+  },
+  {
+    "name": "WebAssembly.Global",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.Instance",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.Memory",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.Module",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.Table",
+    "available": true
+  },
+  {
+    "name": "WritableStream",
+    "available": false,
+    "error": "WritableStream is not defined"
+  },
+  {
+    "name": "WritableStreamDefaultController",
+    "available": false,
+    "error": "WritableStreamDefaultController is not defined"
+  },
+  {
+    "name": "atob",
+    "available": false,
+    "error": "atob is not defined"
+  },
+  {
+    "name": "btoa",
+    "available": false,
+    "error": "btoa is not defined"
+  },
+  {
+    "name": "console",
+    "available": true
+  },
+  {
+    "name": "crypto",
+    "available": false,
+    "error": "crypto is not defined"
+  },
+  {
+    "name": "fetch",
+    "available": false,
+    "error": "fetch is not defined"
+  },
+  {
+    "name": "navigator.userAgent",
+    "available": false,
+    "error": "navigator is not defined"
+  },
+  {
+    "name": "performance.now",
+    "available": false,
+    "error": "performance is not defined"
+  },
+  {
+    "name": "performance.timeOrigin",
+    "available": false,
+    "error": "performance is not defined"
+  },
+  {
+    "name": "queueMicrotask",
+    "available": false,
+    "error": "queueMicrotask is not defined"
+  },
+  {
+    "name": "setTimeout",
+    "available": false,
+    "error": "setTimeout is not defined"
+  },
+  {
+    "name": "clearTimeout",
+    "available": false,
+    "error": "clearTimeout is not defined"
+  },
+  {
+    "name": "setInterval",
+    "available": false,
+    "error": "setInterval is not defined"
+  },
+  {
+    "name": "clearInterval",
+    "available": false,
+    "error": "clearInterval is not defined"
+  },
+  {
+    "name": "structuredClone",
+    "available": false,
+    "error": "structuredClone is not defined"
+  },
+  {
+    "name": "WebAssembly.compile",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.compileStreaming",
+    "available": false,
+    "error": "WebAssembly.compileStreaming is not a function"
+  },
+  {
+    "name": "WebAssembly.instantiate",
+    "available": true
+  },
+  {
+    "name": "WebAssembly.instantiateStreaming",
+    "available": false,
+    "error": "WebAssembly.instantiateStreaming is not a function"
+  },
+  {
+    "name": "WebAssembly.validate",
+    "available": true
+  }
+]
