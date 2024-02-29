@@ -7,7 +7,7 @@
     "build:js": "esbuild src/scripts/index.js src/scripts/alpine.js --outdir=public/assets --bundle --minify",
     "build:css": "postcss src/styles/tailwind.css -o public/assets/index.css",
     "build": "cross-env NODE_ENV=production npm-run-all clean build:js build:css build:11ty",
-    "clean": "rimraf public/assets public/blog public/code public/feed public/posts public/run public/tag public/*.*",
+    "clean": "rimraf public",
     "dev:11ty": "eleventy --serve --quiet --incremental",
     "dev:js": "esbuild src/scripts/index.js --outfile=public/assets/index.js --bundle --watch",
     "dev:css": "postcss src/styles/tailwind.css -o public/assets/index.css --watch",

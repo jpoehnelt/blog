@@ -19,6 +19,10 @@ module.exports = (config) => {
     return new CleanCSS({}).minify(code).styles;
   });
 
+  config.addFilter("trimSlashes", function (str) {
+    return str.replace(/^\/+|\/+$/g, "");
+  });
+
   config.addFilter("slugifyTag", function (str) {
     return slugify(str.replace(/\./g, "-"), {
       remove: /[*+~()'"!:@]/g,

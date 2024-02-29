@@ -1,6 +1,4 @@
 const sharp = require("sharp");
-const fs = require('fs');
-const path = require('path');
 
 module.exports = {
     data() {
@@ -12,7 +10,7 @@ module.exports = {
                 alias: 'post'
             },
             permalink: (data) => {
-                return `images/social/${data.post.url}.png`
+                return `images/social/${data.post.url.replace(/^\/+|\/+$/g, "")}.png`
             }
         }
     },
