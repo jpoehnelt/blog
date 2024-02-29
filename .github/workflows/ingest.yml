@@ -49,6 +49,10 @@ jobs:
       # - name: Ingest Mastodon
       #   run: node dist/mastodon.mjs
       - run: |
+            curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o src/_data/appsScriptWinterCG.json
+        env:
+          APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID: ${{ secrets.APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID }}
+      - run: |
           git status
           git add --all src/_data/
       - name: Commit changes
