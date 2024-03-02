@@ -788,11 +788,50 @@
         "wm-received": "2024-02-29T21:32:55Z",
         "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/112012496708829224/111609624586554433",
         "wm-target": "https://justin.poehnelt.com/posts/2024-google-next-talk-rust-python-apps-script/"
+      },
+      {
+        "author": {
+          "name": "TAKAHASHI Shuuji ????✨",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/b5a92e98a893c8a15b9610526f669d7026d3339142a575276808e9a9cd839211.png",
+          "type": "card",
+          "url": "https://mastodon.social/@shuuji3"
+        },
+        "like-of": "https://justin.poehnelt.com/posts/2024-google-next-talk-rust-python-apps-script/",
+        "published": null,
+        "type": "entry",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/112012496708829224#favorited-by-109777623742186058",
+        "wm-id": 1787802,
+        "wm-private": false,
+        "wm-property": "like-of",
+        "wm-protocol": "webmention",
+        "wm-received": "2024-03-01T23:57:41Z",
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/112012496708829224/109777623742186058",
+        "wm-target": "https://justin.poehnelt.com/posts/2024-google-next-talk-rust-python-apps-script/"
       }
     ],
     "bookmark-of": [],
     "in-reply-to": [],
-    "like-of": [],
+    "like-of": [
+      {
+        "author": {
+          "name": "TAKAHASHI Shuuji ????✨",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/b5a92e98a893c8a15b9610526f669d7026d3339142a575276808e9a9cd839211.png",
+          "type": "card",
+          "url": "https://mastodon.social/@shuuji3"
+        },
+        "like-of": "https://justin.poehnelt.com/posts/2024-google-next-talk-rust-python-apps-script/",
+        "published": null,
+        "type": "entry",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/112012496708829224#favorited-by-109777623742186058",
+        "wm-id": 1787802,
+        "wm-private": false,
+        "wm-property": "like-of",
+        "wm-protocol": "webmention",
+        "wm-received": "2024-03-01T23:57:41Z",
+        "wm-source": "https://brid.gy/like/mastodon/@jpoehnelt@mastodon.thbps.com/112012496708829224/109777623742186058",
+        "wm-target": "https://justin.poehnelt.com/posts/2024-google-next-talk-rust-python-apps-script/"
+      }
+    ],
     "mention-of": [],
     "repost-of": [
       {
@@ -4104,6 +4143,55 @@
         "wm-received": "2023-12-20T03:19:30Z",
         "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/111569353883828169/111609624586554433",
         "wm-target": "https://justin.poehnelt.com/posts/apps-script-memoization/"
+      }
+    ],
+    "rsvp": []
+  },
+  "/posts/apps-script-runtime-limitations-wintercg/": {
+    "all": [
+      {
+        "author": {
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "type": "card",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
+        },
+        "published": null,
+        "repost-of": "https://justin.poehnelt.com/posts/apps-script-runtime-limitations-wintercg/",
+        "type": "entry",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/112017311553562909#reblogged-by-111609624586554433",
+        "wm-id": 1787801,
+        "wm-private": false,
+        "wm-property": "repost-of",
+        "wm-protocol": "webmention",
+        "wm-received": "2024-03-01T23:57:40Z",
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/112017311553562909/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-runtime-limitations-wintercg/"
+      }
+    ],
+    "bookmark-of": [],
+    "in-reply-to": [],
+    "like-of": [],
+    "mention-of": [],
+    "repost-of": [
+      {
+        "author": {
+          "name": "#googleworkspace",
+          "photo": "https://webmention.io/avatar/mastodon.thbps.com/389c3751d19baff8d51a7ee152c59d41d766d1292ce942c374a5b854c1636227.png",
+          "type": "card",
+          "url": "https://hashtag.place/activitypub/account/googleworkspace"
+        },
+        "published": null,
+        "repost-of": "https://justin.poehnelt.com/posts/apps-script-runtime-limitations-wintercg/",
+        "type": "entry",
+        "url": "https://mastodon.thbps.com/@jpoehnelt/112017311553562909#reblogged-by-111609624586554433",
+        "wm-id": 1787801,
+        "wm-private": false,
+        "wm-property": "repost-of",
+        "wm-protocol": "webmention",
+        "wm-received": "2024-03-01T23:57:40Z",
+        "wm-source": "https://brid.gy/repost/mastodon/@jpoehnelt@mastodon.thbps.com/112017311553562909/111609624586554433",
+        "wm-target": "https://justin.poehnelt.com/posts/apps-script-runtime-limitations-wintercg/"
       }
     ],
     "rsvp": []
