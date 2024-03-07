@@ -88,6 +88,10 @@ Syntax error: SyntaxError: await is only valid
   of modules line: 5 file: Code.gs
 ```
 
+:::note
+There is no `unhandledRejection` error for promises in Apps Script. Combined with an async function, this can lead to silent errors.
+:::
+
 ## WebAssembly in Apps Script
 
 As mentioned earlier, the only place I've seen async and await actually useful in Apps Script is with the WebAssembly API. Here is a simple example of using async and await with WebAssembly:
