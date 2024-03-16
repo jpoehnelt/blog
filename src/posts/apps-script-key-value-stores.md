@@ -178,7 +178,7 @@ Firestore is a flexible, scalable, and fully managed NoSQL document database pro
 
 With Firestore, you can store and retrieve structured data in the form of documents organized into collections. It supports a wide range of data types and provides features like transactions, indexes, and security rules for fine-grained access control. Compared to other possible stores, the free quota for Firestore should cover equivalent usage. You can refer to the [pricing page](https://cloud.google.com/firestore/pricing) for more details. Firestore now has TTL. See this [blog post](https://cloud.google.com/blog/products/databases/manage-storage-costs-using-time-to-live-in-firestore).
 
-To learn more about Firestore and its features, you can refer to the [official documentation](https://firebase.google.com/docs/firestore) or read my blog post on [Using Firestore in Apps Script](/posts/apps-script-firestore.md).
+To learn more about Firestore and its features, you can refer to the [official documentation](https://firebase.google.com/docs/firestore) or read my blog post on [Using Firestore in Apps Script](/posts/apps-script-firestore/).
 
 ## Conclusion
 
