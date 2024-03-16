@@ -18,7 +18,7 @@ async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
   const sizes = "(min-width: 30em) 33vw, 100vw";
 
   let metadata = await Image(src, {
-    widths: [200, 400, 600],
+    widths: [200, 400, 600, 800, 1000],
     formats: ["webp", "avif", "jpeg"],
     outputDir: "./public/images",
     urlPath: "/images",
