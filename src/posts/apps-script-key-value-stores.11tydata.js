@@ -1862,8 +1862,6 @@ module.exports = async function () {
   //   charts[`bytes${name}`] = await chart.getShortUrl();
   // }
 
-  console.log(charts);
-
   return { charts };
 };
 
