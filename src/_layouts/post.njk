@@ -25,33 +25,7 @@ layout: base
         {{ content | safe }}
         
         <hr>
-
-        {% if 'post' in tags %}
-            <p class="uppercase text-xs mt-6">About the author</p>
-            <div class="flex items-center gap-8">
-                <div class="w-24">{% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full w-full p-0" %}</div>
-                <div class="text-base">
-                    {% include 'post-author.njk' %}             
-                </div>
-            </div>
-        {% endif %}
-
-        {%- set nextPost = collections['post'] | getNextCollectionItem(page) %}
-        {%- if nextPost %}
-            <p class="uppercase text-xs mt-6">Next</p>
-            <p class="font-bold mb-2">
-                <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-            </p>
-        {% endif %}
-        {%- set previousPost = collections['post'] | getPreviousCollectionItem(page) %}
-        {%- if previousPost %}
-            <p class="uppercase text-xs mt-6">Previous</p>
-
-            <p class="font-bold">
-                <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
-            </p>
-        {% endif %}
-
+        
         {% set post = {
             data: {
                 title: title,
@@ -70,6 +44,32 @@ layout: base
                 <li><a data-relative="{{other.relative}}" href="{{ other.document.url}}/">{{ other.document.data.title }}</a></li>
             {% endfor %}
             </ul>
+        {% endif %}
+        
+        {%- set nextPost = collections['post'] | getNextCollectionItem(page) %}
+        {%- if nextPost %}
+            <p class="uppercase text-xs mt-6">Next</p>
+            <p class="font-bold mb-2">
+                <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+            </p>
+        {% endif %}
+        {%- set previousPost = collections['post'] | getPreviousCollectionItem(page) %}
+        {%- if previousPost %}
+            <p class="uppercase text-xs mt-6">Previous</p>
+
+            <p class="font-bold">
+                <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+            </p>
+        {% endif %}       
+
+        {% if 'post' in tags %}
+            <p class="uppercase text-xs mt-6">About the author</p>
+            <div class="flex items-center gap-8">
+                <div class="w-24">{% image src="src/images/justin-poehnelt.jpg", alt=site.author.name, class_="rounded-full w-full p-0" %}</div>
+                <div class="text-base">
+                    {% include 'post-author.njk' %}             
+                </div>
+            </div>
         {% endif %}
         
         {% include "webmentions.njk" %}    
