@@ -211,3 +211,7 @@ input[type="range"] {
 code span.token.table {
   display: inline;
 }
+
+p > code {
+  @apply text-orange-300 font-mono;
+}
