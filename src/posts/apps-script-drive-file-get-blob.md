@@ -120,3 +120,7 @@ The `test()` function will log the first 10 bytes of the `Blob` obtained by each
   urlFetchBlobBytes: [ -119, 80, 78, 71, 13, 10, 26, 10, 0, 0 ] }
 9:52:14 AM	Notice	Execution completed
 ```
+
+### Conclusion
+
+The `DriveApp` method is the most straightforward and reliable way to obtain the `Blob` of a file in Google Drive. However, it requires the `drive` scope, which is restricted for Workspace Add-ons. The Drive Advanced Service method is not recommended due to the issue with `alt=media`. The `UrlFetchApp` method is the most flexible and can be used with the minimal `script.external_request` scope, but it poses a potential security risk.
