@@ -25,9 +25,6 @@ jobs:
     outputs:
       url: ${{ steps.preview.outputs.url }}
     steps:
-      - id: env
-        run: |
-          echo "environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}" >> $GITHUB_OUTPUT
       - name: wait
         id: preview
         uses: WalshyDev/cf-pages-await@v1
@@ -35,7 +32,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN  }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID  }}
           project: jpoehnelt
-          environment: ${{ steps.env.outputs.environment }}
+          commitHash: ${{ github.sha }}
   lighthouse:
     if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
