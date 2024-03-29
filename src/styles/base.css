@@ -77,7 +77,7 @@ hr {
   overflow-x: auto;
   @apply text-lg;
 }
-.content > blockquote {  
+.content > blockquote {
   @apply border-l-2 px-4 py-2 border-slate-200;
 }
 
@@ -212,6 +212,9 @@ code span.token.table {
   display: inline;
 }
 
-p > code {
+p > code,
+li > code,
+td > code,
+th > code {
   @apply text-orange-300 font-mono;
 }
