@@ -10,7 +10,6 @@ tags:
   - gcr
   - workflows
   - google cloud
-  - gcp
 date: "2022-09-22T00:00:00.000Z"
 hideToc: true
 ---

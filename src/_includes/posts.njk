@@ -9,13 +9,7 @@
 
 			<p class="excerpt p-summary mb-6 mt-4">{{ post.data.excerpt }}</p>
 
-			<div class="mb-4">
-			{% for tag in post.data.tags %}
-				{%- if tag !== "post" -%}
-					<a class="tag {{ tag | replace('.', '') }}" href="{{ site.baseUrl }}tag/{{ tag | slugifyTag }}/">{{ tag }}</a>
-				{%- endif -%}
-			{% endfor %}
-			</div>
+			{% tags post.data.tags %}
 
 			<div class="flex justify-between">
 				<div class="mb-0">Read in {{ post.template.frontMatter.content | timeToRead }}.</div>
