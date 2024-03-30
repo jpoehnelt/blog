@@ -17,7 +17,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     iconsPlugin({
       collections: {
-        ...getIconCollections(["ic", "logos"]),
+        ...getIconCollections(["ic", "logos", "vscode-icons", "skill-icons"]),
         custom: {
           icons: {
             descartes: {

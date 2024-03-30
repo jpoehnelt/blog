@@ -14,6 +14,7 @@ module.exports = (config) => {
   config.addAsyncShortcode("image", require("./shortcodes/image"));
   config.addShortcode("strava", require("./shortcodes/strava"));
   config.addAsyncShortcode("barChart", require("./shortcodes/bar-chart"));
+  config.addShortcode("tags", require("./shortcodes/tags.js"));
 
   config.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
