@@ -3,7 +3,7 @@ layout: post
 title: "Rust Teams Twice as Productive as C++"
 excerpt: "Lars Bergstrom (Google Director of Engineering) Rust teams are twice as productive as teams using C++."
 date: "2024-03-28T19:34:38.862Z"
-tags: ["post","link","www-reddit-com","rust","javascript","python","developers","engineering","productivity","c++"]
+tags: ["post","link","www-reddit-com","rust","javascript","python","developers","engineering","productivity","cpp"]
 ---
 
 > Rust teams are twice as productive as teams using C++
