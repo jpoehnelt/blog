@@ -23,7 +23,7 @@ title: Home
 
 # Hello. :wave:
 
-Welcome to my personal site and blog. I like to <a class="tag run" href="/tag/run/">run</a> and <a class="tag code" href="/tag/code/">code</a> and sometimes <a href="/blog/">write</a> about it.
+Welcome to my personal site and blog. I like to <a href="/tag/run/">#run</a> and <a href="/tag/code/">#code</a> and sometimes <a href="/blog/">write</a> about it.
 
 ## Socials
 
