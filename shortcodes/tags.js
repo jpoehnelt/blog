@@ -48,7 +48,7 @@ const icons = {
   link: { class: "i-ic-sharp-link", ratio: 1 },
   pdf: { class: "i-vscode-icons-file-type-pdf2", ratio: 1 },
   post: { class: "i-ic-outline-article fill-green", ratio: 1 },
-  "c++": { class: "i-vscode-icons-file-type-cpp2", ratio: 1 },
+  "cpp": { class: "i-vscode-icons-file-type-cpp2", ratio: 1 },
   nvm: { class: "i-logos-nvm", ratio: 2 },
 };
 
