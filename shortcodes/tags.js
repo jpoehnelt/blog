@@ -92,7 +92,7 @@ function tagShortCode(tags) {
     return "";
   }
 
-  return `<div class="flex flex-wrap gap-1 mb-4">${tags
+  return `<div class="flex flex-wrap gap-2 mb-4">${tags
     .map((tag) => createTag(tag))
     .sort()
     .map(([, tag]) => tag)
