@@ -24,7 +24,7 @@ eleventyExcludeFromCollections: true
 		<content type="html">{{ post.templateContent | simplifyCodeHighlightingForRSS | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 		{%- if post.data.tags %}
 		{% for tag in post.data.tags %}
-		<category>{{tag}}</category>
+		<category term="{{ tag }}"/>
 		{% endfor %}
 		{%- endif %}
 	</entry>
