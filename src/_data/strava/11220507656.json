@@ -71,6 +71,63 @@
   "prefer_perceived_exertion": null,
   "segment_efforts": [
     {
+      "id": 3216793974226527700,
+      "resource_state": 2,
+      "name": "Overlook to Overlook",
+      "activity": {
+        "id": 11220507656,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 514,
+      "moving_time": 307,
+      "start_date": "2024-04-20T01:22:53Z",
+      "start_date_local": "2024-04-19T19:22:53Z",
+      "distance": 402.9,
+      "start_index": 577,
+      "end_index": 689,
+      "average_cadence": 64.5,
+      "device_watts": false,
+      "average_heartrate": 102.1,
+      "max_heartrate": 133,
+      "segment": {
+        "id": 36718108,
+        "resource_state": 2,
+        "name": "Overlook to Overlook",
+        "activity_type": "Run",
+        "distance": 402.9,
+        "average_grade": 5.6,
+        "maximum_grade": 15.9,
+        "elevation_high": 2161.8,
+        "elevation_low": 2139,
+        "start_latlng": [
+          37.398913,
+          -107.851108
+        ],
+        "end_latlng": [
+          37.400609,
+          -107.851694
+        ],
+        "elevation_profile": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3216594732241912000,
       "resource_state": 2,
       "name": "Ridge Climb",
