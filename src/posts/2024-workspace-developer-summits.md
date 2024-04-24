@@ -16,8 +16,8 @@ hideToc: true
 {% image src="src/images/2024-developer-summits.jpeg", alt="Google Workspace Developer Summits 2024" %}
 Save the date for the Google Workspace Developer Summits in 2024!
 
-🇺🇸 Boston - September 12, 2024
-🇩🇪 Berlin - September 17, 2024
+- 🇺🇸 Boston - September 12, 2024
+- 🇩🇪 Berlin - September 17, 2024
 
 > The event is all about building solutions on the Google Workspace platform, learning about new platform capabilities, and connecting with the Workspace developer community.
 
