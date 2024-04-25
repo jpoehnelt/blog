@@ -10,7 +10,8 @@ const slugify = require("slugify");
 module.exports = (config) => {
   config.addPassthroughCopy({ "src/static/*": "/" });
   config.addPassthroughCopy({ "src/static/.well-known/*": "/.well-known/" });
-
+  
+  config.addShortcode("code", require("./shortcodes/code"));
   config.addAsyncShortcode("image", require("./shortcodes/image"));
   config.addShortcode("strava", require("./shortcodes/strava"));
   config.addAsyncShortcode("barChart", require("./shortcodes/bar-chart"));
