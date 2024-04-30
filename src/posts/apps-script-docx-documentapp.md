@@ -16,7 +16,7 @@ date: "2024-04-30T00:00:00.000Z"
 hideToc: true
 ---
 
-In this post, we will explore how to use Office `.docx` and [DocumentApp] in Google Apps Script. All of these operations are available directly in the Docs application, but you can also use Apps Script to automate these tasks.
+In this post, we will explore how to use Office `.docx` and `DocumentApp` in Google Apps Script. All of these operations are available directly in the Docs application, but you can also use Apps Script to automate these tasks.
 
 ## Background
 
