@@ -11,7 +11,7 @@
   "total_elevation_gain": 961,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 0,
   "id": 11295516831,
   "start_date": "2024-04-29T23:12:56Z",
   "start_date_local": "2024-04-29T17:12:56Z",
@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": "United States",
   "achievement_count": 0,
-  "kudos_count": 1,
+  "kudos_count": 2,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -62,13 +62,13 @@
   "external_id": "garmin_ping_337081934797",
   "from_accepted_tag": false,
   "pr_count": 0,
-  "total_photo_count": 0,
+  "total_photo_count": 2,
   "has_kudoed": false,
   "suffer_score": 45,
-  "description": null,
+  "description": "",
   "calories": 1608,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3220232405803049000,
@@ -1345,8 +1345,17 @@
     }
   ],
   "photos": {
-    "primary": null,
-    "count": 0
+    "primary": {
+      "unique_id": "c57cb255-53cd-4b05-929c-8eb19dfb7100",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/XDIPJuCRfGeI7b0OioxluHDYmmSIxVSR9-UNUqeSf-Q-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/XDIPJuCRfGeI7b0OioxluHDYmmSIxVSR9-UNUqeSf-Q-768x578.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 2
   },
   "stats_visibility": [
     {
