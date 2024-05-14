@@ -22,7 +22,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
         run: npm run webmentions
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: 'chore: update mentions'
           branch: chore/webmentions
