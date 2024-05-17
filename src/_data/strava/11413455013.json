@@ -113,6 +113,7 @@
           -107.851694
         ],
         "elevation_profile": null,
+        "elevation_profiles": null,
         "climb_category": 0,
         "city": null,
         "state": "Colorado",
@@ -170,6 +171,7 @@
           -107.85671
         ],
         "elevation_profile": null,
+        "elevation_profiles": null,
         "climb_category": 1,
         "city": null,
         "state": "Colorado",
@@ -863,8 +865,8 @@
   "device_name": "Garmin Enduro",
   "embed_token": "cbe4721e1a1019d95d7db4767491ade45c318977",
   "similar_activities": {
-    "effort_count": 36,
-    "average_speed": 2.441523390308686,
+    "effort_count": 37,
+    "average_speed": 2.4412147916124236,
     "min_average_speed": 1.8429644208477836,
     "mid_average_speed": 2.286177185185359,
     "max_average_speed": 3.0100648157509955,
@@ -872,17 +874,17 @@
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.3841932302900695,
         2.3813488141531414,
         2.4133899315430543,
         2.404460193505205,
-        2.4071017113093656
+        2.4071017113093656,
+        2.4020569083247105
       ],
-      "current_activity_index": 4,
+      "current_activity_index": 3,
       "min_speed": 1.8429644208477836,
       "mid_speed": 2.286177185185359,
       "max_speed": 3.0100648157509955,
-      "direction": 1
+      "direction": 0
     },
     "resource_state": 2
   },
