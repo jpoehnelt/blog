@@ -4,14 +4,14 @@
     "id": 2170160,
     "resource_state": 1
   },
-  "name": "Afternoon Trail Run",
+  "name": "CT, bad GPS",
   "distance": 25751.8,
   "moving_time": 10034,
   "elapsed_time": 11467,
   "total_elevation_gain": 548,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 0,
   "id": 11460009701,
   "start_date": "2024-05-20T22:27:36Z",
   "start_date_local": "2024-05-20T16:27:36Z",
@@ -62,13 +62,13 @@
   "external_id": "garmin_ping_341963583586",
   "from_accepted_tag": false,
   "pr_count": 0,
-  "total_photo_count": 0,
+  "total_photo_count": 2,
   "has_kudoed": false,
   "suffer_score": 38,
-  "description": null,
+  "description": "",
   "calories": 1575,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [],
   "splits_metric": [
     {
@@ -1332,8 +1332,17 @@
     }
   ],
   "photos": {
-    "primary": null,
-    "count": 0
+    "primary": {
+      "unique_id": "404e4c08-2a29-4005-b65b-4f8d1325547c",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/H2mb3RZ0ZYiqPyx8J-7swn9Hup9n7Dc7QsG25pJdcjs-96x128.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/H2mb3RZ0ZYiqPyx8J-7swn9Hup9n7Dc7QsG25pJdcjs-578x768.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 2
   },
   "stats_visibility": [
     {
