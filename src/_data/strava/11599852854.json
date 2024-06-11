@@ -20,7 +20,7 @@
   "location_city": null,
   "location_state": null,
   "location_country": "United States",
-  "achievement_count": 0,
+  "achievement_count": 1,
   "kudos_count": 0,
   "comment_count": 0,
   "athlete_count": 1,
@@ -66,7 +66,7 @@
   "upload_id_str": "12379681935",
   "external_id": "garmin_ping_346230851738",
   "from_accepted_tag": false,
-  "pr_count": 0,
+  "pr_count": 1,
   "total_photo_count": 0,
   "has_kudoed": false,
   "suffer_score": 17,
@@ -74,7 +74,73 @@
   "calories": 817,
   "perceived_exertion": null,
   "prefer_perceived_exertion": null,
-  "segment_efforts": [],
+  "segment_efforts": [
+    {
+      "id": 3235342755488616000,
+      "resource_state": 2,
+      "name": "Aspen to Snowshoe",
+      "activity": {
+        "id": 11599852854,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 158,
+      "moving_time": 155,
+      "start_date": "2024-06-08T00:59:56Z",
+      "start_date_local": "2024-06-07T18:59:56Z",
+      "distance": 367.1,
+      "start_index": 181,
+      "end_index": 339,
+      "average_cadence": 75.8,
+      "device_watts": true,
+      "average_watts": 217.2,
+      "average_heartrate": 129.8,
+      "max_heartrate": 134,
+      "segment": {
+        "id": 37084217,
+        "resource_state": 2,
+        "name": "Aspen to Snowshoe",
+        "activity_type": "Run",
+        "distance": 367.1,
+        "average_grade": 5.9,
+        "maximum_grade": 14.2,
+        "elevation_high": 2241.4,
+        "elevation_low": 2219.6,
+        "start_latlng": [
+          37.384595,
+          -107.867724
+        ],
+        "end_latlng": [
+          37.38707,
+          -107.867042
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 1,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 1
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
   "splits_metric": [
     {
       "distance": 1001.7,
