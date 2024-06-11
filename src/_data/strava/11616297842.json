@@ -74,7 +74,67 @@
   "calories": 613,
   "perceived_exertion": null,
   "prefer_perceived_exertion": null,
-  "segment_efforts": [],
+  "segment_efforts": [
+    {
+      "id": 3235341626033374700,
+      "resource_state": 2,
+      "name": "Aspen to Snowshoe",
+      "activity": {
+        "id": 11616297842,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 159,
+      "moving_time": 156,
+      "start_date": "2024-06-10T01:57:02Z",
+      "start_date_local": "2024-06-09T19:57:02Z",
+      "distance": 367.1,
+      "start_index": 194,
+      "end_index": 353,
+      "average_cadence": 73.9,
+      "device_watts": true,
+      "average_watts": 214.7,
+      "average_heartrate": 123.6,
+      "max_heartrate": 131,
+      "segment": {
+        "id": 37084217,
+        "resource_state": 2,
+        "name": "Aspen to Snowshoe",
+        "activity_type": "Run",
+        "distance": 367.1,
+        "average_grade": 5.9,
+        "maximum_grade": 14.2,
+        "elevation_high": 2241.4,
+        "elevation_low": 2219.6,
+        "start_latlng": [
+          37.384595,
+          -107.867724
+        ],
+        "end_latlng": [
+          37.38707,
+          -107.867042
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
   "splits_metric": [
     {
       "distance": 1001,
