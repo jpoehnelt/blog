@@ -141,6 +141,65 @@
       "hidden": false
     },
     {
+      "id": 3237308056137609700,
+      "resource_state": 2,
+      "name": "Falls Creek to Dyke Canyon Loop",
+      "activity": {
+        "id": 11661815739,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 5943,
+      "moving_time": 5539,
+      "start_date": "2024-06-15T22:35:26Z",
+      "start_date_local": "2024-06-15T16:35:26Z",
+      "distance": 11936.9,
+      "start_index": 254,
+      "end_index": 6103,
+      "average_cadence": 64.2,
+      "device_watts": true,
+      "average_watts": 181.9,
+      "average_heartrate": 138,
+      "max_heartrate": 162,
+      "segment": {
+        "id": 37118974,
+        "resource_state": 2,
+        "name": "Falls Creek to Dyke Canyon Loop",
+        "activity_type": "Run",
+        "distance": 11936.9,
+        "average_grade": 0.3,
+        "maximum_grade": 48.8,
+        "elevation_high": 2969.6,
+        "elevation_low": 2248.6,
+        "start_latlng": [
+          37.383775,
+          -107.86913
+        ],
+        "end_latlng": [
+          37.391233,
+          -107.867568
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3237222796306185000,
       "resource_state": 2,
       "name": "Falls Creek Climb to Water",
@@ -203,6 +262,65 @@
       ],
       "visibility": "everyone",
       "kom_rank": 1,
+      "hidden": false
+    },
+    {
+      "id": 3237314026796347400,
+      "resource_state": 2,
+      "name": "Dyke Canyon Descent",
+      "activity": {
+        "id": 11661815739,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1176,
+      "moving_time": 1159,
+      "start_date": "2024-06-15T23:52:31Z",
+      "start_date_local": "2024-06-15T17:52:31Z",
+      "distance": 3570.9,
+      "start_index": 4785,
+      "end_index": 5961,
+      "average_cadence": 77.3,
+      "device_watts": true,
+      "average_watts": 182.4,
+      "average_heartrate": 136.8,
+      "max_heartrate": 153,
+      "segment": {
+        "id": 37119034,
+        "resource_state": 2,
+        "name": "Dyke Canyon Descent",
+        "activity_type": "Run",
+        "distance": 3570.9,
+        "average_grade": -15.6,
+        "maximum_grade": 21.9,
+        "elevation_high": 2887,
+        "elevation_low": 2331.6,
+        "start_latlng": [
+          37.40311,
+          -107.886595
+        ],
+        "end_latlng": [
+          37.391267,
+          -107.872941
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
       "hidden": false
     }
   ],
