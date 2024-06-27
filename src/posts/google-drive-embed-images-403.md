@@ -70,27 +70,3 @@ width="300"
 ### Long term fix
 
 - I would move the files to a different host optimized for serving public images behind a CDN.
-
-### Addendum
-
-There is a service, :money_with_wings:, to embed Google Drive files: [https://lienuc.com/](https://lienuc.com/) which solves some of these limitations. See below for an example.
-
-```html
-<img
-  crossorigin="anonymous"
-  height="300"
-  width="300"
-  src="https://drive.lienuc.com/uc?id=19Fx6pTBdS-ZkoucTCId2QZ0zVgmvOCom"
-  alt="Oregon Beach"
-/>
-```
-
-Which looks like the following and has better performance than the `iframe` embedding.
-
-<img
-  crossorigin="anonymous"
-  height="300"
-  width="300"
-  src="https://drive.lienuc.com/uc?id=19Fx6pTBdS-ZkoucTCId2QZ0zVgmvOCom"
-  alt="Oregon Beach"
-/>
