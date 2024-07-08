@@ -127,7 +127,7 @@ This output works as expected:
 11:44:38 AM	Notice	Execution completed
 ```
 
-However, to verify that the code is actually running asynchronously, I removed the `await WebAssembly.instantiate` which resulted in:
+However, to verify that the code is running asynchronously, I removed the `await` from the `await WebAssembly.instantiate` which resulted in:
 
 ```javascript
 11:45:57 AM	Notice	Execution started
@@ -137,7 +137,7 @@ TypeError: Cannot read properties of
   main	@ Code.gs:6
 ```
 
-So, it is clear that the WebAssembly API is actually running asynchronously and populating the `instance.exports` object after the `instantiate` method is called.
+So, it is clear that the WebAssembly API is running asynchronously and populating the `instance.exports` object asynchronously after the `instantiate` method is called.
 
 ## Addendum: `setTimeout` and `Utilities.sleep`
 
