@@ -66,7 +66,7 @@ async function main() {
 }
 ```
 
-This leads to an interesting discovery, the entry function can be `async` and the `await` keyword can be used. But can I use a top level await?
+This leads to an interesting discovery, the entry function can be `async` and the `await` keyword can be used. But can I use a top-level await?
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
@@ -80,11 +80,11 @@ function main() {
 }
 ```
 
-No, top level await is not supported in Apps Script and returns the following error when trying to save the script:
+No, top-level await is not supported in Apps Script and returns the following error when trying to save the script:
 
 ```sh
 Syntax error: SyntaxError: await is only valid 
-  in async functions and the top level bodies 
+  in async functions and the top-level bodies 
   of modules line: 5 file: Code.gs
 ```
 
@@ -127,7 +127,7 @@ This output works as expected:
 11:44:38 AM	Notice	Execution completed
 ```
 
-However, to verify that the code is actually running asynchronously, I removed the `await WebAssembly.instantiate` which results in:
+However, to verify that the code is actually running asynchronously, I removed the `await WebAssembly.instantiate` which resulted in:
 
 ```javascript
 11:45:57 AM	Notice	Execution started
@@ -138,6 +138,46 @@ TypeError: Cannot read properties of
 ```
 
 So, it is clear that the WebAssembly API is actually running asynchronously and populating the `instance.exports` object after the `instantiate` method is called.
+
+## Addendum: `setTimeout` and `Utilities.sleep`
+
+The functions `setTimeout` and `setInterval` are typically used to create asynchronous behavior in JavaScript. However, in Apps Script, these functions are not defined and will result in `ReferenceError: setTimeout is not defined`.
+
+It may be tempting to use `Utilities.sleep()` to recreate `setTimeout`, but this function is synchronous and will block the task queue. 
+
+```javascript
+new Promise((resolve, reject) => {
+    console.log("start");
+    Utilities.sleep(2000);
+    console.log("end");
+    resolve();
+  }).then(() => console.log("done"));
+console.log("next");
+```
+
+This will output the following:
+
+```sh
+3:20:21 PM	Notice	Execution started
+3:20:22 PM	Info	start
+3:20:24 PM	Info	end
+3:20:24 PM	Info	next < this is printed after the sleep!!!
+3:20:24 PM	Info	done
+3:20:24 PM	Notice	Execution completed
+```
+
+If this was asynchronous, the `next` would be printed before the `end`. 
+
+Interestingly, if you use `async`/`await`, the output changes to:
+
+```sh
+3:22:37 PM	Notice	Execution started
+3:22:38 PM	Info	start
+3:22:40 PM	Info	end
+3:22:40 PM	Info	done
+3:22:40 PM	Info	next < this is printed after the sleep!!!
+3:22:40 PM	Notice	Execution completed
+```
 
 ## Conclusion
 
