@@ -4,14 +4,14 @@
     "id": 2170160,
     "resource_state": 1
   },
-  "name": "Morning Trail Run",
+  "name": "High Lonesome 100 blowup",
   "distance": 161393,
   "moving_time": 105569,
   "elapsed_time": 105574,
   "total_elevation_gain": 6705,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 1,
   "id": 11937664687,
   "start_date": "2024-07-19T12:00:07Z",
   "start_date_local": "2024-07-19T06:00:07Z",
@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": "United States",
   "achievement_count": 1,
-  "kudos_count": 8,
+  "kudos_count": 9,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -67,13 +67,13 @@
   "external_id": "garmin_ping_356352539723",
   "from_accepted_tag": false,
   "pr_count": 0,
-  "total_photo_count": 0,
+  "total_photo_count": 5,
   "has_kudoed": false,
   "suffer_score": 291,
-  "description": null,
+  "description": "I should have trained for those descents. Quads were done after the descent from Monarch Pass.",
   "calories": 11146,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3249802368496804400,
@@ -3886,8 +3886,8 @@
       "elevation_difference": 72.6,
       "moving_time": 856,
       "split": 137,
-      "average_speed": 1.17,
-      "average_grade_adjusted_speed": 1.83,
+      "average_speed": 1.16,
+      "average_grade_adjusted_speed": 1.82,
       "average_heartrate": 105.99102564102564,
       "pace_zone": 1
     },
@@ -5110,7 +5110,7 @@
       "moving_time": 1337,
       "split": 86,
       "average_speed": 1.2,
-      "average_grade_adjusted_speed": 1.45,
+      "average_grade_adjusted_speed": 1.44,
       "average_heartrate": 94.73038773669973,
       "pace_zone": 1
     },
@@ -5299,7 +5299,7 @@
       "start_date": "2024-07-19T12:00:07Z",
       "start_date_local": "2024-07-19T06:00:07Z",
       "distance": 1609.34,
-      "average_speed": 3.09,
+      "average_speed": 3.11,
       "max_speed": 3.73,
       "lap_index": 1,
       "split": 1,
@@ -8839,8 +8839,17 @@
     }
   ],
   "photos": {
-    "primary": null,
-    "count": 0
+    "primary": {
+      "unique_id": "533cf423-4767-49ea-a0c4-ad585dd6d508",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/_chg7r8K4zQWZe4oZUorLyfY9W42wM5-XSUdG1bF9lg-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/_chg7r8K4zQWZe4oZUorLyfY9W42wM5-XSUdG1bF9lg-768x578.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 5
   },
   "stats_visibility": [
     {
