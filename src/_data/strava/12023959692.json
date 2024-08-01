@@ -134,7 +134,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 8
+          "effort_count": 9
         }
       ],
       "visibility": "everyone",
@@ -265,6 +265,12 @@
           "type_id": 3,
           "type": "pr",
           "rank": 3
+        },
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 2
         }
       ],
       "visibility": "everyone",
