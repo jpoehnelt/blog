@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": "United States",
   "achievement_count": 0,
-  "kudos_count": 0,
+  "kudos_count": 1,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -250,18 +250,11 @@
         "state": "Colorado",
         "country": "USA",
         "private": false,
-        "hazardous": false,
+        "hazardous": true,
         "starred": false
       },
       "pr_rank": null,
-      "achievements": [
-        {
-          "type_id": 7,
-          "type": "segment_effort_count_leader",
-          "rank": 1,
-          "effort_count": 3
-        }
-      ],
+      "achievements": [],
       "visibility": "everyone",
       "kom_rank": null,
       "hidden": false

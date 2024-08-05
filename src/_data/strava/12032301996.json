@@ -256,7 +256,7 @@
         "state": "Colorado",
         "country": "USA",
         "private": false,
-        "hazardous": false,
+        "hazardous": true,
         "starred": false
       },
       "pr_rank": 3,
@@ -265,12 +265,6 @@
           "type_id": 3,
           "type": "pr",
           "rank": 3
-        },
-        {
-          "type_id": 7,
-          "type": "segment_effort_count_leader",
-          "rank": 1,
-          "effort_count": 3
         }
       ],
       "visibility": "everyone",
