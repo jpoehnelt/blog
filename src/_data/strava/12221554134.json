@@ -1,0 +1,182 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Arnarker Lava Tube",
+  "distance": 1187,
+  "moving_time": 1051,
+  "elapsed_time": 4328,
+  "total_elevation_gain": 40,
+  "type": "Hike",
+  "sport_type": "Hike",
+  "id": 12221554134,
+  "start_date": "2024-08-23T11:42:27Z",
+  "start_date_local": "2024-08-23T11:42:27Z",
+  "timezone": "(GMT+00:00) Atlantic/Reykjavik",
+  "utc_offset": 0,
+  "location_city": null,
+  "location_state": null,
+  "location_country": "United States",
+  "achievement_count": 0,
+  "kudos_count": 2,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a12221554134",
+    "polyline": "go}dKdqdbCMHFIIF?CGBYn@ET[XU`@AG?LO`@ACSHMT]^cB|BYVCHmA`BaAv@QX?nDwAPFGKLB]Li@Gn@NCKKK?ABIIPENDNA?BGHACEAGKCACBD?DDCCBCJA?AWAKJASHOB@DKID?f@CSj@oAX[v@cAf@_@|@oAVYFEFM|@_AbFgHh@}@NOFC",
+    "resource_state": 3,
+    "summary_polyline": "go}dKdqdbCMHFIIF?CGBYn@ET[XU`@AG?LO`@ACSHMT]^cB|BYVCHmA`BaAv@QX?nDwAPFGKLB]Li@Gn@NCKKK?ABIIPENDNA?BGHACEAGKCACBD?DDCCBCJA?AWAKJASHOB@DKID?f@CSj@oAX[v@cAf@_@|@oAVYFEFM|@_AbFgHh@}@NOFC"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    63.889965265989304,
+    -21.491549676284194
+  ],
+  "end_latlng": [
+    63.889718586578965,
+    -21.49122160859406
+  ],
+  "average_speed": 1.129,
+  "max_speed": 3.589,
+  "average_cadence": 54.3,
+  "average_temp": 19,
+  "has_heartrate": true,
+  "average_heartrate": 84.4,
+  "max_heartrate": 120,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 69.2,
+  "elev_low": 43.4,
+  "upload_id": 13029199643,
+  "upload_id_str": "13029199643",
+  "external_id": "garmin_ping_364646495345",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 10,
+  "has_kudoed": false,
+  "suffer_score": 1,
+  "description": "",
+  "calories": 287,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 1007.6,
+      "elapsed_time": 4167,
+      "elevation_difference": 3.4,
+      "moving_time": 910,
+      "split": 1,
+      "average_speed": 1.11,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 87.64479315263908,
+      "pace_zone": 0
+    },
+    {
+      "distance": 179.4,
+      "elapsed_time": 161,
+      "elevation_difference": 0.4,
+      "moving_time": 141,
+      "split": 2,
+      "average_speed": 1.27,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 68.25531914893617,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1187,
+      "elapsed_time": 4328,
+      "elevation_difference": 3.8,
+      "moving_time": 1051,
+      "split": 1,
+      "average_speed": 1.13,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 84.3978622327791,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 42784751521,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 12221554134,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 4326,
+      "moving_time": 4326,
+      "start_date": "2024-08-23T11:42:27Z",
+      "start_date_local": "2024-08-23T11:42:27Z",
+      "distance": 1186.96,
+      "average_speed": 0.27,
+      "max_speed": 3.589,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 587,
+      "total_elevation_gain": 45.2,
+      "average_cadence": 54.3,
+      "device_watts": false,
+      "average_heartrate": 84.4,
+      "max_heartrate": 120
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "7c068e08-f4d0-4dd9-8809-9d529faf95e7",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/Sd2L08Z_lkp5HjbK7rVzpC86oEI69MCRu3xpgFEPXF0-96x128.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/Sd2L08Z_lkp5HjbK7rVzpC86oEI69MCRu3xpgFEPXF0-578x768.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 10
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "device_name": "Garmin Enduro",
+  "embed_token": "6105b6037d48fa3bc67a56d45b3ac83be3b99ea4",
+  "available_zones": [
+    "heartrate"
+  ]
+}
