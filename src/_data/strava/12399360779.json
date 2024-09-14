@@ -1,0 +1,920 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Cambridge",
+  "distance": 6583.9,
+  "moving_time": 2086,
+  "elapsed_time": 2222,
+  "total_elevation_gain": 9,
+  "type": "Run",
+  "sport_type": "TrailRun",
+  "workout_type": 0,
+  "id": 12399360779,
+  "start_date": "2024-09-13T12:12:39Z",
+  "start_date_local": "2024-09-13T08:12:39Z",
+  "timezone": "(GMT-05:00) America/New_York",
+  "utc_offset": -14400,
+  "location_city": null,
+  "location_state": null,
+  "location_country": "United States",
+  "achievement_count": 5,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a12399360779",
+    "polyline": "scqaG~v}pLFCFBB^CV@HL?JJi@PO`@SRe@v@AJ?HZXl@jAZVTAf@l@RHb@XZL`@p@L^RJXBZ^`@v@`@Db@f@`@ZRXPDb@X`@v@DBTDNHNTRf@RH`@p@TLPb@Z`@f@`@FNJHJP`@Zn@\\RNXXJVNRp@`@Xl@ZZn@d@f@x@n@b@P`@f@ZNb@r@v@PLVh@j@\\f@j@^X^\\d@p@~@bAr@b@HNFRDHRJ^HLHJX?t@BL\\f@p@\\BDAJs@v@Yd@yBrEwApBq@lAKVk@~@Mt@c@l@OB[EUFWV_@R]V[P_@Ls@LKD}APOFS@WJeALWCeADg@FkAFeAJY?cCLQFiAJ}AJe@?qAH{A@_@EqAB}AE_@@eAO_BAeCKs@G{@Do@Fm@N[Bo@L]Ls@Pq@\\WFc@Xs@XYNMBc@ZSVf@g@l@a@l@]`Bw@~C}@`AOv@GbACn@KjAL`BDj@Ht@B^Jd@ARBnDBjACb@?xBEbBKhAUzAQX?|@ElF_@tBY~Cm@t@WbB_AfAiAt@{@j@w@Xs@\\i@hAuAR[R_@J_@lA}BVa@v@}@GMUE_@[GS?_@Ec@COMQQM_@AWMUa@[Ya@Yg@i@mB}B[YOWe@W_@e@u@o@c@m@{@u@oA{AIUw@m@[a@[WIMk@e@OSm@o@ISc@YOUi@k@OUk@e@Q[IEOU[e@e@_@KSu@q@W]SK]]a@u@WQUGGECEIg@MQOMQGg@_@YWAEOOa@k@e@W[_@WQy@a@IKCGa@]i@UYU@MZc@N_@Xa@?WLo@AE[Y?k@HY",
+    "resource_state": 3,
+    "summary_polyline": "scqaG~v}pLFCFBB^CV@HL?JJi@PO`@SRe@v@AJ?HZXl@jAZVTAf@l@RHb@XZL`@p@L^RJXBZ^`@v@`@Db@f@`@ZRXPDb@X`@v@DBTDNHNTRf@RH`@p@TLPb@Z`@f@`@FNJHJP`@Zn@\\RNXXJVNRp@`@Xl@ZZn@d@f@x@n@b@P`@f@ZNb@r@v@PLVh@j@\\f@j@^X^\\d@p@~@bAr@b@HNFRDHRJ^HLHJX?t@BL\\f@p@\\BDAJs@v@Yd@yBrEwApBq@lAKVk@~@Mt@c@l@OB[EUFWV_@R]V[P_@Ls@LKD}APOFS@WJeALWCeADg@FkAFeAJY?cCLQFiAJ}AJe@?qAH{A@_@EqAB}AE_@@eAO_BAeCKs@G{@Do@Fm@N[Bo@L]Ls@Pq@\\WFc@Xs@XYNMBc@ZSVf@g@l@a@l@]`Bw@~C}@`AOv@GbACn@KjAL`BDj@Ht@B^Jd@ARBnDBjACb@?xBEbBKhAUzAQX?|@ElF_@tBY~Cm@t@WbB_AfAiAt@{@j@w@Xs@\\i@hAuAR[R_@J_@lA}BVa@v@}@GMUE_@[GS?_@Ec@COMQQM_@AWMUa@[Ya@Yg@i@mB}B[YOWe@W_@e@u@o@c@m@{@u@oA{AIUw@m@[a@[WIMk@e@OSm@o@ISc@YOUi@k@OUk@e@Q[IEOU[e@e@_@KSu@q@W]SK]]a@u@WQUGGECEIg@MQOMQGg@_@YWAEOOa@k@e@W[_@WQy@a@IKCGa@]i@UYU@MZc@N_@Xa@?WLo@AE[Y?k@HY"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    42.36362038180232,
+    -71.10015238635242
+  ],
+  "end_latlng": [
+    42.36362960189581,
+    -71.10007418319583
+  ],
+  "average_speed": 3.156,
+  "max_speed": 5.65,
+  "average_cadence": 80.9,
+  "average_temp": 23,
+  "has_heartrate": true,
+  "average_heartrate": 137,
+  "max_heartrate": 165,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 12.2,
+  "elev_low": 6.4,
+  "upload_id": 13219727645,
+  "upload_id_str": "13219727645",
+  "external_id": "garmin_ping_369746987011",
+  "from_accepted_tag": false,
+  "pr_count": 2,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 9,
+  "description": "trail shoes on pavement 😣",
+  "calories": 417,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 3269657326461902000,
+      "resource_state": 2,
+      "name": "Brookline: Pacific to Granite",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 284,
+      "moving_time": 284,
+      "start_date": "2024-09-13T12:15:50Z",
+      "start_date_local": "2024-09-13T08:15:50Z",
+      "distance": 902.2,
+      "start_index": 191,
+      "end_index": 475,
+      "average_cadence": 80.4,
+      "device_watts": false,
+      "average_heartrate": 135.7,
+      "max_heartrate": 146,
+      "segment": {
+        "id": 20712032,
+        "resource_state": 2,
+        "name": "Brookline: Pacific to Granite",
+        "activity_type": "Run",
+        "distance": 902.2,
+        "average_grade": 0,
+        "maximum_grade": 1.9,
+        "elevation_high": 5.9,
+        "elevation_low": 4.5,
+        "start_latlng": [
+          42.361218,
+          -71.103989
+        ],
+        "end_latlng": [
+          42.355093,
+          -71.110507
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 1,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 1
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3269657326463677400,
+      "resource_state": 2,
+      "name": "River to Western",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 86,
+      "moving_time": 86,
+      "start_date": "2024-09-13T12:27:36Z",
+      "start_date_local": "2024-09-13T08:27:36Z",
+      "distance": 292.7,
+      "start_index": 793,
+      "end_index": 879,
+      "average_cadence": 81.3,
+      "device_watts": false,
+      "average_heartrate": 142.7,
+      "max_heartrate": 146,
+      "segment": {
+        "id": 10087675,
+        "resource_state": 2,
+        "name": "River to Western",
+        "activity_type": "Run",
+        "distance": 292.7,
+        "average_grade": 0,
+        "maximum_grade": 0.8,
+        "elevation_high": 2.9,
+        "elevation_low": 2.7,
+        "start_latlng": [
+          42.361577,
+          -71.116123
+        ],
+        "end_latlng": [
+          42.364157,
+          -71.116184
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3269657326464017400,
+      "resource_state": 2,
+      "name": "Western to Weeks Sprint",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 154,
+      "moving_time": 153,
+      "start_date": "2024-09-13T12:29:35Z",
+      "start_date_local": "2024-09-13T08:29:35Z",
+      "distance": 541.6,
+      "start_index": 889,
+      "end_index": 1043,
+      "average_cadence": 81.7,
+      "device_watts": false,
+      "average_heartrate": 137.4,
+      "max_heartrate": 143,
+      "segment": {
+        "id": 20581610,
+        "resource_state": 2,
+        "name": "Western to Weeks Sprint",
+        "activity_type": "Run",
+        "distance": 541.6,
+        "average_grade": 0,
+        "maximum_grade": 2,
+        "elevation_high": 3.1,
+        "elevation_low": 1.7,
+        "start_latlng": [
+          42.364418,
+          -71.116164
+        ],
+        "end_latlng": [
+          42.369131,
+          -71.117433
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Boston",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3269657326463671300,
+      "resource_state": 2,
+      "name": "Riverbend to Western Ave (btw bridges)",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 146,
+      "moving_time": 146,
+      "start_date": "2024-09-13T12:32:10Z",
+      "start_date_local": "2024-09-13T08:32:10Z",
+      "distance": 514,
+      "start_index": 1044,
+      "end_index": 1190,
+      "average_cadence": 82.4,
+      "device_watts": false,
+      "average_heartrate": 142.2,
+      "max_heartrate": 148,
+      "segment": {
+        "id": 10024731,
+        "resource_state": 2,
+        "name": "Riverbend to Western Ave (btw bridges)",
+        "activity_type": "Run",
+        "distance": 514,
+        "average_grade": 0,
+        "maximum_grade": 4.4,
+        "elevation_high": 29,
+        "elevation_low": 27,
+        "start_latlng": [
+          42.368973,
+          -71.117202
+        ],
+        "end_latlng": [
+          42.364573,
+          -71.115938
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3269657326459003000,
+      "resource_state": 2,
+      "name": "Western to River Sprint",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 84,
+      "moving_time": 84,
+      "start_date": "2024-09-13T12:34:58Z",
+      "start_date_local": "2024-09-13T08:34:58Z",
+      "distance": 283.3,
+      "start_index": 1206,
+      "end_index": 1290,
+      "average_cadence": 82,
+      "device_watts": false,
+      "average_heartrate": 139.5,
+      "max_heartrate": 142,
+      "segment": {
+        "id": 27726400,
+        "resource_state": 2,
+        "name": "Western to River Sprint",
+        "activity_type": "Run",
+        "distance": 283.3,
+        "average_grade": -0.6,
+        "maximum_grade": 5.1,
+        "elevation_high": 10.2,
+        "elevation_low": 7.6,
+        "start_latlng": [
+          42.364151,
+          -71.116229
+        ],
+        "end_latlng": [
+          42.361603,
+          -71.116098
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3269657326459271000,
+      "resource_state": 2,
+      "name": "Brookline Mountain",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 416,
+      "moving_time": 414,
+      "start_date": "2024-09-13T12:41:57Z",
+      "start_date_local": "2024-09-13T08:41:57Z",
+      "distance": 1248.1,
+      "start_index": 1625,
+      "end_index": 2041,
+      "average_cadence": 79.9,
+      "device_watts": false,
+      "average_heartrate": 136.9,
+      "max_heartrate": 155,
+      "segment": {
+        "id": 18828506,
+        "resource_state": 2,
+        "name": "Brookline Mountain",
+        "activity_type": "Run",
+        "distance": 1248.1,
+        "average_grade": -0.1,
+        "maximum_grade": 1.4,
+        "elevation_high": 6.2,
+        "elevation_low": 3.5,
+        "start_latlng": [
+          42.355069,
+          -71.110506
+        ],
+        "end_latlng": [
+          42.363954,
+          -71.10129
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1004,
+      "elapsed_time": 350,
+      "elevation_difference": 1.8,
+      "moving_time": 350,
+      "split": 1,
+      "average_speed": 2.87,
+      "average_grade_adjusted_speed": 2.89,
+      "average_heartrate": 121.32840236686391,
+      "pace_zone": 1
+    },
+    {
+      "distance": 999,
+      "elapsed_time": 401,
+      "elevation_difference": -3.4,
+      "moving_time": 310,
+      "split": 2,
+      "average_speed": 3.22,
+      "average_grade_adjusted_speed": 3.21,
+      "average_heartrate": 136.86774193548388,
+      "pace_zone": 2
+    },
+    {
+      "distance": 999.4,
+      "elapsed_time": 331,
+      "elevation_difference": -0.2,
+      "moving_time": 293,
+      "split": 3,
+      "average_speed": 3.41,
+      "average_grade_adjusted_speed": 3.43,
+      "average_heartrate": 139.77319587628867,
+      "pace_zone": 2
+    },
+    {
+      "distance": 1000.1,
+      "elapsed_time": 301,
+      "elevation_difference": 1.4,
+      "moving_time": 294,
+      "split": 4,
+      "average_speed": 3.4,
+      "average_grade_adjusted_speed": 3.43,
+      "average_heartrate": 140.7542662116041,
+      "pace_zone": 2
+    },
+    {
+      "distance": 998.4,
+      "elapsed_time": 303,
+      "elevation_difference": 1.2,
+      "moving_time": 303,
+      "split": 5,
+      "average_speed": 3.3,
+      "average_grade_adjusted_speed": 3.32,
+      "average_heartrate": 144.58415841584159,
+      "pace_zone": 2
+    },
+    {
+      "distance": 1001,
+      "elapsed_time": 336,
+      "elevation_difference": -2,
+      "moving_time": 336,
+      "split": 6,
+      "average_speed": 2.98,
+      "average_grade_adjusted_speed": 2.98,
+      "average_heartrate": 143.13253012048193,
+      "pace_zone": 1
+    },
+    {
+      "distance": 582.4,
+      "elapsed_time": 198,
+      "elevation_difference": 0.4,
+      "moving_time": 198,
+      "split": 7,
+      "average_speed": 2.94,
+      "average_grade_adjusted_speed": 2.95,
+      "average_heartrate": 132.83673469387756,
+      "pace_zone": 1
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1612,
+      "elapsed_time": 543,
+      "elevation_difference": -0.4,
+      "moving_time": 543,
+      "split": 1,
+      "average_speed": 2.97,
+      "average_grade_adjusted_speed": 2.98,
+      "average_heartrate": 128.07156308851225,
+      "pace_zone": 1
+    },
+    {
+      "distance": 1607.9,
+      "elapsed_time": 604,
+      "elevation_difference": -1.8,
+      "moving_time": 475,
+      "split": 2,
+      "average_speed": 3.39,
+      "average_grade_adjusted_speed": 3.39,
+      "average_heartrate": 137.61733615221988,
+      "pace_zone": 2
+    },
+    {
+      "distance": 1611.3,
+      "elapsed_time": 487,
+      "elevation_difference": 3.2,
+      "moving_time": 480,
+      "split": 3,
+      "average_speed": 3.36,
+      "average_grade_adjusted_speed": 3.39,
+      "average_heartrate": 142.35490605427975,
+      "pace_zone": 2
+    },
+    {
+      "distance": 1607.2,
+      "elapsed_time": 534,
+      "elevation_difference": -2,
+      "moving_time": 534,
+      "split": 4,
+      "average_speed": 3.01,
+      "average_grade_adjusted_speed": 3.02,
+      "average_heartrate": 141.43560606060606,
+      "pace_zone": 1
+    },
+    {
+      "distance": 145.9,
+      "elapsed_time": 52,
+      "elevation_difference": 0.2,
+      "moving_time": 52,
+      "split": 5,
+      "average_speed": 2.81,
+      "average_grade_adjusted_speed": 2.82,
+      "average_heartrate": 129.8653846153846,
+      "pace_zone": 1
+    }
+  ],
+  "laps": [
+    {
+      "id": 43446846055,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 544,
+      "moving_time": 546,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 1609.34,
+      "average_speed": 2.95,
+      "max_speed": 5.65,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 544,
+      "total_elevation_gain": 3.6,
+      "average_cadence": 80.1,
+      "device_watts": false,
+      "average_heartrate": 128.1,
+      "max_heartrate": 147,
+      "pace_zone": 1
+    },
+    {
+      "id": 43446846068,
+      "resource_state": 2,
+      "name": "Lap 2",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 603,
+      "moving_time": 474,
+      "start_date": "2024-09-13T12:21:44Z",
+      "start_date_local": "2024-09-13T08:21:44Z",
+      "distance": 1609.34,
+      "average_speed": 3.4,
+      "max_speed": 4.276,
+      "lap_index": 2,
+      "split": 2,
+      "start_index": 545,
+      "end_index": 1021,
+      "total_elevation_gain": 3,
+      "average_cadence": 81.4,
+      "device_watts": false,
+      "average_heartrate": 137.6,
+      "max_heartrate": 146,
+      "pace_zone": 2
+    },
+    {
+      "id": 43446846074,
+      "resource_state": 2,
+      "name": "Lap 3",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 486,
+      "moving_time": 479,
+      "start_date": "2024-09-13T12:31:48Z",
+      "start_date_local": "2024-09-13T08:31:48Z",
+      "distance": 1609.34,
+      "average_speed": 3.36,
+      "max_speed": 3.99,
+      "lap_index": 3,
+      "split": 3,
+      "start_index": 1022,
+      "end_index": 1502,
+      "total_elevation_gain": 5.2,
+      "average_cadence": 82.4,
+      "device_watts": false,
+      "average_heartrate": 142.4,
+      "max_heartrate": 148,
+      "pace_zone": 2
+    },
+    {
+      "id": 43446846079,
+      "resource_state": 2,
+      "name": "Lap 4",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 534,
+      "moving_time": 534,
+      "start_date": "2024-09-13T12:39:55Z",
+      "start_date_local": "2024-09-13T08:39:55Z",
+      "distance": 1609.34,
+      "average_speed": 3.01,
+      "max_speed": 4.312,
+      "lap_index": 4,
+      "split": 4,
+      "start_index": 1503,
+      "end_index": 2036,
+      "total_elevation_gain": 3.2,
+      "average_cadence": 80.3,
+      "device_watts": false,
+      "average_heartrate": 141.4,
+      "max_heartrate": 165,
+      "pace_zone": 1
+    },
+    {
+      "id": 43446846081,
+      "resource_state": 2,
+      "name": "Lap 5",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 51,
+      "moving_time": 51,
+      "start_date": "2024-09-13T12:48:49Z",
+      "start_date_local": "2024-09-13T08:48:49Z",
+      "distance": 146.93,
+      "average_speed": 2.88,
+      "max_speed": 4.232,
+      "lap_index": 5,
+      "split": 5,
+      "start_index": 2037,
+      "end_index": 2087,
+      "total_elevation_gain": 0,
+      "average_cadence": 77.6,
+      "device_watts": false,
+      "average_heartrate": 129.9,
+      "max_heartrate": 133,
+      "pace_zone": 1
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 52740870745,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 111,
+      "moving_time": 111,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 400,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 634,
+      "end_index": 745
+    },
+    {
+      "id": 52740870746,
+      "resource_state": 2,
+      "name": "1/2 mile",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 233,
+      "moving_time": 233,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 805,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 883,
+      "end_index": 1116
+    },
+    {
+      "id": 52740870747,
+      "resource_state": 2,
+      "name": "1K",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 289,
+      "moving_time": 289,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 1000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 882,
+      "end_index": 1171
+    },
+    {
+      "id": 52740870742,
+      "resource_state": 2,
+      "name": "1 mile",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 479,
+      "moving_time": 479,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 1609,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 882,
+      "end_index": 1355
+    },
+    {
+      "id": 52740870743,
+      "resource_state": 2,
+      "name": "2 mile",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1000,
+      "moving_time": 1000,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 3219,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 886,
+      "end_index": 1880
+    },
+    {
+      "id": 52740870744,
+      "resource_state": 2,
+      "name": "5K",
+      "activity": {
+        "id": 12399360779,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1659,
+      "moving_time": 1659,
+      "start_date": "2024-09-13T12:12:39Z",
+      "start_date_local": "2024-09-13T08:12:39Z",
+      "distance": 5000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 57,
+      "end_index": 1583
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "device_name": "Garmin Enduro",
+  "embed_token": "ef15edf8b84e606871e07def096e4c73621d89bd",
+  "similar_activities": {
+    "effort_count": 1,
+    "average_speed": 3.156212782014022,
+    "min_average_speed": 3.156212782014022,
+    "mid_average_speed": 3.1562127820140216,
+    "max_average_speed": 3.156212782014022,
+    "pr_rank": null,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        3.1562127820140216
+      ],
+      "current_activity_index": 0,
+      "min_speed": 3.156212782014022,
+      "mid_speed": 3.1562127820140216,
+      "max_speed": 3.156212782014022,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "heartrate",
+    "pace"
+  ]
+}
