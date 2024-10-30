@@ -50,7 +50,8 @@ The Drive API and DriveApp have a `name` property that is always the same as the
 
 - The UI `title` has a fallback to the `name` if the `title` is unset.
 - The Forms API `documentTitle` is equivalent to the UI `name` and the Drive API `name`.
-- The Forms API `title` is undefined if unset, but the `getTitle()` method in `FormApp` will return the empty string if unset!!
+- The Forms API `title` is undefined if unset, but the `getTitle()` method in `FormApp` will return the empty string if unset!
+- To change the `name` via the API, you need to use the Drive API or `DriveApp`.
 
 ## Example code
 
