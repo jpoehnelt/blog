@@ -11,7 +11,7 @@
   "total_elevation_gain": 798,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 0,
   "id": 12816930415,
   "start_date": "2024-11-03T18:11:54Z",
   "start_date_local": "2024-11-03T11:11:54Z",
@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": "United States",
   "achievement_count": 0,
-  "kudos_count": 0,
+  "kudos_count": 1,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -65,10 +65,10 @@
   "total_photo_count": 0,
   "has_kudoed": false,
   "suffer_score": 25,
-  "description": null,
+  "description": "retrieving my chainsaw",
   "calories": 1139,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3288275996668445700,
@@ -917,6 +917,7 @@
   "hide_from_home": false,
   "device_name": "Garmin Enduro",
   "embed_token": "e86421eeadb29e9500086a41583afbdb03aa2ef7",
+  "private_note": "",
   "similar_activities": {
     "effort_count": 2,
     "average_speed": 1.4863263157625872,
