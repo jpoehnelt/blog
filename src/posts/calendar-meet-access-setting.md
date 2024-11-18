@@ -15,6 +15,8 @@ date: "2024-04-25T00:00:00.000Z"
 hideToc: true
 ---
 
+**UPDATE: You need to replace the meeting in the Calendar Event in order to edit the Meet space. See https://issuetracker.google.com/379337762.**
+
 In this post, I am going to show you how to use Google Workspace APIs to create a Calendar event and set the access settings for the Google Meet Space. This is in response to an [issue opened in the Google Meet issue tracker](https://issuetracker.google.com/334192346).
 
 > I'm encountering an issue when inviting participants with non-Gmail accounts. For instance, if I invite two people—one with a Gmail account and the other without—the non-Gmail user is unable to join the meeting directly. Instead, they are prompted to request permission to join, which can be inconvenient. While I'm aware of the option to manually adjust host controls to allow all users, doing this for each meeting is impractical and tedious.
