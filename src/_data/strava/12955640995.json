@@ -68,7 +68,6 @@
   "pr_count": 0,
   "total_photo_count": 0,
   "has_kudoed": false,
-  "suffer_score": 14,
   "description": null,
   "calories": 656,
   "perceived_exertion": null,
@@ -130,7 +129,6 @@
       "pr_rank": null,
       "achievements": [],
       "visibility": "everyone",
-      "kom_rank": null,
       "hidden": false
     }
   ],
@@ -744,9 +742,5 @@
     },
     "resource_state": 2
   },
-  "available_zones": [
-    "heartrate",
-    "pace",
-    "power"
-  ]
+  "available_zones": []
 }
