@@ -64,7 +64,6 @@
   "pr_count": 0,
   "total_photo_count": 0,
   "has_kudoed": false,
-  "suffer_score": 12,
   "description": null,
   "calories": 334,
   "perceived_exertion": null,
@@ -465,8 +464,5 @@
     },
     "resource_state": 2
   },
-  "available_zones": [
-    "heartrate",
-    "pace"
-  ]
+  "available_zones": []
 }
