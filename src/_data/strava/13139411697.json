@@ -533,8 +533,8 @@
   "device_name": "Garmin Enduro",
   "embed_token": "c0d06873515585937b49cf01a945bda77d115a88",
   "similar_activities": {
-    "effort_count": 66,
-    "average_speed": 2.6404761833993358,
+    "effort_count": 67,
+    "average_speed": 2.6390987193937825,
     "min_average_speed": 1.5513313850596124,
     "mid_average_speed": 2.1227368033362066,
     "max_average_speed": 3.3605275672480928,
@@ -542,17 +542,17 @@
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.5426976799245753,
         2.5060715606858075,
         2.4831501273663603,
         2.4970107956459326,
-        2.5131887399618558
+        2.5131887399618558,
+        2.5386357662425083
       ],
-      "current_activity_index": 4,
+      "current_activity_index": 3,
       "min_speed": 1.5513313850596124,
       "mid_speed": 2.1227368033362066,
       "max_speed": 3.3605275672480928,
-      "direction": 1
+      "direction": 0
     },
     "resource_state": 2
   },
