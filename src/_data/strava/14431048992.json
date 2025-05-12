@@ -11,7 +11,7 @@
   "total_elevation_gain": 322,
   "type": "Run",
   "sport_type": "TrailRun",
-  "workout_type": null,
+  "workout_type": 0,
   "id": 14431048992,
   "start_date": "2025-05-10T01:45:37Z",
   "start_date_local": "2025-05-09T19:45:37Z",
@@ -70,10 +70,10 @@
   "total_photo_count": 0,
   "has_kudoed": false,
   "suffer_score": 14,
-  "description": null,
+  "description": "",
   "calories": 801,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3356125656339235300,
