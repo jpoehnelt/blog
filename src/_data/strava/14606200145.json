@@ -72,6 +72,234 @@
   "prefer_perceived_exertion": null,
   "segment_efforts": [
     {
+      "id": 3362328858058710000,
+      "resource_state": 2,
+      "name": "Water Tank Trail W->E",
+      "activity": {
+        "id": 14606200145,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 290,
+      "moving_time": 272,
+      "start_date": "2025-05-27T01:34:43Z",
+      "start_date_local": "2025-05-26T19:34:43Z",
+      "distance": 658.6,
+      "start_index": 597,
+      "end_index": 844,
+      "device_watts": false,
+      "average_heartrate": 117.9,
+      "max_heartrate": 133,
+      "segment": {
+        "id": 39267261,
+        "resource_state": 2,
+        "name": "Water Tank Trail W->E",
+        "activity_type": "Ride",
+        "distance": 658.6,
+        "average_grade": 1.4,
+        "maximum_grade": 28,
+        "elevation_high": 2342.4,
+        "elevation_low": 2312,
+        "start_latlng": [
+          37.401104,
+          -107.860835
+        ],
+        "end_latlng": [
+          37.400722,
+          -107.858775
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3362329102935076000,
+      "resource_state": 2,
+      "name": "Water Tank Trail E->W",
+      "activity": {
+        "id": 14606200145,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 243,
+      "moving_time": 223,
+      "start_date": "2025-05-27T01:41:14Z",
+      "start_date_local": "2025-05-26T19:41:14Z",
+      "distance": 652.5,
+      "start_index": 890,
+      "end_index": 1109,
+      "device_watts": false,
+      "average_heartrate": 92.6,
+      "max_heartrate": 112,
+      "segment": {
+        "id": 39267264,
+        "resource_state": 2,
+        "name": "Water Tank Trail E->W",
+        "activity_type": "Ride",
+        "distance": 652.5,
+        "average_grade": -1.1,
+        "maximum_grade": 24.5,
+        "elevation_high": 2341,
+        "elevation_low": 2308.4,
+        "start_latlng": [
+          37.400752,
+          -107.858751
+        ],
+        "end_latlng": [
+          37.401001,
+          -107.860807
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3362330291657702000,
+      "resource_state": 2,
+      "name": "Snowshoe -> Starwood",
+      "activity": {
+        "id": 14606200145,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 144,
+      "moving_time": 144,
+      "start_date": "2025-05-27T01:51:21Z",
+      "start_date_local": "2025-05-26T19:51:21Z",
+      "distance": 983.3,
+      "start_index": 1407,
+      "end_index": 1544,
+      "device_watts": false,
+      "average_heartrate": 125.1,
+      "max_heartrate": 141,
+      "segment": {
+        "id": 39267287,
+        "resource_state": 2,
+        "name": "Snowshoe -> Starwood",
+        "activity_type": "Ride",
+        "distance": 983.3,
+        "average_grade": -5.7,
+        "maximum_grade": 5.6,
+        "elevation_high": 2267,
+        "elevation_low": 2211,
+        "start_latlng": [
+          37.386959,
+          -107.866976
+        ],
+        "end_latlng": [
+          37.379688,
+          -107.866245
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": true,
+        "starred": true
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3362330507314871300,
+      "resource_state": 2,
+      "name": "Starwood -> Snowshoe",
+      "activity": {
+        "id": 14606200145,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 367,
+      "moving_time": 367,
+      "start_date": "2025-05-27T02:08:16Z",
+      "start_date_local": "2025-05-26T20:08:16Z",
+      "distance": 977.6,
+      "start_index": 2130,
+      "end_index": 2484,
+      "device_watts": false,
+      "average_heartrate": 133.3,
+      "max_heartrate": 142,
+      "segment": {
+        "id": 39267291,
+        "resource_state": 2,
+        "name": "Starwood -> Snowshoe",
+        "activity_type": "Ride",
+        "distance": 977.6,
+        "average_grade": 5.6,
+        "maximum_grade": 16.5,
+        "elevation_high": 2259.4,
+        "elevation_low": 2204.2,
+        "start_latlng": [
+          37.379647,
+          -107.866204
+        ],
+        "end_latlng": [
+          37.386757,
+          -107.86715
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3362269512053766700,
       "resource_state": 2,
       "name": "Down from Snowshoe - NO PUBLIC ACCESS",
