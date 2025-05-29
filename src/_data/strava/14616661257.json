@@ -21,8 +21,8 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 3,
-  "kudos_count": 0,
-  "comment_count": 0,
+  "kudos_count": 1,
+  "comment_count": 1,
   "athlete_count": 1,
   "photo_count": 0,
   "map": {
@@ -63,7 +63,7 @@
   "external_id": "garmin_ping_442999506058",
   "from_accepted_tag": false,
   "pr_count": 2,
-  "total_photo_count": 2,
+  "total_photo_count": 0,
   "has_kudoed": false,
   "suffer_score": 9,
   "description": "",
@@ -583,17 +583,8 @@
     }
   ],
   "photos": {
-    "primary": {
-      "unique_id": "f6a50315-78a8-47b6-bbe3-daac3d6339a9",
-      "urls": {
-        "100": "https://dgtzuqphqg23d.cloudfront.net/_LhvGFxRPAWMO-wN3ciD9zzC7tkI_JRPqwq-A4TRAZ8-128x96.jpg",
-        "600": "https://dgtzuqphqg23d.cloudfront.net/_LhvGFxRPAWMO-wN3ciD9zzC7tkI_JRPqwq-A4TRAZ8-768x576.jpg"
-      },
-      "source": 1,
-      "media_type": 1
-    },
-    "use_primary_photo": true,
-    "count": 2
+    "primary": null,
+    "count": 0
   },
   "stats_visibility": [
     {
@@ -620,6 +611,7 @@
   "hide_from_home": false,
   "device_name": "Garmin Enduro 3",
   "embed_token": "3ca79c640aa6cfb6cf4588c59f7f4cf220a28caa",
+  "private_note": "",
   "available_zones": [
     "heartrate",
     "power"
