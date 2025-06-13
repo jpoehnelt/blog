@@ -39,7 +39,7 @@ const id = Drive.Files.copy({}, docx.getId(), { convert: true }).id;
 const doc = DocumentApp.openById(document.id);
 ```
 
-Alternatively, you can use the `Drive.Files.insert()` method to create a new version of the `.docx` file in Google Docs format:
+Alternatively, you can use the `Drive.Files.create()` method to create a new version of the `.docx` file in Google Docs format:
 
 ```javascript
 const docx = DriveApp.getFileById(docxId);
@@ -51,7 +51,7 @@ const metadata = {
   parents: [{ id: docx.getParents().next().getId() }],
 };
 
-const id = Drive.Files.insert(metadata, docx.getBlob(), { convert: true }).id;
+const id = Drive.Files.create(metadata, docx.getBlob(), { convert: true }).id;
 
 const doc = DocumentApp.openById(id);
 ```
