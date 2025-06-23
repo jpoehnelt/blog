@@ -128,7 +128,14 @@
         "starred": false
       },
       "pr_rank": null,
-      "achievements": [],
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 1
+        }
+      ],
       "visibility": "everyone",
       "kom_rank": null,
       "hidden": false
