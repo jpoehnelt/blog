@@ -76,6 +76,65 @@
   "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
+      "id": 3372360740977817600,
+      "resource_state": 2,
+      "name": "Hagg Lake East Side CCW",
+      "activity": {
+        "id": 14876223450,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2744,
+      "moving_time": 2572,
+      "start_date": "2025-06-22T01:17:13Z",
+      "start_date_local": "2025-06-21T18:17:13Z",
+      "distance": 7556.7,
+      "start_index": 26,
+      "end_index": 2629,
+      "average_cadence": 74.8,
+      "device_watts": true,
+      "average_watts": 271.2,
+      "average_heartrate": 129.1,
+      "max_heartrate": 140,
+      "segment": {
+        "id": 39471724,
+        "resource_state": 2,
+        "name": "Hagg Lake East Side CCW",
+        "activity_type": "Run",
+        "distance": 7556.7,
+        "average_grade": -0.2,
+        "maximum_grade": 45.4,
+        "elevation_high": 136.4,
+        "elevation_low": 87.8,
+        "start_latlng": [
+          45.47662,
+          -123.20086
+        ],
+        "end_latlng": [
+          45.503478,
+          -123.219041
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Oregon",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3371709739647350300,
       "resource_state": 2,
       "name": "the golden fields...of mud",
