@@ -135,6 +135,65 @@
       "hidden": false
     },
     {
+      "id": 3379190914729225000,
+      "resource_state": 2,
+      "name": "Tripp Tease (Not Hazardous)",
+      "activity": {
+        "id": 15052900734,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 963,
+      "moving_time": 930,
+      "start_date": "2025-07-09T02:48:05Z",
+      "start_date_local": "2025-07-08T20:48:05Z",
+      "distance": 1892.3,
+      "start_index": 2544,
+      "end_index": 3499,
+      "average_cadence": 73.6,
+      "device_watts": true,
+      "average_watts": 237.2,
+      "average_heartrate": 123.6,
+      "max_heartrate": 135,
+      "segment": {
+        "id": 39611748,
+        "resource_state": 2,
+        "name": "Tripp Tease (Not Hazardous)",
+        "activity_type": "Run",
+        "distance": 1892.3,
+        "average_grade": 3,
+        "maximum_grade": 42.9,
+        "elevation_high": 2336,
+        "elevation_low": 2262,
+        "start_latlng": [
+          37.401886,
+          -107.856108
+        ],
+        "end_latlng": [
+          37.401927,
+          -107.858259
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3377872876512091000,
       "resource_state": 2,
       "name": "Water Tank Trail West Descent",
