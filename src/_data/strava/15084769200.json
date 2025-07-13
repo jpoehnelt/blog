@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 3,
-  "kudos_count": 0,
+  "kudos_count": 4,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -191,6 +191,65 @@
         "country": "USA",
         "private": false,
         "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3379190914727294000,
+      "resource_state": 2,
+      "name": "Tripp Tease (Not Hazardous)",
+      "activity": {
+        "id": 15084769200,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1023,
+      "moving_time": 893,
+      "start_date": "2025-07-12T02:34:30Z",
+      "start_date_local": "2025-07-11T20:34:30Z",
+      "distance": 1892.3,
+      "start_index": 3185,
+      "end_index": 4118,
+      "average_cadence": 68.2,
+      "device_watts": true,
+      "average_watts": 215,
+      "average_heartrate": 125.1,
+      "max_heartrate": 143,
+      "segment": {
+        "id": 39611748,
+        "resource_state": 2,
+        "name": "Tripp Tease (Not Hazardous)",
+        "activity_type": "Run",
+        "distance": 1892.3,
+        "average_grade": 3,
+        "maximum_grade": 42.9,
+        "elevation_high": 2336,
+        "elevation_low": 2262,
+        "start_latlng": [
+          37.401886,
+          -107.856108
+        ],
+        "end_latlng": [
+          37.401927,
+          -107.858259
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
         "starred": false
       },
       "pr_rank": null,
