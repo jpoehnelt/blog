@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 0,
-  "kudos_count": 1,
+  "kudos_count": 2,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -193,7 +193,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 21
+          "effort_count": 22
         }
       ],
       "visibility": "everyone",
@@ -734,8 +734,8 @@
   "device_name": "Garmin Enduro 3",
   "embed_token": "ef922aa6e0162be0f2cc5fbdf857d5f26cd4045b",
   "similar_activities": {
-    "effort_count": 19,
-    "average_speed": 2.4905598461304375,
+    "effort_count": 20,
+    "average_speed": 2.479203516805287,
     "min_average_speed": 2.2782121911734556,
     "mid_average_speed": 2.4678224374388686,
     "max_average_speed": 2.6918595840301003,
@@ -743,17 +743,17 @@
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.5594182920509505,
         2.53797418809494,
         2.4788603912202314,
         2.4338491946784737,
-        2.3559576876157045
+        2.3559576876157045,
+        2.312684972483249
       ],
-      "current_activity_index": 4,
+      "current_activity_index": 3,
       "min_speed": 2.2782121911734556,
       "mid_speed": 2.4678224374388686,
       "max_speed": 2.6918595840301003,
-      "direction": -1
+      "direction": 0
     },
     "resource_state": 2
   },
