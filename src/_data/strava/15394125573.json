@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 0,
-  "kudos_count": 0,
+  "kudos_count": 1,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -67,13 +67,13 @@
   "external_id": "garmin_ping_467606439753",
   "from_accepted_tag": false,
   "pr_count": 0,
-  "total_photo_count": 0,
+  "total_photo_count": 1,
   "has_kudoed": false,
   "suffer_score": 14,
-  "description": null,
+  "description": "",
   "calories": 768,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
     {
       "id": 3389108056770823700,
@@ -259,7 +259,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 34
+          "effort_count": 35
         }
       ],
       "visibility": "everyone",
@@ -913,8 +913,17 @@
     }
   ],
   "photos": {
-    "primary": null,
-    "count": 0
+    "primary": {
+      "unique_id": "c0d1064c-bd32-4189-a87b-217d126da926",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/2AflHB6yUCiqlzpidj1r4Y1R98d6eixP_Jm65GAY5kU-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/2AflHB6yUCiqlzpidj1r4Y1R98d6eixP_Jm65GAY5kU-768x576.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
   },
   "stats_visibility": [
     {
