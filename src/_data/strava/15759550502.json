@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 1,
-  "kudos_count": 0,
+  "kudos_count": 1,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -435,7 +435,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 41
+          "effort_count": 40
         }
       ],
       "visibility": "everyone",
@@ -1230,7 +1230,7 @@
   ],
   "best_efforts": [
     {
-      "id": 66109848984,
+      "id": 66115417235,
       "resource_state": 2,
       "name": "400m",
       "activity": {
@@ -1253,7 +1253,7 @@
       "end_index": 7899
     },
     {
-      "id": 66109848985,
+      "id": 66115417236,
       "resource_state": 2,
       "name": "1/2 mile",
       "activity": {
@@ -1276,7 +1276,7 @@
       "end_index": 7921
     },
     {
-      "id": 66109848986,
+      "id": 66115417237,
       "resource_state": 2,
       "name": "1K",
       "activity": {
@@ -1299,7 +1299,7 @@
       "end_index": 7923
     },
     {
-      "id": 66109848978,
+      "id": 66115417229,
       "resource_state": 2,
       "name": "1 mile",
       "activity": {
@@ -1322,7 +1322,7 @@
       "end_index": 8042
     },
     {
-      "id": 66109848979,
+      "id": 66115417230,
       "resource_state": 2,
       "name": "2 mile",
       "activity": {
@@ -1345,7 +1345,7 @@
       "end_index": 8040
     },
     {
-      "id": 66109848980,
+      "id": 66115417231,
       "resource_state": 2,
       "name": "5K",
       "activity": {
@@ -1368,7 +1368,7 @@
       "end_index": 8064
     },
     {
-      "id": 66109848981,
+      "id": 66115417232,
       "resource_state": 2,
       "name": "10K",
       "activity": {
@@ -1391,7 +1391,7 @@
       "end_index": 8067
     },
     {
-      "id": 66109848982,
+      "id": 66115417233,
       "resource_state": 2,
       "name": "15K",
       "activity": {
@@ -1414,7 +1414,7 @@
       "end_index": 8064
     },
     {
-      "id": 66109848983,
+      "id": 66115417234,
       "resource_state": 2,
       "name": "10 mile",
       "activity": {
@@ -1477,20 +1477,20 @@
   "embed_token": "d79a5382ddc89d647db2bba5e55cc27e1696f4a2",
   "similar_activities": {
     "effort_count": 1,
-    "average_speed": 2.396589032653188,
-    "min_average_speed": 2.396589032653188,
-    "mid_average_speed": 2.396589032653188,
-    "max_average_speed": 2.396589032653188,
+    "average_speed": 2.3965889357479533,
+    "min_average_speed": 2.3965889357479533,
+    "mid_average_speed": 2.3965889357479533,
+    "max_average_speed": 2.3965889357479533,
     "pr_rank": null,
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.396589032653188
+        2.3965889357479533
       ],
       "current_activity_index": 0,
-      "min_speed": 2.396589032653188,
-      "mid_speed": 2.396589032653188,
-      "max_speed": 2.396589032653188,
+      "min_speed": 2.3965889357479533,
+      "mid_speed": 2.3965889357479533,
+      "max_speed": 2.3965889357479533,
       "direction": 0
     },
     "resource_state": 2
