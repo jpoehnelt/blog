@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 0,
-  "kudos_count": 1,
+  "kudos_count": 2,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -254,72 +254,6 @@
       "hidden": false
     },
     {
-      "id": 3402141171790899000,
-      "resource_state": 2,
-      "name": "One Small Tripp for Man",
-      "activity": {
-        "id": 15803573157,
-        "visibility": "everyone",
-        "resource_state": 1
-      },
-      "athlete": {
-        "id": 2170160,
-        "resource_state": 1
-      },
-      "elapsed_time": 551,
-      "moving_time": 549,
-      "start_date": "2025-09-14T02:10:09Z",
-      "start_date_local": "2025-09-13T20:10:09Z",
-      "distance": 1006,
-      "start_index": 3954,
-      "end_index": 4505,
-      "average_cadence": 73.4,
-      "device_watts": true,
-      "average_watts": 269.4,
-      "average_heartrate": 116.6,
-      "max_heartrate": 131,
-      "segment": {
-        "id": 39831587,
-        "resource_state": 2,
-        "name": "One Small Tripp for Man",
-        "activity_type": "Run",
-        "distance": 1006,
-        "average_grade": 6.8,
-        "maximum_grade": 34.6,
-        "elevation_high": 2336,
-        "elevation_low": 2268,
-        "start_latlng": [
-          37.403031,
-          -107.856704
-        ],
-        "end_latlng": [
-          37.407323,
-          -107.856678
-        ],
-        "elevation_profile": null,
-        "elevation_profiles": null,
-        "climb_category": 0,
-        "city": null,
-        "state": "Colorado",
-        "country": "USA",
-        "private": false,
-        "hazardous": false,
-        "starred": false
-      },
-      "pr_rank": null,
-      "achievements": [
-        {
-          "type_id": 7,
-          "type": "segment_effort_count_leader",
-          "rank": 1,
-          "effort_count": 13
-        }
-      ],
-      "visibility": "only_me",
-      "kom_rank": null,
-      "hidden": false
-    },
-    {
       "id": 3402141171790245000,
       "resource_state": 2,
       "name": "Water Tank Trail West Descent",
@@ -378,7 +312,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 44
+          "effort_count": 43
         }
       ],
       "visibility": "only_me",

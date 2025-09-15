@@ -201,72 +201,6 @@
       "hidden": false
     },
     {
-      "id": 3401433914552844300,
-      "resource_state": 2,
-      "name": "One Small Tripp for Man",
-      "activity": {
-        "id": 15782202680,
-        "visibility": "everyone",
-        "resource_state": 1
-      },
-      "athlete": {
-        "id": 2170160,
-        "resource_state": 1
-      },
-      "elapsed_time": 516,
-      "moving_time": 512,
-      "start_date": "2025-09-12T02:53:20Z",
-      "start_date_local": "2025-09-11T20:53:20Z",
-      "distance": 1006,
-      "start_index": 2443,
-      "end_index": 2959,
-      "average_cadence": 75.1,
-      "device_watts": true,
-      "average_watts": 275.5,
-      "average_heartrate": 133.1,
-      "max_heartrate": 143,
-      "segment": {
-        "id": 39831587,
-        "resource_state": 2,
-        "name": "One Small Tripp for Man",
-        "activity_type": "Run",
-        "distance": 1006,
-        "average_grade": 6.8,
-        "maximum_grade": 34.6,
-        "elevation_high": 2336,
-        "elevation_low": 2268,
-        "start_latlng": [
-          37.403031,
-          -107.856704
-        ],
-        "end_latlng": [
-          37.407323,
-          -107.856678
-        ],
-        "elevation_profile": null,
-        "elevation_profiles": null,
-        "climb_category": 0,
-        "city": null,
-        "state": "Colorado",
-        "country": "USA",
-        "private": false,
-        "hazardous": false,
-        "starred": false
-      },
-      "pr_rank": null,
-      "achievements": [
-        {
-          "type_id": 7,
-          "type": "segment_effort_count_leader",
-          "rank": 1,
-          "effort_count": 13
-        }
-      ],
-      "visibility": "everyone",
-      "kom_rank": null,
-      "hidden": false
-    },
-    {
       "id": 3401433914550785000,
       "resource_state": 2,
       "name": "Water Tank Trail West Descent",
@@ -325,7 +259,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 44
+          "effort_count": 43
         }
       ],
       "visibility": "everyone",

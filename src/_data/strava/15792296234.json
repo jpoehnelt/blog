@@ -193,7 +193,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 44
+          "effort_count": 43
         }
       ],
       "visibility": "everyone",
@@ -734,26 +734,26 @@
   "device_name": "Garmin Enduro 3",
   "embed_token": "b1b149c198849ebc659c23c69e06be775ddced6c",
   "similar_activities": {
-    "effort_count": 28,
-    "average_speed": 2.4404231377704497,
+    "effort_count": 29,
+    "average_speed": 2.4504297654354272,
     "min_average_speed": 2.1321386255924173,
-    "mid_average_speed": 2.379532537999358,
-    "max_average_speed": 2.6918729096989966,
+    "mid_average_speed": 2.403173751148341,
+    "max_average_speed": 2.7531513313110887,
     "pr_rank": null,
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.401134246814473,
         2.412478853978317,
         2.4034762980049007,
         2.3256039339822068,
-        2.2969511391731143
+        2.2969511391731143,
+        2.377912296481279
       ],
-      "current_activity_index": 4,
+      "current_activity_index": 3,
       "min_speed": 2.1321386255924173,
-      "mid_speed": 2.379532537999358,
-      "max_speed": 2.6918729096989966,
-      "direction": -1
+      "mid_speed": 2.403173751148341,
+      "max_speed": 2.7531513313110887,
+      "direction": 0
     },
     "resource_state": 2
   },
