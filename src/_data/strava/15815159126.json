@@ -193,7 +193,132 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 43
+          "effort_count": 44
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3402683897474491000,
+      "resource_state": 2,
+      "name": "Big Meadow Cruise",
+      "activity": {
+        "id": 15815159126,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 160,
+      "moving_time": 160,
+      "start_date": "2025-09-15T02:24:41Z",
+      "start_date_local": "2025-09-14T20:24:41Z",
+      "distance": 501.4,
+      "start_index": 2101,
+      "end_index": 2261,
+      "average_cadence": 79.2,
+      "device_watts": true,
+      "average_watts": 304.8,
+      "average_heartrate": 129.6,
+      "max_heartrate": 137,
+      "segment": {
+        "id": 40134745,
+        "resource_state": 2,
+        "name": "Big Meadow Cruise",
+        "activity_type": "Run",
+        "distance": 501.4,
+        "average_grade": -0.7,
+        "maximum_grade": 7.5,
+        "elevation_high": 2295,
+        "elevation_low": 2289.4,
+        "start_latlng": [
+          37.399405,
+          -107.86102
+        ],
+        "end_latlng": [
+          37.39653,
+          -107.864056
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3402683576807420000,
+      "resource_state": 2,
+      "name": "Snowshoe -> Aspen",
+      "activity": {
+        "id": 15815159126,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 98,
+      "moving_time": 98,
+      "start_date": "2025-09-15T02:35:05Z",
+      "start_date_local": "2025-09-14T20:35:05Z",
+      "distance": 324.2,
+      "start_index": 2725,
+      "end_index": 2823,
+      "average_cadence": 78.1,
+      "device_watts": true,
+      "average_watts": 261.2,
+      "average_heartrate": 144.1,
+      "max_heartrate": 156,
+      "segment": {
+        "id": 40134735,
+        "resource_state": 2,
+        "name": "Snowshoe -> Aspen",
+        "activity_type": "Run",
+        "distance": 324.2,
+        "average_grade": -7.2,
+        "maximum_grade": 1.5,
+        "elevation_high": 2267.4,
+        "elevation_low": 2244,
+        "start_latlng": [
+          37.386756,
+          -107.867096
+        ],
+        "end_latlng": [
+          37.384698,
+          -107.86758
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 1
         }
       ],
       "visibility": "everyone",
