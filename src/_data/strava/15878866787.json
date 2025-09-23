@@ -21,7 +21,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 1,
-  "kudos_count": 8,
+  "kudos_count": 9,
   "comment_count": 0,
   "athlete_count": 3,
   "photo_count": 0,
@@ -75,6 +75,124 @@
   "perceived_exertion": null,
   "prefer_perceived_exertion": null,
   "segment_efforts": [
+    {
+      "id": 3405255161710431000,
+      "resource_state": 2,
+      "name": "Mountain Marmot 2025 Ascent",
+      "activity": {
+        "id": 15878866787,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 4251,
+      "moving_time": 4207,
+      "start_date": "2025-09-20T15:02:25Z",
+      "start_date_local": "2025-09-20T09:02:25Z",
+      "distance": 10684.9,
+      "start_index": 151,
+      "end_index": 4402,
+      "average_cadence": 72.7,
+      "device_watts": true,
+      "average_watts": 312,
+      "average_heartrate": 156.3,
+      "max_heartrate": 175,
+      "segment": {
+        "id": 40184250,
+        "resource_state": 2,
+        "name": "Mountain Marmot 2025 Ascent",
+        "activity_type": "Run",
+        "distance": 10684.9,
+        "average_grade": 4.8,
+        "maximum_grade": 49.5,
+        "elevation_high": 3272,
+        "elevation_low": 2754.2,
+        "start_latlng": [
+          37.629856,
+          -107.815939
+        ],
+        "end_latlng": [
+          37.617649,
+          -107.851624
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 3,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3405215535055191600,
+      "resource_state": 2,
+      "name": "Mountain Marmot - First Ascent",
+      "activity": {
+        "id": 15878866787,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1588,
+      "moving_time": 1582,
+      "start_date": "2025-09-20T15:02:25Z",
+      "start_date_local": "2025-09-20T09:02:25Z",
+      "distance": 3811.8,
+      "start_index": 151,
+      "end_index": 1739,
+      "average_cadence": 72.3,
+      "device_watts": true,
+      "average_watts": 326.9,
+      "average_heartrate": 156.6,
+      "max_heartrate": 172,
+      "segment": {
+        "id": 40184258,
+        "resource_state": 2,
+        "name": "Mountain Marmot - First Ascent",
+        "activity_type": "Run",
+        "distance": 3811.8,
+        "average_grade": 6.7,
+        "maximum_grade": 40,
+        "elevation_high": 3011.8,
+        "elevation_low": 2754.2,
+        "start_latlng": [
+          37.629856,
+          -107.815939
+        ],
+        "end_latlng": [
+          37.631963,
+          -107.830721
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 2,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
     {
       "id": 3404527323373309400,
       "resource_state": 2,
@@ -136,6 +254,124 @@
           "rank": 2
         }
       ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3405215890110602000,
+      "resource_state": 2,
+      "name": "Mountain Marmot - Road Descent",
+      "activity": {
+        "id": 15878866787,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1160,
+      "moving_time": 1160,
+      "start_date": "2025-09-20T16:15:10Z",
+      "start_date_local": "2025-09-20T10:15:10Z",
+      "distance": 4774.8,
+      "start_index": 4516,
+      "end_index": 5676,
+      "average_cadence": 82.6,
+      "device_watts": true,
+      "average_watts": 316.6,
+      "average_heartrate": 162.3,
+      "max_heartrate": 180,
+      "segment": {
+        "id": 40184274,
+        "resource_state": 2,
+        "name": "Mountain Marmot - Road Descent",
+        "activity_type": "Run",
+        "distance": 4774.8,
+        "average_grade": -5.8,
+        "maximum_grade": 7.8,
+        "elevation_high": 3283.8,
+        "elevation_low": 3008.2,
+        "start_latlng": [
+          37.617745,
+          -107.852259
+        ],
+        "end_latlng": [
+          37.631411,
+          -107.830547
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3405215740434820000,
+      "resource_state": 2,
+      "name": "Mountain Marmot - Last Descent",
+      "activity": {
+        "id": 15878866787,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1116,
+      "moving_time": 1111,
+      "start_date": "2025-09-20T16:35:32Z",
+      "start_date_local": "2025-09-20T10:35:32Z",
+      "distance": 3717.7,
+      "start_index": 5738,
+      "end_index": 6854,
+      "average_cadence": 78,
+      "device_watts": true,
+      "average_watts": 266,
+      "average_heartrate": 128.1,
+      "max_heartrate": 143,
+      "segment": {
+        "id": 40184267,
+        "resource_state": 2,
+        "name": "Mountain Marmot - Last Descent",
+        "activity_type": "Run",
+        "distance": 3717.7,
+        "average_grade": -7,
+        "maximum_grade": 17.5,
+        "elevation_high": 3000.6,
+        "elevation_low": 2738.8,
+        "start_latlng": [
+          37.631653,
+          -107.830088
+        ],
+        "end_latlng": [
+          37.629929,
+          -107.81542
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
       "visibility": "everyone",
       "kom_rank": null,
       "hidden": false
