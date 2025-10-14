@@ -1,0 +1,49 @@
+{
+  "name": "slidev-theme-google-workspace",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "exports": {
+    "./components/GoogleWorkspaceLogos.vue": "./components/GoogleWorkspaceLogos.vue"
+  },
+  "scripts": {
+    "build": "slidev build",
+    "check": "tsc --noEmit",
+    "dev": "slidev --open --port 2000",
+    "export": "slidev export"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=v0.47.0"
+  },
+  "slidev": {
+    "theme": "google-workspace",
+    "colorSchema": "light",
+    "defaults": {
+      "author": "Justin Poehnelt",
+      "github": "jpoehnelt",
+      "email": "jpoehnelt@google.com",
+      "website": "https://justin.poehnelt.com",
+      "linkedin": "justin-poehnelt",
+      "primary": "#ccc"
+    }
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:",
+    "@slidev/parser": "catalog:",
+    "@slidev/types": "catalog:",
+    "@vueuse/integrations": "catalog:",
+    "qrcode": "catalog:",
+    "shiki": "catalog:"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:",
+    "@types/qrcode": "catalog:",
+    "@unocss/preset-web-fonts": "catalog:",
+    "unocss": "catalog:"
+  }
+}
