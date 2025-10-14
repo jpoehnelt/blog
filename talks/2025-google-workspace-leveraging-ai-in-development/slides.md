@@ -27,7 +27,7 @@ svg: "none"
 ---
 
 <div class="flex items-center justify-start w-full h-full">
-  <img src="/assets/me.jpg" class="rounded-full w-40 h-40 border-2 border-primary shadow" />
+  <img src="./public/assets/me.jpg" class="rounded-full w-40 h-40 border-2 border-primary shadow" />
   <div class="ml-8 text-left">
     <h2 class="text-4xl">Justin Poehnelt</h2>
     <p class="text-xl">Google Workspace Developer Relations</p>
