@@ -1,7 +1,9 @@
 {
-  "name": "blog",
+  "name": "@jpoehnelt/blog",
+  "version": "0.0.1",
+  "private": true,
   "author": "Justin Poehnelt",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "build:11ty": "NODE_OPTIONS=\"--max-old-space-size=4096\" eleventy --quiet",
     "build:js": "esbuild src/scripts/index.js src/scripts/alpine.js --outdir=public/assets --bundle --minify",
