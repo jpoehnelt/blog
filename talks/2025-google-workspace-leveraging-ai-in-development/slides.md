@@ -27,7 +27,7 @@ svg: "none"
 ---
 
 <div class="flex items-center justify-start w-full h-full">
-  <img src="/assets/me.jpg" class="rounded-full w-40 h-40 border-2 border-primary shadow" />
+  <img src="/me.jpg" class="rounded-full w-40 h-40 border-2 border-primary shadow" />
   <div class="ml-8 text-left">
     <h2 class="text-4xl">Justin Poehnelt</h2>
     <p class="text-xl">Google Workspace Developer Relations</p>
@@ -206,7 +206,7 @@ These same "gotchas" that challenge developers also mislead AI tools.
 
 **Developers are submitting bugs about non-existent Apps Script methods!**
 
-<img src="/assets/apps-script-type-error-chart.png" class="w-full mx-auto"/>
+<img src="/apps-script-type-error-chart.png" class="w-full mx-auto"/>
 </v-click>
 
 <!--
