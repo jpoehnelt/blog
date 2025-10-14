@@ -28,4 +28,4 @@ jobs:
           cache: "pnpm"
       - run: pnpm i
       - run: pnpm build
-      - run: npm run check
+      - run: pnpm check
