@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "target": "ESNext",
+    "jsx": "preserve"
+  },
+  "include": ["./**/*.vue", "./**/*.ts"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "2025-google-workspace-leveraging-ai-in-development",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --out ../../dist/talks/2025-google-workspace-leveraging-ai-in-development --base /talks/2025-google-workspace-leveraging-ai-in-development",
+    "check": "tsc --noEmit",
+    "dev": "slidev --open --port 3010",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@shikijs/markdown-it": "catalog:",
+    "@slidev/cli": "catalog:",
+    "@slidev/client": "catalog:",
+    "@slidev/parser": "catalog:",
+    "@types/markdown-it": "catalog:",
+    "@unocss/preset-web-fonts": "catalog:",
+    "markdown-it": "catalog:",
+    "slidev-theme-google-workspace": "workspace:*",
+    "unocss": "catalog:",
+    "vue": "catalog:"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "defaults": {
+      "author": "Justin Poehnelt",
+      "github": "jpoehnelt",
+      "email": "jpoehnelt@google.com",
+      "website": "https://justin.poehnelt.com",
+      "linkedin": "justin-poehnelt"
+    }
+  }
+}

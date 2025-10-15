@@ -86,7 +86,6 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
-public
 
 # Gatsby files
 .cache/
@@ -123,3 +122,7 @@ public
 .netlify
 
 **/credentials.json
+
+.turbo
+.cache
+.playwright-mcp

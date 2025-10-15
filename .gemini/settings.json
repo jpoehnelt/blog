@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "workspace-developer": {
+      "httpUrl": "https://workspace-developer.goog/mcp",
+      "trust": true
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  },
+  "context": {
+    "fileName": ["GEMINI.md", "SLIDEV.md"]
+  },
+  "general": {
+    "preferredEditor": "code"
+  }
+}
