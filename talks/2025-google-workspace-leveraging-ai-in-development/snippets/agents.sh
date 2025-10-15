@@ -1,0 +1,2 @@
+gemini -p "Analyze this repository and summarize important information about its structure, tools, frameworks,
+ patterns, and best practices in AGENTS.MD. Add instructions to continuously update this file as you learn."

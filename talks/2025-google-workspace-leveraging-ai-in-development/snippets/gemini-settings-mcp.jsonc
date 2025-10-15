@@ -1,0 +1,9 @@
+{
+  // ... other Gemini settings ...
+  "mcpServers": {
+    "workspace-developer": {
+      "httpUrl": "https://workspace-developer.goog/mcp",
+      "trust": true,
+    },
+  },
+}

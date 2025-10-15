@@ -1,10 +1,15 @@
 {
-  "plugins": ["prettier-plugin-jinja-template"],
   "overrides": [
     {
-      "files": ["*.njk"],
+      "files": ["talks/**/slides.md"],
       "options": {
-        "parser": "jinja-template",
+        "parser": "slidev",
+        "plugins": ["prettier-plugin-slidev"]
+      }
+    },
+    {
+      "files": ["**/snippets/*"],
+      "options": {
         "printWidth": 60
       }
     }
