@@ -4,7 +4,6 @@ const slugify = require("slugify");
 const sharp = require("sharp");
 const fs = require("fs");
 const htmlmin = require("html-minifier");
-const { ht } = require("date-fns/locale");
 
 async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
   if (src.endsWith(".gif")) {
@@ -41,12 +40,12 @@ async function imageShortcode({ src, alt, class_ = "rounded-sm mx-auto" }) {
   <source type="image/webp" data-srcset="${metadata.webp
     .map(({ srcset }) => srcset)
     .join(", ")}" sizes="${sizes}">
-  <source type="image/avif" data-srcset="${metadata.webp
+  <source type="image/avif" data-srcset="${metadata.avif
     .map(({ srcset }) => srcset)
     .join(", ")}" sizes="${sizes}">
-  <source type="image/jpeg" data-srcset="${metadata.webp
+  <source type="image/jpeg" data-srcset="${metadata.jpeg
     .map(({ srcset }) => srcset)
-    .join(", ")}" data-sizes="${sizes}">`;
+    .join(", ")}" sizes="${sizes}">`;
 
   return `
   <div class="flex flex-col gap-2">
