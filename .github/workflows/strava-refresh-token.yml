@@ -12,13 +12,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
           cache: 'npm'
-      - run: npm ci
+      - run: pnpm i
+      - run: pnpm build
       - name: Refresh token
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
           REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-        run: node dist/strava-refresh.mjs
+        run: node packages/data-automation/dist/strava-ingest.js
