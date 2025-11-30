@@ -51,7 +51,6 @@ This part seems like it will never end. Instead of going down a single canyon, i
 - **Time**: 29:20:53
 - **Place**: 3rd
 
-<div class='strava-embed-placeholder' data-embed-type='activity' data-embed-id='7261930839'></div>
 
 ## My experience
 

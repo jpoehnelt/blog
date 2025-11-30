@@ -123,7 +123,7 @@ If I had my current fitness in January, I would probably been fastest on the Arc
 * Pace: 9:16/mile
 * Elevation: 3488 ft
 
-<Strava id="6887532901" embed="6887532901" />
+<Strava id="6887532901" embed="4735be2afb9f94daac4f9d689feae2e4020f0c7f" />
 
 ## Summary
 
