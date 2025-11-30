@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --out ../../dist/talks/2025-google-workspace-leveraging-ai-in-development --base /talks/2025-google-workspace-leveraging-ai-in-development",
+    "build": "slidev build --base /talks/2025-google-workspace-leveraging-ai-in-development",
     "check": "tsc --noEmit",
     "dev": "slidev --open --port 3010",
     "export": "slidev export"
