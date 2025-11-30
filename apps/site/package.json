@@ -14,7 +14,7 @@
     "lint": "prettier --check . && eslint ."
   },
   "devDependencies": {
-    "@hpcc-js/wasm": "^2.26.2",
+
     "@internationalized/date": "^3.10.0",
     "@lucide/svelte": "^0.544.0",
     "@rehype-pretty/transformers": "^0.13.2",
