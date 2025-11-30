@@ -34,7 +34,8 @@
     },
     "onlyBuiltDependencies": [
       "esbuild",
-      "sharp"
+      "sharp",
+      "workerd"
     ]
   },
   "packageManager": "pnpm@10.17.1"
