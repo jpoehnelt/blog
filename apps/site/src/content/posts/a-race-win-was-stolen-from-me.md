@@ -39,8 +39,6 @@ The route is below, with the obvious large final climb and descent:
 
 I came into this race looking for a good training run and was going to modulate the intensity depending on how I felt after the first ten miles. I had only decided to run the race a few days before as I wanted to take advantage of my current fitness!
 
-<iframe src="https://mastodon.thbps.com/@jpoehnelt/110782621493370204/embed" class="mastodon-embed" style="width: 100%; max-width: 100%; border: 0" allowfullscreen="allowfullscreen"></iframe>
-
 My goal race for the year is still the Moab 240, but this would be a great 5 hour long run I thought. And I ran a very conservative race, not keeping track of my place and just staying below threshold given the terrain.
 
 <Image src="src/images/enchanted-forest-splits-analysis.png" alt="Enchanted Forest Race Splits" />
