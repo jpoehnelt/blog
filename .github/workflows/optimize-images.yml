@@ -1,0 +1,47 @@
+name: Optimize Images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - '**/*.gif'
+      - '**/*.avif'
+  pull_request:
+    paths:
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - '**/*.gif'
+      - '**/*.avif'
+  workflow_dispatch:
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          ref: ${{ github.head_ref }}
+
+      - name: Optimize Images
+        uses: Doist/optimize-images-action@1892bfa3d0d9ba5016803901687464a6bb0ecb0c  # v2.0.0
+        with:
+          mozjpeg: true
+          pngquant: true
+          webp: true
+          gifsicle: true
+
+      - uses: stefanzweifel/git-auto-commit-action@547c1409cec143c754e148a6fbdfa359db836cf6  # v5
+        with:
+          commit_message: "chore: optimize images"
+          file_pattern: '.'
