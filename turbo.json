@@ -6,6 +6,9 @@
       "outputs": ["build/**", "dist/**", ".svelte-kit/**"]
     },
     "check": {
+      "outputs": []
+    },
+    "site#check": {
       "outputs": [".svelte-kit/**"]
     },
     "test": {
