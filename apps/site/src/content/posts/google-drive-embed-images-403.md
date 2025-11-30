@@ -37,6 +37,7 @@ This can be added to a website, but it's not ideal. The iframe has a background 
 Here the border has been removed with `style="border: 0"` and no height or width has been set.
 
 <iframe
+title="Google Drive Image Embed"
 src="https://drive.google.com/file/d/19Fx6pTBdS-ZkoucTCId2QZ0zVgmvOCom/preview"
 style="border: 0"
 ></iframe>
@@ -44,6 +45,7 @@ style="border: 0"
 Here the border has been removed with `style="border: 0"` and the height and width have been set to match the image dimensions.
 
 <iframe
+title="Google Drive Image Embed"
 src="https://drive.google.com/file/d/19Fx6pTBdS-ZkoucTCId2QZ0zVgmvOCom/preview"
 style="border: 0"
 height="300"
