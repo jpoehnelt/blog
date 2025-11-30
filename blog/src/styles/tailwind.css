@@ -1,9 +1,0 @@
-/* purgecss start ignore */
-@import 'tailwindcss/base';
-@import './prism-dracula.css';
-@import './base.css';
-/* purgecss end ignore */
-
-@import 'tailwindcss/components';
-
-@import 'tailwindcss/utilities';

@@ -1,8 +1,7 @@
 packages:
   - packages/**
   - talks/**
-  - blog/**
-  - site/**
+  - apps/**
 minimumReleaseAge: 2880
 onlyBuiltDependencies:
   - esbuild
