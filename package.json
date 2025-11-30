@@ -33,9 +33,9 @@
       "@unocss/core": "catalog:"
     },
     "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
       "esbuild",
-      "sharp",
-      "workerd"
+      "sharp"
     ]
   },
   "packageManager": "pnpm@10.17.1"
