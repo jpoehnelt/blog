@@ -8,7 +8,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
-import { rehypeGraphvizWasm } from "./src/lib/server/rehypeGraphvizWasm.ts";
+
 
 const config = {
   trailingSlash: "always",
@@ -20,7 +20,6 @@ const config = {
       extensions: [".md", ".mdx"],
       remarkPlugins: [remarkGfm, remarkInlineLinks],
       rehypePlugins: [
-        rehypeGraphvizWasm,
         rehypeSlug,
         [
           rehypeAutolinkHeadings,
