@@ -25,7 +25,7 @@ const config = {
           rehypeAutolinkHeadings,
           {
             behavior: "append",
-            properties: { className: ["link-hover"] },
+            properties: { className: ["link-hover"], "aria-label": "Link to section" },
           },
         ],
         [
