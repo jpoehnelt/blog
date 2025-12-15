@@ -62,7 +62,11 @@ const main = async () => {
     ).data;
 
     const fileName = `${id}.json`;
-    const filePath = path.join("blog", "src", "_data", "strava", fileName);
+    const dir = path.dirname(fileName);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    const filePath = path.join("data", "strava", fileName);
     fs.writeFileSync(filePath, JSON.stringify(activity, null, 2));
   }
 };
