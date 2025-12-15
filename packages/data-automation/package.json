@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/* --bundle --outdir=dist --platform=node --sourcemap --format=esm --minify",
+    "build": "esbuild src/* --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external",
     "check": "tsc --noEmit"
   },
   "keywords": [],
