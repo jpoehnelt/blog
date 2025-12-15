@@ -14,7 +14,6 @@ const main = async () => {
       ? parseISO(process.env.STRAVA_AFTER)
       : subDays(endOfToday(), 5),
   );
-  const file = path.join("src", "_data", "strava.json");
 
   let page = 1;
 
@@ -47,11 +46,6 @@ const main = async () => {
     page++;
   }
 
-  const existing = JSON.parse(fs.readFileSync(file, "utf8"));
-  const updated = { ...existing, ...activities };
-
-  fs.writeFileSync(file, JSON.stringify(updated, null, 2));
-
   for (const id of Object.keys(activities)) {
     const activity = (
       await axios.get(`https://www.strava.com/api/v3/activities/${id}`, {
@@ -61,12 +55,12 @@ const main = async () => {
       })
     ).data;
 
-    const fileName = `${id}.json`;
-    const dir = path.dirname(fileName);
+    const activityFileName = `${id}.json`;
+    const dir = path.dirname(activityFileName);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    const filePath = path.join("data", "strava", fileName);
+    const filePath = path.join("data", "strava", activityFileName);
     fs.writeFileSync(filePath, JSON.stringify(activity, null, 2));
   }
 };
