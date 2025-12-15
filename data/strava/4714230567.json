@@ -1,0 +1,162 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Getting bike trainer hooked up",
+  "distance": 981.2,
+  "moving_time": 134,
+  "elapsed_time": 134,
+  "total_elevation_gain": 0,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": 10,
+  "device_name": "Wahoo",
+  "id": 4714230567,
+  "start_date": "2021-01-31T22:01:46Z",
+  "start_date_local": "2021-01-31T15:01:46Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a4714230567",
+    "polyline": "",
+    "resource_state": 3,
+    "summary_polyline": ""
+  },
+  "trainer": true,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "followers_only",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [],
+  "end_latlng": [],
+  "average_speed": 7.322,
+  "max_speed": 8.7,
+  "average_cadence": 75.1,
+  "average_watts": 94.6,
+  "max_watts": 131,
+  "weighted_average_watts": 87,
+  "device_watts": true,
+  "kilojoules": 12.7,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "upload_id": 5032726505,
+  "upload_id_str": "5032726505",
+  "external_id": "69aa9bab-c6e8-4239-aa5f-fa9054b28c82.fit",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 1,
+  "has_kudoed": false,
+  "description": "",
+  "calories": 13,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 981.2,
+      "elapsed_time": 134,
+      "elevation_difference": null,
+      "moving_time": 134,
+      "split": 1,
+      "average_speed": 7.32,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 981.2,
+      "elapsed_time": 134,
+      "elevation_difference": null,
+      "moving_time": 134,
+      "split": 1,
+      "average_speed": 7.32,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 15413394187,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 4714230567,
+        "visibility": "followers_only",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 135,
+      "moving_time": 135,
+      "start_date": "2021-01-31T22:01:46Z",
+      "start_date_local": "2021-01-31T15:01:46Z",
+      "distance": 987.39,
+      "average_speed": 7.31,
+      "max_speed": 8.7,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 134,
+      "total_elevation_gain": 0,
+      "average_cadence": 75.1,
+      "device_watts": true,
+      "average_watts": 94.6
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "b339fd40-108d-4e2c-ab40-63b42c6bdfdd",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/zjfS2QrUO0QZkF-EI3dCkfi3RmZNpnP7yCAkgSX1SMA-96x128.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/zjfS2QrUO0QZkF-EI3dCkfi3RmZNpnP7yCAkgSX1SMA-576x768.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "2365a6b581cb37c109131c0b7b1c50923e389558",
+  "available_zones": [
+    "power"
+  ]
+}

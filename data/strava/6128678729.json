@@ -1,0 +1,225 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Trail work",
+  "distance": 918.2,
+  "moving_time": 350,
+  "elapsed_time": 350,
+  "total_elevation_gain": 15,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": 10,
+  "device_name": "Garmin Enduro",
+  "id": 6128678729,
+  "start_date": "2021-10-17T18:33:16Z",
+  "start_date_local": "2021-10-17T12:33:16Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 2,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a6128678729",
+    "polyline": "wufcFfyhqSUMAGLiAE[Wc@KCa@DKN?FJTEHAPRr@@PHZFp@CHBXDT@`@Hr@AHC@E?SMG]U[Gi@S[g@cA]][USAHAHBRN^b@z@fBHh@R`@DPDJLFBEEu@Bg@ESAg@QkAASQc@G_A@QJKRETALDHLPb@DRKx@?FDFHB",
+    "resource_state": 3,
+    "summary_polyline": "wufcFfyhqSUMAGLiAE[Wc@KCa@DKN?FJTEHAPRr@@PHZFp@CHBXDT@`@Hr@AHC@E?SMG]U[Gi@S[g@cA]][USAHAHBRN^b@z@fBHh@R`@DPDJLFBEEu@Bg@ESAg@QkAASQc@G_A@QJKRETALDHLPb@DRKx@?FDFHB"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.395006,
+    -107.856996
+  ],
+  "end_latlng": [
+    37.395004,
+    -107.856939
+  ],
+  "average_speed": 2.623,
+  "max_speed": 5.2,
+  "average_temp": 27,
+  "average_watts": 51.1,
+  "device_watts": false,
+  "kilojoules": 17.9,
+  "has_heartrate": true,
+  "average_heartrate": 118.8,
+  "max_heartrate": 135,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2228.2,
+  "elev_low": 2211.4,
+  "upload_id": 6512922048,
+  "upload_id_str": "6512922048",
+  "external_id": "garmin_push_7674470651",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 1,
+  "description": null,
+  "calories": 51,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 2886677517494375400,
+      "resource_state": 2,
+      "name": "Reroute - No public access",
+      "activity": {
+        "id": 6128678729,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 118,
+      "moving_time": 118,
+      "start_date": "2021-10-17T18:37:03Z",
+      "start_date_local": "2021-10-17T12:37:03Z",
+      "distance": 425.4,
+      "start_index": 152,
+      "end_index": 233,
+      "device_watts": false,
+      "average_watts": 22.9,
+      "average_heartrate": 107.1,
+      "max_heartrate": 125,
+      "segment": {
+        "id": 30211742,
+        "resource_state": 2,
+        "name": "Reroute - No public access",
+        "activity_type": "Ride",
+        "distance": 425.4,
+        "average_grade": -3.2,
+        "maximum_grade": 5.7,
+        "elevation_high": 2226.6,
+        "elevation_low": 2211.8,
+        "start_latlng": [
+          37.396128,
+          -107.856823
+        ],
+        "end_latlng": [
+          37.395096,
+          -107.856851
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Trimble",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 919.3,
+      "elapsed_time": 350,
+      "elevation_difference": 1,
+      "moving_time": 350,
+      "split": 1,
+      "average_speed": 2.63,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 118.7593123209169,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 919.3,
+      "elapsed_time": 350,
+      "elevation_difference": 1,
+      "moving_time": 350,
+      "split": 1,
+      "average_speed": 2.63,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 118.7593123209169,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 19912764086,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 6128678729,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 348,
+      "moving_time": 348,
+      "start_date": "2021-10-17T18:33:16Z",
+      "start_date_local": "2021-10-17T12:33:16Z",
+      "distance": 919.3,
+      "average_speed": 2.64,
+      "max_speed": 5.2,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 238,
+      "total_elevation_gain": 16.8,
+      "device_watts": false,
+      "average_watts": 51.1,
+      "average_heartrate": 118.8,
+      "max_heartrate": 135
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "0029bb7f2f0a827323a95e335d144282ef77cbf4",
+  "available_zones": [
+    "heartrate",
+    "power"
+  ]
+}

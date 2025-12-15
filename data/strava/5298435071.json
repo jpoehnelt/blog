@@ -1,0 +1,189 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Evening Run",
+  "distance": 293.2,
+  "moving_time": 133,
+  "elapsed_time": 205,
+  "total_elevation_gain": 22,
+  "type": "Run",
+  "sport_type": "Run",
+  "workout_type": null,
+  "device_name": "Garmin Forerunner 935",
+  "id": 5298435071,
+  "start_date": "2021-05-15T02:35:08Z",
+  "start_date_local": "2021-05-14T20:35:08Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a5298435071",
+    "polyline": "ujdcFrjjqSUJw@Dw@XGAI@r@a@PC~@BS@]EWBs@^SBCAAAFGCCv@SPCT?",
+    "resource_state": 3,
+    "summary_polyline": "ujdcFrjjqSUJw@Dw@XGAI@r@a@PC~@BS@]EWBs@^SBCAAAFGCCv@SPCT?"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "followers_only",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.38299,
+    -107.864899
+  ],
+  "end_latlng": [
+    37.383349,
+    -107.864928
+  ],
+  "average_speed": 2.205,
+  "max_speed": 5.4,
+  "average_cadence": 80.1,
+  "average_temp": 23,
+  "has_heartrate": true,
+  "average_heartrate": 122.4,
+  "max_heartrate": 139,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2250.6,
+  "elev_low": 2221.8,
+  "upload_id": 5644317826,
+  "upload_id_str": "5644317826",
+  "external_id": "garmin_push_6780864122",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 0,
+  "description": null,
+  "calories": 18,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 293.2,
+      "elapsed_time": 206,
+      "elevation_difference": -7.8,
+      "moving_time": 134,
+      "split": 1,
+      "average_speed": 2.19,
+      "average_grade_adjusted_speed": 3.4,
+      "average_heartrate": 122.39814814814815,
+      "pace_zone": 2
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 293.2,
+      "elapsed_time": 206,
+      "elevation_difference": -7.8,
+      "moving_time": 134,
+      "split": 1,
+      "average_speed": 2.19,
+      "average_grade_adjusted_speed": 3.4,
+      "average_heartrate": 122.39814814814815,
+      "pace_zone": 2
+    }
+  ],
+  "laps": [
+    {
+      "id": 17260063070,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 5298435071,
+        "visibility": "followers_only",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 205,
+      "moving_time": 133,
+      "start_date": "2021-05-15T02:35:08Z",
+      "start_date_local": "2021-05-14T20:35:08Z",
+      "distance": 293.16,
+      "average_speed": 2.2,
+      "max_speed": 5.4,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 68,
+      "total_elevation_gain": 22,
+      "average_cadence": 80.1,
+      "device_watts": false,
+      "average_heartrate": 122.4,
+      "max_heartrate": 139,
+      "pace_zone": 1
+    }
+  ],
+  "best_efforts": [],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "d3b909060157033f1eb15eb7f8ee9e1419288bff",
+  "similar_activities": {
+    "effort_count": 4,
+    "average_speed": 2.6986956521739134,
+    "min_average_speed": 2.201779359430605,
+    "mid_average_speed": 2.8371782118160866,
+    "max_average_speed": 3.9880733944954128,
+    "pr_rank": 1,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        2.2045112781954885,
+        2.5721070844809524,
+        2.9173791096958555,
+        2.6981480098832002
+      ],
+      "current_activity_index": 0,
+      "min_speed": 2.201779359430605,
+      "mid_speed": 2.8371782118160866,
+      "max_speed": 3.9880733944954128,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "heartrate",
+    "pace"
+  ]
+}

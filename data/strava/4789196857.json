@@ -1,0 +1,127 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Evening Ride",
+  "distance": 0,
+  "moving_time": 1802,
+  "elapsed_time": 1802,
+  "total_elevation_gain": 0,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": null,
+  "device_name": "Garmin Forerunner 935",
+  "id": 4789196857,
+  "start_date": "2021-02-15T01:44:30Z",
+  "start_date_local": "2021-02-14T18:44:30Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a4789196857",
+    "polyline": "",
+    "resource_state": 3,
+    "summary_polyline": ""
+  },
+  "trainer": true,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "followers_only",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [],
+  "end_latlng": [],
+  "average_speed": 0,
+  "max_speed": 0,
+  "average_temp": 26,
+  "has_heartrate": true,
+  "average_heartrate": 128,
+  "max_heartrate": 173,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "upload_id": 5110515937,
+  "upload_id_str": "5110515937",
+  "external_id": "garmin_push_6273983202",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 20,
+  "description": null,
+  "calories": 251,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "laps": [
+    {
+      "id": 15657099949,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 4789196857,
+        "visibility": "followers_only",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1802,
+      "moving_time": 1802,
+      "start_date": "2021-02-15T01:44:30Z",
+      "start_date_local": "2021-02-14T18:44:30Z",
+      "distance": 0,
+      "average_speed": 0,
+      "max_speed": 0,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 1126,
+      "total_elevation_gain": 0,
+      "device_watts": false,
+      "average_heartrate": 128,
+      "max_heartrate": 173
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "5d9aa3e8e9ec5ef16d7acc39ce5586d3b6f20084",
+  "available_zones": [
+    "heartrate"
+  ]
+}
