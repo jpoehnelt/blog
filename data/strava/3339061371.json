@@ -1,0 +1,233 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Evening Run",
+  "distance": 808.1,
+  "moving_time": 257,
+  "elapsed_time": 257,
+  "total_elevation_gain": 21,
+  "type": "Run",
+  "sport_type": "Run",
+  "workout_type": null,
+  "device_name": "Garmin Forerunner 935",
+  "id": 3339061371,
+  "start_date": "2020-04-23T03:13:07Z",
+  "start_date_local": "2020-04-22T20:13:07Z",
+  "timezone": "(GMT-08:00) America/Los_Angeles",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a3339061371",
+    "polyline": "}|{aHlf~jVKjBIZWj@Op@Iz@ExAObAM^MNKDiAb@QDm@XURu@bAQIWYUk@GeAF_BJ{@FM`@c@Fc@D_CCu@?sBJ{@@CLEf@?hBA~ABB@",
+    "resource_state": 3,
+    "summary_polyline": "}|{aHlf~jVKjBIZWj@Op@Iz@ExAObAM^MNKDiAb@QDm@XURu@bAQIWYUk@GeAF_BJ{@FM`@c@Fc@D_CCu@?sBJ{@@CLEf@?hBA~ABB@"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    47.661754,
+    -122.548385
+  ],
+  "end_latlng": [
+    47.662128,
+    -122.547899
+  ],
+  "average_speed": 3.144,
+  "max_speed": 3.8,
+  "average_cadence": 83.3,
+  "average_temp": 20,
+  "has_heartrate": true,
+  "average_heartrate": 137.9,
+  "max_heartrate": 148,
+  "heartrate_opt_out": true,
+  "display_hide_heartrate_option": true,
+  "elev_high": 66.2,
+  "elev_low": 45.2,
+  "upload_id": 3568547203,
+  "upload_id_str": "3568547203",
+  "external_id": "garmin_push_4823931267",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 4,
+  "description": null,
+  "calories": 50,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 808.1,
+      "elapsed_time": 257,
+      "elevation_difference": 17.4,
+      "moving_time": 257,
+      "split": 1,
+      "average_speed": 3.14,
+      "average_grade_adjusted_speed": 3.49,
+      "average_heartrate": 137.94921875,
+      "pace_zone": 3
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 808.1,
+      "elapsed_time": 257,
+      "elevation_difference": 17.4,
+      "moving_time": 257,
+      "split": 1,
+      "average_speed": 3.14,
+      "average_grade_adjusted_speed": 3.49,
+      "average_heartrate": 137.94921875,
+      "pace_zone": 3
+    }
+  ],
+  "laps": [
+    {
+      "id": 11128175506,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 3339061371,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 256,
+      "moving_time": 256,
+      "start_date": "2020-04-23T03:13:07Z",
+      "start_date_local": "2020-04-22T20:13:07Z",
+      "distance": 808.11,
+      "average_speed": 3.16,
+      "max_speed": 3.8,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 78,
+      "total_elevation_gain": 21,
+      "average_cadence": 83.3,
+      "device_watts": false,
+      "average_heartrate": 137.9,
+      "max_heartrate": 148,
+      "pace_zone": 2
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 1970177809,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 3339061371,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 119,
+      "moving_time": 119,
+      "start_date": "2020-04-23T03:13:24Z",
+      "start_date_local": "2020-04-22T20:13:24Z",
+      "distance": 400,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 9,
+      "end_index": 47
+    },
+    {
+      "id": 1970177810,
+      "resource_state": 2,
+      "name": "1/2 mile",
+      "activity": {
+        "id": 3339061371,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 255,
+      "moving_time": 255,
+      "start_date": "2020-04-23T03:13:08Z",
+      "start_date_local": "2020-04-22T20:13:08Z",
+      "distance": 805,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 1,
+      "end_index": 77
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "dae467ba96cabe67f865197e85f7baa558b3c0d5",
+  "similar_activities": {
+    "effort_count": 1,
+    "average_speed": 3.1443579766536964,
+    "min_average_speed": 3.1443579766536964,
+    "mid_average_speed": 3.1443579766536964,
+    "max_average_speed": 3.1443579766536964,
+    "pr_rank": null,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        3.1443579766536964
+      ],
+      "current_activity_index": 0,
+      "min_speed": 3.1443579766536964,
+      "mid_speed": 3.1443579766536964,
+      "max_speed": 3.1443579766536964,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "heartrate",
+    "pace"
+  ]
+}

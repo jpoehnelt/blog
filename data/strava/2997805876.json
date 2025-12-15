@@ -1,0 +1,718 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Richmond",
+  "distance": 17042.9,
+  "moving_time": 1803,
+  "elapsed_time": 1803,
+  "total_elevation_gain": 46,
+  "type": "VirtualRide",
+  "sport_type": "VirtualRide",
+  "device_name": "Zwift",
+  "id": 2997805876,
+  "start_date": "2020-01-10T06:46:38Z",
+  "start_date_local": "2020-01-09T23:46:38Z",
+  "timezone": "(GMT-07:00) America/Phoenix",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 47,
+  "kudos_count": 2,
+  "comment_count": 0,
+  "athlete_count": 40,
+  "photo_count": 0,
+  "map": {
+    "id": "a2997805876",
+    "polyline": "enddFbyuwMcC`FKVc@t@kBvDyIzPqBjEuAdCyBnE_@d@m@h@GLeBjDiBjDUVo@b@SXK^MdAM^qFjKwFhLu@rAYr@sEpI_@x@CVFRNHPELO|@oB|Qy^jC}EX[h@_@X[HQRwANi@xAuCjAeCVc@PKPD`@T|B~BZV^PhLfFzBhAvAz@t@\\RFP@RELOHUNcBFWrFcTJo@@YBaFAeHFmGC_LFgGIYWG{A?cAGi@KSHoCfFkCjFm@vAu@lAeC`FiBhDeAtB_BjDoBtDuApCw@rAYZYTKN_BbDoBrDY\\k@^KLKPERSrAg@jAo@hAeDpGeJzQwDfH[r@CTBRLJNAVYdSaa@zCyFf@k@l@a@JOHQFSJaAT}@dAmBt@cBn@mALORIPFPJjAfAdAfAp@^tCrAr@R~@h@jCjA~BhAzA|@v@`@d@LT?PKJSFWNcBpF}SLo@Ds@FgX?uKDsFI[WG}A?aAIi@IQFORSf@wCrFqIxPiBfDkA~B_BjDmBnDcBfD_@l@{@|@gBnDmBnDYZYTc@j@Md@O~@GP{F~KoJnRc@t@uCrFIRCTDTPHPEJOl@kAPi@fAoB`NmXhC}E~@_Bd@g@\\QHMNc@RqANe@dD{GVa@NIP@^TlAjAp@t@ZTj@X~JnEfCnA~A~@p@\\b@NP@RELMLk@N}AnBqHfCaKLo@?WBqF?_FDuGA_LDyHMUWCmBAi@Gi@IQDON_@x@kDtGm@vAu@pAqE`JgBbDcApBcBpDsAdCcC|Ec@p@w@v@_B`DuB|D[\\g@^UXGRSvAO^iGvLeI`P",
+    "resource_state": 3,
+    "summary_polyline": "enddFbyuwMcC`FKVc@t@kBvDyIzPqBjEuAdCyBnE_@d@m@h@GLeBjDiBjDUVo@b@SXK^MdAM^qFjKwFhLu@rAYr@sEpI_@x@CVFRNHPELO|@oB|Qy^jC}EX[h@_@X[HQRwANi@xAuCjAeCVc@PKPD`@T|B~BZV^PhLfFzBhAvAz@t@\\RFP@RELOHUNcBFWrFcTJo@@YBiEA}HFmGC_LFgGIYWG{A?cAGi@KSHcCtEwC|Fm@vAu@lAyBnEuBzDeAtB_BjDoBtDuApCw@rAYZYTKN_BbDoBrDY\\k@^KLKPERSrAg@jAo@hAeDpGeJzQwDfH[r@CTBRLJNAVYdSaa@zCyFf@k@l@a@JOHQFSJaAT}@dAmBt@cBn@mALORIPFPJjAfAdAfAp@^tCrAr@R~@h@jCjA~BhAzA|@v@`@d@LT?PKJSFWNcBpF}SLo@Ds@FgX?uKDsFI[WG}A?aAIi@IQFORSf@wCrFqIxPiBfDkA~B_BjDmBnDyAvCi@|@{@|@gBnDmBnDYZYTc@j@Md@O~@GP{F~KoJnRc@t@uCrFIRCTDTPHPEJOl@kAPi@fAoB`NmXhC}E~@_Bd@g@\\QHMNc@RqANe@dD{GVa@NIP@^TlAjAp@t@ZTj@X~JnEfCnA~A~@p@\\b@NP@RELMLk@N}AnBqHfCaKLo@?WBqF?_FDuGA_LDyHMUWCmBAi@Gi@IQDON_@x@kDtGm@vAu@pAqE`JgBbDcApBcBpDsAdCcC|Ec@p@w@v@_B`DuB|D[\\g@^UXGRSvAO^iGvLeI`P"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.547395,
+    -77.449296
+  ],
+  "end_latlng": [
+    37.557282,
+    -77.465587
+  ],
+  "average_speed": 9.453,
+  "max_speed": 14.1,
+  "average_watts": 169.3,
+  "max_watts": 464,
+  "weighted_average_watts": 185,
+  "device_watts": true,
+  "kilojoules": 305.2,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "elev_high": 64.8,
+  "elev_low": 51.6,
+  "upload_id": 3195892115,
+  "upload_id_str": "3195892115",
+  "external_id": "zwift-activity-459109842376834144.fit",
+  "from_accepted_tag": false,
+  "pr_count": 16,
+  "total_photo_count": 1,
+  "has_kudoed": false,
+  "description": null,
+  "calories": 291,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [
+    {
+      "id": 74339389057,
+      "resource_state": 2,
+      "name": "Monument Ave Sprint",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 20,
+      "moving_time": 20,
+      "start_date": "2020-01-10T06:51:08Z",
+      "start_date_local": "2020-01-09T23:51:08Z",
+      "distance": 222.7,
+      "start_index": 270,
+      "end_index": 290,
+      "device_watts": true,
+      "average_watts": 202.2,
+      "segment": {
+        "id": 12128762,
+        "resource_state": 2,
+        "name": "Monument Ave Sprint",
+        "activity_type": "VirtualRide",
+        "distance": 222.7,
+        "average_grade": -0.7,
+        "maximum_grade": 0,
+        "elevation_high": 65.4,
+        "elevation_low": 63.9,
+        "start_latlng": [
+          37.55739,
+          -77.466343
+        ],
+        "end_latlng": [
+          37.556194,
+          -77.464321
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Richmond",
+        "state": "Virginia",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 74339389474,
+      "resource_state": 2,
+      "name": "The Fan Flats",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 486,
+      "moving_time": 486,
+      "start_date": "2020-01-10T06:51:29Z",
+      "start_date_local": "2020-01-09T23:51:29Z",
+      "distance": 5051.1,
+      "start_index": 291,
+      "end_index": 777,
+      "device_watts": true,
+      "average_watts": 192.6,
+      "segment": {
+        "id": 19852166,
+        "resource_state": 2,
+        "name": "The Fan Flats",
+        "activity_type": "VirtualRide",
+        "distance": 5051.1,
+        "average_grade": 0,
+        "maximum_grade": 2.5,
+        "elevation_high": 64.8,
+        "elevation_low": 51.8,
+        "start_latlng": [
+          37.556175,
+          -77.464288
+        ],
+        "end_latlng": [
+          37.556173,
+          -77.464288
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Richmond",
+        "state": "Virginia",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 74339389440,
+      "resource_state": 2,
+      "name": "Monument Ave Sprint",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 20,
+      "moving_time": 20,
+      "start_date": "2020-01-10T06:59:15Z",
+      "start_date_local": "2020-01-09T23:59:15Z",
+      "distance": 222.7,
+      "start_index": 757,
+      "end_index": 777,
+      "device_watts": true,
+      "average_watts": 265.8,
+      "segment": {
+        "id": 12128762,
+        "resource_state": 2,
+        "name": "Monument Ave Sprint",
+        "activity_type": "VirtualRide",
+        "distance": 222.7,
+        "average_grade": -0.7,
+        "maximum_grade": 0,
+        "elevation_high": 65.4,
+        "elevation_low": 63.9,
+        "start_latlng": [
+          37.55739,
+          -77.466343
+        ],
+        "end_latlng": [
+          37.556194,
+          -77.464321
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Richmond",
+        "state": "Virginia",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 74339390048,
+      "resource_state": 2,
+      "name": "The Fan Flats",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 483,
+      "moving_time": 483,
+      "start_date": "2020-01-10T06:59:35Z",
+      "start_date_local": "2020-01-09T23:59:35Z",
+      "distance": 5051.1,
+      "start_index": 777,
+      "end_index": 1260,
+      "device_watts": true,
+      "average_watts": 211.1,
+      "segment": {
+        "id": 19852166,
+        "resource_state": 2,
+        "name": "The Fan Flats",
+        "activity_type": "VirtualRide",
+        "distance": 5051.1,
+        "average_grade": 0,
+        "maximum_grade": 2.5,
+        "elevation_high": 64.8,
+        "elevation_low": 51.8,
+        "start_latlng": [
+          37.556175,
+          -77.464288
+        ],
+        "end_latlng": [
+          37.556173,
+          -77.464288
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Richmond",
+        "state": "Virginia",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 74339390060,
+      "resource_state": 2,
+      "name": "Monument Ave Sprint",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 19,
+      "moving_time": 19,
+      "start_date": "2020-01-10T07:07:19Z",
+      "start_date_local": "2020-01-10T00:07:19Z",
+      "distance": 222.7,
+      "start_index": 1241,
+      "end_index": 1260,
+      "device_watts": true,
+      "average_watts": 267.7,
+      "segment": {
+        "id": 12128762,
+        "resource_state": 2,
+        "name": "Monument Ave Sprint",
+        "activity_type": "VirtualRide",
+        "distance": 222.7,
+        "average_grade": -0.7,
+        "maximum_grade": 0,
+        "elevation_high": 65.4,
+        "elevation_low": 63.9,
+        "start_latlng": [
+          37.55739,
+          -77.466343
+        ],
+        "end_latlng": [
+          37.556194,
+          -77.464321
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Richmond",
+        "state": "Virginia",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1002.5,
+      "elapsed_time": 138,
+      "elevation_difference": 8.6,
+      "moving_time": 138,
+      "split": 1,
+      "average_speed": 7.26,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.4,
+      "elapsed_time": 112,
+      "elevation_difference": 2,
+      "moving_time": 112,
+      "split": 2,
+      "average_speed": 8.94,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.5,
+      "elapsed_time": 97,
+      "elevation_difference": -1.2,
+      "moving_time": 97,
+      "split": 3,
+      "average_speed": 10.35,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.6,
+      "elapsed_time": 94,
+      "elevation_difference": -3.2,
+      "moving_time": 94,
+      "split": 4,
+      "average_speed": 10.68,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.5,
+      "elapsed_time": 86,
+      "elevation_difference": -8,
+      "moving_time": 86,
+      "split": 5,
+      "average_speed": 11.61,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 992.2,
+      "elapsed_time": 99,
+      "elevation_difference": 9.4,
+      "moving_time": 99,
+      "split": 6,
+      "average_speed": 10.02,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1004.7,
+      "elapsed_time": 102,
+      "elevation_difference": 3,
+      "moving_time": 102,
+      "split": 7,
+      "average_speed": 9.85,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.7,
+      "elapsed_time": 95,
+      "elevation_difference": -0.8,
+      "moving_time": 95,
+      "split": 8,
+      "average_speed": 10.51,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 93,
+      "elevation_difference": -3.6,
+      "moving_time": 93,
+      "split": 9,
+      "average_speed": 10.75,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.7,
+      "elapsed_time": 87,
+      "elevation_difference": -8.2,
+      "moving_time": 87,
+      "split": 10,
+      "average_speed": 11.48,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.9,
+      "elapsed_time": 102,
+      "elevation_difference": 8.6,
+      "moving_time": 102,
+      "split": 11,
+      "average_speed": 9.82,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1002.8,
+      "elapsed_time": 103,
+      "elevation_difference": 3.8,
+      "moving_time": 103,
+      "split": 12,
+      "average_speed": 9.74,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 993.3,
+      "elapsed_time": 95,
+      "elevation_difference": -0.4,
+      "moving_time": 95,
+      "split": 13,
+      "average_speed": 10.46,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.8,
+      "elapsed_time": 104,
+      "elevation_difference": -3.8,
+      "moving_time": 104,
+      "split": 14,
+      "average_speed": 9.65,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 996.9,
+      "elapsed_time": 91,
+      "elevation_difference": -8.2,
+      "moving_time": 91,
+      "split": 15,
+      "average_speed": 10.95,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.4,
+      "elapsed_time": 117,
+      "elevation_difference": 7.8,
+      "moving_time": 117,
+      "split": 16,
+      "average_speed": 8.56,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1000.8,
+      "elapsed_time": 173,
+      "elevation_difference": 4.2,
+      "moving_time": 173,
+      "split": 17,
+      "average_speed": 5.78,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 40.1,
+      "elapsed_time": 15,
+      "elevation_difference": 0.2,
+      "moving_time": 15,
+      "split": 18,
+      "average_speed": 2.67,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1611.8,
+      "elapsed_time": 209,
+      "elevation_difference": 9.2,
+      "moving_time": 209,
+      "split": 1,
+      "average_speed": 7.71,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1615.3,
+      "elapsed_time": 159,
+      "elevation_difference": -0.4,
+      "moving_time": 159,
+      "split": 2,
+      "average_speed": 10.16,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1601.4,
+      "elapsed_time": 145,
+      "elevation_difference": -10,
+      "moving_time": 145,
+      "split": 3,
+      "average_speed": 11.04,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1611.8,
+      "elapsed_time": 159,
+      "elevation_difference": 10.4,
+      "moving_time": 159,
+      "split": 4,
+      "average_speed": 10.14,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1616,
+      "elapsed_time": 156,
+      "elevation_difference": 0.2,
+      "moving_time": 156,
+      "split": 5,
+      "average_speed": 10.36,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1602.3,
+      "elapsed_time": 147,
+      "elevation_difference": -5.2,
+      "moving_time": 147,
+      "split": 6,
+      "average_speed": 10.9,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1613.7,
+      "elapsed_time": 160,
+      "elevation_difference": 5.4,
+      "moving_time": 160,
+      "split": 7,
+      "average_speed": 10.09,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.4,
+      "elapsed_time": 155,
+      "elevation_difference": -0.4,
+      "moving_time": 155,
+      "split": 8,
+      "average_speed": 10.38,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1606.5,
+      "elapsed_time": 161,
+      "elevation_difference": -5.6,
+      "moving_time": 161,
+      "split": 9,
+      "average_speed": 9.98,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1607.8,
+      "elapsed_time": 180,
+      "elevation_difference": 3.2,
+      "moving_time": 180,
+      "split": 10,
+      "average_speed": 8.93,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 949.7,
+      "elapsed_time": 172,
+      "elevation_difference": 3.4,
+      "moving_time": 172,
+      "split": 11,
+      "average_speed": 5.52,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 9921383764,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 2997805876,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1803,
+      "moving_time": 1804,
+      "start_date": "2020-01-10T06:46:38Z",
+      "start_date_local": "2020-01-09T23:46:38Z",
+      "distance": 17044.7,
+      "average_speed": 9.45,
+      "max_speed": 14.1,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 1803,
+      "total_elevation_gain": 0,
+      "device_watts": true,
+      "average_watts": 169.3
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "7025c8c9-3f95-4c87-acb8-4b405d15f869",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/Z-gVZUgT-nSsSPpl7AgRnZGsFnhxa7YwhZumZNOaejk-128x69.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/Z-gVZUgT-nSsSPpl7AgRnZGsFnhxa7YwhZumZNOaejk-768x419.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "54ed4ecb40ebf299fbaa59bb69ee6852da4043c4",
+  "available_zones": [
+    "power"
+  ]
+}

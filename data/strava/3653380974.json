@@ -1,0 +1,474 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Morning Ride",
+  "distance": 4650.1,
+  "moving_time": 1342,
+  "elapsed_time": 1383,
+  "total_elevation_gain": 150,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": 10,
+  "device_name": "Garmin Forerunner 935",
+  "id": 3653380974,
+  "start_date": "2020-06-22T12:45:56Z",
+  "start_date_local": "2020-06-22T06:45:56Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 1,
+  "kudos_count": 2,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a3653380974",
+    "polyline": "kpdcFxjjqSc@w@s@Lk@BUHYR[@YEw@AWFe@@QC{AAm@LSHQD_@L_@Bg@R[DQ?YKUg@OQYCY@cCb@cCRqAFQGu@w@AI?WNWz@iAZs@HeAAWG_@M_@Uc@OQSIo@Ii@[SYEKGS?MBAJ@`Aj@vAPz@~@Xn@PPDABC@SDKASR_@Hi@Li@KaB?uBDg@Aa@@g@HQd@Yb@INGHGFAFFLGTC`@]Re@f@u@v@e@b@]JEf@EJI^iAd@]R@j@A`@HjBJrBXl@Bl@@ZCLEb@Sh@Il@A~Af@pAX\\BpAGrAUb@Bh@AfBW\\F`@PRCLMd@OdBOd@Qh@YZCL@b@TtAPTHt@h@bAj@d@Fh@Rn@ZRDnAFj@JfBHd@\\VDV?lAg@J?l@HpBFFBRRHh@MPg@JSHM@YHaAf@WH[R]d@EN@NF`@HbAF^`@t@BTAJOPaAh@SNIVG`@B??BS`@KJ_@Nk@Hm@BaBA_AB}BVe@Aq@L]DI?sAMMJIj@MTOPIDUAY@ULe@NO?SIS?gAJe@NK@YEQHMVk@DMA]Mq@IKBKAo@UmAZe@D]?e@TSBgA\\eBb@CBIVIp@",
+    "resource_state": 3,
+    "summary_polyline": "kpdcFxjjqSc@w@s@Lk@BUHYR[@YEw@AWFe@@QC{AAm@LSHQD_@L_@Bg@R[DQ?YKUg@OQYCY@cCb@cCRqAFQGu@w@AI?WNWz@iAZs@HeAAWG_@M_@Uc@OQSIo@Ii@[SYEKGS?MBAJ@`Aj@vAPz@~@Xn@PPDABC@SDKASR_@Hi@Li@KaB?uBDg@Aa@@g@HQd@Yb@INGHGFAFFLGTC`@]Re@f@u@v@e@b@]JEf@EJI^iAd@]R@j@A`@HjBJrBXl@Bl@@ZCLEb@Sh@Il@A~Af@pAX\\BpAGrAUb@Bh@AfBW\\F`@PRCLMd@OdBOd@Qh@YZCL@b@TtAPTHt@h@bAj@d@Fh@Rn@ZRDnAFj@JfBHd@\\VDV?lAg@J?l@HpBFFBRRHh@MPg@JSHM@YHaAf@WH[R]d@EN@NF`@HbAF^`@t@BTAJOPaAh@SNIVG`@B??BS`@KJ_@Nk@Hm@BaBA_AB}BVe@Aq@L]DI?sAMMJIj@MTOPIDUAY@ULe@NO?SIS?gAJe@NK@YEQHMVk@DMA]Mq@IKBKAo@UmAZe@D]?e@TSBgA\\eBb@CBIVIp@"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.383902,
+    -107.864927
+  ],
+  "end_latlng": [
+    37.38388,
+    -107.865131
+  ],
+  "average_speed": 3.465,
+  "max_speed": 9,
+  "average_temp": 20,
+  "average_watts": 97.8,
+  "device_watts": false,
+  "kilojoules": 131.3,
+  "has_heartrate": true,
+  "average_heartrate": 107.4,
+  "max_heartrate": 147,
+  "heartrate_opt_out": true,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2255.4,
+  "elev_low": 2145.6,
+  "upload_id": 3900430609,
+  "upload_id_str": "3900430609",
+  "external_id": "garmin_push_5127650351",
+  "from_accepted_tag": false,
+  "pr_count": 1,
+  "total_photo_count": 1,
+  "has_kudoed": false,
+  "suffer_score": 4,
+  "description": "",
+  "calories": 142,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 2710158594395223000,
+      "resource_state": 2,
+      "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+      "activity": {
+        "id": 3653380974,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 164,
+      "moving_time": 164,
+      "start_date": "2020-06-22T12:46:46Z",
+      "start_date_local": "2020-06-22T06:46:46Z",
+      "distance": 579,
+      "start_index": 13,
+      "end_index": 74,
+      "device_watts": false,
+      "average_watts": 134.4,
+      "average_heartrate": 109.3,
+      "max_heartrate": 127,
+      "segment": {
+        "id": 24587025,
+        "resource_state": 2,
+        "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+        "activity_type": "Ride",
+        "distance": 579,
+        "average_grade": 4.3,
+        "maximum_grade": 16.6,
+        "elevation_high": 2255.4,
+        "elevation_low": 2228.6,
+        "start_latlng": [
+          37.384286,
+          -107.864709
+        ],
+        "end_latlng": [
+          37.389283,
+          -107.86517
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2710161960389035500,
+      "resource_state": 2,
+      "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+      "activity": {
+        "id": 3653380974,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 164,
+      "moving_time": 164,
+      "start_date": "2020-06-22T12:46:46Z",
+      "start_date_local": "2020-06-22T06:46:46Z",
+      "distance": 579,
+      "start_index": 13,
+      "end_index": 74,
+      "device_watts": false,
+      "average_watts": 134.4,
+      "average_heartrate": 109.3,
+      "max_heartrate": 127,
+      "segment": {
+        "id": 24587025,
+        "resource_state": 2,
+        "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+        "activity_type": "Ride",
+        "distance": 579,
+        "average_grade": 4.3,
+        "maximum_grade": 16.6,
+        "elevation_high": 2255.4,
+        "elevation_low": 2228.6,
+        "start_latlng": [
+          37.384286,
+          -107.864709
+        ],
+        "end_latlng": [
+          37.389283,
+          -107.86517
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2710158605884652500,
+      "resource_state": 2,
+      "name": "Church Camp Descent- South",
+      "activity": {
+        "id": 3653380974,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 224,
+      "moving_time": 224,
+      "start_date": "2020-06-22T12:52:18Z",
+      "start_date_local": "2020-06-22T06:52:18Z",
+      "distance": 1396.17,
+      "start_index": 169,
+      "end_index": 305,
+      "device_watts": false,
+      "average_watts": 28.1,
+      "average_heartrate": 105.6,
+      "max_heartrate": 118,
+      "segment": {
+        "id": 3681174,
+        "resource_state": 2,
+        "name": "Church Camp Descent- South",
+        "activity_type": "Ride",
+        "distance": 1396.17,
+        "average_grade": -5.6,
+        "maximum_grade": 17.1,
+        "elevation_high": 2208.6,
+        "elevation_low": 2130.4,
+        "start_latlng": [
+          37.38895397633314,
+          -107.86233304068446
+        ],
+        "end_latlng": [
+          37.378549268469214,
+          -107.85875136964023
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "CO",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": true
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2710158605884652500,
+      "resource_state": 2,
+      "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+      "activity": {
+        "id": 3653380974,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 349,
+      "moving_time": 349,
+      "start_date": "2020-06-22T13:02:53Z",
+      "start_date_local": "2020-06-22T07:02:53Z",
+      "distance": 883,
+      "start_index": 454,
+      "end_index": 583,
+      "device_watts": false,
+      "average_watts": 134.2,
+      "average_heartrate": 111.5,
+      "max_heartrate": 147,
+      "segment": {
+        "id": 24585902,
+        "resource_state": 2,
+        "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+        "activity_type": "Ride",
+        "distance": 883,
+        "average_grade": 6.7,
+        "maximum_grade": 22.2,
+        "elevation_high": 2230,
+        "elevation_low": 2169.4,
+        "start_latlng": [
+          37.376284,
+          -107.863265
+        ],
+        "end_latlng": [
+          37.383764,
+          -107.864749
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1010.4,
+      "elapsed_time": 278,
+      "elevation_difference": 1.2,
+      "moving_time": 268,
+      "split": 1,
+      "average_speed": 3.77,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 110.12741312741312,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1007.5,
+      "elapsed_time": 240,
+      "elevation_difference": -53.2,
+      "moving_time": 240,
+      "split": 2,
+      "average_speed": 4.2,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 104.66666666666667,
+      "pace_zone": 0
+    },
+    {
+      "distance": 983.5,
+      "elapsed_time": 194,
+      "elevation_difference": -11.8,
+      "moving_time": 194,
+      "split": 3,
+      "average_speed": 5.07,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 105.53092783505154,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1004.8,
+      "elapsed_time": 413,
+      "elevation_difference": 31.4,
+      "moving_time": 385,
+      "split": 4,
+      "average_speed": 2.61,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 104.35215053763442,
+      "pace_zone": 0
+    },
+    {
+      "distance": 643.9,
+      "elapsed_time": 258,
+      "elevation_difference": 36.4,
+      "moving_time": 258,
+      "split": 5,
+      "average_speed": 2.5,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 113.13178294573643,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1615.3,
+      "elapsed_time": 444,
+      "elevation_difference": -38,
+      "moving_time": 434,
+      "split": 1,
+      "average_speed": 3.72,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 108.4235294117647,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.7,
+      "elapsed_time": 342,
+      "elevation_difference": -17,
+      "moving_time": 342,
+      "split": 2,
+      "average_speed": 4.7,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 104.58187134502924,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1426.1,
+      "elapsed_time": 597,
+      "elevation_difference": 59,
+      "moving_time": 569,
+      "split": 3,
+      "average_speed": 2.51,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 108.41007194244604,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 12063680798,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 3653380974,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1382,
+      "moving_time": 1343,
+      "start_date": "2020-06-22T12:45:56Z",
+      "start_date_local": "2020-06-22T06:45:56Z",
+      "distance": 4650.11,
+      "average_speed": 3.46,
+      "max_speed": 9,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 588,
+      "total_elevation_gain": 150,
+      "device_watts": false,
+      "average_watts": 97.8,
+      "average_heartrate": 107.4,
+      "max_heartrate": 147
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "44af2270-6d21-42db-9659-102c3087cdf6",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/A0LjhXaYB87fImIiSXY2rqNsD9gaGKtXklCN0fYU0Ng-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/A0LjhXaYB87fImIiSXY2rqNsD9gaGKtXklCN0fYU0Ng-768x576.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "b113c386b4689bcc53df88b0eb6669eb5a3debd0",
+  "available_zones": [
+    "heartrate",
+    "power"
+  ]
+}

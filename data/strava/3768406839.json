@@ -1,0 +1,162 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Afternoon Activity",
+  "distance": 526.7,
+  "moving_time": 762,
+  "elapsed_time": 792,
+  "total_elevation_gain": 3.5,
+  "type": "StandUpPaddling",
+  "sport_type": "StandUpPaddling",
+  "device_name": "Garmin Forerunner 935",
+  "id": 3768406839,
+  "start_date": "2020-07-15T19:40:58Z",
+  "start_date_local": "2020-07-15T13:40:58Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a3768406839",
+    "polyline": "ohbcFfujqSKXCI@GVM?KAIGDEHAPC@BCXADJJ@JNFBFiALLH?h@QN?TDZ@XTXFNNFA@FHEJBHHL?LRCBEPE?AF@DJBR?DCRERIJA`@JRO@E?DY^UDKDGLSPWTGL@DDC",
+    "resource_state": 3,
+    "summary_polyline": "ohbcFfujqSKXCI@GVM?KAIGDEHAPC@BCXADJJ@JNFBFiALLH?h@QN?TDZ@XTXFNNFA@FHEJBHHL?LRCBEPE?AF@DJBR?DCRERIJA`@JRO@E?DY^UDKDGLSPWTGL@DDC"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.372405,
+    -107.866594
+  ],
+  "end_latlng": [
+    37.370644,
+    -107.867462
+  ],
+  "average_speed": 0.691,
+  "max_speed": 1.3,
+  "average_cadence": 20,
+  "average_temp": 27,
+  "has_heartrate": true,
+  "average_heartrate": 98.4,
+  "max_heartrate": 110,
+  "heartrate_opt_out": true,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2185.1,
+  "elev_low": 2180.7,
+  "upload_id": 4026641725,
+  "upload_id_str": "4026641725",
+  "external_id": "garmin_push_5243034831",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 2,
+  "description": null,
+  "calories": 66,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 526.7,
+      "elapsed_time": 792,
+      "elevation_difference": 2.8,
+      "moving_time": 762,
+      "split": 1,
+      "average_speed": 0.67,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 98.39881831610045,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 526.7,
+      "elapsed_time": 792,
+      "elevation_difference": 2.8,
+      "moving_time": 762,
+      "split": 1,
+      "average_speed": 0.67,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 98.39881831610045,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 12414344056,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 3768406839,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 790,
+      "moving_time": 790,
+      "start_date": "2020-07-15T19:40:58Z",
+      "start_date_local": "2020-07-15T13:40:58Z",
+      "distance": 526.72,
+      "average_speed": 0.67,
+      "max_speed": 1.3,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 187,
+      "total_elevation_gain": 4.4,
+      "average_cadence": 20,
+      "device_watts": false,
+      "average_heartrate": 98.4,
+      "max_heartrate": 110
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "722e5ce40dcb31b9602ef496201cc7602289179c",
+  "available_zones": [
+    "heartrate"
+  ]
+}
