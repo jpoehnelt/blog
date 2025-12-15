@@ -1,0 +1,382 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Moose north of the lake",
+  "distance": 6302.3,
+  "moving_time": 2557,
+  "elapsed_time": 2975,
+  "total_elevation_gain": 193,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": 10,
+  "device_name": "Garmin Forerunner 935",
+  "id": 4061195762,
+  "start_date": "2020-09-15T00:47:02Z",
+  "start_date_local": "2020-09-14T18:47:02Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a4061195762",
+    "polyline": "ipdcFnkjqSIJAFAIe@PS?]HcCYOBg@Co@@g@Ia@DWEg@?UCWHSDABDP\\p@Lh@?XSpA[v@IHIRg@f@[Le@KY[QMcAQi@Eq@[QU[o@W_@i@m@e@c@UY[Ok@@]FQG_@a@SQGWBKb@]z@sADu@A_@Q{@K]a@o@KIKCQDQASMg@g@Sa@GYBEHAdAf@x@FTD~@bALZTTFDFCJc@HQCAL[D_@J_@F]KkAA}A?QCGDm@Ak@Da@LIl@[XETMHOJFRGL?b@WJc@f@y@~@m@\\[RKf@KTa@Xy@ZUPDNCXAd@HpBFvB\\fA@R?CA^Gd@UPE\\Eh@?RDZLr@R|@Pn@HzAIdAS|@@pB[LAVF^PH@PE\\SVG~AKp@UVQ`@K@@CBHAb@XzANbCvAr@Nr@ZZHLJLBpAJNAb@Ht@D\\?LB\\TNFPBTAv@_@\\G`@FtBDx@FPDXPl@RXC~@AdALr@?t@EdABzBAVCt@_@PCP?NFVBr@_@jA_@r@EXMfAI^Mv@@fAw@f@Eh@?JE@B?EUHSA]By@v@QDe@Cu@Pq@@q@N]@a@D]TK?[He@ZS@YIQAm@Re@F}BAi@Gy@Lc@Bo@AeAIg@BUBm@Ls@Fc@No@HSLWDcBp@_@FKI?FEN[`@GTAJBd@RpAV`@Tl@@HOXiAn@MLGJEd@[p@IHq@VkAFMAc@@]?a@Bm@?yBXi@AkARcBOKPIl@OTQPe@@QBCBM?m@L[KW?a@J_@Bo@Pg@CIDGTCB[DM?q@Qu@CSEc@UE?UFa@RM@mAC[Xe@H[Ls@PiATW`AGv@BB",
+    "resource_state": 3,
+    "summary_polyline": "ipdcFnkjqSIJAFAIe@PS?]HcCYOBg@Co@@g@Ia@DWEg@?UCWHSDABDP\\p@Lh@?XSpA[v@IHIRg@f@[Le@KY[QMcAQi@Eq@[QU[o@W_@i@m@e@c@UY[Ok@@]FQG_@a@SQGWBKb@]z@sADu@A_@Q{@K]a@o@KIKCQDQASMg@g@Q]I]BEHAdAf@x@FTD~@bALZTTFDFCJc@HQCAL[D_@J_@F]KkAA}A?QCGDm@Ak@Da@LIl@[XETMHOJFRGL?b@WJc@f@y@~@m@\\[RKf@KTa@Xy@ZUPDNCXAd@HpBFvB\\fA@R?CA^Gd@UPE\\Eh@?RDZLr@R|@Pn@HzAIdAS|@@pB[LAVF^PH@PE\\SVG~AKp@UVQ`@K@@CBHAb@XzANbCvAr@Nr@ZZHLJLBpAJNAb@Ht@D\\?LB\\TNFPBTAv@_@\\G`@FtBDx@FPDXPl@RXC~@AdALr@?t@EdABzBAVCt@_@PCP?NFVBr@_@jA_@r@EXMfAI^Mv@@fAw@f@Eh@?JE@B?EUHSA]By@v@QDe@Cu@Pq@@q@N]@a@D]TK?[He@ZS@YIQAm@Re@F}BAi@Gy@Lc@Bo@AeAIg@BUBm@Ls@Fc@No@HSLWDcBp@_@FKI?FEN[`@GTAJBd@RpAV`@Tl@@HOXiAn@MLGJEd@[p@IHq@VkAFMAc@@]?a@Bm@?yBXi@AkARcBOKPIl@OTQPe@@QBCBM?m@L[KW?a@J_@Bo@Pg@CIDGTCB[DM?q@Qu@CSEc@UE?UFa@RM@mAC[Xe@H[Ls@PiATW`AGv@BB"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.383899,
+    -107.865031
+  ],
+  "end_latlng": [
+    37.383847,
+    -107.865296
+  ],
+  "average_speed": 2.465,
+  "max_speed": 7.4,
+  "average_temp": 23,
+  "average_watts": 68.7,
+  "device_watts": false,
+  "kilojoules": 175.7,
+  "has_heartrate": true,
+  "average_heartrate": 113.2,
+  "max_heartrate": 147,
+  "heartrate_opt_out": true,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2463.4,
+  "elev_low": 2357.4,
+  "upload_id": 4346267173,
+  "upload_id_str": "4346267173",
+  "external_id": "garmin_push_5538280597",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 11,
+  "description": "",
+  "calories": 317,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 2740765170421248000,
+      "resource_state": 2,
+      "name": "Church Camp Descent- South",
+      "activity": {
+        "id": 4061195762,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 604,
+      "moving_time": 331,
+      "start_date": "2020-09-15T00:59:58Z",
+      "start_date_local": "2020-09-14T18:59:58Z",
+      "distance": 1396.17,
+      "start_index": 294,
+      "end_index": 543,
+      "device_watts": false,
+      "average_watts": 15.4,
+      "average_heartrate": 101.3,
+      "max_heartrate": 125,
+      "segment": {
+        "id": 3681174,
+        "resource_state": 2,
+        "name": "Church Camp Descent- South",
+        "activity_type": "Ride",
+        "distance": 1396.17,
+        "average_grade": -5.6,
+        "maximum_grade": 17.1,
+        "elevation_high": 2208.6,
+        "elevation_low": 2130.4,
+        "start_latlng": [
+          37.38895397633314,
+          -107.86233304068446
+        ],
+        "end_latlng": [
+          37.378549268469214,
+          -107.85875136964023
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "CO",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": true
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2740765170420354000,
+      "resource_state": 2,
+      "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+      "activity": {
+        "id": 4061195762,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 436,
+      "moving_time": 436,
+      "start_date": "2020-09-15T01:28:41Z",
+      "start_date_local": "2020-09-14T19:28:41Z",
+      "distance": 883,
+      "start_index": 949,
+      "end_index": 1113,
+      "device_watts": false,
+      "average_watts": 106,
+      "average_heartrate": 119,
+      "max_heartrate": 136,
+      "segment": {
+        "id": 24585902,
+        "resource_state": 2,
+        "name": "Falls Creek Ranch Climb - NO PUBLIC ACCESS - Private Property",
+        "activity_type": "Ride",
+        "distance": 883,
+        "average_grade": 6.7,
+        "maximum_grade": 22.2,
+        "elevation_high": 2230,
+        "elevation_low": 2169.4,
+        "start_latlng": [
+          37.376284,
+          -107.863265
+        ],
+        "end_latlng": [
+          37.383764,
+          -107.864749
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": true,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1004.7,
+      "elapsed_time": 525,
+      "elevation_difference": 26.6,
+      "moving_time": 495,
+      "split": 1,
+      "average_speed": 2.03,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 106.84342379958247,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1005.6,
+      "elapsed_time": 540,
+      "elevation_difference": -61.4,
+      "moving_time": 413,
+      "split": 2,
+      "average_speed": 2.43,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 108.1662468513854,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.9,
+      "elapsed_time": 362,
+      "elevation_difference": -27.4,
+      "moving_time": 239,
+      "split": 3,
+      "average_speed": 4.18,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 107.87665198237886,
+      "pace_zone": 0
+    },
+    {
+      "distance": 995.3,
+      "elapsed_time": 389,
+      "elevation_difference": 17.2,
+      "moving_time": 389,
+      "split": 4,
+      "average_speed": 2.56,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 116.4089709762533,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.1,
+      "elapsed_time": 486,
+      "elevation_difference": 13.8,
+      "moving_time": 402,
+      "split": 5,
+      "average_speed": 2.49,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 120.32587064676616,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.4,
+      "elapsed_time": 542,
+      "elevation_difference": 28.8,
+      "moving_time": 488,
+      "split": 6,
+      "average_speed": 2.05,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 117.07172131147541,
+      "pace_zone": 0
+    },
+    {
+      "distance": 300.3,
+      "elapsed_time": 131,
+      "elevation_difference": 2.4,
+      "moving_time": 131,
+      "split": 7,
+      "average_speed": 2.29,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 115.87692307692308,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1615.5,
+      "elapsed_time": 822,
+      "elevation_difference": -6.8,
+      "moving_time": 792,
+      "split": 1,
+      "average_speed": 2.04,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 108.93175853018373,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1604.4,
+      "elapsed_time": 721,
+      "elevation_difference": -38.6,
+      "moving_time": 471,
+      "split": 2,
+      "average_speed": 3.41,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 105.30415754923413,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1618.2,
+      "elapsed_time": 669,
+      "elevation_difference": 4,
+      "moving_time": 585,
+      "split": 3,
+      "average_speed": 2.77,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 121.78608695652174,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1464.2,
+      "elapsed_time": 763,
+      "elevation_difference": 41.4,
+      "moving_time": 709,
+      "split": 4,
+      "average_speed": 2.07,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 116.01129943502825,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 13308847306,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 4061195762,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2972,
+      "moving_time": 2972,
+      "start_date": "2020-09-15T00:47:02Z",
+      "start_date_local": "2020-09-14T18:47:02Z",
+      "distance": 6302.26,
+      "average_speed": 2.12,
+      "max_speed": 7.4,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 1132,
+      "total_elevation_gain": 193,
+      "device_watts": false,
+      "average_watts": 68.7,
+      "average_heartrate": 113.2,
+      "max_heartrate": 147
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "b3d2d69006465e68afcb4a0a2e9a18236d9684c5",
+  "available_zones": [
+    "heartrate",
+    "power"
+  ]
+}

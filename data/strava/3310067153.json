@@ -1,0 +1,734 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Yorkshire",
+  "distance": 14954.7,
+  "moving_time": 2481,
+  "elapsed_time": 2481,
+  "total_elevation_gain": 265,
+  "type": "VirtualRide",
+  "sport_type": "VirtualRide",
+  "device_name": "Zwift",
+  "id": 3310067153,
+  "start_date": "2020-04-17T02:41:02Z",
+  "start_date_local": "2020-04-16T19:41:02Z",
+  "timezone": "(GMT-07:00) America/Phoenix",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 11,
+  "photo_count": 0,
+  "map": {
+    "id": "a3310067153",
+    "polyline": "c~ohIh`lHLCjAg@nAq@`BaA|DmC`BcAPCN@NFNHLNRj@ZzAlAvGpGp\\hOnx@|I~d@\\|CfBfQdB~NrDp]~G|m@nA|L|Etc@lB`Qr@dFBr@ETIJMB_C[cR_DiBWkEc@qGY}@G_@O}@k@}AyAa@Y_@Z_@xBa@V_@g@[m@e@Kc@Dc@C]U[[[SwB{@cHmDyEkBwAs@o@g@m@q@y@mAmAsBk@s@][_Ag@s@WYEeLu@yG[wAKSGY[O_@EUCm@?W|@e_@XmNL{DEuBe@qHAm@Dk@Pc@hFqHp@}@XYZOz@Q\\C\\@ZRbAzAZLXMLc@?k@Ae@mAwL[cF?_@Bi@Lm@jIsVXu@Vi@JOLIjBm@~@g@~CaC`A}@T]tA{BbEaH`A_BT_@BK@MKa@e@eAeFiKk@sAg@yAq@gCq@wCsDoQOg@e@cASYYM_Bi@cAg@i@[wB}A{AoAu@s@s@y@oCuDmAmBYQUTMd@Ch@@d@J~@b@tAtB|F|@rChG`^d@dDBn@E\\OR{@`@}@Za@ZILEP?T@lAKtA[fAYn@MTQNwBlA}FvCSAO[]eCaA{Fq@uCg@eBq@cBs@_BcEmIiCwFmBqGQ_Ak@wDGWMSuAsAc@i@c@m@Q[K]Gc@KcBUyE@[DOHKJEbGuArC{@z@i@zC}BNKPCNLJR~@bC`@v@|@pAx@z@LHPDNA|@KjA[ZOLIHOAWEU_@u@Um@sBkJAY@UFSP[lAqA~CiC~@o@xAg@dEkArFcBlAg@z@_@bCuAnH_FVKX@VJTTN^Np@|O`z@",
+    "resource_state": 3,
+    "summary_polyline": "c~ohIh`lHLCjAg@nAq@`BaA|DmC`BcAPCN@NFNHLNRj@ZzAlAvGpGp\\hOnx@|I~d@\\|CfBfQdB~NrDp]~G|m@nA|L|Etc@lB`Qr@dFBr@ETIJMBqBWeSiDkBWuD]qGY}@G_@O}@k@}AyAa@Y_@Z_@xBa@V_@g@[m@e@Kc@Dc@C]U[[[SwB{@cHmDyEkBwAs@o@g@m@q@y@mAmAsBk@s@][_Ag@s@WYEeLu@yG[wAKSGY[O_@EUCm@?W|@e_@XmNL{DEuBe@qHAm@Dk@Pc@hFqHp@}@XYZOz@Q\\C\\@ZRbAzAZLXMLc@?k@Ae@mAwL[cF?_@Bi@Lm@jIsVXu@Vi@JOLIjBm@~@g@~CaC`A}@T]tA{BbEaH`A_BT_@BK@MKa@e@eAeFiKk@sAg@yAq@gCq@wCsDoQOg@e@cASYYM_Bi@cAg@i@[wB}A{AoAu@s@s@y@oCuDmAmBYQUTMd@Ch@@d@J~@b@tAtB|F|@rChG`^d@dDBn@E\\OR{@`@}@Za@ZILEP?T@lAKtA[fAYn@MTQNwBlA}FvCSAO[]eCaA{Fq@uCg@eBq@cBs@_BcEmIiCwFmBqGQ_Ak@wDGWMSuAsAc@i@c@m@Q[K]Gc@KcBUyE@[DOHKJEbGuArC{@z@i@zC}BNKPCNLJR~@bC`@v@|@pAx@z@LHPDNA|@KjA[ZOLIHOAWEU_@u@Um@sBkJAY@UFSP[lAqA~CiC~@o@xAg@dEkArFcBlAg@z@_@bCuAnH_FVKX@VJTTN^Np@|O`z@"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    53.990263,
+    -1.541321
+  ],
+  "end_latlng": [
+    53.984211,
+    -1.549499
+  ],
+  "average_speed": 6.028,
+  "max_speed": 22.2,
+  "average_watts": 112.1,
+  "max_watts": 296,
+  "weighted_average_watts": 130,
+  "device_watts": true,
+  "kilojoules": 278,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "elev_high": 182.6,
+  "elev_low": 97,
+  "upload_id": 3537991225,
+  "upload_id_str": "3537991225",
+  "external_id": "zwift-activity-530014411406311808.fit",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 1,
+  "has_kudoed": false,
+  "description": null,
+  "calories": 265,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "2019 UCI Worlds Harrogate Circuit (Banner to Banner)",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2197,
+      "moving_time": 2197,
+      "start_date": "2020-04-17T02:41:18Z",
+      "start_date_local": "2020-04-16T19:41:18Z",
+      "distance": 13816.8,
+      "start_index": 16,
+      "end_index": 2213,
+      "device_watts": true,
+      "average_watts": 117.2,
+      "segment": {
+        "id": 21738724,
+        "resource_state": 2,
+        "name": "2019 UCI Worlds Harrogate Circuit (Banner to Banner)",
+        "activity_type": "VirtualRide",
+        "distance": 13816.8,
+        "average_grade": 0,
+        "maximum_grade": 9.8,
+        "elevation_high": 182.6,
+        "elevation_low": 97,
+        "start_latlng": [
+          53.989719,
+          -1.541038
+        ],
+        "end_latlng": [
+          53.989719,
+          -1.541043
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Harrogate",
+        "state": "England",
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "Beckwithshaw to Penny Pot - Fulgaz",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 305,
+      "moving_time": 305,
+      "start_date": "2020-04-17T02:50:54Z",
+      "start_date_local": "2020-04-16T19:50:54Z",
+      "distance": 2323.4,
+      "start_index": 592,
+      "end_index": 897,
+      "device_watts": true,
+      "average_watts": 146.4,
+      "segment": {
+        "id": 20837686,
+        "resource_state": 2,
+        "name": "Beckwithshaw to Penny Pot - Fulgaz",
+        "activity_type": "VirtualRide",
+        "distance": 2323.4,
+        "average_grade": -1.1,
+        "maximum_grade": 10.9,
+        "elevation_high": 169.8,
+        "elevation_low": 108,
+        "start_latlng": [
+          53.975037,
+          -1.592919
+        ],
+        "end_latlng": [
+          53.99474,
+          -1.585872
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Harrogate",
+        "state": "England",
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "Yorkshire KOM",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 396,
+      "moving_time": 396,
+      "start_date": "2020-04-17T02:57:37Z",
+      "start_date_local": "2020-04-16T19:57:37Z",
+      "distance": 1204.6,
+      "start_index": 995,
+      "end_index": 1391,
+      "device_watts": true,
+      "average_watts": 117.7,
+      "segment": {
+        "id": 21747822,
+        "resource_state": 2,
+        "name": "Yorkshire KOM",
+        "activity_type": "VirtualRide",
+        "distance": 1204.6,
+        "average_grade": 5.5,
+        "maximum_grade": 9.1,
+        "elevation_high": 162.8,
+        "elevation_low": 97,
+        "start_latlng": [
+          53.991671,
+          -1.572467
+        ],
+        "end_latlng": [
+          53.986001,
+          -1.559382
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Harrogate",
+        "state": null,
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "Oak Beck ascent - Fulgaz",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 207,
+      "moving_time": 207,
+      "start_date": "2020-04-17T02:57:39Z",
+      "start_date_local": "2020-04-16T19:57:39Z",
+      "distance": 657.6,
+      "start_index": 997,
+      "end_index": 1204,
+      "device_watts": true,
+      "average_watts": 126.9,
+      "segment": {
+        "id": 20837736,
+        "resource_state": 2,
+        "name": "Oak Beck ascent - Fulgaz",
+        "activity_type": "VirtualRide",
+        "distance": 657.6,
+        "average_grade": 7.8,
+        "maximum_grade": 15,
+        "elevation_high": 136.8,
+        "elevation_low": 85.2,
+        "start_latlng": [
+          53.991463,
+          -1.572277
+        ],
+        "end_latlng": [
+          53.989921,
+          -1.563519
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": null,
+        "country": null,
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "Harlow Moor Drive - Fulgaz",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 472,
+      "moving_time": 472,
+      "start_date": "2020-04-17T03:04:21Z",
+      "start_date_local": "2020-04-16T20:04:21Z",
+      "distance": 3389.9,
+      "start_index": 1399,
+      "end_index": 1871,
+      "device_watts": true,
+      "average_watts": 71.8,
+      "segment": {
+        "id": 20837756,
+        "resource_state": 2,
+        "name": "Harlow Moor Drive - Fulgaz",
+        "activity_type": "VirtualRide",
+        "distance": 3389.9,
+        "average_grade": -1.6,
+        "maximum_grade": 10.9,
+        "elevation_high": 157.2,
+        "elevation_low": 104,
+        "start_latlng": [
+          53.98609,
+          -1.559088
+        ],
+        "end_latlng": [
+          53.999628,
+          -1.547419
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Harrogate",
+        "state": "England",
+        "country": "United Kingdom",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2685610710255101000,
+      "resource_state": 2,
+      "name": "Asda 1K sprint - Fulgaz",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 227,
+      "moving_time": 227,
+      "start_date": "2020-04-17T03:13:46Z",
+      "start_date_local": "2020-04-16T20:13:46Z",
+      "distance": 1018,
+      "start_index": 1964,
+      "end_index": 2191,
+      "device_watts": true,
+      "average_watts": 81.6,
+      "segment": {
+        "id": 20707912,
+        "resource_state": 2,
+        "name": "Asda 1K sprint - Fulgaz",
+        "activity_type": "VirtualRide",
+        "distance": 1018,
+        "average_grade": 1.6,
+        "maximum_grade": 10.3,
+        "elevation_high": 123,
+        "elevation_low": 100.2,
+        "start_latlng": [
+          53.996032,
+          -1.545973
+        ],
+        "end_latlng": [
+          53.990227,
+          -1.541232
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": null,
+        "country": null,
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1004.3,
+      "elapsed_time": 157,
+      "elevation_difference": 17.2,
+      "moving_time": 157,
+      "split": 1,
+      "average_speed": 6.4,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 997.8,
+      "elapsed_time": 205,
+      "elevation_difference": 40.2,
+      "moving_time": 205,
+      "split": 2,
+      "average_speed": 4.87,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1000.5,
+      "elapsed_time": 91,
+      "elevation_difference": -21,
+      "moving_time": 91,
+      "split": 3,
+      "average_speed": 10.99,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1007.4,
+      "elapsed_time": 124,
+      "elevation_difference": 3.2,
+      "moving_time": 124,
+      "split": 4,
+      "average_speed": 8.12,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 994,
+      "elapsed_time": 100,
+      "elevation_difference": -27.4,
+      "moving_time": 100,
+      "split": 5,
+      "average_speed": 9.94,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.8,
+      "elapsed_time": 117,
+      "elevation_difference": -5.6,
+      "moving_time": 117,
+      "split": 6,
+      "average_speed": 8.55,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.1,
+      "elapsed_time": 157,
+      "elevation_difference": 0.8,
+      "moving_time": 157,
+      "split": 7,
+      "average_speed": 6.36,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.6,
+      "elapsed_time": 110,
+      "elevation_difference": -14.4,
+      "moving_time": 110,
+      "split": 8,
+      "average_speed": 9.08,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.2,
+      "elapsed_time": 347,
+      "elevation_difference": 39,
+      "moving_time": 347,
+      "split": 9,
+      "average_speed": 2.89,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1007.8,
+      "elapsed_time": 77,
+      "elevation_difference": -41.2,
+      "moving_time": 77,
+      "split": 10,
+      "average_speed": 13.09,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 991.2,
+      "elapsed_time": 250,
+      "elevation_difference": 16.2,
+      "moving_time": 250,
+      "split": 11,
+      "average_speed": 3.96,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1005.7,
+      "elapsed_time": 104,
+      "elevation_difference": -22.4,
+      "moving_time": 104,
+      "split": 12,
+      "average_speed": 9.67,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.2,
+      "elapsed_time": 145,
+      "elevation_difference": -1,
+      "moving_time": 145,
+      "split": 13,
+      "average_speed": 6.88,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 994.8,
+      "elapsed_time": 251,
+      "elevation_difference": 17.8,
+      "moving_time": 251,
+      "split": 14,
+      "average_speed": 3.96,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 954.3,
+      "elapsed_time": 246,
+      "elevation_difference": 18.2,
+      "moving_time": 246,
+      "split": 15,
+      "average_speed": 3.88,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1612,
+      "elapsed_time": 273,
+      "elevation_difference": 39.4,
+      "moving_time": 273,
+      "split": 1,
+      "average_speed": 5.9,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1607.5,
+      "elapsed_time": 212,
+      "elevation_difference": 0.4,
+      "moving_time": 212,
+      "split": 2,
+      "average_speed": 7.58,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.8,
+      "elapsed_time": 182,
+      "elevation_difference": -8.2,
+      "moving_time": 182,
+      "split": 3,
+      "average_speed": 8.84,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1613,
+      "elapsed_time": 221,
+      "elevation_difference": -14,
+      "moving_time": 221,
+      "split": 4,
+      "average_speed": 7.3,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1606,
+      "elapsed_time": 191,
+      "elevation_difference": -21.6,
+      "moving_time": 191,
+      "split": 5,
+      "average_speed": 8.41,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1613.5,
+      "elapsed_time": 377,
+      "elevation_difference": 5,
+      "moving_time": 377,
+      "split": 6,
+      "average_speed": 4.28,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1605.8,
+      "elapsed_time": 315,
+      "elevation_difference": -0.2,
+      "moving_time": 315,
+      "split": 7,
+      "average_speed": 5.1,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1614.7,
+      "elapsed_time": 199,
+      "elevation_difference": -16,
+      "moving_time": 199,
+      "split": 8,
+      "average_speed": 8.11,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1605.5,
+      "elapsed_time": 366,
+      "elevation_difference": 22.6,
+      "moving_time": 366,
+      "split": 9,
+      "average_speed": 4.39,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    },
+    {
+      "distance": 469.9,
+      "elapsed_time": 145,
+      "elevation_difference": 12.2,
+      "moving_time": 145,
+      "split": 10,
+      "average_speed": 3.24,
+      "average_grade_adjusted_speed": null,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 11042293052,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 3310067153,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 3700,
+      "moving_time": 2482,
+      "start_date": "2020-04-17T02:41:02Z",
+      "start_date_local": "2020-04-16T19:41:02Z",
+      "distance": 14956.7,
+      "average_speed": 6.03,
+      "max_speed": 22.2,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 2481,
+      "total_elevation_gain": 0,
+      "device_watts": true,
+      "average_watts": 112.1
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "3e6d4b3c-a581-42a4-af79-2e3fc1073745",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/W3GnqY-Ymk1FxKZd_cqq_qMez_MDz0g1uuOuEnbB3-c-128x69.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/W3GnqY-Ymk1FxKZd_cqq_qMez_MDz0g1uuOuEnbB3-c-768x419.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "3000f7ab9bdb0621b1b3ec6dc93a51b9ab5b430d",
+  "available_zones": [
+    "power"
+  ]
+}

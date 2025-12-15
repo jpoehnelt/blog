@@ -1,0 +1,201 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Afternoon Run",
+  "distance": 704.6,
+  "moving_time": 731,
+  "elapsed_time": 1469,
+  "total_elevation_gain": 10.1,
+  "type": "Run",
+  "sport_type": "Run",
+  "workout_type": 0,
+  "device_name": "Strava App",
+  "id": 4310454485,
+  "start_date": "2020-11-08T21:40:45Z",
+  "start_date_local": "2020-11-08T14:40:45Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a4310454485",
+    "polyline": "o~dcFxlkqSDAACH?HCLQEGE?EEIDAC?BI@@@ABDCKCGWMS?GC@E]CE?@G?MCCEAMEEA@BKDCZBRAZOII?OBO@i@AO@KCGAQBQAIHeAJM?GHKXGDKD?DEd@ERIXDLOXQ`@w@JGRG^FNCd@Q|@aAPGf@]\\MZYHOJe@DMBK?e@@@A@?MEOCQUc@Ge@MKKCCE",
+    "resource_state": 3,
+    "summary_polyline": "o~dcFxlkqSDAACH?HCLQEGE?EEIDAC?BI@@@ABDCKCGWMS?GC@E]CE?@G?MCCEAMEEA@BKDCZBRAZOII?OBO@i@AO@KCGAQBQAIHeAJM?GHKXGDKD?DEd@ERIXDLOXQ`@w@JGRG^FNCd@Q|@aAPGf@]\\MZYHOJe@DMBK?e@@@A@?MEOCQUc@Ge@MKKCCE"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": true,
+  "visibility": "only_me",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.386164,
+    -107.870361
+  ],
+  "end_latlng": [
+    37.383712,
+    -107.865339
+  ],
+  "average_speed": 0.964,
+  "max_speed": 3.3,
+  "average_cadence": 52.9,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "elev_high": 2289.3,
+  "elev_low": 2237.6,
+  "upload_id": 4607844033,
+  "upload_id_str": "4607844033",
+  "external_id": "09c881f7-dda4-435a-90df-561a58affa3f-activity.fit",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "description": null,
+  "calories": 58,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 704.6,
+      "elapsed_time": 1264,
+      "elevation_difference": -40.8,
+      "moving_time": 750,
+      "split": 1,
+      "average_speed": 0.94,
+      "average_grade_adjusted_speed": 0.98,
+      "pace_zone": 1
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 704.6,
+      "elapsed_time": 1264,
+      "elevation_difference": -40.8,
+      "moving_time": 750,
+      "split": 1,
+      "average_speed": 0.94,
+      "average_grade_adjusted_speed": 0.98,
+      "pace_zone": 1
+    }
+  ],
+  "laps": [
+    {
+      "id": 14097450308,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 4310454485,
+        "visibility": "only_me",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1469,
+      "moving_time": 731,
+      "start_date": "2020-11-08T21:40:45Z",
+      "start_date_local": "2020-11-08T14:40:45Z",
+      "distance": 704.64,
+      "average_speed": 0.96,
+      "max_speed": 3.3,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 594,
+      "total_elevation_gain": 10.2,
+      "average_cadence": 52.9,
+      "device_watts": false,
+      "pace_zone": 1
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 1970175308,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 4310454485,
+        "visibility": "only_me",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 282,
+      "moving_time": 282,
+      "start_date": "2020-11-08T21:53:57Z",
+      "start_date_local": "2020-11-08T14:53:57Z",
+      "distance": 400,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 254,
+      "end_index": 479
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "fa1173399d40f30c2e6bd483517633870c6ad946",
+  "similar_activities": {
+    "effort_count": 1,
+    "average_speed": 0.9638850889192887,
+    "min_average_speed": 0.9638850889192887,
+    "mid_average_speed": 0.9638850889192888,
+    "max_average_speed": 0.9638850889192887,
+    "pr_rank": null,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        0.9638850889192888
+      ],
+      "current_activity_index": 0,
+      "min_speed": 0.9638850889192887,
+      "mid_speed": 0.9638850889192888,
+      "max_speed": 0.9638850889192887,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "pace"
+  ]
+}
