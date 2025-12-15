@@ -31,3 +31,9 @@ jobs:
       - run: pnpm i
       - run: pnpm build
       - run: pnpm check
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy apps/site/build --project-name=jpoehnelt --branch=preview
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
