@@ -1,4 +1,5 @@
 import axios from "axios";
+import fs from "fs";
 import sodium from "libsodium-wrappers";
 import { Octokit } from "octokit";
 
@@ -53,6 +54,21 @@ const main = async () => {
       );
     })
   );
+
+  if (process.env.GITHUB_ENV) {
+    console.log(`::add-mask::${response.data.access_token}`);
+    console.log(`::add-mask::${response.data.refresh_token}`);
+    fs.appendFileSync(
+      process.env.GITHUB_ENV,
+      `STRAVA_ACCESS_TOKEN=${response.data.access_token}\n`
+    );
+     fs.appendFileSync(
+      process.env.GITHUB_ENV,
+      `STRAVA_REFRESH_TOKEN=${response.data.refresh_token}\n`
+    );
+  }
+
+  return response.data.access_token;
 };
 
-main();
+await main();

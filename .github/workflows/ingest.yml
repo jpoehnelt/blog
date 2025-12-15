@@ -12,7 +12,7 @@ on:
   schedule:
     - cron: "0 5 * * *"
 jobs:
-  ingest:
+  data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -23,16 +23,23 @@ jobs:
         with:
           cache: "pnpm"
       - run: pnpm i
-      - run: pnpm build
+      - run: pnpm build --filter=data-automation
+      - name: Refresh Strava token
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: node packages/data-automation/dist/strava-refresh.js
       - name: Ingest Strava Activities
         env:
-          STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+          STRAVA_ACCESS_TOKEN: ${{ env.STRAVA_ACCESS_TOKEN }}
           STRAVA_AFTER: ${{ github.event.inputs.after }}
           STRAVA_BEFORE: ${{ github.event.inputs.before }}
         run: node packages/data-automation/dist/strava-ingest.js
       - name: Ingest Strava Activities (random)
         env:
-          STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+          STRAVA_ACCESS_TOKEN: ${{ env.STRAVA_ACCESS_TOKEN }}
         run: |          
           YEAR=$(shuf -i 2020-$(date +%Y) -n 1)
           MONTH=$(shuf -i 1-12 -n 1)
@@ -46,18 +53,20 @@ jobs:
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
           
           node packages/data-automation/dist/strava-ingest.js
-      
-      #- name: Ingest NPM Packages
-      #  run: node dist/npm.mjs
-      # - name: Ingest Mastodon
-      #   run: node dist/mastodon.mjs
+      - name: Commit changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "jpoehnelt@users.noreply.github.com"
+          git config --local user.name "Justin Poehnelt"
+          git commit -m "chore: update data" || true
+          git push
       - run: |
-            curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o blog/src/_data/appsScriptWinterCG.json
+            curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:
           APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID: ${{ secrets.APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID }}
       - run: |
           git status
-          git add --all src/_data/
+          git add --all data/
       - name: Commit changes
         if: github.ref == 'refs/heads/main'
         run: |
