@@ -1,13 +1,11 @@
 ---
 title: 2022 Mogollon Monster 100 Mile Race Report
 description: Race report for the 2022 Mogollon Monster 100 mile ultramarathon.
-pubDate: '2022-10-13'
+pubDate: "2022-10-13"
 tags: >-
   run,ultramarathon,100 mile,race report,Arizona,Mogollon Monster,aravaipa
   running,gcm,blood glucose,nausea
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

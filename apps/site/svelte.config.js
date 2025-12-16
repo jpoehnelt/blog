@@ -9,7 +9,6 @@ import { transformerCopyButton } from "@rehype-pretty/transformers";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
 
-
 const config = {
   trailingSlash: "always",
   extensions: [".svelte", ".md", ".mdx"],
@@ -25,7 +24,10 @@ const config = {
           rehypeAutolinkHeadings,
           {
             behavior: "append",
-            properties: { className: ["link-hover"], "aria-label": "Link to section" },
+            properties: {
+              className: ["link-hover"],
+              "aria-label": "Link to section",
+            },
           },
         ],
         [

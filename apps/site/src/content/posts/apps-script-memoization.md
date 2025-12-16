@@ -3,8 +3,8 @@ title: Memoization in Apps Script
 description: >-
   A generic Apps Script memoization function can be written to cache any
   function.
-pubDate: '2023-12-11'
-tags: 'code,google,google workspace,apps script,memoization'
+pubDate: "2023-12-11"
+tags: "code,google,google workspace,apps script,memoization"
 ---
 
 <script>
@@ -79,7 +79,6 @@ The memoization function will first check the cache for the key. If the key exis
  */
 function memoize(func, ttl = 600, cache = CacheService.getScriptCache()) {
   return (...args) => {
-    
     // consider a more robust input to the hash function to handler complex
     // types such as functions, dates, and regex
     const key = hash(JSON.stringify([func.toString(), ...args]));

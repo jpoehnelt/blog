@@ -1,8 +1,8 @@
 ---
 title: My Debian development environment setup
 description: Setting up a development environment on Debian with Docker and VSCode remote.
-pubDate: '2024-03-18'
-tags: 'code,debian,development,vscode,docker,node,nvm,pnpm,proxmox,vm'
+pubDate: "2024-03-18"
+tags: "code,debian,development,vscode,docker,node,nvm,pnpm,proxmox,vm"
 ---
 
 <script>

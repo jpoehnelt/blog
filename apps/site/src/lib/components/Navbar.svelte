@@ -19,9 +19,11 @@
 
   let mobileMenuOpen = $state(false);
 
-  const navLinks = [
+  const navLinks: { href: string; label: string }[] = [
+    { href: "/#about", label: "About" },
+    { href: "/#tags", label: "Tags" },
     { href: "/posts", label: "Posts" },
-    { href: "/tags", label: "Tags" },
+    { href: "/#races", label: "Races" },
   ];
 
   function isActive(href: string) {
@@ -48,7 +50,10 @@
     </div>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-6 ml-auto" aria-label="Main navigation">
+    <nav
+      class="hidden md:flex items-center gap-6 ml-auto"
+      aria-label="Main navigation"
+    >
       <NavigationMenu.Root class="flex justify-end">
         <NavigationMenu.List class="flex items-center">
           {#each navLinks as link}
@@ -72,7 +77,7 @@
       <!-- Social Links -->
       {#if socialLinks.length > 0}
         <div
-          class="flex items-center gap-2 ml-2 border-l pl-4"
+          class="flex items-center gap-2 ml-2 pl-4"
           aria-label="Social links"
         >
           {#each socialLinks as social}

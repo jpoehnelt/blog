@@ -1,9 +1,10 @@
 ---
 title: Verify a Google access token
 description: A simple endpoint to verify a Google access token
-pubDate: '2023-04-10'
-tags: 'code,google,oauth'
+pubDate: "2023-04-10"
+tags: "code,google,oauth"
 ---
+
 A Google access token can be verified using the following command to an Oauth2 endpoint:
 
 ```bash

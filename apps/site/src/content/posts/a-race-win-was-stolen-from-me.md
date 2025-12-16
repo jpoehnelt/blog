@@ -3,20 +3,18 @@ title: A Trail Marathon Race Win Was Stolen From Me
 description: >-
   A race director gave the win to two runners that skipped the final climb and
   3.8 miles of the course.
-pubDate: '2023-08-01'
+pubDate: "2023-08-01"
 tags: >-
   run,ultramarathon,podium,race,red river,new mexico,enchanted forest,gemini
   adventures
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
-This past Saturday, I ran the Enchanted Forest Trail Marathon by Gemini Adventures. It is a 26-27ish mile course with about 5000ft of climbing, starting and finishing in Red River, NM. 
+This past Saturday, I ran the Enchanted Forest Trail Marathon by Gemini Adventures. It is a 26-27ish mile course with about 5000ft of climbing, starting and finishing in Red River, NM.
 
 <Note>
 
@@ -59,13 +57,13 @@ I decided to relax and get some food thinking that it would be an obvious DQ, bu
 
 A day later, I couldn't keep from reaching out to the Race Director.
 
-> Hi ____,
+> Hi \_\_\_\_,
 >
-> First of thanks for putting on the race! 
+> First of thanks for putting on the race!
 >
 > I just wanted to comment that I do not believe it was fair to only add 40 minutes to the two men that finished the course while missing those 3.8 miles and the final climb. That 40 minute time is not a penalty and would have been the fastest time on that particular segment yesterday and the second fastest time across all distances and years that the races have been held according to Strava; the median segment time(~1 hour) would have been more appropriate. The only runner to have been at or under 40 minutes is myself and a runner from a shorter distance in a previous year.
 >
->I'm reminded of Brian Wilson's 2006 near finish of the Western States 100, https://youtu.be/tXTrCiAk0Yk?t=69, in knowing that nothing is guaranteed in races. I paced myself such that I would have the physical and mental ability late into the race to make decisions such as these around navigation. I feel like that was taken away from me.
+> I'm reminded of Brian Wilson's 2006 near finish of the Western States 100, https://youtu.be/tXTrCiAk0Yk?t=69, in knowing that nothing is guaranteed in races. I paced myself such that I would have the physical and mental ability late into the race to make decisions such as these around navigation. I feel like that was taken away from me.
 
 And the response:
 
@@ -75,13 +73,13 @@ And the response:
 >
 > It was a big portion of the race that was missed by a couple people and it seems we may not have assigned enough of a penalty time for missing the turn. Assigning a time penalty certainly takes out the strategy which is a big part of a race of this difficulty. We were trying to take responsibility for something that may have been our mistake and be fair to everyone.
 >
-> I apologize that our decision hurt your results.  You had a great race on a difficult course!
+> I apologize that our decision hurt your results. You had a great race on a difficult course!
 
 ## Thoughts
 
 - A race is NEVER linear (see Brian Wilson's 2006 near finish of the Western States 100, https://youtu.be/tXTrCiAk0Yk?t=69 or hundreds of other athletes crawling across the finish line)
 - The official results are not real, there is no way to estimate how long it would have taken.
-- There was no penalty, it was only an "adjustment". 
+- There was no penalty, it was only an "adjustment".
 - The "winners" were rewarded for an aggressive pacing strategy that led to a navigation mistake.
 - Trail racing and ultramarathons are about more than just physical ability.
 - Can I have my ten minutes back navigating and making wrong turns during the race? 😄

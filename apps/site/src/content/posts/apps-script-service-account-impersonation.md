@@ -3,11 +3,12 @@ title: Apps Script Service Account Impersonation
 description: >-
   Avoid downloading private service account keys by using impersonation in Apps
   Script to obtain access tokens.
-pubDate: '2024-01-10'
+pubDate: "2024-01-10"
 tags: >-
   code,google,google workspace,apps script,service accounts,google
   cloud,security
 ---
+
 <script>
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -96,7 +97,7 @@ function main() {
   const token = generateAccessTokenForServiceAccount(
     // can also be the email: foo@your-project.iam.gserviceaccount.com
     "112304111718889638064",
-    ["https://www.googleapis.com/auth/datastore"]
+    ["https://www.googleapis.com/auth/datastore"],
   );
 
   // verify the token

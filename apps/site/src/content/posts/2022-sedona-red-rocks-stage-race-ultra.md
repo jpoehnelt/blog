@@ -4,10 +4,9 @@ description: >-
   Race Report for the 2022 Red Rocks Stage Race in Sedona, AZ. I finished the
   50k Saturday, 50k Sunday version second overall in a little over 11 hours
   total.
-pubDate: '2022-04-09'
-tags: 'run,race report,ultramarathon,50k,Sedona,Arizona'
+pubDate: "2022-04-09"
+tags: "run,race report,ultramarathon,50k,Sedona,Arizona"
 ---
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -25,7 +24,7 @@ tl;dr I finished the [2022 Red Rocks Stage Race 50k/50k](http://www.trailrunning
 
 ### Saturday 50k - West Sedona
 
-The first day started out in West Sedona, on trails such as Girdner, Snake, Cockscomb, Mescal, Chuckwagon and Aerie. These trails were more runnable than those during the second stage on Sunday. Knowing that this was a two day event, I started conservatively and finished about 20 minutes behind the leading group of three runners. 
+The first day started out in West Sedona, on trails such as Girdner, Snake, Cockscomb, Mescal, Chuckwagon and Aerie. These trails were more runnable than those during the second stage on Sunday. Knowing that this was a two day event, I started conservatively and finished about 20 minutes behind the leading group of three runners.
 
 Even with the easier pace, I still struggled in the heat and walked it in on the last mile of Girdner.
 
@@ -45,5 +44,6 @@ I missed the short out and back to the aid station at Yavapai Vista (3rd aid sta
 
 It was a small field and my 4th place finish on Saturday and 2nd place finish on Sunday netted me a 2nd place finish overall a few minutes behind the leader. :2nd_place_medal:
 
-Next up: 
+Next up:
+
 - [Cocodona 250](http://cocodona.com/) May 2-???

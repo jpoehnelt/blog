@@ -3,10 +3,9 @@ title: 2022 Behind the Rocks 50k Race Report
 description: >-
   Race Report for the 2022 Behind the Rocks Ultra 50k in Moab, Utah. I finished
   8th in 4:55.
-pubDate: '2022-03-26'
-tags: 'run,race report,ultramarathon,50k,Moab,Utah,Mad Moose Events'
+pubDate: "2022-03-26"
+tags: "run,race report,ultramarathon,50k,Moab,Utah,Mad Moose Events"
 ---
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -88,16 +87,16 @@ Although, I hardly changed places throughout the race (+- 3-4 spots), there were
 My total time in aid states was probably less than a minute total. I started with a 100 fl oz bladder and two bottles in my vest front pockets. Here is what I did at each aid station.
 
 1. Behind the Rocks Aid Station- mile 6.1
-    1. Did not stop
+   1. Did not stop
 2. Gatherer Canyon Aid Station - mile 16.2
-    1. Less than 10 seconds, gained considerable time on others
-    1. Refilled 500ml bottle with sports drink
+   1. Less than 10 seconds, gained considerable time on others
+   1. Refilled 500ml bottle with sports drink
 3. Kane Creek Trail Aid Station - mile 25.3
-    1. Drank full 500ml bottle
-    1. Refilled 500ml bottle with sports drink
+   1. Drank full 500ml bottle
+   1. Refilled 500ml bottle with sports drink
 4. Unknown - mile 27
-    1. Drank full 500ml bottle water
-    1. Refilled 500ml bottle with water
+   1. Drank full 500ml bottle water
+   1. Refilled 500ml bottle with water
 
 Unfortunately, I did have an unplanned bathroom stop around mile 20 that cost me nearly 5 minutes. 💩
 
@@ -109,19 +108,19 @@ My quick turnarounds in aid stations, especially Gatherer Canyon made a substant
 
 This was probably my least favorite course of the Triple Crown. The most Jeep roads, limited single track, and the sand. Even with the sand and heat, this was my fastest of the bunch.
 
-* Dead Horse 50 mile (November) - 7:59
-* Arches 50k (January) - 5:12
-* Red Hot 50k (February) - 5:29
-* Behind the Rocks 50k (March) - 4:55
+- Dead Horse 50 mile (November) - 7:59
+- Arches 50k (January) - 5:12
+- Red Hot 50k (February) - 5:29
+- Behind the Rocks 50k (March) - 4:55
 
 If I had my current fitness in January, I would probably been fastest on the Arches 50k course. The Moab Red Hot is probably my favorite of the bunch, especially the old point to point course.
 
 ### Stats
 
-* Distance: 31.94 miles
-* Duration: 4:55 (unofficial)  
-* Pace: 9:16/mile
-* Elevation: 3488 ft
+- Distance: 31.94 miles
+- Duration: 4:55 (unofficial)
+- Pace: 9:16/mile
+- Elevation: 3488 ft
 
 <Strava id="6887532901" embed="4735be2afb9f94daac4f9d689feae2e4020f0c7f" />
 
@@ -129,7 +128,7 @@ If I had my current fitness in January, I would probably been fastest on the Arc
 
 Even with the range of emotions I felt through the duration of the race, I did find some motivation once I started moving; maybe not the first couple miles though! (I've never thought about quitting so early in the race as I did today.)
 
-Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort. :100: 
+Definitely lacked a little kick in my right leg, but I pushed hard and gave a strong effort. :100:
 
 <Note>
 
@@ -141,6 +140,7 @@ As always, whenever I finish a race in Moab, I vow to never run another one due 
 
 <Image src="src/images/2022-behind-the-rocks/behind-the-rocks-triple-crown-finisher-medal.jpg" alt="Finisher medals for the the Moab Behind the Rocks 50k race and Moab Triple Crown" />
 
-Next up: 
+Next up:
+
 - [Sedona Stage Race](http://www.trailrunningescapes.com/) - next weekend
 - [Cocodona 250](http://cocodona.com/) May 2-???

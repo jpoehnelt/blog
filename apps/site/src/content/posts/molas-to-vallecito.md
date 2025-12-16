@@ -3,10 +3,9 @@ title: Molas Lake to Vallecito Reservoir
 description: >-
   A solo adventure running 36 miles from Molas Lake to Vallecito Reservoir in
   the Weminuche Wilderness
-pubDate: '2020-07-20'
-tags: 'run,ultrarun,Colorado Trail,Weminuche Wilderness,Colorado'
+pubDate: "2020-07-20"
+tags: "run,ultrarun,Colorado Trail,Weminuche Wilderness,Colorado"
 ---
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -20,4 +19,3 @@ At about 8 AM I departed Molas Lake, heading down to the Animas River. My route 
 <Image src="src/images/molas-to-vallecito.jpeg" alt="Looking down Elk Creek Drainage in the Weminuche Wilderness" />
 
 <Strava id="3788347161" embed="3788347161" />
-

@@ -1,11 +1,7 @@
 import { XMLBuilder } from "fast-xml-parser";
 
-import {
-  BASE_URL,
-  DEFAULT_TITLE,
-  AUTHOR_NAME,
-} from "$lib/constants";
-import { getPostsMetadata, type Post } from "$lib/content";
+import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
+import { getPostsMetadata, type Post } from "$lib/content/posts";
 import {
   getPostHtml,
   processContentForRss,
@@ -45,7 +41,7 @@ export const GET: RequestHandler = async () => {
           "@_term": tag,
         })),
       };
-    })
+    }),
   );
 
   const feedObject = {

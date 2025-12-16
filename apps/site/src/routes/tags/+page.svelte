@@ -1,6 +1,6 @@
 <script lang="ts">
   import Head from '$lib/components/Head.svelte';
-  import TagButton from '$lib/components/TagButton.svelte';
+  import PostTagCloud from '$lib/components/PostTagCloud.svelte';
   import { DEFAULT_DESCRIPTION } from '$lib/constants';
 
   import type { PageData } from './$types';
@@ -17,9 +17,5 @@
 
 <main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
   <h1 class="text-4xl mb-6">Tags</h1>
-  <div class="flex flex-wrap gap-2">
-    {#each data.tags as { tag, count } (tag)}
-      <TagButton {tag} {count} />
-    {/each}
-  </div>
+  <PostTagCloud tags={data.tags} />
 </main>

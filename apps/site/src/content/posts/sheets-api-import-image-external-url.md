@@ -4,8 +4,8 @@ description: >-
   Use the Spreadsheets v4 API to set the importFunctionsExternalUrlAccessAllowed
   property to true and allow access to external URLs without requiring user
   consent.
-pubDate: '2024-04-24'
-tags: 'code,google,google workspace,sheets,privacy'
+pubDate: "2024-04-24"
+tags: "code,google,google workspace,sheets,privacy"
 ---
 
 Accessing data from external parties in Google Sheets is now blocked by default. This change affects any spreadsheets that use the `IMAGE` or `IMPORT` functions to import data from external URLs. Users will now need to grant permission to access external data before the functions can be used. This warning shows up as:

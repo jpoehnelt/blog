@@ -1,6 +1,6 @@
 <script lang="ts">
   import PostListItem from "$lib/components/PostListItem.svelte";
-  import type { Post } from "$lib/content";
+  import type { Post } from "$lib/content/posts";
 
   interface Props {
     posts: Post[];

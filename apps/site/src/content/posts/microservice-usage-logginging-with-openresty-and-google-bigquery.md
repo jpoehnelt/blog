@@ -1,11 +1,9 @@
 ---
 title: Microservice Usage Logging with Openresty and Google BigQuery
 description: Using Lua to log requests to BigQuery.
-pubDate: '2017-04-21'
-tags: 'code,bigquery,google,descartes labs,logging,openresty,nginx'
+pubDate: "2017-04-21"
+tags: "code,bigquery,google,descartes labs,logging,openresty,nginx"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -28,7 +26,7 @@ log_by_lua_block {
     local payload = {
         bytes = tonumber(ngx.var.bytes_sent),
         status = tonumber(ngx.var.status),
-        timestamp = ngx.now() 
+        timestamp = ngx.now()
         ... -- more values
     }
     -- post payload to favorite backend for timeseries analysis
@@ -60,12 +58,12 @@ location = /test {
         local payload = {
             bytes = tonumber(ngx.var.bytes_sent),
             status = tonumber(ngx.var.status),
-            timestamp = ngx.now() 
+            timestamp = ngx.now()
             ... -- more values
         }
         local Logging = require "descarteslabs.logging"
         l = Logging.save(ngx.shared.usage_logging, payload)
-    }    
+    }
 }
 ```
 
@@ -100,16 +98,16 @@ end
 As a primarily Google Cloud Platform customer, we have a custom Lua client for many of the Google Cloud APIs, such as Cloud Storage, BigQuery, and Stackdriver. For this particular use case, we are trying out BigQuery. Our query looks something like this:
 
 ```sql
-SELECT 
+SELECT
   COUNT(*) as calls,
-  SUM(bytes) as bytes, 
+  SUM(bytes) as bytes,
   DATETIME_TRUNC(DATETIME(timestamp), `second` ) as w
 FROM `project.dataset.table`
 WHERE
-  status=200 
+  status=200
 GROUP BY
   w
-ORDER BY 
+ORDER BY
   w desc
 LIMIT 100
 ```

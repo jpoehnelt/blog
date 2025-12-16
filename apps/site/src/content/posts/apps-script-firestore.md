@@ -3,8 +3,8 @@ title: Using Firestore in Apps Script
 description: >-
   Firestore can be a powerful tool when using Apps Script. This post shows how
   to use the [Firestore REST API] in Apps Script.
-pubDate: '2024-01-10'
-tags: 'code,google,google workspace,apps script,firestore,google cloud'
+pubDate: "2024-01-10"
+tags: "code,google,google workspace,apps script,firestore,google cloud"
 ---
 
 <script>
@@ -15,20 +15,22 @@ When using Apps Script, sometimes the [CacheService] and [PropertiesService] do 
 
 ## Setup
 
-1. To use Firestore in Apps Script, you will need to enable the Firestore API in the [Google Cloud Console](https://console.cloud.google.com/apis/library/firestore.googleapis.com). 
+1. To use Firestore in Apps Script, you will need to enable the Firestore API in the [Google Cloud Console](https://console.cloud.google.com/apis/library/firestore.googleapis.com).
 2. You will also need to add the following scopes to your Apps Script project:
-  ```js
-  {
-    "oauthScopes": [
-      "https://www.googleapis.com/auth/datastore",
-      "https://www.googleapis.com/auth/script.external_request"
-    ]
-  }
-  ```
+
+```js
+{
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/datastore",
+    "https://www.googleapis.com/auth/script.external_request"
+  ]
+}
+```
+
 3. Finally, you will need to set the Cloud project id in the Apps Script settings.
 4. Create a collection named `kv` in Firestore so the examples below will work.
 
-This post is going to be using the [Firestore REST API](https://firebase.google.com/docs/firestore/use-rest-api) with OAuth access tokens via [`ScriptApp.getOAuthToken()`]. Alternatively, you could use a service account. 
+This post is going to be using the [Firestore REST API](https://firebase.google.com/docs/firestore/use-rest-api) with OAuth access tokens via [`ScriptApp.getOAuthToken()`]. Alternatively, you could use a service account.
 
 ## UrlFetchApp and the [Firestore REST API]
 
@@ -36,9 +38,9 @@ The [UrlFetchApp] can be used to make requests to the [Firestore REST API]. I wr
 
 ```js
 /**
- * Wraps the `UrlFetchApp.fetch()` method to always add the 
+ * Wraps the `UrlFetchApp.fetch()` method to always add the
  * Oauth access token in the header 'Authorization: Bearer TOKEN'.
- * 
+ *
  * @params {string} url
  * @params {Object=} params
  * @returns {UrlFetchApp.HTTPResponse}
@@ -48,7 +50,7 @@ function fetchWithOauthAccessToken__(url, params = {}) {
 
   const headers = {
     Authorization: `Bearer ${token}`,
-    "Content-type": 'application/json',
+    "Content-type": "application/json",
   };
 
   params.headers = params.headers ?? {};
@@ -68,14 +70,13 @@ The second function layer is a wrapper to handle errors and parsing that I inclu
 
 ```js
 class Firestore {
-
   // ... omitted
 
   fetch(url, options) {
     options = {
       ...options,
-      muteHttpExceptions: true
-    }
+      muteHttpExceptions: true,
+    };
 
     const response = fetchWithOauthAccessToken__(url, options);
 
@@ -96,7 +97,6 @@ Below is the `.patch()` method as an example which transforms the payload to JSO
 
 ```js
 class Firestore {
-
   // ... omitted
 
   /**
@@ -105,10 +105,10 @@ class Firestore {
    * @params {Object=} payload
    */
   patch(documentPath, params = {}, payload) {
-    return this.fetch(
-      this.url(documentPath, params), 
-      { method: Methods.PATCH, payload: JSON.stringify(payload) }
-    );
+    return this.fetch(this.url(documentPath, params), {
+      method: Methods.PATCH,
+      payload: JSON.stringify(payload),
+    });
   }
 }
 ```
@@ -117,13 +117,12 @@ I also included a `url` method to generate the [Firestore REST API] url and incl
 
 ```js
 class Firestore {
-
   /**
    * @params {string} projectId
    * @params {string} [databaseId="(default)"]
    */
   constructor(projectId, databaseId = "(default)") {
-    this.basePath = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/${databaseId}/documents`
+    this.basePath = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/${databaseId}/documents`;
   }
 
   // ... omitted
@@ -133,10 +132,14 @@ class Firestore {
    * @params {Object=} params Include parameters such as `updateMask`, `mask`, etc
    */
   url(documentPath, params = {}) {
-    return encodeURI([
-      `${this.basePath}${documentPath}`, 
-      Object.entries(params).map(([k, v]) => `${k}=${v}`).join("&")
-      ].join("?"));
+    return encodeURI(
+      [
+        `${this.basePath}${documentPath}`,
+        Object.entries(params)
+          .map(([k, v]) => `${k}=${v}`)
+          .join("&"),
+      ].join("?"),
+    );
   }
 }
 ```
@@ -202,12 +205,12 @@ function main() {
   const doc = {
     fields: {
       foo: {
-        stringValue: "test"
-      }
-    }
+        stringValue: "test",
+      },
+    },
   };
 
-  console.log(db.patch("/kv/test", {}, doc,));
+  console.log(db.patch("/kv/test", {}, doc));
   console.log(db.get("/kv/test"));
   console.log(db.delete("/kv/test"));
 }
@@ -260,7 +263,7 @@ var Methods = {
 
 /**
  * Wrapper for the [Firestore REST API] using `URLFetchApp`.
- * 
+ *
  * This functionality requires the following scopes:
  *  "https://www.googleapis.com/auth/datastore",
  *  "https://www.googleapis.com/auth/script.external_request"
@@ -271,7 +274,7 @@ class FirestoreService {
    * @params {string} [databaseId="(default)"]
    */
   constructor(projectId, databaseId = "(default)") {
-    this.basePath = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/${databaseId}/documents`
+    this.basePath = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/${databaseId}/documents`;
   }
 
   /**
@@ -279,10 +282,7 @@ class FirestoreService {
    * @params {Object=} params Include parameters such as `updateMask`, `mask`, etc
    */
   get(documentPath, params = {}) {
-    return this.fetch(
-      this.url(documentPath, params),
-      { method: Methods.GET }
-    );
+    return this.fetch(this.url(documentPath, params), { method: Methods.GET });
   }
 
   /**
@@ -291,10 +291,10 @@ class FirestoreService {
    * @params {Object=} payload
    */
   patch(documentPath, params = {}, payload) {
-    return this.fetch(
-      this.url(documentPath, params),
-      { method: Methods.PATCH, payload: JSON.stringify(payload) }
-    );
+    return this.fetch(this.url(documentPath, params), {
+      method: Methods.PATCH,
+      payload: JSON.stringify(payload),
+    });
   }
 
   /**
@@ -303,10 +303,10 @@ class FirestoreService {
    * @params {Object=} payload
    */
   create(documentPath, params = {}, payload) {
-    return this.fetch(
-      this.url(documentPath, params),
-      { method: Methods.POST, payload: JSON.stringify(payload) }
-    );
+    return this.fetch(this.url(documentPath, params), {
+      method: Methods.POST,
+      payload: JSON.stringify(payload),
+    });
   }
 
   /**
@@ -314,21 +314,24 @@ class FirestoreService {
    * @params {Object=} params Include parameters such as `updateMask`, `mask`, etc
    */
   delete(documentPath, params = {}) {
-    return this.fetch(
-      this.url(documentPath, params),
-      { method: Methods.DELETE}
-    );
+    return this.fetch(this.url(documentPath, params), {
+      method: Methods.DELETE,
+    });
   }
 
   /**
-    * @params {string} documentPath
-    * @params {Object=} params Include parameters such as `updateMask`, `mask`, etc
-    */
+   * @params {string} documentPath
+   * @params {Object=} params Include parameters such as `updateMask`, `mask`, etc
+   */
   url(documentPath, params = {}) {
-    return encodeURI([
-      `${this.basePath}${documentPath}`, 
-      Object.entries(params).map(([k, v]) => `${k}=${v}`).join("&")
-      ].join("?"));
+    return encodeURI(
+      [
+        `${this.basePath}${documentPath}`,
+        Object.entries(params)
+          .map(([k, v]) => `${k}=${v}`)
+          .join("&"),
+      ].join("?"),
+    );
   }
 
   /**
@@ -340,8 +343,8 @@ class FirestoreService {
   fetch(url, options) {
     options = {
       ...options,
-      muteHttpExceptions: true
-    }
+      muteHttpExceptions: true,
+    };
 
     const response = fetchWithOauthAccessToken__(url, options);
 
@@ -354,9 +357,9 @@ class FirestoreService {
 }
 
 /**
- * Wraps the `UrlFetchApp.fetch()` method to always add the 
+ * Wraps the `UrlFetchApp.fetch()` method to always add the
  * Oauth access token in the header 'Authorization: Bearer TOKEN'.
- * 
+ *
  * @params {string} url
  * @params {Object=} params
  * @returns {UrlFetchApp.HTTPResponse}
@@ -366,7 +369,7 @@ function fetchWithOauthAccessToken__(url, params = {}) {
 
   const headers = {
     Authorization: `Bearer ${token}`,
-    "Content-type": 'application/json',
+    "Content-type": "application/json",
   };
 
   params.headers = params.headers ?? {};
@@ -380,12 +383,12 @@ function main() {
   const doc = {
     fields: {
       foo: {
-        stringValue: "test"
-      }
-    }
+        stringValue: "test",
+      },
+    },
   };
 
-  console.log(db.patch("/kv/test", {}, doc,));
+  console.log(db.patch("/kv/test", {}, doc));
   console.log(db.get("/kv/test"));
   console.log(db.delete("/kv/test"));
 }

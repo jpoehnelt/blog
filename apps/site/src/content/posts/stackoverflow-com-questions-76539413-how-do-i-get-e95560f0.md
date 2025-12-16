@@ -5,11 +5,9 @@ title: >-
 description: >-
   Link shared about: How do I get access to the chrome.sidePanel API from the
   latest manifest v3? - Stack Overflow
-pubDate: '2024-04-06'
-tags: 'link,stackoverflow-com,chrome-sidePanel,manifest-v3,extension-api'
+pubDate: "2024-04-06"
+tags: "link,stackoverflow-com,chrome-sidePanel,manifest-v3,extension-api"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

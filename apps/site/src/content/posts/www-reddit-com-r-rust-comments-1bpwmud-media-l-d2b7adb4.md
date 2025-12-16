@@ -3,12 +3,10 @@ title: Rust Teams Twice as Productive as C++
 description: >-
   Lars Bergstrom (Google Director of Engineering) Rust teams are twice as
   productive as teams using C++.
-pubDate: '2024-03-28'
+pubDate: "2024-03-28"
 tags: >-
   link,www-reddit-com,rust,javascript,python,developers,engineering,productivity,cpp
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

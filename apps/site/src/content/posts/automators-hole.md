@@ -1,17 +1,15 @@
 ---
 title: Automator's Hole
 description: There is a point between manual tasks and automation where nothing gets done.
-pubDate: '2023-01-03'
-tags: 'code,automation,procrastination,xkcd'
+pubDate: "2023-01-03"
+tags: "code,automation,procrastination,xkcd"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
-As a software engineer, technically "Developer Relations Engineer", I try and automate repetitive tasks as much as possible. However, I have come to realize that there is a gap or hole between manual tasks and automation where nothing gets done. I call this the Automator's Hole. 
+As a software engineer, technically "Developer Relations Engineer", I try and automate repetitive tasks as much as possible. However, I have come to realize that there is a gap or hole between manual tasks and automation where nothing gets done. I call this the Automator's Hole.
 
 <Image src="src/images/automators-hole.jpeg" alt="Automator's Hole" />
 

@@ -1,6 +1,6 @@
 import * as v from "valibot";
 
-import { BASE_URL, POSTS_PREFIX } from "./constants";
+import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
 
 export const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -87,4 +87,25 @@ export function getAllTags() {
   });
 
   return Array.from(tagSet).sort();
+}
+
+export function getTagsWithCounts() {
+  const posts = getPostsMetadata();
+  const tagCounts = new Map<string, number>();
+
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  });
+
+  return Array.from(tagCounts.entries())
+    .map(([tag, count]) => ({ tag, count }))
+    .filter(({ count }) => count >= 3)
+    .sort((a, b) => {
+      if (b.count !== a.count) {
+        return b.count - a.count;
+      }
+      return a.tag.localeCompare(b.tag);
+    });
 }

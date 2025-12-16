@@ -1,6 +1,6 @@
 import { render } from "svelte/server";
 import { BASE_URL } from "./constants";
-import { posts, CONTENT_BASE_PATH, type Post } from "./content";
+import { posts, CONTENT_BASE_PATH, type Post } from "$lib/content/posts";
 
 /**
  * Get the rendered HTML content for a post
@@ -32,14 +32,19 @@ export async function getPostHtml(id: string): Promise<string | null> {
 /**
  * Convert relative URLs to absolute URLs in HTML content
  */
-export function htmlToAbsoluteUrls(html: string, baseUrl: string = BASE_URL): string {
-  return html
-    // Convert relative image src
-    .replace(/src="\/([^"]+)"/g, `src="${baseUrl}$1"`)
-    // Convert relative href
-    .replace(/href="\/([^"]+)"/g, `href="${baseUrl}$1"`)
-    // Convert relative srcset
-    .replace(/srcset="\/([^"]+)"/g, `srcset="${baseUrl}$1"`);
+export function htmlToAbsoluteUrls(
+  html: string,
+  baseUrl: string = BASE_URL,
+): string {
+  return (
+    html
+      // Convert relative image src
+      .replace(/src="\/([^"]+)"/g, `src="${baseUrl}$1"`)
+      // Convert relative href
+      .replace(/href="\/([^"]+)"/g, `href="${baseUrl}$1"`)
+      // Convert relative srcset
+      .replace(/srcset="\/([^"]+)"/g, `srcset="${baseUrl}$1"`)
+  );
 }
 
 /**
@@ -47,16 +52,18 @@ export function htmlToAbsoluteUrls(html: string, baseUrl: string = BASE_URL): st
  * This makes code blocks more readable in RSS readers that don't support custom CSS
  */
 export function simplifyCodeHighlighting(html: string): string {
-  return html
-    // Remove data-rehype-pretty-code attributes
-    .replace(/\s*data-rehype-pretty-code-[^=]*="[^"]*"/g, "")
-    // Remove style attributes from code elements
-    .replace(/<span[^>]*style="[^"]*"[^>]*>/g, "<span>")
-    // Remove empty spans
-    .replace(/<span>\s*<\/span>/g, "")
-    // Simplify nested spans
-    .replace(/<span>(<span>)/g, "$1")
-    .replace(/(<\/span>)<\/span>/g, "$1");
+  return (
+    html
+      // Remove data-rehype-pretty-code attributes
+      .replace(/\s*data-rehype-pretty-code-[^=]*="[^"]*"/g, "")
+      // Remove style attributes from code elements
+      .replace(/<span[^>]*style="[^"]*"[^>]*>/g, "<span>")
+      // Remove empty spans
+      .replace(/<span>\s*<\/span>/g, "")
+      // Simplify nested spans
+      .replace(/<span>(<span>)/g, "$1")
+      .replace(/(<\/span>)<\/span>/g, "$1")
+  );
 }
 
 /**
@@ -95,7 +102,7 @@ export function getLastUpdatedDate(posts: Post[]): Date {
   if (posts.length === 0) {
     return new Date();
   }
-  
+
   const dates = posts.map((post) => post.lastMod || post.pubDate);
   return new Date(Math.max(...dates.map((d) => d.getTime())));
 }

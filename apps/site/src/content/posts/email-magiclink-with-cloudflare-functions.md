@@ -6,11 +6,9 @@ description: >-
   code examples and explanations for each step of the process, including form
   creation, token generation and validation, session management, and user
   authentication.
-pubDate: '2023-07-06'
-tags: 'code,Cloudflare,email,Sendgrid,auth,magiclink,serverless,KV,functions'
+pubDate: "2023-07-06"
+tags: "code,Cloudflare,email,Sendgrid,auth,magiclink,serverless,KV,functions"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -47,19 +45,21 @@ I created a simple HTML form that would POST to `/auth/login` with the email add
 
 ```html
 <form action="/auth/login" method="post">
-    <div class="mb-4">
-      <label for="email">
-        Email
-      </label>
-      <input id="email" name="email" type="text" placeholder="Email" class="input">
-    </div>
+  <div class="mb-4">
+    <label for="email"> Email </label>
+    <input
+      id="email"
+      name="email"
+      type="text"
+      placeholder="Email"
+      class="input"
+    />
+  </div>
 
-    <div class="flex items-center justify-between">
-      <button type="submit" class="button w-full">
-        Sign In
-      </button>
-    </div>
-  </form>
+  <div class="flex items-center justify-between">
+    <button type="submit" class="button w-full">Sign In</button>
+  </div>
+</form>
 ```
 
 <Image src="src/images/email-magiclink-form.png" alt="Email magic link form" />
@@ -182,9 +182,12 @@ Alpine.start();
 Here is the simplified HTML snippet for the navbar which switches on user state.
 
 ```html
-<div x-data="{ open: false, userInfo: {} }" x-init="userInfo = (await fetchUserInfo())">
-    <a x-show="!userInfo?.email" href="/auth/" class="button">Login</a>
-    <div x-show="userInfo?.email">...</div>
+<div
+  x-data="{ open: false, userInfo: {} }"
+  x-init="userInfo = (await fetchUserInfo())"
+>
+  <a x-show="!userInfo?.email" href="/auth/" class="button">Login</a>
+  <div x-show="userInfo?.email">...</div>
 </div>
 ```
 

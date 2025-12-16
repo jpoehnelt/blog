@@ -3,11 +3,9 @@ title: Google Cloud Region Latency in Google Apps Script
 description: >-
   Ping results to Google Cloud regions and  short code snippet demonstrating how
   to measure latency from Google Apps Script.
-pubDate: '2024-03-15'
-tags: 'code,google,google workspace,apps script,google cloud,ping,latency,gcping'
+pubDate: "2024-03-15"
+tags: "code,google,google workspace,apps script,google cloud,ping,latency,gcping"
 ---
-
-
 
 Ever wonder what the ping time is to Google Cloud regions from Google Apps Script? Here are the results for my Apps Script project with the default project id. Timezone is set to `America/Denver`, but I don't think that matters!
 

@@ -1,11 +1,9 @@
 ---
-title: 'Using Google Container Registry, Docker Buildx, and GitHub Actions'
+title: "Using Google Container Registry, Docker Buildx, and GitHub Actions"
 description: A pattern for authenticating to gcr.io from docker/build-push-action.
-pubDate: '2022-09-22'
-tags: 'code,GitHub,docker,gcr,workflows,google cloud'
+pubDate: "2022-09-22"
+tags: "code,GitHub,docker,gcr,workflows,google cloud"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

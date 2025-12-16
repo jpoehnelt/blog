@@ -3,23 +3,23 @@ title: GitHub Workflow to Sync Branches
 description: >-
   It is easy to sync branches in a GitHub workflow without using a third party
   GitHub Action.
-pubDate: '2022-04-12'
-tags: 'code,GitHub,automation,workflows'
+pubDate: "2022-04-12"
+tags: "code,GitHub,automation,workflows"
 ---
 
 ## Problem
 
-I have a GitHub repository using `main` as the default branch, but I am trying to integrate a third party tool (loading JSFiddle contents from GitHub) that has `master` hardcoded as the default branch. 
+I have a GitHub repository using `main` as the default branch, but I am trying to integrate a third party tool (loading JSFiddle contents from GitHub) that has `master` hardcoded as the default branch.
 
 There is an [issue in the tool](https://github.com/jsfiddle/jsfiddle-issues/issues/1665), but stale bot has killed it.
 
 ## Requirements
 
-* Every push to main will also be applied to master. 
-* Both branches will share the same refs and tags.
-* No workflows will execute on pushes to the `master` branch.
-* No manual interaction is required (no pull requests).
-* A maximum delay of only a few minutes.
+- Every push to main will also be applied to master.
+- Both branches will share the same refs and tags.
+- No workflows will execute on pushes to the `master` branch.
+- No manual interaction is required (no pull requests).
+- A maximum delay of only a few minutes.
 
 ## Implementation
 

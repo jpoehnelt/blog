@@ -1,11 +1,9 @@
 ---
 title: Automate Email Bankruptcy using Apps Script
 description: Archiving emails older than 30 days automatically.
-pubDate: '2020-04-28'
-tags: 'code,google,apps script,google workspace,automation,email'
+pubDate: "2020-04-28"
+tags: "code,google,apps script,google workspace,automation,email"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -21,7 +19,7 @@ Go to https://script.google.com/create. See this short guide on accessing Gmail 
 ```js
 function archiveOldEmail() {
   GmailApp.moveThreadsToArchive(
-    GmailApp.search("in:inbox older_than:30d").slice(0, 100)
+    GmailApp.search("in:inbox older_than:30d").slice(0, 100),
   );
 }
 ```

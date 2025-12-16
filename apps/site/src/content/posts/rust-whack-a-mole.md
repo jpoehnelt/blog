@@ -3,9 +3,10 @@ title: Rust Compiler Whack-a-Mole
 description: >-
   Playing whack-a-mole with the rust compiler is both frustrating and a great
   learning experience.
-pubDate: '2023-07-10'
-tags: 'code,rust,debugging,tokio,async,channels,plex,plexamp'
+pubDate: "2023-07-10"
+tags: "code,rust,debugging,tokio,async,channels,plex,plexamp"
 ---
+
 Playing whack-a-mole with the Rust compiler is both frustrating and a great learning experience. The below code is a prototype version of a project I'm working on. It's for a terminal ui to control PlexAmp players. I am using this project to learn Rust and get into a proper systems level language. I would probably be done already if it was in NodeJS or similar!
 
 ```rust
@@ -49,5 +50,5 @@ Basically, the `main` function sets up the channels and spawns the tasks. The `t
 
 ### Things I need to explore further
 
-- Can I use a `tokio::sync::watch` channel instead? I only ever need the latest version of the model but the tradeoff as far as I can tell is that `watch_rx.borrow()` will lock the channel until the borrow is dropped. This means that I can't have multiple tasks borrowing the channel at the same time. 
+- Can I use a `tokio::sync::watch` channel instead? I only ever need the latest version of the model but the tradeoff as far as I can tell is that `watch_rx.borrow()` will lock the channel until the borrow is dropped. This means that I can't have multiple tasks borrowing the channel at the same time.
 - CrossTerm usage with tokio. The above code is using the `tokio::signal::ctrl_c()` future to listen for terminal events and then forward them on the event channel. I doubt this will work with CrossTerm and I'll need to find another way to listen for an exit event. I have some ideas but I'll need to do some more research.

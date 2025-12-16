@@ -3,13 +3,11 @@ title: Key Value Store Options in Google Apps Script
 description: >-
   A comparison of key-value store options in Google Apps Script, including
   PropertiesService, CacheService, Firestore, and Sheet Developer Metadata.
-pubDate: '2024-03-16'
+pubDate: "2024-03-16"
 tags: >-
   code,google,google workspace,apps script,firestore,google cloud,key value
   store,cache,sheets
 ---
-
-
 
 <script>
   import Note from '$lib/components/content/Note.svelte';

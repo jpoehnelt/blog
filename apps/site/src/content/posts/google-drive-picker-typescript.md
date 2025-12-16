@@ -6,8 +6,8 @@ description: >-
   generated from the same source as the Google Drive Picker reference
   documentation and should be more correct and consistent than the community
   types that were previously in the DefinitelyTyped repository.
-pubDate: '2024-11-04'
-tags: 'code,google,google workspace,drive,picker,typescript,definitelytyped'
+pubDate: "2024-11-04"
+tags: "code,google,google workspace,drive,picker,typescript,definitelytyped"
 ---
 
 Last week I submited a [pull request to the DefinitelyTyped repository](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70926) for the Google Drive Picker API. Not a big deal in itself, but these types are generated from the same source as the [Google Drive Picker reference documentation](https://developers.google.com/drive/picker/reference/picker) and _should_ be more correct and consistent than the community types that were previously in the DefinitelyTyped repository.

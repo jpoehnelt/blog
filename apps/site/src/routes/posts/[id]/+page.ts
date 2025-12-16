@@ -6,7 +6,7 @@ import {
   getPostsMetadata,
   getMetadataFromMatter,
   type Post,
-} from "$lib/content";
+} from "$lib/content/posts";
 
 import type { PageLoad } from "./$types";
 
@@ -29,11 +29,7 @@ export const load: PageLoad = async ({ params }) => {
 
   return {
     PostContent: post.default,
-    recommendations: getRecommendations(
-      postMetaData,
-      getPostsMetadata(),
-      2,
-    ),
+    recommendations: getRecommendations(postMetaData, getPostsMetadata(), 2),
     ...postMetaData,
   };
 };

@@ -3,13 +3,11 @@ title: 2022 Creede 100 Race Report
 description: >-
   Race Report for the 2022 Creede 100 mile ultramarathon. I finished 2nd in
   29:16:01.
-pubDate: '2022-09-04'
+pubDate: "2022-09-04"
 tags: >-
   run,race report,ultramarathon,100mile,Tempest
   Adventures,elevation,HAPE,Colorado Trail,cdt,Hoka Tecton X,Colorado
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -28,7 +26,7 @@ The [Creede 100](https://www.tempestadventures.com/creede-100/about) is one of t
 
 <Image src="src/images/2022-creede-100-race-report/creede-100-belt-buckle.jpg" alt="Creede 100 belt buckle for race finishers" />
 
-I led the race for the first 80 miles or so and ended up with a 2nd place finish. Everything was going great until somewhere around 4 AM on a climb above 12,000 ft in below freezing temperatures when I starting having issues with my lungs and felt out of breath; taking breaks every couple hundred feet. Read more about this below! 🫁 
+I led the race for the first 80 miles or so and ended up with a 2nd place finish. Everything was going great until somewhere around 4 AM on a climb above 12,000 ft in below freezing temperatures when I starting having issues with my lungs and felt out of breath; taking breaks every couple hundred feet. Read more about this below! 🫁
 
 Many runners had similar challenges and only 16 out of the 39 racers finished!
 
@@ -53,7 +51,7 @@ Key points about the course:
 ## Stats
 
 - **Distance**: 107.84 miles
-- **Elevation**: 18,652 ft 
+- **Elevation**: 18,652 ft
 - **Time**: 29:16:01
 - **Place**: 2rd
 
@@ -65,13 +63,13 @@ At mile 82, my lungs wanted to give up. I was still motivated and my legs felt g
 
 I decided to keep going, but keep the exertion down. While walking across the mesa at 12,000 ft, the second place runner and his pacer passed me. It was demoralizing, but I had already decided I wasn't quitting. Instead I put a buff around my face to warm and moisten the air I was breathing and slowly keep moving until the sun came up and warmed my lungs up!
 
-Apparently, ultras are really hard on the respiratory system. More so at elevation and even worse in the cold. Basically, protect your lungs from cold, dry, dusty air. Wear a buff or face mask. I'll be doing this for the Moab 240 in a few weeks! 
+Apparently, ultras are really hard on the respiratory system. More so at elevation and even worse in the cold. Basically, protect your lungs from cold, dry, dusty air. Wear a buff or face mask. I'll be doing this for the Moab 240 in a few weeks!
 
 ## Leading a race
 
-I ran this race without crew, pacers, and by myself for the entirety of the course! It was an absolutely solitary experience. The first 80 miles I did so in the lead! 
+I ran this race without crew, pacers, and by myself for the entirety of the course! It was an absolutely solitary experience. The first 80 miles I did so in the lead!
 
-This is a newish experience for me and I never really know what to do. At one point I estimated my lead at about an hour, but this disintegrated after my lung issues. It's fun being out ahead and physically pushing myself. The first 50 miles were probably the hardest I have ever run! Ultimately I ended up comfortably in 2nd place. 
+This is a newish experience for me and I never really know what to do. At one point I estimated my lead at about an hour, but this disintegrated after my lung issues. It's fun being out ahead and physically pushing myself. The first 50 miles were probably the hardest I have ever run! Ultimately I ended up comfortably in 2nd place.
 
 This is also the second race I have run in my Hoka Tecton X and so far the results are 1st and 2nd place finishes. Maybe it's just because I'm not injured now...
 

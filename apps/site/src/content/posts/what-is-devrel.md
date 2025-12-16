@@ -3,8 +3,8 @@ title: What is DevRel?
 description: >
   DevRel is a lot things: marketing, engineering, product management, support;
   my experience as a Developer Relations Engineer at Google.
-pubDate: '2022-05-11'
-tags: 'code,devrel,developer relations engineer,google,google maps'
+pubDate: "2022-05-11"
+tags: "code,devrel,developer relations engineer,google,google maps"
 ---
 
 <script>
@@ -19,7 +19,7 @@ DevRel is marketing
 
 </Note>
 
-Some aspects of developer relations can certainly be considered marketing, but I think it can and should be far more. 
+Some aspects of developer relations can certainly be considered marketing, but I think it can and should be far more.
 
 **To me, DevRel is a lot things: marketing, engineering, product management, and support.**
 

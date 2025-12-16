@@ -1,17 +1,17 @@
 ---
-title: 'SvelteKit: Convert base64 slugs to UUIDs automatically in a derived store'
+title: "SvelteKit: Convert base64 slugs to UUIDs automatically in a derived store"
 description: >-
   A SvelteKit store that automatically converts slugs to UUIDs from the URL path
   parameters.
-pubDate: '2024-03-31'
-tags: 'code,svelte,sveltekit,uuid,slug'
+pubDate: "2024-03-31"
+tags: "code,svelte,sveltekit,uuid,slug"
 ---
 
 <script>
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
-Sometimes UUIDs are used as unique identifiers in URLs, but their length is not very user-friendly. A common pattern is to use a string encoding of the UUID to shorten the URL. This post will show how to apply that conversion in a SvelteKit store. 
+Sometimes UUIDs are used as unique identifiers in URLs, but their length is not very user-friendly. A common pattern is to use a string encoding of the UUID to shorten the URL. This post will show how to apply that conversion in a SvelteKit store.
 
 <Note>
 
@@ -74,26 +74,26 @@ src
 		└── +page.svelte
 ```
 
-The `+page.svelte` component is used to display the content of a page. The `fooId` path parameter is a UUID that is converted to a slug in the URL. The `params` store is used to convert the slugs back to UUIDs. 
+The `+page.svelte` component is used to display the content of a page. The `fooId` path parameter is a UUID that is converted to a slug in the URL. The `params` store is used to convert the slugs back to UUIDs.
 
 In this example, logic is applied to specifically convert slugs that are 22 characters long and conclude with `Id` or `id`. You might need to modify this logic to align with your specific use case.
 
 ```javascript
 // src/lib/stores.ts
 import { page } from "$app/stores";
-import { derived} from "svelte/store";
+import { derived } from "svelte/store";
 import { slugToUUID } from "$lib/utils/uuid";
 
 export const params = derived(page, ($page) => {
-	return Object.fromEntries(
-		Object.entries($page.params).map(([key, value]) => {
-			// Convert slugs to UUIDs if ending in 'Id' or 'id' and 22 characters long
-			if (/^(id|[a-zA-Z]+Id)$/.test(key) && value && value.length === 22) {
-				value = slugToUUID(value);
-			}
-			return [key, value];
-		}),
-	);
+  return Object.fromEntries(
+    Object.entries($page.params).map(([key, value]) => {
+      // Convert slugs to UUIDs if ending in 'Id' or 'id' and 22 characters long
+      if (/^(id|[a-zA-Z]+Id)$/.test(key) && value && value.length === 22) {
+        value = slugToUUID(value);
+      }
+      return [key, value];
+    }),
+  );
 });
 ```
 

@@ -3,11 +3,9 @@ title: Caching Playwright Binaries in GitHub Actions
 description: >-
   A simple strategy to effectively speed up use of Playwright in GitHub Actions
   with caching.
-pubDate: '2022-09-22'
-tags: 'code,GitHub,playwright,workflows'
+pubDate: "2022-09-22"
+tags: "code,GitHub,playwright,workflows"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -44,4 +42,3 @@ If you don't do this properly, you might run into the following error.
 Without any caching, the build took 1 minute and 43 seconds. With caching, but still installing the host dependencies, the time was 45 seconds, plus about 17 seconds for cache loading/saving, leading to a reduction of about 40 seconds for every build.
 
 <Image src="src/images/playwright-build-time-without-caching.png" alt="Build time without caching" />
-

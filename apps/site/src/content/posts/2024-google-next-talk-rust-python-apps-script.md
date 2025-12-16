@@ -1,15 +1,13 @@
 ---
-title: 'Google Next 24 - Rust, Python, and WASM in Apps Script'
+title: "Google Next 24 - Rust, Python, and WASM in Apps Script"
 description: >-
   I will be giving a talk at Google Next 2024 on how to use Rust, Python and
   WASM to extend Google Apps Script.
-pubDate: '2024-02-27'
+pubDate: "2024-02-27"
 tags: >-
   code,google,google next,google cloud,google workspace,wasm,rust,python,apps
   script,next24,webassembly
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

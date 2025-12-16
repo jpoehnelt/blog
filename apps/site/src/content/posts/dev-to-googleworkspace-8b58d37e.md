@@ -1,11 +1,9 @@
 ---
 title: Google Workspace Developers
-description: 'Link shared about: Google Workspace Developers'
-pubDate: '2024-04-02'
-tags: 'link,dev-to,google workspace,developer,content,google,productivity'
+description: "Link shared about: Google Workspace Developers"
+pubDate: "2024-04-02"
+tags: "link,dev-to,google workspace,developer,content,google,productivity"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
