@@ -1,12 +1,10 @@
 ---
 title: Multipass Mini – Janji
 description: Multipass Mini – Janji
-pubDate: '2024-03-28'
+pubDate: "2024-03-28"
 tags: >-
   link,janji-com,fanny-pack,urban-runs,running-vest,shoulder-sling,janji-multipass-mini,link
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

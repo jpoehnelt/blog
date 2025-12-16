@@ -1,0 +1,75 @@
+import { AUTHOR_NAME } from "$lib/constants";
+import type { DetailedActivityResponse } from "strava-v3";
+
+export const stravaData: Record<string, DetailedActivityResponse> =
+  import.meta.glob("/src/data/strava/*.json", {
+    eager: true,
+    import: "default",
+  });
+
+export function getStravaActivities(): DetailedActivityResponse[] {
+  return Object.values(stravaData).sort((a, b) => {
+    return new Date(b.start_date).getTime() - new Date(a.start_date).getTime();
+  });
+}
+
+export function getStravaActivity(
+  id: string,
+): DetailedActivityResponse | undefined {
+  return Object.values(stravaData).find((a) => a.id.toString() === id);
+}
+
+function slugify(text: string): string {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+}
+
+export function getActivitySlug(activity: DetailedActivityResponse): string {
+  if (!activity.name) return activity.id.toString();
+  return `${activity.id}/${slugify(activity.name)}`;
+}
+
+export function getActivityDescription(
+  activity: DetailedActivityResponse,
+): string {
+  const distanceKm = ((activity.distance || 0) / 1000).toFixed(2);
+  const movingTimeSeconds = activity.moving_time || 0;
+  // fast path if distance is roughly 0 to avoid Infinity pace
+  const paceSecondsPerKm =
+    activity.distance && activity.distance > 0
+      ? movingTimeSeconds / (activity.distance / 1000)
+      : 0;
+  const paceMinutes = Math.floor(paceSecondsPerKm / 60);
+  const paceSeconds = Math.floor(paceSecondsPerKm % 60);
+  const pace = `${paceMinutes}:${paceSeconds.toString().padStart(2, "0")}`;
+
+  let description = `${AUTHOR_NAME} ran ${distanceKm}km with an average pace of ${pace}/km during ${activity.name}.`;
+
+  if (activity.description) {
+    description += `\n\n${activity.description}`;
+  }
+
+  description += `\n\nType: ${activity.sport_type || (activity as any).type}`;
+  description += `\nDistance: ${distanceKm} km`;
+  description += `\nMoving Time: ${new Date(movingTimeSeconds * 1000).toISOString().substr(11, 8)}`;
+  description += `\nElevation Gain: ${activity.total_elevation_gain} m`;
+  const avgHr = (activity as any).average_heartrate;
+  if (avgHr) {
+    description += `\nAvg HR: ${Math.round(avgHr)} bpm`;
+  }
+
+  const segmentEfforts = (activity as any).segment_efforts;
+  if (segmentEfforts && segmentEfforts.length > 0) {
+    description += `\n\nSegments:\n`;
+    description += segmentEfforts
+      .map((segment: any) => `- ${segment.name}`)
+      .join("\n");
+  }
+
+  return description;
+}

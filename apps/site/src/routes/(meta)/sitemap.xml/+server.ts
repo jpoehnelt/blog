@@ -1,7 +1,8 @@
 import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL } from "$lib/constants";
-import { getAllTags, getPostsMetadata, type Post } from "$lib/content";
+import { getAllTags, getPostsMetadata, type Post } from "$lib/content/posts";
+import { getStravaActivities, getActivitySlug } from "$lib/content/strava";
 
 import type { RequestHandler } from "./$types";
 
@@ -10,6 +11,7 @@ export const prerender = true;
 export const GET: RequestHandler = async () => {
   const posts = getPostsMetadata();
   const tags = getAllTags();
+  const activities = await getStravaActivities();
   const today = new Date().toISOString().split("T")[0];
 
   const sitemapObject = {
@@ -25,6 +27,7 @@ export const GET: RequestHandler = async () => {
         { loc: BASE_URL, lastmod: today },
         { loc: `${BASE_URL}posts/`, lastmod: today },
         { loc: `${BASE_URL}tags/`, lastmod: today },
+        { loc: `${BASE_URL}activities/`, lastmod: today },
       ]
         .concat(
           // Blog posts
@@ -38,6 +41,13 @@ export const GET: RequestHandler = async () => {
           tags.map((tag: string) => ({
             loc: `${BASE_URL}tags/${encodeURIComponent(tag)}/`,
             lastmod: today,
+          })),
+        )
+        .concat(
+          // Activities
+          activities.map((activity) => ({
+            loc: `${BASE_URL}activities/${getActivitySlug(activity)}`,
+            lastmod: new Date(activity.start_date).toISOString().split("T")[0],
           })),
         ),
     },

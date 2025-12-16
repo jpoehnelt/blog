@@ -3,11 +3,9 @@ title: Building a Google Chat App with n8n
 description: >-
   I created a n8n workflow to implement a Google Chat App that translates
   messages.
-pubDate: '2023-12-01'
-tags: 'code,google,google chat,chat app,n8n,workflow,google translate,visual coding'
+pubDate: "2023-12-01"
+tags: "code,google,google chat,chat app,n8n,workflow,google translate,visual coding"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

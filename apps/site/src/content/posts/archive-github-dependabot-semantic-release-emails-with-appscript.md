@@ -1,14 +1,14 @@
 ---
 title: Automatically Archiving Dependabot and Semantic Release Emails
 description: Using Google Apps Script as part of my open source workflow.
-pubDate: '2022-05-26'
-tags: 'code,GitHub,apps script,google workspace,dependabot,snippet,open source'
+pubDate: "2022-05-26"
+tags: "code,GitHub,apps script,google workspace,dependabot,snippet,open source"
 ---
 
 As an Open Source maintainer, I get hundreds of emails a day from Dependabot and Semantic Release. A while back, I put together the below [Google Apps Script](https://developers.google.com/apps-script) snippet to automatically archive the emails based upon some simple regex patterns to accomplish the following tasks:
 
-* Archive Dependabot emails that are merged or closed.
-* Archive Semantic Release publish notifications on issues and pull requests.
+- Archive Dependabot emails that are merged or closed.
+- Archive Semantic Release publish notifications on issues and pull requests.
 
 Currently this is running in a cron every 5 minutes.
 
@@ -17,8 +17,8 @@ function main() {
   // archive dependabot notifications
   GmailApp.moveThreadsToArchive(
     GmailApp.search('label:"inbox" from:dependabot[bot]').filter((thread) =>
-      threadMatches(thread, [/Merged .* into .*/, /Closed /])
-    )
+      threadMatches(thread, [/Merged .* into .*/, /Closed /]),
+    ),
   );
 
   // archive semantic release publish notifications
@@ -27,8 +27,8 @@ function main() {
       threadMatches(thread, [
         /This PR is included in version/,
         /This issue has been resolved in version/,
-      ])
-    )
+      ]),
+    ),
   );
 }
 

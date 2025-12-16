@@ -3,11 +3,9 @@ title: Running and Chronic Exertional Compartment Syndrome
 description: >-
   Understanding and treating a new running injury, Chronic Exertional
   Compartment Syndrome. Can I run? Can I race?
-pubDate: '2022-04-15'
-tags: 'run,ultramarathon,injury,therapy,cocodona,exertional compartment syndrome'
+pubDate: "2022-04-15"
+tags: "run,ultramarathon,injury,therapy,cocodona,exertional compartment syndrome"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -89,7 +87,7 @@ _I pull my toes towards my shins while restrained by the doctor's hand._
 
 > Physical exam of patients with CECS is often unremarkable. [https://doi.org/10.2147/OAJSM.S168368](https://doi.org/10.2147/OAJSM.S168368)
 
-The key point that the doctor was able to figure out is that the pain and sensation I experience only happens during activity. The doctor gave me a brief description of exertional compartment syndrome and went to see if there was a treadmill available; the idea being that I would run until I was symptomatic. There was, and after about 2 minutes, I hobbled back in pain to the exam room. 
+The key point that the doctor was able to figure out is that the pain and sensation I experience only happens during activity. The doctor gave me a brief description of exertional compartment syndrome and went to see if there was a treadmill available; the idea being that I would run until I was symptomatic. There was, and after about 2 minutes, I hobbled back in pain to the exam room.
 
 From my understanding, a confirmed diagnosis involves measuring the pressure using a special needle inserted into the muscles with a pressure gauge.
 
@@ -117,7 +115,7 @@ This [literature review of Chronic Extertional Compartment Syndrome](https://www
 
 ### Surgery 🔪
 
-I think it is way too early to consider a fasciotomy. 
+I think it is way too early to consider a fasciotomy.
 
 > Unlike acute compartment syndrome, the treatment of CECS is non-emergent. Furthermore, the surgical approach may be less extensive, involving only the involved compartments. The suggested resting pressure considered significant and that indicates the need for surgery for those with CECS is debated in the literature.
 

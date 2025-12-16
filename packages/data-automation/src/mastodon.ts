@@ -18,7 +18,7 @@ const main = async () => {
   const posts = toObject(parsed.rss.channel.item);
   const existing = toObject(JSON.parse(fs.readFileSync(file, "utf8")));
   const updated = Object.values({ ...existing, ...posts }).sort((a, b) =>
-    b.guid.localeCompare(a.guid)
+    b.guid.localeCompare(a.guid),
   );
 
   fs.writeFileSync(file, JSON.stringify(updated, null, 2));

@@ -10,6 +10,7 @@
 	const socialLinks = getDefaultSocialLinks({
 		github: "https://github.com/jpoehnelt",
 		linkedin: "https://www.linkedin.com/in/justin-poehnelt",
+		strava: "https://www.strava.com/athletes/2170160",
 		// twitter: "https://twitter.com/yourhandle",
 		// bluesky: "https://bsky.app/profile/yourhandle",
 		// email: "your@email.com",

@@ -1,11 +1,11 @@
 ---
-title: 'Google Apps Script: google.script.run vs. doGet/doPost Endpoints'
+title: "Google Apps Script: google.script.run vs. doGet/doPost Endpoints"
 description: >-
   Learn about the different options for making API calls in Google Apps Script
   web apps: `google.script.run` and GET/POST endpoints (`doGet` and `doPost`).
   Understand their strengths and weaknesses to choose the best approach for your
   project.
-pubDate: '2024-03-29'
+pubDate: "2024-03-29"
 tags: >-
   code,google,google workspace,apps script,google script run,doGet,doPost,apps
   script web app

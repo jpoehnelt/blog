@@ -4,7 +4,7 @@ description: >-
   Working with binary files like PDFs or images in Google Drive with Google Apps
   Script can be a bit tricky due to scopes. Here is a comparison of the three
   main ways to get the Blob of a file in Google Drive and the scopes required.
-pubDate: '2024-03-27'
+pubDate: "2024-03-27"
 tags: >-
   code,google,google workspace,apps script,blob,pdf,scopes,google workspace
   addons,restricted scopes,oauth verification
@@ -39,7 +39,7 @@ There are three main methods to obtain the `Blob` of a file in Google Drive:
 This method is the most straightforward, but it requires the `drive` scope.
 
 ```js
-DriveApp.getFileById(id).getBlob()
+DriveApp.getFileById(id).getBlob();
 ```
 
 #### Drive Advanced Service
@@ -48,7 +48,7 @@ This method, which uses the Drive Advanced Service, works with the `drive.file`,
 
 ```js
 // This will throw an error
-Drive.Files.get(id, {alt: "media"}) 
+Drive.Files.get(id, { alt: "media" });
 ```
 
 #### UrlFetchApp
@@ -58,10 +58,10 @@ This method is the most flexible, but it requires the `script.external_request` 
 ```js
 const url = `https://www.googleapis.com/drive/v3/files/${id}?alt=media`;
 UrlFetchApp.fetch(url, {
-headers: {
+  headers: {
     Authorization: `Bearer ${ScriptApp.getOAuthToken()}`,
-},
-}).getContent()
+  },
+}).getContent();
 ```
 
 ### Code snippets for each method and comparison

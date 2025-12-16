@@ -28,8 +28,10 @@ Slide Subtitle
 - Slide bullet text
 
 ---
+
 layout: image-right
 image: https://source.unsplash.com/collection/94734566/1920x1080
+
 ---
 
 # Slide Title
@@ -43,28 +45,28 @@ Colons can be used to align columns.
 | zebra stripes |   are neat    |    $1 |
 
 ---
-layout: section
----
+
+## layout: section
 
 # Section Title
 
 ---
-layout: statement
----
+
+## layout: statement
 
 # Statement
 
 ---
-layout: fact
----
+
+## layout: fact
 
 # 100%
 
 Fact information
 
 ---
-layout: quote
----
+
+## layout: quote
 
 # "Notable quote"
 
@@ -90,8 +92,10 @@ function updateUser(id: number, update: Partial<User>) {
 ```
 
 ---
+
 layout: center
 class: "text-center"
+
 ---
 
 # Learn More

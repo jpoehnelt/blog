@@ -1,13 +1,11 @@
 ---
 title: Eleventy Progressive Web App
 description: Catching the Eleventy Lighthouse obsession bug!
-pubDate: '2022-03-31'
+pubDate: "2022-03-31"
 tags: >-
   code,eleventy,pwa,progressive web app,service
   worker,performance,lighthouse,blog
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -32,9 +30,9 @@ The following snippet should be added to your base layout or template.
 
 ```html
 <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js');
-    }
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
 </script>
 ```
 
@@ -57,35 +55,35 @@ The following should be added to your `eleventy.js` config file. Check out all t
 const workbox = require("workbox-build");
 
 module.exports = (eleventyConfig) => {
-
-    eleventyConfig.on('eleventy.after', async () => {
-        // see https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-GenerateSWOptions
-        const options = {
-            cacheId: 'sw',
-            skipWaiting: true,
-            clientsClaim: true,
-            swDest: `public/sw.js`,  // TODO change public to match your dir.output
-            globDirectory: 'public',  // TODO change public to match your dir.output
-            globPatterns: [
-                '**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}',
-            ],
-            runtimeCaching: [
-                {
-                urlPattern: /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-                handler: `StaleWhileRevalidate`,
-                },
-            ],
-        };
-
-        await workbox.generateSW(options);
-    });
-
-    return {
-        dir: {
-            output: "public", // TODO update this
+  eleventyConfig.on("eleventy.after", async () => {
+    // see https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-GenerateSWOptions
+    const options = {
+      cacheId: "sw",
+      skipWaiting: true,
+      clientsClaim: true,
+      swDest: `public/sw.js`, // TODO change public to match your dir.output
+      globDirectory: "public", // TODO change public to match your dir.output
+      globPatterns: [
+        "**/*.{html,css,js,mjs,map,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
+      ],
+      runtimeCaching: [
+        {
+          urlPattern:
+            /^.*\.(html|jpg|png|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+          handler: `StaleWhileRevalidate`,
         },
+      ],
     };
-}
+
+    await workbox.generateSW(options);
+  });
+
+  return {
+    dir: {
+      output: "public", // TODO update this
+    },
+  };
+};
 ```
 
 There are some old plugins for Eleventy to help with this, although I don't really see the value. And they use hacky solutions that predate the `eleventy.after` hook.

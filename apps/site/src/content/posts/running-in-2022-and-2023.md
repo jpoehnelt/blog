@@ -1,11 +1,9 @@
 ---
 title: A look back at running in 2022 and plans for 2023
 description: In 2022 I ran nearly 2400 miles and have big plans for 2023
-pubDate: '2022-12-31'
-tags: 'run,racing,ultramarathon,Moab,utmb,dnf,canyons'
+pubDate: "2022-12-31"
+tags: "run,racing,ultramarathon,Moab,utmb,dnf,canyons"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -35,6 +33,6 @@ For the upcoming year, I have officially signed up for a running coach with [CTS
 - [Canyons 100 mile](https://canyons.utmb.world/) in April
 - [Moab 240](https://www.destinationtrailrun.com/moab) in October (depends on lottery and waitlist)
 
-Canyons is new to me (I need some UTMB stones). The Moab 240 is about getting redemption on a [previous DNF in 2022](/posts/2022-moab-240-race-report/). 
+Canyons is new to me (I need some UTMB stones). The Moab 240 is about getting redemption on a [previous DNF in 2022](/posts/2022-moab-240-race-report/).
 
 For distance in 2023, I'm aiming for about 3000 miles!

@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       after:
-        description: 'After date'
+        description: "After date"
         type: string
       before:
-        description: 'Before date'
-        type: string        
+        description: "Before date"
+        type: string
   schedule:
     - cron: "0 5 * * *"
 jobs:
@@ -40,7 +40,7 @@ jobs:
       - name: Ingest Strava Activities (random)
         env:
           STRAVA_ACCESS_TOKEN: ${{ env.STRAVA_ACCESS_TOKEN }}
-        run: |          
+        run: |
           YEAR=$(shuf -i 2020-$(date +%Y) -n 1)
           MONTH=$(shuf -i 1-12 -n 1)
           DAY=$(shuf -i 1-$(date -d "$YEAR-$MONTH-01 +1 month -1 day" +%d) -n 1)
@@ -51,7 +51,7 @@ jobs:
 
           echo "STRAVA_AFTER=$STRAVA_AFTER"
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
-          
+
           node packages/data-automation/dist/strava-ingest.js
       - name: Commit changes
         if: github.ref == 'refs/heads/main'
@@ -61,7 +61,7 @@ jobs:
           git commit -m "chore: update data" || true
           git push
       - run: |
-            curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
+          curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:
           APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID: ${{ secrets.APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID }}
       - run: |

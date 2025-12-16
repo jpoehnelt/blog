@@ -1,11 +1,9 @@
 ---
 title: TDS - les Traces du Duc de Savoie - Dacia UTMB Mont Blanc
 description: TDS - les Traces du Duc de Savoie - Dacia UTMB Mont Blanc
-pubDate: '2024-03-28'
-tags: 'link,montblanc-utmb-world,UTMB,TDS,Alps,UTMBweek,4stones,link'
+pubDate: "2024-03-28"
+tags: "link,montblanc-utmb-world,UTMB,TDS,Alps,UTMBweek,4stones,link"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

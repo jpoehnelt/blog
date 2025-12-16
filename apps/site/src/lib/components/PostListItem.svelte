@@ -1,7 +1,7 @@
 <script lang="ts">
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
-  import type { Post } from "$lib/content";
+  import type { Post } from "$lib/content/posts";
 
   interface Props {
     post: Post;

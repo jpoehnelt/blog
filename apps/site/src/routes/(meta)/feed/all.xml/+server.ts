@@ -6,24 +6,23 @@ import {
   DEFAULT_DESCRIPTION,
   AUTHOR_NAME,
 } from "$lib/constants";
-import { getPostsMetadata, type Post } from "$lib/content";
+import { getPostsMetadata, type Post } from "$lib/content/posts";
+import { getPostHtml, processContentForRss, escapeXml } from "$lib/rss";
 import {
-  getPostHtml,
-  processContentForRss,
-  escapeXml,
-  getLastUpdatedDate,
-} from "$lib/rss";
-
+  getStravaActivities,
+  getActivitySlug,
+  getActivityDescription,
+} from "$lib/content/strava";
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
 
 export const GET: RequestHandler = async () => {
   const posts = getPostsMetadata();
-  const lastUpdated = getLastUpdatedDate(posts);
+  const activities = await getStravaActivities();
 
-  // Build entries with full content
-  const entries = await Promise.all(
+  // Build post entries
+  const postEntries = await Promise.all(
     posts.map(async (post: Post) => {
       const html = await getPostHtml(post.id);
       const content = html ? processContentForRss(html) : post.description;
@@ -44,7 +43,46 @@ export const GET: RequestHandler = async () => {
           "@_term": tag,
         })),
       };
-    })
+    }),
+  );
+
+  // Build activity entries
+  const activityEntries = activities.map((activity) => {
+    const description = getActivityDescription(activity);
+    // Convert plain text description to HTML for RSS
+    const content = description
+      .split("\n\n")
+      .map((p) => `<p>${p.replace(/\n/g, "<br/>")}</p>`)
+      .join("");
+
+    return {
+      title: activity.name,
+      link: {
+        "@_href": `${BASE_URL}activities/${getActivitySlug(activity)}`,
+      },
+      id: `${BASE_URL}activities/${getActivitySlug(activity)}`,
+      updated: new Date(activity.start_date).toISOString(),
+      published: new Date(activity.start_date).toISOString(),
+      content: {
+        "@_type": "html",
+        "#text": escapeXml(content),
+      },
+      category: [
+        { "@_term": "Activity" },
+        { "@_term": activity.sport_type || (activity as any).type },
+      ],
+    };
+  });
+
+  const allEntries = [...postEntries, ...activityEntries].sort((a, b) => {
+    return new Date(b.published).getTime() - new Date(a.published).getTime();
+  });
+
+  const lastUpdated = new Date(
+    Math.max(
+      ...posts.map((p) => (p.lastMod || p.pubDate).getTime()),
+      ...activities.map((a) => new Date(a.start_date).getTime()),
+    ),
   );
 
   const feedObject = {
@@ -71,7 +109,7 @@ export const GET: RequestHandler = async () => {
       author: {
         name: AUTHOR_NAME,
       },
-      entry: entries,
+      entry: allEntries,
     },
   };
 

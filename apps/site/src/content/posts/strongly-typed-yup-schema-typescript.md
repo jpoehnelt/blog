@@ -3,8 +3,8 @@ title: Strongly Typed Yup Schema in TypeScript
 description: >-
   A basic pattern for strongly typing Yup schemas in TypeScript using
   conditionals.
-pubDate: '2022-10-01'
-tags: 'code,yup,typescript,generics'
+pubDate: "2022-10-01"
+tags: "code,yup,typescript,generics"
 ---
 
 This weekend I have been exploring [conditional types in TypeScript](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) to use with Firestore. These take the basic form of `T extends U ? X : Y` and are used to create a new type based on the type of `T`. I was curious if I could use this to create a strongly typed Yup schema.
@@ -17,14 +17,14 @@ import * as yup from "yup";
 export type ConditionalSchema<T> = T extends string
   ? yup.StringSchema
   : T extends number
-  ? yup.NumberSchema
-  : T extends boolean
-  ? yup.BooleanSchema
-  : T extends Record<any, any>
-  ? yup.AnyObjectSchema
-  : T extends Array<any>
-  ? yup.ArraySchema<any, any>
-  : yup.AnySchema;
+    ? yup.NumberSchema
+    : T extends boolean
+      ? yup.BooleanSchema
+      : T extends Record<any, any>
+        ? yup.AnyObjectSchema
+        : T extends Array<any>
+          ? yup.ArraySchema<any, any>
+          : yup.AnySchema;
 
 export type Shape<Fields> = {
   [Key in keyof Fields]: ConditionalSchema<Fields[Key]>;
@@ -48,4 +48,3 @@ yup.object<Shape<Foo>>({
 ```
 
 And it works! 🎉
-

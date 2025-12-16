@@ -1,11 +1,5 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "./**/*.ts",
-    "./**/*.vue"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["./**/*.ts", "./**/*.vue"],
+  "exclude": ["node_modules", "dist"]
 }

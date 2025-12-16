@@ -1,13 +1,11 @@
 ---
 title: 2021 Mogollon Monster 100 Mile Race Report
 description: Race report for the 2021 Mogollon Monster 100 mile
-pubDate: '2021-09-18'
+pubDate: "2021-09-18"
 tags: >-
   run,ultramarathon,100 mile,race report,Arizona,Mogollon Monster,aravaipa
   running
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -47,4 +45,3 @@ After a DNF at the Silverton Ultra Dirty 100 mile, this felt really good to brin
 <Image src="src/images/mogollon-monster-100/buckle.jpeg" alt="Mogollon Monster 100 mile race finisher belt buckle" />
 
 <Strava id="5950424975" embed="5950424975" />
-

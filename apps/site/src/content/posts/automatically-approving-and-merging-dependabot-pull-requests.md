@@ -3,11 +3,9 @@ title: Automatically Approving and Merging Dependabot Pull Requests
 description: >-
   A simple GitHub workflow to automatically approve and merge Dependabot pull
   requests.
-pubDate: '2022-05-12'
-tags: 'code,GitHub,dependabot,snippet,workflows,automation'
+pubDate: "2022-05-12"
+tags: "code,GitHub,dependabot,snippet,workflows,automation"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -17,6 +15,7 @@ tags: 'code,GitHub,dependabot,snippet,workflows,automation'
 I've recently been using a combination of GitHub apps to automate the approval and merging of Dependabot pull requests, but wanted to simplify this into a GitHub workflow, using branch protection and GitHub's auto merge feature.
 
 The GitHub workflow looks something like:
+
 ```yml
 name: Dependabot
 on: pull_request
@@ -44,7 +43,7 @@ jobs:
 
 </Note>
 
-And it works! 🎉 
+And it works! 🎉
 
 The pull request now looks like the following:
 

@@ -1,12 +1,10 @@
 ---
 title: Arizona Monster 300
-description: 'Link shared about: Arizona Monster 300'
-pubDate: '2024-04-05'
+description: "Link shared about: Arizona Monster 300"
+pubDate: "2024-04-05"
 tags: >-
   link,www-destinationtrailrun-com,trailrunning,arizona,destinationtrailrun,monster300,300mile
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

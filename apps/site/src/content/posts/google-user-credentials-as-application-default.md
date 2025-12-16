@@ -4,8 +4,8 @@ description: >-
   Using an offline Oauth2 flow to get Google user credentials for use as
   application default credentials in APIs that do not allow service accounts or
   API keys and require user credentials.
-pubDate: '2023-05-04'
-tags: 'code,google,oauth,gcloud,workspace'
+pubDate: "2023-05-04"
+tags: "code,google,oauth,gcloud,workspace"
 ---
 
 <script>

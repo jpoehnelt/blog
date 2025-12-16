@@ -3,8 +3,8 @@ title: Google Forms - title vs name vs documentTitle
 description: >-
   Recently I had to clarify some confusion around the title and name of a Google
   Form. Here is a quick explanation of the difference between the two.
-pubDate: '2024-10-29'
-tags: 'code,google,google workspace,apps script,google forms'
+pubDate: "2024-10-29"
+tags: "code,google,google workspace,apps script,google forms"
 ---
 
 <script>
@@ -18,11 +18,11 @@ Recently I had to clarify some confusion around the title and name of a Google F
 The below table show the different ways the title and name are returned in the Forms UI, the Forms API, the `FormApp`, `DriveApp`, and the Drive API.
 
 |     | `name` UI       | `title` UI      | `title` Forms API | `documentTitle` Forms API | `getTitle()` `FormApp` | `getName()` `DriveApp` | `name` Drive API |
-| --- | --------------- | --------------- | ----------------- | ------------------------- | -------------------- | -------------------- | ---------------- |
-| 1   | "Untitled form" | "Untitled form" | `undefined`       | "Untitled form"           | ""                   | "Untitled form"      | "Untitled form"  |
-| 2   | "Name"          | "Name"          | `undefined`       | "Name"                    | ""                   | "Name"               | "Name"           |
-| 3   | "Name"          | "Title"         | "Title"           | "Name"                    | "Title"              | "Name"               | "Name"           |
-| 4   | "Untitled form" | "Title"         | "Title"           | "Untitled form"           | "Title"              | "Untitled form"      | "Untitled form"  |
+| --- | --------------- | --------------- | ----------------- | ------------------------- | ---------------------- | ---------------------- | ---------------- |
+| 1   | "Untitled form" | "Untitled form" | `undefined`       | "Untitled form"           | ""                     | "Untitled form"        | "Untitled form"  |
+| 2   | "Name"          | "Name"          | `undefined`       | "Name"                    | ""                     | "Name"                 | "Name"           |
+| 3   | "Name"          | "Title"         | "Title"           | "Name"                    | "Title"                | "Name"                 | "Name"           |
+| 4   | "Untitled form" | "Title"         | "Title"           | "Untitled form"           | "Title"                | "Untitled form"        | "Untitled form"  |
 
 ## Case 1 - Default form
 

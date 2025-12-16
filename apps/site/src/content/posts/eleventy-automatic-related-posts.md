@@ -3,8 +3,8 @@ title: Eleventy Related Posts Using TF-IDF
 description: >-
   Automating related posts in Eleventy with term frequency-inverse document
   frequency and eleventy-plugin-related.
-pubDate: '2022-04-16'
-tags: 'code,eleventy,eleventy-plugin,tf-idf,blog,11ty'
+pubDate: "2022-04-16"
+tags: "code,eleventy,eleventy-plugin,tf-idf,blog,11ty"
 ---
 
 One of the key features I was missing from my new blog written with [Eleventy](https://11ty.dev) was a widget for related posts. I had already implemented tags, which can serve a similar purpose, but I wanted to experiment with something more automated based upon the content of the post.
@@ -13,8 +13,8 @@ One of the key features I was missing from my new blog written with [Eleventy](h
 
 Here are a couple examples of approaches for more manual implementations.
 
-* [Using frontmatter data](https://www.raymondcamden.com/2021/09/24/creating-a-manual-related-posts-feature-in-eleventy)
-* [Matching on tag similarity](https://fossheim.io/writing/posts/eleventy-similar-posts/)
+- [Using frontmatter data](https://www.raymondcamden.com/2021/09/24/creating-a-manual-related-posts-feature-in-eleventy)
+- [Matching on tag similarity](https://fossheim.io/writing/posts/eleventy-similar-posts/)
 
 ## Term Frequency-Inverse Document Frequency
 
@@ -27,7 +27,7 @@ I am far from a natural language expert, but tf-idf basically computes the impor
 Typically a blog post, article, or some other document will have multiple parts (title, excerpt, tags, body, etc) that may need to be transformed and standardized. For example, the following joins some of these components as a single string.
 
 ```js
-[data.title, data.excerpt, ...data.tags].join(" ")
+[data.title, data.excerpt, ...data.tags].join(" ");
 ```
 
 ### Tokenize
@@ -36,7 +36,7 @@ Tokenize the document string. For example splitting on spaces would be a naive w
 
 ### Stemming and lemmatization
 
-Use a stemmer to chop off parts of each word. In this case, `cars`, `car's`, `cars'` all become `car`. This is typically a fairly crude heuristic. 
+Use a stemmer to chop off parts of each word. In this case, `cars`, `car's`, `cars'` all become `car`. This is typically a fairly crude heuristic.
 
 Lemmatization is the next step and more advanced. For example, `am`, `are`, `is` all become `be` for instance.
 
@@ -45,16 +45,16 @@ Lemmatization is the next step and more advanced. For example, `am`, `are`, `is`
 For this task, I'm using the package, [natural](https://www.npmjs.com/package/natural). A simple example is below.
 
 ```js
-import { TfIdf } from 'natural';
+import { TfIdf } from "natural";
 
 const tfidf = new TfIdf();
 
-tfidf.addDocument('this document is about node.');
-tfidf.addDocument('this document is about ruby.');
-tfidf.addDocument('this document is about ruby and node.');
+tfidf.addDocument("this document is about node.");
+tfidf.addDocument("this document is about ruby.");
+tfidf.addDocument("this document is about ruby and node.");
 
-tfidf.tfidfs('node ruby', function(i, measure) {
-    console.log('document #' + i + ' is ' + measure);
+tfidf.tfidfs("node ruby", function (i, measure) {
+  console.log("document #" + i + " is " + measure);
 });
 ```
 
@@ -81,7 +81,7 @@ const options = {
 
 const related = new Related(documents, options);
 
-related.rank(documents[0]); 
+related.rank(documents[0]);
 // [{absolute: 0-1, relative: 0-INF, document}]
 ```
 
@@ -100,9 +100,9 @@ The output of the above is the following.
 
 The key features layered above the package natural include:
 
-* weights for different parts of the document
-* serialization support
-* sensible defaults for tokenization and stemming
+- weights for different parts of the document
+- serialization support
+- sensible defaults for tokenization and stemming
 
 The source is available on [GitHub](https://github.com/jpoehnelt/related-documents), and can be installed with the following.
 
@@ -124,7 +124,7 @@ eleventyConfig.addFilter(
   require("eleventy-plugin-related").related({
     serializer: (doc) => [doc.title, doc.description ?? "", doc.text ?? ""],
     weights: [10, 1, 3],
-  })
+  }),
 );
 ```
 
@@ -134,20 +134,20 @@ Eleventy gives a ton of flexibility and some times the boundaries of what is a p
 
 So how am I using these two libraries in my blog?
 
-* Joining the title and excerpts into a single string
-* Equal weights between the title/excerpt and tags
+- Joining the title and excerpts into a single string
+- Equal weights between the title/excerpt and tags
 
 ```js
 const related = require("eleventy-plugin-related").related({
-    serializer: ({ data: { title, excerpt, tags } }) => [
-        [title, excerpt].join(" "),
-        (tags || []).join(" "),
-    ],
-    weights: [1, 1],
+  serializer: ({ data: { title, excerpt, tags } }) => [
+    [title, excerpt].join(" "),
+    (tags || []).join(" "),
+  ],
+  weights: [1, 1],
 });
 
 eleventyConfig.addFilter("relatedPosts", function (doc, docs) {
-    return related(doc, docs).filter(({ relative }) => relative > 0.1);
+  return related(doc, docs).filter(({ relative }) => relative > 0.1);
 });
 ```
 

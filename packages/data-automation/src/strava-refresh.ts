@@ -15,7 +15,7 @@ const main = async () => {
       client_secret: process.env.STRAVA_CLIENT_SECRET,
       grant_type: "refresh_token",
       refresh_token: process.env.STRAVA_REFRESH_TOKEN,
-    }
+    },
   );
 
   const octokit = new Octokit({ auth: process.env.REPO_TOKEN });
@@ -24,7 +24,7 @@ const main = async () => {
     data: { key_id: publicKeyId, key: publicKey },
   } = await octokit.request(
     "GET /repos/{owner}/{repo}/actions/secrets/public-key",
-    { owner, repo }
+    { owner, repo },
   );
 
   console.log(`Public key fetched: ${publicKeyId}`);
@@ -50,9 +50,9 @@ const main = async () => {
           secret_name: secretName,
           encrypted_value,
           key_id: publicKeyId,
-        }
+        },
       );
-    })
+    }),
   );
 
   if (process.env.GITHUB_ENV) {
@@ -60,11 +60,11 @@ const main = async () => {
     console.log(`::add-mask::${response.data.refresh_token}`);
     fs.appendFileSync(
       process.env.GITHUB_ENV,
-      `STRAVA_ACCESS_TOKEN=${response.data.access_token}\n`
+      `STRAVA_ACCESS_TOKEN=${response.data.access_token}\n`,
     );
-     fs.appendFileSync(
+    fs.appendFileSync(
       process.env.GITHUB_ENV,
-      `STRAVA_REFRESH_TOKEN=${response.data.refresh_token}\n`
+      `STRAVA_REFRESH_TOKEN=${response.data.refresh_token}\n`,
     );
   }
 

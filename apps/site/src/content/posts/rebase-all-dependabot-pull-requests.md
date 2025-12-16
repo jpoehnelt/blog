@@ -3,8 +3,8 @@ title: Rebasing All Dependabot Pull Requests
 description: >-
   Short code snippet showing how I rebased all Dependabot pull requests across a
   GitHub org.
-pubDate: '2022-05-12'
-tags: 'code,GitHub,gh,dependabot,snippet'
+pubDate: "2022-05-12"
+tags: "code,GitHub,gh,dependabot,snippet"
 ---
 
 The [GitHub cli tool](https://cli.github.com/) `gh` now has a search feature! I recently had a use case requiring DependaBot to rebase all pull requests across the GitHub organization repositories.
@@ -21,4 +21,3 @@ gh search prs \
 | xargs -n 1 -I{} \
   gh pr comment -b "@dependabot rebase" {}
 ```
-

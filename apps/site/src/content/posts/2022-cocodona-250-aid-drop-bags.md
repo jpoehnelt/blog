@@ -3,24 +3,22 @@ title: Drop Bag Plan for Cocodona 250
 description: >-
   Running a 250 mile race without crew or pacers requires adaptability and a
   good plan for drop bags. This is a work in progress...
-pubDate: '2022-04-26'
-tags: 'run,ultramarathon,cocodona,gear,drop bags,chaos'
+pubDate: "2022-04-26"
+tags: "run,ultramarathon,cocodona,gear,drop bags,chaos"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
-*Edits: I will be updating this post as I actually lay out my gear and pack up my bags these next few days.*
+_Edits: I will be updating this post as I actually lay out my gear and pack up my bags these next few days._
 
 On May 2nd, I will be running my first 200+ mile ultra marathon, the [Cocodona 250](https://www.cocodona.com). Making this challenge a little more interesting is the fact that I will be doing so without pacers or crew and while still recovering from an injury. 😱 😱 😱
 
 <Note>
 
-I have **never** run a race with a crew or pacer. 
+I have **never** run a race with a crew or pacer.
 
 </Note>
 
@@ -77,7 +75,7 @@ I know that Mingus Mountain (miles 85- 110) and basically everything beyond mile
 - Patagonia R1 Air Fleece
 - Janji Tech Transit pants
 
-After reaching Dead Horse Ranch State Park, I will leave all of this gear in my drop bag except for the glove shells and then picking up the following (I have multiple of the same item) at **aid station 14 in Sedona** before climbing up Casner Trail to the Mogollon Rim. 
+After reaching Dead Horse Ranch State Park, I will leave all of this gear in my drop bag except for the glove shells and then picking up the following (I have multiple of the same item) at **aid station 14 in Sedona** before climbing up Casner Trail to the Mogollon Rim.
 
 - REI fleece beanie
 - Patagonia Nano-Air Jacket

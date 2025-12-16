@@ -3,11 +3,9 @@ title: Track all Firestore write activity in Firestore
 description: >-
   Capture all user activity in a Firestore collection using Audit Logs, Pub/Sub,
   and Cloud Functions.
-pubDate: '2022-10-21'
-tags: 'code,firestore,pubsub,functions,firebase,audit,logs'
+pubDate: "2022-10-21"
+tags: "code,firestore,pubsub,functions,firebase,audit,logs"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -47,7 +45,7 @@ export default functions.pubsub
   .onPublish(async (message) => {
     const { data } = message;
     const { timestamp, protoPayload } = JSON.parse(
-      Buffer.from(data, "base64").toString()
+      Buffer.from(data, "base64").toString(),
     );
 
     const uid =
@@ -65,13 +63,11 @@ export default functions.pubsub
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       writes.map((write: any) => {
         activityRef.add({ write, timestamp });
-      })
+      }),
     );
   });
-
 ```
 
 4. Cloud Function writes to Firestore
 
 <Image src="src/images/firestore-activity-collection-document.jpeg" alt="User Collection Containing Activity" />
-

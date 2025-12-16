@@ -1,11 +1,9 @@
 ---
 title: Strava Webhooks with Stokehook.com
-description: 'An app I built using Svelte, Firebase, and the Strava API.'
-pubDate: '2022-06-03'
-tags: 'code,run,strava,automation,webhook'
+description: "An app I built using Svelte, Firebase, and the Strava API."
+pubDate: "2022-06-03"
+tags: "code,run,strava,automation,webhook"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -40,7 +38,7 @@ The interface for the app is pretty simple.
 
 ## Payload
 
-The key feature is that Strava sends a "thin" webhook with minimal fields for the activity. The app gets all fields for the object via the Strava API before sending it along. 
+The key feature is that Strava sends a "thin" webhook with minimal fields for the activity. The app gets all fields for the object via the Strava API before sending it along.
 
 So instead of:
 
@@ -52,7 +50,7 @@ So instead of:
   "object_type": "activity",
   "owner_id": 2170160,
   "subscription_id": 217592,
-  "updates": {},
+  "updates": {}
 }
 ```
 

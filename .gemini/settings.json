@@ -6,15 +6,11 @@
     },
     "playwright": {
       "command": "npx",
-      "args": [
-        "@playwright/mcp@latest"
-      ]
+      "args": ["@playwright/mcp@latest"]
     }
   },
   "context": {
-    "fileName": [
-      "GEMINI.md"
-    ]
+    "fileName": ["GEMINI.md"]
   },
   "general": {
     "preferredEditor": "code"

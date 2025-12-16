@@ -3,11 +3,9 @@ title: What about the cows...
 description: >-
   Don't bust the crust (unless you are a cow). A greenwashing campaign by our
   public land management agencies.
-pubDate: '2022-03-30'
-tags: 'cryptobiotic crust,environment,public lands,livestock,grazing'
+pubDate: "2022-03-30"
+tags: "cryptobiotic crust,environment,public lands,livestock,grazing"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -15,9 +13,9 @@ tags: 'cryptobiotic crust,environment,public lands,livestock,grazing'
 
 Throughout the Western United States, no matter how rugged or wild the land, you have a good chance of seeing livestock on **our** public lands. It might be a few cows or hundreds of sheep, but they are everywhere and in my opinion, places they shouldn't.
 
->Livestock grazing is the most widespread land management practice in western North America. Seventy percent of the western United States is grazed, including wilderness areas, wildlife refuges, national forests, and even some national parks. The ecological costs of this nearly ubiquitous form of land use can be dramatic. Examples of such costs include loss of biodiversity; lowering of population densities for a wide variety of taxa; disruption of ecosystem functions, including nutrient cycling and succession; change in community organization; and change in the physical characteristics of both terrestrial and aquatic habitats. - [Ecological Costs of Livestock Grazing in Western North America](https://www.fs.usda.gov/rm/boise/AWAE/labs/awae_flagstaff/Hot_Topics/ripthreatbib/fleishner_ecocosts.pdf)
+> Livestock grazing is the most widespread land management practice in western North America. Seventy percent of the western United States is grazed, including wilderness areas, wildlife refuges, national forests, and even some national parks. The ecological costs of this nearly ubiquitous form of land use can be dramatic. Examples of such costs include loss of biodiversity; lowering of population densities for a wide variety of taxa; disruption of ecosystem functions, including nutrient cycling and succession; change in community organization; and change in the physical characteristics of both terrestrial and aquatic habitats. - [Ecological Costs of Livestock Grazing in Western North America](https://www.fs.usda.gov/rm/boise/AWAE/labs/awae_flagstaff/Hot_Topics/ripthreatbib/fleishner_ecocosts.pdf)
 
-Last weekend, I [ran an ultramarathon](/posts/2022-behind-the-rocks-50k/) in Moab, Utah, a unique desert environment where the race director reminds the runners to stay on trail. 
+Last weekend, I [ran an ultramarathon](/posts/2022-behind-the-rocks-50k/) in Moab, Utah, a unique desert environment where the race director reminds the runners to stay on trail.
 
 > **Don't bust the crust.**
 
@@ -41,4 +39,4 @@ The greenwashing by public land management agencies is ridiculous. 😡
 
 To make real change, please support your local environmental advocates. For a more regional approach to stop this abuse of our public lands, support organizations such as [Western Watersheds Project](https://www.westernwatersheds.org/). 💵
 
-> Western Watersheds Project is a non-profit environmental conservation group that works to influence and improve public lands management throughout the western United States in order to protect native species and conserve and restore the habitats they depend on.  **Our primary focus is on the negative impacts of livestock grazing, including harm to ecological, biological, cultural, historic, archeological, scenic resources, wilderness values, roadless areas, Wilderness Study Areas and designated Wilderness.**
+> Western Watersheds Project is a non-profit environmental conservation group that works to influence and improve public lands management throughout the western United States in order to protect native species and conserve and restore the habitats they depend on. **Our primary focus is on the negative impacts of livestock grazing, including harm to ecological, biological, cultural, historic, archeological, scenic resources, wilderness values, roadless areas, Wilderness Study Areas and designated Wilderness.**

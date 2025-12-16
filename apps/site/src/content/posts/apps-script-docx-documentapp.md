@@ -1,8 +1,8 @@
 ---
 title: Converting between Office docx and Google Docs in Google Apps Script
 description: ...
-pubDate: '2024-04-30'
-tags: 'code,google,google workspace,google docs,apps script,docx,docs,drive'
+pubDate: "2024-04-30"
+tags: "code,google,google workspace,google docs,apps script,docx,docs,drive"
 ---
 
 In this post, we will explore how to use Office `.docx` and `DocumentApp` in Google Apps Script. All of these operations are available directly in the Docs application, but you can also use Apps Script to automate these tasks.
@@ -60,22 +60,22 @@ Converting a Docs file to `.docx` format is a bit more complex in Apps Script. Y
 const doc = DocumentApp.openById(ID);
 
 const blob = UrlFetchApp.fetch(
-  `https://docs.google.com/feeds/download/documents/export/Export`
-  + `?id=${doc.getId()}&exportFormat=docx`, 
+  `https://docs.google.com/feeds/download/documents/export/Export` +
+    `?id=${doc.getId()}&exportFormat=docx`,
   {
     headers: {
       Authorization: `Bearer ${ScriptApp.getOAuthToken()}`,
     },
-  }).getBlob();
+  },
+).getBlob();
 
 const folder = DriveApp.getFileById(ID).getParents().next();
-const docx = folder
-  .createFile(
-    doc.getName().replace(".docx", ""),
-    blob,
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-  );
-  
+const docx = folder.createFile(
+  doc.getName().replace(".docx", ""),
+  blob,
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+);
+
 console.log(docx.getId());
 ```
 

@@ -685,4 +685,4 @@ layout: center
 svg: "none"
 ---
 
- <img src="/research.png" class="h-full mx-auto"/>
+<img src="/research.png" class="h-full mx-auto"/>

@@ -3,11 +3,9 @@ title: 2022 Mace's Hideout 100 Race Report
 description: >-
   Race Report for the 2022 Mace's Hideout 100 mile ultramarathon. I finished 3th
   in 29:20:53.
-pubDate: '2022-06-13'
-tags: 'run,race report,ultramarathon,100mile,Tempest Adventures,Colorado'
+pubDate: "2022-06-13"
+tags: "run,race report,ultramarathon,100mile,Tempest Adventures,Colorado"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
@@ -31,17 +29,21 @@ There are a few main sections to this course that vary considerably and make for
 <Image src="src/images/2022-mace-hideout-100/profile.png" alt="Elevation profile" />
 
 ### Climb to Greenhorn
+
 This is the first 18 miles of the course. It's runnable in many places, but I definitely took it easy. The last couple miles of the climb were very loose and quite steep in a number of locations.
 
 ### High Desert
+
 This part from the Greenhorn aid station down to the lower elevation part of the course is very runnable. The biggest issue I faced here was the heat. If I was in better shape, I would have been running a lot of this section and much faster than I did. The climb back up to Greenhorn was slow for me as I kept sleep walking!
 
 <Image src="src/images/2022-mace-hideout-100/two-track.jpg" alt="Runnable trail" />
 
 ### Crest Traverse
+
 This part of the course is very difficult to run, but I really pushed myself here, especially on the downs. This is all motorized trail, so there were a lot drops and big loose rocks. I sprained my ankle somewhere in this section during the night.
 
 ### Canyon Descent
+
 This part seems like it will never end. Instead of going down a single canyon, it crosses up and over a few canyons just when you want to cruise down to the finish. Through in a bunch of mandatory stream crossings and it really slows you down.
 
 ## Stats
@@ -50,7 +52,6 @@ This part seems like it will never end. Instead of going down a single canyon, i
 - **Elevation**: 19,171 ft
 - **Time**: 29:20:53
 - **Place**: 3rd
-
 
 ## My experience
 

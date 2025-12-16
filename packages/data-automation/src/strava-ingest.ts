@@ -59,7 +59,7 @@ const main = async () => {
     const dir = path.dirname(activityFileName);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
-    }   
+    }
     fs.writeFileSync(activityFileName, JSON.stringify(activity, null, 2));
   }
 };

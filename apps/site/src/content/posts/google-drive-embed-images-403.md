@@ -3,17 +3,15 @@ title: Embed images from Google Drive in your website
 description: >-
   Google Drive broke the ability to embed images with the /uc path. Here's how
   to embed images from Google Drive in your website.
-pubDate: '2024-01-11'
-tags: 'code,google,google drive,google workspace,html,iframe,web'
+pubDate: "2024-01-11"
+tags: "code,google,google drive,google workspace,html,iframe,web"
 ---
 
 Recently the ability to embed Google Drive images with the `/uc` path started failing. For example, the following `<img>` would have worked in the past with the export view link:
 
 ```html
 <!-- DOES NOT WORK: 403 Forbidden -->
-<img 
-  src="https://drive.google.com/uc?export=view&id=1234567890abcdef" 
-/>
+<img src="https://drive.google.com/uc?export=view&id=1234567890abcdef" />
 ```
 
 However this no longer works and a 403 error is returned. Partly this is because of the discontinuation of third party cookies. You can read more at this blog post, [Upcoming Changes to Third Party Cookies in Google Drive](https://workspaceupdates.googleblog.com/2023/10/upcoming-changes-to-third-party-cookies-in-google-drive.html).
@@ -25,9 +23,7 @@ The suggestion is to do the following to embed a Google Drive image:
 This generates an iframe with the following HTML:
 
 ```html
-<iframe 
-  src="https://drive.google.com/file/d/1234567890abcdef/preview"
-></iframe>
+<iframe src="https://drive.google.com/file/d/1234567890abcdef/preview"></iframe>
 ```
 
 ## Examples embedding images from Google Drive

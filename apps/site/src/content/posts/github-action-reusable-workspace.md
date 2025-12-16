@@ -3,11 +3,9 @@ title: Optimizing Parallel Jobs in a Github Workflow
 description: >-
   A pattern for persisting the workspace files between parallel jobs in a GitHub
   Workflow.
-pubDate: '2024-03-12'
-tags: 'code,GitHub,GitHub Actions,workflows,performance'
+pubDate: "2024-03-12"
+tags: "code,GitHub,GitHub Actions,workflows,performance"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';

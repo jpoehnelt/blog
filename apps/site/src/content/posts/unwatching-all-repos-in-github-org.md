@@ -1,11 +1,9 @@
 ---
 title: Unwatch All Repositories in a GitHub Organization
 description: Using the GitHub CLI to unsubscribe from repositories.
-pubDate: '2022-06-03'
-tags: 'code,GitHub,gh,automation'
+pubDate: "2022-06-03"
+tags: "code,GitHub,gh,automation"
 ---
-
-
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
