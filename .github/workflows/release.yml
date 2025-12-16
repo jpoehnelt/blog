@@ -47,14 +47,6 @@ jobs:
             ${{ runner.os }}-turbo-
       - run: pnpm i
       - run: pnpm build
-      - uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
-        id: changesets
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        with:
-          title: "chore: release"
-          commit: "chore: release"
-          commitMode: github-api
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
