@@ -19,7 +19,7 @@ export function getStravaActivity(
   return Object.values(stravaData).find((a) => a.id.toString() === id);
 }
 
-function slugify(text: string): string {
+export function slugify(text: string): string {
   return text
     .toString()
     .toLowerCase()

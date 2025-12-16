@@ -3,6 +3,8 @@ import { error } from "@sveltejs/kit";
 import polyline from "@mapbox/polyline";
 import type { RequestHandler } from "./$types";
 
+export const prerender = true;
+
 function toGpx(activity: any, coordinates: [number, number][]): string {
   const points = coordinates
     .map(([lat, lon]) => `      <trkpt lat="${lat}" lon="${lon}"></trkpt>`)
