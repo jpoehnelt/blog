@@ -1,0 +1,932 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "can't wait to be home",
+  "distance": 4836.6,
+  "moving_time": 1654,
+  "elapsed_time": 1726,
+  "total_elevation_gain": 19,
+  "type": "Run",
+  "sport_type": "TrailRun",
+  "workout_type": null,
+  "device_name": "Garmin Enduro 3",
+  "id": 16271422310,
+  "start_date": "2025-10-27T13:13:43Z",
+  "start_date_local": "2025-10-27T06:13:43Z",
+  "timezone": "(GMT-08:00) America/Los_Angeles",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 14,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a16271422310",
+    "polyline": "elteFh{_jVGHm@h@IFKCOI{@aAIO?CBAKJIDE?CG?GCM]m@GCiB~AQT{@|@}BpB_@`@cCnBY^SJo@n@]Vc@h@_ClBmCfCcAx@c@d@e@^]`@}BfBOR_@ZiA|@sApAcCjB]b@UT]VWN_BpAQVyAhA_@`@_@XsBfBi@h@a@f@w@hAsBdDgCrDm@nA]h@gA`CwAlDy@bCOj@QxAi@lBo@jBI^]r@I\\KRCP@RBD?OBIDc@DQTk@Po@p@qB`@aBN]b@wARyAV_Ad@yAl@kAlAyCl@aAHQfAcBFOvBiDr@q@r@eAzAoBl@k@zAiAzBaCp@g@~@}@b@]|@k@lB_Bx@y@\\e@n@i@ZOZU~@aA|AiAl@o@l@_@bAw@XYRYfAoAd@]j@k@t@m@vBuBVUd@UHKf@[f@g@X_@VSj@m@~@{@lA}@t@s@J@LUb@k@Z]`@YBGJ@HRb@j@PNPX\\\\^Yd@g@",
+    "resource_state": 3,
+    "summary_polyline": "elteFh{_jVGHm@h@IFKCOI{@aAIO?CBAKJIDE?CG?GCM]m@GCiB~AQT{@|@}BpB_@`@cCnBY^SJo@n@]Vc@h@_ClBmCfCcAx@c@d@e@^]`@}BfBOR_@ZiA|@sApAcCjB]b@UT]VWN_BpAQVyAhA_@`@_@XsBfBi@h@a@f@w@hAsBdDgCrDm@nA]h@gA`CwAlDy@bCOj@QxAi@lBo@jBI^]r@I\\KRCP@RBD?OBIDc@DQTk@Po@p@qB`@aBN]b@wARyAV_Ad@yAl@kAlAyCl@aAHQfAcBFOvBiDr@q@r@eAzAoBl@k@zAiAzBaCp@g@~@}@b@]|@k@lB_Bx@y@\\e@n@i@ZOZU~@aA|AiAl@o@l@_@bAw@XYRYfAoAd@]j@k@t@m@vBuBVUd@UHKf@[f@g@X_@VSj@m@~@{@lA}@t@s@J@LUb@k@Z]`@YBGJ@HRb@j@PNPX\\\\^Yd@g@"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.792838,
+    -122.393008
+  ],
+  "end_latlng": [
+    37.79304,
+    -122.392837
+  ],
+  "average_speed": 2.924,
+  "max_speed": 5.2,
+  "average_cadence": 80,
+  "average_temp": 19,
+  "average_watts": 295.1,
+  "max_watts": 526,
+  "weighted_average_watts": 294,
+  "device_watts": true,
+  "kilojoules": 488.6,
+  "has_heartrate": true,
+  "average_heartrate": 126.4,
+  "max_heartrate": 137,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 8.6,
+  "elev_low": -6,
+  "upload_id": 17356058888,
+  "upload_id_str": "17356058888",
+  "external_id": "garmin_ping_495417220668",
+  "from_accepted_tag": false,
+  "pr_count": 3,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 5,
+  "description": "",
+  "calories": 299,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [
+    {
+      "id": 3417887466739077000,
+      "resource_state": 2,
+      "name": "Mile",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 563,
+      "moving_time": 563,
+      "start_date": "2025-10-27T13:17:26Z",
+      "start_date_local": "2025-10-27T06:17:26Z",
+      "distance": 1701.1,
+      "start_index": 223,
+      "end_index": 786,
+      "average_cadence": 80.6,
+      "device_watts": true,
+      "average_watts": 325.6,
+      "average_heartrate": 129.3,
+      "max_heartrate": 137,
+      "segment": {
+        "id": 15106124,
+        "resource_state": 2,
+        "name": "Mile",
+        "activity_type": "Run",
+        "distance": 1701.1,
+        "average_grade": 0,
+        "maximum_grade": 1.9,
+        "elevation_high": 3.6,
+        "elevation_low": 0.6,
+        "start_latlng": [
+          37.796099,
+          -122.394448
+        ],
+        "end_latlng": [
+          37.807478,
+          -122.407079
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466738804700,
+      "resource_state": 2,
+      "name": "Broadway to Bay",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 675,
+      "moving_time": 674,
+      "start_date": "2025-10-27T13:19:33Z",
+      "start_date_local": "2025-10-27T06:19:33Z",
+      "distance": 2099.3,
+      "start_index": 350,
+      "end_index": 1025,
+      "average_cadence": 80.4,
+      "device_watts": true,
+      "average_watts": 309.4,
+      "average_heartrate": 127.6,
+      "max_heartrate": 136,
+      "segment": {
+        "id": 15096286,
+        "resource_state": 2,
+        "name": "Broadway to Bay",
+        "activity_type": "Run",
+        "distance": 2099.3,
+        "average_grade": -0.1,
+        "maximum_grade": 4.8,
+        "elevation_high": 3,
+        "elevation_low": 0.6,
+        "start_latlng": [
+          37.798976,
+          -122.397121
+        ],
+        "end_latlng": [
+          37.806732,
+          -122.405348
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466735283000,
+      "resource_state": 2,
+      "name": "Pier 31",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 43,
+      "moving_time": 43,
+      "start_date": "2025-10-27T13:24:24Z",
+      "start_date_local": "2025-10-27T06:24:24Z",
+      "distance": 121.2,
+      "start_index": 641,
+      "end_index": 684,
+      "average_cadence": 80.3,
+      "device_watts": true,
+      "average_watts": 313.3,
+      "average_heartrate": 127.4,
+      "max_heartrate": 129,
+      "segment": {
+        "id": 22050555,
+        "resource_state": 2,
+        "name": "Pier 31",
+        "activity_type": "Run",
+        "distance": 121.2,
+        "average_grade": 0,
+        "maximum_grade": 0.3,
+        "elevation_high": 3.5,
+        "elevation_low": 3.2,
+        "start_latlng": [
+          37.805245,
+          -122.403302
+        ],
+        "end_latlng": [
+          37.805932,
+          -122.404374
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466737237000,
+      "resource_state": 2,
+      "name": "Brooks Best Fest San Francisco",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 642,
+      "moving_time": 642,
+      "start_date": "2025-10-27T13:28:40Z",
+      "start_date_local": "2025-10-27T06:28:40Z",
+      "distance": 1906.9,
+      "start_index": 897,
+      "end_index": 1539,
+      "average_cadence": 79.9,
+      "device_watts": true,
+      "average_watts": 277.2,
+      "average_heartrate": 128,
+      "max_heartrate": 134,
+      "segment": {
+        "id": 21321647,
+        "resource_state": 2,
+        "name": "Brooks Best Fest San Francisco",
+        "activity_type": "Run",
+        "distance": 1906.9,
+        "average_grade": 0,
+        "maximum_grade": 0.1,
+        "elevation_high": 3.8,
+        "elevation_low": 2.7,
+        "start_latlng": [
+          37.8083,
+          -122.40912
+        ],
+        "end_latlng": [
+          37.79608,
+          -122.39446
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466737021000,
+      "resource_state": 2,
+      "name": "Pier 35 to Pier 9",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 361,
+      "moving_time": 361,
+      "start_date": "2025-10-27T13:30:17Z",
+      "start_date_local": "2025-10-27T06:30:17Z",
+      "distance": 1099.27,
+      "start_index": 994,
+      "end_index": 1355,
+      "average_cadence": 80.1,
+      "device_watts": true,
+      "average_watts": 282.4,
+      "average_heartrate": 129.1,
+      "max_heartrate": 134,
+      "segment": {
+        "id": 1023928,
+        "resource_state": 2,
+        "name": "Pier 35 to Pier 9",
+        "activity_type": "Run",
+        "distance": 1099.27,
+        "average_grade": -0.1,
+        "maximum_grade": 3.1,
+        "elevation_high": 2.5,
+        "elevation_low": 1.1,
+        "start_latlng": [
+          37.807083,
+          -122.406265
+        ],
+        "end_latlng": [
+          37.7999,
+          -122.398
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466736553000,
+      "resource_state": 2,
+      "name": "Levi's Plaza - Ferry Building",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 352,
+      "moving_time": 352,
+      "start_date": "2025-10-27T13:33:49Z",
+      "start_date_local": "2025-10-27T06:33:49Z",
+      "distance": 1053.6,
+      "start_index": 1206,
+      "end_index": 1558,
+      "average_cadence": 79.7,
+      "device_watts": true,
+      "average_watts": 276.7,
+      "average_heartrate": 128.8,
+      "max_heartrate": 134,
+      "segment": {
+        "id": 13242671,
+        "resource_state": 2,
+        "name": "Levi's Plaza - Ferry Building",
+        "activity_type": "Run",
+        "distance": 1053.6,
+        "average_grade": 0.2,
+        "maximum_grade": 2.7,
+        "elevation_high": 3,
+        "elevation_low": 1.1,
+        "start_latlng": [
+          37.803276,
+          -122.400962
+        ],
+        "end_latlng": [
+          37.79568,
+          -122.394061
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3417887466738295000,
+      "resource_state": 2,
+      "name": "Piers",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 187,
+      "moving_time": 187,
+      "start_date": "2025-10-27T13:34:00Z",
+      "start_date_local": "2025-10-27T06:34:00Z",
+      "distance": 566.1,
+      "start_index": 1217,
+      "end_index": 1404,
+      "average_cadence": 79.9,
+      "device_watts": true,
+      "average_watts": 283.4,
+      "average_heartrate": 130.5,
+      "max_heartrate": 134,
+      "segment": {
+        "id": 37829687,
+        "resource_state": 2,
+        "name": "Piers",
+        "activity_type": "Run",
+        "distance": 566.1,
+        "average_grade": -0.1,
+        "maximum_grade": 3.4,
+        "elevation_high": 4.8,
+        "elevation_low": 3.6,
+        "start_latlng": [
+          37.803017,
+          -122.400723
+        ],
+        "end_latlng": [
+          37.798879,
+          -122.39702
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "California",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1002.1,
+      "elapsed_time": 394,
+      "elevation_difference": 13.6,
+      "moving_time": 338,
+      "split": 1,
+      "average_speed": 2.96,
+      "average_grade_adjusted_speed": 3.14,
+      "average_heartrate": 123.8018018018018,
+      "pace_zone": 2
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 334,
+      "elevation_difference": -0.2,
+      "moving_time": 334,
+      "split": 2,
+      "average_speed": 2.99,
+      "average_grade_adjusted_speed": 3.02,
+      "average_heartrate": 128.69461077844312,
+      "pace_zone": 1
+    },
+    {
+      "distance": 999.3,
+      "elapsed_time": 343,
+      "elevation_difference": -3.6,
+      "moving_time": 343,
+      "split": 3,
+      "average_speed": 2.91,
+      "average_grade_adjusted_speed": 2.9,
+      "average_heartrate": 125.00292397660819,
+      "pace_zone": 1
+    },
+    {
+      "distance": 1000.6,
+      "elapsed_time": 329,
+      "elevation_difference": -2.8,
+      "moving_time": 329,
+      "split": 4,
+      "average_speed": 3.04,
+      "average_grade_adjusted_speed": 3.03,
+      "average_heartrate": 130.36170212765958,
+      "pace_zone": 1
+    },
+    {
+      "distance": 836.5,
+      "elapsed_time": 326,
+      "elevation_difference": 0.8,
+      "moving_time": 310,
+      "split": 5,
+      "average_speed": 2.7,
+      "average_grade_adjusted_speed": 2.76,
+      "average_heartrate": 124.19736842105263,
+      "pace_zone": 1
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1609.5,
+      "elapsed_time": 593,
+      "elevation_difference": 14.2,
+      "moving_time": 537,
+      "split": 1,
+      "average_speed": 3,
+      "average_grade_adjusted_speed": 3.12,
+      "average_heartrate": 126.10338345864662,
+      "pace_zone": 2
+    },
+    {
+      "distance": 1611.1,
+      "elapsed_time": 550,
+      "elevation_difference": -3.8,
+      "moving_time": 550,
+      "split": 2,
+      "average_speed": 2.93,
+      "average_grade_adjusted_speed": 2.93,
+      "average_heartrate": 126.06193078324226,
+      "pace_zone": 1
+    },
+    {
+      "distance": 1608.6,
+      "elapsed_time": 578,
+      "elevation_difference": -2.4,
+      "moving_time": 562,
+      "split": 3,
+      "average_speed": 2.86,
+      "average_grade_adjusted_speed": 2.89,
+      "average_heartrate": 127.21402877697842,
+      "pace_zone": 1
+    },
+    {
+      "distance": 9.2,
+      "elapsed_time": 5,
+      "elevation_difference": -0.2,
+      "moving_time": 5,
+      "split": 4,
+      "average_speed": 1.84,
+      "average_grade_adjusted_speed": 1.78,
+      "average_heartrate": 116,
+      "pace_zone": 1
+    }
+  ],
+  "laps": [
+    {
+      "id": 57986224650,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 593,
+      "moving_time": 593,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 1609.34,
+      "average_speed": 2.71,
+      "max_speed": 5.2,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 594,
+      "total_elevation_gain": 17,
+      "average_cadence": 80,
+      "device_watts": true,
+      "average_watts": 325.8,
+      "average_heartrate": 126.1,
+      "max_heartrate": 137,
+      "pace_zone": 1
+    },
+    {
+      "id": 57986224658,
+      "resource_state": 2,
+      "name": "Lap 2",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 549,
+      "moving_time": 549,
+      "start_date": "2025-10-27T13:23:38Z",
+      "start_date_local": "2025-10-27T06:23:38Z",
+      "distance": 1609.34,
+      "average_speed": 2.93,
+      "max_speed": 3.4,
+      "lap_index": 2,
+      "split": 2,
+      "start_index": 595,
+      "end_index": 1144,
+      "total_elevation_gain": 0,
+      "average_cadence": 80.2,
+      "device_watts": true,
+      "average_watts": 292.9,
+      "average_heartrate": 126,
+      "max_heartrate": 133,
+      "pace_zone": 1
+    },
+    {
+      "id": 57986224664,
+      "resource_state": 2,
+      "name": "Lap 3",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 578,
+      "moving_time": 578,
+      "start_date": "2025-10-27T13:32:48Z",
+      "start_date_local": "2025-10-27T06:32:48Z",
+      "distance": 1609.34,
+      "average_speed": 2.78,
+      "max_speed": 3.4,
+      "lap_index": 3,
+      "split": 3,
+      "start_index": 1145,
+      "end_index": 1722,
+      "total_elevation_gain": 3.4,
+      "average_cadence": 79.6,
+      "device_watts": true,
+      "average_watts": 268,
+      "average_heartrate": 127.2,
+      "max_heartrate": 134,
+      "pace_zone": 1
+    },
+    {
+      "id": 57986224670,
+      "resource_state": 2,
+      "name": "Lap 4",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 5,
+      "moving_time": 5,
+      "start_date": "2025-10-27T13:42:26Z",
+      "start_date_local": "2025-10-27T06:42:26Z",
+      "distance": 10.33,
+      "average_speed": 2.07,
+      "max_speed": 2.38,
+      "lap_index": 4,
+      "split": 4,
+      "start_index": 1723,
+      "end_index": 1726,
+      "total_elevation_gain": 0,
+      "average_cadence": 81,
+      "device_watts": true,
+      "average_watts": 249,
+      "average_heartrate": 116,
+      "max_heartrate": 116,
+      "pace_zone": 1
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 68425677862,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 127,
+      "moving_time": 127,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 400,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 271,
+      "end_index": 398
+    },
+    {
+      "id": 68425677863,
+      "resource_state": 2,
+      "name": "1/2 mile",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 258,
+      "moving_time": 258,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 805,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 171,
+      "end_index": 429
+    },
+    {
+      "id": 68425677864,
+      "resource_state": 2,
+      "name": "1K",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 321,
+      "moving_time": 321,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 1000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 178,
+      "end_index": 499
+    },
+    {
+      "id": 68425677860,
+      "resource_state": 2,
+      "name": "1 mile",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 527,
+      "moving_time": 527,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 1609,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 115,
+      "end_index": 642
+    },
+    {
+      "id": 68425677861,
+      "resource_state": 2,
+      "name": "2 mile",
+      "activity": {
+        "id": 16271422310,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1071,
+      "moving_time": 1071,
+      "start_date": "2025-10-27T13:13:43Z",
+      "start_date_local": "2025-10-27T06:13:43Z",
+      "distance": 3219,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 278,
+      "end_index": 1349
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "28e987774c1cfdeb98a31f0063f79c966e6c31bf",
+  "similar_activities": {
+    "effort_count": 1,
+    "average_speed": 2.9241837968561066,
+    "min_average_speed": 2.9241837968561066,
+    "mid_average_speed": 2.9241837968561066,
+    "max_average_speed": 2.9241837968561066,
+    "pr_rank": null,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        2.9241837968561066
+      ],
+      "current_activity_index": 0,
+      "min_speed": 2.9241837968561066,
+      "mid_speed": 2.9241837968561066,
+      "max_speed": 2.9241837968561066,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "heartrate",
+    "pace",
+    "power"
+  ]
+}
