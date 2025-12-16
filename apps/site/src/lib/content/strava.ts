@@ -73,3 +73,49 @@ export function getActivityDescription(
 
   return description;
 }
+
+export function getStravaSegment(id: string): any | undefined {
+  const activities = getStravaActivities();
+  for (const activity of activities) {
+    const segmentEfforts = (activity as any).segment_efforts;
+    if (segmentEfforts) {
+      const segment = segmentEfforts.find(
+        (s: any) => s.segment.id.toString() === id,
+      );
+      if (segment) return segment.segment;
+    }
+  }
+  return undefined;
+}
+
+export function getStravaSegments(): any[] {
+  const activities = getStravaActivities();
+  const segments = new Map<string, any>();
+
+  for (const activity of activities) {
+    const segmentEfforts = (activity as any).segment_efforts;
+    if (segmentEfforts) {
+      for (const effort of segmentEfforts) {
+        const id = effort.segment.id.toString();
+        if (!segments.has(id)) {
+          segments.set(id, { ...effort.segment, activity_ids: [] });
+        }
+        segments.get(id).activity_ids.push(activity.id);
+      }
+    }
+  }
+
+  return Array.from(segments.values());
+}
+
+export function getStravaSegmentActivities(
+  segmentId: string,
+): DetailedActivityResponse[] {
+  return getStravaActivities().filter((activity) => {
+    const segmentEfforts = (activity as any).segment_efforts;
+    return (
+      segmentEfforts &&
+      segmentEfforts.some((s: any) => s.segment.id.toString() === segmentId)
+    );
+  });
+}

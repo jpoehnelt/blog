@@ -8,6 +8,7 @@
     distance: number;
     average_grade?: number;
     segment: {
+      id: number;
       average_grade: number;
     };
     achievements?: {
@@ -50,7 +51,9 @@
         <div class="flex items-center justify-between p-3 rounded-lg border bg-card text-card-foreground shadow-sm">
           <div class="flex flex-col gap-1 overflow-hidden">
             <div class="flex items-center gap-2">
-              <span class="font-medium truncate" title={segment.name}>{segment.name}</span>
+              <a href={`/segments/${segment.segment.id}`} class="font-medium truncate hover:underline hover:text-primary transition-colors" title={segment.name}>
+                {segment.name}
+              </a>
               {#if segment.achievements && segment.achievements.length > 0}
                 <div class="flex gap-1">
                   {#each segment.achievements as achievement}
