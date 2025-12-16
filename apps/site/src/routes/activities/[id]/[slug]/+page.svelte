@@ -5,7 +5,7 @@
   import { initGoogleMaps, importLibrary } from "$lib/maps";
   import polyline from "@mapbox/polyline";
   import { Button } from "$lib/components/ui/button";
-  import { getActivityDescription, getActivitySlug } from "$lib/content/strava";
+    import { getActivityDescription, getActivitySlug, slugify } from "$lib/content/strava";
   import StravaLink from "$lib/components/StravaLink.svelte";
   import StravaSegmentList from "$lib/components/StravaSegmentList.svelte";
 
@@ -83,14 +83,20 @@
         <FormattedDate date={new Date(activity.start_date)} />
         <span>•</span>
         <span>{activity.sport_type || (activity as any).type}</span>
+      </div>
+
+      <div class="mt-8 flex items-center gap-4">
         <StravaLink activityId={activity.id} />
-        <span class="text-muted-foreground">•</span>
-        <a
-          href={`/activities/${activity.id}/download.gpx`}
-          class="text-sm font-medium text-muted-foreground hover:text-primary hover:underline"
-        >
-          GPX
-        </a>
+        {#if activity.map?.summary_polyline}
+          <span class="text-muted-foreground">•</span>
+          <a
+            href={`/activities/${activity.id}/download.gpx`}
+            class="text-sm font-medium text-muted-foreground hover:text-primary hover:underline"
+            download={`${slugify(activity.name)}-${activity.id}.gpx`}
+          >
+            GPX
+          </a>
+        {/if}
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
