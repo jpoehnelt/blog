@@ -1,0 +1,181 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Afternoon Hike",
+  "distance": 1067.1,
+  "moving_time": 1660,
+  "elapsed_time": 2479,
+  "total_elevation_gain": 52,
+  "type": "Hike",
+  "sport_type": "Hike",
+  "device_name": "Garmin Enduro 3",
+  "id": 16336918104,
+  "start_date": "2025-11-02T22:18:07Z",
+  "start_date_local": "2025-11-02T15:18:07Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 2,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a16336918104",
+    "polyline": "{zbcF`hkqS?J@E@HCFA?@UANHBCC?CB@?BH@HRCJBLAD@ADDH@N_@FATK^i@TIHU@WGKEY?IRCJCXUPGB@DEBMPM@QDQFE@KFGBSFGBQLSLK@?EAEEDB@JB@EFANGNEBACEA?DO\\EBELQTKBMCEPQVC?AI@BG?CFCA?IGBCAABKBCFEBM?GHHOXDJKDMJIBQFMB?HMAIFOPQYHQLORAFSHLKBKA?@BDBEHg@TI?EE@DE@GJ@DEFGDECC@KRQLMBGAGD?HETKI@KAJO?HKHC?MAJKLCEG@EAAKDCCD@CJGJ[J?DI@?DMWFKLKEGG",
+    "resource_state": 3,
+    "summary_polyline": "{zbcF`hkqS?J@E@HCFA?@UANHBCC?CB@?BH@HRCJBLAD@ADDH@N_@FATK^i@TIHU@WGKEY?IRCJCXUPGB@DEBMPM@QDQFE@KFGBSFGBQLSLK@?EAEEDB@JB@EFANGNEBACEA?DO\\EBELQTKBMCEPQVC?AI@BG?CFCA?IGBCAABKBCFEBM?GHHOXDJKDMJIBQFMB?HMAIFOPQYHQLORAFSHLKBKA?@BDBEHg@TI?EE@DE@GJ@DEFGDECC@KRQLMBGAGD?HETKI@KAJO?HKHC?MAJKLCEG@EAAKDCCD@CJGJ[J?DI@?DMWFKLKEGG"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.375348,
+    -107.869606
+  ],
+  "end_latlng": [
+    37.375498,
+    -107.868744
+  ],
+  "average_speed": 0.643,
+  "max_speed": 1.763,
+  "average_cadence": 53.8,
+  "has_heartrate": true,
+  "average_heartrate": 96.3,
+  "max_heartrate": 123,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2287.6,
+  "elev_low": 2217,
+  "upload_id": 17422387944,
+  "upload_id_str": "17422387944",
+  "external_id": "garmin_ping_497720438186",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 2,
+  "has_kudoed": false,
+  "suffer_score": 3,
+  "description": "Clinton Keith ",
+  "calories": 187,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 1003.4,
+      "elapsed_time": 2316,
+      "elevation_difference": -32.6,
+      "moving_time": 1567,
+      "split": 1,
+      "average_speed": 0.64,
+      "average_grade_adjusted_speed": 0.91,
+      "average_heartrate": 96.11803823773899,
+      "pace_zone": 0
+    },
+    {
+      "distance": 63.7,
+      "elapsed_time": 163,
+      "elevation_difference": -8,
+      "moving_time": 93,
+      "split": 2,
+      "average_speed": 0.68,
+      "average_grade_adjusted_speed": 0.69,
+      "average_heartrate": 99.69333333333333,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1067.1,
+      "elapsed_time": 2479,
+      "elevation_difference": -40.6,
+      "moving_time": 1660,
+      "split": 1,
+      "average_speed": 0.64,
+      "average_grade_adjusted_speed": 0.9,
+      "average_heartrate": 96.32785602503913,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 58227094210,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 16336918104,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2479,
+      "moving_time": 2479,
+      "start_date": "2025-11-02T22:18:07Z",
+      "start_date_local": "2025-11-02T15:18:07Z",
+      "distance": 1067.12,
+      "average_speed": 0.43,
+      "max_speed": 1.762,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 615,
+      "total_elevation_gain": 70.8,
+      "average_cadence": 53.8,
+      "device_watts": false,
+      "average_heartrate": 96.3,
+      "max_heartrate": 123
+    }
+  ],
+  "photos": {
+    "primary": {
+      "unique_id": "c88fbe17-70f2-411d-8288-d5b90b58dc95",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/VG1GGLgF74rj8VOY73dCxtHqHJsrTOEIyJ5ChRxwz4g-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/VG1GGLgF74rj8VOY73dCxtHqHJsrTOEIyJ5ChRxwz4g-768x576.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 2
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "7d7bfd855fac1da247f68370550a06e108de4a30",
+  "available_zones": [
+    "heartrate"
+  ]
+}

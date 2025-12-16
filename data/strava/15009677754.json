@@ -1,0 +1,272 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Afternoon Stand Up Paddling",
+  "distance": 1855,
+  "moving_time": 1902,
+  "elapsed_time": 1925,
+  "total_elevation_gain": 13.6,
+  "type": "StandUpPaddling",
+  "sport_type": "StandUpPaddling",
+  "device_name": "Garmin Enduro 3",
+  "id": 15009677754,
+  "start_date": "2025-07-04T23:54:19Z",
+  "start_date_local": "2025-07-04T17:54:19Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a15009677754",
+    "polyline": "}xacFxwjqSHEVGXBPFTRJBjAPZGb@]LCFODg@?[He@Ak@CIe@{@Mg@Sc@E[RyE?a@CKQMOCOAo@@]FIFIRSt@FDBJ?LGZIHIDU^UT_@HSAIAGG]GGGKYUYSKIKKKi@WW]o@U]_@YIMMUIG?ICMMYKEKUAKEGGKS_@UMGOAa@UQEQ?UUGCIBIJE`@N`@Jn@HLFXDh@LZ@l@Ip@Qh@Gv@K\\k@bAU`BAZEFE@BEZFn@KbADLB^VPTPNTNVFb@VPTNTPPNJZHL@h@GNCXK\\CZDHAj@K^MPERDFDFN?J",
+    "resource_state": 3,
+    "summary_polyline": "}xacFxwjqSHEVGXBPFTRJBjAPZGb@]LCFODg@?[He@Ak@CIe@{@Mg@Sc@E[RyE?a@CKQMOCOAo@@]FIFIRSt@FDBJ?LGZIHIDU^UT_@HSAIAGG]GGGKYUYSKIKKKi@WW]o@U]_@YIMMUIG?ICMMYKEKUAKEGGKS_@UMGOAa@UQEQ?UUGCIBIJE`@N`@Jn@HLFXDh@LZ@l@Ip@Qh@Gv@K\\k@bAU`BAZEFE@BEZFn@KbADLB^VPTPNTNVFb@VPTNTPPNJZHL@h@GNCXK\\CZDHAj@K^MPERDFDFN?J"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    37.369914,
+    -107.867009
+  ],
+  "end_latlng": [
+    37.370201,
+    -107.867178
+  ],
+  "average_speed": 0.975,
+  "max_speed": 1.55,
+  "average_cadence": 19.6,
+  "has_heartrate": true,
+  "average_heartrate": 77.1,
+  "max_heartrate": 93,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2182.4,
+  "elev_low": 2171.8,
+  "upload_id": 16023445749,
+  "upload_id_str": "16023445749",
+  "external_id": "garmin_ping_455795786026",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 2,
+  "description": "",
+  "calories": 109,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": false,
+  "segment_efforts": [
+    {
+      "id": 3376390234722838000,
+      "resource_state": 2,
+      "name": "East Shore North Bound",
+      "activity": {
+        "id": 15009677754,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 363,
+      "moving_time": 350,
+      "start_date": "2025-07-05T00:05:29Z",
+      "start_date_local": "2025-07-04T18:05:29Z",
+      "distance": 302.9,
+      "start_index": 151,
+      "end_index": 219,
+      "average_cadence": 5.1,
+      "device_watts": false,
+      "average_heartrate": 77.8,
+      "max_heartrate": 83,
+      "segment": {
+        "id": 24925440,
+        "resource_state": 2,
+        "name": "East Shore North Bound",
+        "activity_type": "Canoeing",
+        "distance": 302.9,
+        "average_grade": 1,
+        "maximum_grade": 17.8,
+        "elevation_high": 2185.4,
+        "elevation_low": 2179.6,
+        "start_latlng": [
+          37.370353,
+          -107.864947
+        ],
+        "end_latlng": [
+          37.372645,
+          -107.863253
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Durango",
+        "state": "Colorado",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1000.1,
+      "elapsed_time": 1033,
+      "elevation_difference": -0.1,
+      "moving_time": 1010,
+      "split": 1,
+      "average_speed": 0.97,
+      "average_grade_adjusted_speed": 1.02,
+      "average_heartrate": 79.69565217391305,
+      "pace_zone": 0
+    },
+    {
+      "distance": 854.9,
+      "elapsed_time": 892,
+      "elevation_difference": 1.2,
+      "moving_time": 892,
+      "split": 2,
+      "average_speed": 0.96,
+      "average_grade_adjusted_speed": 0.97,
+      "average_heartrate": 74.21945701357465,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1610.9,
+      "elapsed_time": 1710,
+      "elevation_difference": 0.2,
+      "moving_time": 1687,
+      "split": 1,
+      "average_speed": 0.94,
+      "average_grade_adjusted_speed": 0.98,
+      "average_heartrate": 77.7406513872135,
+      "pace_zone": 0
+    },
+    {
+      "distance": 244.1,
+      "elapsed_time": 215,
+      "elevation_difference": 0.9,
+      "moving_time": 215,
+      "split": 2,
+      "average_speed": 1.14,
+      "average_grade_adjusted_speed": 1.16,
+      "average_heartrate": 72.25581395348837,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 53387972760,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 15009677754,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1710,
+      "moving_time": 1687,
+      "start_date": "2025-07-04T23:54:19Z",
+      "start_date_local": "2025-07-04T17:54:19Z",
+      "distance": 1610.9,
+      "average_speed": 0.94,
+      "max_speed": 1.55,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 348,
+      "total_elevation_gain": 13.6,
+      "average_cadence": 19.6,
+      "device_watts": false,
+      "average_heartrate": 77.7,
+      "max_heartrate": 93
+    },
+    {
+      "id": 53387972766,
+      "resource_state": 2,
+      "name": "Lap 2",
+      "activity": {
+        "id": 15009677754,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 210,
+      "moving_time": 210,
+      "start_date": "2025-07-05T00:22:54Z",
+      "start_date_local": "2025-07-04T18:22:54Z",
+      "distance": 239.9,
+      "average_speed": 1.14,
+      "max_speed": 1.42222,
+      "lap_index": 2,
+      "split": 2,
+      "start_index": 349,
+      "end_index": 398,
+      "total_elevation_gain": 0,
+      "average_cadence": 19.4,
+      "device_watts": false,
+      "average_heartrate": 72.3,
+      "max_heartrate": 80
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "714806751e480790b1f10dfbe1974a4673ea169b",
+  "available_zones": [
+    "heartrate"
+  ]
+}
