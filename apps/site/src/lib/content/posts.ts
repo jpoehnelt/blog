@@ -1,13 +1,13 @@
 import * as v from "valibot";
-
-import { BASE_URL, POSTS_PREFIX, AUTHOR_NAME } from "$lib/constants";
-import { render } from "svelte/server";
-export const CONTENT_BASE_PATH = "/src/content/posts";
+import type { Component } from "svelte";
+import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
 import { error } from "@sveltejs/kit";
+
+const CONTENT_BASE_PATH = "/src/content/posts";
 
 // Eager load only metadata for fast listings
 export const postsMetadata: Record<string, any> = import.meta.glob(
-  "/src/content/posts/*.md",
+  `${CONTENT_BASE_PATH}/*.md`,
   {
     eager: true,
     import: "metadata",
@@ -15,11 +15,9 @@ export const postsMetadata: Record<string, any> = import.meta.glob(
 );
 
 // Lazy load full post content on-demand
-const posts = import.meta.glob("/src/content/posts/*.md");
+const posts = import.meta.glob(`${CONTENT_BASE_PATH}/*.md`);
 
-export const getPostContent = async (
-  id: string,
-): Promise<() => any> => {
+export const getPostContent = async (id: string): Promise<Component> => {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
   const postLoader = posts[filePath];
 
@@ -32,7 +30,7 @@ export const getPostContent = async (
     metadata: Record<string, unknown>;
   };
 
-  return post.default
+  return post.default;
 };
 
 export const getPostMetadata = (id: string) => {
@@ -84,7 +82,12 @@ export function getMetadataFromMatter(
   ).toString();
   const relativeURL = `/${POSTS_PREFIX}/${post.id}/`;
 
-  return { ...post, canonicalURL, relativeURL, markdownURL: `${canonicalURL.replace(/\/$/, '')}.md` };
+  return {
+    ...post,
+    canonicalURL,
+    relativeURL,
+    markdownURL: `${canonicalURL.replace(/\/$/, "")}.md`,
+  };
 }
 
 export type Post = ReturnType<typeof getMetadataFromMatter>;

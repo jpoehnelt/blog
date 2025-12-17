@@ -2,12 +2,7 @@ import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME, LICENSE } from "$lib/constants";
 import { getPostsMetadata, type Post } from "$lib/content/posts";
-import {
-  processContentForRss,
-  escapeXml,
-  getLastUpdatedDate,
-  filterPostsByTag,
-} from "$lib/rss";
+import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
 import { render } from "svelte/server";
 
 import { getPostContent } from "$lib/content/posts";
@@ -25,7 +20,7 @@ export const GET: RequestHandler = async ({ params }) => {
   // Build entries with full content
   const entries = await Promise.all(
     posts.map(async (post: Post) => {
-      const {body} = render(await getPostContent(post.id), {});
+      const { body } = render(await getPostContent(post.id), {});
       const htmlNote = `<p>© ${post.pubDate.getFullYear()} by <a href="${BASE_URL}">${AUTHOR_NAME}</a> is licensed under ${LICENSE}</p>`;
 
       return {
