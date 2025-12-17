@@ -38,7 +38,7 @@ export const GET: RequestHandler = async ({ params }) => {
         published: post.pubDate.toISOString(),
         content: {
           "@_type": "html",
-          "#text": escapeXml(body) + htmlNote,
+          "#text": escapeXml(body + htmlNote),
         },
         category: post.tags.map((tag) => ({
           "@_term": tag,
