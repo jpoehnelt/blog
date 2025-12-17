@@ -1,3 +1,4 @@
+import { visit } from "unist-util-visit";
 import { render } from "svelte/server";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -6,7 +7,11 @@ import rehypeRemark from "rehype-remark";
 import remarkGfm from "remark-gfm";
 import remarkStringify from "remark-stringify";
 import matter from "gray-matter";
-import { getPostContent, getPostMetadata, getPostsMetadata } from "$lib/content/posts";
+import {
+  getPostContent,
+  getPostMetadata,
+  getPostsMetadata,
+} from "$lib/content/posts";
 import type { RequestHandler, EntryGenerator } from "./$types";
 import { AUTHOR_NAME, LICENSE, BASE_URL, PROMPT_SYSTEM } from "$lib/constants";
 
@@ -24,6 +29,18 @@ export const GET: RequestHandler = async ({ params }) => {
   const file = await unified()
     .use(rehypeParse)
     .use(rehypeRemoveComments)
+    .use(() => (tree) => {
+      visit(tree, "element", (node: any) => {
+        ["href", "src", "poster"].forEach((attr) => {
+          if (node.properties?.[attr]?.startsWith("/")) {
+            node.properties[attr] = new URL(
+              node.properties[attr],
+              BASE_URL,
+            ).toString();
+          }
+        });
+      });
+    })
     .use(rehypeRemark)
     .use(remarkGfm)
     .use(remarkStringify)
