@@ -1,33 +1,5 @@
-import { render } from "svelte/server";
 import { BASE_URL } from "./constants";
-import { posts, CONTENT_BASE_PATH, type Post } from "$lib/content/posts";
-
-/**
- * Get the rendered HTML content for a post
- */
-export async function getPostHtml(id: string): Promise<string | null> {
-  const matchPath = `${CONTENT_BASE_PATH}/${id}.md`;
-  const postLoader = posts[matchPath];
-
-  if (!postLoader) {
-    return null;
-  }
-
-  try {
-    // Dynamically import the post content
-    const post = (await postLoader()) as {
-      default: any;
-      metadata: Record<string, unknown>;
-    };
-
-    // Render the Svelte component to HTML
-    const result = render(post.default, {});
-    return result.body;
-  } catch (error) {
-    console.error(`Error rendering post ${id}:`, error);
-    return null;
-  }
-}
+import { type Post } from "$lib/content/posts";
 
 /**
  * Convert relative URLs to absolute URLs in HTML content

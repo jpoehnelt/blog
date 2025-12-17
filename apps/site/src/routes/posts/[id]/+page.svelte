@@ -3,6 +3,9 @@
   import Head from "$lib/components/Head.svelte";
   import PostList from "$lib/components/PostList.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
+  import { AUTHOR_NAME, LICENSE } from "$lib/constants";
+  import { siMarkdown } from "simple-icons";
+  import BrandIcon from "$lib/components/BrandIcon.svelte";
 
   import type { PageProps } from "./$types";
 
@@ -34,14 +37,25 @@
   <article class="prose prose-lg max-w-none">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
-      <span class="text-xs">
-        Published on <b><FormattedDate date={data.pubDate} /></b>
-      </span>
-      {#if data.lastMod}
+      <div class="flex flex-wrap gap-1 items-center">
         <span class="text-xs">
-          Updated on <b><FormattedDate date={data.lastMod} /></b>
+          Published on <b><FormattedDate date={data.pubDate} /></b>
         </span>
-      {/if}
+        {#if data.lastMod}
+          <span class="text-xs">
+            Updated on <b><FormattedDate date={data.lastMod} /></b>
+          </span>
+        {/if}
+        <a
+          href={data.markdownURL}
+          class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+          title="View Markdown"
+          aria-label="View Markdown"
+          target="_blank"
+        >
+          <BrandIcon icon={siMarkdown} size={20} class="text-gray-500" />
+        </a>
+      </div>
 
       {#if data.tags && data.tags.length > 0}
         <div class="flex flex-wrap gap-2 mt-2">
@@ -53,6 +67,12 @@
     </div>
 
     <PostContent />
+
+    <div class="mt-8">
+      <p class="text-xs">
+        © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
+      </p>
+    </div>
   </article>
   <section class="mt-8">
     <h2 class="text-2xl font-bold mb-4">Related Articles</h2>

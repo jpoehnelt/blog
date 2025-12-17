@@ -58,6 +58,11 @@ const config = {
     },
     inlineStyleThreshold: 8192, // Inline critical CSS up to 8KB
   },
+  compilerOptions: {
+    experimental: {
+      async: true,
+    },
+  },
 };
 
 export default config;

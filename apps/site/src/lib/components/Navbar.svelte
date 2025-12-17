@@ -1,7 +1,6 @@
 <script lang="ts">
   import * as NavigationMenu from "$lib/components/ui/navigation-menu";
   import * as Sheet from "$lib/components/ui/sheet";
-  import { Button } from "$lib/components/ui/button";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
   import { page } from "$app/state";
 
