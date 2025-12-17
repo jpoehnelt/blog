@@ -27,3 +27,4 @@ See root `GEMINI.md` for global workflow.
 - **Svelte 5**: Use Runes (`$state`, `$derived`, `$props`). No `export let`.
 - **Tailwind v4**: Use v4 syntax.
 - **Strict TypeScript**: No `any`.
+- **Icons**: Import full paths for `lucide-svelte` (e.g., `import Bot from "@lucide/svelte/icons/bot"`).

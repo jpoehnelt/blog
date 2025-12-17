@@ -66,7 +66,7 @@ export function getDefaultSocialLinks(config: {
   if (config.strava) links.push(createSocialLink("strava", config.strava));
   if (config.email)
     links.push(createSocialLink("email", `mailto:${config.email}`));
-  if (config.rss) links.push(createSocialLink("rss", "/rss.xml"));
+  if (config.rss) links.push(createSocialLink("rss", "/feed/all.xml"));
 
   return links;
 }
