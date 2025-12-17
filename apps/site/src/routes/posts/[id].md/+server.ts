@@ -3,13 +3,20 @@ import { unified } from "unified";
 import rehypeParse from "rehype-parse";
 import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeRemark from "rehype-remark";
+import remarkGfm from "remark-gfm";
 import remarkStringify from "remark-stringify";
 import matter from "gray-matter";
-import { getPostContent, getPostMetadata } from "$lib/content/posts";
-import type { RequestHandler } from "./$types";
+import { getPostContent, getPostMetadata, getPostsMetadata } from "$lib/content/posts";
+import type { RequestHandler, EntryGenerator } from "./$types";
 import { AUTHOR_NAME, LICENSE, BASE_URL, PROMPT_SYSTEM } from "$lib/constants";
 
-export const GET: RequestHandler = async ({ params, url }) => {
+export const prerender = true;
+
+export const entries: EntryGenerator = () => {
+  return getPostsMetadata().map((post) => ({ id: post.id }));
+};
+
+export const GET: RequestHandler = async ({ params }) => {
   const { body } = render(await getPostContent(params.id), {});
   const metadata = getPostMetadata(params.id);
 
@@ -18,6 +25,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
     .use(rehypeParse)
     .use(rehypeRemoveComments)
     .use(rehypeRemark)
+    .use(remarkGfm)
     .use(remarkStringify)
     .process(body);
 

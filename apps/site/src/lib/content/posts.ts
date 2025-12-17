@@ -7,7 +7,7 @@ const CONTENT_BASE_PATH = "/src/content/posts";
 
 // Eager load only metadata for fast listings
 export const postsMetadata: Record<string, any> = import.meta.glob(
-  `${CONTENT_BASE_PATH}/*.md`,
+  "/src/content/posts/*.md",
   {
     eager: true,
     import: "metadata",
@@ -15,7 +15,7 @@ export const postsMetadata: Record<string, any> = import.meta.glob(
 );
 
 // Lazy load full post content on-demand
-const posts = import.meta.glob(`${CONTENT_BASE_PATH}/*.md`);
+const posts = import.meta.glob("/src/content/posts/*.md");
 
 export const getPostContent = async (id: string): Promise<Component> => {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
