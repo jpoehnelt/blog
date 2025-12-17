@@ -36,7 +36,7 @@ export const getPostContent = async (id: string): Promise<Component> => {
 export const getPostMetadata = (id: string) => {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
   const metadata = postsMetadata[filePath];
-  return getMetadataFromMatter(filePath, metadata);
+  return getMetadataFromMatter(id, metadata);
 };
 
 export const postMetadataSchema = v.object({
@@ -76,17 +76,16 @@ export function getMetadataFromMatter(
     id,
     ...data,
   });
-  const canonicalURL = new URL(
-    `${POSTS_PREFIX}/${post.id}/`,
-    BASE_URL,
-  ).toString();
-  const relativeURL = `/${POSTS_PREFIX}/${post.id}/`;
+
+  const canonicalURL = new URL(`${POSTS_PREFIX}/${id}/`, BASE_URL).toString();
+  const relativeURL = `/${POSTS_PREFIX}/${id}/`;
+  const markdownURL = `/${POSTS_PREFIX}/${id}.md`;
 
   return {
     ...post,
     canonicalURL,
     relativeURL,
-    markdownURL: `${canonicalURL.replace(/\/$/, "")}.md`,
+    markdownURL,
   };
 }
 
