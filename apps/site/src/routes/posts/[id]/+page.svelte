@@ -3,6 +3,7 @@
   import Head from "$lib/components/Head.svelte";
   import PostList from "$lib/components/PostList.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
+  import { AUTHOR_NAME, LICENSE } from "$lib/constants";
 
   import type { PageProps } from "./$types";
 
@@ -53,6 +54,12 @@
     </div>
 
     <PostContent />
+
+    <div class="mt-8">
+      <p class="text-xs">
+        © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
+      </p>
+    </div>
   </article>
   <section class="mt-8">
     <h2 class="text-2xl font-bold mb-4">Related Articles</h2>

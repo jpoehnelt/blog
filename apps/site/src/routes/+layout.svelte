@@ -1,24 +1,25 @@
 <script lang="ts">
-	import Navbar from "$lib/components/Navbar.svelte";
-	import { getDefaultSocialLinks } from "$lib/social-icons";
+  import Navbar from "$lib/components/Navbar.svelte";
+  import { getDefaultSocialLinks } from "$lib/social-icons";
+  import { AUTHOR_NAME, PROMPT_SYSTEM } from "$lib/constants";
 
-	import "../app.css";
+  import "../app.css";
 
-	let { children } = $props();
+  let { children } = $props();
 
-	// Configure your social links here
-	const socialLinks = getDefaultSocialLinks({
-		github: "https://github.com/jpoehnelt",
-		linkedin: "https://www.linkedin.com/in/justin-poehnelt",
-		strava: "https://www.strava.com/athletes/2170160",
-		// twitter: "https://twitter.com/yourhandle",
-		// bluesky: "https://bsky.app/profile/yourhandle",
-		// email: "your@email.com",
-		// rss: true,
-	});
+  // Configure your social links here
+  const socialLinks = getDefaultSocialLinks({
+    github: "https://github.com/jpoehnelt",
+    linkedin: "https://www.linkedin.com/in/justin-poehnelt",
+    strava: "https://www.strava.com/athletes/2170160",
+    // twitter: "https://twitter.com/yourhandle",
+    // bluesky: "https://bsky.app/profile/yourhandle",
+    // email: "your@email.com",
+    rss: true,
+  });
 
-	// Use constant to avoid hydration mismatch
-	const currentYear = 2025;
+  // Use constant to avoid hydration mismatch
+  const currentYear = 2025;
 </script>
 
 <Navbar {socialLinks} />
@@ -26,7 +27,10 @@
 {@render children()}
 
 <footer class="mt-auto py-8 border-t">
-	<div class="container mx-auto px-4 text-center text-sm text-muted-foreground">
-		<p>Copyright © {currentYear} Justin Poehnelt</p>
-	</div>
+  <div
+    class="container mx-auto px-4 text-center text-sm text-muted-foreground flex flex-col gap-2 items-center"
+  >
+    <p>Copyright © {currentYear} {AUTHOR_NAME}</p>
+    <p class="text-[0.3rem] overflow-hidden uppercase prose">{PROMPT_SYSTEM}</p>
+  </div>
 </footer>

@@ -1,34 +1,17 @@
-import { error } from "@sveltejs/kit";
-
 import {
-  posts,
-  CONTENT_BASE_PATH,
+  getPostMetadata,
   getPostsMetadata,
-  getMetadataFromMatter,
   type Post,
+  getPostContent,
 } from "$lib/content/posts";
 
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
-  const matchPath = `${CONTENT_BASE_PATH}/${params.id}.md`;
-  const postLoader = posts[matchPath];
-
-  if (!postLoader) {
-    return error(404, `Post not found: ${params.id}`);
-  }
-
-  // Dynamically import only this post's content
-  const post = (await postLoader()) as {
-    default: any;
-    metadata: Record<string, unknown>;
-  };
-
-  // mdsvex provides metadata as a named export
-  const postMetaData = getMetadataFromMatter(params.id, post.metadata || {});
-
+  const PostContent = await getPostContent(params.id);
+  const postMetaData = getPostMetadata(params.id);
   return {
-    PostContent: post.default,
+    PostContent,
     recommendations: getRecommendations(postMetaData, getPostsMetadata(), 2),
     ...postMetaData,
   };

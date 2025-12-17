@@ -1,8 +1,9 @@
 import * as v from "valibot";
 
-import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
-
+import { BASE_URL, POSTS_PREFIX, AUTHOR_NAME } from "$lib/constants";
+import { render } from "svelte/server";
 export const CONTENT_BASE_PATH = "/src/content/posts";
+import { error } from "@sveltejs/kit";
 
 // Eager load only metadata for fast listings
 export const postsMetadata: Record<string, any> = import.meta.glob(
@@ -14,7 +15,31 @@ export const postsMetadata: Record<string, any> = import.meta.glob(
 );
 
 // Lazy load full post content on-demand
-export const posts = import.meta.glob("/src/content/posts/*.md");
+const posts = import.meta.glob("/src/content/posts/*.md");
+
+export const getPostContent = async (
+  id: string,
+): Promise<() => any> => {
+  const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
+  const postLoader = posts[filePath];
+
+  if (!postLoader) {
+    throw error(404, `Not found: ${id}`);
+  }
+
+  const post = (await postLoader()) as {
+    default: any;
+    metadata: Record<string, unknown>;
+  };
+
+  return post.default
+};
+
+export const getPostMetadata = (id: string) => {
+  const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
+  const metadata = postsMetadata[filePath];
+  return getMetadataFromMatter(filePath, metadata);
+};
 
 export const postMetadataSchema = v.object({
   id: v.pipe(v.string(), v.trim()),
@@ -59,7 +84,7 @@ export function getMetadataFromMatter(
   ).toString();
   const relativeURL = `/${POSTS_PREFIX}/${post.id}/`;
 
-  return { ...post, canonicalURL, relativeURL };
+  return { ...post, canonicalURL, relativeURL, markdownURL: `${canonicalURL.replace(/\/$/, '')}.md` };
 }
 
 export type Post = ReturnType<typeof getMetadataFromMatter>;
