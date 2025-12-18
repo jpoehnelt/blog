@@ -12,7 +12,10 @@ export const load: PageLoad = async ({ params }) => {
   const postMetaData = getPostMetadata(params.id);
   return {
     PostContent,
-    recommendations: getRecommendations(postMetaData, getPostsMetadata(), 2),
+    recommendations: getRecommendations(postMetaData, getPostsMetadata(), 4),
+    latest: getPostsMetadata()
+      .filter((p) => p.id !== params.id)
+      .slice(0, 4),
     ...postMetaData,
   };
 };

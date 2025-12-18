@@ -5,9 +5,10 @@
 
   interface Props {
     post: Post;
+    showTags?: boolean;
   }
 
-  let { post }: Props = $props();
+  let { post, showTags = true }: Props = $props();
 </script>
 
 <div class="flex items-baseline gap-2 py-1">
@@ -20,7 +21,7 @@
     </a>
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap">
       <FormattedDate date={post.pubDate} />
-      {#if post.tags && post.tags.length > 0}
+      {#if post.tags && post.tags.length > 0 && showTags}
         <span class="text-muted-foreground/50">•</span>
         <div class="flex gap-1 flex-wrap">
           {#each post.tags as tag}
