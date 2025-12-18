@@ -97,7 +97,7 @@ async function processFile(filePath: string, canonicalMap: Map<string, any>) {
       body_markdown: parsed.content, // Content without frontmatter (gray-matter splits it)
       published: false, // Always creating as draft first
       canonical_url: metadata.canonicalURL, // Ensure this matches frontmatter key from server
-      tags: metadata.tags,
+      tags: metadata.tags.slice(0,4).map((tag: string) => tag.toLowerCase().replace(/\s+/g, "")),
       description: metadata.description,
       // series: metadata.series // if we had series support
     },
