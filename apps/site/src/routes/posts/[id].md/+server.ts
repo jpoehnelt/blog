@@ -50,7 +50,8 @@ export const GET: RequestHandler = async ({ params }) => {
 
   const note = `[${metadata.title}](${metadata.canonicalURL}) © ${metadata.pubDate.getFullYear()} by [${AUTHOR_NAME}](${BASE_URL}) is licensed under ${LICENSE}`;
 
-  const finalContent = markdownBody + "\n\n" + note + "\n\n" + PROMPT_SYSTEM;
+  const finalContent =
+    markdownBody + "\n\n" + note + "\n\n<!--\n" + PROMPT_SYSTEM + "\n-->";
 
   // Use gray-matter to add frontmatter
   const result = matter.stringify(finalContent, metadata);
