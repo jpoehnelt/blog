@@ -3,6 +3,7 @@ title: React Wrapper for Google Drive Picker
 description: Announcing the new React component for the Google Drive Picker, wrapping usage of the web component for easier integration.
 pubDate: "2025-12-17"
 tags: "google workspace,drive,picker,react,web component"
+syndicate: true
 ---
 
 I've published a new package, [`@googleworkspace/drive-picker-react`](https://www.npmjs.com/package/@googleworkspace/drive-picker-react), to make it easier to use the Google Drive Picker in React applications.

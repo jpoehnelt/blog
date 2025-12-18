@@ -5,6 +5,7 @@ description: >-
   working with Antigravity and providing OAuth2 scope linting and MCP support.
 pubDate: "2025-12-16"
 tags: "google workspace,vscode,developer tools,mcp,scopes,oauth"
+syndicate: true
 ---
 
 I recently released the [Google Workspace Developer Tools VS Code extension](https://marketplace.visualstudio.com/items?itemName=google-workspace.google-workspace-developer-tools) to help developers with OAuth2 scope management and AI assistance.

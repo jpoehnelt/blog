@@ -3,6 +3,7 @@ title: Google Workspace Developer Tools MCP Server
 description: Announcing the new MCP server for Google Workspace Developer Tools, providing AI agents with access to official documentation and API snippets.
 pubDate: "2025-12-17"
 tags: "google workspace,mcp,ai,gemini,developer tools"
+syndicate: true
 ---
 
 Following the release of the [VS Code extension](/posts/google-workspace-developer-tools-vscode-extension), I've also published a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server for Google Workspace Developers.
