@@ -1,0 +1,44 @@
+name: Syndicate
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Specific slug to syndicate (leave empty for all)'
+        required: false
+        type: string
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          lfs: true
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          cache: "pnpm"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .turbo
+            node_modules/.cache
+            apps/site/node_modules/.cache
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+      - run: pnpm i
+      - run: pnpm build --filter=data-automation
+      - run: pnpm build --filter site
+      - name: Syndicate
+        run: |
+          if [ -n "${{ inputs.slug }}" ]; then
+            pnpm --filter data-automation syndicate --slug "${{ inputs.slug }}"
+          else
+            pnpm --filter data-automation syndicate
+          fi
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}

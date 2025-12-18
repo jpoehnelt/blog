@@ -7,14 +7,19 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild src/* --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "syndicate": "tsx src/syndicate.ts"
   },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
   "packageManager": "pnpm@10.17.1",
   "devDependencies": {
-    "esbuild": "catalog:"
+    "@types/yargs": "^17.0.35",
+    "esbuild": "catalog:",
+    "fast-glob": "^3.3.3",
+    "tsx": "^4.21.0",
+    "yargs": "^18.0.0"
   },
   "dependencies": {
     "@types/jsdom": "^27.0.0",
