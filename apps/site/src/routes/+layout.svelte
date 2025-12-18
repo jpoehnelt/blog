@@ -2,9 +2,11 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import { getDefaultSocialLinks } from "$lib/social-icons";
   import { AUTHOR_NAME, PROMPT_SYSTEM } from "$lib/constants";
+  import CodeToolbar from "$lib/components/CodeToolbar.svelte";
+  import { mount, onMount } from "svelte";
+  import { afterNavigate } from "$app/navigation";
 
   import "../app.css";
-
   let { children } = $props();
 
   // Configure your social links here
@@ -19,7 +21,31 @@
   });
 
   // Use constant to avoid hydration mismatch
-  const currentYear = 2025;
+  const currentYear = new Date().getFullYear();
+
+  afterNavigate(() => {
+    addCodeToolbar();
+  });
+
+  onMount(() => {
+    addCodeToolbar();
+  });
+
+  function addCodeToolbar() {
+    for (const node of document.querySelectorAll("pre > code")) {
+      const languageMatch = node.className.match(/language-(\w+)/);
+      const language = languageMatch ? languageMatch[1] : "";
+
+      mount(CodeToolbar, {
+        target: node.parentElement!,
+        anchor: node,
+        props: {
+          content: node.textContent ?? "",
+          language: language,
+        },
+      });
+    }
+  }
 </script>
 
 <Navbar {socialLinks} />
