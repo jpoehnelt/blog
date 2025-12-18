@@ -4,13 +4,14 @@
 
   interface Props {
     posts: Post[];
+    showTags?: boolean;
   }
 
-  let { posts }: Props = $props();
+  let { posts, showTags = true }: Props = $props();
 </script>
 
 <div class="space-y-1 max-w-4xl">
   {#each posts as post}
-    <PostListItem {post} />
+    <PostListItem {post} showTags={showTags} />
   {/each}
 </div>

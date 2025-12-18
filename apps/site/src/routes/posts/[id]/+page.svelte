@@ -33,7 +33,9 @@
   />
 </svelte:head>
 
-<main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
+<main
+  class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12"
+>
   <article class="prose prose-lg max-w-none">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
@@ -67,15 +69,16 @@
     </div>
 
     <PostContent />
-
     <div class="mt-8">
       <p class="text-xs">
         © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
       </p>
     </div>
   </article>
-  <section class="mt-8">
-    <h2 class="text-2xl font-bold mb-4">Related Articles</h2>
-    <PostList posts={data.recommendations} />
-  </section>
+  <aside class="mt-8 lg:mt-0 prose">
+    <h3>Related Articles</h3>
+    <PostList posts={data.recommendations} showTags={false}/>
+    <h3>Latest Articles</h3>
+    <PostList posts={data.latest} showTags={false}/>
+  </aside>
 </main>
