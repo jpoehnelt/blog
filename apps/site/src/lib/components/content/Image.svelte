@@ -1,10 +1,11 @@
 <script lang="ts">
   import { images } from "$lib/images";
+  import { cn } from "$lib/utils";
 
   let {
     src,
     alt,
-    class: className = "rounded-sm mx-auto",
+    class: className = "",
     displayLabel = true,
   }: {
     src: string;
@@ -42,9 +43,17 @@
 <div class="flex flex-col gap-3">
   <a href={linkHref} aria-label={`View full size image: ${alt}`}>
     {#if isEnhancedImage}
-      <enhanced:img src={resolvedSrc} {alt} class={className} />
+      <enhanced:img
+        src={resolvedSrc}
+        {alt}
+        class={cn("rounded-sm mx-auto", className)}
+      />
     {:else}
-      <img src={resolvedSrc} {alt} class={className} />
+      <img
+        src={resolvedSrc}
+        {alt}
+        class={cn("rounded-sm mx-auto", className)}
+      />
     {/if}
   </a>
   {#if displayLabel}<p class="text-xs italic text-center mt-0">{alt}</p>{/if}
