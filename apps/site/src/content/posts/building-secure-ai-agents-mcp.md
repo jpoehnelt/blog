@@ -229,8 +229,8 @@ function redactText(text, findings) {
 
   // 2. Map to clean objects and sort ASCENDING by start index
   let ranges = findings.map(f => ({
-    start: parseInt(f.location.codepointRange.start),
-    end: parseInt(f.location.codepointRange.end),
+    start: parseInt(f.location.codepointRange.start, 10),
+    end: parseInt(f.location.codepointRange.end, 10),
     label: f.infoType || "REDACTED"
   })).sort((a, b) => a.start - b.start);
 
