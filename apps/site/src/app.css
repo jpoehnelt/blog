@@ -178,11 +178,11 @@
   /* Code block styling */
   .prose pre {
     @apply bg-muted/50 rounded-lg border border-border;
-    @apply p-4 overflow-x-auto;
+    @apply p-0 overflow-hidden flex flex-col relative;
   }
 
   .prose pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-4 overflow-x-auto;
   }
 
   /* Copy button styling from rehype-pretty-code */
