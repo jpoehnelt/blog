@@ -20,6 +20,8 @@ You are an expert developer maintaining a Turborepo monorepo with a SvelteKit bl
 - **Type Check**: `pnpm check`
 - **Format**: `pnpm format`
 
+Always run `pnpm check` and `pnpm build` before finalizing a change.
+
 ## Tool Guidelines
 
 - **Workspace Verification**: ALWAYS use `workspace-developer` tools (`search_workspace_docs`, `fetch_workspace_docs`) to validate Google Workspace info.
