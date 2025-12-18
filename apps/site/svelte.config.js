@@ -20,7 +20,19 @@ const config = {
       extensions: [".md", ".mdx"],
       highlight: {
         highlighter: async (code, lang = "text") => {
-          const html = escapeSvelte(await codeToHtml(code, { lang, theme }));
+          const html = escapeSvelte(
+            await codeToHtml(code, {
+              lang,
+              theme,
+              transformers: [
+                {
+                  code(node) {
+                    this.addClassToHast(node, `language-${lang}`);
+                  },
+                },
+              ],
+            }),
+          );
           return `{@html \`${html}\` }`;
         },
       },
