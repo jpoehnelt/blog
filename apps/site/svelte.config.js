@@ -28,6 +28,7 @@ const config = {
                 {
                   code(node) {
                     this.addClassToHast(node, `language-${lang}`);
+                    this.addClassToHast(node, `relative`);
                   },
                 },
               ],
