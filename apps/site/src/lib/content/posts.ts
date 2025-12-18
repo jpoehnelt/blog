@@ -64,6 +64,7 @@ export const postMetadataSchema = v.object({
     v.transform((value) => value.split(",")),
   ),
   tweet: v.optional(v.pipe(v.string(), v.trim())),
+  syndicate: v.optional(v.boolean(), false),
 });
 
 export function getMetadataFromMatter(
