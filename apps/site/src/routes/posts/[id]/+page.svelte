@@ -10,7 +10,8 @@
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
-  const { PostContent } = data;
+  // Use $derived to ensure PostContent updates when data changes (e.g. navigation)
+  let PostContent = $derived(data.PostContent);
 </script>
 
 <Head
