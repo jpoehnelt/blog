@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
 
-const theme = "github-dark";
+const theme = "vitesse-light";
 
 const config = {
   trailingSlash: "always",
