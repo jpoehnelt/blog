@@ -45,14 +45,14 @@ async function main() {
   // Note: /api/articles/me/all returns all articles (published and unpublished)
   const userArticles = await fetchAllUserArticles();
   const canonicalMap = new Map<string, any>();
-  
+
   // Create map of canonical_url -> article
   userArticles.forEach((article: any) => {
-      // canonical_url helps us match existing posts
-      // Dev.to api response includes canonical_url
-      if (article.canonical_url) {
-          canonicalMap.set(article.canonical_url, article);
-      }
+    // canonical_url helps us match existing posts
+    // Dev.to api response includes canonical_url
+    if (article.canonical_url) {
+      canonicalMap.set(article.canonical_url, article);
+    }
   });
 
   for (const file of files) {
@@ -61,23 +61,23 @@ async function main() {
 }
 
 async function fetchAllUserArticles() {
-    let page = 1;
-    let allArticles: any[] = [];
-    while (true) {
-        try {
-            const response = await axios.get("https://dev.to/api/articles/me/all", {
-                headers: { "api-key": API_KEY },
-                params: { page, per_page: 1000 } // Maximize per_page
-            });
-            if (response.data.length === 0) break;
-            allArticles = allArticles.concat(response.data);
-            page++;
-        } catch (error) {
-            console.error("Error fetching articles:", error);
-            process.exit(1);
-        }
+  let page = 1;
+  let allArticles: any[] = [];
+  while (true) {
+    try {
+      const response = await axios.get("https://dev.to/api/articles/me/all", {
+        headers: { "api-key": API_KEY },
+        params: { page, per_page: 1000 }, // Maximize per_page
+      });
+      if (response.data.length === 0) break;
+      allArticles = allArticles.concat(response.data);
+      page++;
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+      process.exit(1);
     }
-    return allArticles;
+  }
+  return allArticles;
 }
 
 async function processFile(filePath: string, canonicalMap: Map<string, any>) {
@@ -97,41 +97,45 @@ async function processFile(filePath: string, canonicalMap: Map<string, any>) {
       body_markdown: parsed.content, // Content without frontmatter (gray-matter splits it)
       published: false, // Always creating as draft first
       canonical_url: metadata.canonicalURL, // Ensure this matches frontmatter key from server
-      tags: metadata.tags.slice(0,4).map((tag: string) => tag.toLowerCase().replace(/\s+/g, "")),
+      tags: metadata.tags
+        .slice(0, 4)
+        .map((tag: string) => tag.toLowerCase().replace(/\s+/g, "")),
       description: metadata.description,
       // series: metadata.series // if we had series support
     },
   };
-  
+
   // Check if article exists
   const existing = canonicalMap.get(metadata.canonicalURL);
 
   if (existing) {
-      if (existing.published) {
-          console.log(`Skipping ${metadata.title} - Already published on Dev.to (ID: ${existing.id})`);
-      } else {
-          console.log(`Updating draft ${metadata.title} (ID: ${existing.id})...`);
-          try {
-              await axios.put(`https://dev.to/api/articles/${existing.id}`, payload, {
-                  headers: { "api-key": API_KEY, "Content-Type": "application/json" }
-              });
-              console.log("Updated successfully.");
-          } catch (e: any) {
-              console.error(`Failed to update ${metadata.title}:`, e.message);
-              if (e.response) console.error(e.response.data);
-          }
-      }
-  } else {
-      console.log(`Creating new draft for ${metadata.title}...`);
+    if (existing.published) {
+      console.log(
+        `Skipping ${metadata.title} - Already published on Dev.to (ID: ${existing.id})`,
+      );
+    } else {
+      console.log(`Updating draft ${metadata.title} (ID: ${existing.id})...`);
       try {
-          await axios.post("https://dev.to/api/articles", payload, {
-              headers: { "api-key": API_KEY, "Content-Type": "application/json" }
-          });
-          console.log("Created successfully.");
+        await axios.put(`https://dev.to/api/articles/${existing.id}`, payload, {
+          headers: { "api-key": API_KEY, "Content-Type": "application/json" },
+        });
+        console.log("Updated successfully.");
       } catch (e: any) {
-          console.error(`Failed to create ${metadata.title}:`, e.message);
-           if (e.response) console.error(e.response.data);
+        console.error(`Failed to update ${metadata.title}:`, e.message);
+        if (e.response) console.error(e.response.data);
       }
+    }
+  } else {
+    console.log(`Creating new draft for ${metadata.title}...`);
+    try {
+      await axios.post("https://dev.to/api/articles", payload, {
+        headers: { "api-key": API_KEY, "Content-Type": "application/json" },
+      });
+      console.log("Created successfully.");
+    } catch (e: any) {
+      console.error(`Failed to create ${metadata.title}:`, e.message);
+      if (e.response) console.error(e.response.data);
+    }
   }
 }
 
