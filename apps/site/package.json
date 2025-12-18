@@ -16,7 +16,6 @@
   "devDependencies": {
     "@internationalized/date": "^3.10.0",
     "@lucide/svelte": "^0.544.0",
-    "@rehype-pretty/transformers": "^0.13.2",
     "@sveltejs/adapter-auto": "^7.0.0",
     "@sveltejs/adapter-cloudflare": "^7.2.4",
     "@sveltejs/adapter-static": "^3.0.10",
@@ -50,7 +49,6 @@
     "paneforge": "^1.0.2",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-parse": "^9.0.1",
-    "rehype-pretty-code": "^0.14.1",
     "rehype-remark": "^10.0.1",
     "rehype-remove-comments": "^6.1.1",
     "rehype-slug": "^6.0.0",
