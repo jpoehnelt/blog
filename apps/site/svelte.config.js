@@ -1,13 +1,14 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { enhancedImages } from "@sveltejs/enhanced-img";
-import { mdsvex } from "mdsvex";
+import { mdsvex, escapeSvelte } from "mdsvex";
+import { codeToHtml } from "shiki";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
+
+const theme = "github-dark";
 
 const config = {
   trailingSlash: "always",
@@ -17,6 +18,12 @@ const config = {
     enhancedImages(),
     mdsvex({
       extensions: [".md", ".mdx"],
+      highlight: {
+        highlighter: async (code, lang = "text") => {
+          const html = escapeSvelte(await codeToHtml(code, { lang, theme }));
+          return `{@html \`${html}\` }`;
+        },
+      },
       remarkPlugins: [remarkGfm, remarkInlineLinks],
       rehypePlugins: [
         rehypeSlug,
@@ -28,21 +35,6 @@ const config = {
               className: ["link-hover"],
               "aria-label": "Link to section",
             },
-          },
-        ],
-        [
-          rehypePrettyCode,
-          {
-            theme: {
-              light: "github-light",
-              dark: "github-dark",
-            },
-            transformers: [
-              transformerCopyButton({
-                visibility: "hover",
-                feedbackDuration: 3_000,
-              }),
-            ],
           },
         ],
       ],
