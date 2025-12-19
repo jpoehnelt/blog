@@ -123,11 +123,6 @@
     @apply bg-background text-foreground;
   }
 
-  /* Enhanced prose typography */
-  .prose {
-    @apply max-w-[75ch];
-  }
-
   /* Improved link styling with underline */
   .prose a {
     @apply text-foreground no-underline hover:underline;

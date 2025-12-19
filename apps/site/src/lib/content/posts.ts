@@ -11,6 +11,11 @@ import rehypeRemark from "rehype-remark";
 import remarkGfm from "remark-gfm";
 import remarkStringify from "remark-stringify";
 
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
+
 const CONTENT_BASE_PATH = "/src/content/posts";
 
 // Eager load only metadata for fast listings
@@ -24,6 +29,12 @@ export const postsMetadata: Record<string, any> = import.meta.glob(
 
 // Lazy load full post content on-demand
 const posts = import.meta.glob("/src/content/posts/*.md");
+
+// Lazy load raw content for TOC extraction
+const postsRaw = import.meta.glob("/src/content/posts/*.md", {
+  query: "?raw",
+  import: "default",
+});
 
 export const getPostContent = async (id: string): Promise<Component> => {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
@@ -165,4 +176,57 @@ export async function getPostMarkdown(id: string): Promise<string> {
       .use(remarkStringify)
       .process(body),
   );
+}
+export type TocItem = {
+  id: string;
+  text: string;
+  depth: number;
+};
+
+export async function getPostToc(id: string): Promise<TocItem[]> {
+  const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
+  const postLoader = postsRaw[filePath];
+
+  if (!postLoader) {
+    throw error(404, `Not found: ${id}`);
+  }
+
+  try {
+    const raw = (await postLoader()) as string;
+
+    const toc: TocItem[] = [];
+
+    await unified()
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeSlug)
+      .use(rehypeStringify)
+      .use(() => (tree) => {
+        visit(tree, "element", (node: any) => {
+          if (["h2", "h3"].includes(node.tagName) && node.properties?.id) {
+            toc.push({
+              id: node.properties.id,
+              text: getHastText(node), 
+              depth: parseInt(node.tagName.substring(1)),
+            });
+          }
+        });
+      })
+      .process(raw);
+
+    return toc;
+  } catch (e) {
+    console.error(`Error generating TOC for ${id}:`, e);
+    // Return empty TOC to allow build to continue
+    return [];
+  }
+}
+
+// Helper to extract text from HAST node
+function getHastText(node: any): string {
+  if (node.type === "text") return node.value;
+  if (node.children) {
+    return node.children.map(getHastText).join("");
+  }
+  return "";
 }
