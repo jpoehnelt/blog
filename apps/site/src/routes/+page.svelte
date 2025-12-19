@@ -15,6 +15,9 @@
 
   import type { PageProps } from "./$types";
 
+  import JsonLd from "$lib/components/JsonLd.svelte";
+  import type { Thing, WithContext } from "schema-dts";
+
   let { data }: PageProps = $props();
 
   const recentPosts = data.posts;
@@ -23,25 +26,35 @@
   const featuredPost = recentPosts[0];
   const otherPosts = recentPosts.slice(1);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    address: {
-      "@type": "PostalAddress",
-      addressRegion: "CO",
+  const schema: WithContext<Thing>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: DEFAULT_TITLE,
+      url: BASE_URL,
+      author: {
+        "@type": "Person",
+        name: AUTHOR_NAME,
+      },
+      description: DEFAULT_DESCRIPTION,
     },
-    jobTitle: "Software Engineer",
-    name: AUTHOR_NAME,
-    url: BASE_URL,
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: AUTHOR_NAME,
+      url: BASE_URL,
+      jobTitle: "Software Engineer",
+      sameAs: [
+        "https://github.com/jpoehnelt",
+        "https://www.linkedin.com/in/justin-poehnelt",
+        "https://www.strava.com/athletes/2170160",
+      ],
+    },
+  ];
 </script>
 
-<Head
-  title={DEFAULT_TITLE}
-  description={DEFAULT_DESCRIPTION}
-  pathname="/"
-  {jsonLd}
-/>
+<Head title={DEFAULT_TITLE} description={DEFAULT_DESCRIPTION} pathname="/" />
+<JsonLd {schema} />
 
 <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-foreground">
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -127,17 +140,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
         {#each otherPosts.slice(0, 20) as post}
           <article class="flex flex-col h-full">
-            <h4
-              class="text-xl font-bold mb-2 leading-snug hover:underline"
-            >
+            <h4 class="text-xl font-bold mb-2 leading-snug hover:underline">
               <a href={post.relativeURL}>{post.title}</a>
             </h4>
             <div class="text-xs text-muted-foreground mb-2">
               <FormattedDate date={post.pubDate} />
             </div>
-            <p
-              class="text-sm line-clamp-3 text-muted-foreground flex-grow"
-            >
+            <p class="text-sm line-clamp-3 text-muted-foreground flex-grow">
               {post.description}
             </p>
           </article>

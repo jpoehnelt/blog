@@ -5,14 +5,86 @@
   import { initGoogleMaps, importLibrary } from "$lib/maps";
   import polyline from "@mapbox/polyline";
   import { Button } from "$lib/components/ui/button";
-    import { getActivityDescription, getActivitySlug, slugify } from "$lib/content/strava";
+  import { getActivityDescription, getActivitySlug, slugify } from "$lib/content/strava";
   import StravaLink from "$lib/components/StravaLink.svelte";
   import StravaSegmentList from "$lib/components/StravaSegmentList.svelte";
+  import JsonLd from "$lib/components/JsonLd.svelte";
+  import type { ExerciseAction, SportsEvent, BreadcrumbList, Thing, WithContext } from "schema-dts";
+  import { AUTHOR_NAME, BASE_URL } from "$lib/constants";
 
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
   const { activity } = data;
+
+  const canonicalURL = new URL(`/activities/${getActivitySlug(activity)}`, BASE_URL).toString();
+
+  let schema: WithContext<Thing>[] = $derived.by(() => {
+    const list: WithContext<Thing>[] = [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: BASE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Activities",
+            item: new URL("/activities", BASE_URL).toString(),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: activity.name || "Activity",
+            item: canonicalURL,
+          },
+        ],
+      } as WithContext<BreadcrumbList>,
+      {
+        "@context": "https://schema.org",
+        "@type": "ExerciseAction",
+        agent: {
+          "@type": "Person",
+          name: AUTHOR_NAME,
+        },
+        name: activity.name,
+        description: getActivityDescription(activity),
+        startTime: activity.start_date?.toString(),
+        distance: {
+          "@type": "Distance",
+          name: `${((activity.distance || 0) / 1000).toFixed(2)} km`,
+        },
+        duration: `PT${activity.moving_time}S`,
+        url: canonicalURL,
+      } as WithContext<ExerciseAction>,
+    ];
+
+    if ((activity as any).workout_type === 1) {
+      list.push({
+        "@context": "https://schema.org",
+        "@type": "SportsEvent",
+        name: activity.name,
+        description: "Running Race",
+        startDate: activity.start_date?.toString(),
+        location: {
+          "@type": "Place",
+          name: (activity as any).location_city || "Race Course",
+        },
+        competitor: {
+          "@type": "Person",
+          name: AUTHOR_NAME,
+        },
+      } as WithContext<SportsEvent>);
+    }
+
+    return list;
+  });
+
 
   let mapElement: any = $state();
   let polylineElement: any = $state();
@@ -74,6 +146,8 @@
   description={getActivityDescription(activity)}
   pathname={`/activities/${activity.id}`}
 />
+
+<JsonLd {schema} />
 
 <main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
   <article class="prose prose-lg max-w-none">
