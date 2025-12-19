@@ -5,7 +5,9 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
   const posts = getPostsMetadata();
-  const activities = await getStravaActivities();
+  const activities = getStravaActivities().filter(
+    (a: any) => a.type === "Run" || a.sport_type === "Run",
+  );
   const races = activities.filter((a) => (a as any).workout_type === 1);
   const tags = getTagsWithCounts();
 
