@@ -22,6 +22,9 @@
   }: Props = $props();
 
   const canonicalURL = new URL(pathname, BASE_URL).toString();
+  const imageURL = imagePath 
+    ? new URL(imagePath, BASE_URL).toString() 
+    : undefined;
 </script>
 
 <svelte:head>
@@ -37,6 +40,9 @@
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
+  {#if imageURL}
+    <meta property="og:image" content={imageURL} />
+  {/if}
 
   {#if type === "article" && publishedTime}
     <meta property="article:published_time" content={publishedTime} />
@@ -50,4 +56,7 @@
   <meta property="twitter:url" content={canonicalURL} />
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={description} />
+  {#if imageURL}
+    <meta property="twitter:image" content={imageURL} />
+  {/if}
 </svelte:head>
