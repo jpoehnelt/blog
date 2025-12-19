@@ -31,13 +31,13 @@ The workflow is pretty simple, but also incomplete.
 4. Use the Cloud Translation API to translate the message to the target language.
 5. Send the translated message back to the user via the Webhook Response Node.
 
-<Image src="src/images/n8n-google-chat-app-workflow.png" alt="n8n workflow for a Google Chat App" />
+<Image src="n8n-google-chat-app-workflow.png" alt="n8n workflow for a Google Chat App" />
 
 You can download the workflow source from: https://gist.github.com/jpoehnelt/b8327c11c77a3228e9f2ef1727d48a8f
 
 Here are the settings for the Chat node.
 
-<Image src="src/images/n8n-chat-app-node.png" alt="n8n Google Chat App node settings" />
+<Image src="n8n-chat-app-node.png" alt="n8n Google Chat App node settings" />
 
 The finally node in the slash command path responds with JSON matching the following, which is basically a concatenation of the [Cloud Translation API response](https://cloud.google.com/translate/docs/reference/rest/v3/TranslateTextResponse#Translation):
 
@@ -49,17 +49,17 @@ The finally node in the slash command path responds with JSON matching the follo
 
 The app is obviously not very refined, but it works! 🎉
 
-<Image src="src/images/n8n-google-chat-demo.gif" alt="n8n demo for a Google Chat App" />
+<Image src="n8n-google-chat-demo.gif" alt="n8n demo for a Google Chat App" />
 
 ## Chat App config
 
 There isn't much exciting about the Chat App config.
 
-<Image src="src/images/n8n-chat-app-config-basics.png" alt="Chat App config basics" />
+<Image src="n8n-chat-app-config-basics.png" alt="Chat App config basics" />
 
 The Google Chat App interactivity is configured with a slash command that sends a POST request to the webhook URL. The URL is the n8n webhook URL. The slash command is `/translate` and the parameters are `language` and `text`, the only code I had to write!
 
-<Image src="src/images/n8n-chat-app-config-interactivity.png" alt="Chat App config interactivity" />
+<Image src="n8n-chat-app-config-interactivity.png" alt="Chat App config interactivity" />
 
 ## TODOs
 

@@ -31,15 +31,15 @@ As part of a little side project, I wanted to log all Firestore writes for a use
 
 There are a few moving parts to this solution, but it's pretty automatic.
 
-<Image src="src/images/firestore-audit-logs-to-collection.png" alt="Firestore Audit Logs to Collection" />
+<Image src="firestore-audit-logs-to-collection.png" alt="Firestore Audit Logs to Collection" />
 
 1. Audit Logs are enabled for Firestore writes
 
-<Image src="src/images/firestore-audit-logs.png" alt="Enable Firestore Audit Logs" />
+<Image src="firestore-audit-logs.png" alt="Enable Firestore Audit Logs" />
 
 2. Logs are sent to a Pub/Sub topic via a sink
 
-<Image src="src/images/activity-logs-sink-pubsub.jpeg" alt="Create PubSub Sink" />
+<Image src="activity-logs-sink-pubsub.jpeg" alt="Create PubSub Sink" />
 
 3. Cloud Function is triggered by Pub/Sub message
 
@@ -77,4 +77,4 @@ export default functions.pubsub
 
 4. Cloud Function writes to Firestore
 
-<Image src="src/images/firestore-activity-collection-document.jpeg" alt="User Collection Containing Activity" />
+<Image src="firestore-activity-collection-document.jpeg" alt="User Collection Containing Activity" />

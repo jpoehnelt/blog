@@ -1,20 +1,20 @@
-import * as v from "valibot";
-import type { Component } from "svelte";
-import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
+import { BASE_URL, POSTS_PREFIX, PUBLIC_IMAGES_PREFIX } from "$lib/constants";
 import { error } from "@sveltejs/kit";
-import { unified } from "unified";
-import { visit } from "unist-util-visit";
-import { render } from "svelte/server";
+import type { Element } from "hast";
 import rehypeParse from "rehype-parse";
-import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeRemark from "rehype-remark";
-import remarkGfm from "remark-gfm";
-import remarkStringify from "remark-stringify";
-
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
+import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import remarkStringify from "remark-stringify";
+import type { Component } from "svelte";
+import { render } from "svelte/server";
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import * as v from "valibot";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -160,15 +160,40 @@ export async function getPostMarkdown(id: string): Promise<string> {
       .use(rehypeParse)
       .use(rehypeRemoveComments)
       .use(() => (tree) => {
-        visit(tree, "element", (node: any) => {
-          ["href", "src", "poster"].forEach((attr) => {
-            if (node.properties?.[attr]?.startsWith("/")) {
-              node.properties[attr] = new URL(
-                node.properties[attr],
+        visit(tree, "element", (node: Element) => {
+          if (node.properties?.dataOriginalSrc) {
+            const originalSrc = String(node.properties.dataOriginalSrc);
+
+            // Check if it's a relative path (not absolute and not http/https)
+            // and assume it corresponds to an image in the images directory.
+            // We previously checked for SOURCE_IMAGES_DIR, but now we support direct filenames.
+            const isRelative =
+              !originalSrc.startsWith("/") && !originalSrc.startsWith("http");
+
+            if (isRelative) {
+              // Strip potential "./" prefix if present
+              const imagePath = originalSrc.replace(/^\.\//, "");
+
+              const newUrl = new URL(
+                `${PUBLIC_IMAGES_PREFIX}${imagePath}`,
                 BASE_URL,
               ).toString();
+
+              if (node.tagName === "img") {
+                node.properties.src = newUrl;
+              }
+              if (node.tagName === "a") {
+                node.properties.href = newUrl;
+              }
             }
-          });
+          } else {
+            ["href", "src", "poster"].forEach((attr) => {
+              const value = node.properties?.[attr];
+              if (typeof value === "string" && value.startsWith("/")) {
+                node.properties[attr] = new URL(value, BASE_URL).toString();
+              }
+            });
+          }
         });
       })
       .use(rehypeRemark)

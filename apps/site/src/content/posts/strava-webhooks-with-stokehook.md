@@ -39,7 +39,7 @@ The app basically does the following.
 
 The interface for the app is pretty simple.
 
-<Image src="src/images/stokehook-settings.png" alt="Settings" />
+<Image src="stokehook-settings.png" alt="Settings" />
 
 ## Payload
 

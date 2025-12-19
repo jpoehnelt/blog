@@ -55,7 +55,7 @@ jobs:
 
 My workflow now runs the build and then the preview and test steps in parallel. The preview job can also use a matrix without needing to rebuild the workspace after this change.
 
-<Image src="src/images/parallel-github-workflow.png" alt="Optimized parallel jobs in a GitHub workflow" />
+<Image src="parallel-github-workflow.png" alt="Optimized parallel jobs in a GitHub workflow" />
 
 This new action is a great way to optimize your GitHub Actions workflows and reduce the time it takes to run your CI/CD pipeline. I hope you find it useful, just include the following:
 

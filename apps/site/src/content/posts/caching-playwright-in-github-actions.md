@@ -35,14 +35,14 @@ The primary issue that I've had with caching the binaries is that while the bina
 
 And it works! 🎉
 
-<Image src="src/images/playwright-caching.png" alt="Output for the GitHub action with Playwright browser binaries cached" />
+<Image src="playwright-caching.png" alt="Output for the GitHub action with Playwright browser binaries cached" />
 
 If you don't do this properly, you might run into the following error.
 
 > Host system is missing dependencies to run browsers.
 
-<Image src="src/images/playwright-missing-dependencies-to-run-browsers.png" alt="Missing dependencies to run browsers" />
+<Image src="playwright-missing-dependencies-to-run-browsers.png" alt="Missing dependencies to run browsers" />
 
 Without any caching, the build took 1 minute and 43 seconds. With caching, but still installing the host dependencies, the time was 45 seconds, plus about 17 seconds for cache loading/saving, leading to a reduction of about 40 seconds for every build.
 
-<Image src="src/images/playwright-build-time-without-caching.png" alt="Build time without caching" />
+<Image src="playwright-build-time-without-caching.png" alt="Build time without caching" />

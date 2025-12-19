@@ -55,7 +55,7 @@ I was unable to get the cache working with GCR. I'm not sure if it's a bug or if
 
 I also created a custom role based upon `Storage Legacy Bucket Writer` to add to the `github-deployer@` service account.
 
-<Image src="src/images/container-pusher-role.png" alt="Custom role for pushing images to gcr.io" />
+<Image src="container-pusher-role.png" alt="Custom role for pushing images to gcr.io" />
 
 This includes the following permissions.
 
