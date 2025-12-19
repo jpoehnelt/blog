@@ -4,6 +4,8 @@
   import Image from "$lib/components/content/Image.svelte";
   import ActivityList from "$lib/components/ActivityList.svelte";
   import PostTagCloud from "$lib/components/PostTagCloud.svelte";
+  import RunningChart from "$lib/components/RunningChart.svelte";
+  import ActivityListItem from "$lib/components/ActivityListItem.svelte";
   import {
     DEFAULT_TITLE,
     BASE_URL,
@@ -18,6 +20,8 @@
   const recentPosts = data.posts;
   const recentActivities = data.activities.slice(0, 10);
   const recentRaces = data.races;
+  const featuredPost = recentPosts[0];
+  const otherPosts = recentPosts.slice(1);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -39,64 +43,155 @@
   {jsonLd}
 />
 
-<main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <div class="lg:col-span-2 flex flex-col items-center space-y-8">
-      <!-- Profile Image -->
-      <Image
-        src="src/images/justin-poehnelt.jpg"
-        alt="At the finish of the San Juan Softie 100 mile ultramarathon"
-        class="rounded-full max-w-full sm:max-w-sm mx-auto"
-      />
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-foreground">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <!-- Column 1: Editor's Note (Sidebar) -->
+    <div
+      class="lg:col-span-1 border-r-0 lg:border-r border-border pr-0 lg:pr-8"
+    >
+      <div class="sticky top-8 space-y-8">
+        <section class="space-y-4">
+          <h2
+            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1"
+            id="about"
+          >
+            About
+          </h2>
+          <Image
+            src="src/images/justin-poehnelt.jpg"
+            alt="Justin Poehnelt"
+            class="w-full grayscale contrast-125 filter"
+          />
+          <div class="prose prose-sm">
+            <p>
+              I'm a Developer Relations Engineer at Google, focusing on Google
+              Workspace. My work involves creating tools and supporting the
+              open-source community.
+            </p>
+            <p>
+              Before Google, I had the opportunity to work with geospatial data
+              at Descartes Labs and the US Geological Survey.
+            </p>
+            <p>
+              When I'm not coding, I'm usually running long distances in the
+              mountains of Colorado.
+            </p>
+          </div>
+        </section>
 
-      <!-- Welcome Section -->
-      <section class=" space-y-4">
-        <h1 id="about" class="text-4xl font-bold">About</h1>
-        <p class="text-base leading-relaxed max-w-2xl">
-          I'm a Developer Relations Engineer at Google, focusing on Google
-          Workspace. My work involves creating tools and supporting the
-          open-source community. Before Google, I had the opportunity to work with
-          geospatial data at Descartes Labs and the US Geological Survey. When I'm
-          not coding, I'm usually running long distances in the mountains of
-          Colorado, and I enjoy writing about my experiences in both tech and
-          ultrarunning.
+        <section class="space-y-2">
+          <h3
+            class="text-lg font-bold uppercase border-b border-muted-foreground/50 pb-1"
+          >
+            Topics
+          </h3>
+          <PostTagCloud tags={data.tags.slice(0, 10)} />
+        </section>
+      </div>
+    </div>
+
+    <!-- Column 2 & 3: Main Stories (Headlines) -->
+    <div class="lg:col-span-2 space-y-8">
+      <!-- Featured Story -->
+      <section class="border-b border-border pb-8">
+        <div
+          class="mb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground"
+        >
+          Lead Story
+        </div>
+        <h1
+          class="text-4xl md:text-5xl font-black leading-tight mb-4 hover:underline decoration-4 underline-offset-4"
+        >
+          <a href={featuredPost.relativeURL}>{featuredPost.title}</a>
+        </h1>
+        <div
+          class="flex flex-wrap md:flex-nowrap items-center gap-x-4 mb-4 text-sm font-mono text-muted-foreground border-y border-border py-1"
+        >
+          <div class="whitespace-nowrap shrink-0">
+            <FormattedDate date={featuredPost.pubDate} />
+          </div>
+          {#if featuredPost.tags}
+            <span class="hidden md:inline text-border">|</span>
+            <span class="line-clamp-1 min-w-0 shrink"
+              >{featuredPost.tags.join(", ")}</span
+            >
+          {/if}
+        </div>
+        <p class="text-lg md:text-xl leading-relaxed line-clamp-4">
+          {featuredPost.description ||
+            "Read the latest update from the blog..."}
         </p>
       </section>
 
-      <!-- Tags Section -->
-      <section class="w-full max-w-2xl space-y-4">
-        <h2 id="tags" class="text-2xl font-bold">Tags</h2>
-        <PostTagCloud tags={data.tags} />
-      </section>
-
-      <!-- Recent Posts Section -->
-      <section class="w-full max-w-2xl space-y-4">
-        <h2 id="recent-posts" class="text-2xl font-bold">Recent posts</h2>
-        <ul class="space-y-2">
-          {#each recentPosts as post (post.id)}
-            <li>
-              <FormattedDate date={post.pubDate} /> -
-              <a href={post.relativeURL} class="hover:underline">{post.title}</a>
-            </li>
-          {/each}
-        </ul>
-      </section>
+      <!-- Sub Headlines (Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+        {#each otherPosts.slice(0, 20) as post}
+          <article class="flex flex-col h-full">
+            <h4
+              class="text-xl font-bold mb-2 leading-snug hover:underline"
+            >
+              <a href={post.relativeURL}>{post.title}</a>
+            </h4>
+            <div class="text-xs text-muted-foreground mb-2">
+              <FormattedDate date={post.pubDate} />
+            </div>
+            <p
+              class="text-sm line-clamp-3 text-muted-foreground flex-grow"
+            >
+              {post.description}
+            </p>
+          </article>
+        {/each}
+      </div>
     </div>
 
-    <div class="space-y-8">
-      <!-- Races Section -->
-      {#if recentRaces.length > 0}
-        <section class="w-full max-w-2xl space-y-4">
-          <h2 id="races" class="text-2xl font-bold">Races</h2>
-          <ActivityList activities={recentRaces} />
-        </section>
-      {/if}
+    <!-- Column 4: Sports & Reports -->
+    <div
+      class="lg:col-span-1 border-l-0 lg:border-l border-border pl-0 lg:pl-8 space-y-8"
+    >
+      <!-- Races -->
+      <section>
+        <h2
+          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
+          id="races"
+        >
+          Race Results
+        </h2>
+        {#if recentRaces.length > 0}
+          <div class="space-y-4">
+            {#each recentRaces as race}
+              <ActivityListItem activity={race} />
+            {/each}
+          </div>
+        {:else}
+          <p class="text-sm text-muted-foreground italic">No recent races.</p>
+        {/if}
+      </section>
 
-      <!-- Recent Activities Section -->
-      <section class="w-full max-w-2xl space-y-4">
-        <h2 id="recent-activities" class="text-2xl font-bold">Recent activities</h2>
-        <ActivityList activities={recentActivities} />
+      <!--  Chart -->
+      <section>
+        <RunningChart activities={data.activities} />
+      </section>
+
+      <!-- Activities-->
+      <section>
+        <h2 id="activities">Activities</h2>
+        <div class="max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
+          <ActivityList activities={recentActivities.slice(0, 5)} />
+        </div>
       </section>
     </div>
   </div>
 </main>
+
+<style>
+  @reference "../app.css";
+
+  h2 {
+    @apply text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4;
+  }
+
+  h3 {
+    @apply text-lg font-bold uppercase border-b border-muted-foreground/50 pb-1;
+  }
+</style>
