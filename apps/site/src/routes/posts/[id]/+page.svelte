@@ -3,15 +3,58 @@
   import Head from "$lib/components/Head.svelte";
   import PostList from "$lib/components/PostList.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
-  import { AUTHOR_NAME, LICENSE } from "$lib/constants";
+  import { AUTHOR_NAME, LICENSE, BASE_URL } from "$lib/constants";
   import { siMarkdown } from "simple-icons";
   import BrandIcon from "$lib/components/BrandIcon.svelte";
 
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
+  import JsonLd from "$lib/components/JsonLd.svelte";
+  import type { Thing, WithContext } from "schema-dts";
+
   // Use $derived to ensure PostContent updates when data changes (e.g. navigation)
   let PostContent = $derived(data.PostContent);
+
+  let schema: WithContext<Thing>[] = $derived([
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: data.title,
+      description: data.description,
+      author: {
+        "@type": "Person",
+        name: AUTHOR_NAME,
+      },
+      datePublished: data.pubDate.toISOString(),
+      dateModified: (data.lastMod || data.pubDate).toISOString(),
+      url: data.canonicalURL,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Posts",
+          item: new URL("/posts", BASE_URL).toString(),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: data.title,
+          item: data.canonicalURL,
+        },
+      ],
+    },
+  ]);
 </script>
 
 <Head
@@ -19,6 +62,9 @@
   description={data.description}
   pathname={data.relativeURL}
 />
+
+<JsonLd {schema} />
+
 <svelte:head>
   <meta
     property="article:published_time"

@@ -206,7 +206,7 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
           if (["h2", "h3"].includes(node.tagName) && node.properties?.id) {
             toc.push({
               id: node.properties.id,
-              text: getHastText(node), 
+              text: getHastText(node),
               depth: parseInt(node.tagName.substring(1)),
             });
           }

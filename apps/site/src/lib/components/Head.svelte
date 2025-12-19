@@ -6,10 +6,9 @@
     description: string;
     pathname: string;
     imagePath?: string;
-    jsonLd?: object;
   }
 
-  let { title, description, pathname, imagePath, jsonLd }: Props = $props();
+  let { title, description, pathname, imagePath }: Props = $props();
 
   const canonicalURL = new URL(pathname, BASE_URL).toString();
   // TODO: consider a fallback image
@@ -34,8 +33,4 @@
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={description} />
   <meta property="twitter:image" content={imageURL} />
-
-  {#if jsonLd}
-    {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}
-  {/if}
 </svelte:head>
