@@ -4,7 +4,12 @@ description: >-
   A pattern for persisting the workspace files between parallel jobs in a GitHub
   Workflow.
 pubDate: "2024-03-12"
-tags: "code,GitHub,GitHub Actions,workflows,performance"
+tags:
+  - code
+  - GitHub
+  - GitHub Actions
+  - workflows
+  - performance
 ---
 
 <script>

@@ -4,7 +4,11 @@ description: >-
   A basic pattern for strongly typing Yup schemas in TypeScript using
   conditionals.
 pubDate: "2022-10-01"
-tags: "code,yup,typescript,generics"
+tags:
+  - code
+  - yup
+  - typescript
+  - generics
 ---
 
 This weekend I have been exploring [conditional types in TypeScript](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) to use with Firestore. These take the basic form of `T extends U ? X : Y` and are used to create a new type based on the type of `T`. I was curious if I could use this to create a strongly typed Yup schema.

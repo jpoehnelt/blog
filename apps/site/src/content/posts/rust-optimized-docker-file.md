@@ -4,7 +4,12 @@ description: >-
   A simple Dockerfile for a Rust project that caches dependencies and uses a
   minimal Debian image.
 pubDate: "2024-01-05"
-tags: "code,rust,docker,ops,performance"
+tags:
+  - code
+  - rust
+  - docker
+  - ops
+  - performance
 ---
 
 Below is a simple Dockerfile for a Rust project. It uses a multi-stage build to first build the project and then copy the binary into a new image. This is a common pattern for compiled languages.

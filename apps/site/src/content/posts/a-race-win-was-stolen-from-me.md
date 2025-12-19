@@ -4,9 +4,15 @@ description: >-
   A race director gave the win to two runners that skipped the final climb and
   3.8 miles of the course.
 pubDate: "2023-08-01"
-tags: >-
-  run,ultramarathon,podium,race,red river,new mexico,enchanted forest,gemini
-  adventures
+tags:
+  - run
+  - ultramarathon
+  - podium
+  - race
+  - red river
+  - new mexico
+  - enchanted forest
+  - gemini adventures
 ---
 
 <script>

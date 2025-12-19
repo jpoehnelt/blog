@@ -2,9 +2,14 @@
 title: 2021 Mogollon Monster 100 Mile Race Report
 description: Race report for the 2021 Mogollon Monster 100 mile
 pubDate: "2021-09-18"
-tags: >-
-  run,ultramarathon,100 mile,race report,Arizona,Mogollon Monster,aravaipa
-  running
+tags:
+  - run
+  - ultramarathon
+  - 100 mile
+  - race report
+  - Arizona
+  - Mogollon Monster
+  - aravaipa running
 ---
 
 <script>

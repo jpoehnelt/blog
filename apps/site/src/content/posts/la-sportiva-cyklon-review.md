@@ -2,7 +2,15 @@
 title: La Sportiva Cyklon Cross GTX Review
 description: An ultrarunner reviews the La Sportiva Cyklon Cross GTX for winter running.
 pubDate: "2022-12-31"
-tags: "run,shoe,review,la sportiva,winter,boa,ice,snow"
+tags:
+  - run
+  - shoe
+  - review
+  - la sportiva
+  - winter
+  - boa
+  - ice
+  - snow
 ---
 
 <script>

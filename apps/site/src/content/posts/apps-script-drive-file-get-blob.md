@@ -5,9 +5,17 @@ description: >-
   Script can be a bit tricky due to scopes. Here is a comparison of the three
   main ways to get the Blob of a file in Google Drive and the scopes required.
 pubDate: "2024-03-27"
-tags: >-
-  code,google,google workspace,apps script,blob,pdf,scopes,google workspace
-  addons,restricted scopes,oauth verification
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - blob
+  - pdf
+  - scopes
+  - google workspace addons
+  - restricted scopes
+  - oauth verification
 ---
 
 <script>

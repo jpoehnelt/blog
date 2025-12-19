@@ -4,7 +4,12 @@ description: >-
   Save the date for the Google Workspace Developer Summits in 2024! Boston -
   September 12, 2024 and Berlin - September 17, 2024.
 pubDate: "2024-04-24"
-tags: "code,google,google workspace,apps script,conference"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - conference
 ---
 
 <script>

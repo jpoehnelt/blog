@@ -5,7 +5,14 @@ description: >-
   for the upcoming Moab 240 covering some of the highest and most technical
   sections of the course.
 pubDate: "2023-08-25"
-tags: "run,ultramarathon,200mile,Destination Trails,Moab,Utah,training camp"
+tags:
+  - run
+  - ultramarathon
+  - 200mile
+  - Destination Trails
+  - Moab
+  - Utah
+  - training camp
 ---
 
 Over Labor Day weekend, I am planning a three day training camp for the Moab 240. The camp will cover some of the highest and most technical sections of the course with two days at 50k and another at the marathon distance. I am focusing on the latter part of the course as I [ran (DNF) the first half last year](/posts/2022-moab-240-race-report/).

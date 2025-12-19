@@ -4,7 +4,14 @@ description: >-
   How to use the Vertex AI API in Apps Script to make predictions on your data
   or use it in any of your other Google Workspace processes.
 pubDate: "2023-12-11"
-tags: "code,google,google workspace,apps script,ai,vertex ai,google cloud"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - ai
+  - vertex ai
+  - google cloud
 ---
 
 <script>

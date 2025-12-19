@@ -2,7 +2,11 @@
 title: WMS Layer on Google Maps
 description: Instructions for adding a WMS Layer to Google Maps
 pubDate: "2019-10-19"
-tags: "code,google maps,wms,javascript"
+tags:
+  - code
+  - google maps
+  - wms
+  - javascript
 ---
 
 <script>

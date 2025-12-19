@@ -4,9 +4,18 @@ description: >-
   Race Report for the 2022 Creede 100 mile ultramarathon. I finished 2nd in
   29:16:01.
 pubDate: "2022-09-04"
-tags: >-
-  run,race report,ultramarathon,100mile,Tempest
-  Adventures,elevation,HAPE,Colorado Trail,cdt,Hoka Tecton X,Colorado
+tags:
+  - run
+  - race report
+  - ultramarathon
+  - 100mile
+  - Tempest Adventures
+  - elevation
+  - HAPE
+  - Colorado Trail
+  - cdt
+  - Hoka Tecton X
+  - Colorado
 ---
 
 <script>

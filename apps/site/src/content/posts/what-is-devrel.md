@@ -4,7 +4,12 @@ description: >
   DevRel is a lot things: marketing, engineering, product management, support;
   my experience as a Developer Relations Engineer at Google.
 pubDate: "2022-05-11"
-tags: "code,devrel,developer relations engineer,google,google maps"
+tags:
+  - code
+  - devrel
+  - developer relations engineer
+  - google
+  - google maps
 ---
 
 <script>

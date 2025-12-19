@@ -4,7 +4,13 @@ description: >-
   Firestore can be a powerful tool when using Apps Script. This post shows how
   to use the [Firestore REST API] in Apps Script.
 pubDate: "2024-01-10"
-tags: "code,google,google workspace,apps script,firestore,google cloud"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - firestore
+  - google cloud
 ---
 
 <script>

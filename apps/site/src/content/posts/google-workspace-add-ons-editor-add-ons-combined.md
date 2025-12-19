@@ -5,7 +5,14 @@ description: >-
   could be a powerful way to build Add-ons for Google Workspace but with some
   caveats.
 pubDate: "2023-11-30"
-tags: "code,google,workspace,add-ons,google workspace,apps script,hacking"
+tags:
+  - code
+  - google
+  - workspace
+  - add-ons
+  - google workspace
+  - apps script
+  - hacking
 ---
 
 <script>

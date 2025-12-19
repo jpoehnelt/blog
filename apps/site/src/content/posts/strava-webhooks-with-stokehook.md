@@ -2,7 +2,12 @@
 title: Strava Webhooks with Stokehook.com
 description: "An app I built using Svelte, Firebase, and the Strava API."
 pubDate: "2022-06-03"
-tags: "code,run,strava,automation,webhook"
+tags:
+  - code
+  - run
+  - strava
+  - automation
+  - webhook
 ---
 
 <script>

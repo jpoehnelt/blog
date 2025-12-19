@@ -4,7 +4,12 @@ description: >-
   A SvelteKit store that automatically converts slugs to UUIDs from the URL path
   parameters.
 pubDate: "2024-03-31"
-tags: "code,svelte,sveltekit,uuid,slug"
+tags:
+  - code
+  - svelte
+  - sveltekit
+  - uuid
+  - slug
 ---
 
 <script>

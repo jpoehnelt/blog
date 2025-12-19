@@ -1,8 +1,17 @@
 ---
-title: "Securing Gmail AI Agents against Prompt Injection with Model Armor"
-description: "Securing Gmail AI agents against Prompt Injection and untrusted content using Google Cloud Model Armor."
-pubDate: 2025-12-18
-tags: ai,security,mcp,google cloud,gmail,apps script,prompt
+title: Securing Gmail AI Agents against Prompt Injection with Model Armor
+description: >-
+  Securing Gmail AI agents against Prompt Injection and untrusted content using
+  Google Cloud Model Armor.
+pubDate: 2025-12-18T00:00:00.000Z
+tags:
+  - ai
+  - security
+  - mcp
+  - google cloud
+  - gmail
+  - apps script
+  - prompt
 syndicate: true
 ---
 

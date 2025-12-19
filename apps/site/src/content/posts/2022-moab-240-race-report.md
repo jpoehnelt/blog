@@ -2,7 +2,14 @@
 title: 2022 Moab 240 DNF
 description: "Race Report for the 2022 Moab 240. I had a DNF at the midpoint, Shay Mountain."
 pubDate: "2022-10-13"
-tags: "run,race report,ultramarathon,200mile,Destination Trails,Moab,Utah"
+tags:
+  - run
+  - race report
+  - ultramarathon
+  - 200mile
+  - Destination Trails
+  - Moab
+  - Utah
 ---
 
 <script>

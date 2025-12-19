@@ -5,7 +5,13 @@ description: >-
   50k Saturday, 50k Sunday version second overall in a little over 11 hours
   total.
 pubDate: "2022-04-09"
-tags: "run,race report,ultramarathon,50k,Sedona,Arizona"
+tags:
+  - run
+  - race report
+  - ultramarathon
+  - 50k
+  - Sedona
+  - Arizona
 ---
 
 <script>

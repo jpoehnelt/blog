@@ -6,9 +6,15 @@ description: >-
   Understand their strengths and weaknesses to choose the best approach for your
   project.
 pubDate: "2024-03-29"
-tags: >-
-  code,google,google workspace,apps script,google script run,doGet,doPost,apps
-  script web app
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - google script run
+  - doGet
+  - doPost
+  - apps script web app
 ---
 
 <script>

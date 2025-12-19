@@ -4,7 +4,12 @@ description: >-
   Recently I had to clarify some confusion around the title and name of a Google
   Form. Here is a quick explanation of the difference between the two.
 pubDate: "2024-10-29"
-tags: "code,google,google workspace,apps script,google forms"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - google forms
 ---
 
 <script>

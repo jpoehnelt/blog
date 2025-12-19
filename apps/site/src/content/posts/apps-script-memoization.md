@@ -4,7 +4,12 @@ description: >-
   A generic Apps Script memoization function can be written to cache any
   function.
 pubDate: "2023-12-11"
-tags: "code,google,google workspace,apps script,memoization"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - memoization
 ---
 
 <script>

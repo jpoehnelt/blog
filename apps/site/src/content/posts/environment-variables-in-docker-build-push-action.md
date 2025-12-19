@@ -4,7 +4,12 @@ description: >-
   A basic pattern for passing environment variables to the
   docker/build-push-action from a GitHub secret.
 pubDate: "2022-09-22"
-tags: "code,GitHub,docker,environment variables,workflows"
+tags:
+  - code
+  - GitHub
+  - docker
+  - environment variables
+  - workflows
 ---
 
 I recently ran into an issue where I was required to pass environment variables into a Docker container. I was using the [docker/build-push-action](https://github.com/docker/build-push-action) to build and push the container and everything was working fine until I needed the `SENTRY_AUTH_TOKEN` environment variable as part of the build step for my NextJS application.

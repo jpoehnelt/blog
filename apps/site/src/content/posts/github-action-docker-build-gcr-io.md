@@ -2,7 +2,13 @@
 title: "Using Google Container Registry, Docker Buildx, and GitHub Actions"
 description: A pattern for authenticating to gcr.io from docker/build-push-action.
 pubDate: "2022-09-22"
-tags: "code,GitHub,docker,gcr,workflows,google cloud"
+tags:
+  - code
+  - GitHub
+  - docker
+  - gcr
+  - workflows
+  - google cloud
 ---
 
 <script>

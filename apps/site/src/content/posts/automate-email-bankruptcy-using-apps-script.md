@@ -2,7 +2,13 @@
 title: Automate Email Bankruptcy using Apps Script
 description: Archiving emails older than 30 days automatically.
 pubDate: "2020-04-28"
-tags: "code,google,apps script,google workspace,automation,email"
+tags:
+  - code
+  - google
+  - apps script
+  - google workspace
+  - automation
+  - email
 ---
 
 <script>

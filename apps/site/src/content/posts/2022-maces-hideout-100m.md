@@ -4,7 +4,13 @@ description: >-
   Race Report for the 2022 Mace's Hideout 100 mile ultramarathon. I finished 3th
   in 29:20:53.
 pubDate: "2022-06-13"
-tags: "run,race report,ultramarathon,100mile,Tempest Adventures,Colorado"
+tags:
+  - run
+  - race report
+  - ultramarathon
+  - 100mile
+  - Tempest Adventures
+  - Colorado
 ---
 
 <script>

@@ -2,7 +2,14 @@
 title: Microservice Usage Logging with Openresty and Google BigQuery
 description: Using Lua to log requests to BigQuery.
 pubDate: "2017-04-21"
-tags: "code,bigquery,google,descartes labs,logging,openresty,nginx"
+tags:
+  - code
+  - bigquery
+  - google
+  - descartes labs
+  - logging
+  - openresty
+  - nginx
 ---
 
 <script>

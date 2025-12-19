@@ -2,7 +2,14 @@
 title: A look back at running in 2022 and plans for 2023
 description: In 2022 I ran nearly 2400 miles and have big plans for 2023
 pubDate: "2022-12-31"
-tags: "run,racing,ultramarathon,Moab,utmb,dnf,canyons"
+tags:
+  - run
+  - racing
+  - ultramarathon
+  - Moab
+  - utmb
+  - dnf
+  - canyons
 ---
 
 <script>
