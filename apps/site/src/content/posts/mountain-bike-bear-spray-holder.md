@@ -2,7 +2,10 @@
 title: Mountain Bike Bear Spray Holder
 description: Instructions for a DIY mountain bike bear spray holder
 pubDate: "2021-09-20"
-tags: "bear spray,mtb,mountain bike"
+tags:
+  - bear spray
+  - mtb
+  - mountain bike
 ---
 
 <script>

@@ -4,9 +4,14 @@ description: >-
   Avoid downloading private service account keys by using impersonation in Apps
   Script to obtain access tokens.
 pubDate: "2024-01-10"
-tags: >-
-  code,google,google workspace,apps script,service accounts,google
-  cloud,security
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - service accounts
+  - google cloud
+  - security
 ---
 
 <script>

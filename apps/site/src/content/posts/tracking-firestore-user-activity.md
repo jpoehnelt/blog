@@ -4,7 +4,14 @@ description: >-
   Capture all user activity in a Firestore collection using Audit Logs, Pub/Sub,
   and Cloud Functions.
 pubDate: "2022-10-21"
-tags: "code,firestore,pubsub,functions,firebase,audit,logs"
+tags:
+  - code
+  - firestore
+  - pubsub
+  - functions
+  - firebase
+  - audit
+  - logs
 ---
 
 <script>

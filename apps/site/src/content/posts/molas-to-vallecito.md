@@ -4,7 +4,12 @@ description: >-
   A solo adventure running 36 miles from Molas Lake to Vallecito Reservoir in
   the Weminuche Wilderness
 pubDate: "2020-07-20"
-tags: "run,ultrarun,Colorado Trail,Weminuche Wilderness,Colorado"
+tags:
+  - run
+  - ultrarun
+  - Colorado Trail
+  - Weminuche Wilderness
+  - Colorado
 ---
 
 <script>

@@ -4,7 +4,13 @@ description: >-
   Understanding and treating a new running injury, Chronic Exertional
   Compartment Syndrome. Can I run? Can I race?
 pubDate: "2022-04-15"
-tags: "run,ultramarathon,injury,therapy,cocodona,exertional compartment syndrome"
+tags:
+  - run
+  - ultramarathon
+  - injury
+  - therapy
+  - cocodona
+  - exertional compartment syndrome
 ---
 
 <script>

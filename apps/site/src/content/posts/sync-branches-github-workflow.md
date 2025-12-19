@@ -4,7 +4,11 @@ description: >-
   It is easy to sync branches in a GitHub workflow without using a third party
   GitHub Action.
 pubDate: "2022-04-12"
-tags: "code,GitHub,automation,workflows"
+tags:
+  - code
+  - GitHub
+  - automation
+  - workflows
 ---
 
 ## Problem

@@ -4,8 +4,14 @@ description: >-
   Link shared about: Alfalfa Uses More Water Than All Cities, Industries in
   Colorado River Basin
 pubDate: "2024-04-04"
-tags: >-
-  link,coloradosun-com,water-scarcity,beef-consumption,western-united-states,colorado-river-basin,alfalfa-water-use
+tags:
+  - link
+  - coloradosun-com
+  - water-scarcity
+  - beef-consumption
+  - western-united-states
+  - colorado-river-basin
+  - alfalfa-water-use
 ---
 
 <script>

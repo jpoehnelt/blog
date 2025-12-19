@@ -2,6 +2,14 @@ import * as v from "valibot";
 import type { Component } from "svelte";
 import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
 import { error } from "@sveltejs/kit";
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import { render } from "svelte/server";
+import rehypeParse from "rehype-parse";
+import rehypeRemoveComments from "rehype-remove-comments";
+import rehypeRemark from "rehype-remark";
+import remarkGfm from "remark-gfm";
+import remarkStringify from "remark-stringify";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -55,14 +63,7 @@ export const postMetadataSchema = v.object({
       v.date(),
     ),
   ),
-  tags: v.pipe(
-    v.string(),
-    v.regex(
-      /^(?:[A-Za-z0-9._~\s-]|%[0-9A-Fa-f]{2})+(?:,(?:[A-Za-z0-9._~\s-]|%[0-9A-Fa-f]{2})+)*$/,
-      "Must be comma-separated tag segments.",
-    ),
-    v.transform((value) => value.split(",")),
-  ),
+  tags: v.array(v.string()),
   tweet: v.optional(v.pipe(v.string(), v.trim())),
   syndicate: v.optional(v.boolean(), false),
 });
@@ -136,4 +137,32 @@ export function getTagsWithCounts() {
       }
       return a.tag.localeCompare(b.tag);
     });
+}
+
+export async function getPostMarkdown(id: string): Promise<string> {
+  const { body } = render(await getPostContent(id), {});
+  const metadata = getPostMetadata(id);
+
+  // Convert HTML back to Markdown using unified pipeline
+  return String(
+    await unified()
+      .use(rehypeParse)
+      .use(rehypeRemoveComments)
+      .use(() => (tree) => {
+        visit(tree, "element", (node: any) => {
+          ["href", "src", "poster"].forEach((attr) => {
+            if (node.properties?.[attr]?.startsWith("/")) {
+              node.properties[attr] = new URL(
+                node.properties[attr],
+                BASE_URL,
+              ).toString();
+            }
+          });
+        });
+      })
+      .use(rehypeRemark)
+      .use(remarkGfm)
+      .use(remarkStringify)
+      .process(body),
+  );
 }

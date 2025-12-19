@@ -4,7 +4,13 @@ description: >-
   Announcing the new Google Workspace Developer Tools extension for VS Code,
   working with Antigravity and providing OAuth2 scope linting and MCP support.
 pubDate: "2025-12-16"
-tags: "google workspace,vscode,developer tools,mcp,scopes,oauth"
+tags:
+  - google workspace
+  - vscode
+  - developer tools
+  - mcp
+  - scopes
+  - oauth
 syndicate: true
 ---
 

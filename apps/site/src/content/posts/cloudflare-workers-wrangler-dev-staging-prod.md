@@ -4,7 +4,14 @@ description: >-
   Deploying Cloudflare workers to dev, staging, and prod with Wrangler and
   automatically promoting with GitHub actions.
 pubDate: "2024-02-04"
-tags: "code,Cloudflare,ops,wrangler,Cloudflare workers,staging,edge"
+tags:
+  - code
+  - Cloudflare
+  - ops
+  - wrangler
+  - Cloudflare workers
+  - staging
+  - edge
 ---
 
 <script>

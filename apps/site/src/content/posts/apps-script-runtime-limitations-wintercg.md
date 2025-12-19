@@ -4,7 +4,15 @@ description: >-
   A comparison of the WinterCG Minimum Common Web Platform API draft with the
   Apps Script V8 runtime.
 pubDate: "2024-02-29"
-tags: "code,google,google workspace,apps script,v8,wintercg,javascript,runtime"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - v8
+  - wintercg
+  - javascript
+  - runtime
 ---
 
 <script>

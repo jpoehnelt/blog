@@ -7,7 +7,16 @@ description: >-
   creation, token generation and validation, session management, and user
   authentication.
 pubDate: "2023-07-06"
-tags: "code,Cloudflare,email,Sendgrid,auth,magiclink,serverless,KV,functions"
+tags:
+  - code
+  - Cloudflare
+  - email
+  - Sendgrid
+  - auth
+  - magiclink
+  - serverless
+  - KV
+  - functions
 ---
 
 <script>

@@ -2,9 +2,15 @@
 title: Eleventy Progressive Web App
 description: Catching the Eleventy Lighthouse obsession bug!
 pubDate: "2022-03-31"
-tags: >-
-  code,eleventy,pwa,progressive web app,service
-  worker,performance,lighthouse,blog
+tags:
+  - code
+  - eleventy
+  - pwa
+  - progressive web app
+  - service worker
+  - performance
+  - lighthouse
+  - blog
 ---
 
 <script>

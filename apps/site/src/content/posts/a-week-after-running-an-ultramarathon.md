@@ -2,7 +2,14 @@
 title: Recovering from a 100 mile ultramarathon
 description: What my body is telling me a week after running a 100 mile ultramarathon.
 pubDate: "2023-05-05"
-tags: "run,ultramarathon,100mile,recovery,hrv,fitness,heart"
+tags:
+  - run
+  - ultramarathon
+  - 100mile
+  - recovery
+  - hrv
+  - fitness
+  - heart
 ---
 
 <script>

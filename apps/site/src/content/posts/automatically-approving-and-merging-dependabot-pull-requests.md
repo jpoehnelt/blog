@@ -4,7 +4,13 @@ description: >-
   A simple GitHub workflow to automatically approve and merge Dependabot pull
   requests.
 pubDate: "2022-05-12"
-tags: "code,GitHub,dependabot,snippet,workflows,automation"
+tags:
+  - code
+  - GitHub
+  - dependabot
+  - snippet
+  - workflows
+  - automation
 ---
 
 <script>

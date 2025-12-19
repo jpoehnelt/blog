@@ -4,7 +4,12 @@ description: >-
   Don't bust the crust (unless you are a cow). A greenwashing campaign by our
   public land management agencies.
 pubDate: "2022-03-30"
-tags: "cryptobiotic crust,environment,public lands,livestock,grazing"
+tags:
+  - cryptobiotic crust
+  - environment
+  - public lands
+  - livestock
+  - grazing
 ---
 
 <script>

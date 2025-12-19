@@ -2,7 +2,11 @@
 title: Google Maps React Wrapper
 description: A wrapper for loading Google Maps JavaScript in React
 pubDate: "2021-09-17"
-tags: "code,google maps,javascript,react"
+tags:
+  - code
+  - google maps
+  - javascript
+  - react
 ---
 
 The package [@googlemaps/react-wrapper](https://www.npmjs.com/package/@googlemaps/react-wrapper) is a wrapper component that helps load the Google Maps JavaScript API. Below is a short snippet demonstrating usage.

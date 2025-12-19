@@ -5,7 +5,12 @@ description: >-
   application default credentials in APIs that do not allow service accounts or
   API keys and require user credentials.
 pubDate: "2023-05-04"
-tags: "code,google,oauth,gcloud,workspace"
+tags:
+  - code
+  - google
+  - oauth
+  - gcloud
+  - workspace
 ---
 
 <script>

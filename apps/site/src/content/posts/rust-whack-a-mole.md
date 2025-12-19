@@ -4,7 +4,15 @@ description: >-
   Playing whack-a-mole with the rust compiler is both frustrating and a great
   learning experience.
 pubDate: "2023-07-10"
-tags: "code,rust,debugging,tokio,async,channels,plex,plexamp"
+tags:
+  - code
+  - rust
+  - debugging
+  - tokio
+  - async
+  - channels
+  - plex
+  - plexamp
 ---
 
 Playing whack-a-mole with the Rust compiler is both frustrating and a great learning experience. The below code is a prototype version of a project I'm working on. It's for a terminal ui to control PlexAmp players. I am using this project to learn Rust and get into a proper systems level language. I would probably be done already if it was in NodeJS or similar!

@@ -2,9 +2,18 @@
 title: Feds May Be Underestimating Broadband Woes
 description: "Link shared about: Feds May Be Underestimating Broadband Woes"
 pubDate: "2024-03-28"
-tags: >-
-  link,coloradosun-com,Colorado,Broadband,FCC,Internet,Latency,Hughes,Satellite,Aligntec,Wireless
-  ISP
+tags:
+  - link
+  - coloradosun-com
+  - Colorado
+  - Broadband
+  - FCC
+  - Internet
+  - Latency
+  - Hughes
+  - Satellite
+  - Aligntec
+  - Wireless ISP
 ---
 
 <script>

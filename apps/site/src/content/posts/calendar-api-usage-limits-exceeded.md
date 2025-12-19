@@ -2,7 +2,14 @@
 title: Google Calendar - Usage Limits Exceeded
 description: Cleanup repositories on GitHUb by deleting old forks.
 pubDate: "2024-01-24"
-tags: "code,google,calendar,spam,notification,google workspace,quota"
+tags:
+  - code
+  - google
+  - calendar
+  - spam
+  - notification
+  - google workspace
+  - quota
 ---
 
 When creating events in Google Calendar, many developers come across the error message: **Calendar usage limits exceeded**. This happens even when they are not exceeding the API quota.

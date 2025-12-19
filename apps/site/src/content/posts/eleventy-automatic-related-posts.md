@@ -4,7 +4,13 @@ description: >-
   Automating related posts in Eleventy with term frequency-inverse document
   frequency and eleventy-plugin-related.
 pubDate: "2022-04-16"
-tags: "code,eleventy,eleventy-plugin,tf-idf,blog,11ty"
+tags:
+  - code
+  - eleventy
+  - eleventy-plugin
+  - tf-idf
+  - blog
+  - 11ty
 ---
 
 One of the key features I was missing from my new blog written with [Eleventy](https://11ty.dev) was a widget for related posts. I had already implemented tags, which can serve a similar purpose, but I wanted to experiment with something more automated based upon the content of the post.

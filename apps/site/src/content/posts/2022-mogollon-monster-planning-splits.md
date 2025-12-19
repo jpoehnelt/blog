@@ -2,7 +2,13 @@
 title: Mogollon Monster 100 Mile Planning
 description: Planning and splits for the 2022 Mogollon Monster 100
 pubDate: "2022-09-06"
-tags: "run,ultramarathon,100 mile,Arizona,Mogollon Monster,aravaipa running"
+tags:
+  - run
+  - ultramarathon
+  - 100 mile
+  - Arizona
+  - Mogollon Monster
+  - aravaipa running
 ---
 
 I just signed up for the Mogollon Monster 100 mile race for 2022. [Last year I finished in a little over 29 hours](/posts/mogollon-monster-100-2021/), good for 11th, and this year I am setting **my target at 24 hours**!

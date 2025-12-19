@@ -4,7 +4,14 @@ description: >-
   A short code snippet demonstrating how to generate text with the Gemini Pro
   Rest API in Apps Script.
 pubDate: "2023-12-19"
-tags: "code,google,google workspace,apps script,gemini,llm,ai"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - gemini
+  - llm
+  - ai
 ---
 
 Short and sweet snippet for generating text in Apps Script with the [Gemini Pro Rest API](https://ai.google.dev/tutorials/rest_quickstart).

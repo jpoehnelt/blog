@@ -2,7 +2,11 @@
 title: Automator's Hole
 description: There is a point between manual tasks and automation where nothing gets done.
 pubDate: "2023-01-03"
-tags: "code,automation,procrastination,xkcd"
+tags:
+  - code
+  - automation
+  - procrastination
+  - xkcd
 ---
 
 <script>

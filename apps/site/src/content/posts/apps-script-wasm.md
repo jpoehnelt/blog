@@ -4,7 +4,15 @@ description: >-
   You can use WebAssembly with Google Apps Script! This post will cover how to
   do that and provide a comprehensive guide on how to get started.
 pubDate: "2024-04-04"
-tags: "code,google,google workspace,wasm,rust,python,apps script,webassembly"
+tags:
+  - code
+  - google
+  - google workspace
+  - wasm
+  - rust
+  - python
+  - apps script
+  - webassembly
 ---
 
 <script>

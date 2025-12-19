@@ -5,7 +5,15 @@ description: >-
   async and await. However, there are almost no APIs available that are
   asynchronous except for the WebAssembly API.
 pubDate: "2024-02-07"
-tags: "code,google,google workspace,apps script,async,es6,wasm,webassembly"
+tags:
+  - code
+  - google
+  - google workspace
+  - apps script
+  - async
+  - es6
+  - wasm
+  - webassembly
 ---
 
 <script>

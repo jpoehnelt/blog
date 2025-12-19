@@ -4,7 +4,14 @@ description: >-
   Google Drive broke the ability to embed images with the /uc path. Here's how
   to embed images from Google Drive in your website.
 pubDate: "2024-01-11"
-tags: "code,google,google drive,google workspace,html,iframe,web"
+tags:
+  - code
+  - google
+  - google drive
+  - google workspace
+  - html
+  - iframe
+  - web
 ---
 
 Recently the ability to embed Google Drive images with the `/uc` path started failing. For example, the following `<img>` would have worked in the past with the export view link:

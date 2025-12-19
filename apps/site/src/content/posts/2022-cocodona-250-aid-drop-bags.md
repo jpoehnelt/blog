@@ -4,7 +4,13 @@ description: >-
   Running a 250 mile race without crew or pacers requires adaptability and a
   good plan for drop bags. This is a work in progress...
 pubDate: "2022-04-26"
-tags: "run,ultramarathon,cocodona,gear,drop bags,chaos"
+tags:
+  - run
+  - ultramarathon
+  - cocodona
+  - gear
+  - drop bags
+  - chaos
 ---
 
 <script>

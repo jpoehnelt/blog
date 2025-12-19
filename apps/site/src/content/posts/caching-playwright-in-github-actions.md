@@ -4,7 +4,11 @@ description: >-
   A simple strategy to effectively speed up use of Playwright in GitHub Actions
   with caching.
 pubDate: "2022-09-22"
-tags: "code,GitHub,playwright,workflows"
+tags:
+  - code
+  - GitHub
+  - playwright
+  - workflows
 ---
 
 <script>
