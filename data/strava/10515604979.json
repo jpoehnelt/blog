@@ -1,0 +1,272 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Afternoon Hike",
+  "distance": 6442.4,
+  "moving_time": 5351,
+  "elapsed_time": 6517,
+  "total_elevation_gain": 20,
+  "type": "Hike",
+  "sport_type": "Hike",
+  "device_name": "Garmin Enduro",
+  "id": 10515604979,
+  "start_date": "2024-01-08T00:47:31Z",
+  "start_date_local": "2024-01-07T16:47:31Z",
+  "timezone": "(GMT-08:00) America/Los_Angeles",
+  "utc_offset": -28800,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a10515604979",
+    "polyline": "csvwGxvksVSJK?@FCxABNABECBv@BJCh@[pCEnAMp@EvAEREDUJu@TOAA@u@BGEIAUDWAs@MG?QWIDQDIKEYEGSKs@OGIK?@@WCuAFg@IU@OCA@AC?D_@IUACIOBS@KEuAIk@QB@M@]Ew@U[CUIi@c@k@GGGS?UIWU]SQCU?[GQKWGe@Ia@Aa@Mg@DCBUK{@YQKWEa@WGAd@`@x@Zl@HXHv@At@NbA?ZFbAHv@LZAnAHd@??[DG@GBFIi@@wBLgDKsDFAx@PNHjCp@nAh@lAZn@TPDhBv@r@LdA^p@BtAXj@Hd@LbAHpDt@fBRj@Jl@Rz@LfB^b@DeCg@sCa@]MaDg@KE@{ACcA?iA?}AFUH@C?ETCX?pDCb@ILCVFJ@^`@Rh@H_AQGOGu@@UGSHy@@]DdACXS`@@THZCFC@uAQWIsASMEq@K_@IaAKdC^t@NJ@LCb@L|@Jf@L`AJ^LXDNHh@LT@NF`@FTAdAPlAVj@DhCh@VDNAn@Xt@FTFo@EECIDQ@\\BNAt@FFBHAXLDCV?`BXnAN^PPDzDf@ZLfAR^J|@LrAVfAL|Cn@|@Jj@LHDv@FxAVI@{@OYIc@EYIS?iAWy@KqAYc@Gw@Qq@ISGw@Ic@KQAgDs@cAKg@MuAWg@EgAQi@OkASO@kASY@e@Ke@Q_@GeBc@oAQ]Mm@Es@Mo@C]O{Cm@GiCBkCAYDo@DB@DAC",
+    "resource_state": 3,
+    "summary_polyline": "csvwGxvksVSJK?@FCxABNABECBv@BJCh@[pCEnAMp@EvAEREDUJu@TOAA@u@BGEIAUDWAs@MG?QWIDQDIKEYEGSKs@OGIK?@@WCuAFg@IU@OCA@AC?D_@IUACIOBS@KEuAIk@QB@M@]Ew@U[CUIi@c@k@GGGS?UIWU]SQCU?[GQKWGe@Ia@Aa@Mg@DCBUK{@YQKWEa@WGAd@`@x@Zl@HXHv@At@NbA?ZFbAHv@LZAnAHd@??[DG@GBFIi@@wBLgDKsDFAx@PNHjCp@nAh@lAZn@TPDhBv@r@LdA^p@BtAXj@Hd@LbAHpDt@fBRj@Jl@Rz@LfB^b@DeCg@sCa@]MaDg@KE@{ACcA?iA?}AFUH@C?ETCX?pDCb@ILCVFJ@^`@Rh@H_AQGOGu@@UGSHy@@]DdACXS`@@THZCFC@uAQWIsASMEq@K_@IaAKdC^t@NJ@LCb@L|@Jf@L`AJ^LXDNHh@LT@NF`@FTAdAPlAVj@DhCh@VDNAn@Xt@FTFo@EECIDQ@\\BNAt@FFBHAXLDCV?`BXnAN^PPDzDf@ZLfAR^J|@LrAVfAL|Cn@|@Jj@LHDv@FxAVI@{@OYIc@EYIS?iAWy@KqAYc@Gw@Qq@ISGw@Ic@KQAgDs@cAKg@MuAWg@EgAQi@OkASO@kASY@e@Ke@Q_@GeBc@oAQ]Mm@Es@Mo@C]O{Cm@GiCBkCAYDo@DB@DAC"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    45.99618726409972,
+    -123.92828475683928
+  ],
+  "end_latlng": [
+    45.99627275951207,
+    -123.92745377495885
+  ],
+  "average_speed": 1.204,
+  "max_speed": 3.484,
+  "average_cadence": 52.8,
+  "average_temp": 18,
+  "has_heartrate": true,
+  "average_heartrate": 97.8,
+  "max_heartrate": 117,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 7,
+  "elev_low": -8.6,
+  "upload_id": 11252234593,
+  "upload_id_str": "11252234593",
+  "external_id": "garmin_ping_314071457876",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 11,
+  "description": null,
+  "calories": 501,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 1000.4,
+      "elapsed_time": 1380,
+      "elevation_difference": -6.2,
+      "moving_time": 1380,
+      "split": 1,
+      "average_speed": 0.72,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 89.95637949836423,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1007.4,
+      "elapsed_time": 1264,
+      "elevation_difference": 3.4,
+      "moving_time": 1264,
+      "split": 2,
+      "average_speed": 0.8,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 92.9347581552306,
+      "pace_zone": 0
+    },
+    {
+      "distance": 995.5,
+      "elapsed_time": 907,
+      "elevation_difference": 2.8,
+      "moving_time": 907,
+      "split": 3,
+      "average_speed": 1.1,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 100.82558139534883,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.8,
+      "elapsed_time": 1116,
+      "elevation_difference": 1.2,
+      "moving_time": 1081,
+      "split": 4,
+      "average_speed": 0.92,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 104.6019656019656,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.1,
+      "elapsed_time": 822,
+      "elevation_difference": 4.8,
+      "moving_time": 822,
+      "split": 5,
+      "average_speed": 1.22,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 99.95833333333333,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1002.1,
+      "elapsed_time": 694,
+      "elevation_difference": -1.6,
+      "moving_time": 694,
+      "split": 6,
+      "average_speed": 1.44,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 98.6671469740634,
+      "pace_zone": 0
+    },
+    {
+      "distance": 439.1,
+      "elapsed_time": 334,
+      "elevation_difference": -1.4,
+      "moving_time": 334,
+      "split": 7,
+      "average_speed": 1.31,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 100.43865030674847,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1609.7,
+      "elapsed_time": 2007,
+      "elevation_difference": -5.4,
+      "moving_time": 2007,
+      "split": 1,
+      "average_speed": 0.8,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 91.41374663072776,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1615.8,
+      "elapsed_time": 1895,
+      "elevation_difference": 5.8,
+      "moving_time": 1860,
+      "split": 2,
+      "average_speed": 0.87,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 99.7351430667645,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1610.9,
+      "elapsed_time": 1461,
+      "elevation_difference": 7,
+      "moving_time": 1461,
+      "split": 3,
+      "average_speed": 1.1,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 101.67195767195767,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1601.1,
+      "elapsed_time": 1138,
+      "elevation_difference": -4.2,
+      "moving_time": 1138,
+      "split": 4,
+      "average_speed": 1.41,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 99.13356766256591,
+      "pace_zone": 0
+    },
+    {
+      "distance": 4.9,
+      "elapsed_time": 16,
+      "elevation_difference": -0.2,
+      "moving_time": 16,
+      "split": 5,
+      "average_speed": 0.31,
+      "average_grade_adjusted_speed": null,
+      "average_heartrate": 103.25,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 36287341678,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 10515604979,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 6517,
+      "moving_time": 6482,
+      "start_date": "2024-01-08T00:47:31Z",
+      "start_date_local": "2024-01-07T16:47:31Z",
+      "distance": 6442.35,
+      "average_speed": 0.99,
+      "max_speed": 3.484,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 1097,
+      "total_elevation_gain": 23.2,
+      "average_cadence": 52.8,
+      "device_watts": false,
+      "average_heartrate": 97.8,
+      "max_heartrate": 117
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "07f7c3b3db957d9175ba7ca3de7885ab65081fce",
+  "available_zones": [
+    "heartrate"
+  ]
+}
