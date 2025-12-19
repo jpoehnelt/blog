@@ -37,7 +37,7 @@
 <main
   class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12"
 >
-  <article class="prose prose-lg max-w-none">
+  <article class="prose prose-lg">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
       <div class="flex flex-wrap gap-1 items-center">
