@@ -17,6 +17,7 @@ This server provides AI agents with context-aware access to Google Workspace dev
 The MCP server allows LLMs and AI agents to search and retrieve official Google Workspace documentation. This ensures that the AI answers your questions using the latest guides and best practices, rather than outdated training data.
 
 You can use it to:
+
 - Retrieve up-to-date information about Google Workspace APIs.
 - Fetch code snippets and examples.
 - Understand concepts and limitations of specific services.
