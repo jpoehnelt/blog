@@ -182,7 +182,7 @@ export async function getPostMarkdown(id: string): Promise<string> {
               if (node.tagName === "img") {
                 node.properties.src = newUrl;
               }
-              if (node.tagName === "a" || node.properties.href) {
+              if (node.tagName === "a") {
                 node.properties.href = newUrl;
               }
             }
