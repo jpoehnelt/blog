@@ -1,6 +1,7 @@
 <script lang="ts">
   import { images } from "$lib/images";
   import { cn } from "$lib/utils";
+  import { IMAGES_DIR_PREFIX } from "$lib/constants";
 
   let {
     src,
@@ -20,9 +21,9 @@
       return src; // External URL, use as-is
     }
 
-    if (src.startsWith("src/images/")) {
+    if (src.startsWith(IMAGES_DIR_PREFIX)) {
       // Convert old path format to lookup key
-      const imageKey = src.replace("src/images/", "");
+      const imageKey = src.replace(IMAGES_DIR_PREFIX, "");
       return images[imageKey] || src;
     }
 
@@ -41,7 +42,11 @@
 </script>
 
 <div class="flex flex-col gap-3">
-  <a href={linkHref} aria-label={`View full size image: ${alt}`}>
+  <a
+    href={linkHref}
+    aria-label={`View full size image: ${alt}`}
+    data-original-src={src}
+  >
     {#if isEnhancedImage}
       <enhanced:img
         src={resolvedSrc}

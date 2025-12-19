@@ -6,33 +6,33 @@ import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 import glob from "fast-glob";
+import { BUILD_IMAGES_PREFIX, SOURCE_IMAGES_DIR } from "./src/lib/constants";
 
 if (process.env.CI) {
   sharp.concurrency(1);
 }
 
-const copyImagesKey = "copy-images";
-
 function copyImages() {
   return {
-    name: copyImagesKey,
+    name: "copy-images",
     async buildStart(this: any) {
-      // images are in src/lib/images
-      const imagesDir = path.resolve("src/lib/images");
+      const imagesDir = path.resolve(SOURCE_IMAGES_DIR);
       const images = await glob("**/*.{png,jpg,jpeg,gif,svg,webp}", {
         cwd: imagesDir,
       });
 
-      for (const image of images) {
-        const filePath = path.join(imagesDir, image);
-        const fileContent = await fs.promises.readFile(filePath);
+      await Promise.all(
+        images.map(async (image) => {
+          const filePath = path.join(imagesDir, image);
+          const fileContent = await fs.promises.readFile(filePath);
 
-        this.emitFile({
-          type: "asset",
-          fileName: `images/${image}`,
-          source: fileContent,
-        });
-      }
+          this.emitFile({
+            type: "asset",
+            fileName: `${BUILD_IMAGES_PREFIX}${image}`,
+            source: fileContent,
+          });
+        }),
+      );
     },
   };
 }

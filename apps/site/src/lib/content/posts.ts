@@ -1,6 +1,12 @@
 import * as v from "valibot";
+import type { Element } from "hast";
 import type { Component } from "svelte";
-import { BASE_URL, POSTS_PREFIX } from "$lib/constants";
+import {
+  BASE_URL,
+  BUILD_IMAGES_PREFIX,
+  IMAGES_DIR_PREFIX,
+  POSTS_PREFIX,
+} from "$lib/constants";
 import { error } from "@sveltejs/kit";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
@@ -160,23 +166,28 @@ export async function getPostMarkdown(id: string): Promise<string> {
       .use(rehypeParse)
       .use(rehypeRemoveComments)
       .use(() => (tree) => {
-        visit(tree, "element", (node: any) => {
+        visit(tree, "element", (node: Element) => {
           if (node.properties?.dataOriginalSrc) {
-            const originalSrc = node.properties.dataOriginalSrc;
-            if (originalSrc.startsWith("src/images/")) {
-              const imagePath = originalSrc.replace("src/images/", "");
-              node.properties.src = new URL(
-                `images/${imagePath}`,
+            const originalSrc = String(node.properties.dataOriginalSrc);
+            if (originalSrc.startsWith(IMAGES_DIR_PREFIX)) {
+              const imagePath = originalSrc.replace(IMAGES_DIR_PREFIX, "");
+              const newUrl = new URL(
+                `${BUILD_IMAGES_PREFIX}${imagePath}`,
                 BASE_URL,
               ).toString();
+
+              if (node.tagName === "img" || node.properties.src) {
+                node.properties.src = newUrl;
+              }
+              if (node.tagName === "a" || node.properties.href) {
+                node.properties.href = newUrl;
+              }
             }
           } else {
             ["href", "src", "poster"].forEach((attr) => {
-              if (node.properties?.[attr]?.startsWith("/")) {
-                node.properties[attr] = new URL(
-                  node.properties[attr],
-                  BASE_URL,
-                ).toString();
+              const value = node.properties?.[attr];
+              if (typeof value === "string" && value.startsWith("/")) {
+                node.properties[attr] = new URL(value, BASE_URL).toString();
               }
             });
           }
