@@ -35,9 +35,9 @@
 </svelte:head>
 
 <main
-  class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12"
+  class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-12 [&>article]:flex-1 [&>aside]:max-w-[300px] justify-center"
 >
-  <article class="prose prose-lg max-w-none">
+  <article class="prose">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
       <div class="flex flex-wrap gap-1 items-center">
@@ -78,8 +78,8 @@
   </article>
   <aside class="mt-8 lg:mt-0 prose">
     <h3>Related Articles</h3>
-    <PostList posts={data.recommendations} showTags={false}/>
+    <PostList posts={data.recommendations} showTags={false} />
     <h3>Latest Articles</h3>
-    <PostList posts={data.latest} showTags={false}/>
+    <PostList posts={data.latest} showTags={false} />
   </aside>
 </main>
