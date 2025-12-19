@@ -45,7 +45,7 @@ I came into this race looking for a good training run and was going to modulate 
 
 My goal race for the year is still the Moab 240, but this would be a great 5 hour long run I thought. And I ran a very conservative race, not keeping track of my place and just staying below threshold given the terrain.
 
-<Image src="src/images/enchanted-forest-splits-analysis.png" alt="Enchanted Forest Race Splits" />
+<Image src="enchanted-forest-splits-analysis.png" alt="Enchanted Forest Race Splits" />
 
 ## Missing Segment
 

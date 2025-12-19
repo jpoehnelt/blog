@@ -29,11 +29,11 @@ The high average elevation is a defining characteristic of the Creede 100 and ru
 
 </Tldr>
 
-<Image src="src/images/2022-creede-100-race-report/colorado-trail.jpg" alt="Singletrack along the Creede 100 course" />
+<Image src="2022-creede-100-race-report/colorado-trail.jpg" alt="Singletrack along the Creede 100 course" />
 
 The [Creede 100](https://www.tempestadventures.com/creede-100/about) is one of the highest average elevation races in North America put on by [Tempest Adventures](https://www.tempestadventures.com) in the San Juan Mountains of Colorado. Except for the start, finish, and a short drop in the middle, almost the entire course is above 11,000 ft! Other races such as the Hardrock 100 may have higher points in the course, such as Handies Peak at 14,058 ft, but do not stay at high elevation for the same duration as the Creede 100 course. Do not underestimate this! :mountain:
 
-<Image src="src/images/2022-creede-100-race-report/creede-100-belt-buckle.jpg" alt="Creede 100 belt buckle for race finishers" />
+<Image src="2022-creede-100-race-report/creede-100-belt-buckle.jpg" alt="Creede 100 belt buckle for race finishers" />
 
 I led the race for the first 80 miles or so and ended up with a 2nd place finish. Everything was going great until somewhere around 4 AM on a climb above 12,000 ft in below freezing temperatures when I starting having issues with my lungs and felt out of breath; taking breaks every couple hundred feet. Read more about this below! 🫁
 
@@ -41,11 +41,11 @@ Many runners had similar challenges and only 16 out of the 39 racers finished!
 
 ## About the course
 
-<Image src="src/images/2022-creede-100-race-report/creede-100-course.jpg" alt="The Creede 100 race course" />
+<Image src="2022-creede-100-race-report/creede-100-course.jpg" alt="The Creede 100 race course" />
 
 The course starts in the historic mining town of Creede, CO and follows some local gravel roads before hitting some singletrack heading up to the Colorado Trail. It stays at high elevation on the CT and eventually the Continental Divide Trail until just before the midpoint at mile 46 and the Lost Trail junction. Here the course heads down to the Lost Trail Trailhead for the aid station.
 
-<Image src="src/images/2022-creede-100-race-report/creede-100-elevation.jpg" alt="The Creede 100 race elevation profile" />
+<Image src="2022-creede-100-race-report/creede-100-elevation.jpg" alt="The Creede 100 race elevation profile" />
 
 Key points about the course:
 
@@ -82,7 +82,7 @@ This is a newish experience for me and I never really know what to do. At one po
 
 This is also the second race I have run in my Hoka Tecton X and so far the results are 1st and 2nd place finishes. Maybe it's just because I'm not injured now...
 
-<Image src="src/images/2022-creede-100-race-report/running-in-hoka-tecton-x.jpg" alt="Running 100 mile rugged ultra race in Hoka Tecton X" />
+<Image src="2022-creede-100-race-report/running-in-hoka-tecton-x.jpg" alt="Running 100 mile rugged ultra race in Hoka Tecton X" />
 
 The full results are on [Ultrasignup](https://ultrasignup.com/m_results_event.aspx?did=89185#id1650418).
 

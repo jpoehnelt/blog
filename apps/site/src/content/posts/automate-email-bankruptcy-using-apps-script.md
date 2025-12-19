@@ -34,7 +34,7 @@ You can customize this search as you see fit. I will probably modify this to als
 
 ## Permissions
 
-<Image src="src/images/email-bankruptcy/permissions.png" alt="Permissions" />
+<Image src="email-bankruptcy/permissions.png" alt="Permissions" />
 
 At this point, you need to grant permissions for your script to access your Gmail. Lucky for you, you wrote the code, so there shouldn’t be much to worry about. Famous last words! 😀
 
@@ -44,7 +44,7 @@ You may need to go through a verification process to get this working or can cli
 
 </Note>
 
-<Image src="src/images/email-bankruptcy/oauth.png" alt="Oauth prompt" />
+<Image src="email-bankruptcy/oauth.png" alt="Oauth prompt" />
 
 The sliced array of threads is because the GmailApp `moveThreadsToArchive` has a limit of 100 threads. But that doesn’t matter because I’m never going to run this manually.
 
@@ -52,7 +52,7 @@ The sliced array of threads is because the GmailApp `moveThreadsToArchive` has a
 
 Currently I have a cron that triggers this script every hour.
 
-<Image src="src/images/email-bankruptcy/trigger.png" alt="Triggering apps script every hour" />
+<Image src="email-bankruptcy/trigger.png" alt="Triggering apps script every hour" />
 
 ## Relax
 

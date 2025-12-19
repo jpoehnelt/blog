@@ -38,7 +38,7 @@ This is good and I support protecting the environment, but **what about the cows
 
 This isn't unique to Moab. I'm writing this from Sedona, AZ where livestock no longer graze the area immediately around the beautiful red rocks, but if you go a few miles in almost any direction, the desert landscape will be trampled by livestock. It's disgusting and the laws and policies of our federal government that permit it must be changed.
 
-<Image src="src/images/what-about-the-cows.jpg" alt="Hypocrisy of a sign telling hikers to stay on trail where cattle are grazing. &copy; Justin Poehnelt" />
+<Image src="what-about-the-cows.jpg" alt="Hypocrisy of a sign telling hikers to stay on trail where cattle are grazing. &copy; Justin Poehnelt" />
 
 The greenwashing by public land management agencies is ridiculous. 😡
 

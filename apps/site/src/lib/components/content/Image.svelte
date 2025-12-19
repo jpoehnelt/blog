@@ -20,10 +20,19 @@
       return src; // External URL, use as-is
     }
 
-    if (src.startsWith("src/images/")) {
-      // Convert old path format to lookup key
-      const imageKey = src.replace("src/images/", "");
-      return images[imageKey] || src;
+    // Try direct lookup first (for "foo.jpg")
+    if (images[src]) {
+      return images[src];
+    }
+
+    // Handle legacy prefixes if present (e.g. "src/lib/images/foo.jpg")
+    // Use a regex or hardcoded check. Since we are moving to "no prefix", just checking endsWith or stripping known prefixes is fine.
+    // But honestly, if we batch update all MD files, we might not need this.
+    // Let's keep a robust fallback just in case.
+    const cleanSrc = src.replace(/^(src\/images\/|src\/lib\/images\/)/, "");
+    if (images[cleanSrc]) {
+      console.warn(`Using legacy prefix for image: ${src}`);
+      return images[cleanSrc];
     }
 
     return src;
@@ -41,18 +50,24 @@
 </script>
 
 <div class="flex flex-col gap-3">
-  <a href={linkHref} aria-label={`View full size image: ${alt}`}>
+  <a
+    href={linkHref}
+    aria-label={`View full size image: ${alt}`}
+    data-original-src={src}
+  >
     {#if isEnhancedImage}
       <enhanced:img
         src={resolvedSrc}
         {alt}
         class={cn("rounded-sm mx-auto", className)}
+        data-original-src={src}
       />
     {:else}
       <img
         src={resolvedSrc}
         {alt}
         class={cn("rounded-sm mx-auto", className)}
+        data-original-src={src}
       />
     {/if}
   </a>

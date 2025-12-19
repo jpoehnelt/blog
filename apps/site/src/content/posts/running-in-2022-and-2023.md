@@ -20,7 +20,7 @@ In 2022 I ran nearly 2400 miles and have big plans for 2023!
 
 ## 2022 - Racing and injuries
 
-<Image src="src/images/running-in-2022.png" alt="Running distance in 2022" />
+<Image src="running-in-2022.png" alt="Running distance in 2022" />
 
 In 2022, I ran 2351 miles and [numerous ultra marathons](https://ultrasignup.com/results_participant.aspx?fname=Justin&lname=Poehnelt). Much of my season was marked by injury and too many races. Both 200+ mile races I attempted I started injured and couldn't persevere as would be expected.
 
@@ -29,7 +29,7 @@ In 2022, I ran 2351 miles and [numerous ultra marathons](https://ultrasignup.com
 - 50 mile: San Juan Solstice 50, Ute 50
 - 50k: Moab Red Hot, Behind the Rocks, Sedona Stage Race (2), Arches Ultra
 
-<Image src="src/images/ultrasignup-2022.png" alt="Race results in 2022" />
+<Image src="ultrasignup-2022.png" alt="Race results in 2022" />
 
 An upside to 2022 was that I won my first race and podiumed in some others. It was the most competitive year for me and I was in the lead for over a 100 miles across 3 different races!
 

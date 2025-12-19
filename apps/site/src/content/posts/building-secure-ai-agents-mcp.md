@@ -44,7 +44,7 @@ This abstraction is critical for security because it gives me a centralized plac
 
 I focus on verifying the content coming _out_ of the [Gmail API](https://developers.google.com/gmail/api/guides) using [**Google Cloud Model Armor**](https://cloud.google.com/model-armor). The Model Armor API provides a unified API for both safety and privacy.
 
-<Image src="src/images/gmail-model-armor-mcp.png" alt="Architecture with Model Armor" class="max-h-[40vh] w-auto" />
+<Image src="gmail-model-armor-mcp.png" alt="Architecture with Model Armor" class="max-h-[40vh] w-auto" />
 
 ## More Secure Tool Handler
 

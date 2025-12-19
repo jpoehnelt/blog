@@ -67,7 +67,7 @@ gh api --paginate "https://api.github.com/user/subscriptions" |
 
 Now when I go to one of the repositories, I see that I am only subscribed to "Participating and @mentions" instead of "All Activity".
 
-<Image src="src/images/github-notifications.png" alt="GitHub watch notifications menu" />
+<Image src="github-notifications.png" alt="GitHub watch notifications menu" />
 
 <Note>
 
