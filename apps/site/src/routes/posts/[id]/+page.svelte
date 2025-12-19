@@ -61,6 +61,9 @@
   title={data.title}
   description={data.description}
   pathname={data.relativeURL}
+  type="article"
+  publishedTime={data.pubDate.toISOString()}
+  modifiedTime={(data.lastMod || data.pubDate).toISOString()}
 />
 
 <JsonLd {schema} />

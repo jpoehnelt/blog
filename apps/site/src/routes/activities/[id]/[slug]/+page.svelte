@@ -145,6 +145,8 @@
   title={activity.name}
   description={getActivityDescription(activity)}
   pathname={`/activities/${activity.id}`}
+  type="article"
+  publishedTime={activity.start_date?.toString()}
 />
 
 <JsonLd {schema} />
