@@ -1,11 +1,9 @@
 import { XMLBuilder } from "fast-xml-parser";
 
-import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME, LICENSE } from "$lib/constants";
+import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
 import { getPostsMetadata, type Post } from "$lib/content/posts";
 import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
-import { render } from "svelte/server";
 
-import { getPostContent } from "$lib/content/posts";
 
 import type { RequestHandler } from "./$types";
 
@@ -17,30 +15,25 @@ export const GET: RequestHandler = async ({ params }) => {
     params.tag === "all" ? allPosts : filterPostsByTag(allPosts, params.tag);
   const lastUpdated = getLastUpdatedDate(posts);
 
-  // Build entries with full content
-  const entries = await Promise.all(
-    posts.map(async (post: Post) => {
-      const { body } = render(await getPostContent(post.id), {});
-      const htmlNote = `<p>© ${post.pubDate.getFullYear()} by <a href="${BASE_URL}">${AUTHOR_NAME}</a> is licensed under ${LICENSE}</p>`;
-
-      return {
-        title: post.title,
-        link: {
-          "@_href": post.canonicalURL,
-        },
-        id: post.canonicalURL,
-        updated: (post.lastMod || post.pubDate).toISOString(),
-        published: post.pubDate.toISOString(),
-        content: {
-          "@_type": "html",
-          "#text": escapeXml(body + htmlNote),
-        },
-        category: post.tags.map((tag) => ({
-          "@_term": tag,
-        })),
-      };
-    }),
-  );
+  // Build entries with description only
+  const entries = posts.map((post: Post) => {
+    return {
+      title: post.title,
+      link: {
+        "@_href": post.canonicalURL,
+      },
+      id: post.canonicalURL,
+      updated: (post.lastMod || post.pubDate).toISOString(),
+      published: post.pubDate.toISOString(),
+      content: {
+        "@_type": "html",
+        "#text": escapeXml(post.description),
+      },
+      category: post.tags.map((tag) => ({
+        "@_term": tag,
+      })),
+    };
+  });
 
   const feedObject = {
     "?xml": {
