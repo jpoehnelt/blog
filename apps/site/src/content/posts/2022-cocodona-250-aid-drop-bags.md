@@ -54,7 +54,7 @@ This adds up to 8 unique drop bags as some are shuttled between aid stations as 
 
 I'm going to plan on two different kits, the hot weather and "oh shit" backup clothing that is always with me and a cold weather kit that I'll pick up and drop off at different aid stations. When and wear I get the different kits will depend on the elevation profile of the course.
 
-<Image src="src/images/cocodona-250-elevation-profile.png" alt="Elevation profile for the 2022 Cocodona 250 ultra race in northern Arizona" />
+<Image src="cocodona-250-elevation-profile.png" alt="Elevation profile for the 2022 Cocodona 250 ultra race in northern Arizona" />
 
 ### Always with me
 

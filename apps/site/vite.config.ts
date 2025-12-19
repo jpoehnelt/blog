@@ -1,12 +1,12 @@
+import { enhancedImages } from "@sveltejs/enhanced-img";
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { enhancedImages } from "@sveltejs/enhanced-img";
-import { defineConfig } from "vite";
-import sharp from "sharp";
+import glob from "fast-glob";
 import fs from "fs";
 import path from "path";
-import glob from "fast-glob";
-import { BUILD_IMAGES_PREFIX, SOURCE_IMAGES_DIR } from "./src/lib/constants";
+import sharp from "sharp";
+import { defineConfig } from "vite";
+import { PUBLIC_IMAGES_PREFIX, SOURCE_IMAGES_DIR } from "./src/lib/constants";
 
 if (process.env.CI) {
   sharp.concurrency(1);
@@ -15,6 +15,7 @@ if (process.env.CI) {
 function copyImages() {
   return {
     name: "copy-images",
+    apply: "build" as const,
     async buildStart(this: any) {
       const imagesDir = path.resolve(SOURCE_IMAGES_DIR);
       const images = await glob("**/*.{png,jpg,jpeg,gif,svg,webp}", {
@@ -28,7 +29,7 @@ function copyImages() {
 
           this.emitFile({
             type: "asset",
-            fileName: `${BUILD_IMAGES_PREFIX}${image}`,
+            fileName: `${PUBLIC_IMAGES_PREFIX}${image}`,
             source: fileContent,
           });
         }),

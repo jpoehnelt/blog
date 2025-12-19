@@ -26,7 +26,7 @@ tl;dr I finished the [2022 Red Rocks Stage Race 50k/50k](http://www.trailrunning
 
 </Tldr>
 
-<Image src="src/images/chicken-point-sedona-az.jpg" alt="Looking west from Little Horse Trail near Chicken Point in Sedona, Arizona" />
+<Image src="chicken-point-sedona-az.jpg" alt="Looking west from Little Horse Trail near Chicken Point in Sedona, Arizona" />
 
 ### Saturday 50k - West Sedona
 

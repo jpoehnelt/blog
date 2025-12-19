@@ -53,7 +53,7 @@ And it works! 🎉
 
 The pull request now looks like the following:
 
-<Image src="src/images/automating-dependabot-pull-requests.png" alt="Automating DependaBot pull request approval and merging" />
+<Image src="automating-dependabot-pull-requests.png" alt="Automating DependaBot pull request approval and merging" />
 
 Once I had this implemented and pushed to all the repositories, I just need to [tell Dependabot to rebase all pull requests](/posts/rebase-all-dependabot-pull-requests/).
 

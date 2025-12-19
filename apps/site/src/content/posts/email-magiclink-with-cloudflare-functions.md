@@ -71,7 +71,7 @@ I created a simple HTML form that would POST to `/auth/login` with the email add
 </form>
 ```
 
-<Image src="src/images/email-magiclink-form.png" alt="Email magic link form" />
+<Image src="email-magiclink-form.png" alt="Email magic link form" />
 
 ### Cloudflare Functions - Login
 
@@ -125,7 +125,7 @@ export const onRequestPost: Func = async (context) => {
 
 This sends an email that looks like the following:
 
-<Image src="src/images/email-magiclink-template.png" alt="Email magic link email" />
+<Image src="email-magiclink-template.png" alt="Email magic link email" />
 
 When the user clicks the magic link, they are redirected to `/auth/login` with the opaque token in the query string. The function validates the token and sets a cookie with the user's session id.
 
@@ -287,9 +287,9 @@ export type Func = PagesFunction<Env, any, Data>;
 
 Here are the metrics for this tiny site for Cloudlfare Functions and Sendgrid.
 
-<Image src="src/images/cloudflare-function-metrics.png" alt="Cloudflare Function metrics" />
+<Image src="cloudflare-function-metrics.png" alt="Cloudflare Function metrics" />
 
-<Image src="src/images/email-magiclink-sendgrid-metrics.png" alt="Sendgrid email metrics" />
+<Image src="email-magiclink-sendgrid-metrics.png" alt="Sendgrid email metrics" />
 
 And it's all working! 🎉
 

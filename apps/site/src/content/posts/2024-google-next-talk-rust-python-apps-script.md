@@ -24,7 +24,7 @@ tags:
 
 I will be giving a talk at Google Next 2024 on how to use Rust, Python and WASM to extend Google Apps Script. The full title is _Unleashing the power of Rust, Python, and WebAssembly in Apps Script_.
 
-<Image src="src/images/next-24-rust-python-apps-script-wasm-session.png" alt="Google Next 24 - Rust, Python, and WASM in Apps Script" />
+<Image src="next-24-rust-python-apps-script-wasm-session.png" alt="Google Next 24 - Rust, Python, and WASM in Apps Script" />
 
 See the session details at: [Lightning Talk](https://cloud.withgoogle.com/next?session=IHLT300)
 

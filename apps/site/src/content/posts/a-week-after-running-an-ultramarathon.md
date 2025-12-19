@@ -25,7 +25,7 @@ A week after running the Canyons 100 mile ultramarathon:
 
 It is really amazing how long some of these activities take to recover from! I need more sleep and to keep eating!
 
-<Image src="src/images/resting-heart-rate-after-ultramarathon.png" alt="Resting Heart Rate before and after an UltraMarathon" />
+<Image src="resting-heart-rate-after-ultramarathon.png" alt="Resting Heart Rate before and after an UltraMarathon" />
 
 <Note>
 

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { images } from "$lib/images";
   import { cn } from "$lib/utils";
-  import { IMAGES_DIR_PREFIX } from "$lib/constants";
 
   let {
     src,
@@ -21,10 +20,19 @@
       return src; // External URL, use as-is
     }
 
-    if (src.startsWith(IMAGES_DIR_PREFIX)) {
-      // Convert old path format to lookup key
-      const imageKey = src.replace(IMAGES_DIR_PREFIX, "");
-      return images[imageKey] || src;
+    // Try direct lookup first (for "foo.jpg")
+    if (images[src]) {
+      return images[src];
+    }
+
+    // Handle legacy prefixes if present (e.g. "src/lib/images/foo.jpg")
+    // Use a regex or hardcoded check. Since we are moving to "no prefix", just checking endsWith or stripping known prefixes is fine.
+    // But honestly, if we batch update all MD files, we might not need this.
+    // Let's keep a robust fallback just in case.
+    const cleanSrc = src.replace(/^(src\/images\/|src\/lib\/images\/)/, "");
+    if (images[cleanSrc]) {
+      console.warn(`Using legacy prefix for image: ${src}`);
+      return images[cleanSrc];
     }
 
     return src;

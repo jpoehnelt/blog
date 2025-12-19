@@ -1,26 +1,20 @@
-import * as v from "valibot";
-import type { Element } from "hast";
-import type { Component } from "svelte";
-import {
-  BASE_URL,
-  BUILD_IMAGES_PREFIX,
-  IMAGES_DIR_PREFIX,
-  POSTS_PREFIX,
-} from "$lib/constants";
+import { BASE_URL, POSTS_PREFIX, PUBLIC_IMAGES_PREFIX } from "$lib/constants";
 import { error } from "@sveltejs/kit";
-import { unified } from "unified";
-import { visit } from "unist-util-visit";
-import { render } from "svelte/server";
+import type { Element } from "hast";
 import rehypeParse from "rehype-parse";
-import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeRemark from "rehype-remark";
-import remarkGfm from "remark-gfm";
-import remarkStringify from "remark-stringify";
-
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
+import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import remarkStringify from "remark-stringify";
+import type { Component } from "svelte";
+import { render } from "svelte/server";
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import * as v from "valibot";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -169,10 +163,19 @@ export async function getPostMarkdown(id: string): Promise<string> {
         visit(tree, "element", (node: Element) => {
           if (node.properties?.dataOriginalSrc) {
             const originalSrc = String(node.properties.dataOriginalSrc);
-            if (originalSrc.startsWith(IMAGES_DIR_PREFIX)) {
-              const imagePath = originalSrc.replace(IMAGES_DIR_PREFIX, "");
+
+            // Check if it's a relative path (not absolute and not http/https)
+            // and assume it corresponds to an image in the images directory.
+            // We previously checked for SOURCE_IMAGES_DIR, but now we support direct filenames.
+            const isRelative =
+              !originalSrc.startsWith("/") && !originalSrc.startsWith("http");
+
+            if (isRelative) {
+              // Strip potential "./" prefix if present
+              const imagePath = originalSrc.replace(/^\.\//, "");
+
               const newUrl = new URL(
-                `${BUILD_IMAGES_PREFIX}${imagePath}`,
+                `${PUBLIC_IMAGES_PREFIX}${imagePath}`,
                 BASE_URL,
               ).toString();
 
