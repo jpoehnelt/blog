@@ -5,11 +5,21 @@
   import { initGoogleMaps, importLibrary } from "$lib/maps";
   import polyline from "@mapbox/polyline";
   import { Button } from "$lib/components/ui/button";
-  import { getActivityDescription, getActivitySlug, slugify } from "$lib/content/strava";
+  import {
+    getActivityDescription,
+    getActivitySlug,
+    slugify,
+  } from "$lib/content/strava";
   import StravaLink from "$lib/components/StravaLink.svelte";
   import StravaSegmentList from "$lib/components/StravaSegmentList.svelte";
   import JsonLd from "$lib/components/JsonLd.svelte";
-  import type { ExerciseAction, SportsEvent, BreadcrumbList, Thing, WithContext } from "schema-dts";
+  import type {
+    ExerciseAction,
+    SportsEvent,
+    BreadcrumbList,
+    Thing,
+    WithContext,
+  } from "schema-dts";
   import { AUTHOR_NAME, BASE_URL } from "$lib/constants";
 
   import type { PageProps } from "./$types";
@@ -17,7 +27,10 @@
   let { data }: PageProps = $props();
   const { activity } = data;
 
-  const canonicalURL = new URL(`/activities/${getActivitySlug(activity)}`, BASE_URL).toString();
+  const canonicalURL = new URL(
+    `/activities/${getActivitySlug(activity)}`,
+    BASE_URL
+  ).toString();
 
   let schema: WithContext<Thing>[] = $derived.by(() => {
     const list: WithContext<Thing>[] = [
@@ -85,7 +98,6 @@
     return list;
   });
 
-
   let mapElement: any = $state();
   let polylineElement: any = $state();
   let showMap = $state(false);
@@ -97,7 +109,7 @@
     if (activity.map?.summary_polyline) {
       initGoogleMaps();
 
-      const { LatLngBounds } = await importLibrary("core") as any;
+      const { LatLngBounds } = (await importLibrary("core")) as any;
       await importLibrary("maps3d");
       await importLibrary("geometry");
       const bounds = new LatLngBounds();
@@ -113,32 +125,35 @@
         polylineElement.path = coordinates;
       }
 
-      
-      
       if (mapElement && coordinates.length > 0) {
-        const { spherical } = await importLibrary("geometry") as any;
+        const { spherical } = (await importLibrary("geometry")) as any;
         const center = bounds.getCenter();
         const sw = bounds.getSouthWest();
         const ne = bounds.getNorthEast();
-        
+
         const distance = spherical.computeDistanceBetween(sw, ne);
-        
+
         // Adjust bounds for tilt. The camera needs to be further away if we are looking straight down,
         // but with a high tilt (e.g. 75), we are looking "across".
         // With a 75 degree tilt, we need to be much further back to see the whole bounds.
         const range = Math.max(4000, distance * 2);
 
-        const avgElevation = ((activity as any).elev_high && (activity as any).elev_low) 
-          ? ((activity as any).elev_high + (activity as any).elev_low) / 2 
-          : 0;
+        const avgElevation =
+          (activity as any).elev_high && (activity as any).elev_low
+            ? ((activity as any).elev_high + (activity as any).elev_low) / 2
+            : 0;
 
-        mapElement.center = { lat: center.lat(), lng: center.lng(), altitude: avgElevation };
+        mapElement.center = {
+          lat: center.lat(),
+          lng: center.lng(),
+          altitude: avgElevation,
+        };
         mapElement.range = range;
-        
+
         mapElement.tilt = 60; // Respected from HTML
       }
     }
-  };
+  }
 </script>
 
 <Head
@@ -177,21 +192,39 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
         <div class="flex flex-col">
-          <span class="text-xs text-muted-foreground uppercase font-semibold">Distance</span>
-          <span class="text-xl font-medium">{((activity.distance || 0) / 1000).toFixed(2)} km</span>
+          <span class="text-xs text-muted-foreground uppercase font-semibold"
+            >Distance</span
+          >
+          <span class="text-xl font-medium"
+            >{((activity.distance || 0) / 1000).toFixed(2)} km</span
+          >
         </div>
         <div class="flex flex-col">
-          <span class="text-xs text-muted-foreground uppercase font-semibold">Moving Time</span>
-          <span class="text-xl font-medium">{new Date((activity.moving_time || 0) * 1000).toISOString().substr(11, 8)}</span>
+          <span class="text-xs text-muted-foreground uppercase font-semibold"
+            >Moving Time</span
+          >
+          <span class="text-xl font-medium"
+            >{new Date((activity.moving_time || 0) * 1000)
+              .toISOString()
+              .substr(11, 8)}</span
+          >
         </div>
         <div class="flex flex-col">
-          <span class="text-xs text-muted-foreground uppercase font-semibold">Elevation</span>
-          <span class="text-xl font-medium">{activity.total_elevation_gain} m</span>
+          <span class="text-xs text-muted-foreground uppercase font-semibold"
+            >Elevation</span
+          >
+          <span class="text-xl font-medium"
+            >{activity.total_elevation_gain} m</span
+          >
         </div>
         {#if (activity as any).average_heartrate}
           <div class="flex flex-col">
-            <span class="text-xs text-muted-foreground uppercase font-semibold">Avg HR</span>
-            <span class="text-xl font-medium">{Math.round((activity as any).average_heartrate)} bpm</span>
+            <span class="text-xs text-muted-foreground uppercase font-semibold"
+              >Avg HR</span
+            >
+            <span class="text-xl font-medium"
+              >{Math.round((activity as any).average_heartrate)} bpm</span
+            >
           </div>
         {/if}
       </div>
@@ -221,17 +254,27 @@
       </div>
 
       {#if showMap}
-       <div class="h-[500px] w-full rounded-lg overflow-hidden my-6 relative bg-muted">
-        <gmp-map-3d mode="SATELLITE" bind:this={mapElement} class="w-full h-full">
-           <gmp-polyline-3d bind:this={polylineElement} stroke-color="#ef4444" stroke-width="4" altitude-mode="clamp-to-ground"></gmp-polyline-3d>
-        </gmp-map-3d>
-      </div>
+        <div
+          class="h-[500px] w-full rounded-lg overflow-hidden my-6 relative bg-muted"
+        >
+          <gmp-map-3d
+            mode="SATELLITE"
+            bind:this={mapElement}
+            class="w-full h-full"
+          >
+            <gmp-polyline-3d
+              bind:this={polylineElement}
+              stroke-color="#ef4444"
+              stroke-width="4"
+              altitude-mode="clamp-to-ground"
+            ></gmp-polyline-3d>
+          </gmp-map-3d>
+        </div>
       {:else}
         <div class="my-6 w-full flex justify-center">
           <Button onclick={loadMap} variant="outline">Show Map</Button>
         </div>
       {/if}
-
     </div>
   </article>
 </main>
