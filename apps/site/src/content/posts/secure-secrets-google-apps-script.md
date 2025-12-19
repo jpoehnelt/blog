@@ -51,7 +51,7 @@ For general configuration, environment variables, and non-critical keys, the bui
 
 I can set these manually in the editor (**Project Settings > Script Properties**) or programmatically.
 
-<Image src="src/lib/images/script-properties.png" alt="Script Properties in Apps Script Editor" />
+<Image src="src/images/script-properties.png" alt="Script Properties in Apps Script Editor" />
 
 Here is how I retrieve and parse them effectively. Note that [`getProperty`](https://developers.google.com/apps-script/reference/properties/properties#getpropertykey) always returns a string, so I need to handle type conversion myself.
 
@@ -111,6 +111,11 @@ function main() {
   // Store the CLOUD_PROJECT_ID in Script Properties to keep the code clean
   const projectId =
     PropertiesService.getScriptProperties().getProperty("CLOUD_PROJECT_ID");
+  if (!projectId) {
+    throw new Error(
+      "Script property 'CLOUD_PROJECT_ID' is not set. Please add it to Project Settings.",
+    );
+  }
   const MY_SECRET = getSecret(projectId, "MY_SECRET");
 
   console.log(MY_SECRET);
@@ -120,10 +125,10 @@ function main() {
  * Fetches a secret from Google Cloud Secret Manager.
  * @param {string} project - The Google Cloud Project ID
  * @param {string} name - The name of the secret
- * @param {number} version - The version of the secret (default: 1)
+ * @param {string|number} version - The version of the secret (default: 'latest')
  * @returns {string} The decoded secret value
  */
-function getSecret(project, name, version = 1) {
+function getSecret(project, name, version = "latest") {
   const cache = CacheService.getScriptCache();
   const cacheKey = `secret.${name}.${version}`;
   const cached = cache.get(cacheKey);
@@ -134,7 +139,12 @@ function getSecret(project, name, version = 1) {
 
   const response = UrlFetchApp.fetch(url, {
     headers: { Authorization: `Bearer ${ScriptApp.getOAuthToken()}` },
+    muteHttpExceptions: true,
   });
+
+  if (response.getResponseCode() >= 300) {
+    throw new Error(`Error fetching secret: ${response.getContentText()}`);
+  }
 
   // Secrets are returned as base64 strings, so we must decode them
   const encoded = JSON.parse(response.getContentText()).payload.data;
