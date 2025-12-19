@@ -54,16 +54,15 @@ jobs:
         run: |
           YEAR=$(shuf -i 2020-$(date +%Y) -n 1)
           MONTH=$(shuf -i 1-12 -n 1)
-          DAY=$(shuf -i 1-$(date -d "$YEAR-$MONTH-01 +1 month -1 day" +%d) -n 1)
 
-          echo "Ingesting data from $YEAR-$MONTH-$DAY"
-          STRAVA_AFTER="$YEAR-$MONTH-$DAY"
-          STRAVA_BEFORE=$(date -d "$YEAR-$MONTH-$DAY +10 day" +%Y-%m-%d)
+          STRAVA_AFTER=$(date -d "$YEAR-$MONTH-01" +%Y-%m-%d)
+          STRAVA_BEFORE=$(date -d "$STRAVA_AFTER +1 month" +%Y-%m-%d)
 
+          echo "Ingesting data for $YEAR-$MONTH"
           echo "STRAVA_AFTER=$STRAVA_AFTER"
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
 
-          node packages/data-automation/dist/strava-ingest.js
+          STRAVA_AFTER=$STRAVA_AFTER STRAVA_BEFORE=$STRAVA_BEFORE node packages/data-automation/dist/strava-ingest.js
       - name: Commit changes
         if: github.ref == 'refs/heads/main'
         run: |
