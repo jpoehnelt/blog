@@ -3,6 +3,7 @@ import {
   getPostsMetadata,
   type Post,
   getPostContent,
+  getPostToc,
 } from "$lib/content/posts";
 
 import type { PageLoad } from "./$types";
@@ -10,8 +11,10 @@ import type { PageLoad } from "./$types";
 export const load: PageLoad = async ({ params }) => {
   const PostContent = await getPostContent(params.id);
   const postMetaData = getPostMetadata(params.id);
+  const toc = await getPostToc(params.id);
   return {
     PostContent,
+    toc,
     recommendations: getRecommendations(postMetaData, getPostsMetadata(), 4),
     latest: getPostsMetadata()
       .filter((p) => p.id !== params.id)

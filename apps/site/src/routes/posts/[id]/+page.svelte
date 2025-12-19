@@ -34,10 +34,37 @@
   />
 </svelte:head>
 
+{#snippet toc(items: typeof data.toc)}
+  {#if items && items.length > 1}
+    <div class="mb-8 lg:mb-0">
+      <h3 class="font-bold mb-4 uppercase text-xs text-gray-500">
+        On this page
+      </h3>
+      <ul class="space-y-2 text-sm list-none pl-2 border-l border-gray-200 dark:border-gray-700">
+        {#each items as item}
+          <li>
+            <a
+              href="#{item.id}"
+              class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 -ml-[1px]"
+              class:pl-4={item.depth === 3}
+            >
+              {item.text}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  {/if}
+{/snippet}
+
 <main
-  class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-12 [&>article]:flex-1 [&>aside]:max-w-[300px] justify-center"
+  class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 lg:gap-12 justify-center"
 >
-  <article class="prose">
+  <div class="lg:hidden">
+    {@render toc(data.toc)}
+  </div>
+
+  <article class="prose flex-1 min-w-0 ">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
       <div class="flex flex-wrap gap-1 items-center">
@@ -76,7 +103,12 @@
       </p>
     </div>
   </article>
-  <aside class="mt-8 lg:mt-0 prose">
+
+  <aside class="mt-8 lg:mt-0 prose w-full lg:w-72 shrink-0">
+    <div class="hidden lg:block mb-8">
+       {@render toc(data.toc)}
+    </div>
+
     <h3>Related Articles</h3>
     <PostList posts={data.recommendations} showTags={false} />
     <h3>Latest Articles</h3>
