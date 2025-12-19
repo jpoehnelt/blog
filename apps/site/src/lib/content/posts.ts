@@ -161,14 +161,25 @@ export async function getPostMarkdown(id: string): Promise<string> {
       .use(rehypeRemoveComments)
       .use(() => (tree) => {
         visit(tree, "element", (node: any) => {
-          ["href", "src", "poster"].forEach((attr) => {
-            if (node.properties?.[attr]?.startsWith("/")) {
-              node.properties[attr] = new URL(
-                node.properties[attr],
+          if (node.properties?.dataOriginalSrc) {
+            const originalSrc = node.properties.dataOriginalSrc;
+            if (originalSrc.startsWith("src/images/")) {
+              const imagePath = originalSrc.replace("src/images/", "");
+              node.properties.src = new URL(
+                `images/${imagePath}`,
                 BASE_URL,
               ).toString();
             }
-          });
+          } else {
+            ["href", "src", "poster"].forEach((attr) => {
+              if (node.properties?.[attr]?.startsWith("/")) {
+                node.properties[attr] = new URL(
+                  node.properties[attr],
+                  BASE_URL,
+                ).toString();
+              }
+            });
+          }
         });
       })
       .use(rehypeRemark)

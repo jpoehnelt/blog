@@ -47,12 +47,14 @@
         src={resolvedSrc}
         {alt}
         class={cn("rounded-sm mx-auto", className)}
+        data-original-src={src}
       />
     {:else}
       <img
         src={resolvedSrc}
         {alt}
         class={cn("rounded-sm mx-auto", className)}
+        data-original-src={src}
       />
     {/if}
   </a>
