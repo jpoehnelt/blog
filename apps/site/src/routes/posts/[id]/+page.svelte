@@ -61,24 +61,12 @@
   title={data.title}
   description={data.description}
   pathname={data.relativeURL}
+  type="article"
+  publishedTime={data.pubDate.toISOString()}
+  modifiedTime={(data.lastMod || data.pubDate).toISOString()}
 />
 
 <JsonLd {schema} />
-
-<svelte:head>
-  <meta
-    property="article:published_time"
-    content={data.pubDate.toISOString()}
-  />
-  <meta
-    name="last-modified"
-    content={(data.lastMod || data.pubDate).toISOString()}
-  />
-  <meta
-    property="article:modified_time"
-    content={(data.lastMod || data.pubDate).toISOString()}
-  />
-</svelte:head>
 
 {#snippet toc(items: typeof data.toc)}
   {#if items && items.length > 1}
@@ -86,7 +74,9 @@
       <h3 class="font-bold mb-4 uppercase text-xs text-gray-500">
         On this page
       </h3>
-      <ul class="space-y-2 text-sm list-none pl-2 border-l border-gray-200 dark:border-gray-700">
+      <ul
+        class="space-y-2 text-sm list-none pl-2 border-l border-gray-200 dark:border-gray-700"
+      >
         {#each items as item}
           <li>
             <a
@@ -110,7 +100,7 @@
     {@render toc(data.toc)}
   </div>
 
-  <article class="prose flex-1 min-w-0 ">
+  <article class="prose flex-1 min-w-0">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{data.title}</h1>
       <div class="flex flex-wrap gap-1 items-center">
@@ -152,7 +142,7 @@
 
   <aside class="mt-8 lg:mt-0 prose w-full lg:w-72 shrink-0">
     <div class="hidden lg:block mb-8">
-       {@render toc(data.toc)}
+      {@render toc(data.toc)}
     </div>
 
     <h3>Related Articles</h3>
