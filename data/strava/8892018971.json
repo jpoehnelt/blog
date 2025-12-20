@@ -1,0 +1,129 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Evening Workout",
+  "distance": 0,
+  "moving_time": 2329,
+  "elapsed_time": 2329,
+  "total_elevation_gain": 0,
+  "type": "Workout",
+  "sport_type": "Workout",
+  "workout_type": null,
+  "device_name": "Garmin Enduro",
+  "id": 8892018971,
+  "start_date": "2023-04-15T01:25:39Z",
+  "start_date_local": "2023-04-14T19:25:39Z",
+  "timezone": "(GMT-06:00) America/Bahia_Banderas",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a8892018971",
+    "polyline": "",
+    "resource_state": 3,
+    "summary_polyline": ""
+  },
+  "trainer": true,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [],
+  "end_latlng": [],
+  "average_speed": 0,
+  "max_speed": 0,
+  "average_temp": 39,
+  "has_heartrate": true,
+  "average_heartrate": 69.4,
+  "max_heartrate": 92,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 2205.4,
+  "elev_low": 2190.4,
+  "upload_id": 9541275200,
+  "upload_id_str": "9541275200",
+  "external_id": "garmin_ping_269295065491",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 2,
+  "description": null,
+  "calories": 90,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "laps": [
+    {
+      "id": 30206357874,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 8892018971,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2328,
+      "moving_time": 2328,
+      "start_date": "2023-04-15T01:25:39Z",
+      "start_date_local": "2023-04-14T19:25:39Z",
+      "distance": 0,
+      "average_speed": 0,
+      "max_speed": 0,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 767,
+      "total_elevation_gain": 0,
+      "device_watts": false,
+      "average_heartrate": 69.4,
+      "max_heartrate": 92
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "5edb5f8cf45113213b7df09cad38eea3153cfb17",
+  "available_zones": [
+    "heartrate"
+  ]
+}
