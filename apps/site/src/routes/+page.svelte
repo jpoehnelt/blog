@@ -21,8 +21,9 @@
   let { data }: PageProps = $props();
 
   const recentPosts = data.posts;
-  const recentActivities = data.activities.slice(0, 10);
-  const recentRaces = data.races;
+  const recentActivities = data.recentActivities;
+  const recentRaces = data.recentRaces;
+  const runningChartData = data.runningChartData;
   const featuredPost = recentPosts[0];
   const otherPosts = recentPosts.slice(1);
 
@@ -181,7 +182,7 @@
 
       <!--  Chart -->
       <section>
-        <RunningChart activities={data.activities} />
+        <RunningChart data={runningChartData} />
       </section>
 
       <!-- Activities-->

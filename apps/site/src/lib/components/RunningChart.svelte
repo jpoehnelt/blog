@@ -1,44 +1,13 @@
 <script lang="ts">
   import { Axis, Bars, Chart, Svg } from "layerchart";
   import { scaleBand } from "d3-scale";
-  import { format, startOfDay, isAfter, isSameDay, startOfYear, differenceInDays, addDays } from "date-fns";
-  import type { DetailedActivityResponse } from "strava-v3";
+  import { format } from "date-fns";
 
   interface Props {
-    activities: DetailedActivityResponse[];
+    data: { date: Date; distance: number }[];
   }
 
-  let { activities }: Props = $props();
-
-  const today = startOfDay(new Date());
-  const startOfYearDate = startOfYear(today);
-  const daysCount = differenceInDays(today, startOfYearDate) + 1;
-
-  // Use $derived for the chart data to ensure reactivity in Svelte 5
-  const chartData = $derived.by(() => {
-    // Initialize YTD days
-    const days = Array.from({ length: daysCount }, (_, i) => {
-      const date = addDays(startOfYearDate, i);
-      return {
-        date,
-        distance: 0,
-      };
-    });
-
-    // Populate with activity data
-    activities.forEach((activity) => {
-      if (!activity.start_date) return;
-      const activityDate = startOfDay(new Date(activity.start_date));
-      if (isAfter(activityDate, addDays(startOfYearDate, -1))) {
-        const dayData = days.find((d) => isSameDay(d.date, activityDate));
-        if (dayData) {
-          dayData.distance += (activity.distance || 0) / 1000;
-        }
-      }
-    });
-
-    return days;
-  });
+  let { data: chartData }: Props = $props();
 
   const totalDistance = $derived(
     chartData.reduce((acc, curr) => acc + curr.distance, 0)
