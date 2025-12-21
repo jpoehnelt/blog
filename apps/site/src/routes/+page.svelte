@@ -71,9 +71,11 @@
             About
           </h2>
           <Image
-            src="src/images/justin-poehnelt.jpg"
+            src="justin-poehnelt.jpg"
             alt="Justin Poehnelt"
             class="w-full grayscale contrast-125 filter"
+            loading="eager"
+            fetchpriority="high"
           />
           <div class="prose prose-sm">
             <p>
