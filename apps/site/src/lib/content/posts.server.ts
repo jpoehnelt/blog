@@ -119,5 +119,3 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
     return [];
   }
 }
-
-
