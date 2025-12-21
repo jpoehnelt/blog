@@ -258,12 +258,7 @@ Fetching 10 URLs sequentially vs. in parallel is a night-and-day difference.
  * Sequential: ~10 seconds (1s per request)
  * Parallel: ~1.2 seconds (Total)
  */
-/**
- * Demonstrates the power of fetchAll.
- *
- * Sequential: ~10 seconds (1s per request)
- * Parallel: ~1.2 seconds (Total)
- */
+
 function benchmarkParallelism() {
   const requests = [];
   for (let i = 0; i < 10; i++) {
@@ -374,7 +369,7 @@ This is the most notorious error in high-volume Apps Scripting (Tracker Issue [6
 
 ### DNS Errors and Private IPs
 
-If to see "DNS Error," check if your target URL resolves to a private IP address (e.g., `10.x.x.x` or `192.168.x.x`). This often happens with internal AWS load balancers. `UrlFetchApp` strictly prevents connections to private/intranet IP ranges for security.
+If you see "DNS Error," check if your target URL resolves to a private IP address (e.g., `10.x.x.x` or `192.168.x.x`). This often happens with internal AWS load balancers. `UrlFetchApp` strictly prevents connections to private/intranet IP ranges for security.
 
 ### The Unconfigurable 60-Second Timeout
 
