@@ -36,6 +36,11 @@ export const getPostContent = async (id: string): Promise<Component> => {
 export const getPostMetadata = (id: string) => {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
   const metadata = postsMetadata[filePath];
+
+  if (!metadata) {
+    throw error(404, `Post not found: ${id}`);
+  }
+
   return getMetadataFromMatter(id, metadata);
 };
 

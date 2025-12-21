@@ -63,7 +63,5 @@ function getRecommendations(
 }
 
 function countOverlap(currentTags: Set<string>, otherTags: string[]): number {
-  let matches = 0;
-  for (const t of otherTags) if (currentTags.has(t)) matches++;
-  return matches;
+  return otherTags.filter((t) => currentTags.has(t)).length;
 }

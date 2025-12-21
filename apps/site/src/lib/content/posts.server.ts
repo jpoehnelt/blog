@@ -5,7 +5,6 @@ import rehypeParse from "rehype-parse";
 import rehypeRemark from "rehype-remark";
 import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeSlug from "rehype-slug";
-import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -13,7 +12,8 @@ import remarkStringify from "remark-stringify";
 import { render } from "svelte/server";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
-import { getPostContent, getPostMetadata } from "./posts";
+import { toString } from "hast-util-to-string";
+import { getPostContent } from "./posts";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -25,7 +25,6 @@ const postsRaw = import.meta.glob("/src/content/posts/*.md", {
 
 export async function getPostMarkdown(id: string): Promise<string> {
   const { body } = render(await getPostContent(id), {});
-  const metadata = getPostMetadata(id);
 
   // Convert HTML back to Markdown using unified pipeline
   return String(
@@ -95,23 +94,23 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
 
     const toc: TocItem[] = [];
 
-    await unified()
+    const processor = unified()
       .use(remarkParse)
       .use(remarkRehype)
       .use(rehypeSlug)
-      .use(rehypeStringify)
       .use(() => (tree) => {
-        visit(tree, "element", (node: any) => {
+        visit(tree, "element", (node: Element) => {
           if (["h2", "h3"].includes(node.tagName) && node.properties?.id) {
             toc.push({
-              id: node.properties.id,
-              text: getHastText(node),
+              id: String(node.properties.id),
+              text: toString(node),
               depth: parseInt(node.tagName.substring(1)),
             });
           }
         });
-      })
-      .process(raw);
+      });
+
+    await processor.run(processor.parse(raw));
 
     return toc;
   } catch (e) {
@@ -121,11 +120,4 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
   }
 }
 
-// Helper to extract text from HAST node
-function getHastText(node: any): string {
-  if (node.type === "text") return node.value;
-  if (node.children) {
-    return node.children.map(getHastText).join("");
-  }
-  return "";
-}
+
