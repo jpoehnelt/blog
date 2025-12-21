@@ -341,7 +341,15 @@ function manageCookies() {
     { followRedirects: false },
   );
 
-  const cookie = setCookie.getHeaders()["Set-Cookie"];
+  const headers = setCookie.getAllHeaders();
+  let cookieHeaders = headers['Set-Cookie'] || [];
+
+  // Ensure it's an array, as UrlFetchApp may return a single string
+  if (!Array.isArray(cookieHeaders)) {
+    cookieHeaders = [cookieHeaders];
+  }
+
+  const cookie = cookieHeaders.map(c => c.split(';')[0]).join('; ');
 
   // 2. Pass that cookie to the next request
   const verify = UrlFetchApp.fetch("https://httpbin.org/cookies", {
@@ -399,14 +407,14 @@ Since `setTimeout` isn't available, I stick to [`Utilities.sleep()`](<https://de
  * Essential for handling 429s and "Address Unavailable" errors.
  */
 function fetchWithRetry(url, params = {}) {
-  params.muteHttpExceptions = true;
+  const fetchParams = { ...params, muteHttpExceptions: true };
   const maxRetries = 3;
   let attempt = 0;
 
   while (attempt <= maxRetries) {
     let response;
     try {
-      response = UrlFetchApp.fetch(url, params);
+      response = UrlFetchApp.fetch(url, fetchParams);
     } catch (e) {
       console.warn(`Attempt ${attempt + 1} failed: ${e}`);
       if (attempt === maxRetries) throw e;
@@ -432,8 +440,17 @@ function fetchWithRetry(url, params = {}) {
 
     if (response) {
       const headers = response.getAllHeaders();
-      if (headers["Retry-After"]) {
-        sleepMs = parseInt(headers["Retry-After"], 10) * 1000;
+      let retryAfter = headers["Retry-After"];
+
+      if (Array.isArray(retryAfter)) {
+        retryAfter = retryAfter[0];
+      }
+
+      if (retryAfter) {
+        const retrySeconds = parseInt(retryAfter, 10);
+        if (!isNaN(retrySeconds)) {
+          sleepMs = retrySeconds * 1000;
+        }
       }
     }
 
