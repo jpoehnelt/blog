@@ -19,6 +19,9 @@
     >
       {post.title}
     </a>
+    {#if post.description}
+      <p class="text-sm text-muted-foreground">{post.description}</p>
+    {/if}
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap">
       <FormattedDate date={post.pubDate} />
       {#if post.tags && post.tags.length > 0 && showTags}
