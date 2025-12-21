@@ -1,7 +1,7 @@
 <script lang="ts">
   import Head from "$lib/components/Head.svelte";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
-  import Image from "$lib/components/content/Image.svelte";
+  import justinPoehneltImg from "$lib/images/justin-poehnelt.jpg?enhanced";
   import ActivityList from "$lib/components/ActivityList.svelte";
   import PostTagCloud from "$lib/components/PostTagCloud.svelte";
   import RunningChart from "$lib/components/RunningChart.svelte";
@@ -70,10 +70,10 @@
           >
             About
           </h2>
-          <Image
-            src="justin-poehnelt.jpg"
+          <enhanced:img
+            src={justinPoehneltImg}
             alt="Justin Poehnelt"
-            class="w-full grayscale contrast-125 filter"
+            class="w-full grayscale contrast-125 filter rounded-sm mx-auto"
             loading="eager"
             fetchpriority="high"
           />
