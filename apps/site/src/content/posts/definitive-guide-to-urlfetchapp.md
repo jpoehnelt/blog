@@ -69,7 +69,7 @@ I always try to be explicit with my configuration to avoid surprises.
 | `method`                    | `get`   | Always define this explicitly (e.g., `'post'`, `'put'`). |
 | `contentType`               | `form`  | Crucial for JSON APIs (`application/json`).              |
 | `muteHttpExceptions`        | `false` | **Always set to true** for robust error handling.        |
-| `followRedirects`           | `true`  | Disable debugging DNS or cookie issues.                  |
+| `followRedirects`           | `true`  | Disable when debugging DNS or cookie issues.             |
 | `validateHttpsCertificates` | `true`  | Disable only for internal testing.                       |
 
 ### The Importance of `muteHttpExceptions`
@@ -326,7 +326,7 @@ function spoofUserAgent() {
 
 Unlike a browser, `UrlFetchApp` is stateless. It does not automatically store cookies.
 
-** The Redirect Trap **
+**The Redirect Trap**
 
 A common failure mode occurs with login flows that involve redirects (e.g., `302 Found`). If `followRedirects` is true (default), `UrlFetchApp` follows the chain but discards cookies set by intermediate pages (Tracker Issues [36762397](https://issuetracker.google.com/issues/36762397), [36754794](https://issuetracker.google.com/issues/36754794)). When it reaches the final protected page, it lacks the session cookie and gets rejected.
 
@@ -342,14 +342,16 @@ function manageCookies() {
   );
 
   const headers = setCookie.getAllHeaders();
-  let cookieHeaders = headers['Set-Cookie'] || [];
+  let setCookieHeaders = headers["Set-Cookie"] || [];
 
   // Ensure it's an array, as UrlFetchApp may return a single string
-  if (!Array.isArray(cookieHeaders)) {
-    cookieHeaders = [cookieHeaders];
+  if (!Array.isArray(setCookieHeaders)) {
+    setCookieHeaders = [setCookieHeaders];
   }
 
-  const cookie = cookieHeaders.map(c => c.split(';')[0]).join('; ');
+  const cookie = setCookieHeaders
+    .map((cookieString) => cookieString.split(";")[0])
+    .join("; ");
 
   // 2. Pass that cookie to the next request
   const verify = UrlFetchApp.fetch("https://httpbin.org/cookies", {
@@ -436,7 +438,8 @@ function fetchWithRetry(url, params = {}) {
 
     // Exponential backoff + Jitter
     const jitter = Math.round(Math.random() * 500);
-    let sleepMs = Math.pow(2, attempt + 1) * 1000 + jitter;
+    const exponentialBackoffMs = Math.pow(2, attempt + 1) * 1000 + jitter;
+    let sleepMs = exponentialBackoffMs;
 
     if (response) {
       const headers = response.getAllHeaders();
