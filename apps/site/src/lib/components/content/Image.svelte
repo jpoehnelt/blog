@@ -7,11 +7,15 @@
     alt,
     class: className = "",
     displayLabel = true,
+    loading = "lazy",
+    fetchpriority = "auto",
   }: {
     src: string;
     alt: string;
     class?: string;
     displayLabel?: boolean;
+    loading?: "lazy" | "eager";
+    fetchpriority?: "auto" | "high" | "low";
   } = $props();
 
   // Convert old relative paths and resolve to enhanced image objects
@@ -61,6 +65,8 @@
         {alt}
         class={cn("rounded-sm mx-auto", className)}
         data-original-src={src}
+        {loading}
+        {fetchpriority}
       />
     {:else}
       <img
@@ -68,6 +74,8 @@
         {alt}
         class={cn("rounded-sm mx-auto", className)}
         data-original-src={src}
+        {loading}
+        {fetchpriority}
       />
     {/if}
   </a>
