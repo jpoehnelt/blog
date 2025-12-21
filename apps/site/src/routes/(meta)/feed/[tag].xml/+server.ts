@@ -4,7 +4,6 @@ import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
 import { getPostsMetadata, type Post } from "$lib/content/posts";
 import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
 
-
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
