@@ -1,5 +1,5 @@
 import { getPostsMetadata, getTagsWithCounts } from "$lib/content/posts";
-import { getStravaActivities } from "$lib/content/strava";
+import { getStravaActivities, mapStravaActivity } from "$lib/content/strava";
 import {
   startOfDay,
   startOfYear,
@@ -49,8 +49,8 @@ export const load: PageServerLoad = async () => {
   return {
     posts,
     tags,
-    recentActivities: allActivities.slice(0, 10),
-    recentRaces: races.slice(0, 10),
+    recentActivities: allActivities.slice(0, 10).map(mapStravaActivity),
+    recentRaces: races.slice(0, 10).map(mapStravaActivity),
     runningChartData,
   };
 };
