@@ -29,7 +29,31 @@ export function slugify(text: string): string {
     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
 }
 
-export function getActivitySlug(activity: DetailedActivityResponse): string {
+export interface StravaActivitySimple {
+  id: number | string;
+  name: string;
+  start_date: string | Date;
+  distance?: number;
+  moving_time?: number;
+  total_elevation_gain?: number;
+  type?: string;
+  sport_type?: string;
+}
+
+export function mapStravaActivity(activity: any): StravaActivitySimple {
+  return {
+    id: activity.id,
+    name: activity.name,
+    start_date: activity.start_date,
+    type: activity.type,
+    sport_type: activity.sport_type,
+    distance: activity.distance,
+    moving_time: activity.moving_time,
+    total_elevation_gain: activity.total_elevation_gain,
+  };
+}
+
+export function getActivitySlug(activity: StravaActivitySimple): string {
   if (!activity.name) return activity.id.toString();
   return `${activity.id}/${slugify(activity.name)}`;
 }
