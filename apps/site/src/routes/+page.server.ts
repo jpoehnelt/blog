@@ -1,8 +1,5 @@
 import { getPostsMetadata, getTagsWithCounts } from "$lib/content/posts";
-import {
-  getStravaActivities,
-  mapStravaActivity,
-} from "$lib/content/strava";
+import { getStravaActivities, mapStravaActivity } from "$lib/content/strava";
 import {
   startOfDay,
   startOfYear,
