@@ -56,6 +56,12 @@ One of the most defining characteristics of Apps Script is that it is synchronou
 
 In Node.js, network requests are non-blocking. In Apps Script, a call to [`UrlFetchApp.fetch()`](<https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app#fetch(String,Object)>) halts the entire script until the server responds or times out.
 
+<Note>
+
+**No WebSocket Support**: Because `UrlFetchApp` is strictly synchronous and follows a request/response model, it does not support persistent connections like WebSockets. (Tracker Issue [117437427](https://issuetracker.google.com/117437427)).
+
+</Note>
+
 ## Configuration Deep Dive
 
 The `fetch(url, params)` method is the core interface. While simple requests are easy, production-grade integrations require understanding the configuration options.
