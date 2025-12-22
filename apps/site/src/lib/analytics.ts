@@ -4,10 +4,7 @@ export interface GTagEventParams {
   [key: string]: string | number | boolean;
 }
 
-export function sendEvent(
-  eventName: GTagEvent,
-  params: GTagEventParams
-): void {
+export function sendEvent(eventName: GTagEvent, params: GTagEventParams): void {
   if (import.meta.env.DEV) {
     console.log(`GA: ${eventName}`, params);
   }
