@@ -5,6 +5,7 @@
   import BrandIcon from "$lib/components/BrandIcon.svelte";
   import * as icons from "simple-icons";
   import { cn } from "$lib/utils";
+  import { sendEvent } from "$lib/analytics";
 
   let { content = "", language = "", class: className = "" } = $props();
   let copied = $state(false);
@@ -42,6 +43,11 @@
       setTimeout(() => {
         copied = false;
       }, 5_000);
+
+      sendEvent("code_copy", {
+        language,
+        character_count: content.length,
+      });
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }

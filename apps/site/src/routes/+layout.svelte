@@ -5,6 +5,7 @@
   import CodeToolbar from "$lib/components/CodeToolbar.svelte";
   import { mount, onMount } from "svelte";
   import { afterNavigate } from "$app/navigation";
+  import { sendEvent } from "$lib/analytics";
 
   import "../app.css";
   let { children } = $props();
@@ -29,7 +30,29 @@
 
   onMount(() => {
     addCodeToolbar();
+    document.addEventListener("click", handleGlobalClick);
+
+    return () => {
+      document.removeEventListener("click", handleGlobalClick);
+    };
   });
+
+  function handleGlobalClick(event: MouseEvent) {
+    const anchor = (event.target as HTMLElement).closest("a");
+    if (!anchor) return;
+
+    const url = anchor.href;
+    const text = anchor.innerText;
+    const domain = anchor.hostname;
+    const outbound = anchor.host !== window.location.host;
+
+    sendEvent("link_click", {
+      link_url: url,
+      link_text: text,
+      outbound,
+      link_domain: domain,
+    });
+  }
 
   function addCodeToolbar() {
     for (const node of document.querySelectorAll("pre > code")) {
