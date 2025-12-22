@@ -14,6 +14,7 @@ import { unified } from "unified";
 import { visit } from "unist-util-visit";
 import { toString } from "hast-util-to-string";
 import { getPostContent } from "./posts";
+import matter from "gray-matter";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
 
@@ -91,6 +92,7 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
 
   try {
     const raw = (await postLoader()) as string;
+    const { content } = matter(raw);
 
     const toc: TocItem[] = [];
 
@@ -110,7 +112,7 @@ export async function getPostToc(id: string): Promise<TocItem[]> {
         });
       });
 
-    await processor.run(processor.parse(raw));
+    await processor.run(processor.parse(content));
 
     return toc;
   } catch (e) {
