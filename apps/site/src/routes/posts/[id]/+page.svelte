@@ -6,6 +6,7 @@
   import { AUTHOR_NAME, LICENSE, BASE_URL } from "$lib/constants";
   import { siMarkdown } from "simple-icons";
   import BrandIcon from "$lib/components/BrandIcon.svelte";
+  import GoogleDisclaimer from "$lib/components/content/GoogleDisclaimer.svelte";
 
   import type { PageProps } from "./$types";
 
@@ -25,6 +26,22 @@
       author: {
         "@type": "Person",
         name: AUTHOR_NAME,
+        worksFor: {
+          "@type": "Organization",
+          name: "Google",
+        },
+        affiliation: [
+          {
+            "@type": "Organization",
+            name: "Falls Creek Ranch Association, Inc.",
+            url: "https://fallscreekranch.org",
+          },
+          {
+            "@type": "Organization",
+            name: "Falls Creek Wildlands and Trails",
+            url: "https://fcwt.org",
+          },
+        ],
       },
       datePublished: data.pubDate.toISOString(),
       dateModified: (data.lastMod || data.pubDate).toISOString(),
@@ -133,6 +150,7 @@
     </div>
 
     <PostContent />
+    <GoogleDisclaimer tags={data.tags} />
     <div class="mt-8">
       <p class="text-xs">
         © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
