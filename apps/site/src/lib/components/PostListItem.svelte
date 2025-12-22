@@ -6,9 +6,10 @@
   interface Props {
     post: Post;
     showTags?: boolean;
+    showDescription?: boolean;
   }
 
-  let { post, showTags = true }: Props = $props();
+  let { post, showTags = true, showDescription = false }: Props = $props();
 </script>
 
 <div class="flex items-baseline gap-2 py-1">
@@ -19,7 +20,7 @@
     >
       {post.title}
     </a>
-    {#if post.description}
+    {#if showDescription && post.description}
       <p class="text-sm text-muted-foreground">{post.description}</p>
     {/if}
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap">
