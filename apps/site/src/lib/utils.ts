@@ -1,8 +1,16 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { GOOGLE_KEYWORDS } from "./constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+export function isGoogleRelated(tags: string[] | undefined): boolean {
+  if (!tags) return false;
+  return tags.some((tag) =>
+    GOOGLE_KEYWORDS.some((keyword) => tag.toLowerCase().includes(keyword))
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -6,6 +6,8 @@
   import { AUTHOR_NAME, LICENSE, BASE_URL } from "$lib/constants";
   import { siMarkdown } from "simple-icons";
   import BrandIcon from "$lib/components/BrandIcon.svelte";
+  import GoogleDisclaimer from "$lib/components/content/GoogleDisclaimer.svelte";
+  import { isGoogleRelated } from "$lib/utils";
 
   import type { PageProps } from "./$types";
 
@@ -25,6 +27,14 @@
       author: {
         "@type": "Person",
         name: AUTHOR_NAME,
+        ...(isGoogleRelated(data.tags)
+          ? {
+              affiliation: {
+                "@type": "Organization",
+                name: "Google",
+              },
+            }
+          : {}),
       },
       datePublished: data.pubDate.toISOString(),
       dateModified: (data.lastMod || data.pubDate).toISOString(),
@@ -133,6 +143,7 @@
     </div>
 
     <PostContent />
+    <GoogleDisclaimer tags={data.tags} />
     <div class="mt-8">
       <p class="text-xs">
         © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
