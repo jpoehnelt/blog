@@ -17,6 +17,7 @@
     <a
       href={post.relativeURL}
       class="hover:underline"
+      style:view-transition-name="post-title-{post.id}"
     >
       {post.title}
     </a>

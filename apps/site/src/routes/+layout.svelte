@@ -4,7 +4,7 @@
   import { AUTHOR_NAME, PROMPT_SYSTEM } from "$lib/constants";
   import CodeToolbar from "$lib/components/CodeToolbar.svelte";
   import { mount, onMount } from "svelte";
-  import { afterNavigate } from "$app/navigation";
+  import { afterNavigate, onNavigate } from "$app/navigation";
   import { sendEvent } from "$lib/analytics";
 
   import "../app.css";
@@ -23,6 +23,19 @@
 
   // Use constant to avoid hydration mismatch
   const currentYear = new Date().getFullYear();
+
+  onNavigate((navigation) => {
+    // @ts-ignore
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      // @ts-ignore
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 
   afterNavigate(() => {
     addCodeToolbar();
