@@ -1,3 +1,9 @@
+<script lang="ts">
+  import Head from "$lib/components/Head.svelte";
+</script>
+
+<Head title="404 - Page Not Found" description="Page not found" pathname="/404" robots="noindex, nofollow" />
+
 <!-- WORKAROUND: make it work w/ cf pages fallback behaviour -->
 
 <div class="flex min-h-[calc(100vh-8rem)] items-center justify-center p-4">
