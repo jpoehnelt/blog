@@ -40,12 +40,14 @@ export interface StravaActivitySimple {
   sport_type?: string;
 }
 
-export function mapStravaActivity(activity: any): StravaActivitySimple {
+export function mapStravaActivity(
+  activity: DetailedActivityResponse,
+): StravaActivitySimple {
   return {
     id: activity.id,
     name: activity.name,
     start_date: activity.start_date,
-    type: activity.type,
+    type: (activity as any).type,
     sport_type: activity.sport_type,
     distance: activity.distance,
     moving_time: activity.moving_time,

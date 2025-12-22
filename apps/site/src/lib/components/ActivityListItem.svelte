@@ -1,7 +1,6 @@
 <script lang="ts">
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
-  import type { DetailedActivityResponse } from "strava-v3";
 
   interface Props {
     activity: StravaActivitySimple;
