@@ -1,7 +1,8 @@
 import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL } from "$lib/constants";
-import { getAllTags, getPostsMetadata, type Post } from "$lib/content/posts";
+import { type Post } from "$lib/content/posts";
+import { getAllTags, getPostsMetadata } from "$lib/content/posts.server";
 import { getStravaActivities, getActivitySlug } from "$lib/content/strava";
 
 import type { RequestHandler } from "./$types";

@@ -1,4 +1,5 @@
-import { getPostsMetadata, type Post } from "$lib/content/posts";
+import { type Post } from "$lib/content/posts";
+import { getPostsMetadata } from "$lib/content/posts.server";
 
 import type { PageServerLoad } from "./$types";
 

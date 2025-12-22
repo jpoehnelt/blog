@@ -1,4 +1,4 @@
-import { getPostsMetadata, getTagsWithCounts } from "$lib/content/posts";
+import { getPostsMetadata, getTagsWithCounts } from "$lib/content/posts.server";
 import { getStravaActivities, mapStravaActivity } from "$lib/content/strava";
 import {
   startOfDay,

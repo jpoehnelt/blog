@@ -4,7 +4,8 @@ import {
   DEFAULT_DESCRIPTION,
   PROMPT_SYSTEM,
 } from "$lib/constants";
-import { getPostsMetadata, type Post } from "$lib/content/posts";
+import { type Post } from "$lib/content/posts";
+import { getPostsMetadata } from "$lib/content/posts.server";
 
 import type { RequestHandler } from "./$types";
 
