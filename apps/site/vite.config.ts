@@ -40,4 +40,17 @@ function copyImages() {
 
 export default defineConfig({
   plugins: [tailwindcss(), enhancedImages(), sveltekit(), copyImages()],
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.message.includes("dynamically imported")) {
+          throw new Error(warning.message);
+        }
+        warn(warning);
+      },
+    },
+  },
 });

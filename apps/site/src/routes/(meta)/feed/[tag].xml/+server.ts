@@ -1,7 +1,8 @@
 import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
-import { getPostsMetadata, type Post } from "$lib/content/posts";
+import { type Post } from "$lib/content/posts";
+import { getPostsMetadata } from "$lib/content/posts.server";
 import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
 
 import type { RequestHandler } from "./$types";

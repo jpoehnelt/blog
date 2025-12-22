@@ -1,4 +1,4 @@
-import { getTagsWithCounts } from "$lib/content/posts";
+import { getTagsWithCounts } from "$lib/content/posts.server";
 
 import type { PageServerLoad } from "../$types";
 
