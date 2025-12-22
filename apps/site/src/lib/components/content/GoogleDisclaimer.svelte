@@ -3,7 +3,7 @@
 
   import { isGoogleRelated } from "$lib/utils";
 
-  let { tags }: { tags: string[] } = $props();
+  let { tags = [] }: { tags?: string[] } = $props();
 
   let showDisclaimer = $derived(isGoogleRelated(tags));
 </script>
