@@ -7,7 +7,6 @@
   import { siMarkdown } from "simple-icons";
   import BrandIcon from "$lib/components/BrandIcon.svelte";
   import GoogleDisclaimer from "$lib/components/content/GoogleDisclaimer.svelte";
-  import { isGoogleRelated } from "$lib/utils";
 
   import type { PageProps } from "./$types";
 
@@ -27,14 +26,22 @@
       author: {
         "@type": "Person",
         name: AUTHOR_NAME,
-        ...(isGoogleRelated(data.tags)
-          ? {
-              affiliation: {
-                "@type": "Organization",
-                name: "Google",
-              },
-            }
-          : {}),
+        worksFor: {
+          "@type": "Organization",
+          name: "Google",
+        },
+        affiliation: [
+          {
+            "@type": "Organization",
+            name: "Falls Creek Ranch Association, Inc.",
+            url: "https://fallscreekranch.org",
+          },
+          {
+            "@type": "Organization",
+            name: "Falls Creek Wildlands and Trails",
+            url: "https://fcwt.org",
+          },
+        ],
       },
       datePublished: data.pubDate.toISOString(),
       dateModified: (data.lastMod || data.pubDate).toISOString(),
