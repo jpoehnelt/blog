@@ -1,9 +1,9 @@
 <script lang="ts">
   import ActivityListItem from "$lib/components/ActivityListItem.svelte";
-  import type { DetailedActivityResponse } from "strava-v3";
+  import type { StravaActivitySimple } from "$lib/content/strava";
 
   interface Props {
-    activities: DetailedActivityResponse[];
+    activities: StravaActivitySimple[];
   }
 
   let { activities }: Props = $props();
