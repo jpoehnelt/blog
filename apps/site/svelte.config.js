@@ -61,7 +61,7 @@ const config = {
     output: {
       bundleStrategy: "split", // Code-splitting for efficiency
     },
-    inlineStyleThreshold: 8192, // Inline critical CSS up to 8KB
+    inlineStyleThreshold: 51200, // Inline critical CSS up to 50KB
   },
   compilerOptions: {
     experimental: {

@@ -1,9 +1,5 @@
-import {
-  getPostMetadata,
-  getPostsMetadata,
-  type Post,
-} from "$lib/content/posts";
-import { getPostToc } from "$lib/content/posts.server";
+import { type Post } from "$lib/content/posts";
+import { getPostToc, getPostMetadata, getPostsMetadata } from "$lib/content/posts.server";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ params }) => {

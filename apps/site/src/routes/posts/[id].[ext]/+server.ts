@@ -1,6 +1,5 @@
 import matter from "gray-matter";
-import { getPostMarkdown } from "$lib/content/posts.server";
-import { getPostMetadata, getPostsMetadata } from "$lib/content/posts";
+import { getPostMarkdown, getPostMetadata, getPostsMetadata } from "$lib/content/posts.server";
 import type { RequestHandler, EntryGenerator } from "./$types";
 import { AUTHOR_NAME, LICENSE, BASE_URL, PROMPT_SYSTEM } from "$lib/constants";
 import { error } from "@sveltejs/kit";

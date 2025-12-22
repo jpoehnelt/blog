@@ -1,4 +1,6 @@
 import { BASE_URL, PUBLIC_IMAGES_PREFIX } from "$lib/constants";
+import { getMetadataFromMatter } from "./posts.shared";
+
 import { error } from "@sveltejs/kit";
 import type { Element } from "hast";
 import rehypeParse from "rehype-parse";
@@ -17,6 +19,74 @@ import { getPostContent } from "./posts";
 import matter from "gray-matter";
 
 const CONTENT_BASE_PATH = "/src/content/posts";
+
+// Eager load only metadata for fast listings
+const postsMetadata: Record<string, any> = import.meta.glob(
+  "/src/content/posts/*.md",
+  {
+    eager: true,
+    import: "metadata",
+  },
+);
+
+export const getPostMetadata = (id: string) => {
+  const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
+  const metadata = postsMetadata[filePath];
+
+  if (!metadata) {
+    throw error(404, `Post not found: ${id}`);
+  }
+
+  return getMetadataFromMatter(id, metadata);
+};
+
+export function getPostsMetadata() {
+  const metadata = Object.entries(postsMetadata)
+    .map(([filePath, data]) => {
+      const id = filePath.split("/").pop()?.replace(/\.md$/, "");
+      if (!id) throw new Error("Could not extract post ID from path: " + filePath);
+      return getMetadataFromMatter(id, data);
+    })
+    .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
+
+  return metadata;
+}
+
+export function getAllTags() {
+  const posts = getPostsMetadata();
+  const tagSet = new Set<string>();
+
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      tagSet.add(tag);
+    });
+  });
+
+  return Array.from(tagSet).sort();
+}
+
+export function getTagsWithCounts() {
+  const posts = getPostsMetadata();
+  const tagCounts = new Map<string, number>();
+
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  });
+
+  return Array.from(tagCounts.entries())
+    .map(([tag, count]) => ({ tag, count }))
+    .filter(({ count }) => count >= 3)
+    .sort((a, b) => {
+      if (b.count !== a.count) {
+        return b.count - a.count;
+      }
+      return a.tag.localeCompare(b.tag);
+    });
+}
+
+
 
 // Lazy load raw content for TOC extraction
 const postsRaw = import.meta.glob("/src/content/posts/*.md", {
