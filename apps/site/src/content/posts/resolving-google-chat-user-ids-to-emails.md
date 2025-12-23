@@ -33,9 +33,17 @@ Instead of using Domain-Wide Delegation to let the Service Account _impersonate_
 
 <Image src="read-users-custom-role.png" alt="Read Users Custom Role Assigned to Service Account" />
 
-1.  **[Create a Custom Role](https://support.google.com/a/answer/2405986):** In the [Google Admin Console](https://admin.google.com/), create a role with a single permission: `Admin API Privileges > Users > Read`.
-2.  **Assign the Role:** Assign this custom role directly to your Service Account's email address.
-3.  **Local Development:** Use [IAM Service Account Impersonation](https://docs.cloud.google.com/iam/docs/service-account-impersonation) (acting as the service account) to run your scripts locally, rather than Domain-Wide Delegation (the service account acting as a user), keeping your local environment key-free.
+### 1. Create a Custom Role
+
+In the [Google Admin Console](https://admin.google.com/), create a role with a single permission: `Admin API Privileges > Users > Read`. [Learn more about custom roles](https://support.google.com/a/answer/2405986).
+
+### 2. Assign the Role
+
+Assign this custom role directly to your Service Account's email address.
+
+### 3. Local Development
+
+Use [IAM Service Account Impersonation](https://docs.cloud.google.com/iam/docs/service-account-impersonation) (acting as the service account) to run your scripts locally, rather than Domain-Wide Delegation (the service account acting as a user), keeping your local environment key-free.
 
 ## The Solution
 
@@ -82,13 +90,13 @@ fi
 # 2. Query Admin SDK
 echo "Querying Admin SDK for User ID: $TARGET_USER_ID..."
 
-RESPONSE=$(curl -s -X GET \
+RESPONSE=$(curl -fs -X GET \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json" \
     "https://admin.googleapis.com/admin/directory/v1/users/${TARGET_USER_ID}?projection=basic")
 
 # 3. Parse the output
-EMAIL=$(echo $RESPONSE | jq -r '.primaryEmail')
+EMAIL=$(jq -r '.primaryEmail' <<< "$RESPONSE")
 
 if [ "$EMAIL" != "null" ] && [ -n "$EMAIL" ]; then
     echo "------------------------------------"
@@ -96,7 +104,7 @@ if [ "$EMAIL" != "null" ] && [ -n "$EMAIL" ]; then
     echo "------------------------------------"
 else
     echo "Error: Could not resolve email. API Response:"
-    echo $RESPONSE | jq .
+    jq . <<< "$RESPONSE"
 fi
 ```
 
