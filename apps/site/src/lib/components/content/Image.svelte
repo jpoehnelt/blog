@@ -9,6 +9,7 @@
     displayLabel = true,
     loading = "lazy",
     fetchpriority = "auto",
+    sizes,
   }: {
     src: string;
     alt: string;
@@ -16,6 +17,7 @@
     displayLabel?: boolean;
     loading?: "lazy" | "eager";
     fetchpriority?: "auto" | "high" | "low";
+    sizes?: string;
   } = $props();
 
   // Convert old relative paths and resolve to enhanced image objects
@@ -67,6 +69,7 @@
         data-original-src={src}
         {loading}
         {fetchpriority}
+        {sizes}
       />
     {:else}
       <img
@@ -76,6 +79,7 @@
         data-original-src={src}
         {loading}
         {fetchpriority}
+        {sizes}
       />
     {/if}
   </a>
