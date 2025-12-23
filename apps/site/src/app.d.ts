@@ -10,4 +10,18 @@ declare global {
   }
 }
 
+declare module "*&enhanced" {
+  const value: import("@sveltejs/enhanced-img").Picture;
+  export default value;
+}
+
+declare module "*?enhanced" {
+  const value: import("@sveltejs/enhanced-img").Picture;
+  export default value;
+}
+
+
+
+
+
 export {};

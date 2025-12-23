@@ -1,7 +1,8 @@
 <script lang="ts">
   import Head from "$lib/components/Head.svelte";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
-  import justinPoehneltImg from "$lib/images/justin-poehnelt.jpg?enhanced";
+  // @ts-ignore - TS fails to match the complex query string to the *&enhanced ambient module declaration
+  import justinPoehneltImg from "$lib/images/justin-poehnelt.jpg?w=1326;800;400&enhanced";
   import ActivityList from "$lib/components/ActivityList.svelte";
   import PostTagCloud from "$lib/components/PostTagCloud.svelte";
   import RunningChart from "$lib/components/RunningChart.svelte";
@@ -77,6 +78,7 @@
             class="w-full grayscale contrast-125 filter rounded-sm mx-auto"
             loading="eager"
             fetchpriority="high"
+            sizes="(min-width: 1024px) 300px, 100vw"
           />
           <div class="prose prose-sm">
             <p>
