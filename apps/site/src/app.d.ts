@@ -20,9 +20,8 @@ declare module "*?enhanced" {
   export default value;
 }
 
-declare module "*.jpg?*" {
-  const value: import("@sveltejs/enhanced-img").Picture;
-  export default value;
-}
+
+
+
 
 export {};

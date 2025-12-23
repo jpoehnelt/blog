@@ -1,7 +1,7 @@
 <script lang="ts">
   import Head from "$lib/components/Head.svelte";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
-  // @ts-ignore
+  // @ts-ignore - TS fails to match the complex query string to the *&enhanced ambient module declaration
   import justinPoehneltImg from "$lib/images/justin-poehnelt.jpg?w=1326;800;400&enhanced";
   import ActivityList from "$lib/components/ActivityList.svelte";
   import PostTagCloud from "$lib/components/PostTagCloud.svelte";
