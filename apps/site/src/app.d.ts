@@ -10,6 +10,12 @@ declare global {
   }
 }
 
+declare global {
+	interface Document {
+		startViewTransition(updateCallback: () => Promise<void> | void): ViewTransition;
+	}
+}
+
 declare module "*&enhanced" {
   const value: import("@sveltejs/enhanced-img").Picture;
   export default value;
@@ -19,9 +25,5 @@ declare module "*?enhanced" {
   const value: import("@sveltejs/enhanced-img").Picture;
   export default value;
 }
-
-
-
-
 
 export {};

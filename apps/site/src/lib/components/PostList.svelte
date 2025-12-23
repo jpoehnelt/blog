@@ -6,13 +6,19 @@
     posts: Post[];
     showTags?: boolean;
     showDescription?: boolean;
+    enableTransitions?: boolean;
   }
 
-  let { posts, showTags = true, showDescription = false }: Props = $props();
+  let {
+    posts,
+    showTags = true,
+    showDescription = false,
+    enableTransitions = false,
+  }: Props = $props();
 </script>
 
 <div class="space-y-1 max-w-4xl">
   {#each posts as post}
-    <PostListItem {post} {showTags} {showDescription} />
+    <PostListItem {post} {showTags} {showDescription} {enableTransitions} />
   {/each}
 </div>
