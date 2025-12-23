@@ -130,7 +130,7 @@ Verifying access token...
 }
 Querying Admin SDK...
 ------------------------------------
-Success! resolved to: justin@example.com
+Success! Resolved to: justin@example.com
 ------------------------------------
 ```
 
