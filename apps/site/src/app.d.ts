@@ -10,4 +10,10 @@ declare global {
   }
 }
 
+declare global {
+	interface Document {
+		startViewTransition(updateCallback: () => Promise<void> | void): ViewTransition;
+	}
+}
+
 export {};
