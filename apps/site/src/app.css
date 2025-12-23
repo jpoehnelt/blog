@@ -146,6 +146,10 @@
   .prose p {
     @apply leading-relaxed;
   }
+  
+  .prose {
+    max-width: 75ch !important;
+  }
 
   /* Better code inline styling */
   .prose code:not(pre code) {
