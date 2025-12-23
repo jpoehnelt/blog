@@ -10,6 +10,8 @@ import remarkInlineLinks from "remark-inline-links";
 
 const theme = "vitesse-light";
 
+import remarkSnippet from "./src/lib/server/remark-snippet.js";
+
 const config = {
   trailingSlash: "always",
   extensions: [".svelte", ".md", ".mdx"],
@@ -37,7 +39,7 @@ const config = {
           return `{@html \`${html}\` }`;
         },
       },
-      remarkPlugins: [remarkGfm, remarkInlineLinks],
+      remarkPlugins: [remarkGfm, remarkInlineLinks, remarkSnippet],
       rehypePlugins: [
         rehypeSlug,
         [
