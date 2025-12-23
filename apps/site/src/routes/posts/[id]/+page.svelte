@@ -119,7 +119,7 @@
 
   <article class="prose flex-1 min-w-0">
     <div class="flex flex-col gap-2">
-      <h1 class="mb-0">{data.title}</h1>
+      <h1 class="mb-0" style:view-transition-name="post-title-{data.id}">{data.title}</h1>
       <div class="flex flex-wrap gap-1 items-center">
         <span class="text-xs">
           Published on <b><FormattedDate date={data.pubDate} /></b>

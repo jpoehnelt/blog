@@ -7,9 +7,15 @@
     post: Post;
     showTags?: boolean;
     showDescription?: boolean;
+    enableTransitions?: boolean;
   }
 
-  let { post, showTags = true, showDescription = false }: Props = $props();
+  let {
+    post,
+    showTags = true,
+    showDescription = false,
+    enableTransitions = false,
+  }: Props = $props();
 </script>
 
 <div class="flex items-baseline gap-2 py-1">
@@ -17,6 +23,9 @@
     <a
       href={post.relativeURL}
       class="hover:underline"
+      style:view-transition-name={enableTransitions
+        ? `post-title-${post.id}`
+        : undefined}
     >
       {post.title}
     </a>
