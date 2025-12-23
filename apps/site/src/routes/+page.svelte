@@ -120,7 +120,11 @@
         <h1
           class="text-4xl md:text-5xl font-black leading-tight mb-4 hover:underline decoration-4 underline-offset-4"
         >
-          <a href={featuredPost.relativeURL}>{featuredPost.title}</a>
+          <a
+            href={featuredPost.relativeURL}
+            style:view-transition-name="post-title-{featuredPost.id}"
+            >{featuredPost.title}</a
+          >
         </h1>
         <div
           class="flex flex-wrap md:flex-nowrap items-center gap-x-4 mb-4 text-sm font-mono text-muted-foreground border-y border-border py-1"
@@ -146,7 +150,11 @@
         {#each otherPosts.slice(0, 20) as post}
           <article class="flex flex-col h-full">
             <h4 class="text-xl font-bold mb-2 leading-snug hover:underline">
-              <a href={post.relativeURL}>{post.title}</a>
+              <a
+                href={post.relativeURL}
+                style:view-transition-name="post-title-{post.id}"
+                >{post.title}</a
+              >
             </h4>
             <div class="text-xs text-muted-foreground mb-2">
               <FormattedDate date={post.pubDate} />
