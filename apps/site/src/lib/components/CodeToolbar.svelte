@@ -66,7 +66,7 @@
     {:else}
       <Clipboard />
     {/if}
-    <span class="sr-only">Copy code to clipboard</span>
+    <span class="sr-only">{copied ? "Copied" : "Copy code to clipboard"}</span>
   </Button>
   {#if icon}
     <BrandIcon {icon} size={14} />
