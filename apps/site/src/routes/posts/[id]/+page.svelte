@@ -17,6 +17,16 @@
   // Use $derived to ensure PostContent updates when data changes (e.g. navigation)
   let PostContent = $derived(data.PostContent);
 
+  let mergedPosts = $derived.by(() => {
+    const posts = [...data.recommendations, ...data.latest];
+    const seen = new Set<string>();
+    return posts.filter((p) => {
+      if (seen.has(p.id)) return false;
+      seen.add(p.id);
+      return true;
+    });
+  });
+
   let schema: WithContext<Thing>[] = $derived([
     {
       "@context": "https://schema.org",
@@ -163,9 +173,7 @@
       {@render toc(data.toc)}
     </div>
 
-    <h3>Related Articles</h3>
-    <PostList posts={data.recommendations} showTags={false} />
-    <h3>Latest Articles</h3>
-    <PostList posts={data.latest} showTags={false} />
+    <h3>More Articles</h3>
+    <PostList posts={mergedPosts} showTags={false} />
   </aside>
 </main>
