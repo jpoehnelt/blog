@@ -54,6 +54,31 @@ const config = {
     }),
   ],
   kit: {
+    csp: {
+      mode: "hash",
+      directives: {
+        "script-src": [
+          "self",
+          "https://www.googletagmanager.com",
+          "https://maps.googleapis.com",
+        ],
+        "style-src": ["self", "unsafe-inline", "https://fonts.googleapis.com"],
+        "img-src": [
+          "self",
+          "data:",
+          "https://*.google.com",
+          "https://*.googleapis.com",
+          "https://*.gstatic.com",
+        ],
+        "connect-src": [
+          "self",
+          "https://*.google-analytics.com",
+          "https://*.analytics.google.com",
+          "https://*.googletagmanager.com",
+          "https://maps.googleapis.com",
+        ],
+      },
+    },
     paths: {
       relative: false,
     },
