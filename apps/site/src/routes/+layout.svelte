@@ -82,6 +82,23 @@
   }
 </script>
 
+<svelte:head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-67SN6HNB0B"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-67SN6HNB0B");
+  </script>
+</svelte:head>
+
 <Navbar {socialLinks} />
 
 {@render children()}
