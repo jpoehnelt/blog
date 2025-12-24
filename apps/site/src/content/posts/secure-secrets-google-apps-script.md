@@ -13,6 +13,7 @@ syndicate: true
 ---
 
 <script>
+  import img_script_properties_png from "$lib/images/script-properties.png?enhanced";
   import Note from "$lib/components/content/Note.svelte";
   import Tldr from "$lib/components/content/Tldr.svelte";
   import Image from "$lib/components/content/Image.svelte";
@@ -51,7 +52,7 @@ For general configuration, environment variables, and non-critical keys, the bui
 
 I can set these manually in the editor (**Project Settings > Script Properties**) or programmatically.
 
-<Image src="src/images/script-properties.png" alt="Script Properties in Apps Script Editor" />
+<Image src={img_script_properties_png} alt="Script Properties in Apps Script Editor" />
 
 Here is how I retrieve and parse them effectively. Note that [`getProperty`](https://developers.google.com/apps-script/reference/properties/properties#getpropertykey) always returns a string, so I need to handle type conversion myself.
 

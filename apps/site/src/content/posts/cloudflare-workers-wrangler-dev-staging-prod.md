@@ -15,6 +15,8 @@ tags:
 ---
 
 <script>
+  import img_cloudflare_workers_routes_png from "$lib/images/cloudflare-workers-routes.png?enhanced";
+  import img_cloudflare_workers_prod_dev_staging_png from "$lib/images/cloudflare-workers-prod-dev-staging.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -64,7 +66,7 @@ route = "dev.example.com/*"
 
 This will deploy a worker named `my-worker-dev` to a route of `dev.example.com/*` and set a variable `foo` to `bar` that can be accessed in the worker code.
 
-<Image src="cloudflare-workers-routes.png" alt="Cloudflare worker route for dev worker" />
+<Image src={img_cloudflare_workers_routes_png} alt="Cloudflare worker route for dev worker" />
 
 See the [Wrangler deploy] documentation for more information on deploying to different environments and the documentation on [Cloudflare workers environments](https://developers.cloudflare.com/workers/wrangler/environments/).
 
@@ -90,7 +92,7 @@ route = "example.com/*"
 
 This enables me to call `wrangler deploy --env staging` and `wrangler deploy --env prod` to deploy to the `staging` and `prod` environments respectively and the works look like this in the dashboard:
 
-<Image src="cloudflare-workers-prod-dev-staging.png" alt="Cloudflare workers for dev, staging, and prod" />
+<Image src={img_cloudflare_workers_prod_dev_staging_png} alt="Cloudflare workers for dev, staging, and prod" />
 
 Some fields are not inheritable across environments such as `vars` and `kv-namespaces`. You will need to set these for each environment.
 

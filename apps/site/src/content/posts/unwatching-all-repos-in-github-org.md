@@ -10,6 +10,7 @@ tags:
 ---
 
 <script>
+  import img_github_notifications_png from "$lib/images/github-notifications.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -67,7 +68,7 @@ gh api --paginate "https://api.github.com/user/subscriptions" |
 
 Now when I go to one of the repositories, I see that I am only subscribed to "Participating and @mentions" instead of "All Activity".
 
-<Image src="github-notifications.png" alt="GitHub watch notifications menu" />
+<Image src={img_github_notifications_png} alt="GitHub watch notifications menu" />
 
 <Note>
 

@@ -13,12 +13,13 @@ tags:
 ---
 
 <script>
+  import img_google_forms_name_title_documentitle_jpg from "$lib/images/google-forms-name-title-documentitle.jpg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
 Recently I had to clarify some confusion around the title and name of a Google Form and some inconsistencies between Apps Script, Forms API, and the Forms UI. For some background, the following image shows the name and title of a Google Form.
 
-<Image src="google-forms-name-title-documentitle.jpg" alt="Google Forms name, title, documentTitle" />
+<Image src={img_google_forms_name_title_documentitle_jpg} alt="Google Forms name, title, documentTitle" />
 
 The below table show the different ways the title and name are returned in the Forms UI, the Forms API, the `FormApp`, `DriveApp`, and the Drive API.
 

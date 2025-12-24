@@ -11,6 +11,7 @@ tags:
 ---
 
 <script>
+  import img_stokehook_settings_png from "$lib/images/stokehook-settings.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -39,7 +40,7 @@ The app basically does the following.
 
 The interface for the app is pretty simple.
 
-<Image src="stokehook-settings.png" alt="Settings" />
+<Image src={img_stokehook_settings_png} alt="Settings" />
 
 ## Payload
 

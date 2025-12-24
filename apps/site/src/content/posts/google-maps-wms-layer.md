@@ -10,6 +10,10 @@ tags:
 ---
 
 <script>
+  import img_NLCD_2016_Land_Cover_L48_20210604_3857_png from "$lib/images/NLCD_2016_Land_Cover_L48_20210604_3857.png?enhanced";
+  import img_wms_image_map_type_options_interface_png from "$lib/images/wms/image-map-type-options-interface.png?enhanced";
+  import img_wms_xyz_tile_coordinates_png from "$lib/images/wms/xyz_tile_coordinates.png?enhanced";
+  import img_wms_map_png from "$lib/images/wms/map.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -78,7 +82,7 @@ The WMS standard exposes many options such as coordinate reference systems(CRS),
 
 These options become query parameters in our GetMap request to the WMS returning the following.
 
-<Image src="NLCD_2016_Land_Cover_L48_20210604_3857.png" alt="NLCD 2016 Land Cover L48" />
+<Image src={img_NLCD_2016_Land_Cover_L48_20210604_3857_png} alt="NLCD 2016 Land Cover L48" />
 
 ```js
 https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms?
@@ -101,7 +105,7 @@ It is important to note that the coordinates for the `BBOX` parameter must be in
 
 Now that we have a basic understanding how the HTTP request to retrieve imagery from a WMS, we can begin exploring the interface Google Maps exposes for its map types, specifically the `google.maps.ImageMapType` and `google.maps.ImageMapTypeOptions`.
 
-<Image src="wms/image-map-type-options-interface.png" alt="Interface for google.maps.ImageMapType" />
+<Image src={img_wms_image_map_type_options_interface_png} alt="Interface for google.maps.ImageMapType" />
 
 Your `getTileUrl` is the option required to enable a WMS layer in Google Maps and how we create that tile URL must follow the WMS standard discussed above.
 
@@ -122,7 +126,7 @@ Most tiled web maps follow certain Google Maps conventions:
 
 With the above conventions, we know that at zoom level 1, the world is divided into 4 tiles with the coordinates depicted below.
 
-<Image src="wms/xyz_tile_coordinates.png" alt="XYZ Tile Map Pattern" />
+<Image src={img_wms_xyz_tile_coordinates_png} alt="XYZ Tile Map Pattern" />
 
 We also know that the web mercator extent is a square and its bounds are `-PI * 6378137, PI * 6378137`. Given the above, we can convert from `x`, `y`, and `z` to coordinates using the following:
 
@@ -179,7 +183,7 @@ landCover.setMap(map);
 
 And add it to our map! See this [JSFiddle link](https://jsfiddle.net/jwpoehnelt/1ph0wen3) for an interactive example.
 
-<Image src="wms/map.png" alt="NLCD 2016 Land Cover L48" />
+<Image src={img_wms_map_png} alt="NLCD 2016 Land Cover L48" />
 
 ## Notes
 

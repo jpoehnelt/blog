@@ -1,11 +1,5 @@
-const imageModules = import.meta.glob(
-  "./images/**/*.{png,jpg,jpeg,gif,svg,webp}",
-  { eager: true, query: { enhanced: true } },
-);
+// This file has been deprecated and should no longer be used.
+// All images should be imported explicitly in the components that use them.
+// See apps/site/src/content/posts/*.md for examples.
 
 export const images: Record<string, any> = {};
-
-for (const [path, module] of Object.entries(imageModules)) {
-  const imagePath = path.replace("./images/", "");
-  images[imagePath] = (module as any).default;
-}

@@ -15,6 +15,10 @@ tags:
 ---
 
 <script>
+  import img_firestore_audit_logs_to_collection_png from "$lib/images/firestore-audit-logs-to-collection.png?enhanced";
+  import img_firestore_audit_logs_png from "$lib/images/firestore-audit-logs.png?enhanced";
+  import img_activity_logs_sink_pubsub_jpeg from "$lib/images/activity-logs-sink-pubsub.jpeg?enhanced";
+  import img_firestore_activity_collection_document_jpeg from "$lib/images/firestore-activity-collection-document.jpeg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -31,15 +35,15 @@ As part of a little side project, I wanted to log all Firestore writes for a use
 
 There are a few moving parts to this solution, but it's pretty automatic.
 
-<Image src="firestore-audit-logs-to-collection.png" alt="Firestore Audit Logs to Collection" />
+<Image src={img_firestore_audit_logs_to_collection_png} alt="Firestore Audit Logs to Collection" />
 
 1. Audit Logs are enabled for Firestore writes
 
-<Image src="firestore-audit-logs.png" alt="Enable Firestore Audit Logs" />
+<Image src={img_firestore_audit_logs_png} alt="Enable Firestore Audit Logs" />
 
 2. Logs are sent to a Pub/Sub topic via a sink
 
-<Image src="activity-logs-sink-pubsub.jpeg" alt="Create PubSub Sink" />
+<Image src={img_activity_logs_sink_pubsub_jpeg} alt="Create PubSub Sink" />
 
 3. Cloud Function is triggered by Pub/Sub message
 
@@ -77,4 +81,4 @@ export default functions.pubsub
 
 4. Cloud Function writes to Firestore
 
-<Image src="firestore-activity-collection-document.jpeg" alt="User Collection Containing Activity" />
+<Image src={img_firestore_activity_collection_document_jpeg} alt="User Collection Containing Activity" />

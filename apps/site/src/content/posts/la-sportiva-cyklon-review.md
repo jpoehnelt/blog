@@ -14,12 +14,18 @@ tags:
 ---
 
 <script>
+  import img_la_sportiva_cyklon_review_jpg from "$lib/images/la-sportiva-cyklon-review.jpg?enhanced";
+  import img_la_sportiva_cyklon_tread_jpg from "$lib/images/la-sportiva-cyklon-tread.jpg?enhanced";
+  import img_la_sportiva_cyklon_ice_studs_jpg from "$lib/images/la-sportiva-cyklon-ice-studs.jpg?enhanced";
+  import img_la_sportiva_cyklon_side_profile_jpg from "$lib/images/la-sportiva-cyklon-side-profile.jpg?enhanced";
+  import img_la_sportiva_cyklon_boa_jpg from "$lib/images/la-sportiva-cyklon-boa.jpg?enhanced";
+  import img_la_sportiva_cyklon_gaiter_boa_jpg from "$lib/images/la-sportiva-cyklon-gaiter-boa.jpg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
 The La Sportiva Cyklon Cross GTX is an ideal winter running shoe for snow and icy conditions with the built-in gaiter, GoreTex uppers, and lugs that provide traction on snow.
 
-<Image src="la-sportiva-cyklon-review.jpg" alt="La Sportiva Cyklon Cross GTX Review" />
+<Image src={img_la_sportiva_cyklon_review_jpg} alt="La Sportiva Cyklon Cross GTX Review" />
 
 My typical running shoe is the Hoka Speedgoat 5 and/or TectonX. However, neither of these shoes are suitable for snow and winters in southwest Colorado. In the past I have run with traction devices that wrap around these shoes but I wanted something that didn't shift during my runs and a shoe that would keep my feet dry and warm.
 
@@ -40,9 +46,9 @@ I plan to install "hobnails" or studs on the Cyklon to provide even more tractio
 
 You can see that the treads for these shoes are designed to accommodate screw in studs.
 
-<Image src="la-sportiva-cyklon-tread.jpg" alt="La Sportiva Cyklon Cross GTX Traction" />
+<Image src={img_la_sportiva_cyklon_tread_jpg} alt="La Sportiva Cyklon Cross GTX Traction" />
 
-<Image src="la-sportiva-cyklon-ice-studs.jpg" alt="Screw in ice studs for running shoes" />
+<Image src={img_la_sportiva_cyklon_ice_studs_jpg} alt="Screw in ice studs for running shoes" />
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6s0-82R3C7U?si=99sYr75Fu3m5cM6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="mx-auto w-full"></iframe>
 
@@ -54,12 +60,12 @@ These shoes should have enough rigidity to use with snowshoes. I haven't tried t
 
 The Boa system is a nice feature. It's easy to tighten and loosen the shoe. With the cushioned uppers, it's easy to tighten the shoe without any discomfort and get a nice snug fit. These are my first running shoes using the Boa system and so far I'm happy with it.
 
-<Image src="la-sportiva-cyklon-side-profile.jpg" alt="La Sportiva Cyklon Cross GTX Side Profile" />
+<Image src={img_la_sportiva_cyklon_side_profile_jpg} alt="La Sportiva Cyklon Cross GTX Side Profile" />
 
 ## Additional Photos
 
 Here are some additional photos showing the gaiter and side profile of the shoe.
 
-<Image src="la-sportiva-cyklon-boa.jpg" alt="La Sportiva Cyklon Cross GTX Boa System" />
+<Image src={img_la_sportiva_cyklon_boa_jpg} alt="La Sportiva Cyklon Cross GTX Boa System" />
 
-<Image src="la-sportiva-cyklon-gaiter-boa.jpg" alt="La Sportiva Cyklon Cross GTX Gaiter" />
+<Image src={img_la_sportiva_cyklon_gaiter_boa_jpg} alt="La Sportiva Cyklon Cross GTX Gaiter" />
