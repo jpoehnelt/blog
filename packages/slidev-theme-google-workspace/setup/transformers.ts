@@ -1,25 +1,85 @@
 import type { MarkdownTransformContext } from "@slidev/types";
 import { defineTransformersSetup } from "@slidev/types";
 
-function getValueByPath(obj: Object, path: string): any {
-  const brackets: Record<string, string> = {};
+function getValueByPath(obj: any, path: string): any {
+  if (!obj) return undefined;
 
-  // replace brackets with placeholders using dot notation
-  const pathWithPlaceholders = path
-    .trim()
-    // TODO does not cover all cases
-    .replace(/\[['"]?(.*?)['"]?\]/g, (_, match, index) => {
-      const placeholder = `__BRACKET_${index}__`;
-      brackets[placeholder] = match;
-      return `.${placeholder}`;
-    });
+  const keys: string[] = [];
+  let i = 0;
+  const len = path.length;
 
-  const keys = pathWithPlaceholders.split(".");
+  while (i < len) {
+    // Skip dot
+    if (path[i] === '.') {
+      i++;
+      continue;
+    }
+
+    if (path[i] === '[') {
+      // Bracket notation
+      i++; // consume [
+
+      // consume whitespace
+      while(i < len && /\s/.test(path[i])) i++;
+
+      if (i >= len) break; // malformed
+
+      let key = '';
+      if (path[i] === '\'' || path[i] === '"') {
+        // Quoted string
+        const quote = path[i];
+        i++; // consume opening quote
+
+        while (i < len) {
+           if (path[i] === '\\') {
+             if (i + 1 < len) {
+                key += path[i+1];
+                i += 2;
+             } else {
+                key += '\\';
+                i++;
+             }
+           } else if (path[i] === quote) {
+             i++; // consume closing quote
+             break;
+           } else {
+             key += path[i];
+             i++;
+           }
+        }
+
+        // consume whitespace after quote until ]
+        while(i < len && /\s/.test(path[i])) i++;
+        if (i < len && path[i] === ']') i++; // consume ]
+
+      } else {
+        // Unquoted key (number or variable-like)
+        while (i < len && path[i] !== ']') {
+           key += path[i];
+           i++;
+        }
+        key = key.trim();
+        if (i < len && path[i] === ']') i++; // consume ]
+      }
+      keys.push(key);
+    } else {
+      // Dot notation key
+      let key = '';
+      while (i < len && path[i] !== '.' && path[i] !== '[') {
+        key += path[i];
+        i++;
+      }
+      if (key.length > 0) {
+        keys.push(key);
+      }
+    }
+  }
+
+  // Traverse
   let current: any = obj;
-
   for (const key of keys) {
     if (current && typeof current === "object") {
-      current = current[key] ?? current[brackets[key]];
+      current = current[key];
     } else {
       return undefined;
     }
