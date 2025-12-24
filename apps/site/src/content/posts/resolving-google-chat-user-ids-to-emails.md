@@ -17,6 +17,7 @@ syndicate: true
 ---
 
 <script>
+  import img_read_users_custom_role_png from "$lib/images/read-users-custom-role.png?enhanced";
   import Note from '$lib/components/content/Note.svelte';
   import Image from '$lib/components/content/Image.svelte';
 </script>
@@ -31,7 +32,7 @@ There is a better way. By combining directly assigning a custom role to a Servic
 
 Instead of using Domain-Wide Delegation to let the Service Account _impersonate_ an Admin, we make the Service Account an Admin itself—but strictly a read-only one with a custom role.
 
-<Image src="read-users-custom-role.png" alt="Read Users Custom Role Assigned to Service Account" />
+<Image src={img_read_users_custom_role_png} alt="Read Users Custom Role Assigned to Service Account" />
 
 ### 1. Create a Custom Role
 

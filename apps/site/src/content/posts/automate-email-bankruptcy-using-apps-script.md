@@ -12,6 +12,9 @@ tags:
 ---
 
 <script>
+  import img_email_bankruptcy_permissions_png from "$lib/images/email-bankruptcy/permissions.png?enhanced";
+  import img_email_bankruptcy_oauth_png from "$lib/images/email-bankruptcy/oauth.png?enhanced";
+  import img_email_bankruptcy_trigger_png from "$lib/images/email-bankruptcy/trigger.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -34,7 +37,7 @@ You can customize this search as you see fit. I will probably modify this to als
 
 ## Permissions
 
-<Image src="email-bankruptcy/permissions.png" alt="Permissions" />
+<Image src={img_email_bankruptcy_permissions_png} alt="Permissions" />
 
 At this point, you need to grant permissions for your script to access your Gmail. Lucky for you, you wrote the code, so there shouldn’t be much to worry about. Famous last words! 😀
 
@@ -44,7 +47,7 @@ You may need to go through a verification process to get this working or can cli
 
 </Note>
 
-<Image src="email-bankruptcy/oauth.png" alt="Oauth prompt" />
+<Image src={img_email_bankruptcy_oauth_png} alt="Oauth prompt" />
 
 The sliced array of threads is because the GmailApp `moveThreadsToArchive` has a limit of 100 threads. But that doesn’t matter because I’m never going to run this manually.
 
@@ -52,7 +55,7 @@ The sliced array of threads is because the GmailApp `moveThreadsToArchive` has a
 
 Currently I have a cron that triggers this script every hour.
 
-<Image src="email-bankruptcy/trigger.png" alt="Triggering apps script every hour" />
+<Image src={img_email_bankruptcy_trigger_png} alt="Triggering apps script every hour" />
 
 ## Relax
 

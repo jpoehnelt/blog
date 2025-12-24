@@ -9,6 +9,9 @@ tags:
 ---
 
 <script>
+  import img_mountain_bike_bear_spray_holder_PXL_20210508_182247473_PORTRAIT_jpg from "$lib/images/mountain-bike-bear-spray-holder/PXL_20210508_182247473.PORTRAIT.jpg?enhanced";
+  import img_mountain_bike_bear_spray_holder_PXL_20210508_182626502_PORTRAIT_jpg from "$lib/images/mountain-bike-bear-spray-holder/PXL_20210508_182626502.PORTRAIT.jpg?enhanced";
+  import img_mountain_bike_bear_spray_holder_PXL_20210508_184843375_PORTRAIT_jpg from "$lib/images/mountain-bike-bear-spray-holder/PXL_20210508_184843375.PORTRAIT.jpg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -20,11 +23,11 @@ When I run, it goes in my vest pocket or I carry it in my hand. The bear spray c
 
 1. _Buy bear spray and holder with belt attachment_
 
-   <Image src="mountain-bike-bear-spray-holder/PXL_20210508_182247473.PORTRAIT.jpg" alt="Bear spray with belt attachment" />
+   <Image src={img_mountain_bike_bear_spray_holder_PXL_20210508_182247473_PORTRAIT_jpg} alt="Bear spray with belt attachment" />
 
 2. _Cut off the belt attachment_
 
-   <Image src="mountain-bike-bear-spray-holder/PXL_20210508_182626502.PORTRAIT.jpg" alt="Bear spray without belt attachment" />
+   <Image src={img_mountain_bike_bear_spray_holder_PXL_20210508_182626502_PORTRAIT_jpg} alt="Bear spray without belt attachment" />
 
 3. _Drill holes matching that of my bike frame mounts_
 
@@ -32,7 +35,7 @@ When I run, it goes in my vest pocket or I carry it in my hand. The bear spray c
 
 4. _Attach the bear spray can holder to the bike frame_
 
-   <Image src="mountain-bike-bear-spray-holder/PXL_20210508_184843375.PORTRAIT.jpg" alt="Bear spray mountain bike attachment" />
+   <Image src={img_mountain_bike_bear_spray_holder_PXL_20210508_184843375_PORTRAIT_jpg} alt="Bear spray mountain bike attachment" />
 
 5. _Get out and ride!_
 

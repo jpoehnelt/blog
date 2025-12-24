@@ -13,12 +13,12 @@ tags:
 ---
 
 <script>
+  import img_google_apps_script_urlfetchapp_guide_jpg from "$lib/images/google-apps-script-urlfetchapp-guide.jpg?enhanced";
   import Note from '$lib/components/content/Note.svelte';
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
-<Image
-  src="google-apps-script-urlfetchapp-guide.jpg"
+<Image src={img_google_apps_script_urlfetchapp_guide_jpg}
   alt="Google Apps Script UrlFetchApp Guide"
 />
 

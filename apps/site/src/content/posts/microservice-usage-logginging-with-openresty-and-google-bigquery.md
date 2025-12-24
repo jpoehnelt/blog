@@ -13,12 +13,15 @@ tags:
 ---
 
 <script>
+  import img_openresty_logging_microservices_png from "$lib/images/openresty-logging/microservices.png?enhanced";
+  import img_openresty_logging_architecture_diagram_png from "$lib/images/openresty-logging/architecture-diagram.png?enhanced";
+  import img_openresty_logging_bigquery_table_output_png from "$lib/images/openresty-logging/bigquery-table-output.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
 Here at Descartes Labs, we have been using the microservice architecture in building out our platform. If you are unfamiliar with microservices, they are a collection of independent services often communicating over HTTP or GRPC. Check out Martin Fowler’s 2014 [article](https://martinfowler.com/articles/microservices.html) for more information.
 
-<Image src="openresty-logging/microservices.png" alt="Microservices at Descartes Labs" />
+<Image src={img_openresty_logging_microservices_png} alt="Microservices at Descartes Labs" />
 
 ## Logging bytes sent
 
@@ -46,7 +49,7 @@ There are two issues with the above. The critical issue is that the Lua cosocket
 
 The solution we have implemented involves using a detached thread on each NGINX worker and a shared thread safe buffer.
 
-<Image src="openresty-logging/architecture-diagram.png" alt="OpenResty architecture" />
+<Image src={img_openresty_logging_architecture_diagram_png} alt="OpenResty architecture" />
 
 The NGINX Lua blocks look like the following.
 
@@ -121,6 +124,6 @@ LIMIT 100
 
 Which outputs this table:
 
-<Image src="openresty-logging/bigquery-table-output.png" alt="Google BigQuery Results Using Vegeta for Load Testing" />
+<Image src={img_openresty_logging_bigquery_table_output_png} alt="Google BigQuery Results Using Vegeta for Load Testing" />
 
 Having reached this point, it is trivial to add a few fields to group by, such as customer or service, and provide billing with varying windows and granularity.

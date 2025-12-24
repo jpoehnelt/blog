@@ -14,6 +14,7 @@ tags:
 ---
 
 <script>
+  import img_automating_dependabot_pull_requests_png from "$lib/images/automating-dependabot-pull-requests.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -53,7 +54,7 @@ And it works! 🎉
 
 The pull request now looks like the following:
 
-<Image src="automating-dependabot-pull-requests.png" alt="Automating DependaBot pull request approval and merging" />
+<Image src={img_automating_dependabot_pull_requests_png} alt="Automating DependaBot pull request approval and merging" />
 
 Once I had this implemented and pushed to all the repositories, I just need to [tell Dependabot to rebase all pull requests](/posts/rebase-all-dependabot-pull-requests/).
 

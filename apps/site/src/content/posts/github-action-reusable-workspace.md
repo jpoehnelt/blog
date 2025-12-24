@@ -13,6 +13,7 @@ tags:
 ---
 
 <script>
+  import img_parallel_github_workflow_png from "$lib/images/parallel-github-workflow.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -55,7 +56,7 @@ jobs:
 
 My workflow now runs the build and then the preview and test steps in parallel. The preview job can also use a matrix without needing to rebuild the workspace after this change.
 
-<Image src="parallel-github-workflow.png" alt="Optimized parallel jobs in a GitHub workflow" />
+<Image src={img_parallel_github_workflow_png} alt="Optimized parallel jobs in a GitHub workflow" />
 
 This new action is a great way to optimize your GitHub Actions workflows and reduce the time it takes to run your CI/CD pipeline. I hope you find it useful, just include the following:
 

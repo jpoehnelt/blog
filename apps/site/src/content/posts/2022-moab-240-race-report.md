@@ -13,12 +13,13 @@ tags:
 ---
 
 <script>
+  import img_moab_240_course_scenery_jpeg from "$lib/images/moab_240_course_scenery.jpeg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
 Achilles still has not recovered from the [Mog100](/posts/2022-mogollon-monster-race-report/), giant nodules and the entire ankle was swollen. Had it taped well for the first 70 or so miles but took it off because it changed my stride which was leading to other problems. Someday I will start a 200 without a preexisting injury.
 
-<Image src="moab_240_course_scenery.jpeg" alt="Beautiful views along the Moab 240 course" />
+<Image src={img_moab_240_course_scenery_jpeg} alt="Beautiful views along the Moab 240 course" />
 
 Some other notes.
 

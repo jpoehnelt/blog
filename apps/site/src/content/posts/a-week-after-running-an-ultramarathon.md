@@ -13,6 +13,7 @@ tags:
 ---
 
 <script>
+  import img_resting_heart_rate_after_ultramarathon_png from "$lib/images/resting-heart-rate-after-ultramarathon.png?enhanced";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -25,7 +26,7 @@ A week after running the Canyons 100 mile ultramarathon:
 
 It is really amazing how long some of these activities take to recover from! I need more sleep and to keep eating!
 
-<Image src="resting-heart-rate-after-ultramarathon.png" alt="Resting Heart Rate before and after an UltraMarathon" />
+<Image src={img_resting_heart_rate_after_ultramarathon_png} alt="Resting Heart Rate before and after an UltraMarathon" />
 
 <Note>
 

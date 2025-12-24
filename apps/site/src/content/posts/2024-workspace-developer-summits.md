@@ -13,10 +13,11 @@ tags:
 ---
 
 <script>
+  import img_2024_developer_summits_jpeg from "$lib/images/2024-developer-summits.jpeg?enhanced";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
-<Image src="2024-developer-summits.jpeg" alt="Google Workspace Developer Summits 2024" />
+<Image src={img_2024_developer_summits_jpeg} alt="Google Workspace Developer Summits 2024" />
 
 Save the date for the Google Workspace Developer Summits in 2024!
 
