@@ -62,6 +62,29 @@ const config = {
       bundleStrategy: "split", // Code-splitting for efficiency
     },
     inlineStyleThreshold: 51200, // Inline critical CSS up to 50KB
+    csp: {
+      mode: "auto",
+      directives: {
+        "script-src": [
+          "'self'",
+          "https://www.googletagmanager.com",
+          "https://www.google-analytics.com",
+        ],
+        "object-src": ["'none'"],
+        "base-uri": ["'self'"],
+        "img-src": [
+          "'self'",
+          "data:",
+          "https://www.googletagmanager.com",
+          "https://www.google-analytics.com",
+        ],
+        "connect-src": [
+          "'self'",
+          "https://www.googletagmanager.com",
+          "https://www.google-analytics.com",
+        ],
+      },
+    },
   },
   compilerOptions: {
     experimental: {
