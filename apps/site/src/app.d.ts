@@ -11,9 +11,11 @@ declare global {
 }
 
 declare global {
-	interface Document {
-		startViewTransition(updateCallback: () => Promise<void> | void): ViewTransition;
-	}
+  interface Document {
+    startViewTransition(
+      updateCallback: () => Promise<void> | void,
+    ): ViewTransition;
+  }
 }
 
 declare module "*&enhanced" {

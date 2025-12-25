@@ -1,13 +1,6 @@
 import { getPostsMetadata, getTagsWithCounts } from "$lib/content/posts.server";
 import { getStravaActivities, mapStravaActivity } from "$lib/content/strava";
-import {
-  startOfDay,
-  startOfYear,
-  differenceInDays,
-  addDays,
-  isAfter,
-  isSameDay,
-} from "date-fns";
+import { startOfDay, startOfYear, differenceInDays, addDays } from "date-fns";
 
 import type { PageServerLoad } from "./$types";
 
@@ -33,18 +26,18 @@ export const load: PageServerLoad = async () => {
   });
 
   // Populate with activity data
-  allActivities.forEach((activity) => {
-    if (!activity.start_date) return;
+  for (const activity of allActivities) {
+    if (!activity.start_date) continue;
     const activityDate = startOfDay(new Date(activity.start_date));
-    if (isAfter(activityDate, addDays(startOfYearDate, -1))) {
-      const dayData = runningChartData.find((d) =>
-        isSameDay(d.date, activityDate),
-      );
-      if (dayData) {
-        dayData.distance += (activity.distance || 0) / 1000;
-      }
+
+    // Since activities are sorted by date descending, we can stop once we reach last year
+    if (activityDate < startOfYearDate) break;
+
+    const dayIndex = differenceInDays(activityDate, startOfYearDate);
+    if (dayIndex >= 0 && dayIndex < runningChartData.length) {
+      runningChartData[dayIndex].distance += (activity.distance || 0) / 1000;
     }
-  });
+  }
 
   return {
     posts,

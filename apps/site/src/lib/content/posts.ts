@@ -23,6 +23,3 @@ export const getPostContent = async (id: string): Promise<Component> => {
 
   return post.default;
 };
-
-
-
