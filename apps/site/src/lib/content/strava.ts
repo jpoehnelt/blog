@@ -7,10 +7,14 @@ export const stravaData: Record<string, DetailedActivityResponse> =
     import: "default",
   });
 
+let cachedActivities: DetailedActivityResponse[] | null = null;
+
 export function getStravaActivities(): DetailedActivityResponse[] {
-  return Object.values(stravaData).sort((a, b) => {
+  if (cachedActivities) return cachedActivities;
+  cachedActivities = Object.values(stravaData).sort((a, b) => {
     return new Date(b.start_date).getTime() - new Date(a.start_date).getTime();
   });
+  return cachedActivities;
 }
 
 export function getStravaActivity(

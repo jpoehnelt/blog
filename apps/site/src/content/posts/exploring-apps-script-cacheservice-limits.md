@@ -40,8 +40,9 @@ According to the official [documentation](https://developers.google.com/apps-scr
 However, specific details about the **Apps Script CacheService key length limit of 250 characters** and expected errors for other invalid inputs are less clear. Let's find out exactly where the walls are.
 
 > **Important Distinction:** These limits apply to the specific cache instance you request.
-> * **`getScriptCache()`**: The 1,000-item limit is **shared** across all users. If you have 50 users adding 20 items each, you will hit the limit and trigger mass evictions immediately.
-> * **`getUserCache()`**: The limit applies **per user**, making it much safer for user-specific data (like settings or temporary drafts).
+>
+> - **`getScriptCache()`**: The 1,000-item limit is **shared** across all users. If you have 50 users adding 20 items each, you will hit the limit and trigger mass evictions immediately.
+> - **`getUserCache()`**: The limit applies **per user**, making it much safer for user-specific data (like settings or temporary drafts).
 
 ## The Experiment
 
@@ -384,6 +385,7 @@ When you hit the limit, you don't just lose one item. You lose a **block** of ro
 To build robust applications within these **Apps Script CacheService limits**, adopt these architectural patterns:
 
 ### 1. The "Cache-Aside" Pattern
+
 Never assume data is in the cache. Implement a wrapper that accepts a "fetcher" function. If the cache misses, it runs the fetcher, stores the result, and returns it.
 
 ```javascript
@@ -399,6 +401,7 @@ function getOrSet(key, fetcher, ttl) {
 ```
 
 ### 2. Prevent "Thundering Herd" with Jitter
+
 If you set a static expiration (e.g., exactly 600s) for a popular resource, it will expire for everyone simultaneously, causing a spike in load. Add randomness ("jitter") to your expiration times.
 
 ```javascript
@@ -408,14 +411,17 @@ cache.put(key, value, 600 + jitter);
 ```
 
 ### 3. Batches and Namespaces
+
 - **Batch Operations**: Apps Script is sensitive to latency. Always use `getAll` and `putAll` when processing multiple keys.
 - **Namespace Keys**: `getScriptCache()` is global for the script. Prefix keys (e.g., `STAGING_CONFIG:settings`) to prevent collisions between environments or different parts of your app.
 
 ### 4. Handling Large Payloads (Chunking)
+
 Since the 100KB limit is strict, you cannot cache large API responses directly.
-**Strategy**: Split the string into 90KB chunks (`key_1`, `key_2`) and store a "manifest" key (`key_meta`) to reassemble them. *Warning: Ensure you handle partial cache hits where one chunk is missing.*
+**Strategy**: Split the string into 90KB chunks (`key_1`, `key_2`) and store a "manifest" key (`key_meta`) to reassemble them. _Warning: Ensure you handle partial cache hits where one chunk is missing._
 
 ### 5. Refresh Critical Keys (FIFO Defense)
+
 Since `cache.get()` does not reset the eviction timer (FIFO), you must manually "refresh" hot items by re-writing them.
 
 ```javascript
@@ -435,6 +441,7 @@ function refreshKey(cache, key, expirationInSeconds) {
 ```
 
 ### 6. Concurrency & Safety
+
 - **Hash Your Keys**: Use `Utilities.computeDigest` to ensure keys stay under 250 characters.
 - **Use LockService**: Cache writes are not atomic. Wrap Read-Modify-Write operations (like counters) in `LockService.getScriptLock()` to prevent race conditions.
 
