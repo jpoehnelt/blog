@@ -1,0 +1,12 @@
+{
+  "requests": [
+    {
+      "updateSpreadsheetProperties": {
+        "properties": {
+          "importFunctionsExternalUrlAccessAllowed": true
+        },
+        "fields": "importFunctionsExternalUrlAccessAllowed"
+      }
+    }
+  ]
+}

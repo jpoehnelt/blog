@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Build steps (save should be after this)
+      - uses: jpoehnelt/reusable-workspace/save@v1
+  preview:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jpoehnelt/reusable-workspace/restore@v1
+      # Additional steps (restore should be before this)
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jpoehnelt/reusable-workspace/restore@v1
+        with:
+          fail-on-miss: true
+      # Additional steps (restore should be before this)

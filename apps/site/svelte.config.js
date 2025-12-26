@@ -7,9 +7,12 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
+import remarkSnippet from "@jpoehnelt/remark-snippet";
 
+/** @type {string} */
 const theme = "vitesse-light";
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
   trailingSlash: "always",
   extensions: [".svelte", ".md", ".mdx"],
@@ -37,7 +40,7 @@ const config = {
           return `{@html \`${html}\` }`;
         },
       },
-      remarkPlugins: [remarkGfm, remarkInlineLinks],
+      remarkPlugins: [remarkGfm, remarkInlineLinks, remarkSnippet],
       rehypePlugins: [
         rehypeSlug,
         [
@@ -89,6 +92,12 @@ const config = {
           "https://www.google-analytics.com",
           "https://maps.googleapis.com",
         ],
+    typescript: {
+      config: (config) => {
+        const snippetsDir = "../src/content/posts/snippets";
+        console.log("Applying exclude for snippets", snippetsDir);
+        config.exclude = [...(config.exclude || []), snippetsDir];
+        return config;
       },
     },
   },

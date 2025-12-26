@@ -12,6 +12,10 @@ tags:
   - workflows
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 I recently ran into an issue where I was required to pass environment variables into a Docker container. I was using the [docker/build-push-action](https://github.com/docker/build-push-action) to build and push the container and everything was working fine until I needed the `SENTRY_AUTH_TOKEN` environment variable as part of the build step for my NextJS application.
 
 The solution has two parts.
@@ -23,14 +27,7 @@ The solution has two parts.
 
 This part was easy.
 
-```yml
-- name: Build and push
-  uses: docker/build-push-action@v3
-  with:
-    context: .
-    build-args: |
-      "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}"
-```
+<Snippet src="./snippets/environment-variables-in-docker-build-push-action/build-and-push.yaml" />
 
 ### Dockerfile
 

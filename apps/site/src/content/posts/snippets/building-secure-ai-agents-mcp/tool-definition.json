@@ -1,0 +1,14 @@
+{
+  "name": "read_email",
+  "description": "Read an email message by ID. Returns the subject and body.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "emailId": {
+        "type": "string",
+        "description": "The ID of the email to read"
+      }
+    },
+    "required": ["emailId"]
+  }
+}

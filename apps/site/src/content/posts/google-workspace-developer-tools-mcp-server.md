@@ -13,6 +13,10 @@ tags:
 syndicate: true
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 Following the release of the [VS Code extension](/posts/google-workspace-developer-tools-vscode-extension), I've also published a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) server for Google Workspace Developers.
 
 This server provides AI agents with context-aware access to Google Workspace developer documentation, enabling them to retrieve up-to-date information about APIs, services, and code snippets.
@@ -45,15 +49,7 @@ For other MCP clients, you can configure the server manually.
 
 For **Gemini**, add this to your `settings.json`:
 
-```json
-{
-  "mcpServers": {
-    "workspace-developer": {
-      "httpUrl": "https://workspace-developer.goog/mcp"
-    }
-  }
-}
-```
+<Snippet src="./snippets/google-workspace-developer-tools-mcp-server/mcp-config.json" />
 
 ## Links
 

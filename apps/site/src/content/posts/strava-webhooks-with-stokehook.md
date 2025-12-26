@@ -11,6 +11,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -47,64 +48,10 @@ The key feature is that Strava sends a "thin" webhook with minimal fields for th
 
 So instead of:
 
-```json
-{
-  "aspect_type": "create",
-  "event_time": 1654224986,
-  "object_id": 7246184314,
-  "object_type": "activity",
-  "owner_id": 2170160,
-  "subscription_id": 217592,
-  "updates": {}
-}
-```
+<Snippet src="./snippets/strava-webhooks-with-stokehook/webhook-payload.json" />
 
 The payload ends up looking like:
 
-```json
-{
-  "aspect_type": "create",
-  "event_time": 1654224986,
-  "object_id": 7246184314,
-  "object_type": "activity",
-  "owner_id": 2170160,
-  "subscription_id": 217592,
-  "updates": {},
-  "data": {
-    "resource_state": 3,
-    "athlete": {
-      "id": 2170160,
-      "resource_state": 1
-    },
-    "name": "Evening Hike",
-    "distance": 2077.3,
-    "moving_time": 1700,
-    "elapsed_time": 1843,
-    "total_elevation_gain": 25,
-    "type": "Hike",
-    "id": 7246184314,
-    "start_date": "2022-06-03T02:22:32Z",
-    "start_date_local": "2022-06-02T20:22:32Z",
-    ...
-    "pr_count": 0,
-    "total_photo_count": 0,
-    "has_kudoed": false,
-    "suffer_score": 2,
-    "description": null,
-    "calories": 99,
-    "perceived_exertion": null,
-    "prefer_perceived_exertion": null,
-    "segment_efforts": [],
-    ...
-    "available_zones": [
-      "heartrate"
-    ]
-  },
-  "meta": {
-    "id": "FDnZJ5smHVVPYQAVOrq3",
-    "url": "https://webhook.site/633a324a-eec8-46d1-9bb8-d7b7ca0d90b5"
-  }
-}
-```
+<Snippet src="./snippets/strava-webhooks-with-stokehook/webhook-payload-1.json" />
 
 Try it out at [Stokehook.com](https://stokehook.com)!

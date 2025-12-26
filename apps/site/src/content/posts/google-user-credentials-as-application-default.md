@@ -14,6 +14,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -58,14 +59,7 @@ The `--scopes` flag is optional and should be set to the scopes required by the 
 
 The `credentials.json` file will have contents similar to the following:
 
-```js
-{
-  "client_id": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
-  "client_secret": "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9sLvLS",
-  "refresh_token": "1//iKehrEMZb3aRJFCUxToYY0Nrsve7DoJomVr3zDsHmLUb1LmHsiIq1AUx55MMqnCA",
-  "type": "authorized_user"
-}
-```
+<Snippet src="./snippets/google-user-credentials-as-application-default/example.js" />
 
 The `type` field should be `authorized_user` and the `refresh_token` field is what we (or the library/SDK) will use to generate access tokens. This is different from a service account key file where the `type` field is `service_account` and the `private_key` field is used to generate access tokens.
 
@@ -92,15 +86,7 @@ curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth 
 
 The output of this command should return the following info:
 
-```js
-{
-  "issued_to": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
-  "audience": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
-  "scope": "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/accounts.reauth",
-  "expires_in": 3593,
-  "access_type": "offline"
-}
-```
+<Snippet src="./snippets/google-user-credentials-as-application-default/example-1.js" />
 
 ## User credentials as application default credentials
 
@@ -114,47 +100,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/some/path/credentials.json"
 
 I use this pattern to synchronize my Gmail labels and filters using Terraform executed in a GitHub action along with other automations. My GitHub workflow looks like the following, where `GOOGLE_CREDENTIALS` is a secret containing the contents of the `credentials.json` file:
 
-```yaml
-name: Terraform
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-jobs:
-  terraform:
-    if: github.actor != 'dependabot[bot]'
-    name: "Terraform"
-    runs-on: ubuntu-latest
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
-    steps:
-      - uses: actions/checkout@v3
-      - uses: hashicorp/setup-terraform@v2
-
-      - name: Write credentials.json
-        uses: jsdaniell/create-json@v1.2.2
-        with:
-          name: "credentials.json"
-          json: ${{ secrets.GOOGLE_CREDENTIALS }}
-
-      - name: Terraform Init
-        id: init
-        run: terraform init
-
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
-
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -no-color
-
-      - name: Terraform Apply
-        id: apply
-        run: terraform apply -auto-approve
-        if: github.ref == 'refs/heads/main' && steps.plan.outcome == 'success'
-```
+<Snippet src="./snippets/google-user-credentials-as-application-default/terraform.yaml" />
 
 ## Conclusion
 

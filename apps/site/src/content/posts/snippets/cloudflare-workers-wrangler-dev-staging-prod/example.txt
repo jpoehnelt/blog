@@ -1,0 +1,6 @@
+[env.dev]
+name = "my-worker-dev"
+route = "dev.example.com/*"
+
+[env.dev.var]
+  foo = "bar"

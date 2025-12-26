@@ -17,6 +17,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -129,31 +130,7 @@ Exception: You have exceeded the property storage quota.
 
 To match the [CacheService] interface I wrapped the [PropertiesService] in a class:
 
-```javascript
-class PropertiesWrapper {
-  /**
-   * @params {Properties} properties
-   */
-  constructor(properties) {
-    this.properties = properties;
-  }
-  /**
-   * @params {String} k
-   * @params {String} v
-   */
-  put(k, v) {
-    this.properties.setProperties({ k: v });
-  }
-
-  /**
-   * @params {String} k
-   * @returns {String|undefined}
-   */
-  get(k) {
-    return this.properties.getProperty(k);
-  }
-}
-```
+<Snippet src="./snippets/apps-script-key-value-stores/propertieswrapper.js" />
 
 To learn more about [PropertiesService] and its methods, you can refer to the [official documentation](https://developers.google.com/apps-script/reference/properties/properties-service).
 

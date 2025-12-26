@@ -1,0 +1,13 @@
+[env.staging]
+name = "my-worker-staging"
+route = "staging.example.com/*"
+
+[env.staging.var]
+  foo = "bar"
+
+[env.prod]
+name = "my-worker-prod"
+route = "example.com/*"
+
+[env.prod.var]
+  foo = "bar"

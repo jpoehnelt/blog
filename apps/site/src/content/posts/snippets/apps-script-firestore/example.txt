@@ -1,0 +1,11 @@
+10:30:56 AM	Notice	Execution started
+10:30:57 AM	Info	{ name: 'projects/OMITTED/databases/(default)/documents/kv/test',
+  fields: { foo: { stringValue: 'test' } },
+  createTime: '2024-01-08T21:52:09.794036Z',
+  updateTime: '2024-01-10T18:30:57.728011Z' }
+10:30:58 AM	Info	{ name: 'projects/OMITTED/databases/(default)/documents/kv/test',
+  fields: { foo: { stringValue: 'test' } },
+  createTime: '2024-01-08T21:52:09.794036Z',
+  updateTime: '2024-01-10T18:30:57.728011Z' }
+10:30:58 AM	Info	{}
+10:30:58 AM	Notice	Execution completed

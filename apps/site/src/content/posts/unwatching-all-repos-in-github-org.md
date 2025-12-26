@@ -10,6 +10,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -31,39 +32,11 @@ gh api --paginate "https://api.github.com/user/subscriptions" |
 
 I was subscribed to the following repositories in the GitHub organization.
 
-```txt
-"googlemaps/.github"
-"googlemaps/android-maps-rx"
-"googlemaps/android-places-ktx"
-"googlemaps/google-maps-services-go"
-"googlemaps/google-maps-services-python"
-"googlemaps/googlemaps.github.io"
-"googlemaps/js-api-loader"
-"googlemaps/js-jest-mocks"
-"googlemaps/js-markerclustererplus"
-"googlemaps/js-markermanager"
-"googlemaps/js-markerwithlabel"
-"googlemaps/js-ogc"
-"googlemaps/js-polyline-codec"
-"googlemaps/js-samples"
-"googlemaps/js-three"
-"googlemaps/js-types"
-"googlemaps/openapi-specification"
-"googlemaps/react-wrapper"
-"googlemaps/v3-utility-library"
-```
+<Snippet src="./snippets/unwatching-all-repos-in-github-org/example.txt" />
 
 Now all I had to do was pipe this into another `gh api` command to delete the subscription.
 
-```bash
-gh api --paginate "https://api.github.com/user/subscriptions" |
-  | jq '.[] | .full_name' \
-  | grep googlemaps \
-  | xargs -I {} \
-    gh api \
-      -X DELETE \
-      "https://api.github.com/repos/{}/subscription"
-```
+<Snippet src="./snippets/unwatching-all-repos-in-github-org/example.sh" />
 
 Now when I go to one of the repositories, I see that I am only subscribed to "Participating and @mentions" instead of "All Activity".
 

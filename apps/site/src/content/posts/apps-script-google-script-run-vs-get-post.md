@@ -18,6 +18,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -45,31 +46,13 @@ The poorly named `withUserObject` method can be used to pass additional data to 
 
 > A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
-```js
-google.script.run
-  .withSuccessHandler((result, userObject) =>
-    console.log({ result, userObject }),
-  )
-  .withUserObject(this)
-  .readData();
-```
+<Snippet src="./snippets/apps-script-google-script-run-vs-get-post/example.js" />
 
 ### `doGet`/`doPost` endpoints
 
 More flexible. Use with any web development framework and access data from various applications. Requires implementing logic within a single set of endpoints to route to functions.
 
-```js
-function doGet(e) {
-  if (e.parameter.action === "read") {
-    return ContentService.createTextOutput(
-      JSON.stringify(readData()),
-    ).setMimeType(ContentService.MimeType.JSON);
-  } else {
-    // return the HTML file, index.html in this case
-    return HtmlService.createHtmlOutputFromFile("index");
-  }
-}
-```
+<Snippet src="./snippets/apps-script-google-script-run-vs-get-post/doget.js" />
 
 And then to call the endpoint from the frontend:
 

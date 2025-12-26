@@ -13,6 +13,10 @@ tags:
   - privacy
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 Accessing data from external parties in Google Sheets is now blocked by default. This change affects any spreadsheets that use the `IMAGE` or `IMPORT` functions to import data from external URLs. Users will now need to grant permission to access external data before the functions can be used. This warning shows up as:
 
 > Warning: Some formulas are trying to send and receive data from external parties.
@@ -37,19 +41,6 @@ The comment for this property reads:
 
 The property is set to `false` by default. Developers can use the `spreadsheets.batchUpdate` method in the Sheets API to set this property to `true` and allow access to external URLs for the `IMAGE` and `IMPORT` functions without requiring user consent.
 
-```js
-{
-  "requests": [
-    {
-      "updateSpreadsheetProperties": {
-        "properties": {
-          "importFunctionsExternalUrlAccessAllowed": true
-        },
-        "fields": "importFunctionsExternalUrlAccessAllowed"
-      }
-    }
-  ]
-}
-```
+<Snippet src="./snippets/sheets-api-import-image-external-url/example.js" />
 
 After this change, the warning message will no longer appear, and the functions will work as expected!

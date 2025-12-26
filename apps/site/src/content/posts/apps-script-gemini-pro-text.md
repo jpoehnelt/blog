@@ -14,29 +14,13 @@ tags:
   - ai
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 Short and sweet snippet for generating text in Apps Script with the [Gemini Pro Rest API](https://ai.google.dev/tutorials/rest_quickstart).
 
-```js
-function generateContent(text, API_KEY) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
-
-  return JSON.parse(
-    UrlFetchApp.fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      payload: JSON.stringify({
-        contents: [
-          {
-            parts: [{ text }],
-          },
-        ],
-      }),
-    }).getContentText(),
-  );
-}
-```
+<Snippet src="./snippets/apps-script-gemini-pro-text/generatecontent.js" />
 
 And parsing the response:
 

@@ -19,6 +19,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -63,69 +64,17 @@ Drive.Files.get(id, { alt: "media" });
 
 This method is the most flexible, but it requires the `script.external_request` scope. While this allows retrieving a single file from Drive as a `Blob`, it also allows sending requests to any URL, which poses a potential security risk. This method is likely the best option for getting through the OAuth verification process for your Workspace Add-on, but it may not be installed by some organizations with strict data loss prevention policies.
 
-```js
-const url = `https://www.googleapis.com/drive/v3/files/${id}?alt=media`;
-UrlFetchApp.fetch(url, {
-  headers: {
-    Authorization: `Bearer ${ScriptApp.getOAuthToken()}`,
-  },
-}).getContent();
-```
+<Snippet src="./snippets/apps-script-drive-file-get-blob/url.js" />
 
 ### Code snippets for each method and comparison
 
 Here are the code snippets for each method and a comparison of the first 10 bytes of the `Blob` obtained by each method. Replace `ID` with the ID of the file you want to test.
 
-```javascript
-const ID = "18q95H4slpt6sgtkbEoq6m9rppCb-GAEX";
-
-function getBlobById(id = ID) {
-  return DriveApp.getFileById(id).getBlob();
-}
-
-function getBlobByIdAdvanced(id = ID) {
-  // Does not work with alt: "media"
-  try {
-    return Drive.Files.get(id, { alt: "media" });
-  } catch (e) {
-    console.error(e.message);
-  }
-}
-
-function getBlobByUrl(id = ID) {
-  const url = `https://www.googleapis.com/drive/v3/files/${id}?alt=media`;
-  return UrlFetchApp.fetch(url, {
-    headers: {
-      // This token will differ based upon the context of the script execution
-      Authorization: `Bearer ${ScriptApp.getOAuthToken()}`,
-    },
-  }).getContent();
-}
-
-function test() {
-  const driveAppBlob = getBlobById(ID);
-  const driveAdvancedBlob = getBlobByIdAdvanced(ID);
-  const urlFetchBlob = getBlobByUrl(ID);
-
-  console.log({
-    driveAppBytes: driveAppBlob.getBytes().slice(0, 10),
-    driveAdvancedBytes: driveAdvancedBlob?.getBytes()?.slice(0, 10),
-    urlFetchBlobBytes: urlFetchBlob.slice(0, 10),
-  });
-}
-```
+<Snippet src="./snippets/apps-script-drive-file-get-blob/getblobbyid.js" />
 
 The `test()` function will log the first 10 bytes of the `Blob` obtained by each method. You can run this function from the Apps Script editor to compare the results.
 
-```sh
-9:52:12 AM	Notice	Execution started
-9:52:13 AM	Error	Failed with: Drive.Files.get(id, { alt: "media" })
-9:52:14 AM	Info	{
-  driveAppBytes:     [ -119, 80, 78, 71, 13, 10, 26, 10, 0, 0 ],
-  driveAdvancedBytes: undefined,
-  urlFetchBlobBytes: [ -119, 80, 78, 71, 13, 10, 26, 10, 0, 0 ] }
-9:52:14 AM	Notice	Execution completed
-```
+<Snippet src="./snippets/apps-script-drive-file-get-blob/example.sh" />
 
 ### Conclusion
 

@@ -11,6 +11,10 @@ tags:
   - workflows
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 ## Problem
 
 I have a GitHub repository using `main` as the default branch, but I am trying to integrate a third party tool (loading JSFiddle contents from GitHub) that has `master` hardcoded as the default branch.
@@ -31,28 +35,7 @@ Below is a simple GitHub workflow that pushes `main` to `master`. The key option
 
 > Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set fetch-depth: 0 to fetch all history for all branches and tags. Refer [here](https://help.github.com/en/articles/events-that-trigger-workflows) to learn which commit $GITHUB_SHA points to for different events.
 
-```yaml
-# .github/workflows/push-to-master.yml
-name: Push to Master
-on:
-  push:
-    branches:
-      - main
-jobs:
-  push:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Update master branch from main
-        run: |
-          git config --global user.name 'Justin Poehnelt'
-          git config --global user.email 'jpoehnelt@users.noreply.github.com'
-          git checkout master
-          git reset --hard origin/main
-          git push origin master
-```
+<Snippet src="./snippets/sync-branches-github-workflow/push-to-master.yaml" />
 
 Depending on how you use GitHub workflows, you may also want to ignore the `master` branch. The following workflow will trigger on every branch except `master` using [branches-ignore](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushbranchestagsbranches-ignoretags-ignore).
 

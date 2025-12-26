@@ -13,6 +13,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -28,17 +29,7 @@ The problem in NGINX and with chunked responses from upstream services is that g
 
 The first thing to try, which DOES NOT WORK, is the following:
 
-```
-log_by_lua_block {
-    local payload = {
-        bytes = tonumber(ngx.var.bytes_sent),
-        status = tonumber(ngx.var.status),
-        timestamp = ngx.now()
-        ... -- more values
-    }
-    -- post payload to favorite backend for timeseries analysis
-}
-```
+<Snippet src="./snippets/microservice-usage-logginging-with-openresty-and-google-bigquery/example.txt" />
 
 There are two issues with the above. The critical issue is that the Lua cosocket for nonblocking IO is not available in the logging phase. The second is we want to do this in batch.
 
@@ -50,74 +41,19 @@ The solution we have implemented involves using a detached thread on each NGINX 
 
 The NGINX Lua blocks look like the following.
 
-```nginx
-lua_shared_dict usage_logging 10m;
-
-init_worker_by_lua_block {
-    local Logging = require "descarteslabs.logging"
-    l = Logging.new()
-    l:watch(ngx.shared.usage_logging)
-}
-
-location = /test {
-    proxy_pass service;
-    log_by_lua_block {
-        local payload = {
-            bytes = tonumber(ngx.var.bytes_sent),
-            status = tonumber(ngx.var.status),
-            timestamp = ngx.now()
-            ... -- more values
-        }
-        local Logging = require "descarteslabs.logging"
-        l = Logging.save(ngx.shared.usage_logging, payload)
-    }
-}
-```
+<Snippet src="./snippets/microservice-usage-logginging-with-openresty-and-google-bigquery/example.conf" />
 
 ## Checking the buffer
 
 The ngx.timer.at mechanism makes it trivial to watch this buffer. The only trick is that each worker will be watching the buffer, so some randomness should be added.
 
-```nginx
-local check_function
-check_function = function(premature)
-    if not premature then
-        while true do
-            local requests = self:get(size)
-            pcall(_M.save, self, rows)
-
-            if #rows < size then
-                break
-            end
-        end
-
-        local ok, err = ngx.timer.at(delay(), check_function)
-        if not ok then
-            log(ERR, "failed to create timer: ", err)
-            return
-        end
-    end
-end
-```
+<Snippet src="./snippets/microservice-usage-logginging-with-openresty-and-google-bigquery/example-1.conf" />
 
 ## Using BigQuery
 
 As a primarily Google Cloud Platform customer, we have a custom Lua client for many of the Google Cloud APIs, such as Cloud Storage, BigQuery, and Stackdriver. For this particular use case, we are trying out BigQuery. Our query looks something like this:
 
-```sql
-SELECT
-  COUNT(*) as calls,
-  SUM(bytes) as bytes,
-  DATETIME_TRUNC(DATETIME(timestamp), `second` ) as w
-FROM `project.dataset.table`
-WHERE
-  status=200
-GROUP BY
-  w
-ORDER BY
-  w desc
-LIMIT 100
-```
+<Snippet src="./snippets/microservice-usage-logginging-with-openresty-and-google-bigquery/example.sql" />
 
 Which outputs this table:
 

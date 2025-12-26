@@ -9,23 +9,13 @@ tags:
   - react
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 The package [@googlemaps/react-wrapper](https://www.npmjs.com/package/@googlemaps/react-wrapper) is a wrapper component that helps load the Google Maps JavaScript API. Below is a short snippet demonstrating usage.
 
-```js
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
-
-const render = (status: Status): ReactElement => {
-  if (status === Status.LOADING) return <Spinner />;
-  if (status === Status.FAILURE) return <ErrorComponent />;
-  return null;
-};
-
-const MyApp = () => (
-  <Wrapper apiKey={"YOUR_API_KEY"} render={render}>
-    <MyMapComponent />
-  </Wrapper>
-);
-```
+<Snippet src="./snippets/google-maps-react-wrapper/render.js" />
 
 Recently I livecoded its usage and created `google.maps.Map` and `google.maps.Marker` components.
 
