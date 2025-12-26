@@ -17,6 +17,16 @@ tags:
   - definitelytyped
 ---
 
+<script>
+  import Note from "$lib/components/content/Note.svelte";
+</script>
+
+<Note>
+
+Update: See [React Wrapper for Google Drive Picker](/posts/react-wrapper-google-drive-picker) for a React component with built-in types.
+
+</Note>
+
 Last week I submited a [pull request to the DefinitelyTyped repository](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70926) for the Google Drive Picker API. Not a big deal in itself, but these types are generated from the same source as the [Google Drive Picker reference documentation](https://developers.google.com/drive/picker/reference/picker) and _should_ be more correct and consistent than the community types that were previously in the DefinitelyTyped repository.
 
 The versions of [`@types/google.picker`](https://www.npmjs.com/package/@types/google.picker?activeTab=versions) in this switchover are:

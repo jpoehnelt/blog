@@ -19,6 +19,12 @@ tags:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
+<Note>
+
+Update: See [Generating Text with Gemini Pro in Apps Script](/posts/apps-script-gemini-pro-text) for a snippet on using Gemini Pro.
+
+</Note>
+
 Using Vertex AI in Apps Script and is remarkably easy! This post will show you how to use the Vertex AI API in Apps Script to make predictions on your data or use it in any of your other Google Workspace processes.
 
 ## What is Vertex AI?
