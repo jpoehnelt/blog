@@ -310,7 +310,7 @@ layout: two-cols-header
 
 <p class="important:mt-0">The solution is to ground the AI with:</p>
 
-- **Project-Specific Guidance** via local context files, e.g. `GEMINI.md`.
+- **Project-Specific Guidance** via local context files, e.g. `AGENTS.md`.
 - **Live, Accurate Data** from external tools and protocols, e.g. MCP, GEMS.
 
 </v-click>
@@ -336,7 +336,7 @@ svg: "bottom-left"
 
 # Project-Specific Guidance
 
-Use context files (e.g., `GEMINI.md`, `AGENTS.md`) to give the AI durable, high-level instructions.
+Use context files (e.g., `AGENTS.md`) to give the AI durable, high-level instructions.
 
 - **Define a Persona:** "You are an expert in Google Apps Script."
 - **Set Conventions:** "All functions must include JSDoc comments."
@@ -344,7 +344,7 @@ Use context files (e.g., `GEMINI.md`, `AGENTS.md`) to give the AI durable, high-
 - **Tool Instructions:** "Use `pnpm` instead of `npm` for dependency management."
 
 <!--
-Context files like `GEMINI.md` or `AGENT.md` give the AI durable, high-level instructions, defining a persona, conventions, and domain knowledge.
+Context files like `AGENTS.md` give the AI durable, high-level instructions, defining a persona, conventions, and domain knowledge.
 -->
 
 ---

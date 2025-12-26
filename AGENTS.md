@@ -6,9 +6,9 @@ You are an expert developer maintaining a Turborepo monorepo with a SvelteKit bl
 
 ## Structure
 
-- **apps/site**: SvelteKit blog. See [apps/site/GEMINI.md](apps/site/GEMINI.md).
+- **apps/site**: SvelteKit blog. See [apps/site/AGENTS.md](apps/site/AGENTS.md).
 - **packages/**: Shared utilities (`data-automation`) and themes (`slidev-theme-google-workspace`).
-- **talks/**: Slidev presentations. See [talks/GEMINI.md](talks/GEMINI.md).
+- **talks/**: Slidev presentations. See [talks/AGENTS.md](talks/AGENTS.md).
 
 ## Global Workflow
 
