@@ -44,7 +44,8 @@ export function getPostsMetadata() {
   const metadata = Object.entries(postsMetadata)
     .map(([filePath, data]) => {
       const id = filePath.split("/").pop()?.replace(/\.md$/, "");
-      if (!id) throw new Error("Could not extract post ID from path: " + filePath);
+      if (!id)
+        throw new Error("Could not extract post ID from path: " + filePath);
       return getMetadataFromMatter(id, data);
     })
     .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
@@ -85,8 +86,6 @@ export function getTagsWithCounts() {
       return a.tag.localeCompare(b.tag);
     });
 }
-
-
 
 // Lazy load raw content for TOC extraction
 const postsRaw = import.meta.glob("/src/content/posts/*.md", {

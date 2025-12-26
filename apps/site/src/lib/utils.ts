@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function isGoogleRelated(tags: string[] | undefined): boolean {
   if (!tags) return false;
   return tags.some((tag) =>
-    GOOGLE_KEYWORDS.some((keyword) => tag.toLowerCase().includes(keyword))
+    GOOGLE_KEYWORDS.some((keyword) => tag.toLowerCase().includes(keyword)),
   );
 }
 

@@ -33,18 +33,20 @@ export const load: PageServerLoad = async () => {
   });
 
   // Populate with activity data
-  allActivities.forEach((activity) => {
-    if (!activity.start_date) return;
+  for (const activity of allActivities) {
+    if (!activity.start_date) continue;
     const activityDate = startOfDay(new Date(activity.start_date));
-    if (isAfter(activityDate, addDays(startOfYearDate, -1))) {
-      const dayData = runningChartData.find((d) =>
-        isSameDay(d.date, activityDate),
-      );
-      if (dayData) {
-        dayData.distance += (activity.distance || 0) / 1000;
-      }
+
+    // Since activities are sorted desc, if we passed the start of year, we can stop
+    if (!isAfter(activityDate, addDays(startOfYearDate, -1))) {
+      break;
     }
-  });
+
+    const index = differenceInDays(activityDate, startOfYearDate);
+    if (index >= 0 && index < runningChartData.length) {
+      runningChartData[index].distance += (activity.distance || 0) / 1000;
+    }
+  }
 
   return {
     posts,
