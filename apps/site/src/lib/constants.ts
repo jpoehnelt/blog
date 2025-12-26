@@ -59,4 +59,4 @@ export const LANG_ICON_MAP = {
   gs: siGoogleappsscript,
 };
 
-export * from "./snippet.constants";
+export * from "@jpoehnelt/remark-snippet";

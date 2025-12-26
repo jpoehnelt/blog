@@ -7,11 +7,12 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
+import remarkSnippet from "@jpoehnelt/remark-snippet";
 
+/** @type {string} */
 const theme = "vitesse-light";
 
-import remarkSnippet from "./src/lib/server/remark-snippet.ts";
-
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
   trailingSlash: "always",
   extensions: [".svelte", ".md", ".mdx"],
@@ -65,7 +66,7 @@ const config = {
     },
     inlineStyleThreshold: 51200, // Inline critical CSS up to 50KB
     typescript: {
-      config: (config: Record<string, any>) => {
+      config: (config) => {
         const snippetsDir = "../src/content/posts/snippets";
         console.log("Applying exclude for snippets", snippetsDir);
         config.exclude = [...(config.exclude || []), snippetsDir];

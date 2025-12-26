@@ -1,17 +1,27 @@
 import { visit } from "unist-util-visit";
 import fs from "fs/promises";
 import path from "path";
-
 import { codeToHtml } from "shiki";
+import { EXT_TO_LANG } from "./constants.js";
 
-import { EXT_TO_LANG } from "../snippet.constants.ts";
+export * from "./constants.js";
 
 const theme = "vitesse-light";
 
-const remarkSnippet = () => {
+/**
+ * Options for the remarkSnippet plugin
+ */
+export interface RemarkSnippetOptions {
+  /**
+   * Base URL for the GitHub repository to link snippets to.
+   * Example: "https://github.com/jpoehnelt/blog/blob/main/apps/site/"
+   */
+  baseRepoUrl?: string;
+}
+
+const remarkSnippet = (options: RemarkSnippetOptions = {}) => {
   return async (tree: any, vfile: any) => {
-    // Attempt to get the file path
-    // @ts-ignore - vfile type might miss history in some versions or specific setups
+    // @ts-ignore
     const filePathFromVFile = vfile.path || (vfile.history && vfile.history[0]);
 
     interface NodeToProcess {
@@ -24,8 +34,6 @@ const remarkSnippet = () => {
 
     visit(tree, "html", (node: any, index: number | undefined, parent: any) => {
       if (typeof node.value === "string" && node.value.startsWith("<Snippet")) {
-        // Ensure index is defined before pushing needed?
-        // visit guarantees index is number usually, but type says undefined
         if (typeof index === "number") {
           nodesToProcess.push({ node, index, parent });
         }
@@ -52,8 +60,6 @@ const remarkSnippet = () => {
             // Relative to the markdown file
             filePath = path.resolve(path.dirname(filePathFromVFile), src);
           } else {
-            // Fallback: assume relative to src/content/posts (common case)
-            // or try to match from root if it looks like a source file
             filePath = path.resolve(process.cwd(), "src/content/posts", src);
           }
 
@@ -154,12 +160,19 @@ const remarkSnippet = () => {
             });
           }
 
-          // Calculate GitHub URL (assuming monorepo structure apps/site)
           const relativePath = path.relative(process.cwd(), filePath);
-          const githubUrl = `https://github.com/jpoehnelt/blog/blob/main/apps/site/${relativePath}`;
+          
+          let githubUrl: string;
+          if (options.baseRepoUrl) {
+            // Ensure trailing slash
+            const base = options.baseRepoUrl.endsWith("/")
+              ? options.baseRepoUrl
+              : options.baseRepoUrl + "/";
+            githubUrl = base + relativePath;
+          } else {
+            githubUrl = `https://github.com/jpoehnelt/blog/blob/main/apps/site/${relativePath}`;
+          }
 
-          // Replace the node with the updated component
-          // We use JSON.stringify for the html to safely embed it as a prop
           node.value = `<Snippet src="${src}" description="${description}" githubUrl="${githubUrl}" rawContent={${JSON.stringify(code)}} code={${JSON.stringify(html)}} />`;
         }
       }),
