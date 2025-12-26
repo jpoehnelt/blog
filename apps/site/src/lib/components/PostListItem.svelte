@@ -22,7 +22,7 @@
   <div class="min-w-0 flex-1">
     <a
       href={post.relativeURL}
-      class="hover:underline"
+      class="hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
       style:view-transition-name={enableTransitions
         ? `post-title-${post.id}`
         : undefined}
