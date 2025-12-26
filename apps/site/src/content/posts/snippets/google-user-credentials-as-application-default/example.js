@@ -1,0 +1,6 @@
+{
+  "client_id": "318971810891-E8CivL18KOkJzHB5yn.apps.googleusercontent.com",
+  "client_secret": "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9sLvLS",
+  "refresh_token": "1//iKehrEMZb3aRJFCUxToYY0Nrsve7DoJomVr3zDsHmLUb1LmHsiIq1AUx55MMqnCA",
+  "type": "authorized_user"
+}

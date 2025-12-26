@@ -1,0 +1,9 @@
+log_by_lua_block {
+    local payload = {
+        bytes = tonumber(ngx.var.bytes_sent),
+        status = tonumber(ngx.var.status),
+        timestamp = ngx.now()
+        ... -- more values
+    }
+    -- post payload to favorite backend for timeseries analysis
+}

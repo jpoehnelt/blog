@@ -15,6 +15,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -33,14 +34,7 @@ There a few steps to get this working right in Apps Script:
 1. Add the Google Cloud project number to the Apps Script project settings
 1. Add the following scopes to the Apps Script project manifest:
 
-```json
-{
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/script.external_request",
-    "https://www.googleapis.com/auth/cloud-platform"
-  ]
-}
-```
+<Snippet src="./snippets/apps-script-service-account-impersonation/appsscript.json" />
 
 A more detailed explanation of these steps can be found in the [Create short-lived credentials for a service account](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct#user-credentials).
 
@@ -48,48 +42,7 @@ A more detailed explanation of these steps can be found in the [Create short-liv
 
 To generate the an access token for the service account, the [`generateAccessToken`](https://cloud.google.com/iam/docs/reference/credentials/rest/v1/projects.serviceAccounts/generateAccessToken) endpoint of the IAM Credentials API is used. Calling this endpoint requires code similar to the following using [UrlFetchApp] and [`ScriptApp.getOAuthToken()`]:
 
-```js
-/**
- * Generates an access token using impersonation. Requires the following:
- *
- * - Service Account Token Creator
- * - IAM Credentials API
- *
- * @params {string} serviceAccountEmail
- * @params {Array<string>} scope
- * @params {string} [lifetime="3600s"]
- * @returns {string}
- */
-function generateAccessTokenForServiceAccount(
-  serviceAccountEmailOrId,
-  scope,
-  lifetime = "3600s", // default
-) {
-  const host = "https://iamcredentials.googleapis.com";
-  const url = `${host}/v1/projects/-/serviceAccounts/${serviceAccountEmailOrId}:generateAccessToken`;
-
-  const payload = {
-    scope,
-    lifetime,
-  };
-
-  const options = {
-    method: "POST",
-    headers: { Authorization: "Bearer " + ScriptApp.getOAuthToken() },
-    contentType: "application/json",
-    muteHttpExceptions: true,
-    payload: JSON.stringify(payload),
-  };
-
-  const response = UrlFetchApp.fetch(url, options);
-
-  if (response.getResponseCode() < 300) {
-    return JSON.parse(response.getContentText()).accessToken;
-  } else {
-    throw new Error(response.getContentText());
-  }
-}
-```
+<Snippet src="./snippets/apps-script-service-account-impersonation/generateaccesstokenforserviceaccount.js" />
 
 This function can be used to generate an access token for the service account. The access token can then be used to make requests to Google Cloud APIs.
 
@@ -97,37 +50,11 @@ This function can be used to generate an access token for the service account. T
 
 Now I can use this function to generate an access token for the service account and verify it contains valid scopes:
 
-```js
-function main() {
-  const token = generateAccessTokenForServiceAccount(
-    // can also be the email: foo@your-project.iam.gserviceaccount.com
-    "112304111718889638064",
-    ["https://www.googleapis.com/auth/datastore"],
-  );
-
-  // verify the token
-  console.log(
-    UrlFetchApp.fetch(
-      `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${token}`,
-    ).getContentText(),
-  );
-}
-```
+<Snippet src="./snippets/apps-script-service-account-impersonation/main.js" />
 
 The output looks like the following:
 
-```bash
-12:53:12 PM	Notice	Execution started
-12:53:13 PM	Info	ya29.c.c0AY_VpZ... // truncated
-12:53:13 PM	Info	{
-  "issued_to": "112304111718889638064",
-  "audience": "112304111718889638064",
-  "scope": "https://www.googleapis.com/auth/datastore",
-  "expires_in": 3599,
-  "access_type": "online"
-}
-12:53:14 PM	Notice	Execution completed
-```
+<Snippet src="./snippets/apps-script-service-account-impersonation/example.sh" />
 
 To use this token to make requests to Google Cloud APIs, the token can be added to the `Authorization` header of the request instead of the [`ScriptApp.getOAuthToken()`] user token:
 

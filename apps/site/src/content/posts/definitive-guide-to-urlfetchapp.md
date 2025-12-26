@@ -15,6 +15,7 @@ tags:
 <script>
   import Note from '$lib/components/content/Note.svelte';
   import Image from '$lib/components/content/Image.svelte';
+  import Snippet from '$lib/components/content/Snippet.svelte';
 </script>
 
 <Image
@@ -84,47 +85,13 @@ By default, `UrlFetchApp` throws an exception if the HTTP response code is 4xx o
 
 I almost always set `muteHttpExceptions: true`. This allows me to inspect the [HTTPResponse](https://developers.google.com/apps-script/reference/url-fetch/http-response) object regardless of the status code.
 
-```javascript
-function demonstrateMuteHttpExceptions() {
-  // Using httpbin to simulate a 404 error
-  const response = UrlFetchApp.fetch("https://httpbin.org/status/404", {
-    muteHttpExceptions: true,
-  });
-
-  if (response.getResponseCode() === 404) {
-    console.log("Resource not found, skipping..."); // Graceful handling
-  } else if (response.getResponseCode() === 200) {
-    // Process success
-  }
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/demonstratemutehttpexceptions.js" />
 
 ### Authentication: Google APIs
 
 When integrating with Google APIs, I almost always need to handle authentication via headers.
 
-```javascript
-function callGoogleApi() {
-  // Use httpbin to verify the Authorization header
-  const url = "https://httpbin.org/bearer";
-
-  // Truncate the token for security in this example
-  const token = ScriptApp.getOAuthToken().slice(0, 5);
-
-  if (token) {
-    console.log(`Token: ${token}`);
-  }
-
-  const response = UrlFetchApp.fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/json",
-    },
-  });
-
-  console.log(response.getContentText());
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/callgoogleapi.js" />
 
 For Google APIs and service accounts, I strongly recommend using [Service Account Impersonation](/posts/apps-script-service-account-impersonation) to generate these tokens securely rather than hardcoding keys.
 
@@ -136,27 +103,7 @@ For non-Google services, the pattern is different.
 
 For simple authentication, passing a key in the header is standard. I always [store these keys](/posts/secure-secrets-google-apps-script) in `PropertiesService` to keep them out of the code.
 
-```javascript
-function callExternalApi() {
-  const url = "https://httpbin.org/bearer";
-  const apiKey = PropertiesService.getScriptProperties().getProperty("API_KEY");
-
-  if (!apiKey) {
-    throw new Error("Script property API_KEY is not set");
-  }
-
-  // Log truncated key for verification
-  console.log(`Key: ${apiKey.slice(0, 3)}...`);
-
-  const response = UrlFetchApp.fetch(url, {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
-
-  console.log(response.getContentText());
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/callexternalapi.js" />
 
 **2. OAuth2 Library**
 
@@ -186,48 +133,13 @@ Here are two patterns you will use constantly.
 
 A common mistake is forgetting to stringify the payload. `UrlFetchApp` does not do this automatically for `application/json`.
 
-```javascript
-function postJsonData() {
-  const url = "https://httpbin.org/post";
-  const payload = {
-    status: "active",
-    count: 42,
-  };
-
-  const response = UrlFetchApp.fetch(url, {
-    method: "post",
-    contentType: "application/json",
-    // Critical: Must be a string
-    payload: JSON.stringify(payload),
-    muteHttpExceptions: true,
-  });
-
-  console.log(response.getContentText());
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/postjsondata.js" />
 
 **2. Multipart File Uploads**
 
 You don't need to manually build multipart boundaries. If you pass a `Blob` in the payload object, `UrlFetchApp` handles the complexity for you.
 
-```javascript
-function uploadFile() {
-  // Create a fake file
-  const blob = Utilities.newBlob("Hello World", "text/plain", "test.txt");
-
-  const response = UrlFetchApp.fetch("https://httpbin.org/post", {
-    method: "post",
-    payload: {
-      meta: "metadata_value",
-      // Mixing strings and blobs triggers multipart mode
-      file: blob,
-    },
-    muteHttpExceptions: true,
-  });
-
-  console.log(response.getContentText());
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/uploadfile.js" />
 
 ## UrlFetchApp vs Advanced Services
 
@@ -257,27 +169,7 @@ Fetching 10 URLs sequentially vs. in parallel is a night-and-day difference.
 | Loop `fetch()` | Sequential (Blocking) | Sum of all Request Times |
 | `fetchAll()`   | Parallel (Blocking)   | Time of Slowest Request  |
 
-```javascript
-/**
- * Demonstrates the power of fetchAll.
- *
- * Sequential: ~10 seconds (1s per request)
- * Parallel: ~1.2 seconds (Total)
- */
-
-function benchmarkParallelism() {
-  const requests = [];
-  for (let i = 0; i < 10; i++) {
-    requests.push({
-      url: "https://httpbin.org/delay/1",
-      muteHttpExceptions: true,
-    });
-  }
-
-  // Fast - executes in ~1 second total
-  const responses = UrlFetchApp.fetchAll(requests);
-}
-```
+<Snippet src="./snippets/benchmark-parallelism.gs" region="benchmark" description="Demonstrates the power of fetchAll." />
 
 <Note>
 
@@ -313,20 +205,7 @@ You can install the **Cheerio** library by adding this Script ID to your project
 
 Some servers block requests that identify as `Google-Apps-Script`. You can bypass basic filters by setting a standard browser User-Agent in the headers.
 
-```javascript
-function spoofUserAgent() {
-  const url = "https://httpbin.org/user-agent";
-  const response = UrlFetchApp.fetch(url, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-        "AppleWebKit/537.36 (KHTML, like Gecko) " +
-        "Chrome/120.0.0.0 Safari/537.36",
-    },
-  });
-  console.log(response.getContentText());
-}
-```
+<Snippet src="./snippets/definitive-guide-to-urlfetchapp/spoofuseragent.js" />
 
 ### Managing Cookies
 
@@ -338,35 +217,7 @@ A common failure mode occurs with login flows that involve redirects (e.g., `302
 
 **The Solution**: Manually handle the redirect chain.
 
-```javascript
-function manageCookies() {
-  // 1. Trigger a response that sets a cookie
-  // 'followRedirects: false' is crucial here, otherwise we miss the header
-  const setCookie = UrlFetchApp.fetch(
-    "https://httpbin.org/cookies/set?session=123",
-    { followRedirects: false },
-  );
-
-  const headers = setCookie.getAllHeaders();
-  let setCookieHeaders = headers["Set-Cookie"] || [];
-
-  // Ensure it's an array, as UrlFetchApp may return a single string
-  if (!Array.isArray(setCookieHeaders)) {
-    setCookieHeaders = [setCookieHeaders];
-  }
-
-  const cookie = setCookieHeaders
-    .map((cookieString) => cookieString.split(";")[0])
-    .join("; ");
-
-  // 2. Pass that cookie to the next request
-  const verify = UrlFetchApp.fetch("https://httpbin.org/cookies", {
-    headers: { Cookie: cookie },
-  });
-
-  console.log(verify.getContentText()); // Shows { "cookies": { "session": "123" } }
-}
-```
+<Snippet src="./snippets/manage-cookies.gs" description="Manually handle redirect chain to manage cookies." />
 
 ## Debugging Infrastructure Errors
 
@@ -409,65 +260,7 @@ When I switched to `fetchAll`, I immediately started hitting `429 Too Many Reque
 
 Since `setTimeout` isn't available, I stick to [`Utilities.sleep()`](<https://developers.google.com/apps-script/reference/utilities/utilities#sleep(Integer)>) with a mathematical backoff. This is essential for AI workflows (like calling Gemini) where rate limits are tight.
 
-```javascript
-/**
- * Wraps UrlFetchApp with exponential backoff logic.
- * Essential for handling 429s and "Address Unavailable" errors.
- */
-function fetchWithRetry(url, params = {}) {
-  const fetchParams = { ...params, muteHttpExceptions: true };
-  const maxRetries = 3;
-  let attempt = 0;
-
-  while (attempt <= maxRetries) {
-    let response;
-    try {
-      response = UrlFetchApp.fetch(url, fetchParams);
-    } catch (e) {
-      console.warn(`Attempt ${attempt + 1} failed: ${e}`);
-      if (attempt === maxRetries) throw e;
-    }
-
-    if (response) {
-      const code = response.getResponseCode();
-      // Return if success (2xx) or permanent error (4xx but not 429)
-      if (code < 400 || (code >= 400 && code < 500 && code !== 429)) {
-        return response;
-      }
-      console.warn(`Attempt ${attempt + 1} status: ${code}`);
-    }
-
-    if (attempt === maxRetries) {
-      if (response) return response;
-      throw new Error("Max retries reached");
-    }
-
-    // Exponential backoff + Jitter
-    const jitter = Math.round(Math.random() * 500);
-    const exponentialBackoffMs = Math.pow(2, attempt + 1) * 1000 + jitter;
-    let sleepMs = exponentialBackoffMs;
-
-    if (response) {
-      const headers = response.getAllHeaders();
-      let retryAfter = headers["Retry-After"];
-
-      if (Array.isArray(retryAfter)) {
-        retryAfter = retryAfter[0];
-      }
-
-      if (retryAfter) {
-        const retrySeconds = parseInt(retryAfter, 10);
-        if (!isNaN(retrySeconds)) {
-          sleepMs = retrySeconds * 1000;
-        }
-      }
-    }
-
-    Utilities.sleep(sleepMs);
-    attempt++;
-  }
-}
-```
+<Snippet src="./snippets/fetch-with-retry.gs" description="Wraps UrlFetchApp with exponential backoff logic." />
 
 ## Common Error Codes Dictionary
 

@@ -2,9 +2,8 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import { getDefaultSocialLinks } from "$lib/social-icons";
   import { AUTHOR_NAME, PROMPT_SYSTEM } from "$lib/constants";
-  import CodeToolbar from "$lib/components/CodeToolbar.svelte";
-  import { mount, onMount } from "svelte";
-  import { afterNavigate, onNavigate } from "$app/navigation";
+  import { onMount } from "svelte";
+  import { onNavigate } from "$app/navigation";
   import { sendEvent } from "$lib/analytics";
 
   import "../app.css";
@@ -35,12 +34,7 @@
     });
   });
 
-  afterNavigate(() => {
-    addCodeToolbar();
-  });
-
   onMount(() => {
-    addCodeToolbar();
     document.addEventListener("click", handleGlobalClick);
 
     return () => {
@@ -63,22 +57,6 @@
       outbound,
       link_domain: domain,
     });
-  }
-
-  function addCodeToolbar() {
-    for (const node of document.querySelectorAll("pre > code")) {
-      const languageMatch = node.className.match(/language-(\w+)/);
-      const language = languageMatch ? languageMatch[1] : "";
-
-      mount(CodeToolbar, {
-        target: node.parentElement!,
-        anchor: node,
-        props: {
-          content: node.textContent ?? "",
-          language: language,
-        },
-      });
-    }
   }
 </script>
 

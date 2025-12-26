@@ -12,6 +12,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -23,27 +24,7 @@ Today, I was trying to integrate the [docker/build-push-action](https://github.c
 
 The workflow looks like this.
 
-```yml
-- name: Setup auth
-  id: "auth"
-  uses: "google-github-actions/auth@v0"
-  with:
-    workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-    service_account: "github-deployer@${{ secrets.GOOGLE_CLOUD_PROJECT }}.iam.gserviceaccount.com"
-- name: Setup docker
-  uses: docker/setup-buildx-action@v2
-- name: Authenticate docker
-  run: |
-    gcloud auth configure-docker --quiet gcr.io
-- name: Build and push
-  uses: docker/build-push-action@v3
-  with:
-    context: .
-    push: true
-    tags: ${{ env.IMAGE }}
-    cache-from: type=gha
-    cache-to: type=gha,mode=max
-```
+<Snippet src="./snippets/github-action-docker-build-gcr-io/setup-auth.yaml" />
 
 <Note>
 

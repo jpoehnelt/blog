@@ -1,0 +1,6 @@
+- name: Build and push
+  uses: docker/build-push-action@v3
+  with:
+    context: .
+    build-args: |
+      "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}"

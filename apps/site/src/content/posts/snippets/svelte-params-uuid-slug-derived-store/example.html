@@ -1,0 +1,7 @@
+// src/routes/[fooId]/+page.svelte
+<script>
+  import { params } from "$lib/stores";
+  import { page } from "$app/stores";
+</script>
+
+<p>uuid: {$params.fooId}, slug: {$page.params.fooId}</p>

@@ -10,6 +10,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -28,70 +29,13 @@ Before jumping into JavaScript, we need to explore some XML and learn more about
 
 The WMS standard exposes many options such as coordinate reference systems(CRS), bounding box, and style selection. These parameters are specified in an XML document that can be queried by sending a [GetCapabilities](https://en.wikipedia.org/wiki/Web_Map_Service#Requests) request to the WMS. Below is a extract of the response for the [National Land Cover Database](https://www.mrlc.gov/data/nlcd-2016-land-cover-conus) server.
 
-```js
-<Layer queryable="1" opaque="0">
-  <Name>mrlc_display:NLCD_2016_Land_Cover_L48</Name>
-  <Title>NLCD_2016_Land_Cover_L48</Title>
-  <Abstract />
-  <KeywordList>
-    <Keyword>NLCD_2016_Land_Cover_L48_20210604_3857</Keyword>
-    <Keyword>WCS</Keyword>
-    <Keyword>ERDASImg</Keyword>
-  </KeywordList>
-  <CRS>EPSG:3857</CRS>
-  <CRS>CRS:84</CRS>
-  <EX_GeographicBoundingBox>
-    <westBoundLongitude>-130.23282801589895</westBoundLongitude>
-    <eastBoundLongitude>-63.6719773760062</eastBoundLongitude>
-    <southBoundLatitude>21.742250095963353</southBoundLatitude>
-    <northBoundLatitude>52.87726396463256</northBoundLatitude>
-  </EX_GeographicBoundingBox>
-  <BoundingBox
-    CRS="CRS:84"
-    minx="-130.23282801589895"
-    miny="21.742250095963353"
-    maxx="-63.6719773760062"
-    maxy="52.87726396463256"
-  />
-  <BoundingBox
-    CRS="EPSG:3857"
-    minx="-1.4497452099297844E7"
-    miny="2480607.2664330592"
-    maxx="-7087932.099297844"
-    maxy="6960327.266433059"
-  />
-  <Style>
-    <Name>mrlc:mrlc_NLCD_Land_Cover</Name>
-    <Title>A boring default style</Title>
-    <Abstract>A sample style for rasters</Abstract>
-    <LegendURL width="261" height="509">
-      <Format>image/png</Format>
-      <OnlineResource
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xlink:type="simple"
-        xlink:href="https://www.mrlc.gov/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=mrlc_display%3ANLCD_2016_Land_Cover_L48"
-      />
-    </LegendURL>
-  </Style>
-</Layer>
-```
+<Snippet src="./snippets/google-maps-wms-layer/example.js" />
 
 These options become query parameters in our GetMap request to the WMS returning the following.
 
 <Image src="NLCD_2016_Land_Cover_L48_20210604_3857.png" alt="NLCD 2016 Land Cover L48" />
 
-```js
-https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms?
-&REQUEST=GetMap
-&SERVICE=WMS
-&VERSION=1.1.1
-&LAYERS=mrlc_display:NLCD_2016_Land_Cover_L48
-&FORMAT=image/png
-&SRS=EPSG:3857  // Web Mercator
-&BBOX=-10175297.20791413,5165920.120941021,-10018754.17394622,5322463.154908929 // Coordinates in Web Mecator
-&WIDTH=1024
-&HEIGHT=1024
-```
+<Snippet src="./snippets/google-maps-wms-layer/example-1.js" />
 
 It is important to note that the coordinates for the `BBOX` parameter must be in the coordinate reference system specified by the spatial reference system(SRS). In the above request we are using [`EPSG:3857`](https://epsg.io/3857), also known as **web mercator**.
 
@@ -126,19 +70,7 @@ With the above conventions, we know that at zoom level 1, the world is divided i
 
 We also know that the web mercator extent is a square and its bounds are `-PI * 6378137, PI * 6378137`. Given the above, we can convert from `x`, `y`, and `z` to coordinates using the following:
 
-```js
-const EXTENT = [-Math.PI * 6378137, Math.PI * 6378137];
-
-function xyzToBounds(x, y, z) {
-  const tileSize = (EXTENT[1] * 2) / Math.pow(2, z);
-  const minx = EXTENT[0] + x * tileSize;
-  const maxx = EXTENT[0] + (x + 1) * tileSize;
-  // remember y origin starts at top
-  const miny = EXTENT[1] - (y + 1) * tileSize;
-  const maxy = EXTENT[1] - y * tileSize;
-  return [minx, miny, maxx, maxy];
-}
-```
+<Snippet src="./snippets/google-maps-wms-layer/xyztobounds.js" />
 
 Calling `xyzToBounds(0, 0, 1)` returns `[-20037508.342789244, 0, 0, 20037508.342789244]` which is what we would expect for the upper left tile in the diagram above.
 
@@ -146,36 +78,13 @@ Calling `xyzToBounds(0, 0, 1)` returns `[-20037508.342789244, 0, 0, 20037508.342
 
 The next step is assembling the string for the WMS getMap URL with the function defined above.
 
-```js
-const getTileUrl = (coordinates, zoom) => {
-  return (
-    "https://www.mrlc.gov/geoserver/NLCD_Land_Cover/wms?" +
-    "&REQUEST=GetMap&SERVICE=WMS&VERSION=1.1.1" +
-    "&LAYERS=mrlc_display%3ANLCD_2016_Land_Cover_L48" +
-    "&FORMAT=image%2Fpng" +
-    "&SRS=EPSG:3857&WIDTH=256&HEIGHT=256" +
-    "&BBOX=" +
-    xyzToBounds(coordinates.x, coordinates.y, zoom).join(",")
-  );
-};
-```
+<Snippet src="./snippets/google-maps-wms-layer/gettileurl.js" />
 
 ## Putting it All Together
 
 Now that we have our `getTileUrl` function, we can construct our `ImageMapType`. Don’t forget that `maxZoom` is required! See reference table above or [here](https://developers.google.com/maps/documentation/javascript/reference).
 
-```js
-const landCover = new google.maps.ImageMapType({
-  getTileUrl: getTileUrl,
-  name: "Land Cover",
-  alt: "National Land Cover Database 2016",
-  minZoom: 0,
-  maxZoom: 19,
-  opacity: 1.0map
-});
-
-landCover.setMap(map);
-```
+<Snippet src="./snippets/google-maps-wms-layer/landcover.js" />
 
 And add it to our map! See this [JSFiddle link](https://jsfiddle.net/jwpoehnelt/1ph0wen3) for an interactive example.
 

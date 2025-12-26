@@ -1,0 +1,39 @@
+name: Terraform
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  terraform:
+    if: github.actor != 'dependabot[bot]'
+    name: "Terraform"
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+
+      - name: Write credentials.json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "credentials.json"
+          json: ${{ secrets.GOOGLE_CREDENTIALS }}
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color
+
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply -auto-approve
+        if: github.ref == 'refs/heads/main' && steps.plan.outcome == 'success'
