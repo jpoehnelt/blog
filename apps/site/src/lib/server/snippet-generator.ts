@@ -6,7 +6,11 @@ import remarkParse from "remark-parse";
 import { visit } from "unist-util-visit";
 import { createHighlighter } from "shiki";
 import matter from "gray-matter";
-import { EXT_TO_LANG, SHIKI_THEMES, SHIKI_LANGS } from "@jpoehnelt/remark-snippet";
+import {
+  EXT_TO_LANG,
+  SHIKI_THEMES,
+  SHIKI_LANGS,
+} from "@jpoehnelt/remark-snippet";
 
 // Helper to resolve snippet path (logic mirroring remark-snippet.js)
 function resolveSnippetPath(src: string, markdownFilePath: string): string {
