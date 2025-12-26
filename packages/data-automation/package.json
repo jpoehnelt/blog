@@ -6,10 +6,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/* --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external",
+    "build": "esbuild src/*.ts --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external",
     "check": "tsc --noEmit",
     "test": "vitest run",
-    "syndicate": "tsx src/syndicate.ts"
+    "syndicate": "node dist/syndicate.js"
   },
   "keywords": [],
   "author": "",
