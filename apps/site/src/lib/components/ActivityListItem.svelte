@@ -14,7 +14,7 @@
     <div class="flex items-center gap-2">
       <a
         href={`/activities/${getActivitySlug(activity)}`}
-        class="hover:underline font-medium"
+        class="hover:underline font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
       >
         {activity.name}
       </a>
@@ -22,8 +22,9 @@
         href={`https://www.strava.com/activities/${activity.id}`}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-muted-foreground hover:text-foreground"
+        class="text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
         title="View on Strava"
+        aria-label="View activity on Strava"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +37,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-external-link"
+          aria-hidden="true"
         >
           <path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
