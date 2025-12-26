@@ -6,11 +6,7 @@ import remarkParse from "remark-parse";
 import { visit } from "unist-util-visit";
 import { createHighlighter } from "shiki";
 import matter from "gray-matter";
-import {
-  EXT_TO_LANG,
-  SHIKI_THEMES,
-  SHIKI_LANGS,
-} from "../src/lib/snippet.constants.ts";
+import { EXT_TO_LANG, SHIKI_THEMES, SHIKI_LANGS } from "../snippet.constants";
 
 // Helper to resolve snippet path (logic mirroring remark-snippet.js)
 function resolveSnippetPath(src: string, markdownFilePath: string): string {
@@ -25,21 +21,21 @@ function resolveSnippetPath(src: string, markdownFilePath: string): string {
   }
 }
 
-async function generateSnippets() {
+export interface SnippetEntry {
+  postTitle: string;
+  postSlug: string;
+  src: string;
+  displaySrc: string;
+  description: string;
+  region: string | null;
+  githubUrl: string;
+  rawContent: string;
+  code: string;
+}
+
+export async function generateSnippets() {
   const postsDir = path.resolve(process.cwd(), "src/content/posts");
   const markdownFiles = await glob(`${postsDir}/*.md`);
-
-  interface SnippetEntry {
-    postTitle: string;
-    postSlug: string;
-    src: string;
-    displaySrc: string;
-    description: string;
-    region: string | null;
-    githubUrl: string;
-    rawContent: string;
-    code: string;
-  }
 
   const snippets: SnippetEntry[] = [];
 
@@ -188,6 +184,5 @@ async function generateSnippets() {
   const outputPath = path.resolve(process.cwd(), "src/lib/data/snippets.json");
   await fs.writeFile(outputPath, JSON.stringify(snippets, null, 2));
   console.log(`Generated ${snippets.length} snippets to ${outputPath}`);
+  return snippets;
 }
-
-generateSnippets().catch(console.error);
