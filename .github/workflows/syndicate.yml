@@ -44,3 +44,12 @@ jobs:
           fi
         env:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+      - name: Commit changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          pnpm format
+          git config --local user.email "jpoehnelt@users.noreply.github.com"
+          git config --local user.name "Justin Poehnelt"
+          git add --all apps/site/src/content/posts/
+          git commit -m "chore: update syndication data" || true
+          git push

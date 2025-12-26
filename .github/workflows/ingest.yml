@@ -63,24 +63,16 @@ jobs:
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
 
           STRAVA_AFTER=$STRAVA_AFTER STRAVA_BEFORE=$STRAVA_BEFORE node packages/data-automation/dist/strava-ingest.js
-      - name: Commit changes
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config --local user.email "jpoehnelt@users.noreply.github.com"
-          git config --local user.name "Justin Poehnelt"
-          git commit -m "chore: update data" || true
-          git push
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:
           APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID: ${{ secrets.APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID }}
-      - run: |
-          git status
-          git add --all data/
       - name: Commit changes
         if: github.ref == 'refs/heads/main'
         run: |
+          pnpm format
           git config --local user.email "jpoehnelt@users.noreply.github.com"
           git config --local user.name "Justin Poehnelt"
+          git add --all data/
           git commit -m "chore: update data" || true
           git push

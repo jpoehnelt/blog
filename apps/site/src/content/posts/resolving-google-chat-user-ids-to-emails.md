@@ -1,7 +1,10 @@
 ---
-title: "Resolving Google Chat User IDs to Emails: The Least Privilege Way"
-description: "A secure strategy to resolve Google Chat User IDs to email addresses without using Domain-Wide Delegation. By combining Direct Role Assignment with Service Account Impersonation, you can maintain Least Privilege security."
-pubDate: "2025-12-23"
+title: 'Resolving Google Chat User IDs to Emails: The Least Privilege Way'
+description: >-
+  A secure strategy to resolve Google Chat User IDs to email addresses without
+  using Domain-Wide Delegation. By combining Direct Role Assignment with Service
+  Account Impersonation, you can maintain Least Privilege security.
+pubDate: '2025-12-23'
 tags:
   - google chat
   - google workspace
@@ -14,6 +17,15 @@ tags:
   - directory api
   - domain wide delegation
 syndicate: true
+devto:
+  id: 3123344
+  link: >-
+    https://dev.to/googleworkspace/resolving-google-chat-user-ids-to-emails-the-least-privilege-way-4lga
+  status: published
+medium:
+  id: 9dcb597dcd2a
+  link: 'https://medium.com/@jpoehnelt/9dcb597dcd2a'
+  status: draft
 ---
 
 <script>

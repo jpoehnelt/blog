@@ -2,139 +2,153 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import glob from "fast-glob";
 import matter from "gray-matter";
-import axios from "axios";
-import { readFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
 import path from "path";
-import dotenv from "dotenv";
-
-dotenv.config({ path: path.resolve(process.cwd(), "../../.env") });
-
-const API_KEY = process.env.DEVTO_API_KEY;
-const SITE_BUILD_PATH = path.resolve(
-  process.cwd(),
-  "../../apps/site/build/posts",
-);
-
-if (!API_KEY) {
-  console.error("Missing DEVTO_API_KEY environment variable");
-  process.exit(1);
-}
-
-const argv = yargs(hideBin(process.argv))
-  .option("slug", {
-    type: "string",
-    description: "Specific slug to syndicate",
-  })
-  .parseSync();
+import { CONFIG } from "./syndicate/config.js";
+import { DevToPlatform } from "./syndicate/devto.js";
+import { MediumPlatform } from "./syndicate/medium.js";
+import type { Platform } from "./syndicate/platform.js";
+import type { Frontmatter, PostData } from "./syndicate/types.js";
 
 async function main() {
+  const argv = yargs(hideBin(process.argv))
+    .option("slug", { type: "string" })
+    .option("platform", { choices: ["devto", "medium", "all"], default: "all" })
+    .option("mode", {
+      choices: ["pull", "sync"],
+      default: "sync",
+      description:
+        "Action to perform: pull (update local metadata) or sync (both)",
+    })
+    .option("force", {
+      type: "boolean",
+      default: false,
+      description: "Force update of existing drafts (Dev.to only)",
+    })
+    .option("dry-run", { type: "boolean", default: false })
+    .parseSync();
+
   const pattern = argv.slug
-    ? `${SITE_BUILD_PATH}/${argv.slug}.md`
-    : `${SITE_BUILD_PATH}/*.md`;
+    ? `${CONFIG.paths.build}/${argv.slug}.md`
+    : `${CONFIG.paths.build}/*.md`;
 
   const files = await glob(pattern);
+  if (!files.length) return console.log("No files found.");
 
-  if (files.length === 0) {
-    console.log("No files found to syndicate.");
-    return;
+  // Initialize Platforms
+  const platforms: Platform[] = [];
+  if (
+    (argv.platform === "all" || argv.platform === "devto") &&
+    CONFIG.keys.devto
+  ) {
+    platforms.push(
+      new DevToPlatform(CONFIG.keys.devto, {
+        dryRun: argv.dryRun,
+        mode: argv.mode as any,
+        force: argv.force,
+        baseUrl: CONFIG.baseUrl,
+      }),
+    );
+  }
+  if (
+    (argv.platform === "all" || argv.platform === "medium") &&
+    CONFIG.keys.medium
+  ) {
+    platforms.push(
+      new MediumPlatform(CONFIG.keys.medium, {
+        dryRun: argv.dryRun,
+        mode: argv.mode as any,
+        force: argv.force,
+        baseUrl: CONFIG.baseUrl,
+      }),
+    );
   }
 
-  console.log(`Found ${files.length} files. Processing...`);
+  await Promise.all(platforms.map((p) => p.init()));
 
-  // Fetch current user articles to check for duplicates
-  // Note: /api/articles/me/all returns all articles (published and unpublished)
-  const userArticles = await fetchAllUserArticles();
-  const canonicalMap = new Map<string, any>();
-
-  // Create map of canonical_url -> article
-  userArticles.forEach((article: any) => {
-    // canonical_url helps us match existing posts
-    // Dev.to api response includes canonical_url
-    if (article.canonical_url) {
-      canonicalMap.set(article.canonical_url, article);
-    }
-  });
+  // Process Files
+  console.log(`Processing ${files.length} files...`);
 
   for (const file of files) {
-    await processFile(file, canonicalMap);
-  }
-}
+    const filename = path.basename(file);
+    const sourcePath = path.resolve(CONFIG.paths.source, filename);
 
-async function fetchAllUserArticles() {
-  let page = 1;
-  let allArticles: any[] = [];
-  while (true) {
     try {
-      const response = await axios.get("https://dev.to/api/articles/me/all", {
-        headers: { "api-key": API_KEY },
-        params: { page, per_page: 1000 }, // Maximize per_page
-      });
-      if (response.data.length === 0) break;
-      allArticles = allArticles.concat(response.data);
-      page++;
-    } catch (error) {
-      console.error("Error fetching articles:", error);
-      process.exit(1);
-    }
-  }
-  return allArticles;
-}
+      // Read SOURCE for frontmatter and original content (for writing back)
+      const rawSourceContent = await readFile(sourcePath, "utf-8");
+      const parsedSource = matter(rawSourceContent);
 
-async function processFile(filePath: string, canonicalMap: Map<string, any>) {
-  const content = await readFile(filePath, "utf-8");
-  const parsed = matter(content);
-  const metadata = parsed.data;
+      if (parsedSource.data.syndicate !== true) continue;
 
-  // Check strict syndication flag
-  if (metadata.syndicate !== true) {
-    console.log(`Skipping ${path.basename(filePath)} (syndicate !== true)`);
-    return;
-  }
+      // Read BUILD for syndicated content (includes footer, license, etc)
+      const rawBuildContent = await readFile(file, "utf-8");
+      const parsedBuild = matter(rawBuildContent);
 
-  const payload = {
-    article: {
-      title: metadata.title,
-      body_markdown: parsed.content, // Content without frontmatter (gray-matter splits it)
-      published: false, // Always creating as draft first
-      canonical_url: metadata.canonicalURL, // Ensure this matches frontmatter key from server
-      tags: metadata.tags
-        .slice(0, 4)
-        .map((tag: string) => tag.toLowerCase().replace(/\s+/g, "")),
-      description: metadata.description,
-      // series: metadata.series // if we had series support
-    },
-  };
+      const slug = path.basename(sourcePath, ".md");
+      const canonicalUrl =
+        parsedBuild.data.canonicalURL ||
+        parsedBuild.data.canonical_url ||
+        `${CONFIG.baseUrl}/${slug}`;
 
-  // Check if article exists
-  const existing = canonicalMap.get(metadata.canonicalURL);
+      const postData: PostData = {
+        slug,
+        content: parsedBuild.content, // Use built content
+        frontmatter: parsedSource.data as Frontmatter, // Use source frontmatter
+        canonicalUrl,
+      };
 
-  if (existing) {
-    if (existing.published) {
-      console.log(
-        `Skipping ${metadata.title} - Already published on Dev.to (ID: ${existing.id})`,
-      );
-    } else {
-      console.log(`Updating draft ${metadata.title} (ID: ${existing.id})...`);
-      try {
-        await axios.put(`https://dev.to/api/articles/${existing.id}`, payload, {
-          headers: { "api-key": API_KEY, "Content-Type": "application/json" },
+      // Run Syndication
+      let hasChanges = false;
+      let currentFrontmatter = parsedSource.data as Frontmatter;
+
+      for (const platform of platforms) {
+        // Pass current state
+        const statusUpdate = await platform.syndicate({
+          ...postData,
+          frontmatter: currentFrontmatter,
         });
-        console.log("Updated successfully.");
-      } catch (e: any) {
-        console.error(`Failed to update ${metadata.title}:`, e.message);
-        if (e.response) console.error(e.response.data);
+
+        if (statusUpdate) {
+          hasChanges = true;
+          // Patch generic frontmatter based on platform name
+          // We need a mapping or check instance type.
+          // However, Platform is abstract and name attribute is protected.
+          // Let's assume standardized platform mapping based on instance or explicit check.
+          // Easier: Just patch based upon known keys for now, or check class name.
+
+          if (platform instanceof DevToPlatform) {
+            currentFrontmatter = {
+              ...currentFrontmatter,
+              devto: {
+                ...currentFrontmatter.devto,
+                ...statusUpdate,
+              },
+            };
+          } else if (platform instanceof MediumPlatform) {
+            currentFrontmatter = {
+              ...currentFrontmatter,
+              medium: {
+                ...currentFrontmatter.medium,
+                ...statusUpdate,
+              },
+            };
+          }
+        }
       }
-    }
-  } else {
-    console.log(`Creating new draft for ${metadata.title}...`);
-    try {
-      await axios.post("https://dev.to/api/articles", payload, {
-        headers: { "api-key": API_KEY, "Content-Type": "application/json" },
-      });
-      console.log("Created successfully.");
-    } catch (e: any) {
-      console.error(`Failed to create ${metadata.title}:`, e.message);
-      if (e.response) console.error(e.response.data);
+
+      // Write Back
+      if (hasChanges && !argv.dryRun) {
+        await writeFile(
+          sourcePath,
+          matter.stringify(parsedSource.content, currentFrontmatter, {
+            // @ts-ignore quotingType is not defined in the type definition
+            quotingType: '"',
+          }),
+        );
+        console.log(`✅ Updated frontmatter for ${filename}`);
+      }
+    } catch (e) {
+      console.warn(`Skipping ${filename}: Source file not found or invalid.`);
     }
   }
 }
