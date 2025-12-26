@@ -2,7 +2,7 @@ import { BASE_URL, PUBLIC_IMAGES_PREFIX } from "$lib/constants";
 import { getMetadataFromMatter } from "./posts.shared";
 
 import { error } from "@sveltejs/kit";
-import type { Element } from "hast";
+import type { Element, Parent } from "hast";
 import rehypeParse from "rehype-parse";
 import rehypeRemark from "rehype-remark";
 import rehypeRemoveComments from "rehype-remove-comments";
@@ -101,6 +101,24 @@ export async function getPostMarkdown(id: string): Promise<string> {
     await unified()
       .use(rehypeParse)
       .use(rehypeRemoveComments)
+      .use(() => (tree) => {
+        visit(
+          tree,
+          "element",
+          (node: Element, index, parent: Parent | undefined) => {
+            if (
+              node.properties?.className &&
+              Array.isArray(node.properties.className) &&
+              node.properties.className.includes("no-md")
+            ) {
+              if (parent && typeof index === "number") {
+                parent.children.splice(index, 1);
+                return index;
+              }
+            }
+          },
+        );
+      })
       .use(() => (tree) => {
         visit(tree, "element", (node: Element) => {
           if (node.properties?.dataOriginalSrc) {

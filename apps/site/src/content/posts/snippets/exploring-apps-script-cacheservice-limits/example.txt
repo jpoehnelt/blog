@@ -1,0 +1,39 @@
+=== Starting CacheService Limit Tests ===
+📏 [Test 1] Key Length Limit
+> Max Key Length: 250 characters
+📦 [Test 2] Value Size Limit
+> 102400 bytes: OK
+> 102401 bytes: FAILED (Argument too large: value)
+🧪 [Test 3] Edge Cases
+> Null Key: Threw "Invalid argument: key"
+> Empty Key: Threw "Invalid argument: key"
+> Number Key: Accepted
+  -> Stored Value: "val"
+> Object Value: Accepted
+  -> Stored Value: "[object Object]"
+> Null Value: Accepted
+  -> Stored Value: "null"
+> Neg Expiration: Accepted
+  -> Stored Value: "val"
+🗑️ [Test 4] Robust Eviction Policy Test
+> Filling cache with 1000 items...
+> Reading keys 0-99 to update 'Last Accessed' time...
+> Inserting 50 overflow items...
+> Evicted Count: 101 items
+  -> Missing "Touched" (Oldest): 100
+  -> Missing "Untouched" (Newer): 1
+> Conclusion: FIFO (First-In-First-Out)
+> Note: Oldest items were evicted despite recent activity.
+
+📊 Summary Table
+Test             | Result
+-----------------|--------------------------------
+Key Limit        | 250 chars
+Max Value        | 100KB (102,400 bytes)
+Null Key         | Error: Invalid argument: key
+Empty Key        | Error: Invalid argument: key
+Number Key       | Stored: "val"
+Object Value     | Stored: "[object Object]"
+Null Value       | Stored: "null"
+Neg Expiration   | Stored: "val"
+Eviction Policy  | FIFO (Batch Eviction)

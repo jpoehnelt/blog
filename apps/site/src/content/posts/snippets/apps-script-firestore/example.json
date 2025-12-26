@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "name": {
+      "stringValue": "John Doe"
+    },
+    "age": {
+      "integerValue": "30"
+    },
+    "address": {
+      "mapValue": {
+        "fields": {
+          "street": {
+            "stringValue": "123 Main St"
+          },
+          "city": {
+            "stringValue": "New York"
+          },
+          "state": {
+            "stringValue": "NY"
+          },
+          "zip": {
+            "stringValue": "10001"
+          }
+        }
+      }
+    },
+    "hobbies": {
+      "arrayValue": {
+        "values": [
+          {
+            "stringValue": "hiking"
+          },
+          {
+            "stringValue": "biking"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -24,34 +25,7 @@ So I created a new action with two child actions [`jpoehnelt/reusable-workspace/
 
 The usage looks like the following.
 
-```yml
-name: CI
-
-on:
-  pull_request:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # Build steps (save should be after this)
-      - uses: jpoehnelt/reusable-workspace/save@v1
-  preview:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: jpoehnelt/reusable-workspace/restore@v1
-      # Additional steps (restore should be before this)
-  test:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: jpoehnelt/reusable-workspace/restore@v1
-        with:
-          fail-on-miss: true
-      # Additional steps (restore should be before this)
-```
+<Snippet src="./snippets/github-action-reusable-workspace/ci.yaml" />
 
 My workflow now runs the build and then the preview and test steps in parallel. The preview job can also use a matrix without needing to rebuild the workspace after this change.
 

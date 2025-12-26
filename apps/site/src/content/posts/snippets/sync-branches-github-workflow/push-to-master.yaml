@@ -1,0 +1,20 @@
+# .github/workflows/push-to-master.yml
+name: Push to Master
+on:
+  push:
+    branches:
+      - main
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Update master branch from main
+        run: |
+          git config --global user.name 'Justin Poehnelt'
+          git config --global user.email 'jpoehnelt@users.noreply.github.com'
+          git checkout master
+          git reset --hard origin/main
+          git push origin master

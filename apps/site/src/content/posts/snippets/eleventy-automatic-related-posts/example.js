@@ -1,0 +1,8 @@
+{
+    "absolute": 4.849271710192877,
+    "document": {
+        "text": "this document is about ruby and node.",
+        "title": "ruby and node",
+    },
+    "relative": 0.20786000940717744,
+}

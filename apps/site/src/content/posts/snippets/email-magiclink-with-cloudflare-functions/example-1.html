@@ -1,0 +1,7 @@
+<div
+  x-data="{ open: false, userInfo: {} }"
+  x-init="userInfo = (await fetchUserInfo())"
+>
+  <a x-show="!userInfo?.email" href="/auth/" class="button">Login</a>
+  <div x-show="userInfo?.email">...</div>
+</div>
