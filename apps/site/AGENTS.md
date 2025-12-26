@@ -8,6 +8,8 @@
 - **Visualization**: `layerchart` (D3 wrapper) for charts and maps.
 - **Icons**: `lucide-svelte` and `simple-icons`.
 
+**Note**: Avoid using DaisyUI components; prefer standard Tailwind CSS utility classes and Shadcn Svelte components.
+
 ## Development (`apps/site`)
 
 See root `AGENTS.md` for global workflow.
