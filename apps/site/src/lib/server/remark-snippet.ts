@@ -76,13 +76,11 @@ const remarkSnippet = () => {
             let startIndex = -1;
             let endIndex = -1;
 
-            for (let i = 0; i < lines.length; i++) {
-              if (lines[i].includes(startMarker)) {
-                startIndex = i;
-              }
-              if (lines[i].includes(endMarker)) {
-                endIndex = i;
-              }
+            startIndex = lines.findIndex((line) => line.includes(startMarker));
+            if (startIndex !== -1) {
+              endIndex = lines.findIndex(
+                (line, i) => i > startIndex && line.includes(endMarker),
+              );
             }
 
             if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
@@ -121,11 +119,7 @@ const remarkSnippet = () => {
           let ext = path.extname(src).slice(1);
 
           console.log(`Snippet processing: ${src}, ext: ${ext}`);
-          let lang = ext;
-
-          if (EXT_TO_LANG[ext]) {
-            lang = EXT_TO_LANG[ext];
-          }
+          let lang = EXT_TO_LANG[ext] || ext;
 
           // Highlight the code
           let html;

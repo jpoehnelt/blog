@@ -36,19 +36,20 @@
       {#if icon}
         <BrandIcon {icon} size={14} />
       {/if}
-      {#if githubUrl}
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-mono text-xs text-muted-foreground hover:underline"
-        >
-          {displaySrc}
-        </a>
-      {:else}
-        <span class="font-mono text-xs text-muted-foreground">{displaySrc}</span
-        >
-      {/if}
+      <div class="flex gap-2 text-xs font-mono">
+        {#if githubUrl}
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-muted-foreground hover:underline"
+          >
+            {displaySrc}
+          </a>
+        {:else}
+          <span class="text-muted-foreground">{displaySrc}</span>
+        {/if}
+      </div>
     </div>
     <div class="flex items-center gap-2">
       {#if description}

@@ -94,9 +94,11 @@ export async function generateSnippets() {
           let startIndex = -1;
           let endIndex = -1;
 
-          for (let i = 0; i < lines.length; i++) {
-            if (lines[i].includes(startMarker)) startIndex = i;
-            if (lines[i].includes(endMarker)) endIndex = i;
+          startIndex = lines.findIndex((line) => line.includes(startMarker));
+          if (startIndex !== -1) {
+            endIndex = lines.findIndex(
+              (line, i) => i > startIndex && line.includes(endMarker),
+            );
           }
 
           if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
@@ -183,6 +185,7 @@ export async function generateSnippets() {
 
   const outputPath = path.resolve(process.cwd(), "src/lib/data/snippets.json");
   await fs.writeFile(outputPath, JSON.stringify(snippets, null, 2));
+
   console.log(`Generated ${snippets.length} snippets to ${outputPath}`);
   return snippets;
 }
