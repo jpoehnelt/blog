@@ -21,6 +21,12 @@ tags:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
+<Note>
+
+Update: See [Exploring Apps Script CacheService Limits](/posts/exploring-apps-script-cacheservice-limits) for a deep dive into CacheService behavior and limits.
+
+</Note>
+
 In Google Apps Script, there are a few options for key-value stores. This post will cover the following options:
 
 - [PropertiesService] (User, Script, and Document Properties)
