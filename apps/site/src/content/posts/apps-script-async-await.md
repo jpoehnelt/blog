@@ -17,6 +17,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -32,16 +33,7 @@ I'm not going to get into the specifics of WebAssembly in this post, but I wante
 
 The syntax for Promises, async and await in Apps Script is the same as you would expect in modern JavaScript. Here is a simple example of a Promise:
 
-```javascript
-function main() {
-  const promise = new Promise((resolve, reject) => {
-    resolve("hello world");
-  });
-
-  console.log(promise.constructor.name);
-  promise.then(console.log);
-}
-```
+<Snippet src="./snippets/apps-script-async-await/main.js" />
 
 As expected in JavaScript, this outputs the following:
 
@@ -62,30 +54,11 @@ I haven't dug deep into the underlying event loop and tasks here. Might be worth
 
 Here is an example of using async and await:
 
-```javascript
-async function main() {
-  const promise = new Promise((resolve, reject) => {
-    resolve("hello world");
-  });
-
-  console.log(promise.constructor.name);
-  console.log(await promise);
-}
-```
+<Snippet src="./snippets/apps-script-async-await/main-1.js" />
 
 This leads to an interesting discovery, the entry function can be `async` and the `await` keyword can be used. But can I use a top-level await?
 
-```javascript
-const promise = new Promise((resolve, reject) => {
-  resolve("hello world");
-});
-
-await promise; // doesn't work
-
-function main() {
-  console.log(promise.constructor.name);
-}
-```
+<Snippet src="./snippets/apps-script-async-await/main-2.js" />
 
 No, top-level await is not supported in Apps Script and returns the following error when trying to save the script:
 
@@ -105,26 +78,7 @@ There is no `unhandledRejection` error for promises in Apps Script. Combined wit
 
 As mentioned earlier, the only place I've seen async and await actually useful in Apps Script is with the WebAssembly API. Here is a simple example of using async and await with WebAssembly:
 
-```javascript
-async function main() {
-  let bytes = new Uint8Array(
-    Utilities.base64Decode(
-      "AGFzbQEAAAABBwFgAn9/AX8DAgEAB" +
-        "wcBA2FkZAAACgkBBwAgACABagsAHA" +
-        "RuYW1lAQYBAANhZGQCDQEAAgADbGh" +
-        "zAQNyaHM=",
-    ),
-  );
-
-  let {
-    instance: {
-      exports: { add },
-    },
-  } = await WebAssembly.instantiate(bytes);
-
-  console.log(add(1, 2));
-}
-```
+<Snippet src="./snippets/apps-script-async-await/main-3.js" />
 
 This output works as expected:
 
@@ -152,39 +106,17 @@ The functions `setTimeout` and `setInterval` are typically used to create asynch
 
 It may be tempting to use `Utilities.sleep()` to recreate `setTimeout`, but this function is synchronous and will block the task queue.
 
-```javascript
-new Promise((resolve, reject) => {
-  console.log("start");
-  Utilities.sleep(2000);
-  console.log("end");
-  resolve();
-}).then(() => console.log("done"));
-console.log("next");
-```
+<Snippet src="./snippets/apps-script-async-await/example.js" />
 
 This will output the following:
 
-```sh
-3:20:21 PM	Notice	Execution started
-3:20:22 PM	Info	start
-3:20:24 PM	Info	end
-3:20:24 PM	Info	next < this is printed after the sleep!!!
-3:20:24 PM	Info	done
-3:20:24 PM	Notice	Execution completed
-```
+<Snippet src="./snippets/apps-script-async-await/example.sh" />
 
 If this was asynchronous, the `next` would be printed before the `end`.
 
 Interestingly, if you use `async`/`await`, the output changes to:
 
-```sh
-3:22:37 PM	Notice	Execution started
-3:22:38 PM	Info	start
-3:22:40 PM	Info	end
-3:22:40 PM	Info	done
-3:22:40 PM	Info	next < this is printed after the sleep!!!
-3:22:40 PM	Notice	Execution completed
-```
+<Snippet src="./snippets/apps-script-async-await/example-1.sh" />
 
 ## Conclusion
 

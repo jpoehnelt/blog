@@ -13,6 +13,10 @@ tags:
   - 11ty
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 One of the key features I was missing from my new blog written with [Eleventy](https://11ty.dev) was a widget for related posts. I had already implemented tags, which can serve a similar purpose, but I wanted to experiment with something more automated based upon the content of the post.
 
 ## Manual implementations
@@ -50,19 +54,7 @@ Lemmatization is the next step and more advanced. For example, `am`, `are`, `is`
 
 For this task, I'm using the package, [natural](https://www.npmjs.com/package/natural). A simple example is below.
 
-```js
-import { TfIdf } from "natural";
-
-const tfidf = new TfIdf();
-
-tfidf.addDocument("this document is about node.");
-tfidf.addDocument("this document is about ruby.");
-tfidf.addDocument("this document is about ruby and node.");
-
-tfidf.tfidfs("node ruby", function (i, measure) {
-  console.log("document #" + i + " is " + measure);
-});
-```
+<Snippet src="./snippets/eleventy-automatic-related-posts/tfidf.js" />
 
 ## Wrapping it into two libraries
 
@@ -72,37 +64,11 @@ While the package, [natural](https://www.npmjs.com/package/natural), is great fo
 
 The first layer is the package [related-documents](https://www.npmjs.com/package/related-documents) with the following interface.
 
-```js
-import { Related } from "related-documents";
-
-const documents = [
-  { title: "ruby", text: "this lorem ipsum blah foo" },
-  ...
-];
-
-const options = {
-  serializer: (document: any) => [document.title, document.text],
-  weights: [10, 1],
-};
-
-const related = new Related(documents, options);
-
-related.rank(documents[0]);
-// [{absolute: 0-1, relative: 0-INF, document}]
-```
+<Snippet src="./snippets/eleventy-automatic-related-posts/documents.js" />
 
 The output of the above is the following.
 
-```js
-{
-    "absolute": 4.849271710192877,
-    "document": {
-        "text": "this document is about ruby and node.",
-        "title": "ruby and node",
-    },
-    "relative": 0.20786000940717744,
-}
-```
+<Snippet src="./snippets/eleventy-automatic-related-posts/example.js" />
 
 The key features layered above the package natural include:
 
@@ -124,15 +90,7 @@ To improve the experience for Eleventy developers, I added one more layer to the
 
 The basic usage is as follows.
 
-```js
-eleventyConfig.addFilter(
-  "related",
-  require("eleventy-plugin-related").related({
-    serializer: (doc) => [doc.title, doc.description ?? "", doc.text ?? ""],
-    weights: [10, 1, 3],
-  }),
-);
-```
+<Snippet src="./snippets/eleventy-automatic-related-posts/example-1.js" />
 
 Eleventy gives a ton of flexibility and some times the boundaries of what is a plugin and what is just a node library are not very clear. It's definitely the case here and additional usage and feature requests will give some better definition.
 
@@ -143,19 +101,7 @@ So how am I using these two libraries in my blog?
 - Joining the title and excerpts into a single string
 - Equal weights between the title/excerpt and tags
 
-```js
-const related = require("eleventy-plugin-related").related({
-  serializer: ({ data: { title, excerpt, tags } }) => [
-    [title, excerpt].join(" "),
-    (tags || []).join(" "),
-  ],
-  weights: [1, 1],
-});
-
-eleventyConfig.addFilter("relatedPosts", function (doc, docs) {
-  return related(doc, docs).filter(({ relative }) => relative > 0.1);
-});
-```
+<Snippet src="./snippets/eleventy-automatic-related-posts/related.js" />
 
 Obviously there are some inefficiencies here combining tags into a single string and then tokenizing the later.
 

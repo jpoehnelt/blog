@@ -12,6 +12,22 @@ if (process.env.CI) {
   sharp.concurrency(1);
 }
 
+import { generateSnippets } from "./src/lib/server/snippet-generator";
+
+function snippetPlugin() {
+  return {
+    name: "snippet-plugin",
+    async buildStart() {
+      await generateSnippets();
+    },
+    async handleHotUpdate({ file }: any) {
+      if (file.includes("src/content/posts") && file.endsWith(".md")) {
+        await generateSnippets();
+      }
+    },
+  };
+}
+
 function copyImages() {
   return {
     name: "copy-images",
@@ -39,7 +55,13 @@ function copyImages() {
 }
 
 export default defineConfig({
-  plugins: [tailwindcss(), enhancedImages(), sveltekit(), copyImages()],
+  plugins: [
+    tailwindcss(),
+    enhancedImages(),
+    sveltekit(),
+    copyImages(),
+    snippetPlugin(),
+  ],
   esbuild: {
     drop: ["console", "debugger"],
   },

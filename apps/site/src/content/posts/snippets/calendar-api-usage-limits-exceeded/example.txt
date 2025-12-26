@@ -1,0 +1,23 @@
+POST https://www.googleapis.com/calendar/v3/calendars/primary/events
+
+Authorization: Bearer [YOUR_ACCESS_TOKEN]
+Accept: application/json
+Content-Type: application/json
+
+{
+  "attendees": [
+    {
+      "email": "foo@example.com"
+    },
+    {
+      "email": "bar@example.com"
+    }
+  ],
+  "end": {
+    "date": "2024-01-02"
+  },
+  "start": {
+    "date": "2024-01-01"
+  },
+  "summary": "A Calendar Event"
+}

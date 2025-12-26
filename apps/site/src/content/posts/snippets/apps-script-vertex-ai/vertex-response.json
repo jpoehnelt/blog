@@ -1,0 +1,45 @@
+{
+  "predictions": [
+    {
+      "safetyAttributes": {
+        "blocked": false,
+        "scores": [0.1, 0.2, 0.1],
+        "safetyRatings": [
+          {
+            "severity": "NEGLIGIBLE",
+            "probabilityScore": 0.1,
+            "category": "Dangerous Content",
+            "severityScore": 0.1
+          },
+          {
+            "severity": "NEGLIGIBLE",
+            "severityScore": 0.1,
+            "category": "Harassment",
+            "probabilityScore": 0.2
+          },
+          {
+            "severity": "NEGLIGIBLE",
+            "probabilityScore": 0.1,
+            "severityScore": 0.1,
+            "category": "Hate Speech"
+          },
+          {
+            "category": "Sexually Explicit",
+            "severity": "NEGLIGIBLE",
+            "probabilityScore": 0.1,
+            "severityScore": 0.1
+          }
+        ],
+        "categories": ["Derogatory", "Insult", "Sexual"]
+      },
+      "citationMetadata": { "citations": [] },
+      "content": "The first computer program to return 'Hello World' was written in BCPL by Martin Richards in 1967."
+    }
+  ],
+  "metadata": {
+    "tokenMetadata": {
+      "outputTokenCount": { "totalBillableCharacters": 82, "totalTokens": 25 },
+      "inputTokenCount": { "totalBillableCharacters": 51, "totalTokens": 12 }
+    }
+  }
+}

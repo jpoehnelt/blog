@@ -13,6 +13,10 @@ tags:
 syndicate: true
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 I've published a new package, [`@googleworkspace/drive-picker-react`](https://www.npmjs.com/package/@googleworkspace/drive-picker-react), to make it easier to use the Google Drive Picker in React applications.
 
 As the creator of the underlying [`@googleworkspace/drive-picker-element`](https://www.npmjs.com/package/@googleworkspace/drive-picker-element) web component, I wanted to provide a seamless experience for React developers who might find integrating web components a bit verbose due to the need for manual event listeners and ref handling.
@@ -35,25 +39,7 @@ npm install @googleworkspace/drive-picker-react
 
 ### Example
 
-```tsx
-import {
-  DrivePicker,
-  DrivePickerDocsView,
-} from "@googleworkspace/drive-picker-react";
-
-function App() {
-  return (
-    <DrivePicker
-      clientId="YOUR_CLIENT_ID"
-      appId="YOUR_APP_ID"
-      onPicked={(e) => console.log("Picked:", e.detail)}
-      onCanceled={() => console.log("Picker was canceled")}
-    >
-      <DrivePickerDocsView starred={true} />
-    </DrivePicker>
-  );
-}
-```
+<Snippet src="./snippets/react-wrapper-google-drive-picker/example.txt" />
 
 ## Links
 

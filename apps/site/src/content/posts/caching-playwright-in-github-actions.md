@@ -12,6 +12,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -19,19 +20,7 @@ I've always enjoyed using Playwright, but never want to wait for the binaries to
 
 The primary issue that I've had with caching the binaries is that while the binaries can easily be cached, the operating system dependencies must also be installed if not present. The key bits are in the following steps of my GitHub workflow.
 
-```yml
-- uses: actions/cache@v3
-  id: playwright-cache
-  with:
-    path: |
-      ~/.cache/ms-playwright
-    key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
-- run: npm ci
-- run: npx playwright install --with-deps
-  if: steps.playwright-cache.outputs.cache-hit != 'true'
-- run: npx playwright install-deps
-  if: steps.playwright-cache.outputs.cache-hit == 'true'
-```
+<Snippet src="./snippets/caching-playwright-in-github-actions/cache-workflow.yaml" />
 
 And it works! 🎉
 

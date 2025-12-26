@@ -16,6 +16,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -58,29 +59,11 @@ To get started, you will need to compile your WebAssembly module to a `.wasm` fi
 
 The three primary pieces of code you will need are the Rust code and the JavaScript code to load and run the WebAssembly module.
 
-```rust
-// src/lib.rs
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-pub fn hello(name: &str) -> JsValue {
-   format!("Hello, {} from Rust!", name).into()
-}
-```
+<Snippet src="./snippets/apps-script-wasm/hello.rs" />
 
 The following JavaScript code will load and run the WebAssembly module. I keep this in a separate file to make it easier to bundle with ESBuild and isolate the long generated file.
 
-```js
-// src/wasm.js
-async function hello_(name) {
-  const wasm = await import("./pkg/example_bg.wasm");
-  const { __wbg_set_wasm, hello } = await import("./pkg/example_bg.js");
-  __wbg_set_wasm(wasm);
-  return hello(name);
-}
-
-globalThis.hello_ = hello_;
-```
+<Snippet src="./snippets/apps-script-wasm/hello.js" />
 
 This is the entry point in Apps Script.
 
@@ -119,36 +102,7 @@ However, there are some special call outs to the tools needed tie everything tog
 
 In this last step, my `build.js` file looks like this:
 
-```js
-import fs from "fs";
-import esbuild from "esbuild";
-import { wasmLoader } from "esbuild-plugin-wasm";
-import path from "path";
-
-const outdir = "dist";
-const sourceRoot = "src";
-
-await esbuild.build({
-  entryPoints: ["./src/wasm.js"],
-  bundle: true,
-  outdir,
-  sourceRoot,
-  platform: "neutral",
-  format: "esm",
-  plugins: [wasmLoader({ mode: "embedded" })],
-  inject: ["polyfill.js"],
-  minify: true,
-  banner: { js: "// Generated code DO NOT EDIT\n" },
-});
-
-const passThroughFiles = ["main.js", "appsscript.json"];
-
-await Promise.all(
-  passThroughFiles.map(async (file) =>
-    fs.promises.copyFile(path.join(sourceRoot, file), path.join(outdir, file)),
-  ),
-);
-```
+<Snippet src="./snippets/apps-script-wasm/outdir.js" />
 
 There are a few things to note in this file:
 
@@ -169,15 +123,7 @@ The performance of the encoder and decoder is very important to overall performa
 
 The [esbuild-plugin-wasm] inlines the WebAssembly module as a base64 encoded string in the JavaScript file which looks like the following in the non-minified output:
 
-```js
-// wasm-embedded:.../example_bg.wasm
-var example_bg_default;
-var init_example_bg = __esm({
-  "wasm-embedded:.../example_bg.wasm"() {
-    example_bg_default = __toBinary("AGFzbQEAAAABP...");
-  },
-});
-```
+<Snippet src="./snippets/apps-script-wasm/init-example-bg.js" />
 
 ## Application Binary Interface and WASM Bindgen
 
@@ -195,35 +141,11 @@ pub fn foo(bar: &JsValue) -> JsValue {
 
 I can also take this a step further with [serde-wasm-bindgen](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html) or as in one my use cases returning a JavaScript error object from Rust.
 
-```rust
-#[wasm_bindgen(inline_js = r"
-export class MyErrorFromRust extends Error {
-    constructor(message) {
-        super(message);
-    }
-}
-")]
-extern "C" {
-    pub type MyErrorFromRust;
-    #[wasm_bindgen(constructor)]
-    fn new(message: JsValue) -> MyErrorFromRust;
-}
-```
+<Snippet src="./snippets/apps-script-wasm/myerrorfromrust.rs" />
 
 The result of these bindings is code that looks like this and abstracts the need for me to worry about shared memory and other low-level details:
 
-```js
-export function hello(name) {
-  const ptr0 = passStringToWasm0(
-    name,
-    wasm.__wbindgen_malloc,
-    wasm.__wbindgen_realloc,
-  );
-  const len0 = WASM_VECTOR_LEN;
-  const ret = wasm.hello(ptr0, len0);
-  return takeObject(ret);
-}
-```
+<Snippet src="./snippets/apps-script-wasm/hello-1.js" />
 
 This generated code is not something I would want to write by hand!
 
@@ -245,19 +167,7 @@ async function main() {
 
 This pattern works every in Apps Script including in custom functions and add-ons. I actually used `Promise.all` to run multiple WebAssembly functions in parallel in one of my [add-ons to compress images](https://github.com/googleworkspace/apps-script-samples/blob/f465caa0a7f29a9f04bad77f9e75daf0cbc4e570/wasm/image-add-on/src/add-on.js#L81).
 
-```js
-await Promise.all(
-  items.map((bytes) =>
-    // call WASM function
-    compress_(bytes, {
-      quality: qualityToInt(quality),
-      format: item.mimeType.split("/").pop(),
-      width: parseInt(width ?? "0"),
-      height: parseInt(height ?? "0"),
-    }),
-  ),
-);
-```
+<Snippet src="./snippets/apps-script-wasm/compress.js" />
 
 ## Performance
 

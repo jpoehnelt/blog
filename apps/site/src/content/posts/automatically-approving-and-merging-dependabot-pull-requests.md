@@ -14,6 +14,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -22,26 +23,7 @@ I've recently been using a combination of GitHub apps to automate the approval a
 
 The GitHub workflow looks something like:
 
-```yml
-name: Dependabot
-on: pull_request
-
-permissions:
-  contents: write
-
-jobs:
-  dependabot:
-    runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
-    env:
-      PR_URL: ${{github.event.pull_request.html_url}}
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} # I use a PA token.
-    steps:
-      - name: approve
-        run: gh pr review --approve "$PR_URL"
-      - name: merge
-        run: gh pr merge --auto --squash --delete-branch "$PR_URL"
-```
+<Snippet src="./snippets/automatically-approving-and-merging-dependabot-pull-requests/dependabot.yaml" />
 
 <Note>
 

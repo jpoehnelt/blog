@@ -13,6 +13,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -28,45 +29,7 @@ URL safe base 64 encoding uses the following characters: `A-Z`, `a-z`, `0-9`, `-
 
 Here is a simple implementation of the conversion functions. The `uuid` package is used to parse and stringify UUIDs. The `Buffer` class is used to convert between byte arrays and base 64 strings. If `Buffer` is not available, the `btoa` and `atob` functions are used instead.
 
-```javascript
-const toBase64 = (bytes: Uint8Array) => string = (() => {
-	if (typeof Buffer !== "undefined") {
-		return (bytes: Uint8Array) => Buffer.from(bytes).toString("base64");
-	}
-	return (bytes: Uint8Array) => btoa(String.fromCharCode(...bytes));
-})();
-
-const fromBase64 = (base64: string) => Uint8Array | Buffer = (() => {
-	if (typeof Buffer !== "undefined") {
-		return (base64: string) => Buffer.from(base64, "base64");
-	}
-	return (base64: string) =>
-		Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
-})();
-
-/**
- * Returns the given uuid as a 22 character slug. This can be a regular v4
- * slug or a "nice" slug.
- */
-export function uuidToSlug(id: string) {
-	const bytes = uuid.parse(id);
-	const base64 = toBase64(bytes);
-	const slug = base64
-		.replace(/\+/g, "-") // Replace + with - (see RFC 4648, sec. 5)
-		.replace(/\//g, "_") // Replace / with _ (see RFC 4648, sec. 5)
-		.substring(0, 22); // Drop '==' padding
-	return slug;
-}
-
-/**
- * Returns the uuid represented by the given slug
- */
-export function slugToUUID(slug: string) {
-	const base64 = `${slug.replace(/-/g, "+").replace(/_/g, "/")}==`;
-	return uuid.stringify(fromBase64(base64));
-}
-
-```
+<Snippet src="./snippets/svelte-params-uuid-slug-derived-store/uuidtoslug.js" />
 
 ## A Parameters Store
 
@@ -83,24 +46,7 @@ The `+page.svelte` component is used to display the content of a page. The `fooI
 
 In this example, logic is applied to specifically convert slugs that are 22 characters long and conclude with `Id` or `id`. You might need to modify this logic to align with your specific use case.
 
-```javascript
-// src/lib/stores.ts
-import { page } from "$app/stores";
-import { derived } from "svelte/store";
-import { slugToUUID } from "$lib/utils/uuid";
-
-export const params = derived(page, ($page) => {
-  return Object.fromEntries(
-    Object.entries($page.params).map(([key, value]) => {
-      // Convert slugs to UUIDs if ending in 'Id' or 'id' and 22 characters long
-      if (/^(id|[a-zA-Z]+Id)$/.test(key) && value && value.length === 22) {
-        value = slugToUUID(value);
-      }
-      return [key, value];
-    }),
-  );
-});
-```
+<Snippet src="./snippets/svelte-params-uuid-slug-derived-store/params.js" />
 
 The Regex match above should match the following examples:
 
@@ -113,15 +59,7 @@ The Regex match above should match the following examples:
 
 The `params` store is imported in the `+page.svelte` component to access the UUIDs.
 
-```html
-// src/routes/[fooId]/+page.svelte
-<script>
-  import { params } from "$lib/stores";
-  import { page } from "$app/stores";
-</script>
-
-<p>uuid: {$params.fooId}, slug: {$page.params.fooId}</p>
-```
+<Snippet src="./snippets/svelte-params-uuid-slug-derived-store/example.html" />
 
 The above code will show the following output:
 

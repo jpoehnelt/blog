@@ -12,6 +12,10 @@ tags:
   - quota
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 When creating events in Google Calendar, many developers come across the error message: **Calendar usage limits exceeded**. This happens even when they are not exceeding the API quota.
 
 ## Error - usage limits exceeded
@@ -28,31 +32,7 @@ The full error response is the following:
 
 The corresponding Calendar API request might look like the following:
 
-```http
-POST https://www.googleapis.com/calendar/v3/calendars/primary/events
-
-Authorization: Bearer [YOUR_ACCESS_TOKEN]
-Accept: application/json
-Content-Type: application/json
-
-{
-  "attendees": [
-    {
-      "email": "foo@example.com"
-    },
-    {
-      "email": "bar@example.com"
-    }
-  ],
-  "end": {
-    "date": "2024-01-02"
-  },
-  "start": {
-    "date": "2024-01-01"
-  },
-  "summary": "A Calendar Event"
-}
-```
+<Snippet src="./snippets/calendar-api-usage-limits-exceeded/example.txt" />
 
 ## Cause - spam prevention
 
@@ -73,16 +53,7 @@ The problem is only fixed by removing the attendees and using an alternative app
 
 Google Calendar template links look like the following:
 
-```http
-https://calendar.google.com/calendar/r/eventedit
-  ?action=TEMPLATE
-  &dates=20230325T224500Z%2F20230326T001500Z
-  &stz=Europe/Brussels
-  &etz=Europe/Brussels
-  &details=EVENT_DESCRIPTION_HERE
-  &location=EVENT_LOCATION_HERE
-  &text=EVENT_TITLE_HERE
-```
+<Snippet src="./snippets/calendar-api-usage-limits-exceeded/example-1.txt" />
 
 ## Resources
 
