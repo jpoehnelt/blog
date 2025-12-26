@@ -10,7 +10,7 @@
 
 ## Development (`apps/site`)
 
-See root `GEMINI.md` for global workflow.
+See root `AGENTS.md` for global workflow.
 
 - **Dev**: `pnpm --filter site dev`
 - **Build**: `pnpm --filter site build`
