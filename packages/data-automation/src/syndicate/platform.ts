@@ -22,7 +22,7 @@ export abstract class Platform {
   abstract init(): Promise<void>;
   abstract syndicate(post: PostData): Promise<SyndicationStatus | null>;
   abstract getStatus(post: PostData): Promise<SyndicationStatus | null>;
-  abstract transform(content: string): string;
+  abstract transform(content: string): Promise<string>;
 
   protected log(msg: string) {
     console.log(`[${this.name}] ${msg}`);
@@ -30,23 +30,5 @@ export abstract class Platform {
 
   protected get shouldPublish() {
     return !this.options.dryRun;
-  }
-
-  protected baseTransform(content: string): string {
-    const baseUrl = (this.options.baseUrl || "").replace(/\/posts$/, "");
-
-    // Replace Markdown images: ![](/images/...) -> ![](https://site.com/images/...)
-    let newContent = content.replace(
-      /!\[(.*?)\]\((\/.*?)\)/g,
-      (match, alt, url) => `![${alt}](${baseUrl}${url})`,
-    );
-
-    // Replace HTML images: <img src="/images/..." -> <img src="https://site.com/images/..."
-    newContent = newContent.replace(
-      /src="(\/.*?)"/g,
-      (match, url) => `src="${baseUrl}${url}"`,
-    );
-
-    return newContent;
   }
 }

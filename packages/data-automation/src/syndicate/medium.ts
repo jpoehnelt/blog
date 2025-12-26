@@ -1,16 +1,30 @@
 import { Platform } from "./platform.js";
+import { GistManager } from "./gist.js";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkStringify from "remark-stringify";
+import {
+  remarkRewriteImages,
+  remarkTablesToLists,
+  remarkGistCodeBlocks,
+} from "./plugins.js";
 import type { PostData, SyndicateOptions, SyndicationStatus } from "./types.js";
 
 export class MediumPlatform extends Platform {
   private token: string;
+  private gistManager?: GistManager;
   private USER_AGENT =
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
   private USER =
     "196a743bbd33214584e913c2e8c8633a99ab05b6efac5416f4b5ab57b6e065d99";
 
-  constructor(token: string, options: SyndicateOptions) {
+  constructor(token: string, options: SyndicateOptions, githubToken?: string) {
     super("Medium", options);
     this.token = token;
+    if (githubToken) {
+      this.gistManager = new GistManager(githubToken);
+    }
   }
 
   async init(): Promise<void> {}
@@ -84,7 +98,11 @@ export class MediumPlatform extends Platform {
     this.log(`Syndicating "${post.frontmatter.title}"...`);
     if (!this.shouldPublish) return statusUpdate;
 
-    const finalContent = this.transform(content);
+    const finalContent = await this.transform(
+      content,
+      post.frontmatter.title,
+      canonicalUrl,
+    );
 
     try {
       const payload = {
@@ -116,45 +134,24 @@ export class MediumPlatform extends Platform {
     }
   }
 
-  transform(content: string): string {
-    const transformedContent = this.baseTransform(content);
-    return this.transformTablesToLists(transformedContent);
-  }
-
-  private transformTablesToLists(content: string): string {
-    return content.replace(
-      /\|(.+)\|\n\|([-:| ]+)\|\n((?:\|.*\|\n)+)/g,
-      (match, header, separator, body) => {
-        try {
-          const headers = header
-            .split("|")
-            .map((h: string) => h.trim())
-            .filter((h: string) => h !== "");
-          const rows = body
-            .trim()
-            .split("\n")
-            .map((row: string) =>
-              row
-                .split("|")
-                .map((c: string) => c.trim())
-                .filter((c: string) => c !== ""),
-            );
-
-          let listOutput = "";
-          rows.forEach((row: string[]) => {
-            row.forEach((cell: string, index: number) => {
-              const label = headers[index] || "Column " + (index + 1);
-              listOutput += `**${label}**: ${cell}  \n`;
-            });
-            listOutput += "\n---\n\n"; // Separator between rows
-          });
-
-          return listOutput;
-        } catch (e) {
-          return match; // Fallback
-        }
-      },
-    );
+  async transform(
+    content: string,
+    title = "Untitled",
+    canonicalUrl = "",
+  ): Promise<string> {
+    const file = await unified()
+      .use(remarkParse)
+      .use(remarkGfm)
+      .use(remarkRewriteImages, { baseUrl: this.options.baseUrl })
+      .use(remarkTablesToLists)
+      .use(remarkGistCodeBlocks, {
+        gistManager: this.gistManager,
+        title,
+        canonicalUrl,
+      })
+      .use(remarkStringify)
+      .process(content);
+    return String(file);
   }
 
   private async fetch(endpoint: string, method = "GET", body?: any) {

@@ -340,6 +340,9 @@ importers:
 
   packages/data-automation:
     dependencies:
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       axios:
         specifier: ^1.12.2
         version: 1.12.2
@@ -382,6 +385,21 @@ importers:
       octokit:
         specifier: ^3.2.2
         version: 3.2.2
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
+      remark-stringify:
+        specifier: ^11.0.0
+        version: 11.0.0
+      unified:
+        specifier: ^11.0.5
+        version: 11.0.5
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
       yargs:
         specifier: ^18.0.0
         version: 18.0.0

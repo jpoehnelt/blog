@@ -1,4 +1,9 @@
 import { Platform } from "./platform.js";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkStringify from "remark-stringify";
+import { remarkRewriteImages } from "./plugins.js";
 import type { PostData, SyndicateOptions, SyndicationStatus } from "./types.js";
 
 export class DevToPlatform extends Platform {
@@ -69,7 +74,9 @@ export class DevToPlatform extends Platform {
         this.log(`Force updating draft "${post.frontmatter.title}"...`);
         if (!this.shouldPublish) return statusUpdate;
 
-        const transformedContent = this.transform(content);
+        if (!this.shouldPublish) return statusUpdate;
+
+        const transformedContent = await this.transform(content);
 
         try {
           const payload = {
@@ -149,7 +156,13 @@ export class DevToPlatform extends Platform {
     return res.json<any>();
   }
 
-  transform(content: string): string {
-    return this.baseTransform(content);
+  async transform(content: string): Promise<string> {
+    const file = await unified()
+      .use(remarkParse)
+      .use(remarkGfm)
+      .use(remarkRewriteImages, { baseUrl: this.options.baseUrl })
+      .use(remarkStringify)
+      .process(content);
+    return String(file);
   }
 }

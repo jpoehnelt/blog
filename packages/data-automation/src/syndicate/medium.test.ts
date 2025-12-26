@@ -11,6 +11,13 @@ vi.mock("ky", () => ({
   },
 }));
 
+const mockCreateGist = vi.fn();
+vi.mock("./gist.js", () => ({
+  GistManager: class {
+    createGist = mockCreateGist;
+  },
+}));
+
 // Mock CONFIG - Not needed for class, but maybe for test setup if used elsewhere?
 // The class no longer imports CONFIG.
 // vi.mock('./config.js', ...);
@@ -134,8 +141,18 @@ describe("MediumPlatform", () => {
     });
   });
 
-  it("should transform tables to lists with inline snapshot", async () => {
-    // Mock create fetch to capture body
+  it("should replace code blocks with Gists when githubToken is provided", async () => {
+    // Re-instantiate with githubToken
+    const platformWithGist = new MediumPlatform(
+      "test-token",
+      {
+        dryRun: false,
+        mode: "sync",
+        baseUrl: "https://example.com/posts",
+      },
+      "fake-github-token",
+    );
+
     mockKy.mockResolvedValueOnce({
       ok: true,
       json: async () => ({
@@ -147,32 +164,38 @@ describe("MediumPlatform", () => {
       }),
     });
 
-    const tableContent = `
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Value 1  | Value 2  |
-`;
+    mockCreateGist.mockResolvedValue("https://gist.github.com/123");
 
-    await platform.syndicate({
+    const content = `
+Check out this code:
+
+\`\`\`typescript
+const a = 1;
+\`\`\`
+
+End of post.
+    `;
+
+    await platformWithGist.syndicate({
       slug: "test-slug",
-      content: tableContent,
+      content: content,
       frontmatter: { title: "Test Title" },
       canonicalUrl: "https://example.com/posts/test-slug",
     });
 
+    // Verify GistManager was called
+    expect(mockCreateGist).toHaveBeenCalledWith(
+      expect.stringContaining("const a = 1;"),
+      expect.stringContaining("test-title.typescript"),
+      expect.stringContaining("Code snippet from Test Title"),
+    );
+
+    // Verify Medium payload contains Gist URL
     const postCall = mockKy.mock.calls.find((call: any[]) =>
       call[0].includes("/posts"),
     );
-    const body = postCall[1].json; // ky uses 'json' option
-
-    expect(body.content).toMatchInlineSnapshot(`
-      "
-      **Header 1**: Value 1  
-      **Header 2**: Value 2  
-
-      ---
-
-      "
-    `);
+    const body = postCall[1].json;
+    expect(body.content).toContain("https://gist.github.com/123");
+    expect(body.content).not.toContain("```typescript");
   });
 });

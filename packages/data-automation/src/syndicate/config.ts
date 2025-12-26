@@ -12,5 +12,6 @@ export const CONFIG = {
   keys: {
     devto: process.env.DEVTO_API_KEY,
     medium: process.env.MEDIUM_INTEGRATION_TOKEN,
+    github: process.env.GITHUB_TOKEN,
   },
 };

@@ -43,6 +43,8 @@ jobs:
             pnpm --filter data-automation syndicate
           fi
         env:
+          MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
       - name: Commit changes
         if: github.ref == 'refs/heads/main'

@@ -55,12 +55,16 @@ async function main() {
     CONFIG.keys.medium
   ) {
     platforms.push(
-      new MediumPlatform(CONFIG.keys.medium, {
-        dryRun: argv.dryRun,
-        mode: argv.mode as any,
-        force: argv.force,
-        baseUrl: CONFIG.baseUrl,
-      }),
+      new MediumPlatform(
+        CONFIG.keys.medium,
+        {
+          dryRun: argv.dryRun,
+          mode: argv.mode as any,
+          force: argv.force,
+          baseUrl: CONFIG.baseUrl,
+        },
+        CONFIG.keys.github,
+      ),
     );
   }
 

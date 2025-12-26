@@ -25,6 +25,7 @@
     "vitest": "^4.0.16"
   },
   "dependencies": {
+    "@types/mdast": "^4.0.4",
     "axios": "^1.12.2",
     "date-fns": "^2.30.0",
     "dompurify": "^3.2.7",
@@ -39,6 +40,11 @@
     "lodash-es": "^4.17.21",
     "markdown-table": "^3.0.4",
     "octokit": "^3.2.2",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0",
     "yargs": "^18.0.0"
   }
 }
