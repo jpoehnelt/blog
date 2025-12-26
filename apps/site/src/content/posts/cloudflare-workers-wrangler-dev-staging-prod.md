@@ -15,6 +15,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
   import Note from '$lib/components/content/Note.svelte';
 </script>
@@ -53,14 +54,7 @@ This does not automatically create the domain in Cloudflare. You will need to do
 
 This configuration file can be extended to include a `dev` environment:
 
-```toml
-[env.dev]
-name = "my-worker-dev"
-route = "dev.example.com/*"
-
-[env.dev.var]
-  foo = "bar"
-```
+<Snippet src="./snippets/cloudflare-workers-wrangler-dev-staging-prod/example.txt" />
 
 This will deploy a worker named `my-worker-dev` to a route of `dev.example.com/*` and set a variable `foo` to `bar` that can be accessed in the worker code.
 
@@ -72,21 +66,7 @@ I removed the default `route`, `name`, and `var` from the base configuration and
 
 To promote the worker to `staging` and `prod`, I can add additional sections to the `wrangler.toml` file:
 
-```toml
-[env.staging]
-name = "my-worker-staging"
-route = "staging.example.com/*"
-
-[env.staging.var]
-  foo = "bar"
-
-[env.prod]
-name = "my-worker-prod"
-route = "example.com/*"
-
-[env.prod.var]
-  foo = "bar"
-```
+<Snippet src="./snippets/cloudflare-workers-wrangler-dev-staging-prod/example-1.txt" />
 
 This enables me to call `wrangler deploy --env staging` and `wrangler deploy --env prod` to deploy to the `staging` and `prod` environments respectively and the works look like this in the dashboard:
 
@@ -98,61 +78,11 @@ Some fields are not inheritable across environments such as `vars` and `kv-names
 
 To automate the deployment of the worker to the `dev`, `staging`, and `prod` environments, I can use GitHub actions. Here is an example of a GitHub action that deploys the worker to the correct environment based upon the context of the action, such as a push to the `main` branch or a manual trigger.
 
-```yaml
-name: Deploy
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Environment"
-        required: true
-        type: choice
-        options:
-          - prod
-          - staging
-        default: staging
-jobs:
-  deploy:
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    runs-on: ubuntu-latest
-    env:
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    steps:
-      # other steps to checkout/build/test/etc
-      - name: Manual deploy
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        run: wrangler deploy --env=${{ github.event.inputs.environment }}
-      - name: Automatic deploy to staging
-        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
-        run: wrangler deploy --env=staging
-  promote:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
-    needs: deploy
-    env:
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    steps:
-      # verify staging deployment through integration tests
-      - run: wrangler deploy  --env=staging
-```
+<Snippet src="./snippets/cloudflare-workers-wrangler-dev-staging-prod/deploy.yaml" />
 
 Alternatively, you could promote to prod when a tag is pushed:
 
-```yaml
-name: Deploy
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - "*"
-```
+<Snippet src="./snippets/cloudflare-workers-wrangler-dev-staging-prod/deploy-1.yaml" />
 
 And then add a step to deploy to prod:
 

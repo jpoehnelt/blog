@@ -1,0 +1,10 @@
+[Item Count]
+     |
+1050 |      / (Overflow added)
+     |     /
+1000 |----/   <-- High Water Mark (Limit Triggered)
+     |   |
+     |   |    (Batch Eviction: ~100 items deleted instantly)
+ 900 |___|    <-- Low Water Mark (Safety Buffer)
+     |
+     +----------------------> [Time]

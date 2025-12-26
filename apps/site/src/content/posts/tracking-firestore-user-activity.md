@@ -15,6 +15,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Image from '$lib/components/content/Image.svelte';
 </script>
 
@@ -43,37 +44,7 @@ There are a few moving parts to this solution, but it's pretty automatic.
 
 3. Cloud Function is triggered by Pub/Sub message
 
-```typescript
-import * as firebaseAdmin from "firebase-admin";
-import * as functions from "firebase-functions";
-
-export default functions.pubsub
-  .topic("firestore-activity")
-  .onPublish(async (message) => {
-    const { data } = message;
-    const { timestamp, protoPayload } = JSON.parse(
-      Buffer.from(data, "base64").toString(),
-    );
-
-    const uid =
-      protoPayload.authenticationInfo.thirdPartyPrincipal.payload.user_id;
-
-    const writes = protoPayload.request.writes;
-
-    const activityRef = firebaseAdmin
-      .firestore()
-      .collection("users")
-      .doc(uid)
-      .collection("activity");
-
-    await Promise.all(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      writes.map((write: any) => {
-        activityRef.add({ write, timestamp });
-      }),
-    );
-  });
-```
+<Snippet src="./snippets/tracking-firestore-user-activity/uid.ts" />
 
 4. Cloud Function writes to Firestore
 

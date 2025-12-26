@@ -15,6 +15,10 @@ tags:
   - drive
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 In this post, we will explore how to use Office `.docx` and `DocumentApp` in Google Apps Script. All of these operations are available directly in the Docs application, but you can also use Apps Script to automate these tasks.
 
 ## Background
@@ -40,20 +44,7 @@ const doc = DocumentApp.openById(document.id);
 
 Alternatively, you can use the `Drive.Files.create()` method to create a new version of the `.docx` file in Google Docs format:
 
-```javascript
-const docx = DriveApp.getFileById(docxId);
-
-const metadata = {
-  title: docx.getName().replace(".docx", ""),
-  mimeType: "application/vnd.google-apps.document",
-  // keep in same folder
-  parents: [{ id: docx.getParents().next().getId() }],
-};
-
-const id = Drive.Files.create(metadata, docx.getBlob(), { convert: true }).id;
-
-const doc = DocumentApp.openById(id);
-```
+<Snippet src="./snippets/apps-script-docx-documentapp/docx.js" />
 
 In some cases, you may want to delete the original `.docx` file after converting it to Docs format:
 
@@ -66,42 +57,11 @@ docx.setTrashed(true);
 
 Converting a Docs file to `.docx` format is a bit more complex in Apps Script. You need to use the REST Drive API to export the file as a `.docx` file via `URLFetchApp` and then create a new file in Drive with the exported blob. See https://developers.google.com/drive/api/reference/rest/v3/files#exportLinks for more information on the export links available for Google Docs files.
 
-```javascript
-const doc = DocumentApp.openById(ID);
-
-const blob = UrlFetchApp.fetch(
-  `https://docs.google.com/feeds/download/documents/export/Export` +
-    `?id=${doc.getId()}&exportFormat=docx`,
-  {
-    headers: {
-      Authorization: `Bearer ${ScriptApp.getOAuthToken()}`,
-    },
-  },
-).getBlob();
-
-const folder = DriveApp.getFileById(ID).getParents().next();
-const docx = folder.createFile(
-  doc.getName().replace(".docx", ""),
-  blob,
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-);
-
-console.log(docx.getId());
-```
+<Snippet src="./snippets/apps-script-docx-documentapp/doc.js" />
 
 Because we are using the Drive API via URLFetchApp, you need to add the `https://www.googleapis.com/auth/drive` scope to your Apps Script project.
 
-```js
-{
-  // ...
-  // Modify scopes to the minimum required based upon your usage patterns
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/drive",
-    "https://www.googleapis.com/auth/documents",
-    "https://www.googleapis.com/auth/script.external_request"
-  ]
-}
-```
+<Snippet src="./snippets/apps-script-docx-documentapp/example.js" />
 
 When I execute the above code, I get the following:
 

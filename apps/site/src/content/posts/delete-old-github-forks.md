@@ -10,19 +10,13 @@ tags:
   - cleanup
 ---
 
+<script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
+</script>
+
 Was browsing through my GitHub repositories and realized I have an embarrassing number of forks. A lot of these contain code that is either out of date or not even valid anymore. I used the following to quickly cleanup these repositories that I created before `2021-01-01`.
 
-```bash
-gh search repos \
-  --owner jpoehnelt \
-  --created="<2021-01-01" \
-  --include-forks=only \
-  --json url \
-  --jq ".[] .url" \
-| xargs -I {} \
-  gh repo delete {} \
-    --confirm
-```
+<Snippet src="./snippets/delete-old-github-forks/example.sh" />
 
 You may need to refresh your auth with the `delete_repo` scope.
 

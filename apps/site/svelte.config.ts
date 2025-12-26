@@ -10,7 +10,7 @@ import remarkInlineLinks from "remark-inline-links";
 
 const theme = "vitesse-light";
 
-import remarkSnippet from "./src/lib/server/remark-snippet.js";
+import remarkSnippet from "./src/lib/server/remark-snippet.ts";
 
 const config = {
   trailingSlash: "always",
@@ -64,6 +64,14 @@ const config = {
       bundleStrategy: "split", // Code-splitting for efficiency
     },
     inlineStyleThreshold: 51200, // Inline critical CSS up to 50KB
+    typescript: {
+      config: (config: Record<string, any>) => {
+        const snippetsDir = "../src/content/posts/snippets";
+        console.log("Applying exclude for snippets", snippetsDir);
+        config.exclude = [...(config.exclude || []), snippetsDir];
+        return config;
+      },
+    },
   },
   compilerOptions: {
     experimental: {

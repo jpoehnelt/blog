@@ -15,6 +15,7 @@ tags:
 ---
 
 <script>
+  import Snippet from "$lib/components/content/Snippet.svelte";
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
@@ -42,18 +43,7 @@ The first requirement is to configure the Apps Script project.
 2. Check the `Show "appsscript.json" manifest file in editor` in the Apps Script project settings.
 3. Update the `appsscript.json` file with the following `oauthScopes` field:
 
-```json
-{
-  "timeZone": "America/Denver",
-  "dependencies": {},
-  "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8",
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/cloud-platform",
-    "https://www.googleapis.com/auth/script.external_request"
-  ]
-}
-```
+<Snippet src="./snippets/apps-script-vertex-ai/appsscript.json" />
 
 Now we can write the code to access the Vertex AI API, but will start with some global constants and getting the access token.
 
@@ -73,38 +63,7 @@ Unlike most other types of Apps Scripts, [custom functions never ask users to au
 
 Next we will write a function to make a prediction on a single string using [`URLFetchApp`](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app).
 
-```js
-function predict(prompt) {
-  const BASE = "https://us-central1-aiplatform.googleapis.com";
-  const URL = `${BASE}/v1/projects/${PROJECT_ID}/locations/us-central1/publishers/google/models/${MODEL}:predict`;
-
-  const payload = JSON.stringify({
-    instances: [{ prompt }],
-    parameters: {
-      temperature: 0.2,
-      maxOutputTokens: 256,
-      top: 40,
-      topP: 0.95,
-    },
-  });
-
-  const options = {
-    method: "post",
-    headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
-    muteHttpExceptions: true,
-    contentType: "application/json",
-    payload,
-  };
-
-  const response = UrlFetchApp.fetch(URL, options);
-
-  if (response.getResponseCode() == 200) {
-    return JSON.parse(response.getContentText());
-  } else {
-    throw new Error(response.getContentText());
-  }
-}
-```
+<Snippet src="./snippets/apps-script-vertex-ai/predict.js" />
 
 A quick LLM version of the "Hello World":
 
@@ -118,53 +77,7 @@ function _debug() {
 
 This returns the following:
 
-```json
-{
-  "predictions": [
-    {
-      "safetyAttributes": {
-        "blocked": false,
-        "scores": [0.1, 0.2, 0.1],
-        "safetyRatings": [
-          {
-            "severity": "NEGLIGIBLE",
-            "probabilityScore": 0.1,
-            "category": "Dangerous Content",
-            "severityScore": 0.1
-          },
-          {
-            "severity": "NEGLIGIBLE",
-            "severityScore": 0.1,
-            "category": "Harassment",
-            "probabilityScore": 0.2
-          },
-          {
-            "severity": "NEGLIGIBLE",
-            "probabilityScore": 0.1,
-            "severityScore": 0.1,
-            "category": "Hate Speech"
-          },
-          {
-            "category": "Sexually Explicit",
-            "severity": "NEGLIGIBLE",
-            "probabilityScore": 0.1,
-            "severityScore": 0.1
-          }
-        ],
-        "categories": ["Derogatory", "Insult", "Sexual"]
-      },
-      "citationMetadata": { "citations": [] },
-      "content": "The first computer program to return 'Hello World' was written in BCPL by Martin Richards in 1967."
-    }
-  ],
-  "metadata": {
-    "tokenMetadata": {
-      "outputTokenCount": { "totalBillableCharacters": 82, "totalTokens": 25 },
-      "inputTokenCount": { "totalBillableCharacters": 51, "totalTokens": 12 }
-    }
-  }
-}
-```
+<Snippet src="./snippets/apps-script-vertex-ai/vertex-response.json" />
 
 ## Caching the API Call
 
@@ -174,15 +87,4 @@ Read more about [memoization in Apps Script](/posts/apps-script-memoization/).
 
 The linked memoization would allow for the same prompt to be passed to the function without making an API call.
 
-```js
-// See `memoize` from https://justin.poehnelt.com/posts/apps-script-memoization/
-const predictMemoized = memoize(predict);
-
-function _debug() {
-  Logger.log(
-    predictMemoized(
-      "What was the first computer program to return 'Hello World'?",
-    ),
-  );
-}
-```
+<Snippet src="./snippets/apps-script-vertex-ai/debug.js" />
