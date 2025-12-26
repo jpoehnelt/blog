@@ -1,18 +1,28 @@
 ---
-title: "Exploring Apps Script CacheService Limits"
-description: "A deep dive into Apps Script CacheService limits. I verify key/value constraints and uncover the undocumented FIFO batch eviction policy at the 1000-item limit."
-pubDate: "2025-12-22"
+title: Exploring Apps Script CacheService Limits
+description: >-
+  A deep dive into Apps Script CacheService limits. I verify key/value
+  constraints and uncover the undocumented FIFO batch eviction policy at the
+  1000-item limit.
+pubDate: '2025-12-22'
 tags:
-  [
-    "apps script",
-    "cacheservice",
-    "google workspace",
-    "fifo",
-    "cache",
-    "performance",
-    "limits",
-  ]
+  - apps script
+  - cacheservice
+  - google workspace
+  - fifo
+  - cache
+  - performance
+  - limits
 syndicate: true
+devto:
+  id: 3121405
+  link: >-
+    https://dev.to/googleworkspace/apps-script-cacheservice-eviction-and-other-limits-1p6d
+  status: published
+medium:
+  id: 98d5d9ddf69d
+  link: 'https://medium.com/@jpoehnelt/98d5d9ddf69d'
+  status: draft
 ---
 
 Caching is a critical strategy for optimizing performance in Google Apps Script properties, especially when dealing with slow APIs or heavy computations. The built-in `CacheService` provides a simple key-value store, but its documentation leaves several "edge cases" and failure scenarios vague.

@@ -13,6 +13,15 @@ tags:
   - apps script
   - prompt
 syndicate: true
+devto:
+  id: 3114474
+  link: >-
+    https://dev.to/googleworkspace/securing-gmail-ai-agents-against-prompt-injection-with-model-armor-4fo
+  status: published
+medium:
+  id: c89701702397
+  link: 'https://medium.com/@jpoehnelt/c89701702397'
+  status: draft
 ---
 
 <script>

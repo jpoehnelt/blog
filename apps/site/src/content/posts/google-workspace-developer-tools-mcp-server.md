@@ -3,7 +3,7 @@ title: Google Workspace Developer Tools MCP Server
 description: >-
   Announcing the new MCP server for Google Workspace Developer Tools, providing
   AI agents with access to official documentation and API snippets.
-pubDate: "2025-12-17"
+pubDate: '2025-12-17'
 tags:
   - google workspace
   - mcp
@@ -11,6 +11,15 @@ tags:
   - gemini
   - developer tools
 syndicate: true
+devto:
+  id: 3114475
+  link: >-
+    https://dev.to/googleworkspace/google-workspace-developer-tools-mcp-server-723
+  status: published
+medium:
+  id: b73cd0e1710d
+  link: 'https://medium.com/@jpoehnelt/b73cd0e1710d'
+  status: draft
 ---
 
 <script>

@@ -59,4 +59,4 @@ export const LANG_ICON_MAP = {
   gs: siGoogleappsscript,
 };
 
-export * from "@jpoehnelt/remark-snippet";
+export { SHIKI_LANGS, SHIKI_THEMES } from "@jpoehnelt/remark-snippet";

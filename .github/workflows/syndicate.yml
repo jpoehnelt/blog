@@ -1,8 +1,5 @@
 name: Syndicate
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       slug:
@@ -43,4 +40,15 @@ jobs:
             pnpm --filter data-automation syndicate
           fi
         env:
+          MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+      - name: Commit changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          pnpm format
+          git config --local user.email "jpoehnelt@users.noreply.github.com"
+          git config --local user.name "Justin Poehnelt"
+          git add --all apps/site/src/content/posts/
+          git commit -m "chore: update syndication data" || true
+          git push

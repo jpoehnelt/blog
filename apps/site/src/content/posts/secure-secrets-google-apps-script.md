@@ -1,6 +1,8 @@
 ---
 title: Secure Secrets in Google Apps Script
-description: Do not hardcode secrets in Google Apps Script. Use Properties Service or Google Cloud Secret Manager.
+description: >-
+  Do not hardcode secrets in Google Apps Script. Use Properties Service or
+  Google Cloud Secret Manager.
 pubDate: 2025-12-19T00:00:00.000Z
 tags:
   - google workspace
@@ -10,6 +12,14 @@ tags:
   - secret manager
   - properties service
 syndicate: true
+devto:
+  id: 3116205
+  link: "https://dev.to/googleworkspace/secure-secrets-in-google-apps-script-1dhc"
+  status: published
+medium:
+  id: 6590988d1b2d
+  link: "https://medium.com/@jpoehnelt/6590988d1b2d"
+  status: draft
 ---
 
 <script>
