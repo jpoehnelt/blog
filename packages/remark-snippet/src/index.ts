@@ -161,7 +161,7 @@ const remarkSnippet = (options: RemarkSnippetOptions = {}) => {
           }
 
           const relativePath = path.relative(process.cwd(), filePath);
-          
+
           let githubUrl: string;
           if (options.baseRepoUrl) {
             // Ensure trailing slash

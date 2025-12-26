@@ -11,6 +11,15 @@ tags:
   - react
   - web component
 syndicate: true
+devto:
+  id: 3114293
+  link: "https://dev.to/googleworkspace/react-wrapper-for-google-drive-picker-1api"
+  status: published
+medium:
+  id: 5cfc30792f45
+  link: >-
+    https://medium.com/@jpoehnelt/react-wrapper-for-google-drive-picker-5cfc30792f45
+  status: published
 ---
 
 <script>

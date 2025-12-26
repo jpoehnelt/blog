@@ -33,11 +33,11 @@ describe("remarkSnippet", () => {
 
     expect(fs.readFile).toHaveBeenCalledWith(
       expect.stringContaining("example.ts"),
-      "utf-8"
+      "utf-8",
     );
-    expect(result).toContain('rawContent={"const foo = \'bar\';"}');
+    expect(result).toContain("rawContent={\"const foo = 'bar';\"}");
     expect(result).toContain('src="example.ts"');
-    expect(result).toContain('code={');
+    expect(result).toContain("code={");
   });
 
   it("should respect baseRepoUrl option", async () => {
@@ -48,14 +48,14 @@ describe("remarkSnippet", () => {
     });
 
     expect(result).toContain(
-      'githubUrl="https://github.com/custom/repo/blob/main/'
+      'githubUrl="https://github.com/custom/repo/blob/main/',
     );
   });
 
   it("should enforce kebab-case filenames", async () => {
     const markdown = `<Snippet src="InvalidName.ts" />`;
     await expect(processMarkdown(markdown)).rejects.toThrow(
-      /Invalid snippet filename/
+      /Invalid snippet filename/,
     );
   });
 
