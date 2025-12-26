@@ -190,9 +190,6 @@ importers:
       d3-shape:
         specifier: ^3.2.0
         version: 3.2.0
-      daisyui:
-        specifier: ^5.1.25
-        version: 5.3.1
       embla-carousel-svelte:
         specifier: ^8.6.0
         version: 8.6.0(svelte@5.40.0)
@@ -3512,9 +3509,6 @@ packages:
 
   dagre-d3-es@7.0.11:
     resolution: {integrity: sha512-tvlJLyQf834SylNKax8Wkzco/1ias1OPw8DcUMDE7oUIoSEW25riQVuiu/0OWEFqT0cxHT3Pa9/D82Jr47IONw==}
-
-  daisyui@5.3.1:
-    resolution: {integrity: sha512-h2RqYCfavz3ZHoRhkn9xsDjMTSvCqAf44ve1Lh5nZvXWrnxgnzVvwGhhnM/lwvFo42aK3Rfly0wE4d5t9LKhRQ==}
 
   data-uri-to-buffer@2.0.2:
     resolution: {integrity: sha512-ND9qDTLc6diwj+Xe5cdAgVTbLVdXbtxTJRXRhli8Mowuaan+0EJOtdqJ0QCHNSSPyoXGx9HX2/VMnKeC34AChA==}
@@ -9837,8 +9831,6 @@ snapshots:
     dependencies:
       d3: 7.9.0
       lodash-es: 4.17.21
-
-  daisyui@5.3.1: {}
 
   data-uri-to-buffer@2.0.2: {}
 
