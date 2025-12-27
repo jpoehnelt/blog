@@ -20,7 +20,7 @@ devto:
   status: published
 medium:
   id: c89701702397
-  link: 'https://medium.com/@jpoehnelt/c89701702397'
+  link: "https://medium.com/@jpoehnelt/c89701702397"
   status: draft
 ---
 

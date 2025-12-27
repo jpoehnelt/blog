@@ -4,7 +4,7 @@ description: >-
   A deep dive into Apps Script CacheService limits. I verify key/value
   constraints and uncover the undocumented FIFO batch eviction policy at the
   1000-item limit.
-pubDate: '2025-12-22'
+pubDate: "2025-12-22"
 tags:
   - apps script
   - cacheservice
@@ -21,7 +21,7 @@ devto:
   status: published
 medium:
   id: 98d5d9ddf69d
-  link: 'https://medium.com/@jpoehnelt/98d5d9ddf69d'
+  link: "https://medium.com/@jpoehnelt/98d5d9ddf69d"
   status: draft
 ---
 
