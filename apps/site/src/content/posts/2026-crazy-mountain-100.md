@@ -19,7 +19,7 @@ tags:
 
 I’m officially signed up for the [**Crazy Mountain 100**](https://www.crazymountainultra.com/) in July 2026! 🏔️
 
-<Image src="crazy-mountain-100-ultra-marathon.png" alt="Crazy Mountain 100 Ultra Marathon" />
+<Image src="crazy-mountain-100-ultra-marathon.jpg" alt="Crazy Mountain 100 Ultra Marathon" />
 
 Honestly, I only know about this race because of my friend. I generally avoid races in Grizzly Bear country 🐻, but he recommended that we do it together to get a Hardrock qualifier. From what I've seen, the Crazy Mountains look absolutely wild.
 
