@@ -20,7 +20,12 @@ export function getStravaActivities(): DetailedActivityResponse[] {
 export function getStravaActivity(
   id: string,
 ): DetailedActivityResponse | undefined {
-  return Object.values(stravaData).find((a) => a.id.toString() === id);
+  // Optimization: Try O(1) lookup using the file path key structure from import.meta.glob
+  // Fallback to O(N) search if the key format doesn't match
+  return (
+    stravaData[`/src/data/strava/${id}.json`] ||
+    Object.values(stravaData).find((a) => a.id.toString() === id)
+  );
 }
 
 export function slugify(text: string): string {
