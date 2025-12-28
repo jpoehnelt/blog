@@ -23,6 +23,16 @@ medium:
   status: draft
 ---
 
+<script>
+  import Note from "$lib/components/content/Note.svelte";
+</script>
+
+<Note>
+
+Update: See [Google Workspace Developer Tools MCP Server](/posts/google-workspace-developer-tools-mcp-server) for more details on the MCP features.
+
+</Note>
+
 I recently released the [Google Workspace Developer Tools VS Code extension](https://marketplace.visualstudio.com/items?itemName=google-workspace.google-workspace-developer-tools) to help developers with OAuth2 scope management and AI assistance.
 
 <img src="/images/scope-completion.gif" alt="OAuth2 Scope Linting & Completions" />
