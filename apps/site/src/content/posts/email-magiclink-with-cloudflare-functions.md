@@ -61,7 +61,7 @@ I created a simple HTML form that would POST to `/auth/login` with the email add
 
 I created a Cloudflare Function that would generate a magic link and send it to the email address provided. The function is triggered by a POST request to `/auth/login`.
 
-<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/email.js" />
+<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/email.ts" />
 
 This sends an email that looks like the following:
 
