@@ -64,11 +64,11 @@ While the package, [natural](https://www.npmjs.com/package/natural), is great fo
 
 The first layer is the package [related-documents](https://www.npmjs.com/package/related-documents) with the following interface.
 
-<Snippet src="./snippets/eleventy-automatic-related-posts/documents.js" />
+<Snippet src="./snippets/eleventy-automatic-related-posts/documents.ts" />
 
 The output of the above is the following.
 
-<Snippet src="./snippets/eleventy-automatic-related-posts/example.js" />
+<Snippet src="./snippets/eleventy-automatic-related-posts/example.json" />
 
 The key features layered above the package natural include:
 

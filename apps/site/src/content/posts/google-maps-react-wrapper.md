@@ -15,7 +15,7 @@ tags:
 
 The package [@googlemaps/react-wrapper](https://www.npmjs.com/package/@googlemaps/react-wrapper) is a wrapper component that helps load the Google Maps JavaScript API. Below is a short snippet demonstrating usage.
 
-<Snippet src="./snippets/google-maps-react-wrapper/render.js" />
+<Snippet src="./snippets/google-maps-react-wrapper/render.tsx" />
 
 Recently I livecoded its usage and created `google.maps.Map` and `google.maps.Marker` components.
 

@@ -41,6 +41,6 @@ The comment for this property reads:
 
 The property is set to `false` by default. Developers can use the `spreadsheets.batchUpdate` method in the Sheets API to set this property to `true` and allow access to external URLs for the `IMAGE` and `IMPORT` functions without requiring user consent.
 
-<Snippet src="./snippets/sheets-api-import-image-external-url/example.js" />
+<Snippet src="./snippets/sheets-api-import-image-external-url/example.json" />
 
 After this change, the warning message will no longer appear, and the functions will work as expected!

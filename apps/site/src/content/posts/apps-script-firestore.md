@@ -25,7 +25,7 @@ When using Apps Script, sometimes the [CacheService] and [PropertiesService] do 
 1. To use Firestore in Apps Script, you will need to enable the Firestore API in the [Google Cloud Console](https://console.cloud.google.com/apis/library/firestore.googleapis.com).
 2. You will also need to add the following scopes to your Apps Script project:
 
-<Snippet src="./snippets/apps-script-firestore/example.js" />
+<Snippet src="./snippets/apps-script-firestore/example.json" />
 
 3. Finally, you will need to set the Cloud project id in the Apps Script settings.
 4. Create a collection named `kv` in Firestore so the examples below will work.
