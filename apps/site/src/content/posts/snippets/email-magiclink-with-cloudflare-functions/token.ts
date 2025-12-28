@@ -1,6 +1,6 @@
 export const onRequestGet: Func = async (context) => {
   const token = new URL(context.request.url).searchParams.get(
-    TOKEN_QUERY_PARAM
+    TOKEN_QUERY_PARAM,
   );
 
   let email: string;

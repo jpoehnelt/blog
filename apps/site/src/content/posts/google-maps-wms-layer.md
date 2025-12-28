@@ -35,7 +35,7 @@ These options become query parameters in our GetMap request to the WMS returning
 
 <Image src="NLCD_2016_Land_Cover_L48_20210604_3857.png" alt="NLCD 2016 Land Cover L48" />
 
-<Snippet src="./snippets/google-maps-wms-layer/example-1.js" />
+<Snippet src="./snippets/google-maps-wms-layer/example-1.txt" />
 
 It is important to note that the coordinates for the `BBOX` parameter must be in the coordinate reference system specified by the spatial reference system(SRS). In the above request we are using [`EPSG:3857`](https://epsg.io/3857), also known as **web mercator**.
 

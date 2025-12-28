@@ -29,7 +29,7 @@ URL safe base 64 encoding uses the following characters: `A-Z`, `a-z`, `0-9`, `-
 
 Here is a simple implementation of the conversion functions. The `uuid` package is used to parse and stringify UUIDs. The `Buffer` class is used to convert between byte arrays and base 64 strings. If `Buffer` is not available, the `btoa` and `atob` functions are used instead.
 
-<Snippet src="./snippets/svelte-params-uuid-slug-derived-store/uuidtoslug.js" />
+<Snippet src="./snippets/svelte-params-uuid-slug-derived-store/uuidtoslug.ts" />
 
 ## A Parameters Store
 

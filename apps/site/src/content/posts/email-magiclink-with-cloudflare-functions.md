@@ -69,13 +69,13 @@ This sends an email that looks like the following:
 
 When the user clicks the magic link, they are redirected to `/auth/login` with the opaque token in the query string. The function validates the token and sets a cookie with the user's session id.
 
-<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/token.js" />
+<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/token.ts" />
 
 ### Cloudflare Functions - UserInfo
 
 I also created a Cloudflare Function that would return the user's email address and possibly more data in the future. This is used by the client to determine if the user is logged in.
 
-<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/example.js" />
+<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/example.ts" />
 
 Although this is a mostly static site, I am using AlpineJS.
 
@@ -89,13 +89,13 @@ Here is the simplified HTML snippet for the navbar which switches on user state.
 
 I didn't want all pages to be guarded by the login page, so I created a middleware function that would redirect to the login page if the user was not logged in. The following snippet guards all pages/functions under `/app` and `/api`.
 
-<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/cookie.js" />
+<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/cookie.ts" />
 
 ### Configuration and Constants
 
 In the above code, I used some shared configuration and constants. Here is the code for those.
 
-<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/token-query-param.js" />
+<Snippet src="./snippets/email-magiclink-with-cloudflare-functions/token-query-param.ts" />
 
 ### Metrics
 

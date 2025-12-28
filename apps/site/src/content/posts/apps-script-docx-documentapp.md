@@ -61,7 +61,7 @@ Converting a Docs file to `.docx` format is a bit more complex in Apps Script. Y
 
 Because we are using the Drive API via URLFetchApp, you need to add the `https://www.googleapis.com/auth/drive` scope to your Apps Script project.
 
-<Snippet src="./snippets/apps-script-docx-documentapp/example.js" />
+<Snippet src="./snippets/apps-script-docx-documentapp/example.json" />
 
 When I execute the above code, I get the following:
 

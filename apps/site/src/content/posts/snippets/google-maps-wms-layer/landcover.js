@@ -4,7 +4,7 @@ const landCover = new google.maps.ImageMapType({
   alt: "National Land Cover Database 2016",
   minZoom: 0,
   maxZoom: 19,
-  opacity: 1.0map
+  opacity: 1.0,
 });
 
 landCover.setMap(map);

@@ -2,7 +2,7 @@ import { Related } from "related-documents";
 
 const documents = [
   { title: "ruby", text: "this lorem ipsum blah foo" },
-  ...
+  // ...
 ];
 
 const options = {
