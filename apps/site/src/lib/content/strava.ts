@@ -12,7 +12,10 @@ let cachedActivities: DetailedActivityResponse[] | null = null;
 export function getStravaActivities(): DetailedActivityResponse[] {
   if (cachedActivities) return cachedActivities;
   cachedActivities = Object.values(stravaData).sort((a, b) => {
-    return new Date(b.start_date).getTime() - new Date(a.start_date).getTime();
+    // Optimization: Compare ISO strings directly to avoid expensive Date parsing
+    if (b.start_date > a.start_date) return 1;
+    if (b.start_date < a.start_date) return -1;
+    return 0;
   });
   return cachedActivities;
 }
