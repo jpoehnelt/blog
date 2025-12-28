@@ -77,9 +77,18 @@
   </script>
 </svelte:head>
 
+<a
+  href="#main-content"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground focus:ring-2 focus:ring-ring focus:rounded-md focus:shadow-lg font-medium"
+>
+  Skip to content
+</a>
+
 <Navbar {socialLinks} />
 
-{@render children()}
+<div id="main-content" tabindex="-1" class="outline-none flex flex-col flex-1">
+  {@render children()}
+</div>
 
 <footer class="mt-auto py-8 border-t">
   <div
