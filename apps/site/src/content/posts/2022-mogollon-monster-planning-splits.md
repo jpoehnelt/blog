@@ -11,6 +11,12 @@ tags:
   - aravaipa running
 ---
 
+<Note>
+
+Update: See the [2022 Mogollon Monster Race Report](/posts/2022-mogollon-monster-race-report) for the results.
+
+</Note>
+
 I just signed up for the Mogollon Monster 100 mile race for 2022. [Last year I finished in a little over 29 hours](/posts/mogollon-monster-100-2021/), good for 11th, and this year I am setting **my target at 24 hours**!
 
 > All Mogollon Monster finishers of the race will receive a finishers buckle. A special buckle will be awarded to those that complete the race under 24 hours.
@@ -22,6 +28,8 @@ I want that belt buckle!
 Below are the [splits for my 2021 run](https://live.aravaiparunning.com/#/mogollon_monster-2021/103314), compared to Jeff Browning, and my target finish for 2022. It's probably a little ambitious! 😂
 
 <script>
+  import Note from "$lib/components/content/Note.svelte";
+
   const splits = [
     { location: "See Canyon", distance: 11.1, last: { duration: "02:22", pace: "12:49", time: "8:22 AM" }, jeff: { duration: "01:48", pace: "10:00", time: "7:48 AM" }, target: { duration: "01:58", pace: "10:38", time: "7:58 AM" } },
     { location: "Horton Creek", distance: 22, last: { duration: "02:27", pace: "13:32", time: "10:49 AM" }, jeff: { duration: "01:57", pace: "10:45", time: "9:45 AM" }, target: { duration: "02:08", pace: "11:50", time: "10:06 AM" } },

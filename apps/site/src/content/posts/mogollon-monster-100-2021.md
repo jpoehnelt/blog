@@ -20,8 +20,7 @@ tags:
 
 <Note>
 
-I am running this race again in 2022. See my target splits and other planning at [Mogollon Monster 100 Mile Planning
-](/posts/2022-mogollon-monster-planning-splits/).
+Update: I ran this race again in 2022. See the [race report](/posts/2022-mogollon-monster-race-report) and [planning](/posts/2022-mogollon-monster-planning-splits).
 
 </Note>
 
