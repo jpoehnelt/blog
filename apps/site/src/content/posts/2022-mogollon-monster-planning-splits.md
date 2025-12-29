@@ -11,22 +11,6 @@ tags:
   - aravaipa running
 ---
 
-<Note>
-
-Update: See the [2022 Mogollon Monster Race Report](/posts/2022-mogollon-monster-race-report) for the results.
-
-</Note>
-
-I just signed up for the Mogollon Monster 100 mile race for 2022. [Last year I finished in a little over 29 hours](/posts/mogollon-monster-100-2021/), good for 11th, and this year I am setting **my target at 24 hours**!
-
-> All Mogollon Monster finishers of the race will receive a finishers buckle. A special buckle will be awarded to those that complete the race under 24 hours.
-
-I want that belt buckle!
-
-## Mogollon Monster Splits
-
-Below are the [splits for my 2021 run](https://live.aravaiparunning.com/#/mogollon_monster-2021/103314), compared to Jeff Browning, and my target finish for 2022. It's probably a little ambitious! 😂
-
 <script>
   import Note from "$lib/components/content/Note.svelte";
 
@@ -44,6 +28,22 @@ Below are the [splits for my 2021 run](https://live.aravaiparunning.com/#/mogoll
     { location: "Finish", distance: 100, last: { duration: "04:06", pace: "22:10", time: "11:10 AM" }, jeff: { duration: "02:26", pace: "13:09", time: "2:53 AM" }, target: { duration: "02:50", pace: "15:19", time: "5:56 AM" } }
   ];
 </script>
+
+<Note>
+
+Update: See the [2022 Mogollon Monster Race Report](/posts/2022-mogollon-monster-race-report) for the results.
+
+</Note>
+
+I just signed up for the Mogollon Monster 100 mile race for 2022. [Last year I finished in a little over 29 hours](/posts/mogollon-monster-100-2021/), good for 11th, and this year I am setting **my target at 24 hours**!
+
+> All Mogollon Monster finishers of the race will receive a finishers buckle. A special buckle will be awarded to those that complete the race under 24 hours.
+
+I want that belt buckle!
+
+## Mogollon Monster Splits
+
+Below are the [splits for my 2021 run](https://live.aravaiparunning.com/#/mogollon_monster-2021/103314), compared to Jeff Browning, and my target finish for 2022. It's probably a little ambitious! 😂
 
 <div>
   <table class="w-full">
