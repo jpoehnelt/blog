@@ -35,7 +35,7 @@
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap">
       <FormattedDate date={post.pubDate} />
       {#if post.tags && post.tags.length > 0 && showTags}
-        <span class="text-muted-foreground/50">•</span>
+        <span class="text-muted-foreground/50" aria-hidden="true">•</span>
         <div class="flex gap-1 flex-wrap">
           {#each post.tags as tag}
               <TagButton {tag} />

@@ -23,7 +23,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="text-muted-foreground hover:text-foreground"
-        title="View on Strava"
+        aria-label="View on Strava"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +36,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-external-link"
+          aria-hidden="true"
         >
           <path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
@@ -45,12 +46,12 @@
     </div>
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground">
       <FormattedDate date={new Date(activity.start_date)} />
-      <span>•</span>
+      <span aria-hidden="true">•</span>
       <span>{activity.sport_type || (activity as any).type}</span>
-      <span>•</span>
+      <span aria-hidden="true">•</span>
       <span>{((activity.distance || 0) / 1000).toFixed(2)} km</span>
       {#if (activity.total_elevation_gain || 0) > 0}
-        <span>•</span>
+        <span aria-hidden="true">•</span>
         <span>{activity.total_elevation_gain} m</span>
       {/if}
     </div>
