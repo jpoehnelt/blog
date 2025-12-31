@@ -20,7 +20,14 @@ tags:
 
 <script>
   import Image from '$lib/components/content/Image.svelte';
+  import Note from '$lib/components/content/Note.svelte';
 </script>
+
+<Note>
+
+Update: See [Apps Script and WebAssembly - A comprehensive guide](/posts/apps-script-wasm) for the code and details discussed in this talk.
+
+</Note>
 
 I will be giving a talk at Google Next 2024 on how to use Rust, Python and WASM to extend Google Apps Script. The full title is _Unleashing the power of Rust, Python, and WebAssembly in Apps Script_.
 
