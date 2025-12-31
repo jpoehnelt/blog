@@ -19,6 +19,12 @@ tags:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
+<Note>
+
+Update: See [Secure Secrets in Google Apps Script](/posts/secure-secrets-google-apps-script) for a comprehensive guide on managing secrets.
+
+</Note>
+
 Unlike many other environments in Google Cloud that provide default application credentials, Apps Script is built on OAuth and user credentials. However there are many cases, where a service account is needed to access Google Cloud resources. For example, a service account is needed to interact with the [Google Chat API](https://developers.google.com/chat/api/guides/auth/service-accounts) as a Chat App.
 
 Instead of downloading the service account key and storing it in the Apps Script project, the service account can be impersonated using the [`ScriptApp.getOAuthToken()`] and user as principal. This allows the service account to be used **without downloading the key**.
