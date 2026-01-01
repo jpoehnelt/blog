@@ -10,6 +10,7 @@
   rel="noopener noreferrer"
   class="inline-flex items-center gap-2 hover:text-[#fc4c02] text-gray-500 hover:underline font-medium"
   title="View on Strava"
+  aria-label="View on Strava (opens in a new tab)"
 >
   <svg
     class="w-5 h-5"
