@@ -14,14 +14,14 @@
   const xAccessor = (d: DataPoint) => d.elapsed_time;
   const yAccessor = (d: DataPoint) => d.average_heartrate;
 
-  // Sort data by elapsed time
-  const sortedData = $derived(
-    data.sort((a, b) => a.elapsed_time - b.elapsed_time)
+  // Optimization: Find minimum elapsed time in O(N) without sorting/mutating
+  const minElapsedTime = $derived(
+    data.reduce((min, d) => (d.elapsed_time < min ? d.elapsed_time : min), Infinity)
   );
 
   // Filter out data points that are more than 3x slower than the fastest
   const filteredData = $derived(
-    sortedData.filter((d) => d.elapsed_time / sortedData[0].elapsed_time < 3)
+    data.filter((d) => d.elapsed_time / minElapsedTime < 3)
   );
 
   // Format elapsed time as mm:ss
