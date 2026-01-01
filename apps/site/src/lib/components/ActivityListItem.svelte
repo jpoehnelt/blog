@@ -24,6 +24,7 @@
         rel="noopener noreferrer"
         class="text-muted-foreground hover:text-foreground"
         title="View on Strava"
+        aria-label="View on Strava (opens in a new tab)"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +37,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-external-link"
+          aria-hidden="true"
         >
           <path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
