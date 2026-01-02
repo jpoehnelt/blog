@@ -21,6 +21,12 @@ tags:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
+<Note>
+
+Update: See [Apps Script and WebAssembly - A comprehensive guide](/posts/apps-script-wasm) for a comprehensive guide on using WebAssembly in Apps Script.
+
+</Note>
+
 Google Apps Script is based on the V8 engine and supports the use of Promises, async and await. However, there are almost no APIs available that are asynchronous except for the WebAssembly API.
 
 The [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) API is used to run compiled code binaries. This is a very niche use case and not something that is commonly used in Apps Script, but WebAssembly is explicitly called out for in the [V8 engine](https://v8.dev/):
