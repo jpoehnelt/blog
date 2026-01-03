@@ -17,6 +17,12 @@ tags:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
+<Note>
+
+Update: See [Exploring Apps Script CacheService Limits](/posts/exploring-apps-script-cacheservice-limits) for a deep dive into CacheService behavior and limits.
+
+</Note>
+
 A generic Apps Script memoization function can be written to cache any function. There are two parts to this functionality:
 
 1. Generate a unique key for the function and arguments
