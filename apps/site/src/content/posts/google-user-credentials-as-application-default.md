@@ -59,7 +59,7 @@ The `--scopes` flag is optional and should be set to the scopes required by the 
 
 The `credentials.json` file will have contents similar to the following:
 
-<Snippet src="./snippets/google-user-credentials-as-application-default/example.js" />
+<Snippet src="./snippets/google-user-credentials-as-application-default/example.json" />
 
 The `type` field should be `authorized_user` and the `refresh_token` field is what we (or the library/SDK) will use to generate access tokens. This is different from a service account key file where the `type` field is `service_account` and the `private_key` field is used to generate access tokens.
 
@@ -86,7 +86,7 @@ curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth 
 
 The output of this command should return the following info:
 
-<Snippet src="./snippets/google-user-credentials-as-application-default/example-1.js" />
+<Snippet src="./snippets/google-user-credentials-as-application-default/example-1.json" />
 
 ## User credentials as application default credentials
 
