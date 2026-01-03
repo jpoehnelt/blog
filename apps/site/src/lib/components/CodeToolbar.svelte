@@ -6,6 +6,8 @@
   import * as icons from "simple-icons";
   import { cn } from "$lib/utils";
   import { sendEvent } from "$lib/analytics";
+  import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+  import { mergeProps } from "bits-ui";
 
   let { content = "", language = "", class: className = "" } = $props();
   let copied = $state(false);
@@ -60,14 +62,24 @@
     className
   )}
 >
-  <Button variant="ghost" size="icon" onclick={copyToClipboard}>
-    {#if copied}
-      <Check class="text-green-500" />
-    {:else}
-      <Clipboard />
-    {/if}
-    <span class="sr-only">{copied ? "Copied" : "Copy code to clipboard"}</span>
-  </Button>
+  <Tooltip.Root>
+    <Tooltip.Trigger>
+      {#snippet child({ props })}
+        {@const mergedProps = mergeProps(props, { onclick: copyToClipboard })}
+        <Button {...mergedProps} variant="ghost" size="icon">
+          {#if copied}
+            <Check class="text-green-500" />
+          {:else}
+            <Clipboard />
+          {/if}
+          <span class="sr-only">{copied ? "Copied" : "Copy code to clipboard"}</span>
+        </Button>
+      {/snippet}
+    </Tooltip.Trigger>
+    <Tooltip.Content>
+      <p>{copied ? "Copied" : "Copy code"}</p>
+    </Tooltip.Content>
+  </Tooltip.Root>
   {#if icon}
     <BrandIcon {icon} size={14} />
   {/if}
