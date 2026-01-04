@@ -112,48 +112,54 @@ export function getActivityDescription(
   return description;
 }
 
-export function getStravaSegment(id: string): any | undefined {
-  const activities = getStravaActivities();
-  for (const activity of activities) {
-    const segmentEfforts = (activity as any).segment_efforts;
-    if (segmentEfforts) {
-      const segment = segmentEfforts.find(
-        (s: any) => s.segment.id.toString() === id,
-      );
-      if (segment) return segment.segment;
-    }
-  }
-  return undefined;
-}
+type SegmentCacheEntry = {
+  segment: any;
+  activities: DetailedActivityResponse[];
+};
 
-export function getStravaSegments(): any[] {
+let cachedSegmentsMap: Map<string, SegmentCacheEntry> | null = null;
+
+function getSegmentsMap(): Map<string, SegmentCacheEntry> {
+  if (cachedSegmentsMap) return cachedSegmentsMap;
+  cachedSegmentsMap = new Map();
   const activities = getStravaActivities();
-  const segments = new Map<string, any>();
 
   for (const activity of activities) {
     const segmentEfforts = (activity as any).segment_efforts;
     if (segmentEfforts) {
       for (const effort of segmentEfforts) {
         const id = effort.segment.id.toString();
-        if (!segments.has(id)) {
-          segments.set(id, { ...effort.segment, activity_ids: [] });
+        if (!cachedSegmentsMap.has(id)) {
+          // Use the newest segment definition (activities are sorted newest first)
+          cachedSegmentsMap.set(id, {
+            segment: effort.segment,
+            activities: [],
+          });
         }
-        segments.get(id).activity_ids.push(activity.id);
+        cachedSegmentsMap.get(id)!.activities.push(activity);
       }
     }
   }
+  return cachedSegmentsMap;
+}
 
-  return Array.from(segments.values());
+export function getStravaSegment(id: string): any | undefined {
+  // Optimization: O(1) lookup via cached map instead of O(N) scan
+  return getSegmentsMap().get(id)?.segment;
+}
+
+export function getStravaSegments(): any[] {
+  // Optimization: O(S) iteration over map values instead of O(N) build
+  return Array.from(getSegmentsMap().values()).map((entry) => ({
+    ...entry.segment,
+    activity_ids: entry.activities.map((a) => a.id),
+  }));
 }
 
 export function getStravaSegmentActivities(
   segmentId: string,
 ): DetailedActivityResponse[] {
-  return getStravaActivities().filter((activity) => {
-    const segmentEfforts = (activity as any).segment_efforts;
-    return (
-      segmentEfforts &&
-      segmentEfforts.some((s: any) => s.segment.id.toString() === segmentId)
-    );
-  });
+  // Optimization: O(1) lookup via cached map instead of O(N) filter
+  const entry = getSegmentsMap().get(segmentId);
+  return entry ? [...entry.activities] : [];
 }
