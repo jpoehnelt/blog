@@ -14,15 +14,26 @@ import {
 
 // Helper to resolve snippet path (logic mirroring remark-snippet.js)
 function resolveSnippetPath(src: string, markdownFilePath: string): string {
+  let resolvedPath: string;
   if (path.isAbsolute(src)) {
-    return path.resolve(process.cwd(), "." + src);
+    resolvedPath = path.resolve(process.cwd(), "." + src);
   } else if (markdownFilePath) {
     // Relative to the markdown file
-    return path.resolve(path.dirname(markdownFilePath), src);
+    resolvedPath = path.resolve(path.dirname(markdownFilePath), src);
   } else {
     // Fallback
-    return path.resolve(process.cwd(), "src/content/posts", src);
+    resolvedPath = path.resolve(process.cwd(), "src/content/posts", src);
   }
+
+  // Security check: Prevent path traversal
+  const relative = path.relative(process.cwd(), resolvedPath);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error(
+      `Security Error: Attempted path traversal to ${resolvedPath}. Snippets must be within the project root.`,
+    );
+  }
+
+  return resolvedPath;
 }
 
 export interface SnippetEntry {
