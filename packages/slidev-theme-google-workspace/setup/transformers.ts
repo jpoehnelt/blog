@@ -1,25 +1,69 @@
 import type { MarkdownTransformContext } from "@slidev/types";
 import { defineTransformersSetup } from "@slidev/types";
 
-function getValueByPath(obj: Object, path: string): any {
-  const brackets: Record<string, string> = {};
+function getValueByPath(obj: any, path: string): any {
+  path = path.trim();
+  const keys: string[] = [];
+  let currentKey = "";
+  let inBracket = false;
+  let quoteChar: string | null = null;
+  let escape = false;
 
-  // replace brackets with placeholders using dot notation
-  const pathWithPlaceholders = path
-    .trim()
-    // TODO does not cover all cases
-    .replace(/\[['"]?(.*?)['"]?\]/g, (_, match, index) => {
-      const placeholder = `__BRACKET_${index}__`;
-      brackets[placeholder] = match;
-      return `.${placeholder}`;
-    });
+  for (let i = 0; i < path.length; i++) {
+    const char = path[i];
 
-  const keys = pathWithPlaceholders.split(".");
+    if (inBracket) {
+      if (quoteChar) {
+        if (escape) {
+          currentKey += char;
+          escape = false;
+        } else if (char === "\\") {
+          escape = true;
+        } else if (char === quoteChar) {
+          quoteChar = null;
+        } else {
+          currentKey += char;
+        }
+      } else {
+        if (char === "]") {
+          keys.push(currentKey);
+          currentKey = "";
+          inBracket = false;
+        } else if (char === '"' || char === "'") {
+          quoteChar = char;
+        } else if (/\s/.test(char)) {
+          // ignore whitespace outside quotes in brackets
+        } else {
+          currentKey += char;
+        }
+      }
+    } else {
+      if (char === ".") {
+        if (currentKey) {
+          keys.push(currentKey);
+          currentKey = "";
+        }
+      } else if (char === "[") {
+        if (currentKey) {
+          keys.push(currentKey);
+          currentKey = "";
+        }
+        inBracket = true;
+      } else {
+        currentKey += char;
+      }
+    }
+  }
+
+  if (currentKey) {
+    keys.push(currentKey);
+  }
+
   let current: any = obj;
 
   for (const key of keys) {
     if (current && typeof current === "object") {
-      current = current[key] ?? current[brackets[key]];
+      current = current[key];
     } else {
       return undefined;
     }
