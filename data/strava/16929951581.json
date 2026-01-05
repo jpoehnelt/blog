@@ -4,7 +4,7 @@
     "id": 2170160,
     "resource_state": 1
   },
-  "name": "Afternoon Trail Run",
+  "name": "Moonrise over Animas Valley",
   "distance": 16104.3,
   "moving_time": 7113,
   "elapsed_time": 7535,
@@ -22,7 +22,7 @@
   "location_state": null,
   "location_country": null,
   "achievement_count": 0,
-  "kudos_count": 0,
+  "kudos_count": 1,
   "comment_count": 0,
   "athlete_count": 1,
   "photo_count": 0,
@@ -68,14 +68,73 @@
   "external_id": "garmin_ping_519734637744",
   "from_accepted_tag": false,
   "pr_count": 0,
-  "total_photo_count": 0,
+  "total_photo_count": 1,
   "has_kudoed": false,
   "suffer_score": 20,
-  "description": null,
+  "description": "The ground should be frozen or covered in snow during an evening run in January, not this mud.",
   "calories": 1137,
   "perceived_exertion": null,
-  "prefer_perceived_exertion": null,
+  "prefer_perceived_exertion": false,
   "segment_efforts": [
+    {
+      "id": 3443068304562333000,
+      "resource_state": 2,
+      "name": ".",
+      "activity": {
+        "id": 16929951581,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 316,
+      "moving_time": 315,
+      "start_date": "2026-01-04T01:19:39Z",
+      "start_date_local": "2026-01-03T18:19:39Z",
+      "distance": 647.2,
+      "start_index": 2451,
+      "end_index": 2767,
+      "average_cadence": 72.3,
+      "device_watts": true,
+      "average_watts": 264.8,
+      "average_heartrate": 105.4,
+      "max_heartrate": 116,
+      "segment": {
+        "id": 40738938,
+        "resource_state": 2,
+        "name": ".",
+        "activity_type": "Run",
+        "distance": 647.2,
+        "average_grade": 4.7,
+        "maximum_grade": 19.4,
+        "elevation_high": 2164.4,
+        "elevation_low": 2133.8,
+        "start_latlng": [
+          37.397019,
+          -107.852374
+        ],
+        "end_latlng": [
+          37.400368,
+          -107.851645
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
     {
       "id": 3442728300094137000,
       "resource_state": 2,
@@ -1189,8 +1248,17 @@
     }
   ],
   "photos": {
-    "primary": null,
-    "count": 0
+    "primary": {
+      "unique_id": "21fe9cd7-2cb0-4fe8-80a4-da39f8468052",
+      "urls": {
+        "100": "https://dgtzuqphqg23d.cloudfront.net/LuRyilFR1XbCInRIaEtoMWIExbYpNxnNvDSzF8OFVEE-128x96.jpg",
+        "600": "https://dgtzuqphqg23d.cloudfront.net/LuRyilFR1XbCInRIaEtoMWIExbYpNxnNvDSzF8OFVEE-768x576.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
   },
   "stats_visibility": [
     {
