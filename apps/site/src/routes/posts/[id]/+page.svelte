@@ -145,6 +145,7 @@
           title="View Markdown"
           aria-label="View Markdown"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <BrandIcon icon={siMarkdown} size={20} class="text-gray-500" />
         </a>
