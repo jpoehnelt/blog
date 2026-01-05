@@ -112,48 +112,60 @@ export function getActivityDescription(
   return description;
 }
 
-export function getStravaSegment(id: string): any | undefined {
-  const activities = getStravaActivities();
-  for (const activity of activities) {
-    const segmentEfforts = (activity as any).segment_efforts;
-    if (segmentEfforts) {
-      const segment = segmentEfforts.find(
-        (s: any) => s.segment.id.toString() === id,
-      );
-      if (segment) return segment.segment;
-    }
-  }
-  return undefined;
-}
+let cachedSegmentsMap: Map<
+  string,
+  { segment: any; activities: DetailedActivityResponse[] }
+> | null = null;
 
-export function getStravaSegments(): any[] {
+function ensureSegmentsMap() {
+  if (cachedSegmentsMap) return;
+  cachedSegmentsMap = new Map();
   const activities = getStravaActivities();
-  const segments = new Map<string, any>();
 
+  // Activities are already sorted by date descending (newest first)
   for (const activity of activities) {
     const segmentEfforts = (activity as any).segment_efforts;
     if (segmentEfforts) {
       for (const effort of segmentEfforts) {
         const id = effort.segment.id.toString();
-        if (!segments.has(id)) {
-          segments.set(id, { ...effort.segment, activity_ids: [] });
+
+        if (!cachedSegmentsMap.has(id)) {
+          // Store the segment definition from the most recent activity
+          cachedSegmentsMap.set(id, {
+            segment: effort.segment,
+            activities: [],
+          });
         }
-        segments.get(id).activity_ids.push(activity.id);
+
+        // Add activity to the list
+        cachedSegmentsMap.get(id)?.activities.push(activity);
       }
     }
   }
+}
 
-  return Array.from(segments.values());
+export function getStravaSegment(id: string): any | undefined {
+  ensureSegmentsMap();
+  return cachedSegmentsMap?.get(id)?.segment;
+}
+
+export function getStravaSegments(): any[] {
+  ensureSegmentsMap();
+  if (!cachedSegmentsMap) return [];
+
+  return Array.from(cachedSegmentsMap.values()).map((data) => {
+    return {
+      ...data.segment,
+      activity_ids: data.activities.map((a) => a.id),
+    };
+  });
 }
 
 export function getStravaSegmentActivities(
   segmentId: string,
 ): DetailedActivityResponse[] {
-  return getStravaActivities().filter((activity) => {
-    const segmentEfforts = (activity as any).segment_efforts;
-    return (
-      segmentEfforts &&
-      segmentEfforts.some((s: any) => s.segment.id.toString() === segmentId)
-    );
-  });
+  ensureSegmentsMap();
+  // Return a shallow copy to prevent mutation of the cached array by consumers
+  // (e.g., if they sort it)
+  return [...(cachedSegmentsMap?.get(segmentId)?.activities || [])];
 }
