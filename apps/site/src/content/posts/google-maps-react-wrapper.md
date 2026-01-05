@@ -11,7 +11,14 @@ tags:
 
 <script>
   import Snippet from "$lib/components/content/Snippet.svelte";
+  import Note from "$lib/components/content/Note.svelte";
 </script>
+
+<Note>
+
+Update: This library has been archived. We recommend all users to switch to the new [@vis.gl/react-google-maps](https://www.npmjs.com/package/@vis.gl/react-google-maps), which provides a collection of components and hooks and can be configured to be fully compatible with this package.
+
+</Note>
 
 The package [@googlemaps/react-wrapper](https://www.npmjs.com/package/@googlemaps/react-wrapper) is a wrapper component that helps load the Google Maps JavaScript API. Below is a short snippet demonstrating usage.
 
