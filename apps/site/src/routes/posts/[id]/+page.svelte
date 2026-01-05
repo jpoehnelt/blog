@@ -143,7 +143,7 @@
           href={data.markdownURL}
           class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
           title="View Markdown"
-          aria-label="View Markdown"
+          aria-label="View Markdown (opens in a new tab)"
           target="_blank"
           rel="noopener noreferrer"
         >
