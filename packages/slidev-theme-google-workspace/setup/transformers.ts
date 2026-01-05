@@ -59,6 +59,10 @@ function getValueByPath(obj: any, path: string): any {
     keys.push(currentKey);
   }
 
+  if (inBracket || quoteChar !== null || escape) {
+    return undefined;
+  }
+
   let current: any = obj;
 
   for (const key of keys) {
