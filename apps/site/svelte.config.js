@@ -58,10 +58,13 @@ const config = {
   ],
   kit: {
     csp: {
-      mode: "hash",
       directives: {
         "default-src": ["'self'"],
-        "script-src": ["'self'", "https://www.googletagmanager.com"],
+        "script-src": [
+          "'self'",
+          "https://www.googletagmanager.com",
+          "'unsafe-inline'",
+        ],
         "style-src": ["'self'", "'unsafe-inline'"],
         "img-src": [
           "'self'",

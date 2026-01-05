@@ -1,7 +1,11 @@
-## 2024-05-24 - CSP Implementation in SvelteKit Static Adapter
-**Vulnerability:** Missing Content Security Policy (CSP) allowed potential XSS and data injection attacks.
-**Learning:** SvelteKit's `adapter-static` combined with `kit.csp` in `svelte.config.js` requires specific handling for inline scripts. The `auto` or `hash` mode only works for scripts SvelteKit controls. Scripts in `app.html` are NOT hashed automatically.
-**Prevention:** To enable strict CSP with hashes:
-1. Move inline scripts from `app.html` to `<svelte:head>` in a layout component (e.g., `+layout.svelte`).
-2. Configure `kit.csp` with `mode: 'hash'`.
-3. Whitelist external domains explicitly in `directives`.
+# Security Decisions
+
+## Relaxed CSP for Inline Scripts and Styles
+
+- **Date:** 2024-05-22
+- **Decision:** Relaxed the Content Security Policy (CSP) in `apps/site` to allow `'unsafe-inline'` for both scripts and styles.
+- **Reasoning:**
+  - SvelteKit's `mode: "hash"` was causing issues with legitimate inline styles and scripts, particularly when hashes conflicted with the `'unsafe-inline'` fallback or when scripts were dynamically injected (e.g., GTM).
+  - The user explicitly requested to "relax CSP and inline css" to resolve execution blocking issues.
+  - Enabling `'unsafe-inline'` ensures that critical CSS inlining (performance optimization) works correctly and that third-party scripts (like Google Tag Manager) can execute without strict hashing requirements.
+- **Risks:** This change increases the surface area for XSS attacks, as it permits the execution of any inline script or style. This is a trade-off for functionality and ease of maintenance requested by the user.
