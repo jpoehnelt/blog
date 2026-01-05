@@ -7,7 +7,7 @@ import polyline from '@mapbox/polyline';
 // Configuration
 const INPUT_DIR = path.resolve(process.cwd(), '../../data/strava');
 const OUTPUT_FILE = path.resolve(process.cwd(), '../../data/merged-routes.geojson');
-const GRID_SCALE = 20000; // ~5.5m resolution
+const GRID_SCALE = 5000; // ~22m resolution
 const MIN_OVERLAP = 5; // Strict inequality (> 5) means min count 6? Or overlap > 5 implies count >= 6?
 // User said "> 5". So count > 5.
 
