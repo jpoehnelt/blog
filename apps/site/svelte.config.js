@@ -57,34 +57,6 @@ const config = {
     }),
   ],
   kit: {
-    csp: {
-      mode: "hash",
-      directives: {
-        "default-src": ["'self'"],
-        "script-src": ["'self'", "https://www.googletagmanager.com"],
-        "style-src": ["'self'", "'unsafe-inline'"],
-        "img-src": [
-          "'self'",
-          "data:",
-          "https://*.strava.com",
-          "https://dgtzuqphqg23d.cloudfront.net",
-          "https://maps.googleapis.com",
-          "https://maps.gstatic.com",
-          "https://www.google-analytics.com",
-          "https://www.googletagmanager.com",
-        ],
-        "connect-src": [
-          "'self'",
-          "https://www.google-analytics.com",
-          "https://analytics.google.com",
-          "https://www.googletagmanager.com",
-          "https://maps.googleapis.com",
-        ],
-        "frame-src": ["'none'"],
-        "object-src": ["'none'"],
-        "base-uri": ["'self'"],
-      },
-    },
     paths: {
       relative: false,
     },
