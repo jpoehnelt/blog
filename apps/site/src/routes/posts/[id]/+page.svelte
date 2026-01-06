@@ -71,7 +71,7 @@
           "@type": "ListItem",
           position: 2,
           name: "Posts",
-          item: new URL("/posts", BASE_URL).toString(),
+          item: new URL("/posts/", BASE_URL).toString(),
         },
         {
           "@type": "ListItem",

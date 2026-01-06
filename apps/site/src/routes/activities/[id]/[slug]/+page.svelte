@@ -28,7 +28,7 @@
   const { activity } = data;
 
   const canonicalURL = new URL(
-    `/activities/${getActivitySlug(activity)}`,
+    `/activities/${getActivitySlug(activity)}/`,
     BASE_URL
   ).toString();
 
@@ -48,7 +48,7 @@
             "@type": "ListItem",
             position: 2,
             name: "Activities",
-            item: new URL("/activities", BASE_URL).toString(),
+            item: new URL("/activities/", BASE_URL).toString(),
           },
           {
             "@type": "ListItem",
@@ -159,7 +159,7 @@
 <Head
   title={activity.name}
   description={getActivityDescription(activity)}
-  pathname={`/activities/${activity.id}`}
+  pathname={`/activities/${getActivitySlug(activity)}/`}
   type="article"
   publishedTime={activity.start_date?.toString()}
 />
