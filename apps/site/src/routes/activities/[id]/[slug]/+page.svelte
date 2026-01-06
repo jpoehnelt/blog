@@ -172,14 +172,14 @@
       <h1 class="mb-0">{activity.name}</h1>
       <div class="text-sm text-muted-foreground flex items-center gap-2">
         <FormattedDate date={new Date(activity.start_date)} />
-        <span>•</span>
+        <span aria-hidden="true">•</span>
         <span>{activity.sport_type || (activity as any).type}</span>
       </div>
 
       <div class="mt-8 flex items-center gap-4">
         <StravaLink activityId={activity.id} />
         {#if activity.map?.summary_polyline}
-          <span class="text-muted-foreground">•</span>
+          <span class="text-muted-foreground" aria-hidden="true">•</span>
           <a
             href={`/activities/${activity.id}/download.gpx`}
             class="text-sm font-medium text-muted-foreground hover:text-primary hover:underline"

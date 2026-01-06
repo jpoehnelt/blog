@@ -1,14 +1,14 @@
 function runBenchmark() {
   const iterations = 100;
   const payload = "x".repeat(100); // 100 bytes
-  
+
   // Benchmark CacheService
   const cacheFn = () => {
     const cache = CacheService.getScriptCache();
     cache.put("benchmark_test", payload, 10);
     cache.get("benchmark_test");
   };
-  
+
   // Benchmark PropertiesService
   const propsFn = () => {
     const props = PropertiesService.getScriptProperties();
