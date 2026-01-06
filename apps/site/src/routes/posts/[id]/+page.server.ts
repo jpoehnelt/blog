@@ -3,6 +3,7 @@ import {
   getPostToc,
   getPostMetadata,
   getPostsMetadata,
+  renderMarkdown,
 } from "$lib/content/posts.server";
 import type { PageServerLoad } from "./$types";
 
@@ -10,13 +11,28 @@ export const load: PageServerLoad = async ({ params }) => {
   const postMetaData = getPostMetadata(params.id);
   const toc = await getPostToc(params.id);
 
+  let faq;
+  if (postMetaData.faq) {
+    faq = await Promise.all(
+      postMetaData.faq.map(async (item) => ({
+        ...item,
+        questionHtml: await renderMarkdown(item.question),
+        answerHtml: await renderMarkdown(item.answer),
+      })),
+    );
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { faq: _, ...restPostMetaData } = postMetaData;
+
   return {
     toc,
     recommendations: getRecommendations(postMetaData, getPostsMetadata(), 4),
     latest: getPostsMetadata()
       .filter((p) => p.id !== params.id)
       .slice(0, 4),
-    ...postMetaData,
+    ...restPostMetaData,
+    faq,
   };
 };
 
