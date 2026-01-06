@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="sitemap" href="/sitemap.xml" />
     <link
       rel="alternate"
@@ -25,6 +26,10 @@
       href="https://webmention.io/justin.poehnelt.com/xmlrpc"
     />
     <meta name="google-adsense-account" content="ca-pub-1251836334060830" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.strava.com https://dgtzuqphqg23d.cloudfront.net https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://maps.googleapis.com; frame-src 'none'; object-src 'none'; base-uri 'self'"
+    />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     %sveltekit.head%
   </head>
