@@ -67,7 +67,7 @@
       <div class="sticky top-8 space-y-8">
         <section class="space-y-4">
           <h2
-            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1"
+            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
             id="about"
           >
             About
@@ -197,7 +197,12 @@
 
       <!-- Activities-->
       <section>
-        <h2 id="activities">Activities</h2>
+        <h2
+          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
+          id="activities"
+        >
+          Activities
+        </h2>
         <div class="max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
           <ActivityList activities={recentActivities.slice(0, 5)} />
         </div>
@@ -205,15 +210,3 @@
     </div>
   </div>
 </main>
-
-<style>
-  @reference "../app.css";
-
-  h2 {
-    @apply text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4;
-  }
-
-  h3 {
-    @apply text-lg font-bold uppercase border-b border-muted-foreground/50 pb-1;
-  }
-</style>
