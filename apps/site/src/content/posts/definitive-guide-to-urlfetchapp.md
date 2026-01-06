@@ -1,6 +1,6 @@
 ---
 title: "UrlFetchApp: The Unofficial Google Apps Script Documentation"
-description: "The unofficial documentation for UrlFetchApp in Google Apps Script. Learn about authentication, web scraping, parallel fetches with fetchAll, and how to debug common errors like \"Address Unavailable\"."
+description: 'The unofficial documentation for UrlFetchApp in Google Apps Script. Learn about authentication, web scraping, parallel fetches with fetchAll, and how to debug common errors like "Address Unavailable".'
 pubDate: "2025-12-21"
 tags:
   - apps script

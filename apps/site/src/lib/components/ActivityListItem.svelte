@@ -45,12 +45,12 @@
     </div>
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground">
       <FormattedDate date={new Date(activity.start_date)} />
-      <span>•</span>
+      <span aria-hidden="true">•</span>
       <span>{activity.sport_type || (activity as any).type}</span>
-      <span>•</span>
+      <span aria-hidden="true">•</span>
       <span>{((activity.distance || 0) / 1000).toFixed(2)} km</span>
       {#if (activity.total_elevation_gain || 0) > 0}
-        <span>•</span>
+        <span aria-hidden="true">•</span>
         <span>{activity.total_elevation_gain} m</span>
       {/if}
     </div>
