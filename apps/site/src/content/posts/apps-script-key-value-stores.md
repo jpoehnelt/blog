@@ -62,17 +62,18 @@ You might have noticed I left off a key element here, latency, because I want co
 
 The latency of each option is the deciding factor for high-performance scripts. I ran a benchmark script (source below) performing 100 sequential write/read operations of a 100-byte payload.
 
-| Store | Avg Latency (Read+Write) | Speed Factor |
-| :--- | :--- | :--- |
-| **CacheService** | **~63 ms** | **1x (Baseline)** |
-| PropertiesService | ~80 ms | 1.25x Slower |
-| Firestore (REST) | ~350 ms | 5.5x Slower |
-| SpreadsheetApp | ~800+ ms | 12x Slower |
+| Store             | Avg Latency (Read+Write) | Speed Factor      |
+| :---------------- | :----------------------- | :---------------- |
+| **CacheService**  | **~63 ms**               | **1x (Baseline)** |
+| PropertiesService | ~80 ms                   | 1.25x Slower      |
+| Firestore (REST)  | ~350 ms                  | 5.5x Slower       |
+| SpreadsheetApp    | ~800+ ms                 | 12x Slower        |
 
 **The Takeaway:**
-*   **CacheService** is faster, but not by the order-of-magnitude some expect. Use it for data that *must* expire.
-*   **PropertiesService** is surprisingly performant for persistent storage, clocking in just behind CacheService.
-*   **SpreadsheetApp** remains the bottleneck. Avoid using it as a database at all costs.
+
+- **CacheService** is faster, but not by the order-of-magnitude some expect. Use it for data that _must_ expire.
+- **PropertiesService** is surprisingly performant for persistent storage, clocking in just behind CacheService.
+- **SpreadsheetApp** remains the bottleneck. Avoid using it as a database at all costs.
 
 <Snippet src="./snippets/apps-script-key-value-stores/benchmark.js" />
 
