@@ -91,7 +91,7 @@
               name: item.question,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.answer,
+                text: item.answerHtml,
               },
             })),
           } as WithContext<FAQPage>,
@@ -184,9 +184,13 @@
         <dl class="space-y-8">
           {#each data.faq as item}
             <div>
-              <dt class="font-semibold text-lg mb-2">{item.question}</dt>
-              <dd class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                {item.answer}
+              <dt class="font-semibold text-lg mb-2">
+                {@html item.questionHtml}
+              </dt>
+              <dd
+                class="text-gray-600 dark:text-gray-400 leading-relaxed prose dark:prose-invert"
+              >
+                {@html item.answerHtml}
               </dd>
             </div>
           {/each}

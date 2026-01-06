@@ -7,6 +7,7 @@ import rehypeParse from "rehype-parse";
 import rehypeRemark from "rehype-remark";
 import rehypeRemoveComments from "rehype-remove-comments";
 import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -168,6 +169,16 @@ export type TocItem = {
   text: string;
   depth: number;
 };
+
+export async function renderMarkdown(markdown: string): Promise<string> {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(markdown);
+  return String(file);
+}
 
 export async function getPostToc(id: string): Promise<TocItem[]> {
   const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
