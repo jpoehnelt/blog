@@ -17,7 +17,7 @@
     throw new Error(`Snippet code not loaded for: ${src}`);
   }
 
-  const displaySrc = $derived(src.replace(/^(\.\/)?snippets\//, ""));
+  const displaySrc = $derived(src.split("/").pop() || "");
 
   const ext = $derived(src.split(".").pop()?.toLowerCase() || "");
   const icon = $derived(
@@ -27,10 +27,10 @@
 </script>
 
 <div
-  class="snippet-component my-4 overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm relative group"
+  class="snippet-component my-4 overflow-hidden rounded-lg border border-zinc-200 bg-white text-zinc-950 shadow-sm relative group"
 >
   <div
-    class="flex items-center justify-between border-b bg-muted/40 px-4 py-2 no-md"
+    class="flex items-center justify-between border-b border-zinc-200 bg-zinc-50/50 px-4 py-2 no-md"
   >
     <div class="flex items-center gap-2">
       {#if icon}
@@ -42,23 +42,23 @@
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-muted-foreground hover:underline"
+            class="text-zinc-500 hover:text-zinc-900 hover:underline"
           >
             {displaySrc}
           </a>
         {:else}
-          <span class="text-muted-foreground">{displaySrc}</span>
+          <span class="text-zinc-500">{displaySrc}</span>
         {/if}
       </div>
     </div>
     <div class="flex items-center gap-2">
       {#if description}
-        <span class="text-xs text-muted-foreground">{description}</span>
+        <span class="text-xs text-zinc-500">{description}</span>
       {/if}
       <CodeToolbar
         content={rawContent}
         language={ext}
-        class="static transform-none p-0 bg-transparent flex"
+        class="static transform-none p-0 bg-transparent flex text-zinc-500 hover:text-zinc-900"
       />
     </div>
   </div>
