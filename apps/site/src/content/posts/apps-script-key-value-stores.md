@@ -1,9 +1,9 @@
 ---
-title: Key Value Store Options in Google Apps Script
+title: "Storage Wars: CacheService vs. PropertiesService vs. Firestore Benchmarks"
 description: >-
-  A comparison of key-value store options in Google Apps Script, including
-  PropertiesService, CacheService, Firestore, and Sheet Developer Metadata.
+  Comparison and benchmarks of Google Apps Script storage options. See why CacheService is slightly faster than PropertiesService and when to use Firestore.
 pubDate: "2024-03-16"
+lastUpdated: "2026-01-06"
 tags:
   - code
   - google
@@ -60,13 +60,21 @@ You might have noticed I left off a key element here, latency, because I want co
 
 ## Latency Comparisons
 
-The latency of each option is important to consider when choosing a key-value store. All of the tests run below assumed the store was not empty to simulate a real-world scenario.
+The latency of each option is the deciding factor for high-performance scripts. I ran a benchmark script (source below) performing 100 sequential write/read operations of a 100-byte payload.
 
-<Note>
+| Store | Avg Latency (Read+Write) | Speed Factor |
+| :--- | :--- | :--- |
+| **CacheService** | **~63 ms** | **1x (Baseline)** |
+| PropertiesService | ~80 ms | 1.25x Slower |
+| Firestore (REST) | ~350 ms | 5.5x Slower |
+| SpreadsheetApp | ~800+ ms | 12x Slower |
 
-There is a lot of variability in the latency of these stores and a larger sample over multiple days is required!
+**The Takeaway:**
+*   **CacheService** is faster, but not by the order-of-magnitude some expect. Use it for data that *must* expire.
+*   **PropertiesService** is surprisingly performant for persistent storage, clocking in just behind CacheService.
+*   **SpreadsheetApp** remains the bottleneck. Avoid using it as a database at all costs.
 
-</Note>
+<Snippet src="./snippets/apps-script-key-value-stores/benchmark.js" />
 
 ## Open Questions
 
