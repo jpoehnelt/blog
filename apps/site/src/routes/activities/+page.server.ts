@@ -3,11 +3,10 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
   return {
-    activities: getStravaActivities()
-      .sort(
-        (a, b) =>
-          new Date(a.start_date).getTime() - new Date(b.start_date).getTime(),
-      )
+    activities: [...getStravaActivities()]
+      // Data is already sorted descending (newest first) by getStravaActivities().
+      // We reverse it to display oldest to newest (ascending) without expensive Date parsing and sorting.
+      .reverse()
       .map(mapStravaActivity),
   };
 };
