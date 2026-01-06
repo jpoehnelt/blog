@@ -20,6 +20,13 @@ medium:
   id: 6590988d1b2d
   link: "https://medium.com/@jpoehnelt/6590988d1b2d"
   status: draft
+faq:
+  - question: "How do I store secrets in Google Apps Script?"
+    answer: "For general configuration, use PropertiesService. For sensitive secrets like API keys or database passwords, use Google Cloud Secret Manager."
+  - question: "Why use Google Cloud Secret Manager instead of Script Properties?"
+    answer: "Script Properties are visible to anyone with edit access to the script. Secret Manager provides audit logging, versioning, and finer-grained IAM controls, securing high-value secrets."
+  - question: "How can I improve performance when fetching secrets?"
+    answer: "Use CacheService to store the decoded secret after fetching it from Secret Manager to avoid unnecessary network calls and reduce API costs."
 ---
 
 <script>

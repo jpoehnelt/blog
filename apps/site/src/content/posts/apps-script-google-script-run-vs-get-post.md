@@ -15,6 +15,19 @@ tags:
   - doGet
   - doPost
   - apps script web app
+faq:
+  - question: "When should I use google.script.run?"
+    answer: "I use `google.script.run` for simple Apps Script web apps where I need direct, asynchronous calls to my server-side functions. It's the easiest way to get things working for basic interactions."
+  - question: "When should I use doGet and doPost endpoints?"
+    answer: "I opt for `doGet` and `doPost` when building more complex web apps with frameworks like React, Angular, or Vue. They give me full control over the response, like for file downloads, and robust error handling."
+  - question: "What is the difference between `google.script.run` and `doGet`/`doPost`?"
+    answer: "`google.script.run` is direct, calling specific server functions. `doGet`/`doPost` are more like a REST API, requiring me to handle routing. `google.script.run` is simpler for basic apps, but `doGet`/`doPost` offer more flexibility, especially with web frameworks."
+  - question: "Can I download files using `google.script.run`?"
+    answer: "No, `google.script.run` doesn't support file downloads directly. For that, I use `doGet`/`doPost` endpoints and leverage `ContentService` to generate the file for download."
+  - question: "How do I handle errors with `google.script.run`?"
+    answer: "`google.script.run` offers a `.withFailureHandler()` for errors. But I get much more granular control over error handling and HTTP status codes when I use `doGet`/`doPost`."
+  - question: "Can I use `google.script.run` with frameworks like React or Vue?"
+    answer: "You *can*, but I generally don't recommend it for serious projects. For web frameworks like React or Vue, I find it much cleaner to use `doGet`/`doPost` to build a standard REST API."
 ---
 
 <script>

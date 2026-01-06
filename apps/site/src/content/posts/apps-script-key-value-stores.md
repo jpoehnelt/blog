@@ -14,6 +14,19 @@ tags:
   - key value store
   - cache
   - sheets
+faq:
+  - question: "What are the key-value store options in Google Apps Script?"
+    answer: "In my experience, there are four main options for key-value stores in Apps Script - PropertiesService, CacheService, Firestore, and Sheet Developer Metadata. I've compared them in this post to help you choose the right one for your project."
+  - question: "When should I use PropertiesService?"
+    answer: "I use PropertiesService when I need to store a small number of items (up to 1000) that are not too large (up to 9KB). It's free and I can scope properties to the user, the script, or a specific document."
+  - question: "When should I use CacheService?"
+    answer: "CacheService is my go-to for low-latency caching of small items. It's free, but I have to be aware of the 1000-item limit and the fact that the oldest items will be evicted when the cache gets full."
+  - question: "When should I use Firestore?"
+    answer: "I reach for Firestore when I have a lot of data or large items. It's a 'pay as you go' service, but the free tier is very generous. It's also great for real-time data and when I need more control over access with security rules."
+  - question: "What is the difference between PropertiesService and CacheService?"
+    answer: "The way I see it, PropertiesService is for stuff I need to keep around, while CacheService is for temporary data that can expire. PropertiesService can store larger items, but CacheService is faster."
+  - question: "How do I handle concurrent access to a key-value store?"
+    answer: "For PropertiesService and CacheService, I use LockService to prevent problems when multiple users are trying to write at the same time. Firestore is more advanced and has built-in transactions to handle this for me."
 ---
 
 <script>

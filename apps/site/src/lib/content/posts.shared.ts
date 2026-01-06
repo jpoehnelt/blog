@@ -20,6 +20,14 @@ export const postMetadataSchema = v.object({
   tags: v.array(v.string()),
   tweet: v.optional(v.pipe(v.string(), v.trim())),
   syndicate: v.optional(v.boolean(), false),
+  faq: v.optional(
+    v.array(
+      v.object({
+        question: v.string(),
+        answer: v.string(),
+      }),
+    ),
+  ),
 });
 
 export function getMetadataFromMatter(

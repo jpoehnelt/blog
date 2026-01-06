@@ -10,6 +10,15 @@ tags:
   - google workspace
   - apps script
   - google forms
+faq:
+  - question: "What is the difference between a Google Form's `name` and `title`?"
+    answer: "The `name` is really the file name in Drive (`documentTitle` in the Forms API). The `title` is the visible heading on the form. If I don't set a specific `title`, the UI automatically uses the `name`."
+  - question: "How do the Forms API, `FormApp`, and `DriveApp` represent the `name` and `title`?"
+    answer: "In the Forms API, `documentTitle` is the form's `name`. `FormApp.getTitle()` gives me the form's `title`. Both `DriveApp.getName()` and the Drive API's `name` property refer to the form's `name`."
+  - question: "What happens if a Google Form's `title` is not set?"
+    answer: "If I leave the `title` unset, the form UI just shows the `name` instead. The Forms API will show the `title` as `undefined`, and `FormApp.getTitle()` returns an empty string."
+  - question: "How can I change the `name` of a Google Form programmatically?"
+    answer: "To change the form's `name` programmatically, I have to use the Google Drive API or `DriveApp`. The Forms API doesn't let me modify the `name`."
 ---
 
 <script>
