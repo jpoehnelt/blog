@@ -47,7 +47,7 @@ export const GET: RequestHandler = async () => {
         .concat(
           // Activities
           activities.map((activity) => ({
-            loc: `${BASE_URL}activities/${getActivitySlug(activity)}`,
+            loc: `${BASE_URL}activities/${getActivitySlug(activity)}/`,
             lastmod: new Date(activity.start_date).toISOString().split("T")[0],
           })),
         ),
