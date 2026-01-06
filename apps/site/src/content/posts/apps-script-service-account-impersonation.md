@@ -12,6 +12,17 @@ tags:
   - service accounts
   - google cloud
   - security
+faq:
+  - question: What is service account impersonation in Apps Script?
+    answer: Service account impersonation in Apps Script is a technique that allows you to use a service account to access Google Cloud resources without downloading and storing the service account's private key. Instead, you use the user's credentials to generate a short-lived access token for the service account.
+  - question: Why should I use service account impersonation instead of downloading a service account key?
+    answer: Downloading and storing a service account key is a security risk. If the key is compromised, it can be used to access your Google Cloud resources. Service account impersonation is a more secure method because it uses short-lived access tokens and avoids the need to manage private keys.
+  - question: How do I set up service account impersonation in Apps Script?
+    answer: To set up service account impersonation, you need to create a service account, grant the user running the script the "Service Account Token Creator" role, enable the IAM Service Account Credentials API, and add the necessary OAuth scopes to your Apps Script project.
+  - question: How do I generate an access token for a service account in Apps Script?
+    answer: You can generate an access token by calling the `generateAccessToken` endpoint of the IAM Credentials API using `UrlFetchApp`. You'll need to pass the service account's email address and the desired scopes in the request body, and use the user's OAuth token for authentication.
+  - question: How do I use the generated service account access token?
+    answer: Once you have the access token, you can use it to make requests to Google Cloud APIs by adding it to the `Authorization` header of your `UrlFetchApp` requests in the format `Bearer <token>`.
 ---
 
 <script>

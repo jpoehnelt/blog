@@ -12,7 +12,7 @@
 
   let { data }: PageProps = $props();
   import JsonLd from "$lib/components/JsonLd.svelte";
-  import type { Thing, WithContext } from "schema-dts";
+  import type { Thing, WithContext, FAQPage } from "schema-dts";
 
   // Use $derived to ensure PostContent updates when data changes (e.g. navigation)
   let PostContent = $derived(data.PostContent);
@@ -81,6 +81,22 @@
         },
       ],
     },
+    ...(data.faq
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: data.faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          } as WithContext<FAQPage>,
+        ]
+      : []),
   ]);
 </script>
 
@@ -161,6 +177,22 @@
     </div>
 
     <PostContent />
+
+    {#if data.faq && data.faq.length > 0}
+      <div class="mt-12 mb-12 not-prose">
+        <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+        <dl class="space-y-8">
+          {#each data.faq as item}
+            <div>
+              <dt class="font-semibold text-lg mb-2">{item.question}</dt>
+              <dd class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {item.answer}
+              </dd>
+            </div>
+          {/each}
+        </dl>
+      </div>
+    {/if}
     <GoogleDisclaimer tags={data.tags} />
     <div class="mt-8">
       <p class="text-xs">

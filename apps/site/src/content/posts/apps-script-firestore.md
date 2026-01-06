@@ -11,6 +11,15 @@ tags:
   - apps script
   - firestore
   - google cloud
+faq:
+  - question: When should I use Firestore instead of CacheService or PropertiesService?
+    answer: You should use Firestore when you need a longer time-to-live (TTL) for your data, or when you need to store many more values than the 1000-item limit of CacheService and PropertiesService.
+  - question: How do I set up Firestore for use in Apps Script?
+    answer: To use Firestore in Apps Script, you need to enable the Firestore API in the Google Cloud Console, add the necessary OAuth scopes to your Apps Script project, and set the Cloud project ID in the Apps Script settings.
+  - question: How can I interact with the Firestore REST API from Apps Script?
+    answer: You can use the UrlFetchApp service to make requests to the Firestore REST API. It's recommended to create wrapper functions to handle authentication (e.g., adding an OAuth token to the header) and to parse the API responses.
+  - question: How are Firestore documents structured in the REST API?
+    answer: When using the REST API, Firestore documents are represented as JSON objects where each field includes its data type (e.g., stringValue, integerValue, mapValue).
 ---
 
 <script>

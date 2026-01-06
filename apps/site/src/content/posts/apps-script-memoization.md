@@ -10,6 +10,15 @@ tags:
   - google workspace
   - apps script
   - memoization
+faq:
+  - question: "What is memoization in Apps Script?"
+    answer: "I think of memoization as a way to cache the results of a function. In Apps Script, I can write a generic memoization function that takes any function, generates a unique key for it and its arguments, and then uses the CacheService to store the result."
+  - question: "How do you generate a unique key for a memoized function?"
+    answer: "To generate a unique key, I create a hash from the function's code (by calling func.toString()) and its arguments (which I stringify). This way, the same function with the same arguments will always have the same key."
+  - question: "How does the memoization function work?"
+    answer: "My memoization function is pretty simple. It first checks the cache to see if a key exists. If it does, I just return the cached value. If not, I call the original function, store its result in the cache with the key, and then return the result."
+  - question: "What are the limitations of using CacheService for memoization?"
+    answer: "When I use CacheService for memoization, I have to keep its limitations in mind. The big ones are: a max value size of 100KB, a max key length of 250 characters, and a max of 1000 items in the cache. Also, CacheService only stores strings, so I have to remember to stringify any objects."
 ---
 
 <script>

@@ -14,6 +14,19 @@ tags:
   - es6
   - wasm
   - webassembly
+faq:
+  - question: "Does Google Apps Script support async/await and Promises?"
+    answer: "Yes, Apps Script's V8 runtime supports async/await and Promises, just like other V8-based environments."
+  - question: "Are there any asynchronous APIs in Apps Script?"
+    answer: "You'll find very few native asynchronous APIs in Apps Script. The key exception I've found is the WebAssembly API (WebAssembly.instantiate()), which genuinely works with async/await."
+  - question: "Is top-level `await` supported in Apps Script?"
+    answer: "No, top-level `await` isn't supported. I can only use `await` inside an `async` function."
+  - question: "What happens with unhandled promise rejections in Apps Script?"
+    answer: "Apps Script currently lacks unhandledRejection errors for Promises."
+  - question: "Can I use `setTimeout` or `setInterval` in Apps Script?"
+    answer: "No, `setTimeout` and `setInterval` aren't available."
+  - question: "Is `Utilities.sleep()` a good alternative for `setTimeout`?"
+    answer: "Definitely not. `Utilities.sleep()` blocks script execution, which is completely different from `setTimeout`'s asynchronous behavior."
 ---
 
 <script>

@@ -13,6 +13,17 @@ tags:
   - wintercg
   - javascript
   - runtime
+faq:
+  - question: "Are all JavaScript APIs available in Apps Script?"
+    answer: "No, not all standard JavaScript APIs are supported in Apps Script's V8 runtime. You'll encounter limitations, and some common Web APIs won't be available."
+  - question: "Is the `fetch` API available in Apps Script?"
+    answer: "No, the standard `fetch` API isn't in Apps Script. Instead, use `UrlFetchApp` to make external requests."
+  - question: "How can I create delays or scheduled tasks in Apps Script?"
+    answer: "`setTimeout` and `setInterval` are unavailable. For simple pauses, use `Utilities.sleep()`. For recurring tasks, installable triggers are the way to go."
+  - question: "Are `TextEncoder` and `TextDecoder` available in Apps Script?"
+    answer: "No, `TextEncoder` and `TextDecoder` aren't native. I typically use polyfills or bundle external libraries, like the `util` NPM package, to get this functionality."
+  - question: "Is streaming supported in Apps Script?"
+    answer: "Unfortunately, streaming isn't supported in Apps Script, and there isn't a good workaround for this limitation."
 ---
 
 <script>

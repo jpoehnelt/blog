@@ -1,6 +1,6 @@
 ---
-title: "The Definitive Guide to UrlFetchApp in Google Apps Script"
-description: "A comprehensive deep-dive into UrlFetchApp. Covers architecture, authentication, web scraping, and debugging notorious infrastructure errors (Address Unavailable, 60s timeout, Gzip truncation)."
+title: "UrlFetchApp: The Unofficial Google Apps Script Documentation"
+description: "The unofficial documentation for UrlFetchApp in Google Apps Script. Learn about authentication, web scraping, parallel fetches with fetchAll, and how to debug common errors like \"Address Unavailable\"."
 pubDate: "2025-12-21"
 tags:
   - apps script
@@ -10,6 +10,32 @@ tags:
   - http
   - web scraping
   - fetchall
+  - documentation
+faq:
+  - question: "What are the hard limits for UrlFetchApp?"
+    answer: "From my experience, you'll most likely hit the 60-second timeout for a single request. The URL can't be longer than 2KB, and the payload and response size are both capped at 50MB. You also get a daily quota of 20,000 calls for consumer accounts and 100,000 for Google Workspace accounts."
+  - question: "Where do UrlFetchApp requests originate from?"
+    answer: "When I use UrlFetchApp, the request doesn't come from my computer. Instead, it runs on Google's servers, so the request comes from a random Google IP address. This is important to remember when you're trying to list IPs for a firewall."
+  - question: "Is UrlFetchApp synchronous or asynchronous?"
+    answer: "It's a common misconception, but UrlFetchApp is synchronous. When I call UrlFetchApp.fetch(), my script stops and waits for the server to respond. It doesn't work with async/await the way you might expect from other JavaScript environments."
+  - question: "Why is muteHttpExceptions important?"
+    answer: "I almost always set muteHttpExceptions: true. If you don't, your script will crash on any 4xx or 5xx error. By setting it to true, I can get the response and handle the error in my code without the script dying."
+  - question: "How do you authenticate with Google APIs using UrlFetchApp?"
+    answer: "I usually pass an OAuth 2.0 token in the Authorization header. For service accounts, I strongly recommend using Service Account Impersonation to generate these tokens instead of messing around with private keys."
+  - question: "How do you handle authentication with external APIs?"
+    answer: "For other APIs, I either pass an API key in the headers (which I store in PropertiesService), or for more complex OAuth 2.0 flows, I use the official Apps Script OAuth2 Library. Don't try to implement the OAuth flow yourself!"
+  - question: "Should I use UrlFetchApp or Advanced Services?"
+    answer: "My rule of thumb is to use Advanced Services when they are available, as they save time with autocompletion and built-in auth. But if I need to use a beta feature or have more control over the request, I'll drop down to UrlFetchApp."
+  - question: "How can I make parallel requests with UrlFetchApp?"
+    answer: "You can't use async/await for parallelism, but you can use UrlFetchApp.fetchAll(). I think of it as the Promise.all() for Apps Script."
+  - question: "Can UrlFetchApp be used for web scraping?"
+    answer: "I've used it for web scraping, but it has a major limitation: it doesn't run JavaScript. So if you're scraping a modern web app, you'll probably just get the initial HTML."
+  - question: "How do you manage cookies with UrlFetchApp?"
+    answer: "UrlFetchApp doesn't handle cookies for you. If you need to manage a session, you have to do it manually by grabbing the Set-Cookie header from the response and sending it back in the Cookie header on the next request."
+  - question: "What causes the 'Exception: Address Unavailable' error?"
+    answer: "It's usually not your fault. It means the Google IP address your request came from is blocked by the server you're trying to connect to. The only way I've found to deal with it is to retry the request with exponential backoff."
+  - question: "What is the timeout for UrlFetchApp?"
+    answer: "From my experience, UrlFetchApp has a hard timeout of about 60 seconds. And no, you can't change it."
 ---
 
 <script>
