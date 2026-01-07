@@ -1,15 +1,13 @@
-import { XMLBuilder } from "fast-xml-parser";
-
-import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
+import { Feed } from "feed";
+import {
+  BASE_URL,
+  DEFAULT_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_EMAIL,
+} from "$lib/constants";
 import { type Post } from "$lib/content/posts";
 import { getPostsMetadata, getPostHtml } from "$lib/content/posts.server";
-import {
-  escapeXml,
-  getLastUpdatedDate,
-  filterPostsByTag,
-  processContentForRss,
-} from "$lib/rss";
-
+import { getLastUpdatedDate, processContentForRss } from "$lib/rss";
 import type { RequestHandler, EntryGenerator } from "./$types";
 import { getAllTags } from "$lib/content/posts.server";
 import { slugify } from "$lib/utils/slugify";
@@ -35,66 +33,57 @@ export const GET: RequestHandler = async ({ params }) => {
           post.tags.some((tag) => slugify(tag) === params.tag),
         );
   const lastUpdated = getLastUpdatedDate(posts);
+  const feedUrl = `${BASE_URL}feed/${params.tag}.xml`;
+  const siteUrl = BASE_URL;
 
-  // Build entries with description only
-  const entries = await Promise.all(
+  const feed = new Feed({
+    title: `${DEFAULT_TITLE} - ${params.tag}`,
+    description: `Posts tagged with '${params.tag}'`,
+    id: feedUrl,
+    link: feedUrl,
+    language: "en",
+    image: `${BASE_URL}favicon.png`,
+    favicon: `${BASE_URL}favicon.png`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, ${AUTHOR_NAME}`,
+    updated: lastUpdated,
+    generator: "Feed for Node.js",
+    feedLinks: {
+      atom: feedUrl,
+    },
+    author: {
+      name: AUTHOR_NAME,
+      email: AUTHOR_EMAIL,
+      link: siteUrl,
+    },
+  });
+
+  await Promise.all(
     posts.map(async (post: Post) => {
       const html = await getPostHtml(post.id);
       const contentHtml = processContentForRss(html);
+      const url = `${BASE_URL}posts/${post.id}/`;
 
-      return {
+      feed.addItem({
         title: post.title,
-        link: {
-          "@_href": post.canonicalURL,
-        },
-        id: post.canonicalURL,
-        updated: (post.lastMod || post.pubDate).toISOString(),
-        published: post.pubDate.toISOString(),
-        content: {
-          "@_type": "html",
-          "#text": contentHtml,
-        },
-        category: post.tags.map((tag) => ({
-          "@_term": tag,
-        })),
-      };
+        id: post.canonicalURL || url,
+        link: post.canonicalURL || url,
+        description: post.description,
+        content: contentHtml,
+        author: [
+          {
+            name: AUTHOR_NAME,
+            email: AUTHOR_EMAIL,
+            link: siteUrl,
+          },
+        ],
+        date: post.pubDate,
+        published: post.pubDate,
+        category: post.tags.map((tag) => ({ name: tag, term: tag })),
+      });
     }),
   );
 
-  const feedObject = {
-    "?xml": {
-      "@_version": "1.0",
-      "@_encoding": "utf-8",
-    },
-    feed: {
-      "@_xmlns": "http://www.w3.org/2005/Atom",
-      title: `${DEFAULT_TITLE} - ${params.tag}`,
-      subtitle: `Posts tagged with '${params.tag}'`,
-      link: [
-        {
-          "@_href": `${BASE_URL}feed/${params.tag}.xml`,
-          "@_rel": "self",
-          "@_type": "application/atom+xml",
-        },
-      ],
-      updated: lastUpdated.toISOString(),
-      id: `${BASE_URL}feed/${params.tag}.xml`,
-      author: {
-        name: AUTHOR_NAME,
-      },
-      entry: entries,
-    },
-  };
-
-  const builder = new XMLBuilder({
-    ignoreAttributes: false,
-    format: true,
-    suppressEmptyNode: true,
-  });
-
-  const feedXml = builder.build(feedObject);
-
-  return new Response(feedXml, {
+  return new Response(feed.atom1(), {
     headers: {
       "Content-Type": "application/atom+xml; charset=utf-8",
       "Cache-Control": "max-age=0, s-maxage=3600",

@@ -2,7 +2,7 @@ import { BASE_URL, PUBLIC_IMAGES_PREFIX } from "$lib/constants";
 import { getMetadataFromMatter } from "./posts.shared";
 
 import { error } from "@sveltejs/kit";
-import type { Element, Parent } from "hast";
+import type { Element, Parent, Root } from "hast";
 import rehypeParse from "rehype-parse";
 import rehypeRemark from "rehype-remark";
 import rehypeRemoveComments from "rehype-remove-comments";
@@ -32,7 +32,7 @@ const postsMetadata: Record<string, any> = import.meta.glob(
 );
 
 export const getPostMetadata = (id: string) => {
-  const filePath = `${CONTENT_BASE_PATH}/${id}.md`;
+  const filePath = CONTENT_BASE_PATH + "/" + id + ".md";
   const metadata = postsMetadata[filePath];
 
   if (!metadata) {
@@ -89,7 +89,7 @@ export function getTagsWithCounts() {
     });
 }
 
-const removeNoMd = () => (tree: any) => {
+const removeNoMd = () => (tree: Root) => {
   visit(tree, "element", (node: Element, index, parent: Parent | undefined) => {
     if (
       node.properties?.className &&
@@ -104,7 +104,7 @@ const removeNoMd = () => (tree: any) => {
   });
 };
 
-const resolveUrls = () => (tree: any) => {
+const resolveUrls = () => (tree: Root) => {
   visit(tree, "element", (node: Element) => {
     if (node.properties?.dataOriginalSrc) {
       const originalSrc = String(node.properties.dataOriginalSrc);
