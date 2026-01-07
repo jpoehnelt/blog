@@ -130,7 +130,14 @@
         "starred": false
       },
       "pr_rank": null,
-      "achievements": [],
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 1
+        }
+      ],
       "visibility": "everyone",
       "kom_rank": null,
       "hidden": false
@@ -1285,8 +1292,8 @@
   "hide_from_home": false,
   "embed_token": "25aa0667e85924e9f1960061acda9dba08e56bb6",
   "similar_activities": {
-    "effort_count": 4,
-    "average_speed": 2.3305296510999893,
+    "effort_count": 5,
+    "average_speed": 2.334014468109635,
     "min_average_speed": 2.264065795023197,
     "mid_average_speed": 2.3471281860890474,
     "max_average_speed": 2.4365173539009195,
@@ -1297,13 +1304,14 @@
         2.282787466326386,
         2.357148558462411,
         2.3528686953811997,
-        2.3300212317900892
+        2.3300212317900892,
+        2.3466502699665557
       ],
       "current_activity_index": 3,
       "min_speed": 2.264065795023197,
       "mid_speed": 2.3471281860890474,
       "max_speed": 2.4365173539009195,
-      "direction": -1
+      "direction": 0
     },
     "resource_state": 2
   },
