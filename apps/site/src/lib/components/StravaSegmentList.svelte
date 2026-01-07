@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Badge } from "$lib/components/ui/badge";
+  import { cn } from "$lib/utils";
 
   interface SegmentEffort {
     id: number | string;
@@ -17,7 +18,11 @@
     }[];
   }
 
-  export let segments: SegmentEffort[] = [];
+  interface Props {
+    segments?: SegmentEffort[];
+  }
+
+  let { segments = [] }: Props = $props();
 
   function formatTime(seconds: number): string {
     const mins = Math.floor(seconds / 60);
@@ -27,10 +32,14 @@
   }
 
   function getAchievementColor(achievement: { type: string; rank: number }) {
-    if (achievement.type === "kom") return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    if (achievement.rank === 1) return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    if (achievement.rank === 2) return "bg-gray-100 text-gray-800 border-gray-200";
-    if (achievement.rank === 3) return "bg-orange-100 text-orange-800 border-orange-200";
+    if (achievement.type === "kom")
+      return "bg-yellow-100 text-yellow-800 border-yellow-200";
+    if (achievement.rank === 1)
+      return "bg-yellow-100 text-yellow-800 border-yellow-200";
+    if (achievement.rank === 2)
+      return "bg-gray-100 text-gray-800 border-gray-200";
+    if (achievement.rank === 3)
+      return "bg-orange-100 text-orange-800 border-orange-200";
     return "bg-secondary text-secondary-foreground";
   }
 
@@ -48,16 +57,27 @@
     <h3 class="text-lg font-semibold">Segments</h3>
     <div class="grid gap-2">
       {#each segments as segment}
-        <div class="flex items-center justify-between p-3 rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div
+          class="flex items-center justify-between p-3 rounded-lg border bg-card text-card-foreground shadow-sm"
+        >
           <div class="flex flex-col gap-1 overflow-hidden">
             <div class="flex items-center gap-2">
-              <a href={`/segments/${segment.segment.id}`} class="font-medium truncate hover:underline hover:text-primary transition-colors" title={segment.name}>
+              <a
+                href={`/segments/${segment.segment.id}`}
+                class="font-medium truncate hover:underline hover:text-primary transition-colors"
+                title={segment.name}
+              >
                 {segment.name}
               </a>
               {#if segment.achievements && segment.achievements.length > 0}
                 <div class="flex gap-1">
                   {#each segment.achievements as achievement}
-                    <Badge class={`px-1.5 py-0 text-[10px] h-5 ${getAchievementColor(achievement)}`}>
+                    <Badge
+                      class={cn(
+                        "px-1.5 py-0 text-[10px] h-5",
+                        getAchievementColor(achievement)
+                      )}
+                    >
                       {getAchievementLabel(achievement)}
                     </Badge>
                   {/each}
@@ -67,7 +87,7 @@
             <div class="text-xs text-muted-foreground flex gap-3">
               <span>{((segment.distance || 0) / 1000).toFixed(2)} km</span>
               {#if segment.segment?.average_grade !== undefined}
-                 <span>{segment.segment.average_grade}%</span>
+                <span>{segment.segment.average_grade}%</span>
               {/if}
             </div>
           </div>
