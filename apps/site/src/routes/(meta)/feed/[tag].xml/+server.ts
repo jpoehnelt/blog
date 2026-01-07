@@ -2,38 +2,64 @@ import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
 import { type Post } from "$lib/content/posts";
-import { getPostsMetadata } from "$lib/content/posts.server";
-import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
+import { getPostsMetadata, getPostHtml } from "$lib/content/posts.server";
+import {
+  escapeXml,
+  getLastUpdatedDate,
+  filterPostsByTag,
+  processContentForRss,
+} from "$lib/rss";
 
-import type { RequestHandler } from "./$types";
+import type { RequestHandler, EntryGenerator } from "./$types";
+import { getAllTags } from "$lib/content/posts.server";
+import { slugify } from "$lib/utils/slugify";
 
 export const prerender = true;
+
+export const entries: EntryGenerator = () => {
+  const tags = getAllTags();
+  return [
+    { tag: "all" },
+    ...tags.map((tag) => ({
+      tag: slugify(tag),
+    })),
+  ];
+};
 
 export const GET: RequestHandler = async ({ params }) => {
   const allPosts = getPostsMetadata();
   const posts =
-    params.tag === "all" ? allPosts : filterPostsByTag(allPosts, params.tag);
+    params.tag === "all"
+      ? allPosts
+      : allPosts.filter((post) =>
+          post.tags.some((tag) => slugify(tag) === params.tag),
+        );
   const lastUpdated = getLastUpdatedDate(posts);
 
   // Build entries with description only
-  const entries = posts.map((post: Post) => {
-    return {
-      title: post.title,
-      link: {
-        "@_href": post.canonicalURL,
-      },
-      id: post.canonicalURL,
-      updated: (post.lastMod || post.pubDate).toISOString(),
-      published: post.pubDate.toISOString(),
-      content: {
-        "@_type": "html",
-        "#text": escapeXml(post.description),
-      },
-      category: post.tags.map((tag) => ({
-        "@_term": tag,
-      })),
-    };
-  });
+  const entries = await Promise.all(
+    posts.map(async (post: Post) => {
+      const html = await getPostHtml(post.id);
+      const contentHtml = processContentForRss(html);
+
+      return {
+        title: post.title,
+        link: {
+          "@_href": post.canonicalURL,
+        },
+        id: post.canonicalURL,
+        updated: (post.lastMod || post.pubDate).toISOString(),
+        published: post.pubDate.toISOString(),
+        content: {
+          "@_type": "html",
+          "#text": contentHtml,
+        },
+        category: post.tags.map((tag) => ({
+          "@_term": tag,
+        })),
+      };
+    }),
+  );
 
   const feedObject = {
     "?xml": {

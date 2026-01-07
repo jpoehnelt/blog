@@ -89,6 +89,76 @@ export function getTagsWithCounts() {
     });
 }
 
+const removeNoMd = () => (tree: any) => {
+  visit(tree, "element", (node: Element, index, parent: Parent | undefined) => {
+    if (
+      node.properties?.className &&
+      Array.isArray(node.properties.className) &&
+      node.properties.className.includes("no-md")
+    ) {
+      if (parent && typeof index === "number") {
+        parent.children.splice(index, 1);
+        return index;
+      }
+    }
+  });
+};
+
+const resolveUrls = () => (tree: any) => {
+  visit(tree, "element", (node: Element) => {
+    if (node.properties?.dataOriginalSrc) {
+      const originalSrc = String(node.properties.dataOriginalSrc);
+
+      // Check if it's a relative path (not absolute and not http/https)
+      // and assume it corresponds to an image in the images directory.
+      // We previously checked for SOURCE_IMAGES_DIR, but now we support direct filenames.
+      const isRelative =
+        !originalSrc.startsWith("/") && !originalSrc.startsWith("http");
+
+      if (isRelative) {
+        // Strip potential "./" prefix if present
+        const imagePath = originalSrc.replace(/^\.\//, "");
+
+        const newUrl = new URL(
+          `${PUBLIC_IMAGES_PREFIX}${imagePath}`,
+          BASE_URL,
+        ).toString();
+
+        if (node.tagName === "img") {
+          node.properties.src = newUrl;
+        }
+        if (node.tagName === "a") {
+          node.properties.href = newUrl;
+        }
+      }
+    } else {
+      ["href", "src", "poster"].forEach((attr) => {
+        const value = node.properties?.[attr];
+        if (typeof value === "string" && value.startsWith("/")) {
+          node.properties[attr] = new URL(value, BASE_URL).toString();
+        }
+      });
+    }
+  });
+};
+
+export async function getPostHtml(id: string): Promise<string> {
+  const { body } = render(await getPostContent(id), {});
+
+  // Extract content inside <body>...</body> to avoid full HTML document in feed
+  const bodyContent = body.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || body;
+
+  return String(
+    await unified()
+      .use(rehypeParse, { fragment: true }) // Parse as fragment
+      .use(rehypeRemoveComments)
+      .use(removeNoMd)
+      .use(resolveUrls)
+      .use(rehypeStringify)
+      .process(bodyContent),
+  );
+}
+
 // Lazy load raw content for TOC extraction
 const postsRaw = import.meta.glob("/src/content/posts/*.md", {
   query: "?raw",
@@ -96,72 +166,16 @@ const postsRaw = import.meta.glob("/src/content/posts/*.md", {
 });
 
 export async function getPostMarkdown(id: string): Promise<string> {
-  const { body } = render(await getPostContent(id), {});
+  const html = await getPostHtml(id);
 
   // Convert HTML back to Markdown using unified pipeline
   return String(
     await unified()
       .use(rehypeParse)
-      .use(rehypeRemoveComments)
-      .use(() => (tree) => {
-        visit(
-          tree,
-          "element",
-          (node: Element, index, parent: Parent | undefined) => {
-            if (
-              node.properties?.className &&
-              Array.isArray(node.properties.className) &&
-              node.properties.className.includes("no-md")
-            ) {
-              if (parent && typeof index === "number") {
-                parent.children.splice(index, 1);
-                return index;
-              }
-            }
-          },
-        );
-      })
-      .use(() => (tree) => {
-        visit(tree, "element", (node: Element) => {
-          if (node.properties?.dataOriginalSrc) {
-            const originalSrc = String(node.properties.dataOriginalSrc);
-
-            // Check if it's a relative path (not absolute and not http/https)
-            // and assume it corresponds to an image in the images directory.
-            // We previously checked for SOURCE_IMAGES_DIR, but now we support direct filenames.
-            const isRelative =
-              !originalSrc.startsWith("/") && !originalSrc.startsWith("http");
-
-            if (isRelative) {
-              // Strip potential "./" prefix if present
-              const imagePath = originalSrc.replace(/^\.\//, "");
-
-              const newUrl = new URL(
-                `${PUBLIC_IMAGES_PREFIX}${imagePath}`,
-                BASE_URL,
-              ).toString();
-
-              if (node.tagName === "img") {
-                node.properties.src = newUrl;
-              }
-              if (node.tagName === "a") {
-                node.properties.href = newUrl;
-              }
-            }
-          } else {
-            ["href", "src", "poster"].forEach((attr) => {
-              const value = node.properties?.[attr];
-              if (typeof value === "string" && value.startsWith("/")) {
-                node.properties[attr] = new URL(value, BASE_URL).toString();
-              }
-            });
-          }
-        });
-      })
       .use(rehypeRemark)
       .use(remarkGfm)
       .use(remarkStringify)
-      .process(body),
+      .process(html),
   );
 }
 
