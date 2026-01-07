@@ -165,6 +165,50 @@ export async function getPostMarkdown(id: string): Promise<string> {
   );
 }
 
+export async function getPostHtml(id: string): Promise<string> {
+  const { body } = render(await getPostContent(id), {});
+
+  return String(
+    await unified()
+      .use(rehypeParse)
+      .use(rehypeRemoveComments)
+      .use(() => (tree) => {
+        visit(tree, "element", (node: Element) => {
+          if (node.properties?.dataOriginalSrc) {
+            const originalSrc = String(node.properties.dataOriginalSrc);
+
+            const isRelative =
+              !originalSrc.startsWith("/") && !originalSrc.startsWith("http");
+
+            if (isRelative) {
+              const imagePath = originalSrc.replace(/^\.\//, "");
+              const newUrl = new URL(
+                `${PUBLIC_IMAGES_PREFIX}${imagePath}`,
+                BASE_URL,
+              ).toString();
+
+              if (node.tagName === "img") {
+                node.properties.src = newUrl;
+              }
+              if (node.tagName === "a") {
+                node.properties.href = newUrl;
+              }
+            }
+          } else {
+            ["href", "src", "poster"].forEach((attr) => {
+              const value = node.properties?.[attr];
+              if (typeof value === "string" && value.startsWith("/")) {
+                node.properties[attr] = new URL(value, BASE_URL).toString();
+              }
+            });
+          }
+        });
+      })
+      .use(rehypeStringify)
+      .process(body),
+  );
+}
+
 export type TocItem = {
   id: string;
   text: string;
