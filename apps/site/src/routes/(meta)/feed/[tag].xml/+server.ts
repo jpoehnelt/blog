@@ -2,12 +2,26 @@ import { XMLBuilder } from "fast-xml-parser";
 
 import { BASE_URL, DEFAULT_TITLE, AUTHOR_NAME } from "$lib/constants";
 import { type Post } from "$lib/content/posts";
-import { getPostsMetadata } from "$lib/content/posts.server";
-import { escapeXml, getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
+import {
+  getPostsMetadata,
+  getPostHtml,
+  getAllTags,
+} from "$lib/content/posts.server";
+import { getLastUpdatedDate, filterPostsByTag } from "$lib/rss";
 
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
+
+export async function entries() {
+  const tags = getAllTags();
+  return [
+    { tag: "all" },
+    ...tags.map((tag) => ({
+      tag,
+    })),
+  ];
+}
 
 export const GET: RequestHandler = async ({ params }) => {
   const allPosts = getPostsMetadata();
@@ -15,25 +29,32 @@ export const GET: RequestHandler = async ({ params }) => {
     params.tag === "all" ? allPosts : filterPostsByTag(allPosts, params.tag);
   const lastUpdated = getLastUpdatedDate(posts);
 
-  // Build entries with description only
-  const entries = posts.map((post: Post) => {
-    return {
-      title: post.title,
-      link: {
-        "@_href": post.canonicalURL,
-      },
-      id: post.canonicalURL,
-      updated: (post.lastMod || post.pubDate).toISOString(),
-      published: post.pubDate.toISOString(),
-      content: {
-        "@_type": "html",
-        "#text": escapeXml(post.description),
-      },
-      category: post.tags.map((tag) => ({
-        "@_term": tag,
-      })),
-    };
-  });
+  // Take only the last 10 entries
+  const recentPosts = posts.slice(0, 10);
+
+  // Build entries with full content
+  const entries = await Promise.all(
+    recentPosts.map(async (post: Post) => {
+      const htmlContent = await getPostHtml(post.id);
+
+      return {
+        title: post.title,
+        link: {
+          "@_href": post.canonicalURL,
+        },
+        id: post.canonicalURL,
+        updated: (post.lastMod || post.pubDate).toISOString(),
+        published: post.pubDate.toISOString(),
+        content: {
+          "@_type": "html",
+          "#text": htmlContent,
+        },
+        category: post.tags.map((tag) => ({
+          "@_term": tag,
+        })),
+      };
+    }),
+  );
 
   const feedObject = {
     "?xml": {
