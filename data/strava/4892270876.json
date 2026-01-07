@@ -30,7 +30,7 @@
     "id": "a4892270876",
     "polyline": "cidcF`ijqSG[EaAI_@IKu@e@_AeAYUGCUCYHg@@q@SQ@QFYTg@j@_At@UVcCpBw@Ni@PYTQ^FZp@fABNBr@Cl@KXm@|@SRQXUP]L]ZKLIRa@lAs@|@OHY^OHQCeAe@e@Kk@M{@ISG}Bo@}@a@sAe@wA[c@BmA^g@Jm@A[KgAq@eAe@uBgA{@Oa@BwBr@cARa@@aAIYGaA_@[EYIq@]i@O_@CW@cCf@e@Fe@EQGk@e@m@w@mBcDm@yAc@w@{@y@a@k@a@[Y]Sa@Gk@Mc@[}AIKAK`@|ALdAR`@jAvA|@`Ah@d@Xd@~@nBtAhC`ApA^\\NFVH^?\\Id@O~AOvARnCt@fAPZ@VAnB_@h@UjAWv@?f@JdAr@d@Rf@Zf@TdB`A^AhAWp@K`A@ZJbBv@|FzAf@PrAh@zBxAPJ`@J@KMaAA{@FSh@sANy@Ra@\\O^[l@s@PWVy@Fa@Ao@Ka@[i@Sg@?g@\\_@h@Wz@O^QhCwBz@y@`@i@TGJAXFf@PfAK`@DlC~Ab@\\ASWWYGUKc@a@{@i@i@MI@Z@HB|@d@r@l@z@l@FF@\\C`@`@~AMP",
     "resource_state": 3,
-    "summary_polyline": "cidcF`ijqSG[EaAI_@IKu@e@_AeAYUGCUCYHg@@q@SQ@QFYTg@j@_At@UVcCpBw@Ni@PYTQ^FZp@fABNBr@Cl@KXm@|@SRQXUP]L]ZKLIRa@lAs@|@OHY^OHQCeAe@e@Kk@M{@ISG}Bo@}@a@sAe@wA[c@BmA^g@Jm@A[KgAq@eAe@uBgA{@Oa@BwBr@cARa@@aAIYGaA_@[EYIq@]i@O_@CW@cCf@e@Fe@EQGk@e@m@w@mBcDm@yAc@w@{@y@a@k@a@[Y]Sa@Gk@Mc@[}AIKAK`@|ALdAR`@jAvA|@`Ah@d@Xd@~@nBtAhC`ApA^\\NFVH^?\\Id@O~AOvARnCt@fAPZ@VAnB_@h@UjAWv@?f@JdAr@d@Rf@Zf@TdB`A^AhAWp@K`A@ZJbBv@|FzAf@PrAh@zBxAPJ`@J@KMaAA{@FSh@sANy@Ra@\\O^[l@s@PWVy@Fa@Ao@Ka@[i@Sg@?g@\\_@h@Wz@O^QhCwBz@y@`@i@TGJAXFf@PfAK`@DlC~Ab@\\ASWWYGUKc@a@{@i@i@MI@Z@HB|@d@r@l@z@l@FF@\\C`@`@~AMP"
+    "summary_polyline": "{{dcFlgjqSk@b@w@Ni@PYTQ^FZp@fABNBr@Cl@KXm@|@SRQXUP]L]ZKLIRa@lAs@|@OHY^OHQCeAe@e@Kk@M{@ISG}Bo@}@a@sAe@wA[c@BmA^g@Jm@A[KgAq@eAe@uBgA{@Oa@BwBr@cARa@@aAIYGaA_@[EYIq@]i@O_@CW@cCf@e@Fe@EQGk@e@m@w@mBcDm@yAc@w@{@y@a@k@a@[Y]Sa@Gk@Mc@[}AIKAK`@|ALdAR`@jAvA|@`Ah@d@Xd@~@nBtAhC`ApA^\\NFVH^?\\Id@O~AOvARnCt@fAPZ@VAnB_@h@UjAWv@?f@JdAr@d@Rf@Zf@TdB`A^AhAWp@K`A@ZJbBv@|FzAf@PrAh@zBxAPJ`@J@KMaAA{@FSh@sANy@Ra@\\O^[l@s@PWVy@Fa@Ao@Ka@[i@Sg@?g@\\_@^SdAS^Q\\Y"
   },
   "trainer": false,
   "commute": false,
@@ -121,7 +121,7 @@
         "country": "USA",
         "private": false,
         "hazardous": true,
-        "starred": true
+        "starred": false
       },
       "pr_rank": null,
       "achievements": [],
@@ -183,7 +183,7 @@
       },
       "pr_rank": null,
       "achievements": [],
-      "visibility": "followers_only",
+      "visibility": "only_me",
       "kom_rank": null,
       "hidden": false
     },
@@ -241,7 +241,7 @@
       },
       "pr_rank": null,
       "achievements": [],
-      "visibility": "followers_only",
+      "visibility": "only_me",
       "kom_rank": null,
       "hidden": false
     }
@@ -384,7 +384,7 @@
       "lap_index": 1,
       "split": 1,
       "start_index": 0,
-      "end_index": 176,
+      "end_index": 88,
       "total_elevation_gain": 86,
       "average_cadence": 82,
       "device_watts": false,
@@ -414,8 +414,8 @@
       "max_speed": 4,
       "lap_index": 2,
       "split": 2,
-      "start_index": 177,
-      "end_index": 335,
+      "start_index": 89,
+      "end_index": 247,
       "total_elevation_gain": 54,
       "average_cadence": 81.1,
       "device_watts": false,
@@ -445,8 +445,8 @@
       "max_speed": 4.9,
       "lap_index": 3,
       "split": 3,
-      "start_index": 336,
-      "end_index": 489,
+      "start_index": 248,
+      "end_index": 401,
       "total_elevation_gain": 2,
       "average_cadence": 81.4,
       "device_watts": false,
@@ -476,8 +476,8 @@
       "max_speed": 3.6,
       "lap_index": 4,
       "split": 4,
-      "start_index": 490,
-      "end_index": 583,
+      "start_index": 402,
+      "end_index": 408,
       "total_elevation_gain": 10,
       "average_cadence": 80.1,
       "device_watts": false,
