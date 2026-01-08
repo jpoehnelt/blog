@@ -8,8 +8,8 @@
   import {
     getActivityDescription,
     getActivitySlug,
-    slugify,
   } from "$lib/content/strava";
+  import { slugify } from "$lib/utils/slugify";
   import StravaLink from "$lib/components/StravaLink.svelte";
   import StravaSegmentList from "$lib/components/StravaSegmentList.svelte";
   import JsonLd from "$lib/components/JsonLd.svelte";
