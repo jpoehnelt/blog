@@ -652,6 +652,64 @@
       "hidden": false
     },
     {
+      "id": 3443087773228151300,
+      "resource_state": 2,
+      "name": "Nothing like a good punch to the gut",
+      "activity": {
+        "id": 10737851785,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1446,
+      "moving_time": 1446,
+      "start_date": "2024-02-10T21:35:42Z",
+      "start_date_local": "2024-02-10T14:35:42Z",
+      "distance": 3206,
+      "start_index": 5694,
+      "end_index": 6074,
+      "average_cadence": 72.7,
+      "device_watts": false,
+      "average_heartrate": 126.8,
+      "max_heartrate": 143,
+      "segment": {
+        "id": 40739125,
+        "resource_state": 2,
+        "name": "Nothing like a good punch to the gut",
+        "activity_type": "Run",
+        "distance": 3206,
+        "average_grade": 1.1,
+        "maximum_grade": 25.5,
+        "elevation_high": 648.2,
+        "elevation_low": 599.2,
+        "start_latlng": [
+          34.07785,
+          -112.156008
+        ],
+        "end_latlng": [
+          34.060174,
+          -112.162821
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Arizona",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3191617409230609400,
       "resource_state": 2,
       "name": "Pinnacle Place Climb",
@@ -699,6 +757,64 @@
         "city": "Black Canyon City",
         "state": "AZ",
         "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3443296161247495000,
+      "resource_state": 2,
+      "name": "Top to bottom",
+      "activity": {
+        "id": 10737851785,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 705,
+      "moving_time": 703,
+      "start_date": "2024-02-10T22:30:19Z",
+      "start_date_local": "2024-02-10T15:30:19Z",
+      "distance": 1624,
+      "start_index": 6570,
+      "end_index": 6775,
+      "average_cadence": 77.7,
+      "device_watts": false,
+      "average_heartrate": 129.3,
+      "max_heartrate": 141,
+      "segment": {
+        "id": 40739133,
+        "resource_state": 2,
+        "name": "Top to bottom",
+        "activity_type": "Run",
+        "distance": 1624,
+        "average_grade": -2.8,
+        "maximum_grade": 9.2,
+        "elevation_high": 656.4,
+        "elevation_low": 609.8,
+        "start_latlng": [
+          34.049212,
+          -112.161082
+        ],
+        "end_latlng": [
+          34.050438,
+          -112.15541
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Arizona",
+        "country": "USA",
         "private": false,
         "hazardous": false,
         "starred": false
@@ -1058,6 +1174,64 @@
       "hidden": false
     },
     {
+      "id": 3442758230687548000,
+      "resource_state": 2,
+      "name": "Steamroll it",
+      "activity": {
+        "id": 10737851785,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 894,
+      "moving_time": 889,
+      "start_date": "2024-02-10T23:48:24Z",
+      "start_date_local": "2024-02-10T16:48:24Z",
+      "distance": 2215.5,
+      "start_index": 7888,
+      "end_index": 8155,
+      "average_cadence": 78.3,
+      "device_watts": false,
+      "average_heartrate": 123.1,
+      "max_heartrate": 142,
+      "segment": {
+        "id": 40733254,
+        "resource_state": 2,
+        "name": "Steamroll it",
+        "activity_type": "Run",
+        "distance": 2215.5,
+        "average_grade": -3.8,
+        "maximum_grade": 12.3,
+        "elevation_high": 729.6,
+        "elevation_low": 643.2,
+        "start_latlng": [
+          34.050899,
+          -112.179785
+        ],
+        "end_latlng": [
+          34.044187,
+          -112.187362
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Arizona",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3191617409232070700,
       "resource_state": 2,
       "name": "Unnamed Rd Climb",
@@ -1337,6 +1511,122 @@
         "city": "Peoria",
         "state": "AZ",
         "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3442420654937586000,
+      "resource_state": 2,
+      "name": "Onward and downward",
+      "activity": {
+        "id": 10737851785,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 512,
+      "moving_time": 510,
+      "start_date": "2024-02-11T02:26:59Z",
+      "start_date_local": "2024-02-10T19:26:59Z",
+      "distance": 1048,
+      "start_index": 10492,
+      "end_index": 10637,
+      "average_cadence": 73.3,
+      "device_watts": false,
+      "average_heartrate": 121.7,
+      "max_heartrate": 141,
+      "segment": {
+        "id": 40728142,
+        "resource_state": 2,
+        "name": "Onward and downward",
+        "activity_type": "Run",
+        "distance": 1048,
+        "average_grade": -4.7,
+        "maximum_grade": 12.7,
+        "elevation_high": 742.4,
+        "elevation_low": 690.8,
+        "start_latlng": [
+          33.96445,
+          -112.152417
+        ],
+        "end_latlng": [
+          33.958202,
+          -112.154245
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Arizona",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3442374987618249700,
+      "resource_state": 2,
+      "name": "Pick up the pace!",
+      "activity": {
+        "id": 10737851785,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 1500,
+      "moving_time": 1387,
+      "start_date": "2024-02-11T03:09:19Z",
+      "start_date_local": "2024-02-10T20:09:19Z",
+      "distance": 2939,
+      "start_index": 11183,
+      "end_index": 11614,
+      "average_cadence": 69.6,
+      "device_watts": false,
+      "average_heartrate": 125.7,
+      "max_heartrate": 150,
+      "segment": {
+        "id": 40728146,
+        "resource_state": 2,
+        "name": "Pick up the pace!",
+        "activity_type": "Run",
+        "distance": 2939,
+        "average_grade": -3.9,
+        "maximum_grade": 15,
+        "elevation_high": 744.2,
+        "elevation_low": 623,
+        "start_latlng": [
+          33.940645,
+          -112.163058
+        ],
+        "end_latlng": [
+          33.919788,
+          -112.165032
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Arizona",
+        "country": "USA",
         "private": false,
         "hazardous": false,
         "starred": false
