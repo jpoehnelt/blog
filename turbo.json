@@ -19,6 +19,10 @@
       "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
+    },
+    "push": {
+      "dependsOn": ["^build"],
+      "outputs": []
     }
   },
   "globalDependencies": ["tsconfig.base.json"]

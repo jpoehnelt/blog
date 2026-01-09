@@ -7,6 +7,7 @@
     "build": "turbo build",
     "check": "turbo check",
     "dev": "turbo dev",
+    "push": "turbo push",
     "test": "turbo test",
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write ."
