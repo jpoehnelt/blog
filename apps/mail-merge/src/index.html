@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        padding: 20px;
+        color: #202124;
+      }
+      .form-group { margin-bottom: 20px; }
+      label { display: block; margin-bottom: 6px; font-weight: 500; }
+      input, select {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+      button {
+        background-color: #1a73e8;
+        color: white;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        float: right;
+      }
+      button:disabled { background-color: #dadce0; cursor: default; }
+      button.secondary {
+        background-color: transparent;
+        color: #1a73e8;
+        float: left;
+      }
+      .info {
+        background-color: #e8f0fe;
+        color: #1967d2;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+      .error {
+        color: #d93025;
+        font-size: 13px;
+        margin-top: 5px;
+      }
+      [x-cloak] { display: none !important; }
+    </style>
+  </head>
+  <body x-data="app()" x-init="init()" x-cloak>
+    
+    <!-- LOADING STATE -->
+    <div x-show="loading" style="text-align:center; padding-top:50px;">
+      <p>Loading...</p>
+    </div>
+
+    <!-- NEW CAMPAIGN VIEW -->
+    <div x-show="!loading && view === 'new-campaign'">
+      <h3>Create New Campaign</h3>
+      <div class="form-group">
+        <label>Campaign Name</label>
+        <input type="text" x-model="campaign.name" placeholder="e.g. Newsletter Jan 2026">
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <input type="checkbox" x-model="campaign.includeAll" style="width: auto; margin-right: 8px;">
+          Include All Recipients
+        </label>
+      </div>
+
+      <div x-show="!campaign.includeAll">
+        <div class="form-group">
+          <label>Filter By Column</label>
+          <select x-model="campaign.filterCol">
+            <template x-for="header in headers" :key="header">
+              <option :value="header" x-text="header"></option>
+            </template>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Value to Match</label>
+          <input type="text" x-model="campaign.filterVal" placeholder="e.g. YES">
+        </div>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <button @click="createCampaign" :disabled="submitting" x-text="submitting ? 'Creating...' : 'Create Campaign'"></button>
+      </div>
+    </div>
+
+    <!-- RUN DIALOG VIEW -->
+    <div x-show="!loading && view === 'run'">
+      <h3>Run Mail Merge</h3>
+      <div class="info">
+        Running for: <strong x-text="currentSheetName"></strong>
+      </div>
+
+      <div class="form-group">
+        <label>Select Draft Template</label>
+        <select x-model="runConfig.draftId">
+          <option value="" disabled selected>Select a draft...</option>
+          <template x-for="draft in drafts" :key="draft.id">
+            <option :value="draft.id" x-text="draft.subject"></option>
+          </template>
+        </select>
+        <div style="font-size:11px; color:#5f6368; margin-top:4px;">
+          Tip: Label a Gmail draft "MAIL_MERGE" to see it here.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Execution Mode</label>
+        <select x-model="runConfig.mode">
+          <option value="DRAFT">Draft Mode (Create Drafts Only)</option>
+          <option value="SEND">Live Mode (Send Emails)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Sender Name</label>
+        <input type="text" x-model="runConfig.senderName">
+      </div>
+
+      <div style="margin-top: 30px;">
+        <button @click="runMerge" :disabled="submitting || !runConfig.draftId" x-text="submitting ? 'Running...' : 'Start Merge'"></button>
+      </div>
+    </div>
+
+    <!-- SETTINGS VIEW -->
+    <div x-show="!loading && view === 'settings'">
+      <h3>Global Settings</h3>
+      <div class="form-group">
+        <label>Default Mode</label>
+        <select x-model="settings.MODE">
+          <option value="DRAFT">Draft Mode</option>
+          <option value="SEND">Live Mode</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Default Draft Subject</label>
+        <input type="text" x-model="settings.DRAFT_SUBJECT">
+      </div>
+      <div class="form-group">
+        <label>Default Sender Name</label>
+        <input type="text" x-model="settings.SENDER_NAME">
+      </div>
+      <div class="form-group">
+        <label>Sender Alias (Optional)</label>
+        <input type="text" x-model="settings.SENDER_EMAIL" placeholder="support@example.com">
+      </div>
+
+      <div style="margin-top: 30px;">
+        <button @click="saveSettings" :disabled="submitting" x-text="submitting ? 'Saving...' : 'Save Settings'"></button>
+      </div>
+    </div>
+
+    <!-- MESSAGE VIEW -->
+    <div x-show="!loading && view === 'message'">
+      <div class="message-content" x-html="messageBody"></div>
+      
+      <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+        <button @click="close">OK</button>
+      </div>
+    </div>
+
+    <style>
+      /* Add specific styles for message content to handle lists gracefully */
+      .message-content {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #202124;
+      }
+      .message-content ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .message-content li {
+        margin-bottom: 8px;
+      }
+    </style>
+
+    <script>
+      function app() {
+        return {
+          loading: true,
+          submitting: false,
+          view: 'loading', // 'new-campaign', 'run', 'settings'
+          
+          // Data
+          headers: [],
+          drafts: [],
+          currentSheetName: '',
+          
+          // Forms
+          campaign: { name: '', includeAll: false, filterCol: '', filterVal: '' },
+          runConfig: { draftId: '', mode: 'DRAFT', senderName: '' },
+          settings: {},
+          
+          // Message View
+          messageBody: '',
+
+          init() {
+            // Get initial view/data from server-side variables
+            const initialView = window.INITIAL_VIEW || 'new-campaign';
+            const initialData = window.INITIAL_DATA || {};
+            
+            this.view = initialView;
+            
+            if (this.view === 'message') {
+              this.messageBody = initialData.message || '';
+              this.loading = false;
+            } else {
+              this.loadData();
+            }
+          },
+          
+          close() {
+            google.script.host.close();
+          },
+
+          loadData() {
+            if (this.view === 'new-campaign') {
+              this.fetchHeaders();
+            } else if (this.view === 'run') {
+              this.fetchDrafts();
+              this.fetchConfig(); // For sender name default
+            } else if (this.view === 'settings') {
+              this.fetchConfig();
+            }
+          },
+
+          fetchHeaders() {
+            google.script.run
+              .withSuccessHandler(headers => {
+                this.headers = headers;
+                if (headers.length > 0) this.campaign.filterCol = headers[2] || headers[0]; // Default to Tag or first
+                this.loading = false;
+              })
+              .getHeadersFromMaster(); // Exposed global
+          },
+
+          fetchDrafts() {
+            google.script.run
+              .withSuccessHandler(data => {
+                this.drafts = data.drafts;
+                this.currentSheetName = data.sheetName;
+                this.loading = false;
+              })
+              .getDraftsAndSheetInfo(); // Exposed global
+          },
+
+          fetchConfig() {
+            google.script.run
+              .withSuccessHandler(config => {
+                this.settings = config;
+                // Set default sender name for Run Dialog
+                if (this.view === 'run') {
+                  this.runConfig.senderName = config.SENDER_NAME;
+                }
+                this.loading = false;
+              })
+              .getConfig(); // Exposed global
+          },
+
+          createCampaign() {
+            if (!this.campaign.name) return alert('Enter a campaign name');
+            this.submitting = true;
+            google.script.run
+              .withSuccessHandler(() => google.script.host.close())
+              .withFailureHandler(err => { alert(err); this.submitting = false; })
+              .createCampaign(
+                this.campaign.name,
+                this.campaign.filterCol,
+                this.campaign.filterVal,
+                this.campaign.includeAll
+              );
+          },
+
+          runMerge() {
+            this.submitting = true;
+            google.script.run
+              .withSuccessHandler(() => google.script.host.close())
+              .withFailureHandler(err => { alert(err); this.submitting = false; })
+              .sendMailMerge(this.runConfig);
+          },
+
+          saveSettings() {
+            this.submitting = true;
+            google.script.run
+              .withSuccessHandler(() => google.script.host.close())
+              .withFailureHandler(err => { alert(err); this.submitting = false; })
+              .saveSettings(this.settings);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

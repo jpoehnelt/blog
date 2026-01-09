@@ -55,3 +55,8 @@ jobs:
           command: pages deploy apps/site/build --project-name=jpoehnelt
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create clasprc.json
+        run: echo "$CLASPRC_JSON" > ~/.clasprc.json
+        env:
+          CLASPRC_JSON: ${{ secrets.CLASPRC_JSON }}
+      - run: pnpm push
