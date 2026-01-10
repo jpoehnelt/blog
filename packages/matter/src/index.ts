@@ -25,7 +25,7 @@ export interface GrayMatterFile {
  * Parse content with frontmatter.
  * Strictly requires the first line to be the start of the frontmatter separator '---'.
  */
-export function parse(content: string): GrayMatterFile<string> {
+export function parse(content: string): GrayMatterFile {
   if (!content.startsWith("---")) {
     return {
       data: {},
