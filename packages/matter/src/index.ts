@@ -12,7 +12,7 @@ export function stringify(content: string, data: object): string {
   return `---\n${yaml}---\n${content}`;
 }
 
-export interface GrayMatterFile<I> {
+export interface GrayMatterFile {
   data: { [key: string]: any };
   content: string;
   orig: string;
