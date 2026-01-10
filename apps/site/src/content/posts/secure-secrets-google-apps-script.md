@@ -1,32 +1,38 @@
 ---
-title: Secure Secrets in Google Apps Script
-description: >-
-  Do not hardcode secrets in Google Apps Script. Use Properties Service or
-  Google Cloud Secret Manager.
-pubDate: 2025-12-19T00:00:00.000Z
+title: "Secure Secrets in Google Apps Script"
+description: "Do not hardcode secrets in Google Apps Script. Use Properties
+  Service or Google Cloud Secret Manager."
+pubDate: "2025-12-19T00:00:00.000Z"
 tags:
-  - google workspace
-  - apps script
-  - security
-  - google cloud
-  - secret manager
-  - properties service
+  - "google workspace"
+  - "apps script"
+  - "security"
+  - "google cloud"
+  - "secret manager"
+  - "properties service"
+  - "code"
 syndicate: true
 devto:
   id: 3116205
   link: "https://dev.to/googleworkspace/secure-secrets-in-google-apps-script-1dhc"
-  status: published
+  status: "published"
 medium:
-  id: 6590988d1b2d
+  id: "6590988d1b2d"
   link: "https://medium.com/@jpoehnelt/6590988d1b2d"
-  status: draft
+  status: "draft"
 faq:
   - question: "How do I store secrets in Google Apps Script?"
-    answer: "For general configuration, use PropertiesService. For sensitive secrets like API keys or database passwords, use Google Cloud Secret Manager."
+    answer:
+      "For general configuration, use PropertiesService. For sensitive secrets
+      like API keys or database passwords, use Google Cloud Secret Manager."
   - question: "Why use Google Cloud Secret Manager instead of Script Properties?"
-    answer: "Script Properties are visible to anyone with edit access to the script. Secret Manager provides audit logging, versioning, and finer-grained IAM controls, securing high-value secrets."
+    answer:
+      "Script Properties are visible to anyone with edit access to the script.
+      Secret Manager provides audit logging, versioning, and finer-grained IAM
+      controls, securing high-value secrets."
   - question: "How can I improve performance when fetching secrets?"
-    answer: "Use CacheService to store the decoded secret after fetching it from Secret Manager to avoid unnecessary network calls and reduce API costs."
+    answer: "Use CacheService to store the decoded secret after fetching it from
+      Secret Manager to avoid unnecessary network calls and reduce API costs."
 ---
 
 <script>

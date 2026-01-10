@@ -1,7 +1,7 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import glob from "fast-glob";
-import matter from "gray-matter";
+import matter from "@jpoehnelt/matter";
 import { readFile, writeFile } from "fs/promises";
 import path from "path";
 import { CONFIG } from "./syndicate/config.js";
@@ -80,13 +80,13 @@ async function main() {
     try {
       // Read SOURCE for frontmatter and original content (for writing back)
       const rawSourceContent = await readFile(sourcePath, "utf-8");
-      const parsedSource = matter(rawSourceContent);
+      const parsedSource = matter.parse(rawSourceContent);
 
       if (parsedSource.data.syndicate !== true) continue;
 
       // Read BUILD for syndicated content (includes footer, license, etc)
       const rawBuildContent = await readFile(file, "utf-8");
-      const parsedBuild = matter(rawBuildContent);
+      const parsedBuild = matter.parse(rawBuildContent);
 
       const slug = path.basename(sourcePath, ".md");
       const canonicalUrl =
@@ -144,10 +144,7 @@ async function main() {
       if (hasChanges && !argv.dryRun) {
         await writeFile(
           sourcePath,
-          matter.stringify(parsedSource.content, currentFrontmatter, {
-            // @ts-ignore quotingType is not defined in the type definition
-            quotingType: '"',
-          }),
+          matter.stringify(parsedSource.content, currentFrontmatter),
         );
         console.log(`✅ Updated frontmatter for ${filename}`);
       }

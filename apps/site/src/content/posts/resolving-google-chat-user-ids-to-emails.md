@@ -5,26 +5,28 @@ description: >-
   Delegation. Use Service Account Impersonation and custom Admin roles.
 pubDate: "2025-12-23"
 tags:
-  - google chat
-  - google workspace
-  - service account
-  - admin sdk
-  - people api
-  - service account impersonation
-  - custom role
-  - least privilege
-  - directory api
-  - domain wide delegation
+  - "google chat"
+  - "google workspace"
+  - "service account"
+  - "admin sdk"
+  - "people api"
+  - "service account impersonation"
+  - "custom role"
+  - "least privilege"
+  - "directory api"
+  - "domain wide delegation"
+  - "code"
 syndicate: true
 devto:
   id: 3123344
-  link: >-
-    https://dev.to/googleworkspace/resolving-google-chat-user-ids-to-emails-the-least-privilege-way-4lga
-  status: published
+  link:
+    "https://dev.to/googleworkspace/resolving-google-chat-user-ids-to-emails-\
+    the-least-privilege-way-4lga"
+  status: "published"
 medium:
-  id: 9dcb597dcd2a
+  id: "9dcb597dcd2a"
   link: "https://medium.com/@jpoehnelt/9dcb597dcd2a"
-  status: draft
+  status: "draft"
 ---
 
 <script>

@@ -1,25 +1,26 @@
 ---
-title: React Wrapper for Google Drive Picker
-description: >-
-  Announcing the new React component for the Google Drive Picker, wrapping usage
-  of the web component for easier integration.
+title: "React Wrapper for Google Drive Picker"
+description: "Announcing the new React component for the Google Drive Picker,
+  wrapping usage of the web component for easier integration."
 pubDate: "2025-12-17"
 tags:
-  - google workspace
-  - drive
-  - picker
-  - react
-  - web component
+  - "google workspace"
+  - "drive"
+  - "picker"
+  - "react"
+  - "web component"
+  - "code"
 syndicate: true
 devto:
   id: 3114293
   link: "https://dev.to/googleworkspace/react-wrapper-for-google-drive-picker-1api"
-  status: published
+  status: "published"
 medium:
-  id: 5cfc30792f45
-  link: >-
-    https://medium.com/@jpoehnelt/react-wrapper-for-google-drive-picker-5cfc30792f45
-  status: published
+  id: "5cfc30792f45"
+  link:
+    "https://medium.com/@jpoehnelt/react-wrapper-for-google-drive-picker-5cfc\
+    30792f45"
+  status: "published"
 ---
 
 <script>
