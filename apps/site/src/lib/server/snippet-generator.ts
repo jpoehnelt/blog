@@ -5,7 +5,7 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import { visit } from "unist-util-visit";
 import { createHighlighter } from "shiki";
-import matter from "gray-matter";
+import matter from "@jpoehnelt/matter";
 import {
   EXT_TO_LANG,
   SHIKI_THEMES,
@@ -64,7 +64,7 @@ export async function generateSnippets() {
 
   for (const file of markdownFiles) {
     const content = await fs.readFile(file, "utf-8");
-    const { data, content: markdownBody } = matter(content);
+    const { data, content: markdownBody } = matter.parse(content);
 
     // Parse AST to find snippets
     const processor = unified().use(remarkParse);

@@ -15,6 +15,7 @@
 - **Lists**: Use bullet points or numbered lists to break up dense text.
 - **Emphasis**: Use **bold** for key terms or emphasis. Use _italics_ sparingly for stress or notes.
 - **Links**: Use descriptive link text. Link to official documentation or authoritative sources when relevant.
+- **Tags**: Use tags to categorize content. Common tags include `google`, `apps script`, `google workspace`, `gmail`, `javascript`, `typescript`, `python`, `oauth`, etc. Almost all posts should include either `code` or `run`.
 
 ## Technical Content
 

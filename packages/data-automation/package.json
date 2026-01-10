@@ -25,6 +25,7 @@
     "vitest": "^4.0.16"
   },
   "dependencies": {
+    "@jpoehnelt/matter": "workspace:*",
     "@types/mdast": "^4.0.4",
     "axios": "^1.12.2",
     "date-fns": "^2.30.0",
@@ -32,7 +33,6 @@
     "dotenv": "^16.6.1",
     "fast-glob": "^3.3.3",
     "fast-xml-parser": "^4.5.3",
-    "gray-matter": "^4.0.3",
     "jsdom": "^22.1.0",
     "ky": "^1.14.1",
     "libsodium-wrappers": "^0.7.15",
