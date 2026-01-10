@@ -1,9 +1,8 @@
 ---
-title: "Resolving Google Chat User IDs to Emails: The Least Privilege Way"
+title: "Resolve Chat User IDs to Emails: Least Privilege"
 description: >-
-  A secure strategy to resolve Google Chat User IDs to email addresses without
-  using Domain-Wide Delegation. By combining Direct Role Assignment with Service
-  Account Impersonation, you can maintain Least Privilege security.
+  Securely resolve Google Chat User IDs to emails without Domain-Wide
+  Delegation. Use Service Account Impersonation and custom Admin roles.
 pubDate: "2025-12-23"
 tags:
   - google chat

@@ -1,8 +1,8 @@
 ---
-title: Converting between Office docx and Google Docs in Google Apps Script
+title: Convert docx to Google Docs with Apps Script
 description: >-
-  Learn how to programmatically convert, open, and edit Microsoft Word .docx
-  files using Google Apps Script and the Drive API.
+  Programmatically convert, open, and edit Microsoft Word .docx files in Google
+  Apps Script using the Drive API and DocumentApp.
 pubDate: "2024-04-30"
 tags:
   - code

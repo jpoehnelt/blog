@@ -1,6 +1,6 @@
 ---
-title: "Using Google Container Registry, Docker Buildx, and GitHub Actions"
-description: A pattern for authenticating to gcr.io from docker/build-push-action.
+title: "Docker Buildx, GCR, and GitHub Actions Guide"
+description: Authenticate and push to Google Container Registry (gcr.io) from GitHub Actions using the docker/build-push-action and Google Cloud Auth.
 pubDate: "2022-09-22"
 tags:
   - code
