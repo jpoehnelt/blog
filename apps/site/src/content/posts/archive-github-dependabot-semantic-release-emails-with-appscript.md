@@ -1,6 +1,6 @@
 ---
-title: Automatically Archiving Dependabot and Semantic Release Emails
-description: Using Google Apps Script as part of my open source workflow.
+title: Archiving Dependabot Emails with Apps Script
+description: Archive Dependabot and Semantic Release emails automatically using Google Apps Script cron jobs to declutter your inbox.
 pubDate: "2022-05-26"
 tags:
   - code

@@ -109,3 +109,14 @@ This component is **automatically added** to the bottom of posts that include ta
 ## Specific Conventions
 
 - **Dates**: Use ISO 8601 format (YYYY-MM-DD) for `pubDate`.
+
+## SEO Guidelines
+
+- **Titles**:
+  - Keep titles under 60 characters to avoid truncation in search results.
+  - Preferred length is < 50 characters to allow for brand suffix (e.g., " - Brand Name").
+  - Be descriptive but concise.
+- **Descriptions**:
+  - Keep descriptions under 160 characters.
+  - Summarize the content and include a call to action or hook.
+  - Avoid duplicate descriptions across posts.

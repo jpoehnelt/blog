@@ -1,9 +1,8 @@
 ---
 title: "Promises, async and await in Google Apps Script"
 description: >-
-  Google Apps Script is based on the V8 engine and supports the use of Promises,
-  async and await. However, there are almost no APIs available that are
-  asynchronous except for the WebAssembly API.
+  Understand async/await and Promises in Google Apps Script. Learn why most APIs
+  remain synchronous and how WebAssembly is the exception.
 pubDate: "2024-02-07"
 tags:
   - code
