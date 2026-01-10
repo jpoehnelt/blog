@@ -52,7 +52,7 @@ export function parse(content: string): GrayMatterFile<string> {
 
   const rawMatter = content.slice(3, end);
   const data = YAML.parse(rawMatter) || {};
-  const body = content.slice(end + 4).replace(/^\n/, ""); // Remove first newline after ---
+  const body = content.slice(end + 4).replace(/^\r?\n/, ""); // Remove first newline after ---
 
   return {
     data,
