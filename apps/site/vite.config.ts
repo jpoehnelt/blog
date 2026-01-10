@@ -1,3 +1,4 @@
+import matter from "@jpoehnelt/matter";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
@@ -23,6 +24,53 @@ function snippetPlugin() {
     async handleHotUpdate({ file }: any) {
       if (file.includes("src/content/posts") && file.endsWith(".md")) {
         await generateSnippets();
+      }
+    },
+  };
+}
+
+function tagsPlugin() {
+  function normalizedTags(tags: string[]) {
+    return tags.map((tag: string) => tag.toLowerCase().replace(" ", "").trim());
+  }
+
+  const LIKELY_CODE_TAGS = normalizedTags([
+    "apps script",
+    "google workspace",
+    "javascript",
+    "typescript",
+    "python",
+    "oauth",
+  ]);
+
+  return {
+    name: "tags-plugin",
+    apply: "build" as const,
+    async buildStart() {
+      const posts = await glob("src/content/posts/*.md");
+      for (const post of posts) {
+        const fileContent = await fs.promises.readFile(post, "utf-8");
+        const { data, content } = matter.parse(fileContent);
+
+        let modified = false;
+
+        if (!data.tags) {
+          data.tags = [];
+        }
+
+        const normalizeTags = normalizedTags(data.tags);
+        for (const tag of LIKELY_CODE_TAGS) {
+          if (!normalizeTags.includes("code") && normalizeTags.includes(tag)) {
+            data.tags.push("code");
+            modified = true;
+            break;
+          }
+        }
+
+        if (modified) {
+          await fs.promises.writeFile(post, matter.stringify(content, data));
+          console.log(`Updated tags for ${post}`);
+        }
       }
     },
   };
@@ -56,6 +104,7 @@ function copyImages() {
 
 export default defineConfig({
   plugins: [
+    tagsPlugin(),
     tailwindcss(),
     enhancedImages(),
     sveltekit(),

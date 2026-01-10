@@ -16,5 +16,5 @@
 - **Decision:** Moved CSP configuration from `svelte.config.js` to a manual `<meta>` tag in `apps/site/src/app.html`.
 - **Reasoning:**
   - Even with `mode: "auto"`, SvelteKit was generating hashes for its own inline scripts (like hydration payloads) and adding them to the CSP header.
-  - The presence of *any* hash in the CSP header causes browsers to ignore `'unsafe-inline'`, which broke the relaxed policy we intended.
+  - The presence of _any_ hash in the CSP header causes browsers to ignore `'unsafe-inline'`, which broke the relaxed policy we intended.
   - By removing `csp` from `svelte.config.js`, we prevent SvelteKit from generating these hashes, allowing our manual `'unsafe-inline'` policy in `app.html` to take precedence and function correctly.

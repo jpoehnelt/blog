@@ -1,27 +1,39 @@
 ---
 title: "Currentonly Scopes in Google Apps Script"
-description: >-
-  Learn about the @OnlyCurrentDoc annotation and currentonly scopes in Google Apps Script. 
-  Understand why and how to use them, along with their critical limitations regarding 
-  Advanced Services and external APIs.
+description: "Learn about the @OnlyCurrentDoc annotation and currentonly scopes
+  in Google Apps Script.  Understand why and how to use them, along with their
+  critical limitations regarding  Advanced Services and external APIs."
 pubDate: "2026-01-06"
 tags:
-  - google
-  - google workspace
-  - apps script
-  - security
-  - scopes
+  - "google"
+  - "google workspace"
+  - "apps script"
+  - "security"
+  - "scopes"
+  - "code"
 faq:
   - question: "What is the `currentonly` scope in Apps Script?"
-    answer: "It restricts a script's access to only the currently active file (document, spreadsheet, form, or presentation) rather than all files in the user's Drive."
+    answer: "It restricts a script's access to only the currently active file
+      (document, spreadsheet, form, or presentation) rather than all files in
+      the user's Drive."
   - question: "How do I enable `currentonly` scope?"
-    answer: "Add the `/** @OnlyCurrentDoc */` JSDoc annotation at the top of your script file, or manually add the `.currentonly` scope URL to your `appsscript.json` manifest."
+    answer:
+      "Add the `/** @OnlyCurrentDoc */` JSDoc annotation at the top of your
+      script file, or manually add the `.currentonly` scope URL to your
+      `appsscript.json` manifest."
   - question: "Why am I getting 'Script does not have permission' errors?"
-    answer: "If you use `currentonly`, you cannot access other files using methods like `openById` or `openByUrl`. You can only use `getActiveSpreadsheet()`, `getActiveDocument()`, etc."
+    answer:
+      "If you use `currentonly`, you cannot access other files using methods
+      like `openById` or `openByUrl`. You can only use `getActiveSpreadsheet()`,
+      `getActiveDocument()`, etc."
   - question: "Does `currentonly` work with Advanced Google Services?"
-    answer: "No. Advanced Services (like the Sheets API v4 enabled in 'Services') require their own full scopes and do not support `currentonly`."
+    answer:
+      "No. Advanced Services (like the Sheets API v4 enabled in 'Services')
+      require their own full scopes and do not support `currentonly`."
   - question: "Can I use `UrlFetchApp` with `currentonly`?"
-    answer: "No. If your script makes external requests, it needs the `https://www.googleapis.com/auth/script.external_request` scope, which is separate from `currentonly`."
+    answer: "No. If your script makes external requests, it needs the
+      `https://www.googleapis.com/auth/script.external_request` scope, which is
+      separate from `currentonly`."
 ---
 
 <script>

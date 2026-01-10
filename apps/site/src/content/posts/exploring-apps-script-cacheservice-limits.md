@@ -1,39 +1,60 @@
 ---
 title: "Apps Script CacheService: Unofficial Documentation and Limits"
-description: "The unofficial documentation for the Apps Script CacheService. Learn about key/value constraints, size limits, and the undocumented FIFO batch eviction policy."
+description: "The unofficial documentation for the Apps Script CacheService.
+  Learn about key/value constraints, size limits, and the undocumented FIFO
+  batch eviction policy."
 pubDate: "2025-12-22"
 tags:
-  - apps script
-  - cacheservice
-  - google workspace
-  - fifo
-  - cache
-  - performance
-  - limits
-  - documentation
+  - "apps script"
+  - "cacheservice"
+  - "google workspace"
+  - "fifo"
+  - "cache"
+  - "performance"
+  - "limits"
+  - "documentation"
+  - "code"
 faq:
   - question: "What is the key length limit for CacheService?"
-    answer: "I've tested this, and the key length is a hard 250 characters. If your key is even one character over, it will throw an error."
+    answer:
+      "I've tested this, and the key length is a hard 250 characters. If your
+      key is even one character over, it will throw an error."
   - question: "What is the value size limit for CacheService?"
-    answer: "The documentation says 100KB, and my tests confirm it. The limit is exactly 102,400 bytes, and like the key length, it's a hard limit."
+    answer: "The documentation says 100KB, and my tests confirm it. The limit is
+      exactly 102,400 bytes, and like the key length, it's a hard limit."
   - question: "What is the eviction policy for CacheService?"
-    answer: "This is a critical one I discovered. The CacheService uses a FIFO (First-In, First-Out) policy. This means when the cache is full (at 1000 items), it doesn't just remove the oldest item; it removes a whole batch of the oldest items, around 10% of the cache."
+    answer: "This is a critical one I discovered. The CacheService uses a FIFO
+      (First-In, First-Out) policy. This means when the cache is full (at 1000
+      items), it doesn't just remove the oldest item; it removes a whole batch
+      of the oldest items, around 10% of the cache."
   - question: "What is the difference between getScriptCache() and getUserCache()?"
-    answer: "This is a huge distinction. getScriptCache() is shared by everyone using your script, so if you have multiple users, they can overwrite each other's data. I always use getUserCache() for user-specific data to keep it safe and separate."
+    answer: "This is a huge distinction. getScriptCache() is shared by everyone
+      using your script, so if you have multiple users, they can overwrite each
+      other's data. I always use getUserCache() for user-specific data to keep
+      it safe and separate."
   - question: "How should I handle large payloads with CacheService?"
-    answer: "I can't store anything over 100KB directly. My strategy for this is to chunk the data into smaller pieces, like 90KB each, and store them with separate keys. I then use a 'manifest' key to keep track of the chunks so I can put them back together later."
+    answer:
+      "I can't store anything over 100KB directly. My strategy for this is to
+      chunk the data into smaller pieces, like 90KB each, and store them with
+      separate keys. I then use a 'manifest' key to keep track of the chunks so
+      I can put them back together later."
   - question: "How can I prevent hitting the CacheService rate limits?"
-    answer: "To avoid hitting rate limits, I always use batch operations like getAll() and putAll(). I also use a 'cache-aside' pattern, which means I check the cache first, and if the data isn't there, I fetch it and then store it in the cache. Adding some 'jitter' (randomness) to the expiration times also helps prevent all my cached items from expiring at once."
+    answer: "To avoid hitting rate limits, I always use batch operations like
+      getAll() and putAll(). I also use a 'cache-aside' pattern, which means I
+      check the cache first, and if the data isn't there, I fetch it and then
+      store it in the cache. Adding some 'jitter' (randomness) to the expiration
+      times also helps prevent all my cached items from expiring at once."
 syndicate: true
 devto:
   id: 3121405
-  link: >-
-    https://dev.to/googleworkspace/apps-script-cacheservice-eviction-and-other-limits-1p6d
-  status: published
+  link:
+    "https://dev.to/googleworkspace/apps-script-cacheservice-eviction-and-oth\
+    er-limits-1p6d"
+  status: "published"
 medium:
-  id: 98d5d9ddf69d
+  id: "98d5d9ddf69d"
   link: "https://medium.com/@jpoehnelt/98d5d9ddf69d"
-  status: draft
+  status: "draft"
 ---
 
 Caching is a critical strategy for optimizing performance in Google Apps Script properties, especially when dealing with slow APIs or heavy computations. The built-in `CacheService` provides a simple key-value store, but its documentation leaves several "edge cases" and failure scenarios vague.
