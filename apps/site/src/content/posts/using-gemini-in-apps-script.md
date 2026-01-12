@@ -29,6 +29,11 @@ This has been a long time coming, and it is finally here. Apps Script now has a 
 
 Previously, if you wanted to call Gemini or other Vertex AI models, you had to manually construct `UrlFetchApp` requests, handle bearer tokens, and manage headers. It was doable, but verbose and annoying.
 
+## The Vertex AI Advanced Service
+
+The new service, `VertexAI`, allows you to interact with the Vertex AI API directly. This means you can generate text, images, and more with significantly less boilerplate code. You can check out the full [Vertex AI REST reference docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini) for more details on available methods and parameters.
+
+
 ### Before: The Old Way
 
 In my previous post on [Using Vertex AI in Apps Script](/posts/apps-script-vertex-ai), the code looked like this:
@@ -41,10 +46,7 @@ function predict(prompt) {
     headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
     muteHttpExceptions: true,
     contentType: "application/json",
-    payload: JSON.stringify({
-      instances: [{ prompt }],
-      parameters: { temperature: 0.2, maxOutputTokens: 256 }
-    }),
+    payload: JSON.stringify(payload),
   };
   const response = UrlFetchApp.fetch(URL, options);
   // ... parsing logic ...
@@ -57,11 +59,9 @@ Now, with the built-in service, it's just:
 
 ```javascript
 const response = VertexAI.Endpoints.generateContent(payload, model);
+// ... parsing logic ...
 ```
 
-## The Vertex AI Advanced Service
-
-The new service, `VertexAI`, allows you to interact with the Vertex AI API directly. This means you can generate text, images, and more using models like **Gemini 3 Pro** with significantly less boilerplate code. You can check out the full [Vertex AI REST reference docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini) for more details on available methods and parameters.
 
 ## Prerequisites
 
