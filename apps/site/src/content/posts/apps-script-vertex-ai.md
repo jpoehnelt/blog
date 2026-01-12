@@ -21,7 +21,7 @@ tags:
 
 <Note>
 
-Update: See [Generating Text with Gemini Pro in Apps Script](/posts/apps-script-gemini-pro-text) for a snippet on using Gemini Pro.
+**New:** Check out [Using Gemini in Apps Script](/posts/using-gemini-in-apps-script) for the latest built-in service!
 
 </Note>
 
