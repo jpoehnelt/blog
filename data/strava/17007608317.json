@@ -136,6 +136,65 @@
       "hidden": false
     },
     {
+      "id": 3445872697745073700,
+      "resource_state": 2,
+      "name": "High Meadows Fire Rd Climb",
+      "activity": {
+        "id": 17007608317,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 422,
+      "moving_time": 422,
+      "start_date": "2026-01-11T03:46:42Z",
+      "start_date_local": "2026-01-10T20:46:42Z",
+      "distance": 886,
+      "start_index": 3123,
+      "end_index": 3545,
+      "average_cadence": 74.5,
+      "device_watts": true,
+      "average_watts": 282.2,
+      "average_heartrate": 135.2,
+      "max_heartrate": 146,
+      "segment": {
+        "id": 40773868,
+        "resource_state": 2,
+        "name": "High Meadows Fire Rd Climb",
+        "activity_type": "Run",
+        "distance": 886,
+        "average_grade": 4.7,
+        "maximum_grade": 22.5,
+        "elevation_high": 2296.6,
+        "elevation_low": 2251,
+        "start_latlng": [
+          37.401863,
+          -107.856042
+        ],
+        "end_latlng": [
+          37.408517,
+          -107.856073
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3445290609187156000,
       "resource_state": 2,
       "name": "Water Tank Trail West Descent",
