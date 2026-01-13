@@ -77,6 +77,72 @@
   "prefer_perceived_exertion": null,
   "segment_efforts": [
     {
+      "id": 3443236096142154000,
+      "resource_state": 2,
+      "name": ".",
+      "activity": {
+        "id": 9870192846,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 312,
+      "moving_time": 311,
+      "start_date": "2023-09-17T16:40:15Z",
+      "start_date_local": "2023-09-17T10:40:15Z",
+      "distance": 647.2,
+      "start_index": 1942,
+      "end_index": 2254,
+      "average_cadence": 77.9,
+      "device_watts": true,
+      "average_watts": 202.1,
+      "average_heartrate": 128.8,
+      "max_heartrate": 138,
+      "segment": {
+        "id": 40738938,
+        "resource_state": 2,
+        "name": ".",
+        "activity_type": "Run",
+        "distance": 647.2,
+        "average_grade": 4.7,
+        "maximum_grade": 19.4,
+        "elevation_high": 2164.4,
+        "elevation_low": 2133.8,
+        "start_latlng": [
+          37.397019,
+          -107.852374
+        ],
+        "end_latlng": [
+          37.400368,
+          -107.851645
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 3
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3138591007118289000,
       "resource_state": 2,
       "name": "Ridge Climb",
@@ -128,6 +194,65 @@
         "private": false,
         "hazardous": true,
         "starred": true
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 3445872731763847700,
+      "resource_state": 2,
+      "name": "High Meadows Fire Rd Climb",
+      "activity": {
+        "id": 9870192846,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 436,
+      "moving_time": 436,
+      "start_date": "2023-09-17T17:03:57Z",
+      "start_date_local": "2023-09-17T11:03:57Z",
+      "distance": 886,
+      "start_index": 3342,
+      "end_index": 3778,
+      "average_cadence": 72.4,
+      "device_watts": true,
+      "average_watts": 200.3,
+      "average_heartrate": 132,
+      "max_heartrate": 145,
+      "segment": {
+        "id": 40773868,
+        "resource_state": 2,
+        "name": "High Meadows Fire Rd Climb",
+        "activity_type": "Run",
+        "distance": 886,
+        "average_grade": 4.7,
+        "maximum_grade": 22.5,
+        "elevation_high": 2296.6,
+        "elevation_low": 2251,
+        "start_latlng": [
+          37.401863,
+          -107.856042
+        ],
+        "end_latlng": [
+          37.408517,
+          -107.856073
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
       },
       "pr_rank": null,
       "achievements": [],
