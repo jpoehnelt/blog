@@ -64,6 +64,21 @@ function onOpen() {
 
 When you save your script, Apps Script attempts to narrow the required scopes to their `.currentonly` variants, such as `https://www.googleapis.com/auth/spreadsheets.currentonly`.
 
+You can also explicitly define this in your `appsscript.json` manifest file to pair with the JSDoc annotation:
+
+```json
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets.currentonly"
+  ]
+}
+```
+
 ## The Benefits
 
 1.  **Security**: If your script is compromised or contains a bug, the damage is limited to the single file it's running in.
