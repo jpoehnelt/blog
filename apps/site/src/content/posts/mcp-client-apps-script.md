@@ -13,7 +13,10 @@ faq:
   - question: Can I use `stdio` or `sse` MCP servers?
     answer: No. `stdio` doesn't work because Apps Script is in the cloud and `sse` or HTTP Server Sent Events are not supported in Apps Script `UrlFetchApp`.
   - question: How do I authenticate the MCP server?
-    answer: You should to use servers that support key-based or long lived tokens in headers. Google MCP servers might support the Apps Script OAuth token if you have the correct scopes defined! See [Secure Secrets in Apps Script](/posts/secure-secrets-google-apps-script/).
+    answer: You should use servers that support key-based or long lived tokens in headers. Google MCP servers might support the Apps Script OAuth token if you have the correct scopes defined! See [Secure Secrets in Apps Script](/posts/secure-secrets-google-apps-script/).
+  - question: Can I use this to connect to Google APIs like Drive or Gmail?
+    answer: Maybe. This client is for communicating with an MCP server. However, you could build an MCP server that exposes tools for interacting with Google APIs. For example, your MCP server could have a `createDoc` tool that uses the Google Drive API. This client would then call your MCP server's `createDoc` tool. If you don't have this server already, it is probably easier to just create the Apps Script method/tool directly.
+
 ---
 
 <script>
@@ -229,7 +232,7 @@ Here is what the code looks like to call the MCP server from Vertex AI in Apps S
 
 <Image src="mcp-vertex-ai-tool-call.png" alt="Vertex AI Tool Call from MCP Server in Apps Script" />
 
-## Sumamry
+## Summary
 
 This simple wrapper allows Google Apps Script to act as an MCP Client, enabling you to integrate your Workspace automation directly with the growing ecosystem of MCP servers.
 
