@@ -60,12 +60,12 @@ git lfs install --skip-smudge
 
 # 3. Bypass the Jules Proxy
 git config --global --unset-all \
-  url.[http://git@192.168.0.1:8080/.insteadOf](http://git@192.168.0.1:8080/.insteadOf)
+  url."http://git@192.168.0.1:8080/.insteadOf"
 
 # 4. Manual authenticated pull
 cd /app
-git -c url."[https://github.com/](https://github.com/)".insteadOf="" \
-    -c lfs.url="[https://github.com/jpoehnelt/blog.git/info/lfs](https://github.com/jpoehnelt/blog.git/info/lfs)" \
+git -c url."https://github.com/".insteadOf="" \
+    -c lfs.url="https://github.com/jpoehnelt/blog.git/info/lfs" \
     lfs pull
 ```
 
