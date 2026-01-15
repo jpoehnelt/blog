@@ -40,17 +40,16 @@ Since the clone happens *before* your setup script, you can't inject the necessa
 
 ## What I tried
 
-I had a script like this:
+I had a script like this in the Jules environment page.
 
 **THIS DOES NOT WORK**
 
 ```bash
 # 1. Install LFS & Fix Hook Path
-sudo apt-get update && \
-  sudo apt-get install -y git-lfs
+sudo apt-get update
+sudo apt-get install -y git-lfs
 mkdir -p ~/.git-hooks
-git config --global core.hooksPath \
-  ~/.git-hooks
+git config --global core.hooksPath ~/.git-hooks
 
 # 2. Force LFS to 'Success' without downloading
 # This allows Jules' automated clone to complete.
@@ -69,17 +68,17 @@ git -c url."https://github.com/".insteadOf="" \
     lfs pull
 ```
 
-This was successful on the Jules environment script page, but like I said above, the timing is wrong. The LFS pull happens *after* the clone, so it doesn't work.
+This was successful on the Jules environment script page, but like I said above, the timing is wrong.
 
 ## Abandoning Git LFS
 
-Instead of fighting the environment with complex `git -c` overrides and global "no-op" smudge filters, I decided to **abandon Git LFS entirely.**
+Instead of fighting the environment with complex overrides and global "no-op" smudge filters, I decided to **abandon Git LFS entirely.**
 
 My files are small enough to be handled by standard Git. I have a GitHub workflow that optimizes my images and then commits the files to GitHub.
 
 ## How to Migrate Back to Standard Git
 
-If you're stuck in LFS hell, here is how you move the files back into your main Git history:
+If you're stuck with LFS, here is how you move the files back into your main Git history:
 
 ```bash
 # 1. Pull everything local
@@ -92,7 +91,7 @@ git lfs migrate export --everything --include="*.png,*.jpg,*.jpeg,*.gif"
 # 3. Cleanup and GC
 rm .gitattributes
 git add .
-git commit -m "chore: Migrate assets to standard Git"
+git commit -m "chore: migrate assets to standard Git"
 ```
 
 Some additional steps that *YOU SHOULD RESEARCH* before running:
@@ -108,7 +107,9 @@ git gc --prune=now --aggressive
 ```
 
 <Note>
+
 **Warning:** This rewrites your Git history. You will need to `git push --force` to your origin, and any other collaborators will need to re-clone.
+
 </Note>
 
 ## Conclusion
