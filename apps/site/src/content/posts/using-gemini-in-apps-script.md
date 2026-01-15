@@ -164,8 +164,21 @@ The result:
 
 ## Troubleshooting
 
-### "Unexpected error while getting the method or property generateContent..."
+### "Exception: Unexpected error while getting the method or property generateContent..."
 
-> Unexpected error while getting the method or property generateContent on object Apiary.aiplatform.endpoints.
+> Exception: Unexpected error while getting the method or property generateContent on object Apiary.aiplatform.endpoints.
 
-If you see this error, it is often because you are using a model that isn't available in your selected region, or you are trying to use a **Preview model** without using the GLOBAL endpoint. There is a bug here, and you can use the `gemini-2.5-pro` model instead.
+If you see this error, it is likely due to **internal bugs in the Advanced Vertex AI Service**. It often happens when using models that aren't fully supported by the service's auto-discovery (like Preview models) or regional availability issues.
+
+To workaround this, try using a stable model like `gemini-1.5-flash` or revert to the `UrlFetchApp` method.
+
+If you need to use a preview model or `global` location with `UrlFetchApp`, here are some `const`s to help you out:
+
+```javascript
+const LOCATION = "global";
+const MODEL_ID = "gemini-3-flash-preview";
+const model =
+  `projects/${PROJECT_ID}/locations/${LOCATION}` +
+  `/publishers/google/models/${MODEL_ID}`;
+const url = `https://aiplatform.googleapis.com/v1/${model}:generateContent`;
+```
