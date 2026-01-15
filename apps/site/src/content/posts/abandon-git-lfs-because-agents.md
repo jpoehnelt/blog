@@ -40,9 +40,7 @@ Since the clone happens *before* your setup script, you can't inject the necessa
 
 ## What I tried
 
-I had a script like this in the Jules environment page.
-
-**THIS DOES NOT WORK**
+I had a script like this in the Jules environment page. **THIS DOES NOT WORK**
 
 ```bash
 # 1. Install LFS & Fix Hook Path
