@@ -1,14 +1,6 @@
 {
   "timeZone": "America/Denver",
-  "dependencies": {
-    "enabledAdvancedServices": [
-      {
-        "userSymbol": "VertexAI",
-        "version": "v1",
-        "serviceId": "aiplatform"
-      }
-    ]
-  },
+  "dependencies": {},
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "oauthScopes": [
