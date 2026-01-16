@@ -2,6 +2,7 @@
   import * as NavigationMenu from "$lib/components/ui/navigation-menu";
   import * as Sheet from "$lib/components/ui/sheet";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
+  import Search from "$lib/components/Search.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
   import { page } from "$app/state";
 
@@ -53,6 +54,7 @@
       class="hidden md:flex items-center gap-6 ml-auto"
       aria-label="Main navigation"
     >
+      <Search />
       <NavigationMenu.Root class="flex justify-end">
         <NavigationMenu.List class="flex items-center">
           {#each navLinks as link}
