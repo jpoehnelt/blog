@@ -1,5 +1,6 @@
 <script lang="ts">
   import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import ExternalLink from "$lib/components/ExternalLink.svelte";
   import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
 
   interface Props {
@@ -18,10 +19,8 @@
       >
         {activity.name}
       </a>
-      <a
+      <ExternalLink
         href={`https://www.strava.com/activities/${activity.id}`}
-        target="_blank"
-        rel="noopener noreferrer"
         class="text-muted-foreground hover:text-foreground"
         aria-label="View on Strava (opens in a new tab)"
       >
@@ -42,7 +41,7 @@
             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
           />
         </svg>
-      </a>
+      </ExternalLink>
     </div>
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground">
       <FormattedDate date={new Date(activity.start_date)} />

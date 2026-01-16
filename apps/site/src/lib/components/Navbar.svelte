@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as NavigationMenu from "$lib/components/ui/navigation-menu";
   import * as Sheet from "$lib/components/ui/sheet";
+  import ExternalLink from "$lib/components/ExternalLink.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
   import { page } from "$app/state";
 
@@ -79,10 +80,8 @@
           aria-label="Social links"
         >
           {#each socialLinks as social}
-            <a
+            <ExternalLink
               href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
               class="text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded p-1"
               aria-label={social.name}
             >
@@ -95,7 +94,7 @@
               >
                 <path d={social.icon} />
               </svg>
-            </a>
+            </ExternalLink>
           {/each}
         </div>
       {/if}
@@ -161,10 +160,8 @@
               </p>
               <div class="flex flex-col gap-2">
                 {#each socialLinks as social}
-                  <a
+                  <ExternalLink
                     href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     class="px-4 py-3 text-base font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 flex items-center gap-3"
                   >
                     <svg
@@ -176,7 +173,7 @@
                       <path d={social.icon} />
                     </svg>
                     {social.name}
-                  </a>
+                  </ExternalLink>
                 {/each}
               </div>
             </div>
