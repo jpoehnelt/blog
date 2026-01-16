@@ -64,7 +64,7 @@
   </div>
   <div
     id={src}
-    class="p-0 [&_pre]:!my-0 [&_pre]:!rounded-none [&_pre]:!border-0 [&_pre]:!bg-transparent [&_pre]:!px-4 [&_pre]:!py-3"
+    class="p-0 [&_pre]:!my-0 [&_pre]:!rounded-none [&_pre]:!border-0 [&_pre]:!bg-transparent [&_pre]:!p-0 [&_code]:!px-4 [&_code]:!pt-3 [&_code]:!pb-5"
   >
     {@html code}
   </div>
