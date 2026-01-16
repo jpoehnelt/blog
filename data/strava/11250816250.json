@@ -130,6 +130,71 @@
       "hidden": false
     },
     {
+      "id": 3445872742675910000,
+      "resource_state": 2,
+      "name": "High Meadows Fire Rd Climb",
+      "activity": {
+        "id": 11250816250,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 414,
+      "moving_time": 414,
+      "start_date": "2024-04-24T01:24:16Z",
+      "start_date_local": "2024-04-23T19:24:16Z",
+      "distance": 886,
+      "start_index": 392,
+      "end_index": 523,
+      "average_cadence": 76.7,
+      "device_watts": false,
+      "average_heartrate": 132.2,
+      "max_heartrate": 148,
+      "segment": {
+        "id": 40773868,
+        "resource_state": 2,
+        "name": "High Meadows Fire Rd Climb",
+        "activity_type": "Run",
+        "distance": 886,
+        "average_grade": 4.7,
+        "maximum_grade": 22.5,
+        "elevation_high": 2296.6,
+        "elevation_low": 2251,
+        "start_latlng": [
+          37.401863,
+          -107.856042
+        ],
+        "end_latlng": [
+          37.408517,
+          -107.856073
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 1
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3402686151972776000,
       "resource_state": 2,
       "name": "Big Meadow Cruise",

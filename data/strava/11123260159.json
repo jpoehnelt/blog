@@ -130,6 +130,71 @@
       "hidden": false
     },
     {
+      "id": 3445872742677093000,
+      "resource_state": 2,
+      "name": "High Meadows Fire Rd Climb",
+      "activity": {
+        "id": 11123260159,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 426,
+      "moving_time": 415,
+      "start_date": "2024-04-07T01:28:22Z",
+      "start_date_local": "2024-04-06T19:28:22Z",
+      "distance": 886,
+      "start_index": 1004,
+      "end_index": 1135,
+      "average_cadence": 74.1,
+      "device_watts": false,
+      "average_heartrate": 139.4,
+      "max_heartrate": 147,
+      "segment": {
+        "id": 40773868,
+        "resource_state": 2,
+        "name": "High Meadows Fire Rd Climb",
+        "activity_type": "Run",
+        "distance": 886,
+        "average_grade": 4.7,
+        "maximum_grade": 22.5,
+        "elevation_high": 2296.6,
+        "elevation_low": 2251,
+        "start_latlng": [
+          37.401863,
+          -107.856042
+        ],
+        "end_latlng": [
+          37.408517,
+          -107.856073
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": "Colorado",
+        "country": "USA",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [
+        {
+          "type_id": 7,
+          "type": "segment_effort_count_leader",
+          "rank": 1,
+          "effort_count": 1
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
       "id": 3402686135122093600,
       "resource_state": 2,
       "name": "Big Meadow Cruise",
@@ -907,8 +972,8 @@
   "hide_from_home": false,
   "embed_token": "583c4aea160d60c1bfb0be9e81b382f950c2b075",
   "similar_activities": {
-    "effort_count": 98,
-    "average_speed": 2.332388120568078,
+    "effort_count": 100,
+    "average_speed": 2.3337226453030264,
     "min_average_speed": 1.8429583835946923,
     "mid_average_speed": 2.286169637875331,
     "max_average_speed": 3.0100547536087605,
