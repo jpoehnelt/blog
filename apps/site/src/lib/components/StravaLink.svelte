@@ -1,6 +1,7 @@
 <script lang="ts">
   import { socialIcons } from "$lib/social-icons";
   import { cn } from "$lib/utils.js";
+  import ExternalLink from "$lib/components/ExternalLink.svelte";
 
   interface Props {
     activityId: number | string;
@@ -11,10 +12,8 @@
   let { activityId, class: className, ...rest }: Props = $props();
 </script>
 
-<a
+<ExternalLink
   href={`https://www.strava.com/activities/${activityId}`}
-  target="_blank"
-  rel="noopener noreferrer"
   class={cn(
     "inline-flex items-center gap-2 font-medium text-gray-500 hover:text-[#fc4c02] hover:underline",
     className
@@ -30,4 +29,4 @@
   >
     <path d={socialIcons.strava} />
   </svg>
-</a>
+</ExternalLink>
