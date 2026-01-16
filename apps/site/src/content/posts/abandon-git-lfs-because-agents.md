@@ -1,7 +1,7 @@
 ---
 title: "Why I Ditched Git LFS for my Blog (AI Sandboxes)"
 description: "Git LFS seems like a great idea until you try to use it with AI agents, sandboxed environments, or internal proxies. Here is why it fails in Jules and how I migrated back to standard Git."
-pubDate: "2026-01-15"
+pubDate: "2026-01-16"
 tags:
   - git-lfs
   - jules
