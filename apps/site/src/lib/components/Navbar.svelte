@@ -1,5 +1,4 @@
 <script lang="ts">
-  import * as NavigationMenu from "$lib/components/ui/navigation-menu";
   import * as Sheet from "$lib/components/ui/sheet";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import Search from "$lib/components/Search.svelte";
@@ -25,13 +24,6 @@
     { href: "/posts", label: "Posts" },
     { href: "/#races", label: "Races" },
   ];
-
-  function isActive(href: string) {
-    if (href === "/") {
-      return page.url.pathname === "/";
-    }
-    return page.url.pathname.startsWith(href);
-  }
 </script>
 
 <header
@@ -54,26 +46,30 @@
       class="hidden md:flex items-center gap-6 ml-auto"
       aria-label="Main navigation"
     >
-      <Search />
-      <NavigationMenu.Root class="flex justify-end">
-        <NavigationMenu.List class="flex items-center">
-          {#each navLinks as link}
-            <NavigationMenu.Item>
-              <NavigationMenu.Link
-                href={link.href}
-                class="relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded {isActive(
-                  link.href
-                )
-                  ? 'text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground'
-                  : 'text-foreground/60'}"
-                aria-current={isActive(link.href) ? "page" : undefined}
-              >
-                {link.label}
-              </NavigationMenu.Link>
-            </NavigationMenu.Item>
-          {/each}
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
+      <div class="w-64">
+        <Search />
+      </div>
+
+      <!-- Replacement for NavigationMenu using standard links -->
+      <ul class="flex items-center gap-1">
+        {#each navLinks as link}
+          {@const active =
+            link.href === "/"
+              ? page.url.pathname === "/"
+              : page.url.pathname.startsWith(link.href)}
+          <li>
+            <a
+              href={link.href}
+              class="relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded {active
+                ? 'text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground'
+                : 'text-foreground/60'}"
+              aria-current={active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
 
       <!-- Social Links -->
       {#if socialLinks.length > 0}
@@ -140,16 +136,21 @@
           >
         </Sheet.Header>
         <nav class="flex flex-col gap-4 mt-6" aria-label="Mobile navigation">
+          <div class="px-4">
+            <Search />
+          </div>
           {#each navLinks as link}
+            {@const active =
+              link.href === "/"
+                ? page.url.pathname === "/"
+                : page.url.pathname.startsWith(link.href)}
             <a
               href={link.href}
-              class="px-4 py-3 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 {isActive(
-                link.href
-              )
+              class="px-4 py-3 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 {active
                 ? 'bg-accent text-accent-foreground'
                 : 'text-foreground/80'}"
               onclick={() => (mobileMenuOpen = false)}
-              aria-current={isActive(link.href) ? "page" : undefined}
+              aria-current={active ? "page" : undefined}
             >
               {link.label}
             </a>
