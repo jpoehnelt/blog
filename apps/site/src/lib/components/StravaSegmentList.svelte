@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge";
+  import { Badge } from "$lib/components/ui/badge/index.js";
 
   interface SegmentEffort {
     id: number | string;
@@ -17,7 +17,11 @@
     }[];
   }
 
-  export let segments: SegmentEffort[] = [];
+  interface Props {
+    segments?: SegmentEffort[];
+  }
+
+  let { segments = [] }: Props = $props();
 
   function formatTime(seconds: number): string {
     const mins = Math.floor(seconds / 60);
@@ -46,9 +50,9 @@
 {#if segments && segments.length > 0}
   <div class="space-y-4">
     <h3 class="text-lg font-semibold">Segments</h3>
-    <div class="grid gap-2">
+    <ul class="grid gap-2">
       {#each segments as segment}
-        <div class="flex items-center justify-between p-3 rounded-lg border bg-card text-card-foreground shadow-sm">
+        <li class="flex items-center justify-between p-3 rounded-lg border bg-card text-card-foreground shadow-sm">
           <div class="flex flex-col gap-1 overflow-hidden">
             <div class="flex items-center gap-2">
               <a href={`/segments/${segment.segment.id}`} class="font-medium truncate hover:underline hover:text-primary transition-colors" title={segment.name}>
@@ -74,8 +78,8 @@
           <div class="text-sm font-mono font-medium whitespace-nowrap">
             {formatTime(segment.elapsed_time)}
           </div>
-        </div>
+        </li>
       {/each}
-    </div>
+    </ul>
   </div>
 {/if}
