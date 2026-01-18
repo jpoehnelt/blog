@@ -65,7 +65,7 @@
   <span class="hidden lg:inline-flex">Search posts...</span>
   <span class="inline-flex lg:hidden">Search...</span>
   <kbd
-    class="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex"
+    class="pointer-events-none absolute right-1.5 top-1/2 hidden h-5 -translate-y-1/2 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex"
   >
     <span class="text-xs">⌘</span>K
   </kbd>
