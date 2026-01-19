@@ -42,7 +42,7 @@ jobs:
       - run: pnpm i
       - run: pnpm build
       - run: pnpm check
-      - uses: cloudflare/wrangler-action@v3
+      - uses: cloudflare/wrangler-action@392082e81ffbcb9ebdde27400634aa004b35ea37 # v3.14.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
