@@ -18,7 +18,7 @@
   }: Props = $props();
 </script>
 
-<div class="flex items-baseline gap-2 py-1">
+<li class="flex items-baseline gap-2 py-1">
   <div class="min-w-0 flex-1">
     <a
       href={post.relativeURL}
@@ -44,4 +44,4 @@
       {/if}
     </div>
   </div>
-</div>
+</li>
