@@ -17,8 +17,8 @@
   }: Props = $props();
 </script>
 
-<div class="space-y-1 max-w-4xl">
+<ul class="space-y-1 max-w-4xl">
   {#each posts as post}
     <PostListItem {post} {showTags} {showDescription} {enableTransitions} />
   {/each}
-</div>
+</ul>

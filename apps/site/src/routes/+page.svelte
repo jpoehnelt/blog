@@ -180,11 +180,11 @@
           Race Results
         </h2>
         {#if recentRaces.length > 0}
-          <div class="space-y-4">
+          <ul class="space-y-4">
             {#each recentRaces as race}
               <ActivityListItem activity={race} />
             {/each}
-          </div>
+          </ul>
         {:else}
           <p class="text-sm text-muted-foreground italic">No recent races.</p>
         {/if}

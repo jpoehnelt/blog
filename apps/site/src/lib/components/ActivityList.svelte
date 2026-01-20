@@ -9,8 +9,8 @@
   let { activities }: Props = $props();
 </script>
 
-<div class="space-y-1 max-w-4xl">
+<ul class="space-y-1 max-w-4xl">
   {#each activities as activity}
     <ActivityListItem {activity} />
   {/each}
-</div>
+</ul>
