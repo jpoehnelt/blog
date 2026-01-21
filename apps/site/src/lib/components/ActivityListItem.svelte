@@ -1,16 +1,19 @@
 <script lang="ts">
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
+  import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
   import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
+  import { ExternalLink as ExternalLinkIcon } from "@lucide/svelte";
 
   interface Props {
     activity: StravaActivitySimple;
+    [key: string]: any;
   }
 
-  let { activity }: Props = $props();
+  let { activity, ...rest }: Props = $props();
 </script>
 
-<div class="flex items-baseline gap-2 py-1">
+<li class="flex items-baseline gap-2 py-1" {...rest}>
   <div class="min-w-0 flex-1">
     <div class="flex items-center gap-2">
       <a
@@ -24,35 +27,19 @@
         class="text-muted-foreground hover:text-foreground"
         aria-label="View on Strava (opens in a new tab)"
       >
-        <svg
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-external-link"
-        >
-          <path d="M15 3h6v6" /><path d="M10 14 21 3" /><path
-            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-          />
-        </svg>
+        <ExternalLinkIcon size={12} />
       </ExternalLink>
     </div>
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground">
       <FormattedDate date={new Date(activity.start_date)} />
-      <span aria-hidden="true">•</span>
+      <MetadataSeparator />
       <span>{activity.sport_type || (activity as any).type}</span>
-      <span aria-hidden="true">•</span>
+      <MetadataSeparator />
       <span>{((activity.distance || 0) / 1000).toFixed(2)} km</span>
       {#if (activity.total_elevation_gain || 0) > 0}
-        <span aria-hidden="true">•</span>
+        <MetadataSeparator />
         <span>{activity.total_elevation_gain} m</span>
       {/if}
     </div>
   </div>
-</div>
+</li>
