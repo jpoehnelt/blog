@@ -2,6 +2,7 @@
   import * as Sheet from "$lib/components/ui/sheet";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import Search from "$lib/components/Search.svelte";
+  import NavLink from "$lib/components/atoms/NavLink.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
   import { page } from "$app/state";
 
@@ -58,15 +59,9 @@
               ? page.url.pathname === "/"
               : page.url.pathname.startsWith(link.href)}
           <li>
-            <a
-              href={link.href}
-              class="relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded {active
-                ? 'text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground'
-                : 'text-foreground/60'}"
-              aria-current={active ? "page" : undefined}
-            >
+            <NavLink href={link.href} {active}>
               {link.label}
-            </a>
+            </NavLink>
           </li>
         {/each}
       </ul>
@@ -144,16 +139,14 @@
               link.href === "/"
                 ? page.url.pathname === "/"
                 : page.url.pathname.startsWith(link.href)}
-            <a
+            <NavLink
               href={link.href}
-              class="px-4 py-3 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 {active
-                ? 'bg-accent text-accent-foreground'
-                : 'text-foreground/80'}"
+              {active}
+              variant="mobile"
               onclick={() => (mobileMenuOpen = false)}
-              aria-current={active ? "page" : undefined}
             >
               {link.label}
-            </a>
+            </NavLink>
           {/each}
 
           {#if socialLinks.length > 0}
