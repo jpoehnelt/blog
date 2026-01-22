@@ -80,8 +80,6 @@ To use the Vertex AI advanced service, you need to do the following, which you a
 4.  **Apps Script Configuration:** Add your Cloud Project number in **Project Settings**.
 5.  **Add Service:** Enable the **Vertex AI** advanced service in the "Services" section of the editor.
 
-    <Image src="using-gemini-with-vertex-ai/apps-script-cloud-project-number.png" alt="Apps Script Cloud Project Number" />
-
     <Image src="using-gemini-with-vertex-ai/add-vertex-ai-service.png" alt="Add Vertex AI Service" />
 
     <Image src="using-gemini-with-vertex-ai/enable-vertex-ai.png" alt="Enable Vertex AI Service" />
