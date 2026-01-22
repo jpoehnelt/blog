@@ -158,7 +158,7 @@ The result:
 
 - **No more `UrlFetchApp`**: The service handles the underlying network requests.
 - **Built-in Auth**: `ScriptApp.getOAuthToken()` is handled more seamlessly, though you still need standard scopes.
-- **Cleaner Syntax**: `VertexAI.Endpoints.generateContent(payload, model)` is much easier to read than a massive `fetch` call.
+- **Cleaner Syntax**: `VertexAI.Endpoints.generateContent(payload, model)` is much easier to read than a massive `UrlFetchApp` call.
 
 ## Troubleshooting
 
