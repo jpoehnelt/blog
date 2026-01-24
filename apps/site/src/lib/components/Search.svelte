@@ -7,9 +7,9 @@
 
   const searchClient = algoliasearch(
     "S9JK6686GJ",
-    "c0cecf984cdee236bab37e90807b4348"
+    "c0cecf984cdee236bab37e90807b4348",
   );
-  const index = searchClient.initIndex("posts");
+  const index = searchClient.initIndex("blog_pages");
 
   let query = $state("");
   let hits = $state<any[]>([]);
@@ -49,16 +49,28 @@
     }
   }
 
+  function getUrl(hit: any) {
+    if (hit.url) {
+      try {
+        const url = new URL(hit.url);
+        return url.pathname;
+      } catch {
+        return hit.url;
+      }
+    }
+    return `/posts/${hit.slug}`;
+  }
+
   // Reactively trigger search when query changes
   $effect(() => {
-     handleSearch(query);
+    handleSearch(query);
   });
 </script>
 
 <button
   onclick={() => (open = true)}
   class={cn(
-    "relative w-full justify-start rounded-md border border-input bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 flex items-center gap-2"
+    "relative w-full justify-start rounded-md border border-input bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 flex items-center gap-2",
   )}
 >
   <SearchIcon class="h-4 w-4 shrink-0 opacity-50" />
@@ -76,20 +88,22 @@
   <Command.List>
     <Command.Empty>No results found.</Command.Empty>
     {#if hits.length > 0}
-        <Command.Group heading="Posts">
-            {#each hits as hit (hit.objectID)}
-                <Command.LinkItem
-                    href="/posts/{hit.slug}"
-                    onclick={() => open = false}
-                    class="flex flex-col items-start gap-1"
-                >
-                    <span class="font-medium leading-none">{hit.title}</span>
-                    {#if hit.description}
-                        <span class="text-xs text-muted-foreground line-clamp-1">{hit.description}</span>
-                    {/if}
-                </Command.LinkItem>
-            {/each}
-        </Command.Group>
+      <Command.Group heading="Posts">
+        {#each hits as hit (hit.objectID)}
+          <Command.LinkItem
+            href={getUrl(hit)}
+            onclick={() => (open = false)}
+            class="flex flex-col items-start gap-1"
+          >
+            <span class="font-medium leading-none">{hit.title}</span>
+            {#if hit.description}
+              <span class="text-xs text-muted-foreground line-clamp-1"
+                >{hit.description}</span
+              >
+            {/if}
+          </Command.LinkItem>
+        {/each}
+      </Command.Group>
     {/if}
   </Command.List>
 </Command.Dialog>
