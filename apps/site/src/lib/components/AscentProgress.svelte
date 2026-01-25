@@ -25,7 +25,7 @@
 <svelte:window bind:scrollY bind:innerHeight onresize={updateHeight} />
 
 <div
-  class="fixed top-0 left-0 w-1 bg-[#FF6700] z-50 transition-all duration-75 ease-out"
+  class="fixed top-0 left-0 w-1 bg-accent z-50 transition-all duration-75 ease-out"
   style:height="{progress}%"
   role="progressbar"
   aria-valuenow={Math.round(progress)}
