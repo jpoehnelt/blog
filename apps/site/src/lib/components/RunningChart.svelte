@@ -22,10 +22,14 @@
   };
 
   const currentMonthData = $derived(
-    chartData.filter((d) => isSameMonth(d.date, new Date()))
+    chartData.filter((d) =>
+      isSameMonth(new Date(d.date.getTime() + 43200000), new Date())
+    )
   );
   const otherMonthData = $derived(
-    chartData.filter((d) => !isSameMonth(d.date, new Date()))
+    chartData.filter((d) =>
+      !isSameMonth(new Date(d.date.getTime() + 43200000), new Date())
+    )
   );
 </script>
 

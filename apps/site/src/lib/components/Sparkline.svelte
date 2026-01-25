@@ -26,12 +26,15 @@
   let max = $derived(Math.max(...points));
   let range = $derived(max - min);
 
+  let padding = $derived(strokeWidth);
+  let drawHeight = $derived((height as number) - 2 * padding);
+
   let pathData = $derived(
     points
       .map((val, i) => {
         const x = (i / (points.length - 1)) * renderWidth;
         const normalizedY = range === 0 ? 0.5 : (val - min) / range;
-        const y = (1 - normalizedY) * (height as number);
+        const y = padding + (1 - normalizedY) * drawHeight;
         return `${i === 0 ? "M" : "L"} ${x} ${y}`;
       })
       .join(" ")
