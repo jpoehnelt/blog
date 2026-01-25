@@ -4,15 +4,17 @@ import path from "path";
 import fs from "fs";
 
 const main = async () => {
+  const now = new Date();
+  const getSafeDate = (envVar: string | undefined, defaultDate: Date) => {
+    const d = envVar ? parseISO(envVar) : defaultDate;
+    return d > now ? now : d;
+  };
+
   const before = getUnixTime(
-    process.env.STRAVA_BEFORE
-      ? parseISO(process.env.STRAVA_BEFORE)
-      : endOfToday(),
+    getSafeDate(process.env.STRAVA_BEFORE, endOfToday()),
   );
   const after = getUnixTime(
-    process.env.STRAVA_AFTER
-      ? parseISO(process.env.STRAVA_AFTER)
-      : subDays(endOfToday(), 5),
+    getSafeDate(process.env.STRAVA_AFTER, subDays(endOfToday(), 5)),
   );
 
   let page = 1;
