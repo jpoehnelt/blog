@@ -14,7 +14,7 @@
   let { activity, ...rest }: Props = $props();
 </script>
 
-<li class="flex items-center gap-4 py-1" {...rest}>
+<li class="flex items-baseline gap-4 py-1" {...rest}>
   <div class="min-w-0 flex-1">
     <div class="flex items-center gap-2">
       <a
@@ -44,15 +44,15 @@
         <span>{activity.total_elevation_gain} m</span>
       {/if}
     </div>
+    {#if activity.elevation_profile && activity.elevation_profile.length > 1}
+      <div class="mt-2 h-8 w-full max-w-sm" title="Elevation Profile">
+        <Sparkline
+          points={activity.elevation_profile}
+          height={32}
+          width="100%"
+          class="text-muted-foreground/50"
+        />
+      </div>
+    {/if}
   </div>
-  {#if activity.elevation_profile && activity.elevation_profile.length > 1}
-    <div class="w-24 shrink-0" title="Elevation Profile">
-      <Sparkline
-        points={activity.elevation_profile}
-        height={24}
-        width="100%"
-        class="text-muted-foreground/50"
-      />
-    </div>
-  {/if}
 </li>

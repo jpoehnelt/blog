@@ -5,6 +5,7 @@
     height?: number;
     stroke?: string;
     strokeWidth?: number;
+    animate?: boolean;
     [key: string]: any;
   }
 
@@ -14,6 +15,7 @@
     height = 30,
     stroke = "currentColor",
     strokeWidth = 1.5,
+    animate = true,
     ...rest
   }: Props = $props();
 
@@ -21,13 +23,13 @@
   let max = $derived(Math.max(...points));
   let range = $derived(max - min);
 
-  let polylinePoints = $derived(
+  let pathData = $derived(
     points
       .map((val, i) => {
         const x = (i / (points.length - 1)) * 100;
         const normalizedY = range === 0 ? 0.5 : (val - min) / range;
         const y = (1 - normalizedY) * (height as number);
-        return `${x},${y}`;
+        return `${i === 0 ? "M" : "L"} ${x} ${y}`;
       })
       .join(" ")
   );
@@ -41,8 +43,8 @@
   class="overflow-visible"
   {...rest}
 >
-  <polyline
-    points={polylinePoints}
+  <path
+    d={pathData}
     fill="none"
     {stroke}
     stroke-width={strokeWidth}
@@ -50,4 +52,9 @@
     stroke-linejoin="round"
     vector-effect="non-scaling-stroke"
   />
+  {#if animate}
+    <circle r={strokeWidth * 1.5} fill={stroke}>
+      <animateMotion dur="5s" repeatCount="indefinite" path={pathData} />
+    </circle>
+  {/if}
 </svg>
