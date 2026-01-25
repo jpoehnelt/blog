@@ -8,10 +8,11 @@
 
   interface Props {
     activity: StravaActivitySimple;
+    elevationDomainMax?: number;
     [key: string]: any;
   }
 
-  let { activity, ...rest }: Props = $props();
+  let { activity, elevationDomainMax = 0, ...rest }: Props = $props();
 </script>
 
 <li class="flex items-baseline gap-4 py-1" {...rest}>
@@ -55,6 +56,7 @@
           height={32}
           width="100%"
           class="text-muted-foreground/50"
+          referenceValue={elevationDomainMax}
         />
       </div>
     {/if}

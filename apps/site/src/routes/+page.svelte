@@ -29,6 +29,18 @@
   const featuredPost = recentPosts[0];
   const otherPosts = recentPosts.slice(1);
 
+  let maxRaceElevationRange = $derived(
+    Math.max(
+      100,
+      ...data.recentRaces.map((a) => {
+        if (!a.elevation_profile || a.elevation_profile.length === 0) return 0;
+        const min = Math.min(...a.elevation_profile);
+        const max = Math.max(...a.elevation_profile);
+        return max - min;
+      })
+    )
+  );
+
   const schema: WithContext<Thing>[] = [
     {
       "@context": "https://schema.org",
@@ -176,7 +188,10 @@
         {#if recentRaces.length > 0}
           <ul class="space-y-4 list-none p-0 m-0">
             {#each recentRaces as race}
-              <ActivityListItem activity={race} />
+              <ActivityListItem
+                activity={race}
+                elevationDomainMax={maxRaceElevationRange}
+              />
             {/each}
           </ul>
         {:else}
