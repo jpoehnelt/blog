@@ -41,11 +41,27 @@ export interface StravaActivitySimple {
   total_elevation_gain?: number;
   type?: string;
   sport_type?: string;
+  elevation_profile?: number[];
 }
 
 export function mapStravaActivity(
   activity: DetailedActivityResponse,
 ): StravaActivitySimple {
+  let elevation_profile: number[] | undefined;
+  const splits =
+    (activity as any).splits_metric || (activity as any).splits_standard;
+
+  if (splits && splits.length > 0) {
+    elevation_profile = [];
+    let current_elevation = 0;
+    elevation_profile.push(current_elevation);
+    for (const split of splits) {
+      const diff = split.elevation_difference || 0;
+      current_elevation += diff;
+      elevation_profile.push(current_elevation);
+    }
+  }
+
   return {
     id: activity.id,
     name: activity.name,
@@ -55,6 +71,7 @@ export function mapStravaActivity(
     distance: activity.distance,
     moving_time: activity.moving_time,
     total_elevation_gain: activity.total_elevation_gain,
+    elevation_profile,
   };
 }
 

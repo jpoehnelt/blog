@@ -2,6 +2,7 @@
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
+  import Sparkline from "$lib/components/Sparkline.svelte";
   import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
   import { ExternalLink as ExternalLinkIcon } from "@lucide/svelte";
 
@@ -13,7 +14,7 @@
   let { activity, ...rest }: Props = $props();
 </script>
 
-<li class="flex items-baseline gap-2 py-1" {...rest}>
+<li class="flex items-center gap-4 py-1" {...rest}>
   <div class="min-w-0 flex-1">
     <div class="flex items-center gap-2">
       <a
@@ -30,7 +31,9 @@
         <ExternalLinkIcon size={12} />
       </ExternalLink>
     </div>
-    <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground">
+    <div
+      class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground"
+    >
       <FormattedDate date={new Date(activity.start_date)} />
       <MetadataSeparator />
       <span>{activity.sport_type || (activity as any).type}</span>
@@ -42,4 +45,14 @@
       {/if}
     </div>
   </div>
+  {#if activity.elevation_profile && activity.elevation_profile.length > 1}
+    <div class="w-24 shrink-0" title="Elevation Profile">
+      <Sparkline
+        points={activity.elevation_profile}
+        height={24}
+        width="100%"
+        class="text-muted-foreground/50"
+      />
+    </div>
+  {/if}
 </li>
