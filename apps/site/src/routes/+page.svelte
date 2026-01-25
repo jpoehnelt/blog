@@ -68,7 +68,7 @@
       <div class="sticky top-8 space-y-8">
         <section class="space-y-4">
           <h2
-            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
+            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
             id="about"
           >
             About
@@ -83,7 +83,7 @@
               sizes="(min-width: 1024px) 300px, 100vw"
             />
           </figure>
-          <div class="prose prose-sm">
+          <div class="prose">
             <p>
               I'm a Developer Relations Engineer at Google, focusing on Google
               Workspace. My work involves creating tools and supporting the
@@ -102,7 +102,7 @@
 
         <section class="space-y-2">
           <h3
-            class="text-lg font-bold uppercase border-b border-muted-foreground/50 pb-1"
+            class="text-lg font-bold uppercase border-b border-muted-foreground/50 pb-1 tracking-wider"
           >
             Topics
           </h3>
@@ -168,7 +168,7 @@
       <!-- Races -->
       <section>
         <h2
-          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
+          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
           id="races"
         >
           Race Results
@@ -187,7 +187,7 @@
       <!-- Activities-->
       <section>
         <h2
-          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4"
+          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
           id="activities"
         >
           Activities
