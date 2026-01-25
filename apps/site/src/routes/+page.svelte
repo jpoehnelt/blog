@@ -73,14 +73,16 @@
           >
             About
           </h2>
-          <enhanced:img
-            src={justinPoehneltImg}
-            alt="Justin Poehnelt"
-            class="w-full grayscale contrast-125 filter rounded-sm mx-auto"
-            loading="eager"
-            fetchpriority="high"
-            sizes="(min-width: 1024px) 300px, 100vw"
-          />
+          <figure class="mb-4 block">
+            <enhanced:img
+              src={justinPoehneltImg}
+              alt="Justin Poehnelt"
+              class="w-full grayscale contrast-125 filter rounded-sm mx-auto"
+              loading="eager"
+              fetchpriority="high"
+              sizes="(min-width: 1024px) 300px, 100vw"
+            />
+          </figure>
           <div class="prose prose-sm">
             <p>
               I'm a Developer Relations Engineer at Google, focusing on Google
