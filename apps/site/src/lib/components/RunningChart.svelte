@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Axis, Bars, Chart, Svg } from "layerchart";
   import { scaleBand } from "d3-scale";
-  import { format } from "date-fns";
+  import { format, isSameMonth } from "date-fns";
 
   interface Props {
     data: { date: Date; distance: number }[];
@@ -20,6 +20,13 @@
   const formatDay = (d: Date) => {
     return d.getDate() === 1 && d.getMonth() % 2 === 0 ? format(d, "MMM") : "";
   };
+
+  const currentMonthData = $derived(
+    chartData.filter((d) => isSameMonth(d.date, new Date()))
+  );
+  const otherMonthData = $derived(
+    chartData.filter((d) => !isSameMonth(d.date, new Date()))
+  );
 </script>
 
 <div class="w-full">
@@ -35,7 +42,17 @@
       padding={{ top: 0, bottom: 25, left: 30, right: 0 }}
     >
       <Svg>
-        <Bars class="fill-foreground/80 hover:fill-foreground transition-colors" radius={1} />
+        <Bars
+          data={otherMonthData}
+          class="fill-foreground/80 hover:fill-foreground transition-colors"
+          radius={1}
+        />
+        <Bars
+          data={currentMonthData}
+          fill="var(--accent)"
+          class="hover:fill-foreground transition-colors"
+          radius={1}
+        />
         <Axis 
           placement="bottom" 
           format={formatDay} 
