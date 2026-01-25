@@ -4,7 +4,7 @@
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
   import Sparkline from "$lib/components/Sparkline.svelte";
   import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
-  import { ExternalLink as ExternalLinkIcon } from "@lucide/svelte";
+  import { ExternalLink as ExternalLinkIcon, Footprints } from "@lucide/svelte";
 
   interface Props {
     activity: StravaActivitySimple;
@@ -36,7 +36,11 @@
     >
       <FormattedDate date={new Date(activity.start_date)} />
       <MetadataSeparator />
-      <span>{activity.sport_type || (activity as any).type}</span>
+      {#if activity.sport_type === "TrailRun" || (activity as any).type === "TrailRun"}
+        <Footprints size={14} aria-label="Trail Run" />
+      {:else}
+        <span>{activity.sport_type || (activity as any).type}</span>
+      {/if}
       <MetadataSeparator />
       <span>{((activity.distance || 0) / 1000).toFixed(2)} km</span>
       {#if (activity.total_elevation_gain || 0) > 0}
