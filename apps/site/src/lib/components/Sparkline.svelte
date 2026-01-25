@@ -13,7 +13,7 @@
     points,
     width = 100,
     height = 30,
-    stroke = "#FF6700",
+    stroke = "var(--accent)",
     strokeWidth = 1.5,
     animate = true,
     ...rest

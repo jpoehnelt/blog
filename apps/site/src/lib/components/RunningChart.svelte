@@ -49,7 +49,7 @@
         />
         <Bars
           data={currentMonthData}
-          fill="#FF6700"
+          fill="var(--accent)"
           class="hover:fill-foreground transition-colors"
           radius={1}
         />
