@@ -7,6 +7,7 @@
   import PostTagCloud from "$lib/components/PostTagCloud.svelte";
   import RunningChart from "$lib/components/RunningChart.svelte";
   import ActivityListItem from "$lib/components/ActivityListItem.svelte";
+  import PostCard from "$lib/components/PostCard.svelte";
   import {
     DEFAULT_TITLE,
     BASE_URL,
@@ -148,21 +149,7 @@
       <!-- Sub Headlines (Grid) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
         {#each otherPosts.slice(0, 20) as post}
-          <article class="flex flex-col h-full">
-            <h4 class="text-xl font-bold mb-2 leading-snug hover:underline">
-              <a
-                href={post.relativeURL}
-                style:view-transition-name="post-title-{post.id}"
-                >{post.title}</a
-              >
-            </h4>
-            <div class="text-xs text-muted-foreground mb-2">
-              <FormattedDate date={post.pubDate} />
-            </div>
-            <p class="text-sm line-clamp-3 text-muted-foreground flex-grow">
-              {post.description}
-            </p>
-          </article>
+          <PostCard {post} />
         {/each}
       </div>
     </div>
