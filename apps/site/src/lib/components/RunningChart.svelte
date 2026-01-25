@@ -22,8 +22,8 @@
   };
 </script>
 
-<div class="w-full mt-4 mb-8">
-  <h3 class="text-sm font-bold uppercase border-b border-foreground mb-4 pb-1">Running Tracker (km)</h3>
+<div class="w-full">
+  <h2 class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4">Running Tracker (km)</h2>
   <div class="h-[150px] w-full">
     <Chart
       data={chartData}

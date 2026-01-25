@@ -158,6 +158,11 @@
     <div
       class="lg:col-span-1 border-l-0 lg:border-l border-border pl-0 lg:pl-8 space-y-8"
     >
+      <!--  Chart -->
+      <section>
+        <RunningChart data={runningChartData} />
+      </section>
+
       <!-- Races -->
       <section>
         <h2
@@ -175,11 +180,6 @@
         {:else}
           <p class="text-sm text-muted-foreground italic">No recent races.</p>
         {/if}
-      </section>
-
-      <!--  Chart -->
-      <section>
-        <RunningChart data={runningChartData} />
       </section>
 
       <!-- Activities-->
