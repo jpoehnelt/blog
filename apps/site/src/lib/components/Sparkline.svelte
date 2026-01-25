@@ -19,6 +19,9 @@
     ...rest
   }: Props = $props();
 
+  let svgWidth = $state(0);
+  let renderWidth = $derived(svgWidth || 100);
+
   let min = $derived(Math.min(...points));
   let max = $derived(Math.max(...points));
   let range = $derived(max - min);
@@ -26,7 +29,7 @@
   let pathData = $derived(
     points
       .map((val, i) => {
-        const x = (i / (points.length - 1)) * 100;
+        const x = (i / (points.length - 1)) * renderWidth;
         const normalizedY = range === 0 ? 0.5 : (val - min) / range;
         const y = (1 - normalizedY) * (height as number);
         return `${i === 0 ? "M" : "L"} ${x} ${y}`;
@@ -38,9 +41,10 @@
 <svg
   {width}
   {height}
-  viewBox={`0 0 100 ${height}`}
+  viewBox={`0 0 ${renderWidth} ${height}`}
   preserveAspectRatio="none"
   class="overflow-visible"
+  bind:clientWidth={svgWidth}
   {...rest}
 >
   <path
@@ -50,11 +54,10 @@
     stroke-width={strokeWidth}
     stroke-linecap="round"
     stroke-linejoin="round"
-    vector-effect="non-scaling-stroke"
   />
   {#if animate}
-    <circle r={strokeWidth * 1.5} fill={stroke}>
-      <animateMotion dur="5s" repeatCount="indefinite" path={pathData} />
+    <circle r={2} fill={stroke}>
+      <animateMotion dur="10s" repeatCount="indefinite" path={pathData} />
     </circle>
   {/if}
 </svg>
