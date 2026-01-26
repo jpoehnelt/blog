@@ -62,7 +62,13 @@ jobs:
           echo "STRAVA_AFTER=$STRAVA_AFTER"
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
 
-          STRAVA_AFTER=$STRAVA_AFTER STRAVA_BEFORE=$STRAVA_BEFORE node packages/data-automation/dist/strava-ingest.js
+      - name: Discover and Ingest Races
+        run: |
+          # Discover new races (optional dynamic range)
+          # node packages/data-automation/dist/cli.js discover --start 126940 --end 127000
+          
+          # Smart Ingest: Filter past races, prioritize upcoming
+          node packages/data-automation/dist/cli.js ingest
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:

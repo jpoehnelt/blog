@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/*.ts --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external",
+    "build": "esbuild src/cli.ts --bundle --outfile=dist/cli.js --platform=node --sourcemap --format=esm --packages=external --banner:js='#!/usr/bin/env node'",
     "check": "tsc --noEmit",
     "test": "vitest run",
     "syndicate": "node dist/syndicate.js"
@@ -45,6 +45,7 @@
     "remark-stringify": "^11.0.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
-    "yargs": "^18.0.0"
+    "yargs": "^18.0.0",
+    "zod": "^4.1.12"
   }
 }
