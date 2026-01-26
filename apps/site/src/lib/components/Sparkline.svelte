@@ -6,6 +6,7 @@
     stroke?: string;
     strokeWidth?: number;
     animate?: boolean;
+    referenceValue?: number;
     [key: string]: any;
   }
 
@@ -16,6 +17,7 @@
     stroke = "var(--accent)",
     strokeWidth = 1.5,
     animate = true,
+    referenceValue = 0,
     ...rest
   }: Props = $props();
 
@@ -24,7 +26,7 @@
 
   let min = $derived(Math.min(...points));
   let max = $derived(Math.max(...points));
-  let range = $derived(max - min);
+  let range = $derived(Math.max(max - min, referenceValue));
 
   let padding = $derived(strokeWidth);
   let drawHeight = $derived((height as number) - 2 * padding);
