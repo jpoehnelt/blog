@@ -1,28 +1,22 @@
 import { error } from "@sveltejs/kit";
-import fs from "fs";
+import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
 import races from "../../../../../../../../../data/races.json";
+import { getDataDir, readJsonFile } from "$lib/server/utils";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 // Force reload timestamp: 1234567
   const { year, slug, id } = params;
 
-  // Handle monorepo structure: try root data dir or relative to site
-  let dataDir = path.resolve(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-      // If CWD is apps/site, go up two levels
-      dataDir = path.resolve(process.cwd(), "../../data");
-  }
+  const dataDir = await getDataDir();
   const racesFile = path.join(dataDir, "races.json");
-  let racesData = races; // Fallback to imported
   
-  if (fs.existsSync(racesFile)) {
-      try {
-          racesData = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
-      } catch (e) {
-          console.error("Failed to read races.json from disk, using fallback", e);
-      }
+  let racesData: any[] = races;
+  const loadedRaces = await readJsonFile<any[]>(racesFile);
+  if (loadedRaces) {
+    racesData = loadedRaces;
   }
 
   const race = racesData.find(
@@ -34,18 +28,16 @@ export async function load({ params }) {
   }
 
   // Verify the ID belongs to this race (either as the race ID or an event ID)
-  const isValidId = race.id === id || (race.events && race.events.some(e => e.id === id));
+  const isValidId = race.id === id || (race.events && race.events.some((e: any) => e.id === id));
   if (!isValidId) {
       throw error(404, "Event ID not found in race");
   }
-
-
 
   console.log("CWD:", process.cwd());
   
   const events = [];
 
-  const targetEvent = race.events?.find(e => e.id === id);
+  const targetEvent = race.events?.find((e: any) => e.id === id);
 
   if (targetEvent) {
       // Loop is technically unnecessary if we only process one, 
@@ -55,15 +47,7 @@ export async function load({ params }) {
           try {
             if (e.waitlist && e.waitlist.dataFile) {
                 const dataPath = path.join(dataDir, e.waitlist.dataFile);
-                if (fs.existsSync(dataPath)) {
-                    try {
-                        data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
-                    } catch (err) {
-                        console.error(`Error parsing data file for ${e.title} at ${dataPath}:`, err);
-                    }
-                } else {
-                    // console.log(`Data file not found: ${dataPath}`);
-                }
+                data = await readJsonFile(dataPath);
             }
           } catch (err) {
               console.error(`Error processing event waitlist ${e.title}:`, err);
@@ -73,13 +57,7 @@ export async function load({ params }) {
           try {
              if (e.entrants && e.entrants.dataFile) {
                 const entrantsPath = path.join(dataDir, e.entrants.dataFile);
-                 if (fs.existsSync(entrantsPath)) {
-                    try {
-                        entrants = JSON.parse(fs.readFileSync(entrantsPath, "utf-8"));
-                    } catch (err) {
-                         console.error(`Error parsing entrants file for ${e.title} at ${entrantsPath}:`, err);
-                    }
-                 }
+                entrants = await readJsonFile(entrantsPath);
              }
           } catch (err) {
               console.error(`Error processing event entrants ${e.title}:`, err);
@@ -88,7 +66,6 @@ export async function load({ params }) {
           events.push({ ...e, data, entrants });
       
   } 
-  // Removed fallback for root dataFile as races.json has been fully migrated
   
   return {
     race,
@@ -97,19 +74,16 @@ export async function load({ params }) {
 }
 
 /** @type {import('./$types').EntryGenerator} */
-export function entries() {
-  const dataDir = path.resolve(process.cwd(), "../../data");
-  if (!fs.existsSync(dataDir) && fs.existsSync(path.resolve(process.cwd(), "data"))) {
-      return getEntries(path.resolve(process.cwd(), "data"));
-  }
+export async function entries() {
+  const dataDir = await getDataDir();
   return getEntries(dataDir);
 }
 
-function getEntries(dataDir) {
+async function getEntries(dataDir: string) {
   const racesFile = path.join(dataDir, "races.json");
-  if (!fs.existsSync(racesFile)) return [];
-
-  const races = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
+  const races = await readJsonFile<any[]>(racesFile);
+  
+  if (!races || !Array.isArray(races)) return [];
   
   // Return all events for all races
   const entries = [];

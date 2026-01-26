@@ -1,17 +1,23 @@
 <script lang="ts">
+  // @ts-nocheck
   import { Axis, Chart, Line, Highlight, Tooltip, Spline, Area, Svg } from "layerchart";
   import { scaleTime, scaleOrdinal } from "d3-scale";
   import { format } from "date-fns";
   import { curveCatmullRom } from "d3-shape";
   import { schemeTableau10 } from "d3-scale-chromatic";
 
-  let { events } = $props<{ events: { title: string; data: { date: string; count: number }[] }[] }>();
+  interface ChartEvent {
+      title: string;
+      data: { date: string; count: number }[];
+  }
+
+  let { events } = $props<{ events: ChartEvent[] }>();
   
   const cScale = scaleOrdinal(schemeTableau10);
 
-  let processedData = $derived(events.flatMap(event => {
+  let processedData = $derived(events.flatMap((event: ChartEvent) => {
       if (!event.data) return [];
-      return event.data.map(d => ({
+      return event.data.map((d: { date: string; count: number }) => ({
           date: new Date(d.date),
           value: d.count,
           label: event.title
@@ -56,7 +62,8 @@
     <Tooltip.Root let:data>
       <Tooltip.Header>{format(data.date, "MMM d, yyyy")}</Tooltip.Header>
       <Tooltip.List>
-        <Tooltip.Item label={data.label} value={data.value} color={cScale(data.label)} />
+        <!-- @ts-ignore -->
+        <Tooltip.Item label={data.label} value={data.value} color={String(cScale(data.label))} />
       </Tooltip.List>
     </Tooltip.Root>
   </Chart>

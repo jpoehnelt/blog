@@ -22,7 +22,11 @@ export async function scrape(options: ScrapeOptions) {
   ensureDataDir(dataFile);
 
   console.log(`Fetching ${url}...`);
-  const response = await axios.get(url);
+  const response = await axios.get(url, {
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+  });
   const dom = new JSDOM(response.data);
   const doc = dom.window.document;
 

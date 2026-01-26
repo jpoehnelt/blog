@@ -117,19 +117,9 @@ export async function discover(argv: DiscoverOptions) {
       });
 
       if (exists) {
-        // console.log(`Race ${name} (${id}) already exists. Removing temporarily to debug... actually I should just update it if I wrote better code.`);
-        // For now, let's just SKIP the check to force it to add (duplicate) or I need to manually remove it better
-        // console.log(`Race ${name} (${id}) already exists. Skipped.`);
-        // continue;
+        console.log(`Race ${name} (${id}) already exists. Skipped.`);
+        continue;
       }
-
-      /*
-      const existingConfig = races.find(r => r.slug === slug && r.year === year);
-       if (existingConfig) {
-           console.log(`Race ${name} (${year}) already exists with different ID? Skipped.`);
-           continue;
-       }
-       */
 
       let location = "";
       

@@ -1,29 +1,24 @@
 import { error } from "@sveltejs/kit";
-import fs from "fs";
+import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
+import { getDataDir, readJsonFile } from "$lib/server/utils";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
   const { year } = params;
-
-  // Handle monorepo structure: try root data dir or relative to site
-  let dataDir = path.resolve(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-      // If CWD is apps/site, go up two levels
-      dataDir = path.resolve(process.cwd(), "../../data");
-  }
-
+  const dataDir = await getDataDir();
   const racesFile = path.join(dataDir, "races.json");
 
-  if (!fs.existsSync(racesFile)) {
+  const races = await readJsonFile(racesFile);
+
+  if (!races || !Array.isArray(races)) {
     return {
         races: [],
         years: [],
         selectedYear: year
     };
   }
-
-  const races = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
 
   // Get all unique years
   const years = [...new Set(races.map((r) => r.year))].sort().reverse();
@@ -41,20 +36,16 @@ export async function load({ params }) {
 }
 
 /** @type {import('./$types').EntryGenerator} */
-export function entries() {
-  const dataDir = path.resolve(process.cwd(), "../../data");
-  if (!fs.existsSync(dataDir) && fs.existsSync(path.resolve(process.cwd(), "data"))) {
-      // Fallback if CWD is root
-      return getEntries(path.resolve(process.cwd(), "data"));
-  }
+export async function entries() {
+  const dataDir = await getDataDir();
   return getEntries(dataDir);
 }
 
-function getEntries(dataDir) {
+async function getEntries(dataDir: string) {
   const racesFile = path.join(dataDir, "races.json");
-  if (!fs.existsSync(racesFile)) return [];
-
-  const races = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
+  const races = await readJsonFile<any[]>(racesFile);
+  
+  if (!races || !Array.isArray(races)) return [];
   const years = [...new Set(races.map((r) => r.year))];
   
   return years.map(year => ({ year }));

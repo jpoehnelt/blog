@@ -26,7 +26,16 @@
       data?: EventData[];
   }
 
-  let { data } = $props<{ data: { race: any; events: RaceEvent[] } }>();
+  interface Race {
+      id: string;
+      year: string;
+      slug: string;
+      name: string;
+      date: string;
+      location: string;
+  }
+
+  let { data } = $props<{ data: { race: Race; events: RaceEvent[] } }>();
 
   let race = $derived(data.race);
   let events = $derived(data.events || []);
@@ -40,10 +49,40 @@
     }),
   );
 
+  // Pre-calculate snapshot maps for each event (1d, 7d, 30d)
+  let diffMaps = $derived(
+    activeEvents.reduce((acc: Record<string, Record<number, Map<string, number>>>, event: RaceEvent) => {
+        if (!event.data || event.data.length === 0) return acc;
+        
+        const now = new Date();
+        const oneDay = 24 * 60 * 60 * 1000;
+        const maps: Record<number, Map<string, number>> = {};
+
+        [1, 7, 30].forEach(days => {
+            const targetDate = new Date(now.getTime() - days * oneDay);
+            // Find closest snapshot
+            const snapshot = event.data?.reduce((closest: EventData, curr: EventData) => {
+                const currDiff = Math.abs(new Date(curr.date).getTime() - targetDate.getTime());
+                const closestDiff = Math.abs(new Date(closest.date).getTime() - targetDate.getTime());
+                return currDiff < closestDiff ? curr : closest;
+            });
+
+            const map = new Map<string, number>();
+            if (snapshot && snapshot.applicants) {
+                snapshot.applicants.forEach((name: string, idx: number) => map.set(name, idx));
+            }
+            maps[days] = map;
+        });
+
+        acc[event.id] = maps;
+        return acc;
+    }, {} as Record<string, Record<number, Map<string, number>>>)
+  );
+
   // Entrants Logic
   let entrants = $derived(
-    events.flatMap((e) =>
-      (e.entrants || []).map((entrant) => ({
+    events.flatMap((e: RaceEvent) =>
+      (e.entrants || []).map((entrant: Entrant) => ({
         ...entrant,
         eventTitle: e.title,
       })),
@@ -156,35 +195,14 @@
     },
   ]);
 
-  function getPositionDiffs(event: RaceEvent, applicant: string, currentIdx: number) {
-    if (!event.data) return { d1: 0, d7: 0, d30: 0 };
+  function getPositionDiffs(eventId: string, applicant: string, currentIdx: number) {
+    if (!diffMaps[eventId]) return { d1: 0, d7: 0, d30: 0 };
 
-    const now = new Date();
-    const oneDay = 24 * 60 * 60 * 1000;
-
-    function getDiff(daysAgo: number) {
-      const targetDate = new Date(now.getTime() - daysAgo * oneDay);
-      // Find snapshot closest to targetDate
-      // Sort by closeness
-      if (!event.data) return null;
-      const snapshot = event.data.reduce((closest: EventData, curr: EventData) => {
-        const currDiff = Math.abs(
-          new Date(curr.date).getTime() - targetDate.getTime(),
-        );
-        const closestDiff = Math.abs(
-          new Date(closest.date).getTime() - targetDate.getTime(),
-        );
-        return currDiff < closestDiff ? curr : closest;
-      });
-
-      if (!snapshot || !snapshot.applicants) return null;
-
-      const pastIdx = snapshot.applicants.indexOf(applicant);
-      if (pastIdx === -1) return null; // Was not on list
-
-      // If I was 10th (pastIdx=9) and now 5th (currentIdx=4), diff is 9 - 4 = +5 (moved up)
-      return pastIdx - currentIdx;
-    }
+    const getDiff = (days: number) => {
+        const pastIdx = diffMaps[eventId][days]?.get(applicant);
+        if (pastIdx === undefined) return null;
+        return pastIdx - currentIdx;
+    };
 
     return {
       d1: getDiff(1),
@@ -308,7 +326,7 @@
         <!-- Clearance Rate Chart -->
         <div class="bg-white p-6 rounded-lg shadow">
           <h3 class="text-lg font-medium mb-4">Waitlist Trends</h3>
-          {#if activeEvents.some((e) => e.data && e.data.length > 1)}
+          {#if activeEvents.some((e: RaceEvent) => e.data && e.data.length > 1)}
             <WaitlistChart
               events={activeEvents}
             />
@@ -425,7 +443,7 @@
   {/if}
 
   <!-- Full Waitlist Section -->
-  {#if activeEvents.some((e) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
+  {#if activeEvents.some((e: RaceEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
     <div class="mb-8">
       <h2 class="text-2xl font-semibold mb-6">Waitlist Applicants</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -474,9 +492,9 @@
                      </thead>
                      <tbody class="divide-y divide-gray-100">
                       {#each last.applicants
-                        .map((name, i) => ({ name, i }))
-                        .filter((item) => !searchTerms[event.id] || item.name.toLowerCase().includes(searchTerms[event.id].toLowerCase())) as item}
-                        {@const diffs = getPositionDiffs(event, item.name, item.i)}
+                        .map((name: string, i: number) => ({ name, i }))
+                        .filter((item: { name: string; i: number }) => !searchTerms[event.id] || item.name.toLowerCase().includes(searchTerms[event.id].toLowerCase())) as item}
+                        {@const diffs = getPositionDiffs(event.id, item.name, item.i)}
                         <tr class="hover:bg-gray-50">
                             <td class="px-3 py-2 font-mono text-xs text-gray-500">{item.i + 1}</td>
                             <td class="px-3 py-2 font-medium">

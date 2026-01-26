@@ -1,31 +1,25 @@
 import { error, redirect } from "@sveltejs/kit";
-import fs from "fs";
+import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
-import races from "../../../../../../../../data/races.json";
+import racesFallback from "../../../../../../../../data/races.json";
+import { getDataDir, readJsonFile } from "$lib/server/utils";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
   const { year, slug } = params;
 
-  // Handle monorepo structure: try root data dir or relative to site
-  let dataDir = path.resolve(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-      // If CWD is apps/site, go up two levels
-      dataDir = path.resolve(process.cwd(), "../../data");
-  }
+  const dataDir = await getDataDir();
   const racesFile = path.join(dataDir, "races.json");
-  let racesData = races; // Fallback to imported
   
-  if (fs.existsSync(racesFile)) {
-      try {
-          racesData = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
-      } catch (e) {
-          console.error("Failed to read races.json from disk, using fallback", e);
-      }
+  let racesData: any[] = racesFallback;
+  const loadedRaces = await readJsonFile<any[]>(racesFile);
+  if (loadedRaces) {
+    racesData = loadedRaces;
   }
 
   const race = racesData.find(
-    (r) => r.year === year && r.slug === slug
+    (r: any) => r.year === year && r.slug === slug
   );
 
   if (!race) {
@@ -38,42 +32,30 @@ export async function load({ params }) {
   }
 
   // Load summary stats for each event
-  const eventsWithStats = race.events ? race.events.map(e => {
+  const eventsWithStats = race.events ? await Promise.all(race.events.map(async (e: any) => {
       let waitlistCount = 0;
       let entrantsCount = 0;
 
       // Load Waitlist Count
       if (e.waitlist && e.waitlist.dataFile) {
           const dataPath = path.join(dataDir, e.waitlist.dataFile);
-          if (fs.existsSync(dataPath)) {
-              try {
-                  const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
-                  if (Array.isArray(data) && data.length > 0) {
-                      waitlistCount = data[data.length - 1].count || 0;
-                  }
-              } catch (err) {
-                  console.error(`Error reading waitlist stats for ${e.title}:`, err);
-              }
+          const data = await readJsonFile(dataPath);
+          if (Array.isArray(data) && data.length > 0) {
+              waitlistCount = data[data.length - 1].count || 0;
           }
       }
 
       // Load Entrants Count
       if (e.entrants && e.entrants.dataFile) {
           const entrantsPath = path.join(dataDir, e.entrants.dataFile);
-          if (fs.existsSync(entrantsPath)) {
-              try {
-                  const entrants = JSON.parse(fs.readFileSync(entrantsPath, "utf-8"));
-                  if (Array.isArray(entrants)) {
-                      entrantsCount = entrants.length;
-                  }
-              } catch (err) {
-                   console.error(`Error reading entrants stats for ${e.title}:`, err);
-              }
+          const entrants = await readJsonFile(entrantsPath);
+          if (Array.isArray(entrants)) {
+              entrantsCount = entrants.length;
           }
       }
 
       return { ...e, stats: { waitlist: waitlistCount, entrants: entrantsCount } };
-  }) : [];
+  })) : [];
 
   return {
     race: { ...race, events: eventsWithStats }
@@ -81,20 +63,16 @@ export async function load({ params }) {
 }
 
 /** @type {import('./$types').EntryGenerator} */
-export function entries() {
-  const dataDir = path.resolve(process.cwd(), "../../data");
-  if (!fs.existsSync(dataDir) && fs.existsSync(path.resolve(process.cwd(), "data"))) {
-      // Fallback if CWD is root
-      return getEntries(path.resolve(process.cwd(), "data"));
-  }
+export async function entries() {
+  const dataDir = await getDataDir();
   return getEntries(dataDir);
 }
 
-function getEntries(dataDir) {
+async function getEntries(dataDir: string) {
   const racesFile = path.join(dataDir, "races.json");
-  if (!fs.existsSync(racesFile)) return [];
-
-  const races = JSON.parse(fs.readFileSync(racesFile, "utf-8"));
+  const races = await readJsonFile<any[]>(racesFile);
+  
+  if (!races || !Array.isArray(races)) return [];
   
   // Return all combinations of year/slug
   return races.map((r) => ({

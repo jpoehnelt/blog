@@ -112,11 +112,11 @@ export default defineConfig({
     sveltekit(),
     copyImages(),
     snippetPlugin(),
-    visualizer({
+    process.env.ANALYZE ? visualizer({
       emitFile: true,
       filename: "stats.html",
-    }),
-  ],
+    }) : undefined,
+  ].filter(Boolean),
   esbuild: {
     drop: ["console", "debugger"],
   },
