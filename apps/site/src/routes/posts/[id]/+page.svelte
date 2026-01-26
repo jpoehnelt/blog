@@ -12,6 +12,7 @@
 
   let { data }: PageProps = $props();
   import JsonLd from "$lib/components/JsonLd.svelte";
+  import AscentProgress from "$lib/components/AscentProgress.svelte";
   import type { Thing, WithContext, FAQPage } from "schema-dts";
 
   // Use $derived to ensure PostContent updates when data changes (e.g. navigation)
@@ -110,6 +111,8 @@
 />
 
 <JsonLd {schema} />
+
+<AscentProgress />
 
 {#snippet toc(items: typeof data.toc)}
   {#if items && items.length > 1}
