@@ -14,6 +14,8 @@
   let query = $state("");
   let hits = $state<any[]>([]);
   let open = $state(false);
+  let loading = $state(false);
+  let debounceTimer: ReturnType<typeof setTimeout>;
 
   // Handle Cmd+K
   function handleKeydown(e: KeyboardEvent) {
@@ -32,21 +34,30 @@
     }
   });
 
-  async function handleSearch(value: string) {
+  function handleSearch(value: string) {
+    clearTimeout(debounceTimer);
+
     // If value is empty, clear hits
     if (!value.trim()) {
       hits = [];
+      loading = false;
       return;
     }
 
     if (!browser) return;
 
-    try {
-      const { hits: searchHits } = await index.search(value);
-      hits = searchHits;
-    } catch (error) {
-      console.error("Search error:", error);
-    }
+    loading = true;
+
+    debounceTimer = setTimeout(async () => {
+      try {
+        const { hits: searchHits } = await index.search(value);
+        hits = searchHits;
+      } catch (error) {
+        console.error("Search error:", error);
+      } finally {
+        loading = false;
+      }
+    }, 300);
   }
 
   function getUrl(hit: any) {
@@ -84,9 +95,11 @@
 </button>
 
 <Command.Dialog bind:open shouldFilter={false} title="Search Posts">
-  <Command.Input bind:value={query} placeholder="Type to search..." />
+  <Command.Input bind:value={query} placeholder="Type to search..." isLoading={loading} />
   <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
+    {#if !loading}
+      <Command.Empty>No results found.</Command.Empty>
+    {/if}
     {#if hits.length > 0}
       <Command.Group heading="Posts">
         {#each hits as hit (hit.objectID)}
