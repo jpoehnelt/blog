@@ -284,7 +284,7 @@
             </Breadcrumb.Item>
             <Breadcrumb.Separator class="text-stone-600" />
             <Breadcrumb.Item>
-               <Breadcrumb.Page class="text-white font-medium max-w-[150px] md:max-w-none truncate">{activeEvents[0]?.title}</Breadcrumb.Page>
+               <Breadcrumb.Page class="text-white font-medium max-w-[150px] md:max-w-none truncate">{events[0]?.title}</Breadcrumb.Page>
             </Breadcrumb.Item>
          </Breadcrumb.List>
       </Breadcrumb.Root>
@@ -292,12 +292,16 @@
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div class="flex-1">
           <div class="flex items-center gap-3 mb-2">
-            <span class="px-3 py-1 rounded-full bg-orange-600/20 text-orange-400 text-xs font-semibold tracking-wide border border-orange-600/30">WAITLIST ACTIVE</span>
+            {#if activeEvents.length > 0}
+               <span class="px-3 py-1 rounded-full bg-orange-600/20 text-orange-400 text-xs font-semibold tracking-wide border border-orange-600/30">WAITLIST ACTIVE</span>
+            {:else}
+               <span class="px-3 py-1 rounded-full bg-slate-700/50 text-slate-400 text-xs font-semibold tracking-wide border border-slate-600/50">REGISTRATION OPEN</span>
+            {/if}
             <span class="text-stone-400 text-sm font-medium tracking-wide uppercase">{race.date ? new Date(race.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }) : race.year}</span>
           </div>
           <div class="flex flex-col gap-1 mb-2">
             <div class="text-xl md:text-2xl font-bold text-stone-400">{race.name}</div>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">{activeEvents[0]?.title}</h1>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">{events[0]?.title}</h1>
           </div>
           <div class="flex items-center text-stone-300 gap-2 mb-6">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -333,11 +337,7 @@
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
 
-  {#if activeEvents.length === 0}
-    <div class="p-4 bg-gray-100 rounded-lg text-gray-600">
-      No data available for this category yet.
-    </div>
-  {:else}
+  {#if activeEvents.length > 0}
     <div class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Waitlist Analysis</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -378,6 +378,14 @@
           </div>
         </div>
       </div>
+    </div>
+  {/if}
+
+  {#if activeEvents.length === 0 && entrants.length === 0}
+    <div class="p-12 text-center border-2 border-dashed border-stone-300 rounded-2xl bg-white/50 mb-8">
+      <p class="text-stone-500 text-lg">
+        No data available for this category yet.
+      </p>
     </div>
   {/if}
 
