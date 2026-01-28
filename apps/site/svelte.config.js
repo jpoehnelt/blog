@@ -60,6 +60,9 @@ const config = {
     paths: {
       relative: false,
     },
+    alias: {
+      $data: "./src/data",
+    },
     adapter: adapter(),
     output: {
       bundleStrategy: "split", // Code-splitting for efficiency

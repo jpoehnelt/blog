@@ -1,400 +1,67 @@
 [
   {
-    "id": "126907",
-    "year": "2026",
-    "date": "2026-02-07",
-    "slug": "q50-races-trails-extravaganza",
-    "name": "Q50 Races Trails Extravaganza",
-    "location": "Franklinton, LA",
-    "events": [
-      {
-        "id": "126907",
-        "title": "Q50 Races Trails Extravaganza",
-        "waitlist": {
-          "dataFile": "races/2026/q50-races-trails-extravaganza/q50-races-trails-extravaganza-126907.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/q50-races-trails-extravaganza/q50-races-trails-extravaganza-126907.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "126915",
-    "year": "2026",
-    "date": "2026-05-02",
-    "slug": "last-person-standing-by-flint-creek-endurance",
-    "name": "Last Person Standing  by  Flint Creek Endurance",
-    "location": "Gentry, AR",
-    "events": [
-      {
-        "id": "126915",
-        "title": "Last Person Standing  by  Flint Creek Endurance",
-        "waitlist": {
-          "dataFile": "races/2026/last-person-standing-by-flint-creek-endurance/last-person-standing-by-flint-creek-endurance-126915.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/last-person-standing-by-flint-creek-endurance/last-person-standing-by-flint-creek-endurance-126915.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "126946",
-    "year": "2026",
-    "date": "2026-05-04",
+    "id": 126941,
+    "title": "Cocodona",
     "slug": "cocodona",
-    "name": "Cocodona",
+    "parentId": 126941,
+    "date": "2026-05-04T11:00:00.000Z",
     "location": "Black Canyon City, AZ",
+    "lat": 0,
+    "lng": 0,
     "events": [
       {
-        "id": "126941",
+        "id": 126941,
         "title": "Cocodona 250",
+        "slug": "cocodona-250",
         "waitlist": {
-          "dataFile": "races/2026/cocodona/cocodona-126941.waitlist.json"
+          "dataFile": "races/2026/cocodona/cocodona-250.waitlist.json"
         },
         "entrants": {
-          "dataFile": "races/2026/cocodona/cocodona-126941.entrants.json"
+          "dataFile": "races/2026/cocodona/cocodona-250.entrants.json"
         }
       },
       {
-        "id": "126942",
+        "id": 126942,
         "title": "Sedona Canyons 125",
+        "slug": "sedona-canyons-125",
         "waitlist": {
-          "dataFile": "races/2026/cocodona/sedona-canyons-125-126942.waitlist.json"
+          "dataFile": "races/2026/cocodona/sedona-canyons-125.waitlist.json"
         },
         "entrants": {
-          "dataFile": "races/2026/cocodona/sedona-canyons-125-126942.entrants.json"
+          "dataFile": "races/2026/cocodona/sedona-canyons-125.entrants.json"
         }
       },
       {
-        "id": "126946",
+        "id": 126946,
         "title": "Bradshaw Brute 100",
+        "slug": "bradshaw-brute-100",
         "waitlist": {
-           "dataFile": "races/2026/cocodona/bradshaw-brute-100-126946.waitlist.json"
+          "dataFile": "races/2026/cocodona/bradshaw-brute-100.waitlist.json"
         },
         "entrants": {
-           "dataFile": "races/2026/cocodona/bradshaw-brute-100-126946.entrants.json"
+          "dataFile": "races/2026/cocodona/bradshaw-brute-100.entrants.json"
         }
-      }
-    ]
-  },
-  {
-    "id": "126994",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "race-to-the-tower-trail-run",
-    "name": "Race to the Tower Trail Run",
-    "location": "Oneonta, AL",
-    "events": [
+      },
       {
-        "id": "126994",
-        "title": "Race to the Tower Trail Run",
+        "id": 126943,
+        "title": "Mingus Traverse",
+        "slug": "mingus-traverse",
         "waitlist": {
-          "dataFile": "races/2026/race-to-the-tower-trail-run/race-to-the-tower-trail-run-126994.waitlist.json"
+          "dataFile": "races/2026/cocodona/mingus-traverse.waitlist.json"
         },
         "entrants": {
-          "dataFile": "races/2026/race-to-the-tower-trail-run/race-to-the-tower-trail-run-126994.entrants.json"
+          "dataFile": "races/2026/cocodona/mingus-traverse.entrants.json"
         }
-      }
-    ]
-  },
-  {
-    "id": "127000",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "napa-wilderness-trail-runs",
-    "name": "Napa Wilderness Trail Runs",
-    "location": "Napa, CA",
-    "events": [
+      },
       {
-        "id": "127000",
-        "title": "Napa Wilderness Trail Runs",
+        "id": 126944,
+        "title": "Flagstaff Crest",
+        "slug": "flagstaff-crest",
         "waitlist": {
-          "dataFile": "races/2026/napa-wilderness-trail-runs/napa-wilderness-trail-runs-127000.waitlist.json"
+          "dataFile": "races/2026/cocodona/flagstaff-crest.waitlist.json"
         },
         "entrants": {
-          "dataFile": "races/2026/napa-wilderness-trail-runs/napa-wilderness-trail-runs-127000.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127006",
-    "year": "2026",
-    "date": "2026-05-01",
-    "slug": "ultra-blue-island-by-azores-trail-run-2026",
-    "name": "Ultra Blue Island by Azores Trail Run 2026",
-    "location": "",
-    "events": [
-      {
-        "id": "127006",
-        "title": "Ultra Blue Island by Azores Trail Run 2026",
-        "waitlist": {
-          "dataFile": "races/2026/ultra-blue-island-by-azores-trail-run-2026/ultra-blue-island-by-azores-trail-run-2026-127006.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/ultra-blue-island-by-azores-trail-run-2026/ultra-blue-island-by-azores-trail-run-2026-127006.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127012",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "iron-will-backroads",
-    "name": "Iron Will Backroads",
-    "location": "Enterprise, KS",
-    "events": [
-      {
-        "id": "127012",
-        "title": "Iron Will Backroads",
-        "waitlist": {
-          "dataFile": "races/2026/iron-will-backroads/iron-will-backroads-127012.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/iron-will-backroads/iron-will-backroads-127012.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127020",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "rumble-on-the-ridge",
-    "name": "Rumble on the Ridge",
-    "location": "Arena, WI",
-    "events": [
-      {
-        "id": "127020",
-        "title": "Rumble on the Ridge",
-        "waitlist": {
-          "dataFile": "races/2026/rumble-on-the-ridge/rumble-on-the-ridge-127020.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/rumble-on-the-ridge/rumble-on-the-ridge-127020.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127025",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "rim-rock-50-mile-trail-challenge",
-    "name": "Rim Rock 50 Mile Trail Challenge",
-    "location": "Napa, CA",
-    "events": [
-      {
-        "id": "127025",
-        "title": "Rim Rock 50 Mile Trail Challenge",
-        "waitlist": {
-          "dataFile": "races/2026/rim-rock-50-mile-trail-challenge/rim-rock-50-mile-trail-challenge-127025.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/rim-rock-50-mile-trail-challenge/rim-rock-50-mile-trail-challenge-127025.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127039",
-    "year": "2026",
-    "date": "2026-04-11",
-    "slug": "blue-heron-hundreds",
-    "name": "Blue Heron Hundreds",
-    "location": "Mooresville, AL",
-    "events": [
-      {
-        "id": "127039",
-        "title": "Blue Heron Hundreds",
-        "waitlist": {
-          "dataFile": "races/2026/blue-heron-hundreds/blue-heron-hundreds-127039.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/blue-heron-hundreds/blue-heron-hundreds-127039.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127046",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "run-for-amma",
-    "name": "Run for Amma",
-    "location": "Los Gatos, Ca",
-    "events": [
-      {
-        "id": "127046",
-        "title": "Run for Amma",
-        "waitlist": {
-          "dataFile": "races/2026/run-for-amma/run-for-amma-127046.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/run-for-amma/run-for-amma-127046.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127042",
-    "year": "2026",
-    "date": "2026-04-11",
-    "slug": "singing-river-runs",
-    "name": "Singing River Runs",
-    "location": "Mooresville, AL",
-    "events": [
-      {
-        "id": "127042",
-        "title": "Singing River Runs",
-        "waitlist": {
-          "dataFile": "races/2026/singing-river-runs/singing-river-runs-127042.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/singing-river-runs/singing-river-runs-127042.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127058",
-    "year": "2026",
-    "date": "2026-04-18",
-    "slug": "capitan-mountain-34-hour",
-    "name": "Capitan Mountain 34 Hour",
-    "location": "Capitan, NM",
-    "events": [
-      {
-        "id": "127058",
-        "title": "Capitan Mountain 34 Hour",
-        "waitlist": {
-          "dataFile": "races/2026/capitan-mountain-34-hour/capitan-mountain-34-hour-127058.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/capitan-mountain-34-hour/capitan-mountain-34-hour-127058.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127061",
-    "year": "2026",
-    "date": "2026-04-26",
-    "slug": "troublesome-hollow-50k",
-    "name": "Troublesome Hollow 50K",
-    "location": "bristol, VA",
-    "events": [
-      {
-        "id": "127061",
-        "title": "Troublesome Hollow 50K",
-        "waitlist": {
-          "dataFile": "races/2026/troublesome-hollow-50k/troublesome-hollow-50k-127061.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/troublesome-hollow-50k/troublesome-hollow-50k-127061.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127063",
-    "year": "2026",
-    "date": "2026-05-16",
-    "slug": "butterfield-blitz-backyard",
-    "name": "Butterfield Blitz Backyard",
-    "location": "Herriman, UT",
-    "events": [
-      {
-        "id": "127063",
-        "title": "Butterfield Blitz Backyard",
-        "waitlist": {
-          "dataFile": "races/2026/butterfield-blitz-backyard/butterfield-blitz-backyard-127063.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/butterfield-blitz-backyard/butterfield-blitz-backyard-127063.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127082",
-    "year": "2026",
-    "date": "2026-02-07",
-    "slug": "mill-stone-50k",
-    "name": "Mill Stone 50K",
-    "location": "Fort Mill, SC",
-    "events": [
-      {
-        "id": "127082",
-        "title": "Mill Stone 50K",
-        "waitlist": {
-          "dataFile": "races/2026/mill-stone-50k/mill-stone-50k-127082.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/mill-stone-50k/mill-stone-50k-127082.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127086",
-    "year": "2026",
-    "date": "2026-04-04",
-    "slug": "big-bear-squatch-north",
-    "name": "Big Bear Squatch North",
-    "location": "Bear Mountain, NY",
-    "events": [
-      {
-        "id": "127086",
-        "title": "Big Bear Squatch North",
-        "waitlist": {
-          "dataFile": "races/2026/big-bear-squatch-north/big-bear-squatch-north-127086.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/big-bear-squatch-north/big-bear-squatch-north-127086.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127094",
-    "year": "2026",
-    "date": "2026-05-23",
-    "slug": "sugar-badger-5050-and-half",
-    "name": "Sugar Badger 50/50 and Half",
-    "location": "Belleville, WI",
-    "events": [
-      {
-        "id": "127094",
-        "title": "Sugar Badger 50/50 and Half",
-        "waitlist": {
-          "dataFile": "races/2026/sugar-badger-5050-and-half/sugar-badger-5050-and-half-127094.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/sugar-badger-5050-and-half/sugar-badger-5050-and-half-127094.entrants.json"
-        }
-      }
-    ]
-  },
-  {
-    "id": "127100",
-    "year": "2026",
-    "date": "2026-04-14",
-    "slug": "dt-stone-anvil",
-    "name": "DT Stone Anvil",
-    "location": "Chatsworth, GA",
-    "events": [
-      {
-        "id": "127100",
-        "title": "DT Stone Anvil",
-        "waitlist": {
-          "dataFile": "races/2026/dt-stone-anvil/dt-stone-anvil-127100.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/dt-stone-anvil/dt-stone-anvil-127100.entrants.json"
+          "dataFile": "races/2026/cocodona/flagstaff-crest.entrants.json"
         }
       }
     ]

@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/cli.ts --bundle --outfile=dist/cli.js --platform=node --sourcemap --format=esm --packages=external --banner:js='#!/usr/bin/env node'",
+    "build": "esbuild src/syndicate.ts --bundle --outfile=dist/syndicate.js --platform=node --sourcemap --format=esm --packages=external --banner:js='#!/usr/bin/env node'",
     "check": "tsc --noEmit",
     "test": "vitest run",
     "syndicate": "node dist/syndicate.js"
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@jpoehnelt/matter": "workspace:*",
+    "@jpoehnelt/ultrasignup-scraper": "workspace:*",
     "@types/mdast": "^4.0.4",
     "axios": "^1.12.2",
     "date-fns": "^2.30.0",

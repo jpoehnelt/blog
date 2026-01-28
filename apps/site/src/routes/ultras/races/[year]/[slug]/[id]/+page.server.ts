@@ -1,70 +1,60 @@
+import { WaitlistHistorySchema, ParticipantsDataSchema } from "@jpoehnelt/ultrasignup-scraper";
 import { error } from "@sveltejs/kit";
-import fs from "fs/promises";
-import { existsSync } from "fs";
-import path from "path";
-import races from "../../../../../../../../../data/races.json";
-import { getDataDir, readJsonFile } from "$lib/server/utils";
+import { readFileSync } from "node:fs";
+import type { Race } from "$lib/types";
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
-// Force reload timestamp: 1234567
-  const { year, slug, id } = params;
+export async function load({ params, fetch, parent }) {
+  const { id } = params;
 
-  const dataDir = await getDataDir();
-  const racesFile = path.join(dataDir, "races.json");
-  
-  let racesData: any[] = races;
-  const loadedRaces = await readJsonFile<any[]>(racesFile);
-  if (loadedRaces) {
-    racesData = loadedRaces;
-  }
-
-  const race = racesData.find(
-    (r) => r.year === year && r.slug === slug
-  );
-
-  if (!race) {
-    throw error(404, "Race not found");
-  }
+  // Get race from layout
+  const { race } = await parent();
 
   // Verify the ID belongs to this race (either as the race ID or an event ID)
-  const isValidId = race.id === id || (race.events && race.events.some((e: any) => e.id === id));
+  const isValidId = race.id === id || (race.events && race.events.some((e: any) => String(e.id) === String(id)));
   if (!isValidId) {
       throw error(404, "Event ID not found in race");
   }
-
-  console.log("CWD:", process.cwd());
   
   const events = [];
-
-  const targetEvent = race.events?.find((e: any) => e.id === id);
+  
+  const targetEvent = race.events?.find((e: any) => String(e.id) === String(id));
 
   if (targetEvent) {
-      // Loop is technically unnecessary if we only process one, 
-      // but keeping structure similar or just processing 'targetEvent'
       const e = targetEvent;
-      let data = null;
-          try {
-            if (e.waitlist && e.waitlist.dataFile) {
-                const dataPath = path.join(dataDir, e.waitlist.dataFile);
-                data = await readJsonFile(dataPath);
-            }
-          } catch (err) {
-              console.error(`Error processing event waitlist ${e.title}:`, err);
-          }
-          
-          let entrants = null;
-          try {
-             if (e.entrants && e.entrants.dataFile) {
-                const entrantsPath = path.join(dataDir, e.entrants.dataFile);
-                entrants = await readJsonFile(entrantsPath);
-             }
-          } catch (err) {
-              console.error(`Error processing event entrants ${e.title}:`, err);
-          }
-
-          events.push({ ...e, data, entrants });
       
+      const [waitlistRes, entrantsRes] = await Promise.all([
+          e.waitlist?.dataFile ? fetch(`/data/${e.waitlist.dataFile}`).catch(err => {
+              console.error(`Error fetching waitlist for ${e.title}:`, err);
+              return null;
+          }) : Promise.resolve(null),
+          e.entrants?.dataFile ? fetch(`/data/${e.entrants.dataFile}`).catch(err => {
+              console.error(`Error fetching entrants for ${e.title}:`, err);
+              return null;
+          }) : Promise.resolve(null)
+      ]);
+
+      let data = null;
+      if (waitlistRes?.ok) {
+          try {
+              const raw = await waitlistRes.json();
+              data = WaitlistHistorySchema.parse(raw);
+          } catch (err) {
+              console.error(`Error parsing waitlist for ${e.title}:`, err);
+          }
+      }
+
+      let entrants = null;
+      if (entrantsRes?.ok) {
+          try {
+              const raw = await entrantsRes.json();
+              entrants = ParticipantsDataSchema.parse(raw);
+          } catch (err) {
+              console.error(`Error parsing entrants for ${e.title}:`, err);
+          }
+      }
+
+      events.push({ ...e, data, entrants });
   } 
   
   return {
@@ -75,25 +65,32 @@ export async function load({ params }) {
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {
-  const dataDir = await getDataDir();
-  return getEntries(dataDir);
-}
+  let typedRaces: Race[] = [];
+  try {
+      const data = readFileSync("./static/data/races.json", "utf-8");
+      typedRaces = JSON.parse(data);
+  } catch (e) {
+      // Fallback for when running from project root or different cwd
+      try {
+          const data = readFileSync("apps/site/static/data/races.json", "utf-8");
+          typedRaces = JSON.parse(data);
+      } catch (e2) {
+          console.error("Failed to load races.json in entries", e2);
+          return [];
+      }
+  }
 
-async function getEntries(dataDir: string) {
-  const racesFile = path.join(dataDir, "races.json");
-  const races = await readJsonFile<any[]>(racesFile);
-  
-  if (!races || !Array.isArray(races)) return [];
+  if (!typedRaces || !Array.isArray(typedRaces)) return [];
   
   // Return all events for all races
   const entries = [];
-  for (const race of races) {
+  for (const race of typedRaces) {
       if (race.events) {
           for (const event of race.events) {
               entries.push({
                   year: race.year,
                   slug: race.slug,
-                  id: event.id
+                  id: String(event.id)
               });
           }
       }
@@ -102,11 +99,10 @@ async function getEntries(dataDir: string) {
           entries.push({
               year: race.year,
               slug: race.slug,
-              id: race.id
+              id: String(race.id)
           });
       }
   }
   return entries;
 }
-
 

@@ -3,6 +3,10 @@ name: Ingest
 on:
   workflow_dispatch:
     inputs:
+      scrape_range:
+        description: "Scrape Range (start-end)"
+        type: string
+        required: false
       after:
         description: "After date"
         type: string
@@ -64,11 +68,15 @@ jobs:
 
       - name: Discover and Ingest Races
         run: |
-          # Discover new races (optional dynamic range)
-          # node packages/data-automation/dist/cli.js discover --start 126940 --end 127000
-          
-          # Smart Ingest: Filter past races, prioritize upcoming
-          node packages/data-automation/dist/cli.js ingest
+          # Daily Update (Refresh known races)
+          if [ "${{ github.event.inputs.scrape_range }}" == "" ]; then
+            pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev update -f ../../data/races.json -o ../../data/races
+          else
+            # Manual Discovery (Scrape new range)
+            START=$(echo ${{ github.event.inputs.scrape_range }} | cut -d'-' -f1)
+            END=$(echo ${{ github.event.inputs.scrape_range }} | cut -d'-' -f2)
+            pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev scrape $START $END -o ../../data/races
+          fi
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:

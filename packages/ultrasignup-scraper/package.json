@@ -1,0 +1,37 @@
+{
+  "name": "@jpoehnelt/ultrasignup-scraper",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "ultrasignup-scraper": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup src/cli.ts src/index.ts --format esm,cjs --dts",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^20.11.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1",
+    "zod": "^4.3.6"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "got": "^14.6.6",
+    "jsdom": "^24.0.0",
+    "keyv": "^5.6.0",
+    "keyv-file": "^5.3.3",
+    "p-limit": "^7.2.0"
+  }
+}
