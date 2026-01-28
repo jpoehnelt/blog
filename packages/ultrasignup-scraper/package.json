@@ -2,8 +2,17 @@
   "name": "@jpoehnelt/ultrasignup-scraper",
   "version": "0.0.1",
   "type": "module",
-  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -11,7 +20,7 @@
     "ultrasignup-scraper": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsup src/cli.ts src/index.ts --format esm,cjs --dts",
+    "build": "tsup src/cli.ts src/index.ts src/types.ts --format esm,cjs --dts",
     "dev": "tsx src/cli.ts",
     "test": "vitest run"
   },

@@ -1,11 +1,14 @@
 export type {
-  RaceEventSummary,
-  Participant,
   WaitlistSnapshot,
-  WaitlistApplicant,
 } from "@jpoehnelt/ultrasignup-scraper";
 
-import type { Race as ScraperRace, RaceEventSummary } from "@jpoehnelt/ultrasignup-scraper";
+import type {
+  Race as ScraperRace,
+  RaceEventSummary,
+  Participant,
+  WaitlistApplicant,
+  RaceSchema,
+} from "@jpoehnelt/ultrasignup-scraper/types";
 
 export interface Entrant {
   firstName: string;

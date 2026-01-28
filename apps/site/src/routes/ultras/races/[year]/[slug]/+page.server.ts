@@ -1,4 +1,4 @@
-import { WaitlistHistorySchema, ParticipantsDataSchema } from "@jpoehnelt/ultrasignup-scraper";
+import { WaitlistHistorySchema, ParticipantsDataSchema } from "@jpoehnelt/ultrasignup-scraper/types";
 import { error, redirect } from "@sveltejs/kit";
 import { readFileSync } from "node:fs";
 import type { Race } from "$lib/types";

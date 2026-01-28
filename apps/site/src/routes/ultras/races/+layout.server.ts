@@ -1,5 +1,5 @@
 import type { Race } from "$lib/types";
-import { RaceSchema, type Race as ScraperRace } from "@jpoehnelt/ultrasignup-scraper";
+import { RaceSchema, type Race as ScraperRace } from "@jpoehnelt/ultrasignup-scraper/types";
 import { slugify } from "$lib/utils";
 import { z } from "zod";
 
