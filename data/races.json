@@ -1,0 +1,69 @@
+[
+  {
+    "id": 126941,
+    "title": "Cocodona",
+    "slug": "cocodona",
+    "parentId": 126941,
+    "date": "2026-05-04T11:00:00.000Z",
+    "location": "Black Canyon City, AZ",
+    "lat": 0,
+    "lng": 0,
+    "events": [
+      {
+        "id": 126941,
+        "title": "Cocodona 250",
+        "slug": "cocodona-250",
+        "waitlist": {
+          "dataFile": "races/2026/cocodona/cocodona-250.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/cocodona/cocodona-250.entrants.json"
+        }
+      },
+      {
+        "id": 126942,
+        "title": "Sedona Canyons 125",
+        "slug": "sedona-canyons-125",
+        "waitlist": {
+          "dataFile": "races/2026/cocodona/sedona-canyons-125.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/cocodona/sedona-canyons-125.entrants.json"
+        }
+      },
+      {
+        "id": 126946,
+        "title": "Bradshaw Brute 100",
+        "slug": "bradshaw-brute-100",
+        "waitlist": {
+          "dataFile": "races/2026/cocodona/bradshaw-brute-100.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/cocodona/bradshaw-brute-100.entrants.json"
+        }
+      },
+      {
+        "id": 126943,
+        "title": "Mingus Traverse",
+        "slug": "mingus-traverse",
+        "waitlist": {
+          "dataFile": "races/2026/cocodona/mingus-traverse.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/cocodona/mingus-traverse.entrants.json"
+        }
+      },
+      {
+        "id": 126944,
+        "title": "Flagstaff Crest",
+        "slug": "flagstaff-crest",
+        "waitlist": {
+          "dataFile": "races/2026/cocodona/flagstaff-crest.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/cocodona/flagstaff-crest.entrants.json"
+        }
+      }
+    ]
+  }
+]
