@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from "$lib/utils.js";
   import { tv, type VariantProps } from "tailwind-variants";
+  import { page } from "$app/state";
 
   const navLinkVariants = tv({
     base: "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded font-medium",
@@ -55,18 +56,22 @@
 
   let {
     href,
-    active = false,
+    active,
     variant = "default",
     class: className,
     children,
     ...rest
   }: Props = $props();
+
+  let isActive = $derived(
+    active ?? (href === "/" ? page.url.pathname === "/" : page.url.pathname.startsWith(href))
+  );
 </script>
 
 <a
   {href}
-  class={cn(navLinkVariants({ variant, active }), className)}
-  aria-current={active ? "page" : undefined}
+  class={cn(navLinkVariants({ variant, active: isActive }), className)}
+  aria-current={isActive ? "page" : undefined}
   {...rest}
 >
   {@render children?.()}

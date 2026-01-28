@@ -4,7 +4,6 @@
   import NavLink from "$lib/components/NavLink.svelte";
   import Search from "$lib/components/Search.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
-  import { page } from "$app/state";
 
   interface SocialLink {
     name: string;
@@ -54,12 +53,8 @@
       <!-- Replacement for NavigationMenu using standard links -->
       <ul class="flex items-center gap-1">
         {#each navLinks as link}
-          {@const active =
-            link.href === "/"
-              ? page.url.pathname === "/"
-              : page.url.pathname.startsWith(link.href)}
           <li>
-            <NavLink href={link.href} {active}>
+            <NavLink href={link.href}>
               {link.label}
             </NavLink>
           </li>
@@ -135,13 +130,8 @@
             <Search />
           </div>
           {#each navLinks as link}
-            {@const active =
-              link.href === "/"
-                ? page.url.pathname === "/"
-                : page.url.pathname.startsWith(link.href)}
             <NavLink
               href={link.href}
-              {active}
               variant="mobile"
               onclick={() => (mobileMenuOpen = false)}
             >
