@@ -383,7 +383,7 @@
 
   {#if entrants.length > 0}
     <div class="mb-12">
-      <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Field Strength</h2>
+      <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Field</h2>
       
       <!-- Mobile Tabs -->
       <div class="lg:hidden">
@@ -412,7 +412,6 @@
   <!-- Full Waitlist Section -->
   {#if activeEvents.some((e: RaceEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
     <div class="mb-8">
-      <h2 class="text-2xl font-semibold mb-6">Waitlist Applicants</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {#each activeEvents as event}
           {#if event.data && event.data.length > 0}
