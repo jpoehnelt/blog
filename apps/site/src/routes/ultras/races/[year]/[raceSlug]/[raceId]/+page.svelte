@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>{race.year} {race.name} - Event Selection</title>
+  <title>{race.year} {race.title} - Event Selection</title>
 </svelte:head>
 
 <div class="min-h-screen bg-stone-50 pb-20">
@@ -29,7 +29,7 @@
             </Breadcrumb.Item>
             <Breadcrumb.Separator class="text-stone-600" />
             <Breadcrumb.Item>
-               <Breadcrumb.Page class="text-white font-medium">{race.name}</Breadcrumb.Page>
+               <Breadcrumb.Page class="text-white font-medium">{race.title}</Breadcrumb.Page>
             </Breadcrumb.Item>
          </Breadcrumb.List>
       </Breadcrumb.Root>
@@ -40,7 +40,7 @@
            <span class="text-stone-400 text-sm font-medium tracking-wide uppercase">{race.date ? new Date(race.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }) : race.year}</span>
         </div>
         <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6">
-          {race.name}
+          {race.title}
         </h1>
         <div class="flex items-center text-stone-300 gap-2 mb-2 text-xl">
            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -52,17 +52,17 @@
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Event Selection Grid -->
-    <div>
+    <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg">
         <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Select an Event</h2>
         
         {#if race.events && race.events.length > 0}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {#each race.events as event}
-                    <a href="/ultras/races/{race.year}/{race.slug}/{event.id}" class="group block bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <a href="/ultras/races/{race.year}/{race.slug}/{race.id}/{event.id}" class="group block bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         <div class="p-8">
                             <h3 class="text-2xl font-black text-slate-800 mb-6 group-hover:text-orange-600 transition-colors">{event.title}</h3>
                             
-                            <div class="flex gap-4 text-sm mb-6">
+                            <div class="flex gap-4 text-sm mb-4">
                                 {#if event.stats}
                                     <div class="flex flex-col items-center bg-stone-50 p-3 rounded-xl border border-stone-100 min-w-[80px]">
                                         <span class="font-black text-xl text-slate-900">{event.stats.waitlist}</span>
@@ -76,6 +76,22 @@
                                     <span class="text-stone-400 italic">No stats available</span>
                                 {/if}
                             </div>
+                            
+                            {#if event.competitiveness}
+                              <div class="flex items-center gap-3 text-xs mb-4">
+                                <div class="flex items-center gap-1.5 bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full border border-purple-100">
+                                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                                  <span class="font-bold">{event.competitiveness.averageRank.toFixed(0)}</span>
+                                  <span class="text-purple-500 font-medium">avg rank</span>
+                                </div>
+                                {#if event.competitiveness.eliteCount > 0}
+                                  <div class="flex items-center gap-1.5 bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full border border-orange-100">
+                                    <span class="font-bold">{event.competitiveness.eliteCount}</span>
+                                    <span class="text-orange-500 font-medium">elite</span>
+                                  </div>
+                                {/if}
+                              </div>
+                            {/if}
           
                             <div class="flex items-center justify-between pt-6 border-t border-stone-100">
                                 <span class="text-stone-400 text-xs font-bold uppercase tracking-wide">View Dashboard</span>

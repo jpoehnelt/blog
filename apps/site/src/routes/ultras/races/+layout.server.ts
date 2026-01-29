@@ -1,6 +1,5 @@
 import type { Race } from "$lib/types";
-import { RaceSchema, type Race as ScraperRace } from "@jpoehnelt/ultrasignup-scraper/types";
-import { slugify } from "$lib/utils";
+import { RaceSchema, type Race as ScraperRace } from "@jpoehnelt/ultrasignup-scraper";
 import { z } from "zod";
 
 export const load = async ({ fetch }) => {
@@ -10,12 +9,7 @@ export const load = async ({ fetch }) => {
 
   const races: Race[] = data.map((r: ScraperRace) => ({
     ...r,
-    id: String(r.id),
-    name: r.title,
-    parentId: r.parentId,
-    year: new Date(r.date).getFullYear().toString(),
-    slug: slugify(r.title),
-    events: r.events || [],
+    year: new Date(r.date).getFullYear(),
   }));
 
   return {

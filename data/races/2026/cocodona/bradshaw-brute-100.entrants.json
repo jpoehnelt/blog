@@ -4,7 +4,7 @@
     "lastName": "Crosby",
     "age": "M30-39",
     "location": "Cranston, RI",
-    "rank": 93.7,
+    "rank": 93.3,
     "ageRank": 90.6,
     "results": 54,
     "bib": "",
@@ -16,7 +16,7 @@
     "age": "F40-49",
     "location": "Marana, AZ",
     "rank": 93.2,
-    "ageRank": 0,
+    "ageRank": 97.1,
     "results": 19,
     "bib": "",
     "finishes": 0
@@ -26,7 +26,7 @@
     "lastName": "Jackson",
     "age": "M40-49",
     "location": "Loma Linda, CA",
-    "rank": 89.6,
+    "rank": 89.5,
     "ageRank": 94.7,
     "results": 71,
     "bib": "",
@@ -103,7 +103,7 @@
     "lastName": "Cronk",
     "age": "M60-69",
     "location": "Oro Valley, AZ",
-    "rank": 72.9,
+    "rank": 72.8,
     "ageRank": 95.6,
     "results": 45,
     "bib": "",
@@ -231,17 +231,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Isabella",
-    "lastName": "Janovick",
-    "age": "F40-49",
-    "location": "Star, ID",
-    "rank": 66.5,
-    "ageRank": 70.9,
-    "results": 24,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Kevin",
     "lastName": "Bone",
     "age": "M30-39",
@@ -253,6 +242,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Isabella",
+    "lastName": "Janovick",
+    "age": "F40-49",
+    "location": "Star, ID",
+    "rank": 66.2,
+    "ageRank": 70.9,
+    "results": 24,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "David",
     "lastName": "Furtado",
     "age": "M40-49",
@@ -260,28 +260,6 @@
     "rank": 66.2,
     "ageRank": 73.1,
     "results": 29,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Prairie",
-    "age": "M30-39",
-    "location": "Austin, TX",
-    "rank": 65.6,
-    "ageRank": 68.4,
-    "results": 52,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jason",
-    "lastName": "Vanderhovel",
-    "age": "M30-39",
-    "location": "Brighton, MI",
-    "rank": 65.3,
-    "ageRank": 66.7,
-    "results": 21,
     "bib": "",
     "finishes": 0
   },
@@ -304,6 +282,28 @@
     "rank": 64.6,
     "ageRank": 67,
     "results": 71,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Vanderhovel",
+    "age": "M30-39",
+    "location": "Brighton, MI",
+    "rank": 64.6,
+    "ageRank": 66.7,
+    "results": 21,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Prairie",
+    "age": "M30-39",
+    "location": "Austin, TX",
+    "rank": 64.5,
+    "ageRank": 68.4,
+    "results": 52,
     "bib": "",
     "finishes": 0
   },
@@ -389,7 +389,7 @@
     "lastName": "Barratt",
     "age": "M40-49",
     "location": "MESA, AZ",
-    "rank": 53.3,
+    "rank": 55,
     "ageRank": 58.1,
     "results": 13,
     "bib": "",

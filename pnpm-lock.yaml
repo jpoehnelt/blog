@@ -135,6 +135,9 @@ importers:
       glob:
         specifier: ^13.0.0
         version: 13.0.0
+      simple-statistics:
+        specifier: ^7.8.8
+        version: 7.8.8
       strava-v3:
         specifier: ^3.1.0
         version: 3.1.0
@@ -6336,6 +6339,9 @@ packages:
   simple-icons@14.15.0:
     resolution: {integrity: sha512-yjlJ8skP4isCd4dQTDGFbv0hQgDIr57DbWaovEeHADPAZa5DBEAs+3ZnBb76ti+yz7/OzFI3SqTP1SKku1uhCw==}
     engines: {node: '>=0.12.18'}
+
+  simple-statistics@7.8.8:
+    resolution: {integrity: sha512-CUtP0+uZbcbsFpqEyvNDYjJCl+612fNgjT8GaVuvMG7tBuJg8gXGpsP5M7X658zy0IcepWOZ6nPBu1Qb9ezA1w==}
 
   simple-swizzle@0.2.4:
     resolution: {integrity: sha512-nAu1WFPQSMNr2Zn9PGSZK9AGn4t/y97lEm+MXTtUDwfP0ksAIX4nO+6ruD9Jwut4C49SB1Ws+fbXsm/yScWOHw==}
@@ -13965,6 +13971,8 @@ snapshots:
   signal-exit@4.1.0: {}
 
   simple-icons@14.15.0: {}
+
+  simple-statistics@7.8.8: {}
 
   simple-swizzle@0.2.4:
     dependencies:

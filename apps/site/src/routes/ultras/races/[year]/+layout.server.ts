@@ -1,4 +1,4 @@
-import type { Race } from "$lib/types";
+import type { Race } from "@jpoehnelt/ultrasignup-scraper";
 
 export const load = async ({ parent, params }) => {
   const { races } = await parent();

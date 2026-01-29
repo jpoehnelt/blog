@@ -62,7 +62,10 @@ export const RaceSchema = BaseSchema.extend({
   lat: z.coerce.number().optional(),
   lng: z.coerce.number().optional(),
   events: z.array(RaceEventSummarySchema),
-});
+}).transform((race) => ({
+  ...race,
+  year: race.date.getFullYear(),
+}));
 
 export const WaitlistSnapshotSchema = z.object({
   date: z.string(),

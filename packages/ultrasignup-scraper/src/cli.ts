@@ -160,22 +160,47 @@ async function updateRacesJson(newRaceData: any, racesJsonPath: string) {
   await fs.writeFile(racesJsonPath, JSON.stringify(races, null, 2));
 }
 
+// Minimum criteria for a race to be considered "competitive/popular"
+const MIN_ENTRANTS = 50;
+const MIN_WAITLIST = 1;
+const MIN_ELITE_COUNT = 1; // Entrants with rank >= 90
+
+function isCompetitiveRace(events: { participants: any[]; waitlist: any[] }[]): boolean {
+  let totalEntrants = 0;
+  let totalWaitlist = 0;
+  let eliteCount = 0;
+
+  for (const event of events) {
+    totalEntrants += event.participants?.length || 0;
+    totalWaitlist += event.waitlist?.length || 0;
+    eliteCount += (event.participants || []).filter(p => p.rank && p.rank >= 90).length;
+  }
+
+  // Race is competitive if it has: significant waitlist OR many entrants OR elite runners
+  return totalWaitlist >= MIN_WAITLIST || totalEntrants >= MIN_ENTRANTS || eliteCount >= MIN_ELITE_COUNT;
+}
+
 program
   .command("scrape")
-  .description("Discover and ingest new races")
+  .description("Discover and ingest new races (filters for competitive/popular races)")
   .argument("<start>", "Start ID")
   .argument("<end>", "End ID")
   .option("-o, --out-dir <dir>", "Output directory", "../../data/races")
+  .option("--no-filter", "Disable competitive race filtering")
   .action(async (startStr, endStr, options) => {
     const start = Number(startStr);
     const end = Number(endStr);
     const outDir = path.resolve(process.cwd(), options.outDir);
     const racesJsonPath = path.resolve(outDir, "../races.json");
+    const filterEnabled = options.filter !== false;
 
     const limit = pLimit(5);
     const tasks = [];
 
     console.log(`Scraping range ${start} to ${end}...`);
+    if (filterEnabled) {
+      console.log(`Filtering: min ${MIN_ENTRANTS} entrants OR waitlist OR elite runners`);
+    }
 
     for (let id = start; id <= end; id++) {
       tasks.push(
@@ -195,7 +220,15 @@ program
             return;
           }
 
-          console.log(`\nFound Main Event: ${id} - ${info.title}`);
+          // Get events to check competitiveness
+          const events = await race.getEvents();
+          
+          if (filterEnabled && !isCompetitiveRace(events)) {
+            process.stdout.write("x"); // Skip non-competitive races
+            return;
+          }
+
+          console.log(`\n✓ Found: ${id} - ${info.title}`);
           const raceData = await saveRaceData(info, outDir);
           await updateRacesJson(raceData, racesJsonPath);
         }),

@@ -1,6 +1,5 @@
 import { JSDOM } from "jsdom";
-// z is no longer needed here if we import schemas
-// import { z } from "zod"; 
+import { z } from "zod";
 
 import got, { HTTPError } from "got";
 import {
@@ -87,10 +86,12 @@ export class Scraper {
     const { time: { start } = {}, location } = JSON.parse(aceData);
     const date = start ? new Date(start) : undefined;
 
-    return RaceSchema.pick({
-      date: true,
-      location: true,
-    }).parse({ date, location });
+    return z
+      .object({
+        date: z.date(),
+        location: z.string(),
+      })
+      .parse({ date, location });
   }
 
   async getRace(): Promise<Race> {

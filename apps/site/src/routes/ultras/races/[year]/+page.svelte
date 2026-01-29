@@ -66,7 +66,7 @@
           <a
             href="/ultras/races/{y}"
             class="px-4 py-2 rounded-xl text-sm font-bold transition-all border
-          {y === year
+          {y === Number(year)
               ? 'bg-orange-600 text-white border-orange-500 shadow-lg shadow-orange-900/20'
               : 'bg-slate-700/50 text-stone-400 border-slate-600 hover:bg-slate-700 hover:text-stone-200 hover:border-slate-500'}"
           >
@@ -81,7 +81,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each racesForYear as race}
           <a
-            href="/ultras/races/{race.year}/{race.slug}"
+            href="/ultras/races/{race.year}/{race.slug}/{race.id}"
             class="group block bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <div class="h-32 bg-slate-900 relative overflow-hidden group-hover:bg-slate-800 transition-colors">
@@ -92,11 +92,26 @@
             </div>
             
             <div class="p-6 pt-4">
-              <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{race.name || race.title}</h2> <!-- Fallback title -->
-              <div class="flex items-center text-stone-500 text-sm mb-4">
+              <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{race.title}</h2> <!-- Fallback title -->
+              <div class="flex items-center text-stone-500 text-sm mb-3">
                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                  {race.location}
               </div>
+              {#if race.competitiveness}
+                <div class="flex items-center gap-3 text-xs mb-3">
+                  <div class="flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                    <span class="font-semibold">{race.competitiveness.averageRank.toFixed(0)}</span>
+                    <span class="text-purple-500">avg rank</span>
+                  </div>
+                  {#if race.competitiveness.eliteCount > 0}
+                    <div class="flex items-center gap-1 bg-orange-50 text-orange-700 px-2 py-1 rounded-full">
+                      <span class="font-semibold">{race.competitiveness.eliteCount}</span>
+                      <span class="text-orange-500">elite</span>
+                    </div>
+                  {/if}
+                </div>
+              {/if}
               <div class="flex items-center justify-between mt-4 text-sm font-medium pt-4 border-t border-stone-100">
                 <span class="text-stone-400">{new Date(race.date).toLocaleDateString(undefined, {month:'short', day:'numeric'})}</span>
                 <span class="text-orange-600 flex items-center group-hover:translate-x-1 transition-transform">
