@@ -627,7 +627,6 @@
   theme: "blue" | "rose",
 )}
   <div
-    id={title.toLowerCase().replace(/\s+/g, '-')}
     class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden h-full"
   >
     <div
@@ -1243,8 +1242,12 @@
 
         <!-- Desktop Grid -->
         <div class="hidden lg:grid grid-cols-2 gap-8">
-          {@render ParticipantList(topMen, "Top Men", "blue")}
-          {@render ParticipantList(topWomen, "Top Women", "rose")}
+          <div id="top-men">
+            {@render ParticipantList(topMen, "Top Men", "blue")}
+          </div>
+          <div id="top-women">
+            {@render ParticipantList(topWomen, "Top Women", "rose")}
+          </div>
         </div>
       </div>
     {/if}
