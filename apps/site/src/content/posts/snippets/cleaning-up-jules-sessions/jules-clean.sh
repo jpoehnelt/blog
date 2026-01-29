@@ -15,19 +15,50 @@ fi
 
 echo "Searching for sessions created before $THRESHOLD_DATE..."
 
-# 1. List sessions
-# 2. Filter by createTime using jq
-# 3. Extract the 'name' (resource path) for deletion
-SESSIONS_TO_DELETE=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" "$API_BASE/sessions?pageSize=100" | \
-    jq -r --arg date "$THRESHOLD_DATE" '.sessions[] | select(.createTime < $date) | .name')
+NEXT_PAGE_TOKEN=""
+SESSIONS_TO_DELETE=""
+
+# Loop to fetch all pages
+while : ; do
+    URL="$API_BASE/sessions?pageSize=100"
+    if [ -n "$NEXT_PAGE_TOKEN" ]; then
+        URL="$URL&pageToken=$NEXT_PAGE_TOKEN"
+    fi
+
+    RESPONSE_JSON=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" "$URL")
+
+    # Extract sessions to delete from the current page
+    PAGE_SESSIONS=$(echo "$RESPONSE_JSON" | jq -r --arg date "$THRESHOLD_DATE" \
+        '.sessions[]? | select(.createTime < $date) | .name')
+
+    if [ -n "$PAGE_SESSIONS" ]; then
+        if [ -n "$SESSIONS_TO_DELETE" ]; then
+            SESSIONS_TO_DELETE="$SESSIONS_TO_DELETE
+$PAGE_SESSIONS"
+        else
+            SESSIONS_TO_DELETE="$PAGE_SESSIONS"
+        fi
+    fi
+
+    # Check for next page token
+    NEXT_PAGE_TOKEN=$(echo "$RESPONSE_JSON" | jq -r '.nextPageToken // empty')
+
+    if [ -z "$NEXT_PAGE_TOKEN" ]; then
+        break
+    fi
+done
 
 if [ -z "$SESSIONS_TO_DELETE" ]; then
     echo "No sessions older than $DAYS_OLD days found."
     exit 0
 fi
 
-# Iterate and delete
-for SESSION_NAME in $SESSIONS_TO_DELETE; do
+# Iterate and delete using while read for safety
+echo "$SESSIONS_TO_DELETE" | while IFS= read -r SESSION_NAME; do
+    if [ -z "$SESSION_NAME" ]; then
+        continue
+    fi
+
     echo "Deleting $SESSION_NAME..."
 
     # The API expects: DELETE /v1alpha/{session_name}
