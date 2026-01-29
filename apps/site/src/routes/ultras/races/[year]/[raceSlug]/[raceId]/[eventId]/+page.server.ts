@@ -1,6 +1,7 @@
 import { error } from "@sveltejs/kit";
-import { RaceDataManager } from "$lib/races";
-
+import { RaceDataManager } from "$lib/races.server";
+import { readFileSync } from "fs";
+import { resolve } from "path";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params, parent, fetch }) {
@@ -11,7 +12,7 @@ export async function load({ params, parent, fetch }) {
 
   // Verify the ID belongs to this race
   if (race.id !== Number(raceId)) {
-      throw error(404, "Race ID mismatch");
+    throw error(404, "Race ID mismatch");
   }
 
   const event = race.events?.find((e) => e.id === Number(eventId));
@@ -41,8 +42,10 @@ export async function load({ params, parent, fetch }) {
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {
-  const raceManager = new RaceDataManager(fetch);
-  const races = await raceManager.getRaces();
+  // Read directly from filesystem during pre-rendering
+  const racesPath = resolve("../../data/races.json");
+  const racesJson = readFileSync(racesPath, "utf-8");
+  const races = JSON.parse(racesJson);
 
   // Return all events for all races
   const entries = [];

@@ -77,6 +77,8 @@ jobs:
             END=$(echo ${{ github.event.inputs.scrape_range }} | cut -d'-' -f2)
             pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev scrape $START $END -o ../../data/races
           fi
+      - name: Generate My Races Index
+        run: npx tsx packages/data-automation/src/generate-my-races.ts --name "Poehnelt" --output data/my-races.json
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:

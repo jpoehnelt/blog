@@ -2,18 +2,99 @@
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   let { data } = $props();
   let race = $derived(data.race);
+
+  let title = $derived(`${race.year} ${race.title} - Event Selection`);
+  let description = $derived(
+    `Select an event distance for the ${race.year} ${race.title} in ${race.location}. View waitlist stats and entrant information for all available distances.`
+  );
+  let canonicalUrl = $derived(
+    `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`
+  );
+
+  let jsonLd = $derived([
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://justin.poehnelt.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Races",
+          item: "https://justin.poehnelt.com/ultras/races",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: race.year,
+          item: `https://justin.poehnelt.com/ultras/races/${race.year}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: race.title,
+          item: canonicalUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      name: `${race.title} ${race.year}`,
+      startDate: race.date || race.year,
+      location: {
+        "@type": "Place",
+        name: race.location || "TBD",
+      },
+      description: description,
+      url: canonicalUrl,
+    },
+  ]);
 </script>
 
 <svelte:head>
-  <title>{race.year} {race.title} - Event Selection</title>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {#each jsonLd as ld}
+    {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
+  {/each}
 </svelte:head>
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <div class="relative bg-slate-900 text-stone-100 overflow-hidden shadow-2xl">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-100 overflow-hidden shadow-2xl">
+    <!-- Topographic Contour Pattern - Mountain Lines -->
+    <div class="absolute inset-0 opacity-[0.07]">
+      <svg class="w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" class="text-white">
+          <path d="M-50,350 Q100,300 200,320 T400,280 T600,310 T850,270" />
+          <path d="M-50,300 Q80,250 180,270 T380,220 T580,250 T850,200" />
+          <path d="M-50,250 Q60,180 200,210 T420,150 T620,190 T850,130" />
+          <path d="M-50,200 Q120,140 250,160 T450,100 T650,140 T850,80" />
+          <path d="M-50,150 Q100,80 220,110 T460,50 T680,90 T850,30" />
+          <path d="M-50,100 Q80,40 200,60 T440,10 T660,40 T850,-20" />
+          <path d="M-50,325 Q90,280 190,300 T390,250 T590,280 T850,240" opacity="0.5" />
+          <path d="M-50,275 Q70,210 190,240 T400,180 T600,220 T850,160" opacity="0.5" />
+          <path d="M-50,175 Q110,100 230,130 T455,70 T665,110 T850,50" opacity="0.5" />
+        </g>
+      </svg>
+    </div>
     
-    <div class="relative container mx-auto px-6 py-12 md:py-20">
+    <!-- Gradient overlays for depth -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-slate-900/40"></div>
+    
+    <!-- Accent glow -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
+    
+    <div class="relative container mx-auto px-6 py-16 md:py-24">
       <Breadcrumb.Root class="mb-6">
          <Breadcrumb.List>
             <Breadcrumb.Item>

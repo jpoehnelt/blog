@@ -4,6 +4,7 @@ import { BASE_URL } from "$lib/constants";
 import { type Post } from "$lib/content/posts";
 import { getAllTags, getPostsMetadata } from "$lib/content/posts.server";
 import { getStravaActivities, getActivitySlug } from "$lib/content/strava";
+import racesData from "$data/races.json";
 
 import type { RequestHandler } from "./$types";
 
@@ -14,6 +15,28 @@ export const GET: RequestHandler = async () => {
   const tags = getAllTags();
   const activities = await getStravaActivities();
   const today = new Date().toISOString().split("T")[0];
+
+  // Get unique years from races
+  const raceYears = [...new Set(racesData.map((r: any) => r.year))];
+
+  // Generate race URLs
+  const raceUrls = racesData.flatMap((race: any) => {
+    const raceLastmod = race.date
+      ? new Date(race.date).toISOString().split("T")[0]
+      : today;
+    return [
+      // Race page (event selection)
+      {
+        loc: `${BASE_URL}ultras/races/${race.year}/${race.slug}/${race.id}/`,
+        lastmod: raceLastmod,
+      },
+      // Individual event pages
+      ...race.events.map((event: any) => ({
+        loc: `${BASE_URL}ultras/races/${race.year}/${race.slug}/${race.id}/${event.id}/`,
+        lastmod: raceLastmod,
+      })),
+    ];
+  });
 
   const sitemapObject = {
     urlset: {
@@ -29,6 +52,12 @@ export const GET: RequestHandler = async () => {
         { loc: `${BASE_URL}posts/`, lastmod: today },
         { loc: `${BASE_URL}tags/`, lastmod: today },
         { loc: `${BASE_URL}activities/`, lastmod: today },
+        { loc: `${BASE_URL}ultras/races/`, lastmod: today },
+        // Race year pages
+        ...raceYears.map((year: number) => ({
+          loc: `${BASE_URL}ultras/races/${year}/`,
+          lastmod: today,
+        })),
       ]
         .concat(
           // Blog posts
@@ -50,7 +79,8 @@ export const GET: RequestHandler = async () => {
             loc: `${BASE_URL}activities/${getActivitySlug(activity)}/`,
             lastmod: new Date(activity.start_date).toISOString().split("T")[0],
           })),
-        ),
+        )
+        .concat(raceUrls),
     },
   };
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   import WaitlistChart from "$lib/components/WaitlistChart.svelte";
+  import WaitlistTable from "$lib/components/WaitlistTable.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
   import { linearRegression, linearRegressionLine, rSquared } from "simple-statistics";
@@ -10,7 +11,7 @@
     Participant,
     RaceEventSummary,
     WaitlistHistory,
-  } from "@jpoehnelt/ultrasignup-scraper";
+  } from "@jpoehnelt/ultrasignup-scraper/types";
 
   interface PageEvent extends Omit<RaceEventSummary, "entrants"> {
     data: WaitlistHistory | null;
@@ -437,6 +438,19 @@
     ),
   );
 
+  // Calculate field competitiveness from all entrants (regardless of waitlist)
+  let fieldCompetitiveness = $derived(calculateCompetitiveness(entrants));
+
+  // Hero stats - calculate once for template
+  let totalWaitlist = $derived(
+    activeEvents.reduce(
+      (acc: number, e: PageEvent) =>
+        acc + (e.data && e.data.length > 0 ? e.data[e.data.length - 1]?.count || 0 : 0),
+      0,
+    ),
+  );
+  let heroCompetitiveness = $derived(fieldCompetitiveness || activeEvents[0]?.competitiveness);
+
   const HIGH_PERFORMER_RANK = 85;
   const MIN_RESULTS = 5;
   const QUALIFIED_QUOTA = 10;
@@ -571,6 +585,15 @@
     };
   }
 
+  // Helper to transform applicants for WaitlistTable component
+  function getWaitlistApplicants(eventId: string, applicants: string[]) {
+    return applicants.map((name, i) => ({
+      name,
+      position: i + 1,
+      ...getPositionDiffs(eventId, name, i)
+    }));
+  }
+
   let searchTerms: Record<string, string> = $state({});
 </script>
 
@@ -604,6 +627,7 @@
   theme: "blue" | "rose",
 )}
   <div
+    id={title.toLowerCase().replace(/\s+/g, '-')}
     class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden h-full"
   >
     <div
@@ -687,7 +711,12 @@
 {/snippet}
 
 <svelte:head>
-  <title>{race.year} {race.title} Waitlist Analysis</title>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`} />
+  {#each jsonLd as ld}
+    {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
+  {/each}
   {#each athleteJsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
   {/each}
@@ -695,13 +724,33 @@
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <div class="relative bg-slate-900 text-stone-100 overflow-hidden">
-    <div
-      class="absolute inset-0 opacity-10"
-      style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
-    ></div>
+  <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-100 overflow-hidden">
+    <!-- Topographic Contour Pattern - Mountain Lines -->
+    <div class="absolute inset-0 opacity-[0.07]">
+      <svg class="w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" class="text-white">
+          <path d="M-50,350 Q100,300 200,320 T400,280 T600,310 T850,270" />
+          <path d="M-50,300 Q80,250 180,270 T380,220 T580,250 T850,200" />
+          <path d="M-50,250 Q60,180 200,210 T420,150 T620,190 T850,130" />
+          <path d="M-50,200 Q120,140 250,160 T450,100 T650,140 T850,80" />
+          <path d="M-50,150 Q100,80 220,110 T460,50 T680,90 T850,30" />
+          <path d="M-50,100 Q80,40 200,60 T440,10 T660,40 T850,-20" />
+          <path d="M-50,325 Q90,280 190,300 T390,250 T590,280 T850,240" opacity="0.5" />
+          <path d="M-50,275 Q70,210 190,240 T400,180 T600,220 T850,160" opacity="0.5" />
+          <path d="M-50,175 Q110,100 230,130 T455,70 T665,110 T850,50" opacity="0.5" />
+        </g>
+      </svg>
+    </div>
+    
+    <!-- Gradient overlays for depth -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent"></div>
+    
+    <!-- Accent glow -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
 
-    <div class="relative container mx-auto px-6 py-12 md:py-20">
+    <div class="relative container mx-auto px-6 py-16 md:py-24">
       <Breadcrumb.Root class="mb-6">
         <Breadcrumb.List>
           <Breadcrumb.Item>
@@ -803,6 +852,35 @@
             <span class="text-lg font-medium">{race.location}</span>
           </div>
 
+          <!-- Quick Navigation -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            {#if entrants.length > 0}
+              <a
+                href="#top-men"
+                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-blue-600/30 border border-slate-600/50 hover:border-blue-500/50 text-stone-300 hover:text-blue-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
+              >
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                Top Men
+              </a>
+              <a
+                href="#top-women"
+                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-rose-600/30 border border-slate-600/50 hover:border-rose-500/50 text-stone-300 hover:text-rose-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
+              >
+                <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                Top Women
+              </a>
+            {/if}
+            {#if activeEvents.some((e: PageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
+              <a
+                href="#waitlist"
+                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-orange-600/30 border border-slate-600/50 hover:border-orange-500/50 text-stone-300 hover:text-orange-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
+              >
+                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                Waitlist
+              </a>
+            {/if}
+          </div>
+
           {#if race.events && race.events.filter((e: any) => String(e.id) !== String(activeEvents[0]?.id)).length > 0}
             <div class="flex flex-wrap gap-2">
               <span
@@ -821,34 +899,27 @@
           {/if}
         </div>
 
-        {#if activeEvents.length > 0}
-          {@const totalWaitlist = activeEvents.reduce(
-            (acc: number, e: PageEvent) =>
-              acc +
-              (e.data && e.data.length > 0
-                ? e.data[e.data.length - 1]?.count || 0
-                : 0),
-            0,
-          )}
-          {@const heroCompetitiveness = activeEvents[0]?.competitiveness}
+        {#if totalWaitlist > 0 || heroCompetitiveness}
           <div class="flex gap-4">
-            <div
-              class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
-            >
+            {#if totalWaitlist > 0}
               <div
-                class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
+                class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
               >
-                Waitlist Size
+                <div
+                  class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
+                >
+                  Waitlist Size
+                </div>
+                <div class="text-4xl font-black text-white">
+                  {totalWaitlist.toLocaleString()}
+                </div>
+                <div
+                  class="text-xs text-green-400 font-medium mt-1 flex items-center gap-1"
+                >
+                  Total Applicants
+                </div>
               </div>
-              <div class="text-4xl font-black text-white">
-                {totalWaitlist.toLocaleString()}
-              </div>
-              <div
-                class="text-xs text-green-400 font-medium mt-1 flex items-center gap-1"
-              >
-                Total Applicants
-              </div>
-            </div>
+            {/if}
             {#if heroCompetitiveness}
               <div
                 class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
@@ -867,6 +938,23 @@
                   {heroCompetitiveness.eliteCount} Elite (90+)
                 </div>
               </div>
+              <div
+                class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
+              >
+                <div
+                  class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
+                >
+                  Total Entrants
+                </div>
+                <div class="text-4xl font-black text-white">
+                  {heroCompetitiveness.totalEntrants.toLocaleString()}
+                </div>
+                <div
+                  class="text-xs text-blue-400 font-medium mt-1 flex items-center gap-1"
+                >
+                  Registered Runners
+                </div>
+              </div>
             {/if}
           </div>
         {/if}
@@ -877,11 +965,10 @@
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     {#if activeEvents.length > 0}
       <div class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Waitlist Analysis</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Statistics (moved before chart) -->
           <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-lg font-medium mb-4">Statistics</h3>
+            <h3 class="text-lg font-medium mb-4">Waitlist Analysis</h3>
             <div class="space-y-4">
               {#each activeEvents as event}
                 {#if event.data && event.data.length > 0}
@@ -1054,8 +1141,76 @@
       </div>
     {/if}
 
+    <!-- Field Statistics (no waitlist but has entrants) -->
+    {#if activeEvents.length === 0 && fieldCompetitiveness}
+      <div class="mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-medium mb-4">Field Analysis</h3>
+            <div class="border-b pb-4 last:border-0 last:pb-0">
+              <div class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide">{events[0]?.title}</div>
+              
+              <div class="mb-4">
+                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Field Strength</div>
+                
+                <div class="grid grid-cols-2 gap-2 mb-3">
+                  <div class="bg-slate-50 rounded px-2 py-1.5">
+                    <div class="text-xs text-stone-400">Avg Rank</div>
+                    <div class="font-mono text-lg font-bold text-slate-700">{fieldCompetitiveness.averageRank.toFixed(1)}</div>
+                  </div>
+                  <div class="bg-slate-50 rounded px-2 py-1.5">
+                    <div class="text-xs text-stone-400">Median</div>
+                    <div class="font-mono text-lg font-bold text-slate-700">{fieldCompetitiveness.medianRank.toFixed(1)}</div>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  {#each fieldCompetitiveness.rankDistribution as bucket}
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="w-12 text-stone-500 font-medium">{bucket.label}</span>
+                      <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
+                        <div 
+                          class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : 'bg-slate-400'}"
+                          style="width: {bucket.percent}%"
+                        ></div>
+                      </div>
+                      <span class="w-8 text-right text-stone-400">{bucket.count}</span>
+                    </div>
+                  {/each}
+                </div>
+
+                {#if fieldCompetitiveness.eliteCount > 0}
+                  <div class="mt-2 text-xs text-purple-600 font-medium">
+                    {fieldCompetitiveness.eliteCount} elite runner{fieldCompetitiveness.eliteCount > 1 ? 's' : ''} (90+ rank)
+                  </div>
+                {/if}
+                <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
+                  <p><strong class="text-stone-500">About rankings:</strong> Based on UltraSignup rankings. Avg/Median calculated from {fieldCompetitiveness.rankedEntrants} ranked runners (excludes unranked).</p>
+                  <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing/Unranked</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <!-- Total Entrants -->
+                <div class="bg-slate-50 rounded-lg p-3">
+                  <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Total Entrants</div>
+                  <div class="text-2xl font-bold text-slate-800">{fieldCompetitiveness.totalEntrants}</div>
+                </div>
+                
+                <!-- Ranked Entrants -->
+                <div class="bg-slate-50 rounded-lg p-3">
+                  <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Ranked Runners</div>
+                  <div class="text-2xl font-bold text-slate-800">{fieldCompetitiveness.rankedEntrants}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {/if}
+
     {#if entrants.length > 0}
-      <div class="mb-12">
+      <div class="mb-12 bg-stone-50">
         <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">
           Field
         </h2>
@@ -1096,116 +1251,17 @@
 
     <!-- Full Waitlist Section -->
     {#if activeEvents.some((e: PageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
-      <div class="mb-8">
+      <div id="waitlist" class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {#each activeEvents as event}
             {#if event.data && event.data.length > 0}
               {@const last = event.data[event.data.length - 1]}
               {#if last.applicants && last.applicants.length > 0}
-                <div
-                  class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden mt-8"
-                >
-                  <div
-                    class="px-6 py-4 border-b border-stone-100 bg-stone-50/50 flex flex-col md:flex-row justify-between items-center gap-4"
-                  >
-                    <h3
-                      class="font-bold text-slate-800 flex items-center gap-2"
-                    >
-                      <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                      Waitlist Applicants
-                      <span
-                        class="text-xs font-normal text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full"
-                        >{last.applicants.length} Total</span
-                      >
-                    </h3>
-                    <div class="relative w-full md:w-64">
-                      <div
-                        class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
-                      >
-                        <svg
-                          class="w-4 h-4 text-slate-400"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                          />
-                        </svg>
-                      </div>
-                      <input
-                        type="text"
-                        id={`search-${event.id}`}
-                        class="block w-full p-2 ps-10 text-sm text-slate-700 border border-slate-200 rounded-lg bg-white focus:ring-orange-500 focus:border-orange-500"
-                        placeholder="Search applicants..."
-                        bind:value={searchTerms[event.id]}
-                      />
-                    </div>
-                  </div>
-
-                  <div class="overflow-x-auto max-h-[800px] overflow-y-auto">
-                    <table class="w-full text-sm text-left">
-                      <thead
-                        class="text-xs text-slate-500 uppercase bg-stone-50 sticky top-0 z-10 shadow-sm"
-                      >
-                        <tr>
-                          <th class="px-4 py-3 font-semibold w-16 text-center"
-                            >Pos</th
-                          >
-                          <th class="px-4 py-3 font-semibold">Name</th>
-                          <th class="px-4 py-3 font-semibold text-right">1D</th>
-                          <th class="px-4 py-3 font-semibold text-right">7D</th>
-                          <th class="px-4 py-3 font-semibold text-right">30D</th
-                          >
-                        </tr>
-                      </thead>
-                      <tbody class="divide-y divide-stone-100 bg-white">
-                        {#each last.applicants
-                          .map((name: string, i: number) => ({ name, i }))
-                          .filter((item: { name: string; i: number }) => !searchTerms[event.id] || item.name
-                                .toLowerCase()
-                                .includes(searchTerms[event.id].toLowerCase())) as item}
-                          {@const diffs = getPositionDiffs(
-                            event.id,
-                            item.name,
-                            item.i,
-                          )}
-                          <tr
-                            class="hover:bg-orange-50/50 transition-colors group"
-                          >
-                            <td
-                              class="px-4 py-3 font-mono text-xs text-slate-400 text-center"
-                              >{item.i + 1}</td
-                            >
-                            <td class="px-4 py-3 font-medium text-slate-700">
-                              <a
-                                href={`https://ultrasignup.com/results_participant.aspx?fname=${item.name.split(" ")[0]}&lname=${item.name.split(" ").slice(1).join(" ")}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="hover:text-orange-600 hover:underline transition-colors"
-                              >
-                                {item.name}
-                              </a>
-                            </td>
-                            <td class="px-4 py-3 text-right"
-                              >{@render ChangeIndicator(diffs.d1)}</td
-                            >
-                            <td class="px-4 py-3 text-right"
-                              >{@render ChangeIndicator(diffs.d7)}</td
-                            >
-                            <td class="px-4 py-3 text-right"
-                              >{@render ChangeIndicator(diffs.d30)}</td
-                            >
-                          </tr>
-                        {/each}
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="mt-8">
+                  <WaitlistTable
+                    applicants={getWaitlistApplicants(String(event.id), last.applicants)}
+                    eventId={String(event.id)}
+                  />
                 </div>
               {/if}
             {/if}

@@ -8,6 +8,11 @@
   import RunningChart from "$lib/components/RunningChart.svelte";
   import ActivityListItem from "$lib/components/ActivityListItem.svelte";
   import PostCard from "$lib/components/PostCard.svelte";
+  import RaceStatsBanner from "$lib/components/RaceStatsBanner.svelte";
+  import MyNextRaceCard from "$lib/components/MyNextRaceCard.svelte";
+  import HotWaitlistsCard from "$lib/components/HotWaitlistsCard.svelte";
+  import EliteSpotlightCard from "$lib/components/EliteSpotlightCard.svelte";
+  import UpcomingRacesCard from "$lib/components/UpcomingRacesCard.svelte";
   import {
     DEFAULT_TITLE,
     BASE_URL,
@@ -28,6 +33,13 @@
   const runningChartData = data.runningChartData;
   const featuredPost = recentPosts[0];
   const otherPosts = recentPosts.slice(1);
+
+  // Race widget data
+  const raceStats = data.raceStats;
+  const myRaces = data.myRaces;
+  const hotWaitlists = data.hotWaitlists;
+  const topEliteRaces = data.topEliteRaces;
+  const upcomingRacesWidget = data.upcomingRacesWidget;
 
   const schema: WithContext<Thing>[] = [
     {
@@ -148,9 +160,34 @@
         </p>
       </section>
 
-      <!-- Sub Headlines (Grid) -->
+      <!-- Sub Headlines (Grid with interspersed race cards) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-        {#each otherPosts.slice(0, 20) as post}
+        <!-- First 2 posts -->
+        {#each otherPosts.slice(0, 2) as post}
+          <PostCard {post} />
+        {/each}
+
+        <!-- Hot Waitlists Card -->
+        {#if hotWaitlists && hotWaitlists.length > 0}
+          <div class="md:col-span-2">
+            <HotWaitlistsCard races={hotWaitlists} />
+          </div>
+        {/if}
+
+        <!-- Next 2 posts -->
+        {#each otherPosts.slice(2, 4) as post}
+          <PostCard {post} />
+        {/each}
+
+        <!-- Elite Spotlight Card -->
+        {#if topEliteRaces && topEliteRaces.length > 0}
+          <div class="md:col-span-2">
+            <EliteSpotlightCard races={topEliteRaces} />
+          </div>
+        {/if}
+
+        <!-- Remaining posts -->
+        {#each otherPosts.slice(4, 20) as post}
           <PostCard {post} />
         {/each}
       </div>
@@ -160,6 +197,16 @@
     <div
       class="lg:col-span-1 border-l-0 lg:border-l border-border pl-0 lg:pl-8 space-y-8"
     >
+      <!-- My Races -->
+      {#if myRaces && myRaces.length > 0}
+        <MyNextRaceCard races={myRaces} />
+      {/if}
+
+      <!-- Upcoming Races -->
+      {#if upcomingRacesWidget && upcomingRacesWidget.length > 0}
+        <UpcomingRacesCard races={upcomingRacesWidget} />
+      {/if}
+
       <!--  Chart -->
       <section>
         <RunningChart data={runningChartData} />
@@ -199,3 +246,4 @@
     </div>
   </div>
 </main>
+

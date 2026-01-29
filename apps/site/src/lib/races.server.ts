@@ -5,7 +5,7 @@ import {
   type WaitlistHistory,
   ParticipantSchema,
   WaitlistHistorySchema,
-} from "@jpoehnelt/ultrasignup-scraper";
+} from "@jpoehnelt/ultrasignup-scraper/types";
 import { z } from "zod";
 
 export class RaceDataManager {
@@ -43,10 +43,7 @@ export class RaceDataManager {
     return undefined;
   }
 
-  async getEntrants(
-    raceId: number,
-    eventId: number
-  ): Promise<Participant[]> {
+  async getEntrants(raceId: number, eventId: number): Promise<Participant[]> {
     const race = await this.getRace(raceId);
     if (!race) throw new Error(`Race ${raceId} not found`);
 
@@ -59,29 +56,30 @@ export class RaceDataManager {
 
     const res = await this.fetch(`/data/${event.entrants.dataFile}`);
     if (!res.ok) {
-       throw new Error(`Could not load entrants for event ${eventId}: ${res.statusText}`);
+      throw new Error(
+        `Could not load entrants for event ${eventId}: ${res.statusText}`,
+      );
     }
     const json = await res.json();
     return z.array(ParticipantSchema).parse(json);
   }
 
-  async getWaitlist(
-    raceId: number,
-    eventId: number
-  ): Promise<WaitlistHistory> {
+  async getWaitlist(raceId: number, eventId: number): Promise<WaitlistHistory> {
     const race = await this.getRace(raceId);
     if (!race) throw new Error(`Race ${raceId} not found`);
 
     const event = race.events.find((e) => e.id === eventId);
     if (!event) throw new Error(`Event ${eventId} not found in race ${raceId}`);
 
-     if (!event.waitlist?.dataFile) {
+    if (!event.waitlist?.dataFile) {
       return [];
     }
 
     const res = await this.fetch(`/data/${event.waitlist.dataFile}`);
     if (!res.ok) {
-       throw new Error(`Could not load waitlist for event ${eventId}: ${res.statusText}`);
+      throw new Error(
+        `Could not load waitlist for event ${eventId}: ${res.statusText}`,
+      );
     }
     const json = await res.json();
     return WaitlistHistorySchema.parse(json);

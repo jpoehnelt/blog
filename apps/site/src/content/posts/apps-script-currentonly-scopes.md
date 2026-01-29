@@ -69,13 +69,10 @@ You can also explicitly define this in your `appsscript.json` manifest file to p
 ```json
 {
   "timeZone": "America/New_York",
-  "dependencies": {
-  },
+  "dependencies": {},
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/spreadsheets.currentonly"
-  ]
+  "oauthScopes": ["https://www.googleapis.com/auth/spreadsheets.currentonly"]
 }
 ```
 

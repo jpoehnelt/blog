@@ -1,9 +1,8 @@
 import { redirect } from "@sveltejs/kit";
 
-
 export async function load({ parent }) {
   const { races } = await parent();
-  
+
   let latestYear = new Date().getFullYear().toString();
 
   if (races && Array.isArray(races) && races.length > 0) {
@@ -11,7 +10,7 @@ export async function load({ parent }) {
     if (years.length > 0) {
       latestYear = String(years[0]);
     } else {
-        latestYear = String(races[races.length - 1].year);
+      latestYear = String(races[races.length - 1].year);
     }
   }
 

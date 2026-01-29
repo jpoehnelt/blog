@@ -1,0 +1,80 @@
+<script lang="ts">
+  import { differenceInDays } from "date-fns";
+
+  interface MyRace {
+    raceId: number;
+    eventId: number;
+    title: string;
+    eventTitle: string;
+    date: string;
+    location: string;
+    type: "entrant" | "waitlist";
+    position?: number;
+    totalCount?: number;
+    slug: string;
+  }
+
+  interface Props {
+    races: MyRace[];
+  }
+
+  let { races }: Props = $props();
+
+  function getDaysUntil(date: string) {
+    return differenceInDays(new Date(date), new Date());
+  }
+</script>
+
+{#if races.length > 0}
+  <section class="space-y-4">
+    <h2 class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 tracking-wider">
+      My Race{races.length > 1 ? "s" : ""}
+    </h2>
+    <div class="space-y-4">
+      {#each races as race}
+        <a 
+          href="/ultras/races/{new Date(race.date).getFullYear()}/{race.slug}/{race.raceId}/{race.eventId}"
+          class="block group"
+        >
+          <div class="space-y-2">
+            <div class="font-black text-lg leading-tight group-hover:underline decoration-2">
+              {race.eventTitle}
+            </div>
+            <div class="text-sm text-muted-foreground">
+              {race.title} • {race.location}
+            </div>
+            
+            <div class="flex items-center gap-4 text-sm">
+              <div class="flex items-center gap-1.5 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded font-bold">
+                ⏱️ {getDaysUntil(race.date)} days
+              </div>
+              
+              {#if race.type === "waitlist" && race.position}
+                <div class="flex items-center gap-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-1 rounded font-bold">
+                  #{race.position}
+                  <span class="font-normal text-xs">/ {race.totalCount}</span>
+                </div>
+              {:else if race.type === "entrant"}
+                <div class="flex items-center gap-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded font-bold">
+                  ✓ Registered
+                </div>
+              {/if}
+            </div>
+            
+            <div class="text-xs text-muted-foreground">
+              {new Date(race.date).toLocaleDateString(undefined, {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </div>
+          </div>
+        </a>
+        {#if races.indexOf(race) < races.length - 1}
+          <hr class="border-border" />
+        {/if}
+      {/each}
+    </div>
+  </section>
+{/if}

@@ -2,8 +2,8 @@ import { redirect } from "@sveltejs/kit";
 import type {
   WaitlistHistory,
   Participant,
-} from "@jpoehnelt/ultrasignup-scraper";
-import { RaceDataManager } from "$lib/races";
+} from "@jpoehnelt/ultrasignup-scraper/types";
+import { RaceDataManager } from "$lib/races.server";
 
 interface CompetitivenessStats {
   averageRank: number;
@@ -12,15 +12,17 @@ interface CompetitivenessStats {
   totalEntrants: number;
 }
 
-function calculateCompetitiveness(entrants: Participant[]): CompetitivenessStats | null {
+function calculateCompetitiveness(
+  entrants: Participant[],
+): CompetitivenessStats | null {
   if (!entrants || entrants.length === 0) return null;
 
-  const rankedEntrants = entrants.filter(e => e.rank && e.rank > 0);
-  const ranks = rankedEntrants.map(e => e.rank!).sort((a, b) => b - a);
-  
+  const rankedEntrants = entrants.filter((e) => e.rank && e.rank > 0);
+  const ranks = rankedEntrants.map((e) => e.rank!).sort((a, b) => b - a);
+
   if (ranks.length === 0) return null;
 
-  const eliteCount = ranks.filter(r => r >= 90).length;
+  const eliteCount = ranks.filter((r) => r >= 90).length;
   const sum = ranks.reduce((a, b) => a + b, 0);
   const averageRank = sum / ranks.length;
 
@@ -66,9 +68,9 @@ export async function load({ fetch, parent, params }) {
           if (entrantsData && entrantsData.length > 0) {
             entrantsCount = entrantsData.length;
           }
-          
+
           const competitiveness = calculateCompetitiveness(entrantsData);
-          
+
           return {
             ...event,
             stats: { waitlist: waitlistCount, entrants: entrantsCount },
@@ -88,4 +90,3 @@ export async function load({ fetch, parent, params }) {
     race: { ...race, events: resolvedEvents },
   };
 }
-

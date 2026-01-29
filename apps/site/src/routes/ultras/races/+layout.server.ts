@@ -1,5 +1,8 @@
 import type { Race } from "$lib/types";
-import { RaceSchema, type Race as ScraperRace } from "@jpoehnelt/ultrasignup-scraper";
+import {
+  RaceSchema,
+  type Race as ScraperRace,
+} from "@jpoehnelt/ultrasignup-scraper/types";
 import { z } from "zod";
 
 export const load = async ({ fetch }) => {
