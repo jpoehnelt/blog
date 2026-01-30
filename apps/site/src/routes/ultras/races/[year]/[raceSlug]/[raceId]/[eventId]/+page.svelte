@@ -133,7 +133,7 @@
     if (days <= 0) return [];
     
     const totalCount = curr.count;
-    const percentiles = [50, 75, 90, 95];
+    const percentiles = [25, 50, 75];
     
     return percentiles.map(p => {
       // Position at this percentile (0-indexed)
@@ -967,7 +967,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Statistics (moved before chart) -->
           <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-lg font-medium mb-4">Waitlist Analysis</h3>
+            <h3 class="text-lg font-medium mb-4">Race Analysis</h3>
             <div class="space-y-4">
               {#each activeEvents as event}
                 {#if event.data && event.data.length > 0}
@@ -1071,13 +1071,12 @@
 
                     {#if event.percentileStats && event.percentileStats.length > 0}
                       <div class="mt-4 pt-3 border-t border-stone-100">
-                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Movement by Position</div>
-                        <div class="grid grid-cols-2 gap-2">
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Queue Progress</div>
+                        <div class="grid grid-cols-3 gap-2">
                           {#each event.percentileStats as stat}
-                            <div class="bg-slate-50 rounded px-2 py-1.5 flex justify-between items-center">
-                              <span class="text-xs text-stone-500">
-                                #{stat.position}
-                                <span class="text-stone-400">({stat.percentile}%)</span>
+                            <div class="bg-slate-50 rounded px-2 py-1.5 flex flex-col items-center">
+                              <span class="text-xs text-stone-400 mb-0.5">
+                                {stat.percentile === 25 ? 'Front' : stat.percentile === 50 ? 'Middle' : 'Back'}
                               </span>
                               <span class="font-mono text-sm font-medium {stat.velocity > 0 ? 'text-green-600' : stat.velocity < 0 ? 'text-red-500' : 'text-slate-400'}">
                                 {stat.velocity > 0 ? '+' : ''}{stat.velocity.toFixed(1)}/d
@@ -1086,7 +1085,7 @@
                           {/each}
                         </div>
                         <div class="text-xs text-stone-400 mt-2 italic">
-                          Daily position change at each rank
+                          Avg daily position change by queue section
                         </div>
                       </div>
                     {/if}
