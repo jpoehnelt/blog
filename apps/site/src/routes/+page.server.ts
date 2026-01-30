@@ -8,22 +8,8 @@ import {
   isAfter,
 } from "date-fns";
 import { RaceDataManager } from "$lib/races.server";
-import myRacesData from "$data/my-races.json";
 
 import type { PageServerLoad } from "./$types";
-
-interface MyRace {
-  raceId: number;
-  eventId: number;
-  title: string;
-  eventTitle: string;
-  date: string;
-  location: string;
-  type: "entrant" | "waitlist";
-  position?: number;
-  totalCount?: number;
-  slug: string;
-}
 
 export const load: PageServerLoad = async ({ fetch }) => {
   const posts = getPostsMetadata();
@@ -167,11 +153,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
     year: new Date(r.date).getFullYear(),
   }));
 
-  // Get my races from precomputed data (future races only)
-  const myRaces = ((myRacesData.races || []) as MyRace[]).filter(
-    (r) => new Date(r.date) > now,
-  );
-
   return {
     posts,
     tags,
@@ -184,7 +165,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
       eliteRunners: totalElites,
       activeWaitlists,
     },
-    myRaces,
     hotWaitlists,
     topEliteRaces,
     upcomingRacesWidget,

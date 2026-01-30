@@ -76,9 +76,35 @@ export const WaitlistSnapshotSchema = z.object({
 export const WaitlistHistorySchema = z.array(WaitlistSnapshotSchema);
 export const ParticipantsDataSchema = z.array(ParticipantSchema);
 
+// My Race Entry - minimal reference data stored in my-races.json
+export const MyRaceEntrySchema = z.object({
+  raceId: z.number(),
+  eventId: z.number(),
+  type: z.enum(["entrant", "waitlist"]),
+  position: z.number().optional(),
+  totalCount: z.number().optional(),
+});
+
+// My Race Entry Resolved - after joining with races.json
+export const MyRaceEntryResolvedSchema = MyRaceEntrySchema.extend({
+  title: z.string(),
+  date: z.string(),
+  location: z.string(),
+  slug: z.string(),
+});
+
+export const MyRacesDataSchema = z.object({
+  generated: z.string(),
+  lastName: z.string(),
+  races: z.array(MyRaceEntrySchema),
+});
+
 export type Race = z.infer<typeof RaceSchema>;
 export type Participant = z.infer<typeof ParticipantSchema>;
 export type WaitlistApplicant = z.infer<typeof WaitlistApplicantSchema>;
 export type RaceEventSummary = z.infer<typeof RaceEventSummarySchema>;
 export type WaitlistSnapshot = z.infer<typeof WaitlistSnapshotSchema>;
 export type WaitlistHistory = z.infer<typeof WaitlistHistorySchema>;
+export type MyRaceEntry = z.infer<typeof MyRaceEntrySchema>;
+export type MyRaceEntryResolved = z.infer<typeof MyRaceEntryResolvedSchema>;
+export type MyRacesData = z.infer<typeof MyRacesDataSchema>;

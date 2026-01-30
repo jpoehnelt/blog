@@ -2,6 +2,7 @@ import { error } from "@sveltejs/kit";
 import { RaceDataManager } from "$lib/races.server";
 import { readFileSync } from "fs";
 import { resolve } from "path";
+import { getPostsMetadata } from "$lib/content/posts.server";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params, parent, fetch }) {
@@ -34,9 +35,16 @@ export async function load({ params, parent, fetch }) {
     },
   ];
 
+  // Get blog posts that reference this race
+  const allPosts = getPostsMetadata();
+  const relatedPosts = allPosts.filter(
+    (post) => post.raceId === Number(raceId) || post.raceId === Number(eventId),
+  );
+
   return {
     race,
     events,
+    relatedPosts,
   };
 }
 

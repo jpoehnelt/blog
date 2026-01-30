@@ -170,18 +170,41 @@ export class Scraper {
         element.classList.contains("event_selected_link"),
     );
 
-    const events: {
+    let events: {
       id: number;
       title: string;
       type: "TEAM" | "INDIVIDUAL";
-    }[] = elements.map((element) => {
-      const url = new URL(element.getAttribute("href") || "", URLS.BASE);
-      const id = Number(url.searchParams.get("did"));
-      const title = element.textContent?.trim() || "";
-      const type = element.href.includes("teams.aspx") ? "TEAM" : "INDIVIDUAL";
+    }[];
 
-      return { id, title, type };
-    });
+    if (elements.length > 0) {
+      // Multi-event race: parse event links
+      events = elements.map((element) => {
+        const url = new URL(element.getAttribute("href") || "", URLS.BASE);
+        const id = Number(url.searchParams.get("did"));
+        const title = element.textContent?.trim() || "";
+        const type = element.href.includes("teams.aspx")
+          ? "TEAM"
+          : "INDIVIDUAL";
+
+        return { id, title, type };
+      });
+    } else {
+      // Single-event race: fallback to using the current ID
+      // Extract the event title from the page subtitle (e.g., "Lennep, MT • 100 mile")
+      const subtitle = doc.querySelector(".event-subtitle, .event-info, h2");
+      const subtitleText = subtitle?.textContent?.trim() || "";
+      // Try to extract distance from subtitle (e.g., "Lennep, MT • 100 mile" -> "100 mile")
+      const distanceMatch = subtitleText.match(/•\s*(.+)$/);
+      const title = distanceMatch?.[1]?.trim() || "100 Mile";
+
+      events = [
+        {
+          id: this.id,
+          title,
+          type: "INDIVIDUAL" as const,
+        },
+      ];
+    }
 
     const waitlists = await Promise.all(
       events.map((e) => this.getWaitlist(e.id)),
@@ -204,7 +227,14 @@ export class Scraper {
     const dom = new JSDOM(html);
     const doc = dom.window.document;
 
-    const table = doc.querySelector("table.ultra_grid");
+    // Use the specific table ID for waitlist applicants, or fall back to last ultra_grid
+    // The page has multiple ultra_grid tables: first is "Pending", second is "Waitlist Applicants"
+    let table = doc.querySelector("#ContentPlaceHolder1_gvEntrants");
+    if (!table) {
+      // Fallback: get all ultra_grid tables and use the last one (waitlist applicants)
+      const tables = doc.querySelectorAll("table.ultra_grid");
+      table = tables.length > 0 ? tables[tables.length - 1] : null;
+    }
     if (!table) {
       return [];
     }

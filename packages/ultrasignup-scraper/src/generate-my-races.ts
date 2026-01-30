@@ -8,25 +8,10 @@
 import fs from "fs";
 import path from "path";
 import { glob } from "glob";
-
-interface MyRaceEntry {
-  raceId: number;
-  eventId: number;
-  title: string;
-  eventTitle: string;
-  date: string;
-  location: string;
-  type: "entrant" | "waitlist";
-  position?: number;
-  totalCount?: number;
-  slug: string;
-}
-
-interface MyRacesOutput {
-  generated: string;
-  lastName: string;
-  races: MyRaceEntry[];
-}
+import type {
+  MyRaceEntry,
+  MyRacesData,
+} from "@jpoehnelt/ultrasignup-scraper/types";
 
 interface RaceEvent {
   id: number;
@@ -91,20 +76,15 @@ async function main() {
       );
 
       if (position !== -1) {
-        const { raceId, eventId, eventTitle } = parseFilePath(file, races);
+        const { raceId, eventId } = parseFilePath(file, races);
         const race = raceMap.get(raceId);
         if (race) {
           myRaces.push({
             raceId,
             eventId,
-            title: race.title,
-            eventTitle,
-            date: race.date,
-            location: race.location,
             type: "entrant",
             position: position + 1,
             totalCount: data.length,
-            slug: race.slug,
           });
         }
       }
@@ -131,7 +111,7 @@ async function main() {
         );
 
         if (position !== -1) {
-          const { raceId, eventId, eventTitle } = parseFilePath(file, races);
+          const { raceId, eventId } = parseFilePath(file, races);
           const race = raceMap.get(raceId);
           if (race) {
             // Check if already in myRaces as entrant
@@ -142,14 +122,9 @@ async function main() {
               myRaces.push({
                 raceId,
                 eventId,
-                title: race.title,
-                eventTitle,
-                date: race.date,
-                location: race.location,
                 type: "waitlist",
                 position: position + 1,
                 totalCount: latestSnapshot.count,
-                slug: race.slug,
               });
             }
           }
@@ -165,7 +140,7 @@ async function main() {
     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
   );
 
-  const output: MyRacesOutput = {
+  const output: MyRacesData = {
     generated: new Date().toISOString(),
     lastName,
     races: myRaces,
@@ -185,7 +160,7 @@ async function main() {
 function parseFilePath(
   filePath: string,
   races: Race[],
-): { raceId: number; eventId: number; eventTitle: string } {
+): { raceId: number; eventId: number; title: string } {
   // Example: data/races/2026/cocodona/cocodona-250.waitlist.json
   const parts = filePath.split("/");
   const raceSlug = parts[parts.length - 2]; // e.g., "cocodona"
@@ -194,14 +169,13 @@ function parseFilePath(
 
   // Find matching race
   const race = races.find((r) => r.slug === raceSlug);
-  if (!race) return { raceId: 0, eventId: 0, eventTitle: "" };
+  if (!race) return { raceId: 0, eventId: 0, title: "" };
 
   // Find matching event
   const event = race.events?.find((e) => e.slug === eventSlug);
-  if (!event)
-    return { raceId: race.id, eventId: race.id, eventTitle: race.title };
+  if (!event) return { raceId: race.id, eventId: race.id, title: race.title };
 
-  return { raceId: race.id, eventId: event.id, eventTitle: event.title };
+  return { raceId: race.id, eventId: event.id, title: event.title };
 }
 
 await main();

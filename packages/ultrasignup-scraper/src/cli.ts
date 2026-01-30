@@ -3,6 +3,12 @@ import { Scraper, type Race } from "./index.js";
 import * as fs from "fs/promises";
 import * as path from "path";
 import pLimit from "p-limit";
+import {
+  slugify,
+  isCompetitiveRace,
+  updateRacesJson,
+  MIN_ENTRANTS,
+} from "./utils.js";
 
 const program = new Command();
 
@@ -40,17 +46,6 @@ program
     const events = await race.getEvents();
     console.log(JSON.stringify(events, null, 2));
   });
-
-const slugify = (text: string) => {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "")
-    .replace(/--+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-};
 
 async function saveRaceData(info: Race, outDir: string) {
   const mainDid = info.id;
@@ -108,9 +103,10 @@ async function saveRaceData(info: Race, outDir: string) {
       waitlistHistory.sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
       );
-
-      await fs.writeFile(waitlistPath, JSON.stringify(waitlistHistory, null, 2));
     }
+
+    // Always write the waitlist file (even if empty) since races.json references it
+    await fs.writeFile(waitlistPath, JSON.stringify(waitlistHistory, null, 2));
 
     // Waitlist Latest
     const waitlistLatestPath = path.join(
@@ -141,57 +137,6 @@ async function saveRaceData(info: Race, outDir: string) {
     slug: mainSlug, // Ensure slug is updated in returned object
     events: results,
   };
-}
-
-async function updateRacesJson(newRaceData: any, racesJsonPath: string) {
-  let races: any[] = [];
-  try {
-    const content = await fs.readFile(racesJsonPath, "utf-8");
-    races = JSON.parse(content);
-  } catch (e) {
-    // empty
-  }
-
-  // Upsert
-  const idx = races.findIndex((r) => r.id === newRaceData.id);
-  if (idx >= 0) {
-    races[idx] = newRaceData;
-  } else {
-    races.push(newRaceData);
-  }
-
-  // Sort by date
-  races.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-
-  await fs.writeFile(racesJsonPath, JSON.stringify(races, null, 2));
-}
-
-// Minimum criteria for a race to be considered "competitive/popular"
-const MIN_ENTRANTS = 50;
-const MIN_WAITLIST = 1;
-const MIN_ELITE_COUNT = 1; // Entrants with rank >= 90
-
-function isCompetitiveRace(
-  events: { participants: any[]; waitlist: any[] }[],
-): boolean {
-  let totalEntrants = 0;
-  let totalWaitlist = 0;
-  let eliteCount = 0;
-
-  for (const event of events) {
-    totalEntrants += event.participants?.length || 0;
-    totalWaitlist += event.waitlist?.length || 0;
-    eliteCount += (event.participants || []).filter(
-      (p) => p.rank && p.rank >= 90,
-    ).length;
-  }
-
-  // Race is competitive if it has: significant waitlist OR many entrants OR elite runners
-  return (
-    totalWaitlist >= MIN_WAITLIST ||
-    totalEntrants >= MIN_ENTRANTS ||
-    eliteCount >= MIN_ELITE_COUNT
-  );
 }
 
 program
@@ -272,14 +217,29 @@ program
     "Output directory for race data",
     "../../data/races",
   )
+  .option("--id <id>", "Update only the race with this ID")
   .action(async (options) => {
     const racesJsonPath = path.resolve(process.cwd(), options.file);
     const outDir = path.resolve(process.cwd(), options.outDir);
+    const filterById = options.id ? Number(options.id) : null;
 
     console.log(`Updating races from ${racesJsonPath}...`);
 
     const content = await fs.readFile(racesJsonPath, "utf-8");
-    const races: Race[] = JSON.parse(content);
+    let races: Race[] = JSON.parse(content);
+
+    // Filter to specific ID if provided
+    if (filterById) {
+      const targetRace = races.find((r) => r.id === filterById);
+      if (!targetRace) {
+        console.error(`Race with ID ${filterById} not found in races.json`);
+        process.exit(1);
+      }
+      races = [targetRace];
+      console.log(
+        `Filtering to single race: ${targetRace.title} (${filterById})`,
+      );
+    }
 
     const limit = pLimit(5);
     const tasks = races.map((race) =>
@@ -299,11 +259,26 @@ program
 
     const updatedRaces = await Promise.all(tasks);
 
-    // Sort and save
-    updatedRaces.sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-    );
-    await fs.writeFile(racesJsonPath, JSON.stringify(updatedRaces, null, 2));
+    // If we filtered by ID, merge the result back into the full list
+    if (filterById) {
+      const fullContent = await fs.readFile(racesJsonPath, "utf-8");
+      const fullRaces: Race[] = JSON.parse(fullContent);
+      const updatedRace = updatedRaces[0];
+      const index = fullRaces.findIndex((r) => r.id === filterById);
+      if (index !== -1) {
+        fullRaces[index] = updatedRace;
+      }
+      fullRaces.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
+      await fs.writeFile(racesJsonPath, JSON.stringify(fullRaces, null, 2));
+    } else {
+      // Sort and save all
+      updatedRaces.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
+      await fs.writeFile(racesJsonPath, JSON.stringify(updatedRaces, null, 2));
+    }
     console.log("Update complete.");
   });
 

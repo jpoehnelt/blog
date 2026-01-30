@@ -3,6 +3,7 @@
   import WaitlistTable from "$lib/components/WaitlistTable.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
+  import type { Post } from "$lib/content/posts.shared";
   import { linearRegression, linearRegressionLine, rSquared } from "simple-statistics";
 
   import type {
@@ -18,10 +19,11 @@
     entrants: Participant[] | null;
   }
 
-  let { data } = $props<{ data: { race: Race; events: PageEvent[] } }>();
+  let { data } = $props<{ data: { race: Race; events: PageEvent[]; relatedPosts: Post[] } }>();
 
   let race = $derived(data.race);
   let events = $derived(data.events || []);
+  let relatedPosts = $derived(data.relatedPosts || []);
 
   // ... existing code ...
 
@@ -443,7 +445,7 @@
     events.flatMap((e: PageEvent) =>
       (e.entrants || []).map((entrant: Participant) => ({
         ...entrant,
-        eventTitle: e.title,
+        title: e.title,
       })),
     ),
   );
@@ -1243,9 +1245,48 @@
       </div>
     {/if}
 
+    <!-- Related Blog Posts -->
+    {#if relatedPosts.length > 0}
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+          <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+          Related Posts
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {#each relatedPosts as post}
+            <a href={post.relativeURL} class="group bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden hover:shadow-md transition-shadow">
+              <div class="p-6">
+                <div class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-2">
+                  {new Date(post.pubDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+                <h3 class="font-bold text-lg text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-2 mb-2">
+                  {post.title}
+                </h3>
+                <p class="text-sm text-slate-600 line-clamp-3">
+                  {post.description}
+                </p>
+                {#if post.tags && post.tags.length > 0}
+                  <div class="flex flex-wrap gap-1 mt-3">
+                    {#each post.tags.slice(0, 3) as tag}
+                      <span class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded">{tag}</span>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            </a>
+          {/each}
+        </div>
+      </div>
+    {/if}
+
     {#if entrants.length > 0}
       <div class="mb-12 bg-stone-50">
-        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+          <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
           Field
         </h2>
 
@@ -1307,5 +1348,7 @@
         </div>
       </div>
     {/if}
+
+
   </div>
 </div>

@@ -1,21 +1,9 @@
 <script lang="ts">
   import { differenceInDays } from "date-fns";
-
-  interface MyRace {
-    raceId: number;
-    eventId: number;
-    title: string;
-    eventTitle: string;
-    date: string;
-    location: string;
-    type: "entrant" | "waitlist";
-    position?: number;
-    totalCount?: number;
-    slug: string;
-  }
+  import type { MyRaceEntryResolved } from "@jpoehnelt/ultrasignup-scraper/types";
 
   interface Props {
-    races: MyRace[];
+    races: MyRaceEntryResolved[];
   }
 
   let { races }: Props = $props();
@@ -38,10 +26,10 @@
         >
           <div class="space-y-2">
             <div class="font-black text-lg leading-tight group-hover:underline decoration-2">
-              {race.eventTitle}
+              {race.title}
             </div>
             <div class="text-sm text-muted-foreground">
-              {race.title} • {race.location}
+              {race.location}
             </div>
             
             <div class="flex items-center gap-4 text-sm">

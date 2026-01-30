@@ -2,6 +2,7 @@
 title: "2026 Crazy Mountain 100"
 description: "I'm running the Crazy Mountain 100 in 2026! It's a rugged 100 miler in Montana that serves as a Hardrock qualifier."
 pubDate: "2025-12-27"
+raceId: 128954
 tags:
   - run
   - race preview

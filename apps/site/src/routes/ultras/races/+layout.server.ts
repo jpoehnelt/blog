@@ -1,7 +1,4 @@
-import {
-  RaceSchema,
-  type Race,
-} from "@jpoehnelt/ultrasignup-scraper/types";
+import { RaceSchema, type Race } from "@jpoehnelt/ultrasignup-scraper/types";
 import { z } from "zod";
 
 export const load = async ({ fetch }) => {

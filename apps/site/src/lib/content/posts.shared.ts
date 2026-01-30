@@ -28,6 +28,10 @@ export const postMetadataSchema = v.object({
       }),
     ),
   ),
+  // Link to UltraSignup race (eventId)
+  raceId: v.optional(v.number()),
+  // Link to Strava activity
+  stravaId: v.optional(v.number()),
 });
 
 export function getMetadataFromMatter(

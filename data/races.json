@@ -3078,7 +3078,19 @@
     "location": "Lennep, MT",
     "lat": 46.416056,
     "lng": -110.5432522,
-    "events": [],
+    "events": [
+      {
+        "id": 128954,
+        "title": "100 mile",
+        "slug": "100-mile",
+        "waitlist": {
+          "dataFile": "races/2026/crazy-mountain-100/100-mile.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/crazy-mountain-100/100-mile.entrants.json"
+        }
+      }
+    ],
     "year": 2026
   },
   {
