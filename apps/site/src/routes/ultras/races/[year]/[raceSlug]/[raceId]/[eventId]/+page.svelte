@@ -723,6 +723,22 @@
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`} />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`} />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`} />
+  
   {#each jsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
   {/each}
