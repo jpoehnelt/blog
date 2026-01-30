@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Sheet from "$lib/components/ui/sheet";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
+  import MobileMenuIcon from "$lib/components/MobileMenuIcon.svelte";
   import NavLink from "$lib/components/NavLink.svelte";
   import Search from "$lib/components/Search.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
@@ -100,29 +101,7 @@
         aria-label="Toggle navigation menu"
         aria-expanded={mobileMenuOpen}
       >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          {#if mobileMenuOpen}
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          {:else}
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          {/if}
-        </svg>
+        <MobileMenuIcon open={mobileMenuOpen} />
       </Sheet.Trigger>
       <Sheet.Content side="right" class="w-[300px] sm:w-[400px]">
         <Sheet.Header>
