@@ -23,7 +23,7 @@
   const navLinks: { href: string; label: string }[] = [
     { href: "/#about", label: "About" },
     { href: "/posts", label: "Posts" },
-    { href: "/#races", label: "Races" },
+    { href: "/ultras/races", label: "Races" },
   ];
 </script>
 

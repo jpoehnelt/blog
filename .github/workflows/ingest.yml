@@ -3,6 +3,10 @@ name: Ingest
 on:
   workflow_dispatch:
     inputs:
+      scrape_range:
+        description: "Scrape Range (start-end)"
+        type: string
+        required: false
       after:
         description: "After date"
         type: string
@@ -62,7 +66,19 @@ jobs:
           echo "STRAVA_AFTER=$STRAVA_AFTER"
           echo "STRAVA_BEFORE=$STRAVA_BEFORE"
 
-          STRAVA_AFTER=$STRAVA_AFTER STRAVA_BEFORE=$STRAVA_BEFORE node packages/data-automation/dist/strava-ingest.js
+      - name: Discover and Ingest Races
+        run: |
+          # Daily Update (Refresh known races)
+          if [ "${{ github.event.inputs.scrape_range }}" == "" ]; then
+            pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev update -f ../../data/races.json -o ../../data/races
+          else
+            # Manual Discovery (Scrape new range)
+            START=$(echo ${{ github.event.inputs.scrape_range }} | cut -d'-' -f1)
+            END=$(echo ${{ github.event.inputs.scrape_range }} | cut -d'-' -f2)
+            pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev scrape $START $END -o ../../data/races
+          fi
+      - name: Generate My Races Index
+        run: npx tsx packages/data-automation/src/generate-my-races.ts --name "Poehnelt" --output data/my-races.json
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:

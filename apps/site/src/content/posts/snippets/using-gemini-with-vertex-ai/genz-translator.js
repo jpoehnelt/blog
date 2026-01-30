@@ -6,7 +6,7 @@
 function translateGenZtoVictorian_(emailBody) {
   const projectId = "jpoehnelt-blog";
   const region = "us-central1";
-  const modelName = "gemini-2.5-pro"; 
+  const modelName = "gemini-2.5-pro";
 
   const model = `projects/${projectId}/locations/${region}/publishers/google/models/${modelName}`;
 

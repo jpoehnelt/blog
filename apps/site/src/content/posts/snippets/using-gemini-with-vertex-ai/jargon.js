@@ -33,8 +33,6 @@ function prioritizeSynergy_(simplePhrase) {
   try {
     const response = VertexAI.Endpoints.generateContent(payload, model);
 
-    VertexAI.En
-
     // Safety check just in case the AI refuses to be that annoying
     const jargon = response?.candidates?.[0]?.content?.parts?.[0]?.text;
 

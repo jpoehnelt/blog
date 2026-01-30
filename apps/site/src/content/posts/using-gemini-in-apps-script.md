@@ -33,7 +33,6 @@ Previously, if you wanted to call Gemini or other Vertex AI models, you had to m
 
 The new service, `VertexAI`, allows you to interact with the Vertex AI API directly. This means you can generate text, images, and more with significantly less boilerplate code. You can check out the full [Vertex AI REST reference docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini) for more details on available methods and parameters.
 
-
 ### Before: The Old Way
 
 In my previous post on [Using Vertex AI in Apps Script](/posts/apps-script-vertex-ai), the code looked like this:
@@ -61,7 +60,6 @@ Now, with the built-in service, it's just:
 const response = VertexAI.Endpoints.generateContent(payload, model);
 // ... parsing logic ...
 ```
-
 
 ## Prerequisites
 
@@ -113,7 +111,6 @@ I have the honour to remain, Sir,
 Your most humble and devoted student.
 3:36:02 PM	Notice	Execution completed
 ```
-
 
 ## Code Snippet: Corporate Jargon Generator
 

@@ -102,6 +102,8 @@ function copyImages() {
   };
 }
 
+import { visualizer } from "rollup-plugin-visualizer";
+
 export default defineConfig({
   plugins: [
     tagsPlugin(),
@@ -110,11 +112,18 @@ export default defineConfig({
     sveltekit(),
     copyImages(),
     snippetPlugin(),
-  ],
+    process.env.ANALYZE
+      ? visualizer({
+          emitFile: true,
+          filename: "stats.html",
+        })
+      : undefined,
+  ].filter(Boolean),
   esbuild: {
     drop: ["console", "debugger"],
   },
   build: {
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.message.includes("dynamically imported")) {
@@ -123,5 +132,8 @@ export default defineConfig({
         warn(warning);
       },
     },
+  },
+  ssr: {
+    external: ["jsdom"],
   },
 });

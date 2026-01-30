@@ -21,6 +21,7 @@
     WithContext,
   } from "schema-dts";
   import { AUTHOR_NAME, BASE_URL } from "$lib/constants";
+  import * as Breadcrumb from "$lib/components/ui/breadcrumb";
 
   import type { PageProps } from "./$types";
 
@@ -167,6 +168,22 @@
 <JsonLd {schema} />
 
 <main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
+  <Breadcrumb.Root class="mb-6">
+    <Breadcrumb.List>
+      <Breadcrumb.Item>
+        <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+      </Breadcrumb.Item>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Item>
+        <Breadcrumb.Link href="/activities">Activities</Breadcrumb.Link>
+      </Breadcrumb.Item>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Item>
+        <Breadcrumb.Page class="truncate max-w-[200px] font-medium">{activity.name}</Breadcrumb.Page>
+      </Breadcrumb.Item>
+    </Breadcrumb.List>
+  </Breadcrumb.Root>
+
   <article class="prose prose-lg max-w-none">
     <div class="flex flex-col gap-2">
       <h1 class="mb-0">{activity.name}</h1>

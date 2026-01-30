@@ -60,11 +60,25 @@ const config = {
     paths: {
       relative: false,
     },
+    alias: {
+      $data: "./src/data",
+    },
     adapter: adapter(),
     output: {
       bundleStrategy: "split", // Code-splitting for efficiency
     },
     inlineStyleThreshold: 51200, // Inline critical CSS up to 50KB
+    prerender: {
+      handleHttpError: ({ path, message }) => {
+        // Some race slugs contain "/" characters which break URL patterns
+        // Log a warning instead of failing the build
+        if (path.includes("/ultras/races/")) {
+          console.warn(`Skipping race page with malformed slug: ${path}`);
+          return;
+        }
+        throw new Error(message);
+      },
+    },
     typescript: {
       config: (config) => {
         const snippetsDir = "../src/content/posts/snippets";
