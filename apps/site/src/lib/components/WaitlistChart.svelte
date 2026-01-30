@@ -25,59 +25,70 @@
     velocity?: number;
   }
 
+  interface VelocityPoint {
+    date: Date;
+    velocity: number;
+    label: string;
+  }
+
+  interface TrendPoint {
+    date: Date;
+    velocity: number;
+  }
+
   let { events, raceDate } = $props<{ events: ChartEvent[]; raceDate?: string }>();
 
   const cScale = scaleOrdinal(schemeTableau10);
 
-  let processedData = $derived.by(() => {
-    return events.flatMap((event) => {
-      const velMap = new Map(event.velocityData?.map((v) => [v.date, v.velocity]));
-      return (event.data || []).map((d) => ({
+  let processedData = $derived.by((): ProcessedDataPoint[] => {
+    return events.flatMap((event: ChartEvent) => {
+      const velMap = new Map(event.velocityData?.map((v: { date: string; velocity: number }) => [v.date, v.velocity]));
+      return (event.data || []).map((d: { date: string; count: number }) => ({
         date: new Date(d.date),
         value: d.count,
         label: event.title,
         velocity: velMap.get(d.date),
       }));
-    }).sort((a, b) => a.date.getTime() - b.date.getTime());
+    }).sort((a: ProcessedDataPoint, b: ProcessedDataPoint) => a.date.getTime() - b.date.getTime());
   });
 
-  let processedVelocity = $derived(
-    events.flatMap((event) => {
+  let processedVelocity: VelocityPoint[] = $derived(
+    events.flatMap((event: ChartEvent) => {
        if (!event.velocityData) return [];
-       return event.velocityData.map((d) => ({
+       return event.velocityData.map((d: { date: string; velocity: number }) => ({
          date: new Date(d.date),
          velocity: d.velocity,
          label: event.title,
        }));
-    }).sort((a, b) => a.date.getTime() - b.date.getTime())
+    }).sort((a: VelocityPoint, b: VelocityPoint) => a.date.getTime() - b.date.getTime())
   );
 
   // Process trend line data from regression
-  let trendLineData = $derived.by(() => {
+  let trendLineData: TrendPoint[] = $derived.by((): TrendPoint[] => {
     if (!events[0]?.regression?.trendPoints || events[0].regression.trendPoints.length < 2) return [];
     if (!processedVelocity.length) return [];
     
     const firstVelDate = processedVelocity[0].date.getTime();
-    return events[0].regression.trendPoints.map((pt) => ({
+    return events[0].regression.trendPoints.map((pt: { dayIndex: number; velocity: number }) => ({
       date: new Date(firstVelDate + pt.dayIndex * 24 * 60 * 60 * 1000),
       velocity: pt.velocity
     }));
   });
 
   // Calculate X Domain
-  let xDomain = $derived.by(() => {
+  let xDomain = $derived.by((): [Date, Date] | undefined => {
     if (processedData.length === 0) return undefined;
-    const dates = processedData.map(d => d.date.getTime());
+    const dates = processedData.map((d: ProcessedDataPoint) => d.date.getTime());
     const minDate = Math.min(...dates);
     const maxDate = raceDate ? new Date(raceDate).getTime() : Math.max(...dates);
     return [new Date(minDate), new Date(maxDate)];
   });
 
   // Calculate Y2 Domain (Velocity)
-  let y2Domain = $derived.by(() => {
+  let y2Domain: [number, number] = $derived.by((): [number, number] => {
     if (processedVelocity.length === 0) return [0, 2];
     
-    const vels = processedVelocity.map(d => d.velocity ?? 0);
+    const vels = processedVelocity.map((d: VelocityPoint) => d.velocity ?? 0);
     const current = vels[vels.length - 1];
     const min = Math.min(...vels);
     const max = Math.max(...vels);
@@ -92,7 +103,7 @@
 
 </script>
 
-{#snippet tooltipContent({ data })}
+{#snippet tooltipContent({ data }: { data: ProcessedDataPoint })}
   <Tooltip.Header
     >{Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(data.date)}</Tooltip.Header
   >
@@ -147,14 +158,11 @@
     data={processedData}
     x="date"
     y="value"
-    y2="velocity"
     z="label"
     xScale={scaleTime()}
     {xDomain}
     yDomain={[0, null]}
-    {y2Domain}
     yNice
-    y2Nice
     {cScale}
     padding={{ left: 50, bottom: 24, right: 70 }}
     tooltip={{ mode: "voronoi" }}
@@ -218,7 +226,7 @@
           {/each}
           {#if processedVelocity.length >= 2}
             <path
-              d={`M ${processedVelocity.map((d) => {
+              d={`M ${processedVelocity.map((d: VelocityPoint) => {
                 const x = ((d.date.getTime() - (xDomain?.[0]?.getTime() ?? 0)) / ((xDomain?.[1]?.getTime() ?? 1) - (xDomain?.[0]?.getTime() ?? 0))) * ((width ?? 0) - (padding?.left ?? 0) - (padding?.right ?? 0)) + (padding?.left ?? 0);
                 const y = velScale(d.velocity);
                 return `${x},${y}`;
@@ -232,7 +240,7 @@
         <!-- Trend Line (Regression) -->
         {#if trendLineData.length >= 2}
           <path
-            d={`M ${trendLineData.map((d) => {
+            d={`M ${trendLineData.map((d: TrendPoint) => {
               const x = ((d.date.getTime() - (xDomain?.[0]?.getTime() ?? 0)) / ((xDomain?.[1]?.getTime() ?? 1) - (xDomain?.[0]?.getTime() ?? 0))) * ((width ?? 0) - (padding?.left ?? 0) - (padding?.right ?? 0)) + (padding?.left ?? 0);
               const y = velScale(d.velocity);
               return `${x},${y}`;
