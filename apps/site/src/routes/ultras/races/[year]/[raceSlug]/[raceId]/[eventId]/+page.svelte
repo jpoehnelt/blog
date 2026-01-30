@@ -36,13 +36,15 @@
 
   interface CompetitivenessStats {
     totalEntrants: number;
-    rankedEntrants: number;
+    rankedEntrants: number;      // Runners with 5+ results
+    insufficientResultsCount: number;  // Runners with rank but <5 results
+    unrankedCount: number;       // Runners with no rank
     averageRank: number;
     medianRank: number;
     eliteCount: number;      // 90+ rank
     strongCount: number;     // 80-89.9 rank
     midPackCount: number;    // 60-79.9 rank
-    newcomerCount: number;   // <60 or no rank
+    newcomerCount: number;   // <60
     topRunners: { name: string; rank: number; location: string }[];
     rankDistribution: { label: string; count: number; percent: number }[];
   }
@@ -50,23 +52,27 @@
   function calculateCompetitiveness(entrants: Participant[] | null): CompetitivenessStats | null {
     if (!entrants || entrants.length === 0) return null;
 
-    const rankedEntrants = entrants.filter(e => e.rank && e.rank > 0);
-    const ranks = rankedEntrants.map(e => e.rank!).sort((a, b) => b - a);
+    // For accurate rankings, only include runners with 5+ results (UltraSignup requirement)
+    const MIN_RESULTS_FOR_RANKING = 5;
+    const qualifiedEntrants = entrants.filter(e => e.rank && e.rank > 0 && (e.results ?? 0) >= MIN_RESULTS_FOR_RANKING);
+    const insufficientResultsCount = entrants.filter(e => e.rank && e.rank > 0 && (e.results ?? 0) < MIN_RESULTS_FOR_RANKING).length;
+    const unrankedCount = entrants.filter(e => !e.rank || e.rank === 0).length;
+    
+    const ranks = qualifiedEntrants.map(e => e.rank!).sort((a, b) => b - a);
     
     if (ranks.length === 0) return null;
 
     const eliteCount = ranks.filter(r => r >= 90).length;
     const strongCount = ranks.filter(r => r >= 80 && r < 90).length;
     const midPackCount = ranks.filter(r => r >= 60 && r < 80).length;
-    const newcomerCount = ranks.filter(r => r > 0 && r < 60).length;  // Only ranked but <60
-    const unrankedCount = entrants.length - rankedEntrants.length;    // Rank 0 or missing
+    const newcomerCount = ranks.filter(r => r > 0 && r < 60).length;
 
     const sum = ranks.reduce((a, b) => a + b, 0);
     const averageRank = sum / ranks.length;
     const medianRank = ranks[Math.floor(ranks.length / 2)];
 
-    // Get top 10 runners
-    const topRunners = rankedEntrants
+    // Get top 10 runners (from qualified entrants only)
+    const topRunners = qualifiedEntrants
       .sort((a, b) => (b.rank || 0) - (a.rank || 0))
       .slice(0, 10)
       .map(e => ({
@@ -75,18 +81,22 @@
         location: e.location || ''
       }));
 
-    // Create distribution buckets (based on ranked entrants only for percentages)
-    const rankedTotal = rankedEntrants.length;
+    // Create distribution buckets
+    const totalForPercent = entrants.length;
+    const newRunnersCount = insufficientResultsCount + unrankedCount;
     const rankDistribution = [
-      { label: '90+', count: eliteCount, percent: rankedTotal > 0 ? (eliteCount / rankedTotal) * 100 : 0 },
-      { label: '80-89', count: strongCount, percent: rankedTotal > 0 ? (strongCount / rankedTotal) * 100 : 0 },
-      { label: '60-79', count: midPackCount, percent: rankedTotal > 0 ? (midPackCount / rankedTotal) * 100 : 0 },
-      { label: '<60', count: newcomerCount + unrankedCount, percent: rankedTotal > 0 ? ((newcomerCount + unrankedCount) / entrants.length) * 100 : 0 },
+      { label: '90+', count: eliteCount, percent: totalForPercent > 0 ? (eliteCount / totalForPercent) * 100 : 0 },
+      { label: '80-89', count: strongCount, percent: totalForPercent > 0 ? (strongCount / totalForPercent) * 100 : 0 },
+      { label: '60-79', count: midPackCount, percent: totalForPercent > 0 ? (midPackCount / totalForPercent) * 100 : 0 },
+      { label: '<60', count: newcomerCount, percent: totalForPercent > 0 ? (newcomerCount / totalForPercent) * 100 : 0 },
+      { label: 'New', count: newRunnersCount, percent: totalForPercent > 0 ? (newRunnersCount / totalForPercent) * 100 : 0 },
     ];
 
     return {
       totalEntrants: entrants.length,
-      rankedEntrants: rankedEntrants.length,
+      rankedEntrants: qualifiedEntrants.length,
+      insufficientResultsCount,
+      unrankedCount,
       averageRank,
       medianRank,
       eliteCount,
@@ -996,7 +1006,7 @@
                               <span class="w-12 text-stone-500 font-medium">{bucket.label}</span>
                               <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
                                 <div 
-                                  class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : 'bg-slate-400'}"
+                                  class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : bucket.label === 'New' ? 'bg-amber-400' : 'bg-slate-400'}"
                                   style="width: {bucket.percent}%"
                                 ></div>
                               </div>
@@ -1011,8 +1021,13 @@
                           </div>
                         {/if}
                         <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
-                          <p><strong class="text-stone-500">About rankings:</strong> Based on UltraSignup rankings. Avg/Median calculated from {event.competitiveness.rankedEntrants} ranked runners (excludes unranked).</p>
-                          <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing/Unranked</p>
+                          <p><strong class="text-stone-500">About rankings:</strong> Stats based on {event.competitiveness.rankedEntrants} runners with 5+ finishes.</p>
+                          {#if event.competitiveness.insufficientResultsCount > 0 || event.competitiveness.unrankedCount > 0}
+                            <p class="text-stone-400/80">
+                              Excluded: {event.competitiveness.insufficientResultsCount > 0 ? `${event.competitiveness.insufficientResultsCount} with <5 finishes` : ''}{event.competitiveness.insufficientResultsCount > 0 && event.competitiveness.unrankedCount > 0 ? ', ' : ''}{event.competitiveness.unrankedCount > 0 ? `${event.competitiveness.unrankedCount} unranked` : ''}
+                            </p>
+                          {/if}
+                          <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing</p>
                         </div>
                       </div>
                     {/if}
@@ -1168,7 +1183,7 @@
                       <span class="w-12 text-stone-500 font-medium">{bucket.label}</span>
                       <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
                         <div 
-                          class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : 'bg-slate-400'}"
+                          class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : bucket.label === 'New' ? 'bg-amber-400' : 'bg-slate-400'}"
                           style="width: {bucket.percent}%"
                         ></div>
                       </div>
@@ -1183,8 +1198,13 @@
                   </div>
                 {/if}
                 <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
-                  <p><strong class="text-stone-500">About rankings:</strong> Based on UltraSignup rankings. Avg/Median calculated from {fieldCompetitiveness.rankedEntrants} ranked runners (excludes unranked).</p>
-                  <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing/Unranked</p>
+                  <p><strong class="text-stone-500">About rankings:</strong> Stats based on {fieldCompetitiveness.rankedEntrants} runners with 5+ finishes (UltraSignup requirement for stable rankings).</p>
+                  {#if fieldCompetitiveness.insufficientResultsCount > 0 || fieldCompetitiveness.unrankedCount > 0}
+                    <p class="text-stone-400/80">
+                      Excluded: {fieldCompetitiveness.insufficientResultsCount > 0 ? `${fieldCompetitiveness.insufficientResultsCount} with <5 finishes` : ''}{fieldCompetitiveness.insufficientResultsCount > 0 && fieldCompetitiveness.unrankedCount > 0 ? ', ' : ''}{fieldCompetitiveness.unrankedCount > 0 ? `${fieldCompetitiveness.unrankedCount} unranked` : ''}
+                    </p>
+                  {/if}
+                  <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing</p>
                 </div>
               </div>
 
