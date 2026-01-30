@@ -104,6 +104,7 @@
   title={data.title}
   description={data.description}
   pathname={data.relativeURL}
+  imagePath={`/posts/${data.id}/og.png`}
   type="article"
   publishedTime={data.pubDate.toISOString()}
   modifiedTime={(data.lastMod || data.pubDate).toISOString()}
