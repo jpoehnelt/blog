@@ -99,15 +99,18 @@ async function saveRaceData(info: Race, outDir: string) {
       ),
     };
 
-    // Deduplicate: remove today's entry if it exists
-    waitlistHistory = waitlistHistory.filter((h) => h.date !== today);
-    waitlistHistory.push(snapshot);
-    // Sort by date just in case
-    waitlistHistory.sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-    );
+    // Only append to history if there are actually waitlist entries
+    if (event.waitlist.length > 0) {
+      // Deduplicate: remove today's entry if it exists
+      waitlistHistory = waitlistHistory.filter((h) => h.date !== today);
+      waitlistHistory.push(snapshot);
+      // Sort by date just in case
+      waitlistHistory.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
 
-    await fs.writeFile(waitlistPath, JSON.stringify(waitlistHistory, null, 2));
+      await fs.writeFile(waitlistPath, JSON.stringify(waitlistHistory, null, 2));
+    }
 
     // Waitlist Latest
     const waitlistLatestPath = path.join(
