@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/syndicate.ts --bundle --outfile=dist/syndicate.js --platform=node --sourcemap --format=esm --packages=external --banner:js='#!/usr/bin/env node'",
+    "build": "esbuild src/syndicate.ts src/strava-refresh.ts src/strava-ingest.ts --bundle --outdir=dist --platform=node --sourcemap --format=esm --packages=external --banner:js='#!/usr/bin/env node'",
     "check": "tsc --noEmit",
     "test": "vitest run",
     "syndicate": "node dist/syndicate.js"
