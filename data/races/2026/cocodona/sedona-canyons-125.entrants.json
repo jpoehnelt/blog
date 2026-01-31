@@ -33,6 +33,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Barry",
+    "lastName": "Smith",
+    "age": "M50-59",
+    "location": "Ottawa, ON",
+    "rank": 90.5,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jeffrey",
     "lastName": "Kohl",
     "age": "M30-39",
@@ -2046,17 +2057,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Adi",
-    "lastName": "Shnall",
-    "age": "F60-69",
-    "location": "Thornhill, ON",
-    "rank": 71.7,
-    "ageRank": 86.8,
-    "results": 79,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Indira",
     "lastName": "Palmer",
     "age": "F20-29",
@@ -2064,6 +2064,17 @@
     "rank": 71.7,
     "ageRank": 92.7,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Adi",
+    "lastName": "Shnall",
+    "age": "F60-69",
+    "location": "Thornhill, ON",
+    "rank": 71.6,
+    "ageRank": 87,
+    "results": 80,
     "bib": "",
     "finishes": 0
   },
@@ -4499,17 +4510,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Barry",
-    "lastName": "Smith",
-    "age": "M50-59",
-    "location": "Ottawa, ON",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ella",
     "lastName": "Johnson",
     "age": "F60-69",
@@ -4532,10 +4532,76 @@
     "finishes": 0
   },
   {
-    "firstName": "Jp",
-    "lastName": "Suarez",
+    "firstName": "Nichole",
+    "lastName": "Goodale",
+    "age": "F30-39",
+    "location": "Casa Grande, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mathieu",
+    "lastName": "Lefebvre",
     "age": "M30-39",
-    "location": "Lubbock, TX",
+    "location": "Toronto, ON",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Lopez",
+    "age": "F40-49",
+    "location": "Casa Grande, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tanner",
+    "lastName": "Robberstad",
+    "age": "M30-39",
+    "location": "Reiles Acres, ND",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Katie",
+    "lastName": "Thomas",
+    "age": "F30-39",
+    "location": "ETNA, WY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Cole",
+    "lastName": "Dotson",
+    "age": "M20-29",
+    "location": "Chimacum, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jenny",
+    "lastName": "Dinelli",
+    "age": "F40-49",
+    "location": "Braidwood, IL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4598,65 +4664,21 @@
     "finishes": 0
   },
   {
-    "firstName": "Nichole",
-    "lastName": "Goodale",
-    "age": "F30-39",
-    "location": "Casa Grande, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mathieu",
-    "lastName": "Lefebvre",
-    "age": "M30-39",
-    "location": "Toronto, ON",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chasity",
-    "lastName": "Ivy",
-    "age": "F40-49",
-    "location": "SCHRIEVER, LA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Lopez",
-    "age": "F40-49",
-    "location": "Casa Grande, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tanner",
-    "lastName": "Robberstad",
-    "age": "M30-39",
-    "location": "Reiles Acres, ND",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Nina",
     "lastName": "Kuschinsky",
     "age": "F50-59",
     "location": "Svendborg, DNK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jp",
+    "lastName": "Suarez",
+    "age": "M30-39",
+    "location": "Lubbock, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4862,32 +4884,21 @@
     "finishes": 0
   },
   {
-    "firstName": "Katie",
-    "lastName": "Thomas",
-    "age": "F30-39",
-    "location": "ETNA, WY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Cole",
-    "lastName": "Dotson",
-    "age": "M20-29",
-    "location": "Chimacum, WA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jenny",
-    "lastName": "Dinelli",
+    "firstName": "Chasity",
+    "lastName": "Ivy",
     "age": "F40-49",
-    "location": "Braidwood, IL",
+    "location": "SCHRIEVER, LA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Maribeth",
+    "lastName": "Brown",
+    "age": "F50-59",
+    "location": "Erie, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4921,17 +4932,6 @@
     "lastName": "Bodner",
     "age": "M40-49",
     "location": "Columbus, OH",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Maribeth",
-    "lastName": "Brown",
-    "age": "F50-59",
-    "location": "Erie, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
