@@ -229,6 +229,13 @@
             {y}
           </a>
         {/each}
+        <span class="w-px bg-slate-600 mx-1"></span>
+        <a
+          href="/ultras/races/competitive"
+          class="px-4 py-2 rounded-xl text-sm font-bold transition-all border bg-slate-700/50 text-stone-400 border-slate-600 hover:bg-slate-700 hover:text-stone-200 hover:border-slate-500"
+        >
+          🏆 Competitive
+        </a>
       </div>
     {/if}
 

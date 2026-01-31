@@ -32,7 +32,7 @@ I didn't get into the 2026 Hardrock 100, so I'm looking ahead to the 2027 lotter
 
 ## Registration Drama
 
-Getting in was a sprint. Registration opened at 6:00 AM, and I managed to [snag a spot](https://ultrasignup.com/entrants_event.aspx?did=128954) by 6:01 AM. ⚡ Sounds like there will be a lottery next year.
+Getting in was a sprint. Registration opened at 6:00 AM, and I managed to [snag a spot](https://ultrasignup.com/entrants_event.aspx?did=128954) by 6:01 AM. ⚡ Sounds like there will be a lottery next year. You can [track the waitlist movement](/ultras/races/2026/crazy-mountain-100/128954/128954#waitlist) on my race tracker.
 
 <Image src="crazy-mountain-quickest-registration-lottery.png" alt="Crazy Mountain 100 Registration Lottery" />
 
