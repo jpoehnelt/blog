@@ -3,8 +3,8 @@ import type { Race } from "@jpoehnelt/ultrasignup-scraper/types";
 
 export const load = async ({ parent, params }) => {
   const { raceId } = params;
-  const { racesForYear } = await parent();
-  const races = racesForYear as Race[];
+  const { racesForSlug, enrichment } = await parent();
+  const races = racesForSlug as Race[];
 
   const race = races.find((r) => r.id === parseInt(raceId));
 
@@ -14,5 +14,6 @@ export const load = async ({ parent, params }) => {
 
   return {
     race,
+    enrichment,
   };
 };

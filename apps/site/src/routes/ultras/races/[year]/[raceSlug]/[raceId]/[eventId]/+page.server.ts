@@ -8,8 +8,8 @@ import { getPostsMetadata } from "$lib/content/posts.server";
 export async function load({ params, parent, fetch }) {
   const { raceId, eventId } = params;
 
-  // Get race from layout
-  const { race } = await parent();
+  // Get race and enrichment from layout
+  const { race, enrichment } = await parent();
 
   // Verify the ID belongs to this race
   if (race.id !== Number(raceId)) {
@@ -45,6 +45,7 @@ export async function load({ params, parent, fetch }) {
     race,
     events,
     relatedPosts,
+    enrichment,
   };
 }
 

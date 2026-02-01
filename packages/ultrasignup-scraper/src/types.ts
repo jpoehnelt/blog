@@ -108,3 +108,149 @@ export type WaitlistHistory = z.infer<typeof WaitlistHistorySchema>;
 export type MyRaceEntry = z.infer<typeof MyRaceEntrySchema>;
 export type MyRaceEntryResolved = z.infer<typeof MyRaceEntryResolvedSchema>;
 export type MyRacesData = z.infer<typeof MyRacesDataSchema>;
+
+// --- Enrichment Types ---
+
+export const RaceEnrichmentSchema = z.object({
+  raceId: z.number(),
+  lastUpdated: z.string(),
+  summary: z.string().optional(),
+  uniqueFeatures: z.array(z.string()).optional(),
+  raceReports: z
+    .array(
+      z.object({
+        title: z.string(),
+        url: z.string(),
+        author: z.string().optional(),
+        year: z.number().optional(),
+      }),
+    )
+    .optional(),
+  videos: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        channelTitle: z.string().optional(),
+        publishedYear: z.number().optional(),
+        rank: z.number().optional(),
+        reason: z.string().optional(),
+      }),
+    )
+    .optional(),
+  videoInsights: z
+    .object({
+      challengingSections: z.array(z.string()).optional(),
+      proTips: z.array(z.string()).optional(),
+      courseHighlights: z.array(z.string()).optional(),
+      dnfRisks: z.array(z.string()).optional(),
+    })
+    .optional(),
+  media: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        type: z.enum(["news", "podcast", "article", "interview"]),
+        source: z.string().optional(),
+        summary: z.string().optional(),
+        years: z.array(z.number()).optional(),
+        qualityScore: z.number().optional().describe("Quality score 1-10"),
+        tags: z.array(z.string()).optional(),
+        contentSummary: z.string().optional().describe("Summary of the actual content"),
+        racers: z
+          .array(z.object({ firstName: z.string(), lastName: z.string() }))
+          .optional()
+          .describe("Racers mentioned in the content"),
+      }),
+    )
+    .optional(),
+});
+
+export type RaceEnrichment = z.infer<typeof RaceEnrichmentSchema>;
+
+export const RaceEnrichmentsFileSchema = z.record(
+  z.string(),
+  RaceEnrichmentSchema,
+);
+export type RaceEnrichmentsFile = z.infer<typeof RaceEnrichmentsFileSchema>;
+
+// --- Series Enrichment (shared across years) ---
+
+export const RaceSeriesEnrichmentSchema = z.object({
+  slug: z.string(),
+  lastUpdated: z.string(),
+  summary: z.string().optional(),
+  uniqueFeatures: z.array(z.string()).optional(),
+  courseInfo: z
+    .object({
+      elevation: z.string().optional(),
+      terrain: z.string().optional(),
+      aidStations: z.number().optional(),
+    })
+    .optional(),
+  videos: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        channelTitle: z.string().optional(),
+        publishedYear: z.number().optional(),
+      }),
+    )
+    .optional(),
+  media: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        type: z.enum(["news", "podcast", "article", "interview"]),
+        source: z.string().optional(),
+        summary: z.string().optional(),
+        years: z.array(z.number()).optional(),
+        qualityScore: z.number().optional().describe("Quality score 1-10"),
+        tags: z.array(z.string()).optional(),
+        contentSummary: z.string().optional().describe("Summary of the actual content"),
+        racers: z.array(z.object({ firstName: z.string(), lastName: z.string() })).optional().describe("Racers mentioned in the content"),
+      }),
+    )
+    .optional(),
+});
+
+export type RaceSeriesEnrichment = z.infer<typeof RaceSeriesEnrichmentSchema>;
+
+// --- Series Registry (links races to series) ---
+
+const BaseSeriesSchema = z.object({
+  title: z.string(),
+  location: z.string().optional(),
+  website: z.string().optional(),
+  events: z.array(z.string()).optional(),
+});
+
+const UltrasignupSeriesSchema = BaseSeriesSchema.extend({
+  source: z.literal("ultrasignup"),
+  ultrasignupIds: z.array(z.number()),
+});
+
+const ExternalSeriesSchema = BaseSeriesSchema.extend({
+  source: z.literal("external"),
+  externalData: z.record(
+    z.string(), // year as string key
+    z.object({
+      date: z.string().optional(),
+      results: z.string().optional(),
+      website: z.string().optional(),
+    }),
+  ).optional(),
+});
+
+export const RaceSeriesSchema = z.discriminatedUnion("source", [
+  UltrasignupSeriesSchema,
+  ExternalSeriesSchema,
+]);
+
+export type RaceSeries = z.infer<typeof RaceSeriesSchema>;
+
+export const RaceSeriesRegistrySchema = z.record(z.string(), RaceSeriesSchema);
+export type RaceSeriesRegistry = z.infer<typeof RaceSeriesRegistrySchema>;

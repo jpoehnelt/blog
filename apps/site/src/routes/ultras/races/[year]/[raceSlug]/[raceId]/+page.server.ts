@@ -1,4 +1,3 @@
-import { redirect } from "@sveltejs/kit";
 import type {
   WaitlistHistory,
   Participant,
@@ -36,16 +35,8 @@ function calculateCompetitiveness(
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, parent, params }) {
-  const { year, raceSlug } = params; // getting params just for redirect url construction if needed, mostly effectively unused if we use race properties but keeping for safety
+  const { year, raceSlug } = params;
   const { race } = await parent();
-
-  // If there is only one event, redirect directly to it
-  if (race.events && race.events.length === 1) {
-    throw redirect(
-      307,
-      `/ultras/races/${year}/${raceSlug}/${race.id}/${race.events[0].id}`,
-    );
-  }
 
   const raceManager = new RaceDataManager(fetch);
 

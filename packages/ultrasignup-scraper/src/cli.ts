@@ -282,4 +282,153 @@ program
     console.log("Update complete.");
   });
 
+program
+  .command("my-races")
+  .description("Generate index of races for a specific person")
+  .option("-n, --name <lastName>", "Last name to search for", "Poehnelt")
+  .option(
+    "-o, --output <path>",
+    "Output JSON file path",
+    "../../data/my-races.json",
+  )
+  .option("-d, --data-dir <dir>", "Data directory", "../../data")
+  .action(async (options) => {
+    const { name: lastName, output, dataDir } = options;
+    const dataPath = path.resolve(process.cwd(), dataDir);
+    const outputPath = path.resolve(process.cwd(), output);
+    const racesJsonPath = path.join(dataPath, "races.json");
+
+    console.log(`Searching for lastName: "${lastName}"`);
+    console.log(`Output path: ${outputPath}`);
+
+    // Load races.json
+    let races: Race[];
+    try {
+      const content = await fs.readFile(racesJsonPath, "utf-8");
+      races = JSON.parse(content);
+    } catch {
+      console.error(`Error: ${racesJsonPath} not found`);
+      process.exit(1);
+    }
+
+    const raceMap = new Map<number, Race>();
+    races.forEach((r) => raceMap.set(r.id, r));
+
+    interface MyRaceEntry {
+      raceId: number;
+      eventId: number;
+      type: "entrant" | "waitlist";
+      position?: number;
+      totalCount?: number;
+    }
+
+    const myRaces: MyRaceEntry[] = [];
+
+    // Helper to parse file path
+    function parseFilePath(filePath: string): {
+      raceId: number;
+      eventId: number;
+    } {
+      const parts = filePath.split("/");
+      const raceSlug = parts[parts.length - 2];
+      const fileName = parts[parts.length - 1];
+      const eventSlug = fileName.split(".")[0];
+
+      const race = races.find((r) => r.slug === raceSlug);
+      if (!race) return { raceId: 0, eventId: 0 };
+
+      const event = race.events?.find((e: any) => e.slug === eventSlug);
+      if (!event) return { raceId: race.id, eventId: race.id };
+
+      return { raceId: race.id, eventId: event.id };
+    }
+
+    // Scan entrants files
+    const racesDir = path.join(dataPath, "races");
+    const { glob } = await import("glob");
+
+    const entrantFiles = await glob(`${racesDir}/**/*.entrants.json`);
+    for (const file of entrantFiles) {
+      try {
+        const content = await fs.readFile(file, "utf-8");
+        const data: Array<{ firstName: string; lastName: string }> =
+          JSON.parse(content);
+        const position = data.findIndex(
+          (p) => p.lastName?.toLowerCase() === lastName.toLowerCase(),
+        );
+
+        if (position !== -1) {
+          const { raceId, eventId } = parseFilePath(file);
+          if (raceMap.has(raceId)) {
+            myRaces.push({
+              raceId,
+              eventId,
+              type: "entrant",
+              position: position + 1,
+              totalCount: data.length,
+            });
+          }
+        }
+      } catch {
+        // Skip malformed files
+      }
+    }
+
+    // Scan waitlist files
+    const waitlistFiles = await glob(`${racesDir}/**/*.waitlist.json`);
+    for (const file of waitlistFiles) {
+      if (file.includes(".latest.")) continue;
+
+      try {
+        const content = await fs.readFile(file, "utf-8");
+        const data: Array<{
+          date: string;
+          count: number;
+          applicants?: string[];
+        }> = JSON.parse(content);
+        const latestSnapshot = data[data.length - 1];
+
+        if (latestSnapshot?.applicants) {
+          const position = latestSnapshot.applicants.findIndex((name) =>
+            name.toLowerCase().includes(lastName.toLowerCase()),
+          );
+
+          if (position !== -1) {
+            const { raceId, eventId } = parseFilePath(file);
+            if (raceMap.has(raceId)) {
+              // Check if already in myRaces as entrant
+              const existingIdx = myRaces.findIndex(
+                (r) => r.raceId === raceId && r.eventId === eventId,
+              );
+              if (existingIdx === -1) {
+                myRaces.push({
+                  raceId,
+                  eventId,
+                  type: "waitlist",
+                  position: position + 1,
+                  totalCount: latestSnapshot.count,
+                });
+              }
+            }
+          }
+        }
+      } catch {
+        // Skip malformed files
+      }
+    }
+
+    const output_data = {
+      generated: new Date().toISOString(),
+      lastName,
+      races: myRaces,
+    };
+
+    // Ensure output directory exists
+    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await fs.writeFile(outputPath, JSON.stringify(output_data, null, 2));
+
+    console.log(`Found ${myRaces.length} races for ${lastName}`);
+    console.log(`Output written to ${outputPath}`);
+  });
+
 program.parse();

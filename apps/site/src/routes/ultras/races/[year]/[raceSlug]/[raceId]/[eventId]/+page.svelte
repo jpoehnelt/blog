@@ -4,6 +4,7 @@
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
   import type { Post } from "$lib/content/posts.shared";
+  import { extractYouTubeId, getYouTubeThumbnail, isYouTubeUrl } from "$lib/utils/youtube";
   import { linearRegression, linearRegressionLine, rSquared } from "simple-statistics";
 
   import type {
@@ -24,6 +25,7 @@
   let race = $derived(data.race);
   let events = $derived(data.events || []);
   let relatedPosts = $derived(data.relatedPosts || []);
+  let enrichment = $derived(data.enrichment);
 
   // ... existing code ...
 
@@ -849,9 +851,10 @@
             >
           </div>
           <div class="flex flex-col gap-1 mb-2">
-            <div class="text-xl md:text-2xl font-bold text-stone-400">
+            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}" class="text-xl md:text-2xl font-bold text-stone-400 hover:text-orange-400 transition-colors inline-flex items-center gap-2 group">
+              <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
               {race.title}
-            </div>
+            </a>
             <h1
               class="text-4xl md:text-6xl font-black tracking-tight text-white"
             >
@@ -990,6 +993,22 @@
   </div>
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
+    <!-- Race Summary Card with Link Back -->
+    {#if enrichment?.summary}
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-lg flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-1 min-w-0">
+          <p class="text-stone-600 line-clamp-2">{enrichment.summary}</p>
+        </div>
+        <a 
+          href="/ultras/races/{race.year}/{race.slug}/{race.id}" 
+          class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          View Race Details
+        </a>
+      </div>
+    {/if}
+
     {#if activeEvents.length > 0}
       <div class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1349,6 +1368,158 @@
       </div>
     {/if}
 
+    <!-- Video Insights Section -->
+    {#if enrichment?.videoInsights}
+      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
+        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Race Insights from Videos</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {#if enrichment.videoInsights.proTips && enrichment.videoInsights.proTips.length > 0}
+            <div class="bg-green-50 rounded-xl p-6 border border-green-100">
+              <h3 class="flex items-center gap-2 text-green-800 font-bold mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Pro Tips
+              </h3>
+              <ul class="space-y-2">
+                {#each enrichment.videoInsights.proTips as tip}
+                  <li class="text-green-700 text-sm flex items-start gap-2">
+                    <span class="text-green-500 mt-1">•</span>
+                    {tip}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
+          
+          {#if enrichment.videoInsights.challengingSections && enrichment.videoInsights.challengingSections.length > 0}
+            <div class="bg-amber-50 rounded-xl p-6 border border-amber-100">
+              <h3 class="flex items-center gap-2 text-amber-800 font-bold mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Challenging Sections
+              </h3>
+              <ul class="space-y-2">
+                {#each enrichment.videoInsights.challengingSections as section}
+                  <li class="text-amber-700 text-sm flex items-start gap-2">
+                    <span class="text-amber-500 mt-1">•</span>
+                    {section}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
+          
+          {#if enrichment.videoInsights.courseHighlights && enrichment.videoInsights.courseHighlights.length > 0}
+            <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+              <h3 class="flex items-center gap-2 text-blue-800 font-bold mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                Course Highlights
+              </h3>
+              <ul class="space-y-2">
+                {#each enrichment.videoInsights.courseHighlights as highlight}
+                  <li class="text-blue-700 text-sm flex items-start gap-2">
+                    <span class="text-blue-500 mt-1">•</span>
+                    {highlight}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
+          
+          {#if enrichment.videoInsights.dnfRisks && enrichment.videoInsights.dnfRisks.length > 0}
+            <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+              <h3 class="flex items-center gap-2 text-red-800 font-bold mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
+                DNF Risks
+              </h3>
+              <ul class="space-y-2">
+                {#each enrichment.videoInsights.dnfRisks as risk}
+                  <li class="text-red-700 text-sm flex items-start gap-2">
+                    <span class="text-red-500 mt-1">•</span>
+                    {risk}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
+        </div>
+      </div>
+    {/if}
+
+    <!-- Videos Section -->
+    {#if enrichment?.videos && enrichment.videos.length > 0}
+      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
+        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Race Videos</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {#each enrichment.videos as video}
+            <a href={video.url} target="_blank" rel="noopener noreferrer" class="group block bg-stone-50 rounded-xl overflow-hidden border border-stone-200 hover:shadow-lg transition-all">
+              <div class="aspect-video bg-slate-900 relative">
+                {#if isYouTubeUrl(video.url)}
+                  {@const videoId = extractYouTubeId(video.url)}
+                  {#if videoId}
+                    <img src={getYouTubeThumbnail(videoId)} alt={video.title} class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                      <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                      </div>
+                    </div>
+                  {/if}
+                {/if}
+              </div>
+              <div class="p-4">
+                <div class="flex items-start gap-2">
+                  {#if video.rank}
+                    <span class="px-2 py-0.5 rounded bg-orange-100 text-orange-700 text-xs font-bold">#{video.rank}</span>
+                  {/if}
+                  <h3 class="font-semibold text-slate-800 text-sm leading-tight group-hover:text-orange-600 transition-colors">{video.title}</h3>
+                </div>
+                {#if video.reason}
+                  <p class="text-stone-500 text-xs mt-2 line-clamp-2">{video.reason}</p>
+                {/if}
+              </div>
+            </a>
+          {/each}
+        </div>
+      </div>
+    {/if}
+
+    <!-- Media Coverage Section -->
+    {#if enrichment?.media && enrichment.media.length > 0}
+      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
+        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Media Coverage</h2>
+        
+        <div class="space-y-4">
+          {#each enrichment.media as item}
+            <a href={item.url} target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-xl border border-stone-200 hover:border-orange-200 hover:bg-orange-50/50 transition-all">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 {item.type === 'podcast' ? 'bg-purple-100 text-purple-600' : item.type === 'news' ? 'bg-blue-100 text-blue-600' : item.type === 'interview' ? 'bg-green-100 text-green-600' : 'bg-stone-100 text-stone-600'}">
+                {#if item.type === 'podcast'}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                {:else if item.type === 'news'}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                {:else if item.type === 'interview'}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                {:else}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                {/if}
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold uppercase tracking-wide {item.type === 'podcast' ? 'text-purple-600' : item.type === 'news' ? 'text-blue-600' : item.type === 'interview' ? 'text-green-600' : 'text-stone-500'}">{item.type}</span>
+                  {#if item.source}
+                    <span class="text-xs text-stone-400">• {item.source}</span>
+                  {/if}
+                </div>
+                <h3 class="font-semibold text-slate-800 group-hover:text-orange-600 transition-colors">{item.title}</h3>
+                {#if item.summary}
+                  <p class="text-stone-500 text-sm mt-1 line-clamp-2">{item.summary}</p>
+                {/if}
+              </div>
+              <svg class="w-5 h-5 text-stone-400 group-hover:text-orange-600 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          {/each}
+        </div>
+      </div>
+    {/if}
 
   </div>
 </div>

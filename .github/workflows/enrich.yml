@@ -1,0 +1,89 @@
+name: Enrich Races
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum number of races to enrich"
+        type: number
+        default: 5
+      upcoming:
+        description: "Only enrich upcoming races"
+        type: boolean
+        default: true
+  schedule:
+    - cron: "0 7 * * 2" # Run weekly on Tuesday at 7am UTC
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          lfs: true
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          cache: "pnpm"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .turbo
+            node_modules/.cache
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+      - run: pnpm i
+      - run: pnpm build --filter=@jpoehnelt/ultrasignup-scraper
+
+      - name: Enrich race series
+        run: |
+          LIMIT=${{ github.event.inputs.limit || 20 }}
+          UPCOMING=${{ github.event.inputs.upcoming }}
+          
+          # Default to upcoming=true and limit=20 for scheduled runs
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+             UPCOMING="true"
+             LIMIT=20
+          fi
+
+          CMD="pnpm --filter @jpoehnelt/ultrasignup-scraper enrich enrich-all-series --limit=$LIMIT --delay=3000"
+          
+          if [ "$UPCOMING" == "true" ]; then
+            CMD="$CMD --upcoming"
+          fi
+          
+          echo "Running: $CMD"
+          $CMD
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: add race enrichments"
+          title: "chore: add race enrichments"
+          body: |
+            Automated PR to add AI-generated enrichments for races.
+
+            This includes:
+            - AI-generated race summaries and unique features
+            - YouTube video links and insights
+            - Media coverage (news, podcasts, articles)
+
+            Please review the enrichment data before merging.
+          branch: enrichments/update
+          delete-branch: true
+          labels: automated

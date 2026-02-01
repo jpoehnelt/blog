@@ -78,7 +78,7 @@ jobs:
             pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev scrape $START $END -o ../../data/races
           fi
       - name: Generate My Races Index
-        run: npx tsx packages/ultrasignup-scraper/src/generate-my-races.ts --name "Poehnelt" --output data/my-races.json
+        run: pnpm --filter "@jpoehnelt/ultrasignup-scraper" dev my-races --name "Poehnelt" --output ../../data/my-races.json
       - run: |
           curl -L https://script.google.com/macros/s/$APPS_SCRIPT_RUNTIME_DEPLOYMENT_ID/exec -o data/appsScriptWinterCG.json
         env:
