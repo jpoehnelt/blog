@@ -90,6 +90,9 @@ importers:
       prettier-plugin-slidev:
         specifier: 'catalog:'
         version: 1.0.5(prettier@3.6.2)
+      tsx:
+        specifier: ^4.19.2
+        version: 4.21.0
       turbo:
         specifier: 'catalog:'
         version: 2.5.8
