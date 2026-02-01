@@ -32,7 +32,7 @@ interface RaceSeriesEnrichment {
 interface RaceEnrichment {
   summary?: string;
   uniqueFeatures?: string[];
-  gpx?: string;
+  gpx?: Record<string, { url: string; source: string }>;
   videos?: Array<{
     url: string;
     title: string;
@@ -68,10 +68,7 @@ export const load = async ({ parent, params }) => {
   const races = racesForYear as Race[];
 
   // Find races matching this slug (could be multiple events for same race)
-  const racesForSlug = races.filter((r) => {
-    const slug = r.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    return slug === raceSlug;
-  });
+  const racesForSlug = races.filter((r) => r.slug === raceSlug);
 
   if (racesForSlug.length === 0) {
     throw error(404, "Race not found");
@@ -85,8 +82,11 @@ export const load = async ({ parent, params }) => {
     const seriesPath = path.join(dataRoot, raceSlug, "series.json");
     const content = await fs.readFile(seriesPath, "utf-8");
     series = JSON.parse(content);
-  } catch {
-    // No series enrichment available
+  } catch (e: unknown) {
+    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
+      console.error(`Failed to load series enrichment for ${raceSlug}:`, e);
+    }
+    // No series enrichment available or error reading it
   }
 
   // Load year-specific enrichment
@@ -95,8 +95,11 @@ export const load = async ({ parent, params }) => {
     const enrichmentPath = path.join(dataRoot, raceSlug, year, "enrichment.json");
     const content = await fs.readFile(enrichmentPath, "utf-8");
     yearEnrichment = JSON.parse(content);
-  } catch {
-    // No year-specific enrichment
+  } catch (e: unknown) {
+    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
+      console.error(`Failed to load year-specific enrichment for ${raceSlug} in ${year}:`, e);
+    }
+    // No year-specific enrichment available or error reading it
   }
 
   // Merge: year-specific takes precedence, but merge videos/media arrays
@@ -129,23 +132,16 @@ function mergeByUrl<T extends { url: string }>(
   secondary?: T[] | null,
 ): T[] | undefined {
   if (!primary?.length && !secondary?.length) return undefined;
-  
+
+  const combined = [...(primary ?? []), ...(secondary ?? [])];
   const seen = new Set<string>();
-  const result: T[] = [];
-  
-  for (const item of primary ?? []) {
-    if (!seen.has(item.url)) {
-      seen.add(item.url);
-      result.push(item);
+  const unique = combined.filter(item => {
+    if (seen.has(item.url)) {
+      return false;
     }
-  }
-  
-  for (const item of secondary ?? []) {
-    if (!seen.has(item.url)) {
-      seen.add(item.url);
-      result.push(item);
-    }
-  }
-  
-  return result.length > 0 ? result : undefined;
+    seen.add(item.url);
+    return true;
+  });
+
+  return unique.length > 0 ? unique : undefined;
 }

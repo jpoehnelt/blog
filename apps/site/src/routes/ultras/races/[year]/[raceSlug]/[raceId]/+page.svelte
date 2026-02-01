@@ -1,13 +1,9 @@
 <script lang="ts">
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+  import { extractYouTubeId, isYouTubeUrl } from "$lib/utils/youtube";
   let { data } = $props();
   let race = $derived(data.race);
   let enrichment = $derived(data.enrichment);
-  let gpxUrl = $derived.by(() => {
-    if (!enrichment?.gpx) return null;
-    const gpxData = enrichment.gpx as unknown as Record<string, { url: string; source: string }>;
-    return gpxData[String(race.id)]?.url ?? null;
-  });
 
   let title = $derived(`${race.year} ${race.title} | Ultra Marathon Race`);
   let description = $derived(
@@ -186,15 +182,7 @@
               </ul>
             </div>
           {/if}
-          
-          {#if gpxUrl}
-            <div class="mt-6 pt-6 border-t border-stone-100">
-              <a href={gpxUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-100 transition-colors font-medium">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                View GPX Course Map
-              </a>
-            </div>
-          {/if}
+
         </div>
       {/if}
 
@@ -206,10 +194,8 @@
             {#each enrichment.videos as video}
               <div class="group">
                 <div class="aspect-video rounded-xl overflow-hidden bg-stone-100 mb-3">
-                  {#if video.url.includes('youtube.com') || video.url.includes('youtu.be')}
-                    {@const videoId = video.url.includes('youtu.be') 
-                      ? video.url.split('/').pop()?.split('?')[0] 
-                      : new URL(video.url).searchParams.get('v')}
+                  {#if isYouTubeUrl(video.url)}
+                    {@const videoId = extractYouTubeId(video.url)}
                     <iframe
                       src="https://www.youtube.com/embed/{videoId}"
                       title={video.title}
@@ -218,7 +204,7 @@
                       allowfullscreen
                     ></iframe>
                   {:else}
-                    <a href={video.url} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full bg-slate-800 text-white hover:bg-slate-700 transition-colors">
+                    <a href={video.url} target="_blank" rel="noopener noreferrer" aria-label="Watch {video.title}" class="flex items-center justify-center w-full h-full bg-slate-800 text-white hover:bg-slate-700 transition-colors">
                       <svg class="w-16 h-16 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
                     </a>
                   {/if}

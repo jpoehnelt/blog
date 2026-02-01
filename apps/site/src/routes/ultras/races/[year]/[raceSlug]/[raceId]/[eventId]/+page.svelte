@@ -4,6 +4,7 @@
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
   import type { Post } from "$lib/content/posts.shared";
+  import { extractYouTubeId, getYouTubeThumbnail, isYouTubeUrl } from "$lib/utils/youtube";
   import { linearRegression, linearRegressionLine, rSquared } from "simple-statistics";
 
   import type {
@@ -1436,13 +1437,16 @@
           {#each enrichment.videos as video}
             <a href={video.url} target="_blank" rel="noopener noreferrer" class="group block bg-stone-50 rounded-xl overflow-hidden border border-stone-200 hover:shadow-lg transition-all">
               <div class="aspect-video bg-slate-900 relative">
-                {#if video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)}
-                  <img src={`https://img.youtube.com/vi/${video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1]}/mqdefault.jpg`} alt={video.title} class="w-full h-full object-cover" />
-                  <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                    <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
-                      <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                {#if isYouTubeUrl(video.url)}
+                  {@const videoId = extractYouTubeId(video.url)}
+                  {#if videoId}
+                    <img src={getYouTubeThumbnail(videoId)} alt={video.title} class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                      <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                      </div>
                     </div>
-                  </div>
+                  {/if}
                 {/if}
               </div>
               <div class="p-4">
