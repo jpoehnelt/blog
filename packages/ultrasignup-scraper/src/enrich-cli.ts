@@ -14,7 +14,8 @@ if (result.error) {
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import * as fs from "fs/promises";
-import { enrichRace, enrichSeries } from "./enrichment.js";
+import pLimit from "p-limit";
+import { enrichRace, enrichSeries, searchForSeriesMedia, analyzeMediaContent } from "./enrichment.js";
 import type { Race, RaceEnrichment, RaceEnrichmentsFile, RaceSeriesEnrichment, RaceSeriesRegistry } from "./types.js";
 
 const DATA_DIR = path.resolve(import.meta.dirname, "../../../data");
@@ -364,6 +365,186 @@ yargs(hideBin(process.argv))
       }
 
       console.log(`Total: ${Object.keys(registry).length} series`);
+    },
+  )
+  .command(
+    "enrich-all-series",
+    "Enrich all races as series (batch operation)",
+    (yargs) => {
+      return yargs
+        .option("skip-existing", {
+          type: "boolean",
+          alias: "s",
+          description: "Skip races that already have series.json",
+          default: true,
+        })
+        .option("append", {
+          type: "boolean",
+          alias: "a",
+          description: "Append to existing data instead of overwriting",
+          default: false,
+        });
+    },
+    async (argv) => {
+      const { skipExisting, limit, delay, upcoming, concurrency, append } = argv as unknown as {
+        skipExisting: boolean;
+        limit: number | undefined;
+        delay: number;
+        upcoming: boolean;
+        concurrency: number;
+        append: boolean;
+      };
+      let races = await loadRaces();
+      
+      if (upcoming) {
+        const now = new Date();
+        races = races.filter(r => new Date(r.date) > now);
+        console.log(`Filtered to ${races.length} upcoming races.`);
+      }
+
+      // Get unique slugs
+      const slugMap = new Map<string, { title: string; ids: number[] }>();
+      for (const race of races) {
+        const slug = race.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        const existing = slugMap.get(slug);
+        if (existing) {
+          existing.ids.push(race.id);
+        } else {
+          slugMap.set(slug, { title: race.title, ids: [race.id] });
+        }
+      }
+
+      const slugs = Array.from(slugMap.keys());
+      console.log(`Found ${slugs.length} unique race series from ${races.length} races\n`);
+
+      let enriched = 0;
+      let skipped = 0;
+      let errors = 0;
+      let processedCount = 0;
+
+      // Mutex for registry operations to prevent race conditions
+      let registryLock = Promise.resolve();
+      const updateRegistrySafely = (task: () => Promise<void>) => {
+        const next = registryLock.then(() => task().catch(console.error));
+        registryLock = next;
+        return next;
+      };
+
+      const limiter = pLimit(concurrency);
+      console.log(`Processing with concurrency: ${concurrency}`);
+
+      const tasks = slugs.map((slug) => 
+        limiter(async () => {
+          if (limit && processedCount >= limit) {
+            return;
+          }
+
+          // Check if series.json exists
+          const seriesPath = path.join(RACES_DIR, slug, "series.json");
+          let existingData: RaceSeriesEnrichment | undefined;
+          
+          try {
+            const content = await fs.readFile(seriesPath, "utf-8");
+            existingData = JSON.parse(content);
+            
+            if (skipExisting && !append) {
+              console.log(`Skipping ${slug} (already enriched)`);
+              skipped++;
+              return;
+            }
+          } catch {
+            // File doesn't exist, proceed
+          }
+
+          processedCount++;
+          if (limit && processedCount > limit) return;
+
+          const { title } = slugMap.get(slug)!;
+          const index = processedCount;
+          console.log(`\n[${index}/${limit || slugs.length}] Enriching: ${slug}${append && existingData ? " [APPEND]" : ""}`);
+
+          try {
+            // Ensure directory exists
+            await fs.mkdir(path.join(RACES_DIR, slug), { recursive: true });
+
+            // Run enrichment
+            const result = await enrichSeries(slug, title, {
+              existing: append ? existingData : undefined
+            });
+            await fs.writeFile(seriesPath, JSON.stringify(result, null, 2));
+            console.log(`  ✓ Saved ${seriesPath}`);
+            
+            // Register in series registry (Serialized)
+            await updateRegistrySafely(async () => {
+              let registry: RaceSeriesRegistry = {};
+              try {
+                const content = await fs.readFile(SERIES_FILE, "utf-8");
+                registry = JSON.parse(content);
+              } catch {
+                // No registry yet
+              }
+
+              if (!registry[slug]) {
+                registry[slug] = {
+                  title,
+                  source: "ultrasignup",
+                  ultrasignupIds: slugMap.get(slug)!.ids,
+                };
+                await fs.writeFile(SERIES_FILE, JSON.stringify(registry, null, 2));
+              }
+            });
+
+            enriched++;
+
+            // Delay to avoid rate limits (applied per-thread)
+            if (delay > 0) {
+              await new Promise((r) => setTimeout(r, delay));
+            }
+          } catch (error) {
+            console.error(`  ✗ Error processing ${slug}: ${error}`);
+            errors++;
+          }
+        })
+      );
+
+      await Promise.all(tasks);
+
+      console.log(`\n=== Summary ===`);
+      console.log(`Processed: ${processedCount}`);
+      console.log(`Enriched: ${enriched}`);
+      console.log(`Skipped: ${skipped}`);
+      console.log(`Errors: ${errors}`);
+    },
+  )
+  .command(
+    "search-media <query>",
+    "Search for media coverage and analyze quality",
+    (yargs) => {
+      return yargs.positional("query", {
+        describe: "Race title or search query",
+        type: "string",
+      });
+    },
+    async (argv) => {
+      const results = await searchForSeriesMedia(argv.query as string);
+      console.log(JSON.stringify(results, null, 2));
+    },
+  )
+  .command(
+    "review-url <url> [title]",
+    "Perform deep AI analysis on a specific URL",
+    (yargs) => {
+      return yargs
+        .positional("url", { describe: "URL to analyze", type: "string" })
+        .positional("title", { describe: "Race title (context)", type: "string", default: "Ultramarathon" });
+    },
+    async (argv) => {
+      const result = await analyzeMediaContent(argv.url as string, argv.title as string);
+      if (result) {
+        console.log(JSON.stringify(result, null, 2));
+      } else {
+        console.log("No analysis results (low quality or failed to fetch).");
+      }
     },
   )
   .demandCommand(1)

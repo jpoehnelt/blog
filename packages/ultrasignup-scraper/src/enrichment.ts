@@ -1,6 +1,8 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText, Output } from "ai";
 import { z } from "zod";
+import { JSDOM } from "jsdom";
+import pLimit from "p-limit";
 import type { Race, RaceEnrichment, RaceSeriesEnrichment } from "./types.js";
 
 // --- AI Provider ---
@@ -26,6 +28,54 @@ const SummarySchema = z.object({
     .array(z.string())
     .describe("Top 3 unique features of this race"),
 });
+
+const ContentAnalysisSchema = z.object({
+  qualityScore: z.number().min(1).max(10).describe("Quality score 1-10 based on depth, authority, and editorial value"),
+  summary: z.string().describe("Summary of the actual content"),
+  tags: z.array(z.enum(["Report", "Preview", "Other"])).describe("Content tags. Use 'Report' for race reports/results, 'Preview' for guides/previews. Everything else is 'Other'."),
+  racers: z.array(z.object({ firstName: z.string(), lastName: z.string() })).default([]).describe("Racers mentioned in the content"),
+  category: z.enum(["news", "podcast", "article", "interview"]).describe("Refined category based on content"),
+});
+
+export async function analyzeMediaContent(url: string, title?: string): Promise<z.infer<typeof ContentAnalysisSchema> | null> {
+  const google = getGoogle();
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const html = await response.text();
+    const dom = new JSDOM(html);
+    
+    // Simple text extraction
+    const content = dom.window.document.body.textContent?.slice(0, 15000) || "";
+    
+    const { output } = await generateText({
+      model: google(MODEL),
+      output: Output.object({ schema: ContentAnalysisSchema }),
+      prompt: `Analyze this content for the race "${title || "Unknown"}".
+      
+      URL: ${url}
+      Content Snippet: ${content}
+
+      Tasks:
+      1. Assign a Quality Score (1-10). High scores (8-10) for deep, specific coverage (interviews, detailed race reports). Low scores (1-4) for generic aggregators, brief mentions, or automated listings.
+      2. Tag the content: "Report", "Preview", or "Other".
+      3. Extract mentioned racers (First Last).
+      4. Summarize the content in 1 sentence.
+
+      CRITICAL FILTERS:
+      - If this is a generic listicle (e.g. "Best Half Marathons in National Parks") where the race is just one item among many, assign Quality Score < 3.
+      - If this is a registry page or automated calendar, assign Quality Score 1.
+      `,
+    });
+
+    return output;
+  } catch (error) {
+    console.warn(`    Analysis failed for ${url}: ${error}`);
+    return null;
+  }
+}
+
 
 const VideoSearchSchema = z.object({
   videos: z
@@ -68,8 +118,27 @@ const MediaSearchSchema = z.object({
 
 // --- Utilities ---
 
+const BLOCKED_DOMAINS = [
+  "mybestruns.com",
+  "ahotu.com",
+  "runguides.com",
+  "runningintheusa.com",
+  "ultrasignup.com",
+  "eventbrite.com",
+  "facebook.com",
+  "instagram.com",
+  "twitter.com",
+  "pinterest.com",
+];
+
 async function validateUrl(url: string): Promise<boolean> {
   try {
+    const parsed = new URL(url);
+    if (BLOCKED_DOMAINS.some((d) => parsed.hostname.includes(d))) {
+      console.log(`  Skipping blocked domain: ${parsed.hostname}`);
+      return false;
+    }
+
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
 
@@ -191,11 +260,18 @@ async function searchForVideos(
     }
 
     // Filter to public, embeddable videos
-    const validated = videosData.items
-      .filter((item) => 
-        item.status?.privacyStatus === "public" && 
-        item.status?.embeddable !== false
-      )
+    const candidates = videosData.items
+      .filter((item) => {
+        if (item.status?.privacyStatus !== "public" || item.status?.embeddable === false) return false;
+        
+        const videoTitle = item.snippet?.title?.toLowerCase() || "";
+        const raceToken = race.title.toLowerCase().split(' ')[0];
+        
+        // Strict relevance check
+        if (!videoTitle.includes(raceToken)) return false;
+        
+        return true;
+      })
       .map((item) => {
         const publishedYear = item.snippet?.publishedAt 
           ? new Date(item.snippet.publishedAt).getFullYear() 
@@ -208,11 +284,53 @@ async function searchForVideos(
         };
       });
 
-    console.log(`  Found ${validated.length} embeddable videos`);
+    console.log(`  Found ${candidates.length} candidates, validating with AI...`);
+    
+    const limit = pLimit(3);
+    const validatedPromises = candidates.map((video) => 
+      limit(async () => {
+        const isRelevant = await validateVideoRelevance(video, race.title);
+        return isRelevant ? video : null;
+      })
+    );
+    
+    const validated = (await Promise.all(validatedPromises)).filter((v): v is NonNullable<typeof v> => v !== null);
+
+    console.log(`  Found ${validated.length} validated videos`);
     return validated.slice(0, 5);
   } catch (error) {
     console.warn(`  Video search failed: ${error}`);
     return [];
+  }
+}
+
+async function validateVideoRelevance(
+  video: { title: string; channelTitle?: string; description?: string },
+  raceTitle: string,
+): Promise<boolean> {
+  const google = getGoogle();
+  
+  try {
+    const { output } = await generateText({
+      model: google(MODEL),
+      prompt: `Task: Determine if the following YouTube video is SPECIFICALLY about the "${raceTitle}" race.
+      
+      Video Title: "${video.title}"
+      Channel: "${video.channelTitle || "Unknown"}"
+      
+      Rules:
+      1. Return "true" only if the video is clearly about this specific race/event (recaps, course previews, race reports).
+      2. Return "false" for generic advice (e.g., "How to run your first 50k"), unrelated races, or vlog entries that don't mention the race in the title/context.
+      3. Be strict. If ambiguous, reject.
+      
+      Answer (true/false):`,
+    });
+
+    return output.trim().toLowerCase().includes("true");
+  } catch (error) {
+    console.warn(`  Video validation failed: ${error}`);
+    // Fail closed on error to be safe
+    return false;
   }
 }
 
@@ -243,7 +361,7 @@ async function searchForMedia(race: Race) {
       model: google(MODEL),
       output: Output.object({ schema: MediaSearchSchema }),
       tools: { google_search: google.tools.googleSearch({}) },
-      prompt: `Search for media coverage about the "${race.title}" ultramarathon. Find news articles, podcasts, and interviews. Exclude YouTube and social media. For each item, include the year(s) it covers (e.g., [2024] for a race recap, or [2023, 2024] for a multi-year comparison).`,
+      prompt: `Search for high-quality editorial media coverage about the "${race.title}" ultramarathon. Find news articles, podcasts, and interviews. Exclude directories, automated race calendars (like mybestruns, ahotu), and content farms. Exclude YouTube and social media. For each item, include the year(s) it covers.`,
     });
 
     if (!output?.media?.length) return [];
@@ -253,9 +371,24 @@ async function searchForMedia(race: Race) {
 
     for (const item of output.media) {
       if (await validateUrl(item.url)) {
-        validated.push(item);
+        // Step 2: Deep analysis
+        const analysis = await analyzeMediaContent(item.url, item.title);
+        
+        if (analysis && analysis.qualityScore >= 6) {
+          validated.push({
+            ...item,
+            type: analysis.category,
+            contentSummary: analysis.summary,
+            qualityScore: analysis.qualityScore,
+            tags: analysis.tags,
+            racers: analysis.racers,
+          });
+          console.log(`    ✓ [Score: ${analysis.qualityScore}] ${item.title}`);
+        } else {
+          console.log(`    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Low quality/failed: ${item.title}`);
+        }
       } else {
-        console.log(`  Skipping invalid media: ${item.url}`);
+        console.log(`  Skipping invalid/blocked: ${item.url}`);
       }
     }
 
@@ -410,7 +543,7 @@ export async function enrichSeries(
 
   // Videos (append-only) - search for general/course videos
   console.log("  Searching for series videos...");
-  const newVideos = await searchForSeriesVideos(raceTitle);
+  const newVideos = await searchForSeriesVideos(raceTitle, existing?.videos || []);
   const allVideos = mergeByUrl(existing?.videos, newVideos);
 
   if (allVideos.length > 0) {
@@ -439,14 +572,21 @@ export async function enrichSeries(
 
 async function searchForSeriesVideos(
   raceTitle: string,
-): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number }>> {
+  existingVideos: Array<any> = []
+): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number; viewCount?: number }>> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return [];
+
+  // Determine filtering strictness
+  const strictMode = existingVideos.length >= 5;
+  const minViews = strictMode ? 1000 : 100;
+  const maxAgeYears = strictMode ? 4 : 10;
+  const currentYear = new Date().getFullYear();
 
   try {
     // Search for course guides and general race videos (not specific year recaps)
     const searchQuery = encodeURIComponent(`${raceTitle} ultramarathon course guide preview`);
-    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=10&order=relevance&key=${apiKey}`;
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=15&order=relevance&key=${apiKey}`;
 
     console.log(`  Searching YouTube for series content...`);
     const searchResponse = await fetch(searchUrl);
@@ -462,9 +602,9 @@ async function searchForSeriesVideos(
 
     if (!searchData.items?.length) return [];
 
-    // Get full video details
+    // Get full video details (including statistics for viewCount)
     const videoIds = searchData.items.map((item) => item.id.videoId).join(",");
-    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,status&id=${videoIds}&key=${apiKey}`;
+    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,status,statistics&id=${videoIds}&key=${apiKey}`;
 
     const videosResponse = await fetch(videosUrl);
     if (!videosResponse.ok) return [];
@@ -474,16 +614,32 @@ async function searchForSeriesVideos(
         id: string;
         snippet?: { title: string; channelTitle: string; publishedAt?: string };
         status?: { privacyStatus: string; embeddable: boolean };
+        statistics?: { viewCount: string };
       }>;
     };
 
     if (!videosData.items?.length) return [];
 
-    return videosData.items
-      .filter((item) =>
-        item.status?.privacyStatus === "public" &&
-        item.status?.embeddable !== false
-      )
+    // Step 1: Basic Filtering & Strict Token Check
+    const candidates = videosData.items
+      .filter((item) => {
+        if (item.status?.privacyStatus !== "public" || item.status?.embeddable === false) return false;
+        
+        const viewCount = parseInt(item.statistics?.viewCount || "0", 10);
+        const publishedYear = item.snippet?.publishedAt ? new Date(item.snippet.publishedAt).getFullYear() : currentYear;
+        const age = currentYear - publishedYear;
+        const videoTitle = item.snippet?.title?.toLowerCase() || "";
+        const raceToken = raceTitle.toLowerCase().split(' ')[0]; // E.g., "mill" from "Mill Stone"
+        
+        // Strict relevance check: Title must contain at least the first significant word of the race name
+        if (!videoTitle.includes(raceToken)) return false;
+
+        // Apply dynamic filters
+        if (viewCount < minViews) return false;
+        if (age > maxAgeYears) return false;
+
+        return true;
+      })
       .map((item) => ({
         url: `https://www.youtube.com/watch?v=${item.id}`,
         title: item.snippet?.title || "Untitled",
@@ -491,42 +647,106 @@ async function searchForSeriesVideos(
         publishedYear: item.snippet?.publishedAt
           ? new Date(item.snippet.publishedAt).getFullYear()
           : undefined,
-      }))
-      .slice(0, 5);
+        viewCount: parseInt(item.statistics?.viewCount || "0", 10),
+      }));
+      
+    // Step 2: AI Validation for remaining candidates
+    console.log(`  Validating ${candidates.length} video candidates with AI...`);
+    const limit = pLimit(3);
+    
+    const validatedPromises = candidates.map((video) => 
+      limit(async () => {
+        const isRelevant = await validateVideoRelevance(video, raceTitle);
+        if (isRelevant) {
+             console.log(`    ✓ [AI Valid] ${video.title}`);
+             return video;
+        } else {
+             console.log(`    ✗ [AI Invalid] ${video.title}`);
+             return null;
+        }
+      })
+    );
+    
+    const validated = (await Promise.all(validatedPromises)).filter((v): v is NonNullable<typeof v> => v !== null);
+
+    return validated.slice(0, 5);
   } catch (error) {
     console.warn(`  Series video search failed: ${error}`);
     return [];
   }
 }
 
-async function searchForSeriesMedia(raceTitle: string) {
+async function searchForSeriesMedia(raceTitle: string, existingMedia: Array<{ url: string; title: string }> = []) {
   const google = getGoogle();
+
+  // Create exclusion context
+  const excludeContext = existingMedia.length > 0
+    ? `\nExclude these already known articles:\n${existingMedia.map(m => `- ${m.title} (${m.url})`).join("\n")}`
+    : "";
 
   try {
     const { output } = await generateText({
       model: google(MODEL),
       output: Output.object({ schema: MediaSearchSchema }),
       tools: { google_search: google.tools.googleSearch({}) },
-      prompt: `Search for evergreen media coverage about the "${raceTitle}" ultramarathon. Find course guides, race profiles, and timeless articles. Exclude year-specific race results and recaps. Exclude YouTube and social media.`,
+      prompt: `Search for high-quality, evergreen editorial media coverage about the "${raceTitle}" ultramarathon. Find course guides, race profiles, and timeless articles from reputable sources (e.g. iRunFar, Trail Runner Mag). Exclude directories, automated calendars, and AI-generated aggregators. Exclude year-specific results/recaps. Exclude weekly news roundups (e.g. "This Week in Running").${excludeContext}`,
     });
+
+    console.log(`  AI Media Search result: ${output?.media?.length || 0} items found`);
+    if (output?.media) {
+      console.log(`  Initial AI summaries:`, output.media.map(m => `[${m.source}] ${m.title}`).join(", "));
+    }
 
     if (!output?.media?.length) return [];
 
-    console.log(`  Validating ${output.media.length} media URLs...`);
-    const validated = [];
+    console.log(`  Validating ${output.media.length} media URLs (Parallel: 3)...`);
+    
+    // Concurrency limit
+    const limit = pLimit(3);
 
-    for (const item of output.media) {
-      if (await validateUrl(item.url)) {
-        validated.push(item);
-      }
-    }
+    const validationPromises = output.media.map((item) => 
+      limit(async () => {
+        if (await validateUrl(item.url)) {
+          // Step 2: Deep analysis
+          const analysis = await analyzeMediaContent(item.url, item.title);
+          
+          if (analysis && analysis.qualityScore >= 6) {
+            console.log(`    ✓ [Score: ${analysis.qualityScore}] ${item.title}`);
+            return {
+              ...item,
+              type: analysis.category,
+              contentSummary: analysis.summary,
+              qualityScore: analysis.qualityScore,
+              tags: analysis.tags,
+              racers: analysis.racers,
+            };
+          } else {
+            console.log(`    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Rejected (Low quality or analysis failed): ${item.title}`);
+            return null;
+          }
+        } else {
+          console.log(`  Skipping invalid/blocked: ${item.url}`);
+          return null;
+        }
+      })
+    );
+
+    const results = await Promise.all(validationPromises);
+    const validated = results.filter((item): item is NonNullable<typeof item> => item !== null);
 
     return validated;
   } catch (error) {
-    console.warn(`  Series media search failed: ${error}`);
+    console.warn(`  Media search failed: ${error}`);
     return [];
   }
 }
+
+export {
+  searchForSeriesMedia,
+  validateVideoRelevance,
+};
+
+
 
 export {
   RaceEnrichmentSchema,

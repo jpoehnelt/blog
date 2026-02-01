@@ -7,8 +7,12 @@ on:
         description: "Maximum number of races to enrich"
         type: number
         default: 5
+      upcoming:
+        description: "Only enrich upcoming races"
+        type: boolean
+        default: true
   schedule:
-    - cron: "0 6 * * *" # Run 1 hour after ingest
+    - cron: "0 7 * * 2" # Run weekly on Tuesday at 7am UTC
 
 jobs:
   enrich:
@@ -34,10 +38,25 @@ jobs:
       - run: pnpm i
       - run: pnpm build --filter=@jpoehnelt/ultrasignup-scraper
 
-      - name: Enrich races without enrichment
+      - name: Enrich race series
         run: |
-          LIMIT=${{ github.event.inputs.limit || 5 }}
-          pnpm --filter @jpoehnelt/ultrasignup-scraper enrich enrich-all --limit=$LIMIT --delay=3000
+          LIMIT=${{ github.event.inputs.limit || 20 }}
+          UPCOMING=${{ github.event.inputs.upcoming }}
+          
+          # Default to upcoming=true and limit=20 for scheduled runs
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+             UPCOMING="true"
+             LIMIT=20
+          fi
+
+          CMD="pnpm --filter @jpoehnelt/ultrasignup-scraper enrich enrich-all-series --limit=$LIMIT --delay=3000"
+          
+          if [ "$UPCOMING" == "true" ]; then
+            CMD="$CMD --upcoming"
+          fi
+          
+          echo "Running: $CMD"
+          $CMD
 
       - name: Check for changes
         id: changes

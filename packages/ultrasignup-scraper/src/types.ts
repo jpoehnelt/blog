@@ -155,6 +155,13 @@ export const RaceEnrichmentSchema = z.object({
         source: z.string().optional(),
         summary: z.string().optional(),
         years: z.array(z.number()).optional(),
+        qualityScore: z.number().optional().describe("Quality score 1-10"),
+        tags: z.array(z.string()).optional(),
+        contentSummary: z.string().optional().describe("Summary of the actual content"),
+        racers: z
+          .array(z.object({ firstName: z.string(), lastName: z.string() }))
+          .optional()
+          .describe("Racers mentioned in the content"),
       }),
     )
     .optional(),
@@ -201,6 +208,10 @@ export const RaceSeriesEnrichmentSchema = z.object({
         source: z.string().optional(),
         summary: z.string().optional(),
         years: z.array(z.number()).optional(),
+        qualityScore: z.number().optional().describe("Quality score 1-10"),
+        tags: z.array(z.string()).optional(),
+        contentSummary: z.string().optional().describe("Summary of the actual content"),
+        racers: z.array(z.object({ firstName: z.string(), lastName: z.string() })).optional().describe("Racers mentioned in the content"),
       }),
     )
     .optional(),
