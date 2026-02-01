@@ -128,41 +128,81 @@ async function generateSummary(race: Race) {
 
 async function searchForVideos(
   race: Race,
-): Promise<Array<{ url: string; title: string }>> {
-  const google = getGoogle();
+): Promise<Array<{ url: string; title: string; channelTitle?: string }>> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    console.warn("  No API key for YouTube search");
+    return [];
+  }
 
   try {
-    const { output } = await generateText({
-      model: google(MODEL),
-      output: Output.object({ schema: VideoSearchSchema }),
-      tools: { google_search: google.tools.googleSearch({}) },
-      prompt: `Find the 5 most popular YouTube race recap or course preview videos for the ultramarathon "${race.title}".`,
-    });
-
-    if (!output?.videos?.length) return [];
-
-    const seen = new Set<string>();
-    const candidates = output.videos.filter((v) => {
-      if (!v.url.includes("youtube.com") && !v.url.includes("youtu.be"))
-        return false;
-      if (seen.has(v.url)) return false;
-      seen.add(v.url);
-      return true;
-    });
-
-    console.log(`  Validating ${candidates.length} video URLs...`);
-    const validated: Array<{ url: string; title: string }> = [];
-
-    for (const video of candidates) {
-      if (await validateUrl(video.url)) {
-        validated.push(video);
-        if (validated.length >= 5) break;
-      } else {
-        console.log(`  Skipping invalid video: ${video.url}`);
-      }
+    // Step 1: Search YouTube directly for race videos
+    const searchQuery = encodeURIComponent(`${race.title} ultramarathon race recap`);
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=10&order=relevance&key=${apiKey}`;
+    
+    console.log(`  Searching YouTube for "${race.title}"...`);
+    const searchResponse = await fetch(searchUrl);
+    
+    if (!searchResponse.ok) {
+      const errorBody = await searchResponse.text();
+      console.warn(`  YouTube Search API error: ${searchResponse.status} - ${errorBody}`);
+      return [];
     }
 
-    return validated;
+    const searchData = await searchResponse.json() as {
+      items?: Array<{
+        id: { videoId: string };
+        snippet: { title: string; channelTitle: string };
+      }>;
+    };
+
+    if (!searchData.items?.length) {
+      console.log("  No videos found in search");
+      return [];
+    }
+
+    // Step 2: Get full video details to check embeddable status
+    const videoIds = searchData.items.map((item) => item.id.videoId).join(",");
+    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,status&id=${videoIds}&key=${apiKey}`;
+    
+    const videosResponse = await fetch(videosUrl);
+    if (!videosResponse.ok) {
+      // Fall back to search results without validation
+      console.warn("  Could not validate videos, using search results");
+      return searchData.items.slice(0, 5).map((item) => ({
+        url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+        title: item.snippet.title,
+        channelTitle: item.snippet.channelTitle,
+      }));
+    }
+
+    const videosData = await videosResponse.json() as {
+      items?: Array<{
+        id: string;
+        snippet?: { title: string; channelTitle: string };
+        status?: { privacyStatus: string; embeddable: boolean };
+      }>;
+    };
+
+    if (!videosData.items?.length) {
+      console.log("  No valid videos found");
+      return [];
+    }
+
+    // Filter to public, embeddable videos
+    const validated = videosData.items
+      .filter((item) => 
+        item.status?.privacyStatus === "public" && 
+        item.status?.embeddable !== false
+      )
+      .map((item) => ({
+        url: `https://www.youtube.com/watch?v=${item.id}`,
+        title: item.snippet?.title || "Untitled",
+        channelTitle: item.snippet?.channelTitle,
+      }));
+
+    console.log(`  Found ${validated.length} embeddable videos`);
+    return validated.slice(0, 5);
   } catch (error) {
     console.warn(`  Video search failed: ${error}`);
     return [];

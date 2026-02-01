@@ -131,6 +131,7 @@ export const RaceEnrichmentSchema = z.object({
       z.object({
         url: z.string(),
         title: z.string(),
+        channelTitle: z.string().optional(),
         rank: z.number().optional(),
         reason: z.string().optional(),
       }),

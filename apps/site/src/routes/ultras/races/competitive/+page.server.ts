@@ -65,10 +65,15 @@ export async function load({ parent, fetch }) {
     .filter((r) => r.competitiveness && r.competitiveness.eliteCount >= 10)
     .sort((a, b) => {
       // Primary sort: elite count (descending)
-      const eliteDiff = (b.competitiveness?.eliteCount ?? 0) - (a.competitiveness?.eliteCount ?? 0);
+      const eliteDiff =
+        (b.competitiveness?.eliteCount ?? 0) -
+        (a.competitiveness?.eliteCount ?? 0);
       if (eliteDiff !== 0) return eliteDiff;
       // Secondary sort: average rank (descending)
-      return (b.competitiveness?.averageRank ?? 0) - (a.competitiveness?.averageRank ?? 0);
+      return (
+        (b.competitiveness?.averageRank ?? 0) -
+        (a.competitiveness?.averageRank ?? 0)
+      );
     });
 
   return {

@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import * as path from "path";
 import { fileURLToPath } from "url";
 
-// Load .env from monorepo root
+// Load .env from monorepo root (override shell env vars)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, "../../../.env");
-const result = dotenv.config({ path: envPath });
+const result = dotenv.config({ path: envPath, override: true });
 if (result.error) {
   console.warn("Failed to load .env:", result.error.message);
 }
