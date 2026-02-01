@@ -285,12 +285,43 @@ yargs(hideBin(process.argv))
       }
 
       if (!registry[slug]) {
-        // Get all UltraSignup IDs for this slug
+        // Get all races that would match this slug
         const races = await loadRaces();
         const matchingRaces = races.filter((r) => {
           const raceSlug = r.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
           return raceSlug === slug;
         });
+
+        // Check for slug conflicts - different titles generating same slug
+        const uniqueTitles = [...new Set(matchingRaces.map((r) => r.title))];
+        if (uniqueTitles.length > 1) {
+          console.warn(`\n⚠️  SLUG CONFLICT DETECTED!`);
+          console.warn(`Multiple races generate slug "${slug}":`);
+          for (const raceTitle of uniqueTitles) {
+            const ids = matchingRaces.filter((r) => r.title === raceTitle).map((r) => r.id);
+            console.warn(`  - "${raceTitle}" (IDs: ${ids.join(", ")})`);
+          }
+          console.warn(`\nTo resolve, use a unique slug with --slug option.`);
+          console.warn(`Example: pnpm enrich enrich-series my-unique-slug -t "Race Title"\n`);
+          process.exit(1);
+        }
+
+        // Check if this slug is already used for different race IDs
+        const existingIds = Object.values(registry)
+          .filter((s): s is typeof s & { source: "ultrasignup" } => s.source === "ultrasignup")
+          .flatMap((s) => s.ultrasignupIds);
+        
+        const newIds = matchingRaces.map((r) => r.id);
+        const conflictingIds = newIds.filter((id) => existingIds.includes(id));
+        
+        if (conflictingIds.length > 0) {
+          const existingSlug = Object.entries(registry).find(([, s]) => 
+            s.source === "ultrasignup" && s.ultrasignupIds.some((id) => conflictingIds.includes(id))
+          )?.[0];
+          console.warn(`\n⚠️  Race ID conflict! IDs ${conflictingIds.join(", ")} already registered under "${existingSlug}".`);
+          process.exit(1);
+        }
+
         const ultrasignupIds = matchingRaces.map((r) => r.id);
 
         registry[slug] = {
