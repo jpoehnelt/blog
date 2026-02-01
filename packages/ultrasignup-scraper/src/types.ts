@@ -207,3 +207,39 @@ export const RaceSeriesEnrichmentSchema = z.object({
 });
 
 export type RaceSeriesEnrichment = z.infer<typeof RaceSeriesEnrichmentSchema>;
+
+// --- Series Registry (links races to series) ---
+
+const BaseSeriesSchema = z.object({
+  title: z.string(),
+  location: z.string().optional(),
+  website: z.string().optional(),
+  events: z.array(z.string()).optional(),
+});
+
+const UltrasignupSeriesSchema = BaseSeriesSchema.extend({
+  source: z.literal("ultrasignup"),
+  ultrasignupIds: z.array(z.number()),
+});
+
+const ExternalSeriesSchema = BaseSeriesSchema.extend({
+  source: z.literal("external"),
+  externalData: z.record(
+    z.string(), // year as string key
+    z.object({
+      date: z.string().optional(),
+      results: z.string().optional(),
+      website: z.string().optional(),
+    }),
+  ).optional(),
+});
+
+export const RaceSeriesSchema = z.discriminatedUnion("source", [
+  UltrasignupSeriesSchema,
+  ExternalSeriesSchema,
+]);
+
+export type RaceSeries = z.infer<typeof RaceSeriesSchema>;
+
+export const RaceSeriesRegistrySchema = z.record(z.string(), RaceSeriesSchema);
+export type RaceSeriesRegistry = z.infer<typeof RaceSeriesRegistrySchema>;

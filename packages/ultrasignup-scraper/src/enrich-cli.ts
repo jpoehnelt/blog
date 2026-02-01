@@ -15,12 +15,13 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import * as fs from "fs/promises";
 import { enrichRace, enrichSeries } from "./enrichment.js";
-import type { Race, RaceEnrichment, RaceEnrichmentsFile, RaceSeriesEnrichment } from "./types.js";
+import type { Race, RaceEnrichment, RaceEnrichmentsFile, RaceSeriesEnrichment, RaceSeriesRegistry } from "./types.js";
 
 const DATA_DIR = path.resolve(import.meta.dirname, "../../../data");
 const RACES_DIR = path.join(DATA_DIR, "races");
 const RACES_FILE = path.join(DATA_DIR, "races.json");
 const ENRICHMENTS_FILE = path.join(DATA_DIR, "race-enrichments.json");
+const SERIES_FILE = path.join(DATA_DIR, "series.json");
 
 async function loadRaces(): Promise<Race[]> {
   const content = await fs.readFile(RACES_FILE, "utf-8");
@@ -211,8 +212,8 @@ yargs(hideBin(process.argv))
     },
   )
   .command(
-    "enrich-series <slug> <title>",
-    "Enrich a race series with shared content (not year-specific)",
+    "enrich-series <slug>",
+    "Enrich a race series with shared content (derives title from races.json)",
     (yargs) => {
       return yargs
         .positional("slug", {
@@ -220,10 +221,10 @@ yargs(hideBin(process.argv))
           description: "Race slug (e.g., black-canyon-ultras)",
           demandOption: true,
         })
-        .positional("title", {
+        .option("title", {
           type: "string",
-          description: "Race title for search (e.g., \"Black Canyon Ultras\")",
-          demandOption: true,
+          alias: "t",
+          description: "Race title (auto-derived from races.json if omitted)",
         })
         .option("force", {
           type: "boolean",
@@ -233,7 +234,24 @@ yargs(hideBin(process.argv))
         });
     },
     async (argv) => {
-      const { slug, title, force } = argv;
+      const { slug, force } = argv;
+      let { title } = argv;
+
+      // Auto-derive title from races.json if not provided
+      if (!title) {
+        const races = await loadRaces();
+        const matchingRace = races.find((r) => {
+          const raceSlug = r.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          return raceSlug === slug;
+        });
+        if (matchingRace) {
+          title = matchingRace.title;
+          console.log(`Derived title from races.json: "${title}"`);
+        } else {
+          console.error(`No race found with slug "${slug}". Provide --title.`);
+          process.exit(1);
+        }
+      }
 
       // Ensure series directory exists
       const seriesDir = path.join(RACES_DIR, slug);
@@ -253,10 +271,68 @@ yargs(hideBin(process.argv))
 
       const result = await enrichSeries(slug, title, { force, existing });
 
-      // Save to series.json
+      // Save to series.json (enrichment)
       await fs.writeFile(seriesPath, JSON.stringify(result, null, 2));
-      console.log(`\nSaved to ${seriesPath}`);
+      console.log(`\nSaved enrichment to ${seriesPath}`);
+
+      // Auto-register in series registry if not present
+      let registry: RaceSeriesRegistry = {};
+      try {
+        const content = await fs.readFile(SERIES_FILE, "utf-8");
+        registry = JSON.parse(content);
+      } catch {
+        // No registry yet
+      }
+
+      if (!registry[slug]) {
+        // Get all UltraSignup IDs for this slug
+        const races = await loadRaces();
+        const matchingRaces = races.filter((r) => {
+          const raceSlug = r.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          return raceSlug === slug;
+        });
+        const ultrasignupIds = matchingRaces.map((r) => r.id);
+
+        registry[slug] = {
+          title,
+          source: "ultrasignup",
+          ultrasignupIds,
+        };
+        await fs.writeFile(SERIES_FILE, JSON.stringify(registry, null, 2));
+        console.log(`Registered series "${slug}" in ${SERIES_FILE}`);
+      }
+
       console.log(JSON.stringify(result, null, 2));
+    },
+  )
+  .command(
+    "series-list",
+    "List all registered race series",
+    () => {},
+    async () => {
+      let registry: RaceSeriesRegistry = {};
+      try {
+        const content = await fs.readFile(SERIES_FILE, "utf-8");
+        registry = JSON.parse(content);
+      } catch {
+        console.log("No series registry found.");
+        return;
+      }
+
+      console.log("Registered Race Series:\n");
+      for (const [slug, series] of Object.entries(registry)) {
+        const source = series.source === "ultrasignup" 
+          ? `UltraSignup (${series.ultrasignupIds.length} IDs)`
+          : "External";
+        console.log(`  ${slug}`);
+        console.log(`    Title: ${series.title}`);
+        console.log(`    Source: ${source}`);
+        if (series.location) console.log(`    Location: ${series.location}`);
+        if (series.events) console.log(`    Events: ${series.events.join(", ")}`);
+        console.log();
+      }
+
+      console.log(`Total: ${Object.keys(registry).length} series`);
     },
   )
   .demandCommand(1)
