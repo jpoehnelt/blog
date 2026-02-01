@@ -14,10 +14,11 @@ if (result.error) {
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import * as fs from "fs/promises";
-import { enrichRace } from "./enrichment.js";
-import type { Race, RaceEnrichment, RaceEnrichmentsFile } from "./types.js";
+import { enrichRace, enrichSeries } from "./enrichment.js";
+import type { Race, RaceEnrichment, RaceEnrichmentsFile, RaceSeriesEnrichment } from "./types.js";
 
 const DATA_DIR = path.resolve(import.meta.dirname, "../../../data");
+const RACES_DIR = path.join(DATA_DIR, "races");
 const RACES_FILE = path.join(DATA_DIR, "races.json");
 const ENRICHMENTS_FILE = path.join(DATA_DIR, "race-enrichments.json");
 
@@ -207,6 +208,55 @@ yargs(hideBin(process.argv))
       console.log(
         `\nSummary: ${withWebsites}/${races.length} with websites, ${enriched} enriched`,
       );
+    },
+  )
+  .command(
+    "enrich-series <slug> <title>",
+    "Enrich a race series with shared content (not year-specific)",
+    (yargs) => {
+      return yargs
+        .positional("slug", {
+          type: "string",
+          description: "Race slug (e.g., black-canyon-ultras)",
+          demandOption: true,
+        })
+        .positional("title", {
+          type: "string",
+          description: "Race title for search (e.g., \"Black Canyon Ultras\")",
+          demandOption: true,
+        })
+        .option("force", {
+          type: "boolean",
+          alias: "f",
+          description: "Force regeneration of all content",
+          default: false,
+        });
+    },
+    async (argv) => {
+      const { slug, title, force } = argv;
+
+      // Ensure series directory exists
+      const seriesDir = path.join(RACES_DIR, slug);
+      await fs.mkdir(seriesDir, { recursive: true });
+
+      // Load existing series enrichment
+      const seriesPath = path.join(seriesDir, "series.json");
+      let existing: RaceSeriesEnrichment | undefined;
+
+      try {
+        const content = await fs.readFile(seriesPath, "utf-8");
+        existing = JSON.parse(content);
+        console.log(`Loaded existing series enrichment from ${seriesPath}`);
+      } catch {
+        // No existing enrichment
+      }
+
+      const result = await enrichSeries(slug, title, { force, existing });
+
+      // Save to series.json
+      await fs.writeFile(seriesPath, JSON.stringify(result, null, 2));
+      console.log(`\nSaved to ${seriesPath}`);
+      console.log(JSON.stringify(result, null, 2));
     },
   )
   .demandCommand(1)

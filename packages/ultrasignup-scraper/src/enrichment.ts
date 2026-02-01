@@ -1,7 +1,7 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText, Output } from "ai";
 import { z } from "zod";
-import type { Race, RaceEnrichment } from "./types.js";
+import type { Race, RaceEnrichment, RaceSeriesEnrichment } from "./types.js";
 
 // --- AI Provider ---
 
@@ -60,6 +60,7 @@ const MediaSearchSchema = z.object({
           .describe("Media type"),
         source: z.string().describe("Publication or podcast name"),
         summary: z.string().describe("1-2 sentence summary"),
+        years: z.array(z.number()).optional().describe("Year(s) the content covers (e.g., [2024] or [2023, 2024])"),
       }),
     )
     .describe("Media coverage about the race"),
@@ -128,7 +129,7 @@ async function generateSummary(race: Race) {
 
 async function searchForVideos(
   race: Race,
-): Promise<Array<{ url: string; title: string; channelTitle?: string }>> {
+): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number }>> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     console.warn("  No API key for YouTube search");
@@ -179,7 +180,7 @@ async function searchForVideos(
     const videosData = await videosResponse.json() as {
       items?: Array<{
         id: string;
-        snippet?: { title: string; channelTitle: string };
+        snippet?: { title: string; channelTitle: string; publishedAt?: string };
         status?: { privacyStatus: string; embeddable: boolean };
       }>;
     };
@@ -195,11 +196,17 @@ async function searchForVideos(
         item.status?.privacyStatus === "public" && 
         item.status?.embeddable !== false
       )
-      .map((item) => ({
-        url: `https://www.youtube.com/watch?v=${item.id}`,
-        title: item.snippet?.title || "Untitled",
-        channelTitle: item.snippet?.channelTitle,
-      }));
+      .map((item) => {
+        const publishedYear = item.snippet?.publishedAt 
+          ? new Date(item.snippet.publishedAt).getFullYear() 
+          : undefined;
+        return {
+          url: `https://www.youtube.com/watch?v=${item.id}`,
+          title: item.snippet?.title || "Untitled",
+          channelTitle: item.snippet?.channelTitle,
+          publishedYear,
+        };
+      });
 
     console.log(`  Found ${validated.length} embeddable videos`);
     return validated.slice(0, 5);
@@ -236,7 +243,7 @@ async function searchForMedia(race: Race) {
       model: google(MODEL),
       output: Output.object({ schema: MediaSearchSchema }),
       tools: { google_search: google.tools.googleSearch({}) },
-      prompt: `Search for media coverage about the "${race.title}" ultramarathon. Find news articles, podcasts, and interviews. Exclude YouTube and social media.`,
+      prompt: `Search for media coverage about the "${race.title}" ultramarathon. Find news articles, podcasts, and interviews. Exclude YouTube and social media. For each item, include the year(s) it covers (e.g., [2024] for a race recap, or [2023, 2024] for a multi-year comparison).`,
     });
 
     if (!output?.media?.length) return [];
@@ -359,4 +366,171 @@ export async function enrichRace(
   return enrichment;
 }
 
-export { RaceEnrichmentSchema, type RaceEnrichment } from "./types.js";
+// --- Series Enrichment ---
+
+export interface EnrichSeriesOptions {
+  force?: boolean;
+  existing?: RaceSeriesEnrichment;
+}
+
+/**
+ * Enrich a race series with AI-generated content shared across years.
+ * This generates evergreen content like course info, general videos, etc.
+ */
+export async function enrichSeries(
+  slug: string,
+  raceTitle: string,
+  options: EnrichSeriesOptions = {},
+): Promise<RaceSeriesEnrichment> {
+  const { force = false, existing } = options;
+
+  console.log(`Enriching series: ${slug}${force ? " [FORCE]" : ""}`);
+
+  const enrichment: RaceSeriesEnrichment = {
+    slug,
+    lastUpdated: new Date().toISOString(),
+  };
+
+  // Summary (regenerate-able)
+  const hasSummary = existing?.summary && existing?.uniqueFeatures;
+
+  if (!hasSummary || force) {
+    console.log("  Generating series summary...");
+    // Create a minimal race object for the summary function
+    const result = await generateSummary({ title: raceTitle } as Race);
+    if (result) {
+      enrichment.summary = result.summary;
+      enrichment.uniqueFeatures = result.uniqueFeatures;
+    }
+  } else {
+    console.log("  Keeping existing summary");
+    enrichment.summary = existing?.summary;
+    enrichment.uniqueFeatures = existing?.uniqueFeatures;
+  }
+
+  // Videos (append-only) - search for general/course videos
+  console.log("  Searching for series videos...");
+  const newVideos = await searchForSeriesVideos(raceTitle);
+  const allVideos = mergeByUrl(existing?.videos, newVideos);
+
+  if (allVideos.length > 0) {
+    enrichment.videos = allVideos;
+    const newCount = allVideos.length - (existing?.videos?.length || 0);
+    console.log(
+      `  Videos: ${newVideos.length} found, ${newCount} new, ${allVideos.length} total`,
+    );
+  }
+
+  // Media (append-only) - search for evergreen articles
+  console.log("  Searching for series media...");
+  const newMedia = await searchForSeriesMedia(raceTitle);
+  const allMedia = mergeByUrl(existing?.media, newMedia);
+
+  if (allMedia.length > 0) {
+    enrichment.media = allMedia;
+    const newCount = allMedia.length - (existing?.media?.length || 0);
+    console.log(
+      `  Media: ${newMedia.length} found, ${newCount} new, ${allMedia.length} total`,
+    );
+  }
+
+  return enrichment;
+}
+
+async function searchForSeriesVideos(
+  raceTitle: string,
+): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number }>> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return [];
+
+  try {
+    // Search for course guides and general race videos (not specific year recaps)
+    const searchQuery = encodeURIComponent(`${raceTitle} ultramarathon course guide preview`);
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=10&order=relevance&key=${apiKey}`;
+
+    console.log(`  Searching YouTube for series content...`);
+    const searchResponse = await fetch(searchUrl);
+
+    if (!searchResponse.ok) return [];
+
+    const searchData = await searchResponse.json() as {
+      items?: Array<{
+        id: { videoId: string };
+        snippet: { title: string; channelTitle: string; publishedAt?: string };
+      }>;
+    };
+
+    if (!searchData.items?.length) return [];
+
+    // Get full video details
+    const videoIds = searchData.items.map((item) => item.id.videoId).join(",");
+    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,status&id=${videoIds}&key=${apiKey}`;
+
+    const videosResponse = await fetch(videosUrl);
+    if (!videosResponse.ok) return [];
+
+    const videosData = await videosResponse.json() as {
+      items?: Array<{
+        id: string;
+        snippet?: { title: string; channelTitle: string; publishedAt?: string };
+        status?: { privacyStatus: string; embeddable: boolean };
+      }>;
+    };
+
+    if (!videosData.items?.length) return [];
+
+    return videosData.items
+      .filter((item) =>
+        item.status?.privacyStatus === "public" &&
+        item.status?.embeddable !== false
+      )
+      .map((item) => ({
+        url: `https://www.youtube.com/watch?v=${item.id}`,
+        title: item.snippet?.title || "Untitled",
+        channelTitle: item.snippet?.channelTitle,
+        publishedYear: item.snippet?.publishedAt
+          ? new Date(item.snippet.publishedAt).getFullYear()
+          : undefined,
+      }))
+      .slice(0, 5);
+  } catch (error) {
+    console.warn(`  Series video search failed: ${error}`);
+    return [];
+  }
+}
+
+async function searchForSeriesMedia(raceTitle: string) {
+  const google = getGoogle();
+
+  try {
+    const { output } = await generateText({
+      model: google(MODEL),
+      output: Output.object({ schema: MediaSearchSchema }),
+      tools: { google_search: google.tools.googleSearch({}) },
+      prompt: `Search for evergreen media coverage about the "${raceTitle}" ultramarathon. Find course guides, race profiles, and timeless articles. Exclude year-specific race results and recaps. Exclude YouTube and social media.`,
+    });
+
+    if (!output?.media?.length) return [];
+
+    console.log(`  Validating ${output.media.length} media URLs...`);
+    const validated = [];
+
+    for (const item of output.media) {
+      if (await validateUrl(item.url)) {
+        validated.push(item);
+      }
+    }
+
+    return validated;
+  } catch (error) {
+    console.warn(`  Series media search failed: ${error}`);
+    return [];
+  }
+}
+
+export {
+  RaceEnrichmentSchema,
+  RaceSeriesEnrichmentSchema,
+  type RaceEnrichment,
+  type RaceSeriesEnrichment,
+} from "./types.js";

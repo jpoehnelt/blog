@@ -132,6 +132,7 @@ export const RaceEnrichmentSchema = z.object({
         url: z.string(),
         title: z.string(),
         channelTitle: z.string().optional(),
+        publishedYear: z.number().optional(),
         rank: z.number().optional(),
         reason: z.string().optional(),
       }),
@@ -153,6 +154,7 @@ export const RaceEnrichmentSchema = z.object({
         type: z.enum(["news", "podcast", "article", "interview"]),
         source: z.string().optional(),
         summary: z.string().optional(),
+        years: z.array(z.number()).optional(),
       }),
     )
     .optional(),
@@ -165,3 +167,43 @@ export const RaceEnrichmentsFileSchema = z.record(
   RaceEnrichmentSchema,
 );
 export type RaceEnrichmentsFile = z.infer<typeof RaceEnrichmentsFileSchema>;
+
+// --- Series Enrichment (shared across years) ---
+
+export const RaceSeriesEnrichmentSchema = z.object({
+  slug: z.string(),
+  lastUpdated: z.string(),
+  summary: z.string().optional(),
+  uniqueFeatures: z.array(z.string()).optional(),
+  courseInfo: z
+    .object({
+      elevation: z.string().optional(),
+      terrain: z.string().optional(),
+      aidStations: z.number().optional(),
+    })
+    .optional(),
+  videos: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        channelTitle: z.string().optional(),
+        publishedYear: z.number().optional(),
+      }),
+    )
+    .optional(),
+  media: z
+    .array(
+      z.object({
+        url: z.string(),
+        title: z.string(),
+        type: z.enum(["news", "podcast", "article", "interview"]),
+        source: z.string().optional(),
+        summary: z.string().optional(),
+        years: z.array(z.number()).optional(),
+      }),
+    )
+    .optional(),
+});
+
+export type RaceSeriesEnrichment = z.infer<typeof RaceSeriesEnrichmentSchema>;
