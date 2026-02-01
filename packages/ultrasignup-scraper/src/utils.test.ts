@@ -391,3 +391,153 @@ describe("WaitlistApplicantSchema", () => {
     expect(() => WaitlistApplicantSchema.parse(applicant)).toThrow();
   });
 });
+
+// Enrichment tests
+import { mergeByUrl } from "./enrichment.js";
+import { RaceEnrichmentSchema, RaceEnrichmentsFileSchema } from "./types.js";
+
+describe("mergeByUrl", () => {
+  it("should merge new items with empty existing list", () => {
+    const newItems = [
+      { url: "https://example.com/1", title: "Item 1" },
+      { url: "https://example.com/2", title: "Item 2" },
+    ];
+    const result = mergeByUrl(undefined, newItems);
+    expect(result).toHaveLength(2);
+    expect(result[0].url).toBe("https://example.com/1");
+  });
+
+  it("should merge new items with existing list", () => {
+    const existing = [{ url: "https://example.com/1", title: "Existing" }];
+    const newItems = [{ url: "https://example.com/2", title: "New" }];
+    const result = mergeByUrl(existing, newItems);
+    expect(result).toHaveLength(2);
+    expect(result[0].title).toBe("Existing");
+    expect(result[1].title).toBe("New");
+  });
+
+  it("should deduplicate by URL", () => {
+    const existing = [{ url: "https://example.com/1", title: "Existing" }];
+    const newItems = [
+      { url: "https://example.com/1", title: "Duplicate" },
+      { url: "https://example.com/2", title: "New" },
+    ];
+    const result = mergeByUrl(existing, newItems);
+    expect(result).toHaveLength(2);
+    expect(result[0].title).toBe("Existing"); // Original kept
+    expect(result[1].title).toBe("New");
+  });
+
+  it("should deduplicate within new items", () => {
+    const newItems = [
+      { url: "https://example.com/1", title: "First" },
+      { url: "https://example.com/1", title: "Duplicate" },
+    ];
+    const result = mergeByUrl(undefined, newItems);
+    expect(result).toHaveLength(1);
+    expect(result[0].title).toBe("First");
+  });
+
+  it("should handle empty new items", () => {
+    const existing = [{ url: "https://example.com/1", title: "Existing" }];
+    const result = mergeByUrl(existing, []);
+    expect(result).toHaveLength(1);
+  });
+
+  it("should not mutate input arrays", () => {
+    const existing = [{ url: "https://example.com/1", title: "Existing" }];
+    const newItems = [{ url: "https://example.com/2", title: "New" }];
+    mergeByUrl(existing, newItems);
+    expect(existing).toHaveLength(1);
+    expect(newItems).toHaveLength(1);
+  });
+});
+
+describe("RaceEnrichmentSchema", () => {
+  it("should validate minimal enrichment", () => {
+    const enrichment = {
+      raceId: 123456,
+      lastUpdated: "2026-02-01T00:00:00.000Z",
+    };
+    expect(() => RaceEnrichmentSchema.parse(enrichment)).not.toThrow();
+  });
+
+  it("should validate full enrichment", () => {
+    const enrichment = {
+      raceId: 123456,
+      lastUpdated: "2026-02-01T00:00:00.000Z",
+      summary: "An epic ultramarathon through the mountains.",
+      uniqueFeatures: ["High altitude", "Technical terrain", "Amazing views"],
+      videos: [{ url: "https://youtube.com/watch?v=abc", title: "Race Recap" }],
+      videoInsights: {
+        challengingSections: ["Mile 50 climb"],
+        proTips: ["Start slow"],
+        courseHighlights: ["Summit views"],
+        dnfRisks: ["Altitude sickness"],
+      },
+      media: [
+        {
+          url: "https://news.com/article",
+          title: "Race Preview",
+          type: "article",
+          source: "Running News",
+          summary: "Preview of the upcoming race.",
+        },
+      ],
+    };
+    expect(() => RaceEnrichmentSchema.parse(enrichment)).not.toThrow();
+  });
+
+  it("should validate video with optional rank/reason", () => {
+    const enrichment = {
+      raceId: 123456,
+      lastUpdated: "2026-02-01T00:00:00.000Z",
+      videos: [
+        {
+          url: "https://youtube.com/watch?v=abc",
+          title: "Race Recap",
+          rank: 1,
+          reason: "Best overview",
+        },
+      ],
+    };
+    expect(() => RaceEnrichmentSchema.parse(enrichment)).not.toThrow();
+  });
+
+  it("should reject invalid media type", () => {
+    const enrichment = {
+      raceId: 123456,
+      lastUpdated: "2026-02-01T00:00:00.000Z",
+      media: [
+        {
+          url: "https://twitter.com/post",
+          title: "Tweet",
+          type: "tweet",
+          source: "Twitter",
+        },
+      ],
+    };
+    expect(() => RaceEnrichmentSchema.parse(enrichment)).toThrow();
+  });
+});
+
+describe("RaceEnrichmentsFileSchema", () => {
+  it("should validate enrichments file structure", () => {
+    const file = {
+      "123456": {
+        raceId: 123456,
+        lastUpdated: "2026-02-01T00:00:00.000Z",
+        summary: "Test race",
+      },
+      "789012": {
+        raceId: 789012,
+        lastUpdated: "2026-02-01T00:00:00.000Z",
+      },
+    };
+    expect(() => RaceEnrichmentsFileSchema.parse(file)).not.toThrow();
+  });
+
+  it("should validate empty file", () => {
+    expect(() => RaceEnrichmentsFileSchema.parse({})).not.toThrow();
+  });
+});

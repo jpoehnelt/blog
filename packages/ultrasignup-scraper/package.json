@@ -20,8 +20,9 @@
     "ultrasignup-scraper": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsup src/cli.ts src/index.ts src/types.ts --format esm,cjs --dts",
+    "build": "tsup src/cli.ts src/index.ts src/types.ts src/enrichment.ts --format esm,cjs --dts",
     "dev": "tsx src/cli.ts",
+    "enrich": "tsx src/enrich-cli.ts",
     "test": "vitest run"
   },
   "peerDependencies": {
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@types/jsdom": "^27.0.0",
+    "@types/yargs": "^17.0.35",
     "tsx": "^4.19.2",
     "@types/node": "^20.11.5",
     "tsup": "^8.0.1",
@@ -37,11 +39,16 @@
     "zod": "^4.3.6"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.16",
+    "ai": "^6.0.59",
     "commander": "^14.0.2",
+    "dotenv": "^16.6.1",
     "got": "^14.6.6",
     "jsdom": "^24.0.0",
     "keyv": "^5.6.0",
     "keyv-file": "^5.3.3",
-    "p-limit": "^7.2.0"
+    "p-limit": "^7.2.0",
+    "glob": "^11.0.0",
+    "yargs": "^18.0.0"
   }
 }

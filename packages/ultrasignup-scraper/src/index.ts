@@ -13,6 +13,7 @@ import {
 } from "./types.js";
 
 export * from "./types.js";
+export * from "./enrichment.js";
 
 const client = got.extend({
   retry: {
@@ -99,6 +100,12 @@ export class Scraper {
     const { body: html } = await scrape(url);
     const root = new JSDOM(html).window.document.body;
 
+    // Extract official website URL
+    const websiteLink = root.querySelector<HTMLAnchorElement>(
+      "a#ContentPlaceHolder1_EventInfoThin1_hlWebsite, a.websiteitem",
+    );
+    const website = websiteLink?.href || undefined;
+
     const titleElement = root.querySelector(".event-title");
     const parentUrl = new URL(
       (titleElement?.parentElement as HTMLAnchorElement)?.href,
@@ -131,6 +138,7 @@ export class Scraper {
       title,
       date,
       location,
+      website,
       lat,
       lng,
       slug: title.toLowerCase().replace(/\s/g, "-"),
