@@ -4,18 +4,54 @@
     "location": "Arizona, USA",
     "website": "https://aravaiparunning.com/network/blackcanyon/",
     "source": "ultrasignup",
-    "ultrasignupIds": [125776],
-    "events": ["100K", "60K"]
+    "ultrasignupIds": [
+      125776
+    ],
+    "events": [
+      "100K",
+      "60K"
+    ]
   },
   "utmb": {
     "title": "Ultra-Trail du Mont-Blanc",
     "location": "Chamonix, France",
     "website": "https://utmb.world/",
     "source": "external",
-    "events": ["UTMB", "CCC", "OCC", "TDS", "MCC"],
+    "events": [
+      "UTMB",
+      "CCC",
+      "OCC",
+      "TDS",
+      "MCC"
+    ],
     "externalData": {
-      "2024": { "date": "2024-08-30" },
-      "2025": { "date": "2025-08-29" }
+      "2024": {
+        "date": "2024-08-30"
+      },
+      "2025": {
+        "date": "2025-08-29"
+      }
     }
+  },
+  "cocodona": {
+    "title": "Cocodona",
+    "source": "ultrasignup",
+    "ultrasignupIds": [
+      126941
+    ]
+  },
+  "behind-the-rocks-ultra": {
+    "title": "Behind the Rocks Ultra",
+    "source": "ultrasignup",
+    "ultrasignupIds": [
+      125817
+    ]
+  },
+  "crown-of-the-crest": {
+    "title": "Crown of the Crest",
+    "source": "ultrasignup",
+    "ultrasignupIds": [
+      127167
+    ]
   }
 }
