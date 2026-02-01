@@ -77,6 +77,19 @@
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Justin Poehnelt" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  
   {#each jsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
   {/each}
@@ -183,6 +196,26 @@
             </div>
           {/if}
 
+        </div>
+      {/if}
+
+      <!-- Compact Event Cards (moved up) -->
+      {#if race.events && race.events.length > 0}
+        <div class="flex flex-wrap gap-3">
+          {#each race.events as event}
+            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}/{event.id}" class="group flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-stone-200 shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+              <h3 class="font-bold text-slate-800 group-hover:text-orange-600 transition-colors">{event.title}</h3>
+              {#if event.stats}
+                <div class="flex items-center gap-3 text-xs text-stone-500">
+                  <span><strong class="text-slate-700">{event.stats.entrants}</strong> entrants</span>
+                  {#if event.stats.waitlist > 0}
+                    <span><strong class="text-orange-600">{event.stats.waitlist}</strong> waitlist</span>
+                  {/if}
+                </div>
+              {/if}
+              <svg class="w-4 h-4 text-stone-400 group-hover:text-orange-500 transition-colors ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          {/each}
         </div>
       {/if}
 
@@ -332,58 +365,7 @@
       {/if}
     {/if}
 
-    <!-- Event Details Cards (moved below enrichment) -->
-    {#if race.events && race.events.length > 0}
-      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg">
-        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Event Details</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {#each race.events as event}
-            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}/{event.id}" class="group block bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div class="p-6">
-                <h3 class="text-xl font-black text-slate-800 mb-4 group-hover:text-orange-600 transition-colors">{event.title}</h3>
-                
-                <div class="flex gap-3 text-sm mb-4">
-                  {#if event.stats}
-                    <div class="flex flex-col items-center bg-stone-50 p-3 rounded-xl border border-stone-100 min-w-[70px]">
-                      <span class="font-black text-lg text-slate-900">{event.stats.waitlist}</span>
-                      <span class="text-[10px] uppercase tracking-widest text-stone-500 font-bold mt-1">Waitlist</span>
-                    </div>
-                    <div class="flex flex-col items-center bg-stone-50 p-3 rounded-xl border border-stone-100 min-w-[70px]">
-                      <span class="font-black text-lg text-slate-900">{event.stats.entrants}</span>
-                      <span class="text-[10px] uppercase tracking-widest text-stone-500 font-bold mt-1">Entrants</span>
-                    </div>
-                  {:else}
-                    <span class="text-stone-400 italic text-sm">No stats available</span>
-                  {/if}
-                </div>
-                
-                {#if event.competitiveness}
-                  <div class="flex items-center gap-2 text-xs mb-4">
-                    <div class="flex items-center gap-1.5 bg-purple-50 text-purple-700 px-2 py-1 rounded-full border border-purple-100">
-                      <span class="font-bold">{event.competitiveness.averageRank.toFixed(0)}</span>
-                      <span class="text-purple-500 font-medium">avg rank</span>
-                    </div>
-                    {#if event.competitiveness.eliteCount > 0}
-                      <div class="flex items-center gap-1 bg-orange-50 text-orange-700 px-2 py-1 rounded-full border border-orange-100">
-                        <span class="font-bold">{event.competitiveness.eliteCount}</span>
-                        <span class="text-orange-500 font-medium">elite</span>
-                      </div>
-                    {/if}
-                  </div>
-                {/if}
 
-                <div class="flex items-center justify-between pt-4 border-t border-stone-100">
-                  <span class="text-stone-400 text-xs font-bold uppercase tracking-wide">View Dashboard</span>
-                  <div class="w-7 h-7 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </div>
-                </div>
-              </div>
-            </a>
-          {/each}
-        </div>
-      </div>
-    {/if}
   </div>
 </div>
 

@@ -851,9 +851,10 @@
             >
           </div>
           <div class="flex flex-col gap-1 mb-2">
-            <div class="text-xl md:text-2xl font-bold text-stone-400">
+            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}" class="text-xl md:text-2xl font-bold text-stone-400 hover:text-orange-400 transition-colors inline-flex items-center gap-2 group">
+              <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
               {race.title}
-            </div>
+            </a>
             <h1
               class="text-4xl md:text-6xl font-black tracking-tight text-white"
             >
@@ -992,6 +993,22 @@
   </div>
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
+    <!-- Race Summary Card with Link Back -->
+    {#if enrichment?.summary}
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-lg flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-1 min-w-0">
+          <p class="text-stone-600 line-clamp-2">{enrichment.summary}</p>
+        </div>
+        <a 
+          href="/ultras/races/{race.year}/{race.slug}/{race.id}" 
+          class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          View Race Details
+        </a>
+      </div>
+    {/if}
+
     {#if activeEvents.length > 0}
       <div class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
