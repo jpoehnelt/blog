@@ -157,7 +157,10 @@ export const RaceEnrichmentSchema = z.object({
         years: z.array(z.number()).optional(),
         qualityScore: z.number().optional().describe("Quality score 1-10"),
         tags: z.array(z.string()).optional(),
-        contentSummary: z.string().optional().describe("Summary of the actual content"),
+        contentSummary: z
+          .string()
+          .optional()
+          .describe("Summary of the actual content"),
         racers: z
           .array(z.object({ firstName: z.string(), lastName: z.string() }))
           .optional()
@@ -210,8 +213,14 @@ export const RaceSeriesEnrichmentSchema = z.object({
         years: z.array(z.number()).optional(),
         qualityScore: z.number().optional().describe("Quality score 1-10"),
         tags: z.array(z.string()).optional(),
-        contentSummary: z.string().optional().describe("Summary of the actual content"),
-        racers: z.array(z.object({ firstName: z.string(), lastName: z.string() })).optional().describe("Racers mentioned in the content"),
+        contentSummary: z
+          .string()
+          .optional()
+          .describe("Summary of the actual content"),
+        racers: z
+          .array(z.object({ firstName: z.string(), lastName: z.string() }))
+          .optional()
+          .describe("Racers mentioned in the content"),
       }),
     )
     .optional(),
@@ -235,14 +244,16 @@ const UltrasignupSeriesSchema = BaseSeriesSchema.extend({
 
 const ExternalSeriesSchema = BaseSeriesSchema.extend({
   source: z.literal("external"),
-  externalData: z.record(
-    z.string(), // year as string key
-    z.object({
-      date: z.string().optional(),
-      results: z.string().optional(),
-      website: z.string().optional(),
-    }),
-  ).optional(),
+  externalData: z
+    .record(
+      z.string(), // year as string key
+      z.object({
+        date: z.string().optional(),
+        results: z.string().optional(),
+        website: z.string().optional(),
+      }),
+    )
+    .optional(),
 });
 
 export const RaceSeriesSchema = z.discriminatedUnion("source", [

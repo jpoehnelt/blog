@@ -83,7 +83,7 @@ export const load = async ({ parent, params }) => {
     const content = await fs.readFile(seriesPath, "utf-8");
     series = JSON.parse(content);
   } catch (e: unknown) {
-    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
+    if ((e as NodeJS.ErrnoException).code !== "ENOENT") {
       console.error(`Failed to load series enrichment for ${raceSlug}:`, e);
     }
     // No series enrichment available or error reading it
@@ -92,19 +92,27 @@ export const load = async ({ parent, params }) => {
   // Load year-specific enrichment
   let yearEnrichment: RaceEnrichment | null = null;
   try {
-    const enrichmentPath = path.join(dataRoot, raceSlug, year, "enrichment.json");
+    const enrichmentPath = path.join(
+      dataRoot,
+      raceSlug,
+      year,
+      "enrichment.json",
+    );
     const content = await fs.readFile(enrichmentPath, "utf-8");
     yearEnrichment = JSON.parse(content);
   } catch (e: unknown) {
-    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
-      console.error(`Failed to load year-specific enrichment for ${raceSlug} in ${year}:`, e);
+    if ((e as NodeJS.ErrnoException).code !== "ENOENT") {
+      console.error(
+        `Failed to load year-specific enrichment for ${raceSlug} in ${year}:`,
+        e,
+      );
     }
     // No year-specific enrichment available or error reading it
   }
 
   // Merge: year-specific takes precedence, but merge videos/media arrays
   let enrichment: MergedEnrichment | null = null;
-  
+
   if (series || yearEnrichment) {
     enrichment = {
       // Use year-specific summary if available, otherwise series
@@ -135,7 +143,7 @@ function mergeByUrl<T extends { url: string }>(
 
   const combined = [...(primary ?? []), ...(secondary ?? [])];
   const seen = new Set<string>();
-  const unique = combined.filter(item => {
+  const unique = combined.filter((item) => {
     if (seen.has(item.url)) {
       return false;
     }

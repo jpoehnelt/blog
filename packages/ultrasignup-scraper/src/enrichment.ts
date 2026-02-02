@@ -30,14 +30,32 @@ const SummarySchema = z.object({
 });
 
 const ContentAnalysisSchema = z.object({
-  qualityScore: z.number().min(1).max(10).describe("Quality score 1-10 based on depth, authority, and editorial value"),
+  qualityScore: z
+    .number()
+    .min(1)
+    .max(10)
+    .describe(
+      "Quality score 1-10 based on depth, authority, and editorial value",
+    ),
   summary: z.string().describe("Summary of the actual content"),
-  tags: z.array(z.enum(["Report", "Preview", "Other"])).describe("Content tags. Use 'Report' for race reports/results, 'Preview' for guides/previews. Everything else is 'Other'."),
-  racers: z.array(z.object({ firstName: z.string(), lastName: z.string() })).default([]).describe("Racers mentioned in the content"),
-  category: z.enum(["news", "podcast", "article", "interview"]).describe("Refined category based on content"),
+  tags: z
+    .array(z.enum(["Report", "Preview", "Other"]))
+    .describe(
+      "Content tags. Use 'Report' for race reports/results, 'Preview' for guides/previews. Everything else is 'Other'.",
+    ),
+  racers: z
+    .array(z.object({ firstName: z.string(), lastName: z.string() }))
+    .default([])
+    .describe("Racers mentioned in the content"),
+  category: z
+    .enum(["news", "podcast", "article", "interview"])
+    .describe("Refined category based on content"),
 });
 
-export async function analyzeMediaContent(url: string, title?: string): Promise<z.infer<typeof ContentAnalysisSchema> | null> {
+export async function analyzeMediaContent(
+  url: string,
+  title?: string,
+): Promise<z.infer<typeof ContentAnalysisSchema> | null> {
   const google = getGoogle();
 
   try {
@@ -45,10 +63,10 @@ export async function analyzeMediaContent(url: string, title?: string): Promise<
     if (!response.ok) return null;
     const html = await response.text();
     const dom = new JSDOM(html);
-    
+
     // Simple text extraction
     const content = dom.window.document.body.textContent?.slice(0, 15000) || "";
-    
+
     const { output } = await generateText({
       model: google(MODEL),
       output: Output.object({ schema: ContentAnalysisSchema }),
@@ -75,7 +93,6 @@ export async function analyzeMediaContent(url: string, title?: string): Promise<
     return null;
   }
 }
-
 
 const VideoSearchSchema = z.object({
   videos: z
@@ -110,7 +127,12 @@ const MediaSearchSchema = z.object({
           .describe("Media type"),
         source: z.string().describe("Publication or podcast name"),
         summary: z.string().describe("1-2 sentence summary"),
-        years: z.array(z.number()).optional().describe("Year(s) the content covers (e.g., [2024] or [2023, 2024])"),
+        years: z
+          .array(z.number())
+          .optional()
+          .describe(
+            "Year(s) the content covers (e.g., [2024] or [2023, 2024])",
+          ),
       }),
     )
     .describe("Media coverage about the race"),
@@ -198,7 +220,14 @@ async function generateSummary(race: Race) {
 
 async function searchForVideos(
   race: Race,
-): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number }>> {
+): Promise<
+  Array<{
+    url: string;
+    title: string;
+    channelTitle?: string;
+    publishedYear?: number;
+  }>
+> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     console.warn("  No API key for YouTube search");
@@ -207,19 +236,23 @@ async function searchForVideos(
 
   try {
     // Step 1: Search YouTube directly for race videos
-    const searchQuery = encodeURIComponent(`${race.title} ultramarathon race recap`);
+    const searchQuery = encodeURIComponent(
+      `${race.title} ultramarathon race recap`,
+    );
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=10&order=relevance&key=${apiKey}`;
-    
+
     console.log(`  Searching YouTube for "${race.title}"...`);
     const searchResponse = await fetch(searchUrl);
-    
+
     if (!searchResponse.ok) {
       const errorBody = await searchResponse.text();
-      console.warn(`  YouTube Search API error: ${searchResponse.status} - ${errorBody}`);
+      console.warn(
+        `  YouTube Search API error: ${searchResponse.status} - ${errorBody}`,
+      );
       return [];
     }
 
-    const searchData = await searchResponse.json() as {
+    const searchData = (await searchResponse.json()) as {
       items?: Array<{
         id: { videoId: string };
         snippet: { title: string; channelTitle: string };
@@ -234,7 +267,7 @@ async function searchForVideos(
     // Step 2: Get full video details to check embeddable status
     const videoIds = searchData.items.map((item) => item.id.videoId).join(",");
     const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,status&id=${videoIds}&key=${apiKey}`;
-    
+
     const videosResponse = await fetch(videosUrl);
     if (!videosResponse.ok) {
       // Fall back to search results without validation
@@ -246,7 +279,7 @@ async function searchForVideos(
       }));
     }
 
-    const videosData = await videosResponse.json() as {
+    const videosData = (await videosResponse.json()) as {
       items?: Array<{
         id: string;
         snippet?: { title: string; channelTitle: string; publishedAt?: string };
@@ -262,19 +295,23 @@ async function searchForVideos(
     // Filter to public, embeddable videos
     const candidates = videosData.items
       .filter((item) => {
-        if (item.status?.privacyStatus !== "public" || item.status?.embeddable === false) return false;
-        
+        if (
+          item.status?.privacyStatus !== "public" ||
+          item.status?.embeddable === false
+        )
+          return false;
+
         const videoTitle = item.snippet?.title?.toLowerCase() || "";
-        const raceToken = race.title.toLowerCase().split(' ')[0];
-        
+        const raceToken = race.title.toLowerCase().split(" ")[0];
+
         // Strict relevance check
         if (!videoTitle.includes(raceToken)) return false;
-        
+
         return true;
       })
       .map((item) => {
-        const publishedYear = item.snippet?.publishedAt 
-          ? new Date(item.snippet.publishedAt).getFullYear() 
+        const publishedYear = item.snippet?.publishedAt
+          ? new Date(item.snippet.publishedAt).getFullYear()
           : undefined;
         return {
           url: `https://www.youtube.com/watch?v=${item.id}`,
@@ -284,17 +321,21 @@ async function searchForVideos(
         };
       });
 
-    console.log(`  Found ${candidates.length} candidates, validating with AI...`);
-    
+    console.log(
+      `  Found ${candidates.length} candidates, validating with AI...`,
+    );
+
     const limit = pLimit(3);
-    const validatedPromises = candidates.map((video) => 
+    const validatedPromises = candidates.map((video) =>
       limit(async () => {
         const isRelevant = await validateVideoRelevance(video, race.title);
         return isRelevant ? video : null;
-      })
+      }),
     );
-    
-    const validated = (await Promise.all(validatedPromises)).filter((v): v is NonNullable<typeof v> => v !== null);
+
+    const validated = (await Promise.all(validatedPromises)).filter(
+      (v): v is NonNullable<typeof v> => v !== null,
+    );
 
     console.log(`  Found ${validated.length} validated videos`);
     return validated.slice(0, 5);
@@ -309,7 +350,7 @@ async function validateVideoRelevance(
   raceTitle: string,
 ): Promise<boolean> {
   const google = getGoogle();
-  
+
   try {
     const { output } = await generateText({
       model: google(MODEL),
@@ -373,7 +414,7 @@ async function searchForMedia(race: Race) {
       if (await validateUrl(item.url)) {
         // Step 2: Deep analysis
         const analysis = await analyzeMediaContent(item.url, item.title);
-        
+
         if (analysis && analysis.qualityScore >= 6) {
           validated.push({
             ...item,
@@ -385,7 +426,9 @@ async function searchForMedia(race: Race) {
           });
           console.log(`    ✓ [Score: ${analysis.qualityScore}] ${item.title}`);
         } else {
-          console.log(`    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Low quality/failed: ${item.title}`);
+          console.log(
+            `    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Low quality/failed: ${item.title}`,
+          );
         }
       } else {
         console.log(`  Skipping invalid/blocked: ${item.url}`);
@@ -543,7 +586,10 @@ export async function enrichSeries(
 
   // Videos (append-only) - search for general/course videos
   console.log("  Searching for series videos...");
-  const newVideos = await searchForSeriesVideos(raceTitle, existing?.videos || []);
+  const newVideos = await searchForSeriesVideos(
+    raceTitle,
+    existing?.videos || [],
+  );
   const allVideos = mergeByUrl(existing?.videos, newVideos);
 
   if (allVideos.length > 0) {
@@ -572,8 +618,16 @@ export async function enrichSeries(
 
 async function searchForSeriesVideos(
   raceTitle: string,
-  existingVideos: Array<any> = []
-): Promise<Array<{ url: string; title: string; channelTitle?: string; publishedYear?: number; viewCount?: number }>> {
+  existingVideos: Array<any> = [],
+): Promise<
+  Array<{
+    url: string;
+    title: string;
+    channelTitle?: string;
+    publishedYear?: number;
+    viewCount?: number;
+  }>
+> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return [];
 
@@ -585,7 +639,9 @@ async function searchForSeriesVideos(
 
   try {
     // Search for course guides and general race videos (not specific year recaps)
-    const searchQuery = encodeURIComponent(`${raceTitle} ultramarathon course guide preview`);
+    const searchQuery = encodeURIComponent(
+      `${raceTitle} ultramarathon course guide preview`,
+    );
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&maxResults=15&order=relevance&key=${apiKey}`;
 
     console.log(`  Searching YouTube for series content...`);
@@ -593,7 +649,7 @@ async function searchForSeriesVideos(
 
     if (!searchResponse.ok) return [];
 
-    const searchData = await searchResponse.json() as {
+    const searchData = (await searchResponse.json()) as {
       items?: Array<{
         id: { videoId: string };
         snippet: { title: string; channelTitle: string; publishedAt?: string };
@@ -609,7 +665,7 @@ async function searchForSeriesVideos(
     const videosResponse = await fetch(videosUrl);
     if (!videosResponse.ok) return [];
 
-    const videosData = await videosResponse.json() as {
+    const videosData = (await videosResponse.json()) as {
       items?: Array<{
         id: string;
         snippet?: { title: string; channelTitle: string; publishedAt?: string };
@@ -623,14 +679,20 @@ async function searchForSeriesVideos(
     // Step 1: Basic Filtering & Strict Token Check
     const candidates = videosData.items
       .filter((item) => {
-        if (item.status?.privacyStatus !== "public" || item.status?.embeddable === false) return false;
-        
+        if (
+          item.status?.privacyStatus !== "public" ||
+          item.status?.embeddable === false
+        )
+          return false;
+
         const viewCount = parseInt(item.statistics?.viewCount || "0", 10);
-        const publishedYear = item.snippet?.publishedAt ? new Date(item.snippet.publishedAt).getFullYear() : currentYear;
+        const publishedYear = item.snippet?.publishedAt
+          ? new Date(item.snippet.publishedAt).getFullYear()
+          : currentYear;
         const age = currentYear - publishedYear;
         const videoTitle = item.snippet?.title?.toLowerCase() || "";
-        const raceToken = raceTitle.toLowerCase().split(' ')[0]; // E.g., "mill" from "Mill Stone"
-        
+        const raceToken = raceTitle.toLowerCase().split(" ")[0]; // E.g., "mill" from "Mill Stone"
+
         // Strict relevance check: Title must contain at least the first significant word of the race name
         if (!videoTitle.includes(raceToken)) return false;
 
@@ -649,25 +711,29 @@ async function searchForSeriesVideos(
           : undefined,
         viewCount: parseInt(item.statistics?.viewCount || "0", 10),
       }));
-      
+
     // Step 2: AI Validation for remaining candidates
-    console.log(`  Validating ${candidates.length} video candidates with AI...`);
+    console.log(
+      `  Validating ${candidates.length} video candidates with AI...`,
+    );
     const limit = pLimit(3);
-    
-    const validatedPromises = candidates.map((video) => 
+
+    const validatedPromises = candidates.map((video) =>
       limit(async () => {
         const isRelevant = await validateVideoRelevance(video, raceTitle);
         if (isRelevant) {
-             console.log(`    ✓ [AI Valid] ${video.title}`);
-             return video;
+          console.log(`    ✓ [AI Valid] ${video.title}`);
+          return video;
         } else {
-             console.log(`    ✗ [AI Invalid] ${video.title}`);
-             return null;
+          console.log(`    ✗ [AI Invalid] ${video.title}`);
+          return null;
         }
-      })
+      }),
     );
-    
-    const validated = (await Promise.all(validatedPromises)).filter((v): v is NonNullable<typeof v> => v !== null);
+
+    const validated = (await Promise.all(validatedPromises)).filter(
+      (v): v is NonNullable<typeof v> => v !== null,
+    );
 
     return validated.slice(0, 5);
   } catch (error) {
@@ -676,13 +742,17 @@ async function searchForSeriesVideos(
   }
 }
 
-async function searchForSeriesMedia(raceTitle: string, existingMedia: Array<{ url: string; title: string }> = []) {
+async function searchForSeriesMedia(
+  raceTitle: string,
+  existingMedia: Array<{ url: string; title: string }> = [],
+) {
   const google = getGoogle();
 
   // Create exclusion context
-  const excludeContext = existingMedia.length > 0
-    ? `\nExclude these already known articles:\n${existingMedia.map(m => `- ${m.title} (${m.url})`).join("\n")}`
-    : "";
+  const excludeContext =
+    existingMedia.length > 0
+      ? `\nExclude these already known articles:\n${existingMedia.map((m) => `- ${m.title} (${m.url})`).join("\n")}`
+      : "";
 
   try {
     const { output } = await generateText({
@@ -692,26 +762,35 @@ async function searchForSeriesMedia(raceTitle: string, existingMedia: Array<{ ur
       prompt: `Search for high-quality, evergreen editorial media coverage about the "${raceTitle}" ultramarathon. Find course guides, race profiles, and timeless articles from reputable sources (e.g. iRunFar, Trail Runner Mag). Exclude directories, automated calendars, and AI-generated aggregators. Exclude year-specific results/recaps. Exclude weekly news roundups (e.g. "This Week in Running").${excludeContext}`,
     });
 
-    console.log(`  AI Media Search result: ${output?.media?.length || 0} items found`);
+    console.log(
+      `  AI Media Search result: ${output?.media?.length || 0} items found`,
+    );
     if (output?.media) {
-      console.log(`  Initial AI summaries:`, output.media.map(m => `[${m.source}] ${m.title}`).join(", "));
+      console.log(
+        `  Initial AI summaries:`,
+        output.media.map((m) => `[${m.source}] ${m.title}`).join(", "),
+      );
     }
 
     if (!output?.media?.length) return [];
 
-    console.log(`  Validating ${output.media.length} media URLs (Parallel: 3)...`);
-    
+    console.log(
+      `  Validating ${output.media.length} media URLs (Parallel: 3)...`,
+    );
+
     // Concurrency limit
     const limit = pLimit(3);
 
-    const validationPromises = output.media.map((item) => 
+    const validationPromises = output.media.map((item) =>
       limit(async () => {
         if (await validateUrl(item.url)) {
           // Step 2: Deep analysis
           const analysis = await analyzeMediaContent(item.url, item.title);
-          
+
           if (analysis && analysis.qualityScore >= 6) {
-            console.log(`    ✓ [Score: ${analysis.qualityScore}] ${item.title}`);
+            console.log(
+              `    ✓ [Score: ${analysis.qualityScore}] ${item.title}`,
+            );
             return {
               ...item,
               type: analysis.category,
@@ -721,18 +800,22 @@ async function searchForSeriesMedia(raceTitle: string, existingMedia: Array<{ ur
               racers: analysis.racers,
             };
           } else {
-            console.log(`    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Rejected (Low quality or analysis failed): ${item.title}`);
+            console.log(
+              `    ✗ [Score: ${analysis?.qualityScore ?? "N/A"}] Rejected (Low quality or analysis failed): ${item.title}`,
+            );
             return null;
           }
         } else {
           console.log(`  Skipping invalid/blocked: ${item.url}`);
           return null;
         }
-      })
+      }),
     );
 
     const results = await Promise.all(validationPromises);
-    const validated = results.filter((item): item is NonNullable<typeof item> => item !== null);
+    const validated = results.filter(
+      (item): item is NonNullable<typeof item> => item !== null,
+    );
 
     return validated;
   } catch (error) {
@@ -741,12 +824,7 @@ async function searchForSeriesMedia(raceTitle: string, existingMedia: Array<{ ur
   }
 }
 
-export {
-  searchForSeriesMedia,
-  validateVideoRelevance,
-};
-
-
+export { searchForSeriesMedia, validateVideoRelevance };
 
 export {
   RaceEnrichmentSchema,

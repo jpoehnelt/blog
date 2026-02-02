@@ -15,8 +15,19 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import * as fs from "fs/promises";
 import pLimit from "p-limit";
-import { enrichRace, enrichSeries, searchForSeriesMedia, analyzeMediaContent } from "./enrichment.js";
-import type { Race, RaceEnrichment, RaceEnrichmentsFile, RaceSeriesEnrichment, RaceSeriesRegistry } from "./types.js";
+import {
+  enrichRace,
+  enrichSeries,
+  searchForSeriesMedia,
+  analyzeMediaContent,
+} from "./enrichment.js";
+import type {
+  Race,
+  RaceEnrichment,
+  RaceEnrichmentsFile,
+  RaceSeriesEnrichment,
+  RaceSeriesRegistry,
+} from "./types.js";
 
 const DATA_DIR = path.resolve(import.meta.dirname, "../../../data");
 const RACES_DIR = path.join(DATA_DIR, "races");
@@ -299,27 +310,38 @@ yargs(hideBin(process.argv))
           console.warn(`\n⚠️  SLUG CONFLICT DETECTED!`);
           console.warn(`Multiple races generate slug "${slug}":`);
           for (const raceTitle of uniqueTitles) {
-            const ids = matchingRaces.filter((r) => r.title === raceTitle).map((r) => r.id);
+            const ids = matchingRaces
+              .filter((r) => r.title === raceTitle)
+              .map((r) => r.id);
             console.warn(`  - "${raceTitle}" (IDs: ${ids.join(", ")})`);
           }
           console.warn(`\nTo resolve, use a unique slug with --slug option.`);
-          console.warn(`Example: pnpm enrich enrich-series my-unique-slug -t "Race Title"\n`);
+          console.warn(
+            `Example: pnpm enrich enrich-series my-unique-slug -t "Race Title"\n`,
+          );
           process.exit(1);
         }
 
         // Check if this slug is already used for different race IDs
         const existingIds = Object.values(registry)
-          .filter((s): s is typeof s & { source: "ultrasignup" } => s.source === "ultrasignup")
+          .filter(
+            (s): s is typeof s & { source: "ultrasignup" } =>
+              s.source === "ultrasignup",
+          )
           .flatMap((s) => s.ultrasignupIds);
-        
+
         const newIds = matchingRaces.map((r) => r.id);
         const conflictingIds = newIds.filter((id) => existingIds.includes(id));
-        
+
         if (conflictingIds.length > 0) {
-          const existingSlug = Object.entries(registry).find(([, s]) => 
-            s.source === "ultrasignup" && s.ultrasignupIds.some((id) => conflictingIds.includes(id))
+          const existingSlug = Object.entries(registry).find(
+            ([, s]) =>
+              s.source === "ultrasignup" &&
+              s.ultrasignupIds.some((id) => conflictingIds.includes(id)),
           )?.[0];
-          console.warn(`\n⚠️  Race ID conflict! IDs ${conflictingIds.join(", ")} already registered under "${existingSlug}".`);
+          console.warn(
+            `\n⚠️  Race ID conflict! IDs ${conflictingIds.join(", ")} already registered under "${existingSlug}".`,
+          );
           process.exit(1);
         }
 
@@ -353,14 +375,16 @@ yargs(hideBin(process.argv))
 
       console.log("Registered Race Series:\n");
       for (const [slug, series] of Object.entries(registry)) {
-        const source = series.source === "ultrasignup" 
-          ? `UltraSignup (${series.ultrasignupIds.length} IDs)`
-          : "External";
+        const source =
+          series.source === "ultrasignup"
+            ? `UltraSignup (${series.ultrasignupIds.length} IDs)`
+            : "External";
         console.log(`  ${slug}`);
         console.log(`    Title: ${series.title}`);
         console.log(`    Source: ${source}`);
         if (series.location) console.log(`    Location: ${series.location}`);
-        if (series.events) console.log(`    Events: ${series.events.join(", ")}`);
+        if (series.events)
+          console.log(`    Events: ${series.events.join(", ")}`);
         console.log();
       }
 
@@ -386,19 +410,20 @@ yargs(hideBin(process.argv))
         });
     },
     async (argv) => {
-      const { skipExisting, limit, delay, upcoming, concurrency, append } = argv as unknown as {
-        skipExisting: boolean;
-        limit: number | undefined;
-        delay: number;
-        upcoming: boolean;
-        concurrency: number;
-        append: boolean;
-      };
+      const { skipExisting, limit, delay, upcoming, concurrency, append } =
+        argv as unknown as {
+          skipExisting: boolean;
+          limit: number | undefined;
+          delay: number;
+          upcoming: boolean;
+          concurrency: number;
+          append: boolean;
+        };
       let races = await loadRaces();
-      
+
       if (upcoming) {
         const now = new Date();
-        races = races.filter(r => new Date(r.date) > now);
+        races = races.filter((r) => new Date(r.date) > now);
         console.log(`Filtered to ${races.length} upcoming races.`);
       }
 
@@ -415,7 +440,9 @@ yargs(hideBin(process.argv))
       }
 
       const slugs = Array.from(slugMap.keys());
-      console.log(`Found ${slugs.length} unique race series from ${races.length} races\n`);
+      console.log(
+        `Found ${slugs.length} unique race series from ${races.length} races\n`,
+      );
 
       let enriched = 0;
       let skipped = 0;
@@ -433,7 +460,7 @@ yargs(hideBin(process.argv))
       const limiter = pLimit(concurrency);
       console.log(`Processing with concurrency: ${concurrency}`);
 
-      const tasks = slugs.map((slug) => 
+      const tasks = slugs.map((slug) =>
         limiter(async () => {
           if (limit && processedCount >= limit) {
             return;
@@ -442,11 +469,11 @@ yargs(hideBin(process.argv))
           // Check if series.json exists
           const seriesPath = path.join(RACES_DIR, slug, "series.json");
           let existingData: RaceSeriesEnrichment | undefined;
-          
+
           try {
             const content = await fs.readFile(seriesPath, "utf-8");
             existingData = JSON.parse(content);
-            
+
             if (skipExisting && !append) {
               console.log(`Skipping ${slug} (already enriched)`);
               skipped++;
@@ -461,7 +488,9 @@ yargs(hideBin(process.argv))
 
           const { title } = slugMap.get(slug)!;
           const index = processedCount;
-          console.log(`\n[${index}/${limit || slugs.length}] Enriching: ${slug}${append && existingData ? " [APPEND]" : ""}`);
+          console.log(
+            `\n[${index}/${limit || slugs.length}] Enriching: ${slug}${append && existingData ? " [APPEND]" : ""}`,
+          );
 
           try {
             // Ensure directory exists
@@ -469,11 +498,11 @@ yargs(hideBin(process.argv))
 
             // Run enrichment
             const result = await enrichSeries(slug, title, {
-              existing: append ? existingData : undefined
+              existing: append ? existingData : undefined,
             });
             await fs.writeFile(seriesPath, JSON.stringify(result, null, 2));
             console.log(`  ✓ Saved ${seriesPath}`);
-            
+
             // Register in series registry (Serialized)
             await updateRegistrySafely(async () => {
               let registry: RaceSeriesRegistry = {};
@@ -490,7 +519,10 @@ yargs(hideBin(process.argv))
                   source: "ultrasignup",
                   ultrasignupIds: slugMap.get(slug)!.ids,
                 };
-                await fs.writeFile(SERIES_FILE, JSON.stringify(registry, null, 2));
+                await fs.writeFile(
+                  SERIES_FILE,
+                  JSON.stringify(registry, null, 2),
+                );
               }
             });
 
@@ -504,7 +536,7 @@ yargs(hideBin(process.argv))
             console.error(`  ✗ Error processing ${slug}: ${error}`);
             errors++;
           }
-        })
+        }),
       );
 
       await Promise.all(tasks);
@@ -536,10 +568,17 @@ yargs(hideBin(process.argv))
     (yargs) => {
       return yargs
         .positional("url", { describe: "URL to analyze", type: "string" })
-        .positional("title", { describe: "Race title (context)", type: "string", default: "Ultramarathon" });
+        .positional("title", {
+          describe: "Race title (context)",
+          type: "string",
+          default: "Ultramarathon",
+        });
     },
     async (argv) => {
-      const result = await analyzeMediaContent(argv.url as string, argv.title as string);
+      const result = await analyzeMediaContent(
+        argv.url as string,
+        argv.title as string,
+      );
       if (result) {
         console.log(JSON.stringify(result, null, 2));
       } else {

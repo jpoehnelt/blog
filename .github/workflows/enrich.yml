@@ -42,7 +42,7 @@ jobs:
         run: |
           LIMIT=${{ github.event.inputs.limit || 20 }}
           UPCOMING=${{ github.event.inputs.upcoming }}
-          
+
           # Default to upcoming=true and limit=20 for scheduled runs
           if [ "${{ github.event_name }}" == "schedule" ]; then
              UPCOMING="true"
@@ -50,11 +50,11 @@ jobs:
           fi
 
           CMD="pnpm --filter @jpoehnelt/ultrasignup-scraper enrich enrich-all-series --limit=$LIMIT --delay=3000"
-          
+
           if [ "$UPCOMING" == "true" ]; then
             CMD="$CMD --upcoming"
           fi
-          
+
           echo "Running: $CMD"
           $CMD
 

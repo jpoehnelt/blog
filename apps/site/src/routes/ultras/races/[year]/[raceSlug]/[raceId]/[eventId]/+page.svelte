@@ -127,6 +127,15 @@
     velocity: number; // positions moved per day at this percentile
   }
 
+  // Enriched event with computed analytics properties
+  interface EnrichedPageEvent extends PageEvent {
+    velocity: number | null;
+    velocitySeries: { date: string; velocity: number }[];
+    regression: RegressionResult | null;
+    percentileStats: PercentileStats[];
+    competitiveness: CompetitivenessStats | null;
+  }
+
   function calculatePercentileVelocities(event: PageEvent): PercentileStats[] {
     if (!event.data || event.data.length < 2) return [];
 
@@ -381,7 +390,7 @@
   }
 
   let activeEvents = $derived(
-    activeEventsBase.map((e: PageEvent) => {
+    activeEventsBase.map((e: PageEvent): EnrichedPageEvent => {
       const velocitySeries = calculateVelocitySeries(e);
       const lastVelocity = velocitySeries.length > 0 ? velocitySeries[velocitySeries.length - 1].velocity : null;
       const regressionResult = calculateRegression(velocitySeries, race.date);
@@ -403,7 +412,7 @@
     activeEvents.reduce(
       (
         acc: Record<string, Record<number, Map<string, number>>>,
-        event: PageEvent,
+        event: EnrichedPageEvent,
       ) => {
         if (!event.data || event.data.length === 0) return acc;
 
@@ -535,10 +544,133 @@
     })),
   );
 
-  let title = $derived(`${race.title} ${race.year} Waitlist & Stats`);
-  let description = $derived(
-    `Detailed waitlist analysis, clearance rates, and statistics for the ${race.year} ${race.title}.`,
-  );
+  // Check if race has already happened
+  let isRacePast = $derived.by(() => {
+    if (!race.date) return false;
+    const raceDate = new Date(race.date);
+    return raceDate < new Date();
+  });
+
+  let title = $derived.by(() => {
+    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
+    
+    // After race day, pivot to analysis-focused title for future registrants
+    if (isRacePast) {
+      return `${race.title} ${race.year} ${events[0]?.title} - Field Analysis & Competitiveness`;
+    }
+    
+    if (waitlistSize > 0) {
+      return `${race.title} ${race.year} Waitlist (${waitlistSize} people) - Clearance Rates & Movement`;
+    }
+    return `${race.title} ${race.year} ${events[0]?.title} - Stats & Analysis`;
+  });
+  
+  let description = $derived.by(() => {
+    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
+    const velocity = activeEvents[0]?.velocity;
+    const competitiveness = activeEvents[0]?.competitiveness;
+    
+    // After race day, focus on field strength and analysis
+    if (isRacePast) {
+      let desc = `${race.year} ${race.title} ${events[0]?.title ?? ''} race analysis. `;
+      if (competitiveness) {
+        desc += `Field had ${competitiveness.rankedEntrants} ranked runners with avg rank ${competitiveness.averageRank.toFixed(0)}. `;
+      }
+      desc += `View historical entrants, field competitiveness, and race insights.`;
+      return desc;
+    }
+    
+    if (waitlistSize > 0) {
+      let desc = `${race.year} ${race.title} waitlist has ${waitlistSize} people. `;
+      if (velocity && velocity > 0) {
+        desc += `Currently moving ${velocity.toFixed(1)} spots/day. `;
+      }
+      desc += `Track waitlist movement, clearance history, and your chances of getting in.`;
+      return desc;
+    }
+    return `Detailed statistics and field analysis for the ${race.year} ${race.title} ${events[0]?.title ?? ''}.`;
+  });
+
+  // FAQ structured data for search queries
+  let faqJsonLd = $derived.by(() => {
+    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
+    const competitiveness = activeEvents[0]?.competitiveness;
+    
+    // For past races: FAQ for people planning to register next year
+    if (isRacePast) {
+      const questions = [
+        {
+          "@type": "Question",
+          name: `How long was the ${race.title} waitlist on race day?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: waitlistSize > 0 
+              ? `The ${race.year} ${race.title} ${events[0]?.title ?? ''} had ${waitlistSize} people still on the waitlist by race day.`
+              : `The ${race.year} ${race.title} ${events[0]?.title ?? ''} waitlist cleared before race day.`
+          }
+        },
+        {
+          "@type": "Question",
+          name: `How competitive is the ${race.title} field?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: competitiveness 
+              ? `In ${race.year}, the field had ${competitiveness.rankedEntrants} ranked runners with an average rank of ${competitiveness.averageRank.toFixed(0)} and ${competitiveness.eliteCount} elite runners (90+ rank).`
+              : `The ${race.title} attracts a competitive field. Check this page for detailed field analysis.`
+          }
+        },
+
+        {
+          "@type": "Question",
+          name: `How many people were signed up for the ${race.title} in ${race.year}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: competitiveness 
+              ? `The ${race.year} ${race.title} ${events[0]?.title ?? ''} had ${competitiveness.totalEntrants} registered entrants.`
+              : `View this page for complete entrant statistics.`
+          }
+        }
+      ];
+      
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: questions
+      };
+    }
+    
+    // For upcoming races with waitlist: FAQ for current waitlist questions
+    if (waitlistSize === 0) return null;
+    
+    const velocity = activeEvents[0]?.velocity;
+    
+    const questions = [
+      {
+        "@type": "Question",
+        name: `How many people are on the ${race.title} waitlist?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `The ${race.year} ${race.title} ${events[0]?.title ?? ''} currently has ${waitlistSize} people on the waitlist.`
+        }
+      },
+      {
+        "@type": "Question", 
+        name: `How fast is the ${race.title} waitlist moving?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: velocity && velocity > 0 
+            ? `The waitlist is currently moving at approximately ${velocity.toFixed(1)} positions per day.`
+            : `The waitlist movement varies. Check the live tracker for current movement rates.`
+        }
+      }
+    ];
+    
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: questions
+    };
+  });
 
   let jsonLd = $derived([
     {
@@ -749,6 +881,9 @@
   {#each athleteJsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
   {/each}
+  {#if faqJsonLd}
+    {@html `<script type="application/ld+json">${JSON.stringify(faqJsonLd)}</script>`}
+  {/if}
 </svelte:head>
 
 <div class="min-h-screen bg-stone-50 pb-20">
@@ -900,7 +1035,7 @@
                 Top Women
               </a>
             {/if}
-            {#if activeEvents.some((e: PageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
+            {#if activeEvents.some((e: EnrichedPageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
               <a
                 href="#waitlist"
                 class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-orange-600/30 border border-slate-600/50 hover:border-orange-500/50 text-stone-300 hover:text-orange-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
@@ -1348,7 +1483,7 @@
     {/if}
 
     <!-- Full Waitlist Section -->
-    {#if activeEvents.some((e: PageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
+    {#if activeEvents.some((e: EnrichedPageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
       <div id="waitlist" class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {#each activeEvents as event}
