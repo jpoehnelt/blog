@@ -4,8 +4,11 @@
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
   import type { Post } from "$lib/content/posts.shared";
-  import { extractYouTubeId, getYouTubeThumbnail, isYouTubeUrl } from "$lib/utils/youtube";
-  import { linearRegression, linearRegressionLine, rSquared } from "simple-statistics";
+  import {
+    linearRegression,
+    linearRegressionLine,
+    rSquared,
+  } from "simple-statistics";
 
   import type {
     Race,
@@ -20,7 +23,9 @@
     entrants: Participant[] | null;
   }
 
-  let { data } = $props<{ data: { race: Race; events: PageEvent[]; relatedPosts: Post[] } }>();
+  let { data } = $props<{
+    data: { race: Race; events: PageEvent[]; relatedPosts: Post[] };
+  }>();
 
   let race = $derived(data.race);
   let events = $derived(data.events || []);
@@ -40,36 +45,45 @@
 
   interface CompetitivenessStats {
     totalEntrants: number;
-    rankedEntrants: number;      // Runners with 5+ results
-    insufficientResultsCount: number;  // Runners with rank but <5 results
-    unrankedCount: number;       // Runners with no rank
+    rankedEntrants: number; // Runners with 5+ results
+    insufficientResultsCount: number; // Runners with rank but <5 results
+    unrankedCount: number; // Runners with no rank
     averageRank: number;
     medianRank: number;
-    eliteCount: number;      // 90+ rank
-    strongCount: number;     // 80-89.9 rank
-    midPackCount: number;    // 60-79.9 rank
-    newcomerCount: number;   // <60
+    eliteCount: number; // 90+ rank
+    strongCount: number; // 80-89.9 rank
+    midPackCount: number; // 60-79.9 rank
+    newcomerCount: number; // <60
     topRunners: { name: string; rank: number; location: string }[];
     rankDistribution: { label: string; count: number; percent: number }[];
   }
 
-  function calculateCompetitiveness(entrants: Participant[] | null): CompetitivenessStats | null {
+  function calculateCompetitiveness(
+    entrants: Participant[] | null,
+  ): CompetitivenessStats | null {
     if (!entrants || entrants.length === 0) return null;
 
     // For accurate rankings, only include runners with 5+ results (UltraSignup requirement)
     const MIN_RESULTS_FOR_RANKING = 5;
-    const qualifiedEntrants = entrants.filter(e => e.rank && e.rank > 0 && (e.results ?? 0) >= MIN_RESULTS_FOR_RANKING);
-    const insufficientResultsCount = entrants.filter(e => e.rank && e.rank > 0 && (e.results ?? 0) < MIN_RESULTS_FOR_RANKING).length;
-    const unrankedCount = entrants.filter(e => !e.rank || e.rank === 0).length;
-    
-    const ranks = qualifiedEntrants.map(e => e.rank!).sort((a, b) => b - a);
-    
+    const qualifiedEntrants = entrants.filter(
+      (e) =>
+        e.rank && e.rank > 0 && (e.results ?? 0) >= MIN_RESULTS_FOR_RANKING,
+    );
+    const insufficientResultsCount = entrants.filter(
+      (e) => e.rank && e.rank > 0 && (e.results ?? 0) < MIN_RESULTS_FOR_RANKING,
+    ).length;
+    const unrankedCount = entrants.filter(
+      (e) => !e.rank || e.rank === 0,
+    ).length;
+
+    const ranks = qualifiedEntrants.map((e) => e.rank!).sort((a, b) => b - a);
+
     if (ranks.length === 0) return null;
 
-    const eliteCount = ranks.filter(r => r >= 90).length;
-    const strongCount = ranks.filter(r => r >= 80 && r < 90).length;
-    const midPackCount = ranks.filter(r => r >= 60 && r < 80).length;
-    const newcomerCount = ranks.filter(r => r > 0 && r < 60).length;
+    const eliteCount = ranks.filter((r) => r >= 90).length;
+    const strongCount = ranks.filter((r) => r >= 80 && r < 90).length;
+    const midPackCount = ranks.filter((r) => r >= 60 && r < 80).length;
+    const newcomerCount = ranks.filter((r) => r > 0 && r < 60).length;
 
     const sum = ranks.reduce((a, b) => a + b, 0);
     const averageRank = sum / ranks.length;
@@ -79,21 +93,45 @@
     const topRunners = qualifiedEntrants
       .sort((a, b) => (b.rank || 0) - (a.rank || 0))
       .slice(0, 10)
-      .map(e => ({
+      .map((e) => ({
         name: `${e.firstName} ${e.lastName}`,
         rank: e.rank || 0,
-        location: e.location || ''
+        location: e.location || "",
       }));
 
     // Create distribution buckets
     const totalForPercent = entrants.length;
     const newRunnersCount = insufficientResultsCount + unrankedCount;
     const rankDistribution = [
-      { label: '90+', count: eliteCount, percent: totalForPercent > 0 ? (eliteCount / totalForPercent) * 100 : 0 },
-      { label: '80-89', count: strongCount, percent: totalForPercent > 0 ? (strongCount / totalForPercent) * 100 : 0 },
-      { label: '60-79', count: midPackCount, percent: totalForPercent > 0 ? (midPackCount / totalForPercent) * 100 : 0 },
-      { label: '<60', count: newcomerCount, percent: totalForPercent > 0 ? (newcomerCount / totalForPercent) * 100 : 0 },
-      { label: 'New', count: newRunnersCount, percent: totalForPercent > 0 ? (newRunnersCount / totalForPercent) * 100 : 0 },
+      {
+        label: "90+",
+        count: eliteCount,
+        percent: totalForPercent > 0 ? (eliteCount / totalForPercent) * 100 : 0,
+      },
+      {
+        label: "80-89",
+        count: strongCount,
+        percent:
+          totalForPercent > 0 ? (strongCount / totalForPercent) * 100 : 0,
+      },
+      {
+        label: "60-79",
+        count: midPackCount,
+        percent:
+          totalForPercent > 0 ? (midPackCount / totalForPercent) * 100 : 0,
+      },
+      {
+        label: "<60",
+        count: newcomerCount,
+        percent:
+          totalForPercent > 0 ? (newcomerCount / totalForPercent) * 100 : 0,
+      },
+      {
+        label: "New",
+        count: newRunnersCount,
+        percent:
+          totalForPercent > 0 ? (newRunnersCount / totalForPercent) * 100 : 0,
+      },
     ];
 
     return {
@@ -108,7 +146,7 @@
       midPackCount,
       newcomerCount,
       topRunners,
-      rankDistribution
+      rankDistribution,
     };
   }
 
@@ -140,89 +178,100 @@
     if (!event.data || event.data.length < 2) return [];
 
     const sortedData = [...event.data].sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     );
-    
+
     // Get the two most recent snapshots with applicant data
-    const recent = sortedData.filter(d => d.applicants && d.applicants.length > 0);
+    const recent = sortedData.filter(
+      (d) => d.applicants && d.applicants.length > 0,
+    );
     if (recent.length < 2) return [];
-    
+
     const prev = recent[recent.length - 2];
     const curr = recent[recent.length - 1];
-    
+
     if (!prev.applicants || !curr.applicants) return [];
-    
-    const days = (new Date(curr.date).getTime() - new Date(prev.date).getTime()) / (1000 * 60 * 60 * 24);
+
+    const days =
+      (new Date(curr.date).getTime() - new Date(prev.date).getTime()) /
+      (1000 * 60 * 60 * 24);
     if (days <= 0) return [];
-    
+
     const totalCount = curr.count;
     const percentiles = [25, 50, 75];
-    
-    return percentiles.map(p => {
+
+    return percentiles.map((p) => {
       // Position at this percentile (0-indexed)
       const position = Math.floor((p / 100) * totalCount);
-      
+
       // Get the applicant at this position in current snapshot
       const applicant = curr.applicants![position];
-      if (!applicant) return { percentile: p, position: position + 1, velocity: 0 };
-      
+      if (!applicant)
+        return { percentile: p, position: position + 1, velocity: 0 };
+
       // Find their previous position
       const prevPosition = prev.applicants!.indexOf(applicant);
-      
+
       if (prevPosition === -1) {
         // New applicant, can't calculate velocity
         return { percentile: p, position: position + 1, velocity: 0 };
       }
-      
+
       // Calculate how many positions they moved per day
       const positionChange = prevPosition - position; // Positive = moved up
       const velocity = positionChange / days;
-      
+
       return {
         percentile: p,
         position: position + 1, // 1-indexed for display
-        velocity
+        velocity,
       };
     });
   }
 
-  function calculateVelocitySeries(event: PageEvent): { date: string; velocity: number }[] {
+  function calculateVelocitySeries(
+    event: PageEvent,
+  ): { date: string; velocity: number }[] {
     if (!event.data || event.data.length < 2) return [];
 
     // Ensure data is sorted by date
-    const sortedData = [...event.data].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const sortedData = [...event.data].sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+    );
     const series: { date: string; velocity: number }[] = [];
 
     // Iterate through snapshots starting from the second one
     for (let i = 1; i < sortedData.length; i++) {
-        const prev = sortedData[i - 1];
-        const curr = sortedData[i];
-        
-        if (!curr.applicants || !prev.applicants) continue;
+      const prev = sortedData[i - 1];
+      const curr = sortedData[i];
 
-        // Cohort: Top 25 at current time t
-        const cohort = curr.applicants.slice(0, 25);
-        const velocities: number[] = [];
+      if (!curr.applicants || !prev.applicants) continue;
 
-        const days = (new Date(curr.date).getTime() - new Date(prev.date).getTime()) / (1000 * 60 * 60 * 24);
-        if (days <= 0) continue;
+      // Cohort: Top 25 at current time t
+      const cohort = curr.applicants.slice(0, 25);
+      const velocities: number[] = [];
 
-        for (const applicant of cohort) {
-            const prevPos = prev.applicants.indexOf(applicant);
-            const currPos = curr.applicants.indexOf(applicant); // Should be index in cohort basically
+      const days =
+        (new Date(curr.date).getTime() - new Date(prev.date).getTime()) /
+        (1000 * 60 * 60 * 24);
+      if (days <= 0) continue;
 
-            if (prevPos !== -1 && currPos !== -1) {
-                 const posDiff = prevPos - currPos; // Positive = moved up
-                 velocities.push(posDiff / days);
-            }
+      for (const applicant of cohort) {
+        const prevPos = prev.applicants.indexOf(applicant);
+        const currPos = curr.applicants.indexOf(applicant); // Should be index in cohort basically
+
+        if (prevPos !== -1 && currPos !== -1) {
+          const posDiff = prevPos - currPos; // Positive = moved up
+          velocities.push(posDiff / days);
         }
+      }
 
-        if (velocities.length > 0) {
-             const total = velocities.reduce((sum, v) => sum + v, 0);
-             const mean = total / velocities.length;
-             
-             series.push({ date: curr.date, velocity: mean });
-        }
+      if (velocities.length > 0) {
+        const total = velocities.reduce((sum, v) => sum + v, 0);
+        const mean = total / velocities.length;
+
+        series.push({ date: curr.date, velocity: mean });
+      }
     }
     return series;
   }
@@ -239,23 +288,25 @@
 
   function calculateRegression(
     velocitySeries: { date: string; velocity: number }[],
-    raceDate: string | null
+    raceDate: string | null,
   ): RegressionResult | null {
     const MIN_SAMPLES = 10;
     const MAX_PROJECTION = 500; // Cap projection at 500 positions
     const R2_THRESHOLD = 0.99; // R² above this suggests overfitting/few points
-    
+
     if (velocitySeries.length < MIN_SAMPLES) return null;
 
     // Convert dates to day indices (0, 1, 2, ...) for regression
     const firstDate = new Date(velocitySeries[0].date).getTime();
     const data: [number, number][] = velocitySeries.map((d) => [
-      Math.floor((new Date(d.date).getTime() - firstDate) / (1000 * 60 * 60 * 24)),
-      d.velocity
+      Math.floor(
+        (new Date(d.date).getTime() - firstDate) / (1000 * 60 * 60 * 24),
+      ),
+      d.velocity,
     ]);
 
-    const x = data.map(d => d[0]);
-    const y = data.map(d => d[1]);
+    const x = data.map((d) => d[0]);
+    const y = data.map((d) => d[1]);
     const n = x.length;
 
     // Polynomial regression (degree 2) using least squares
@@ -273,70 +324,83 @@
     // | n      sumX   sumX2  | | a |   | sumY   |
     // | sumX   sumX2  sumX3  | | b | = | sumXY  |
     // | sumX2  sumX3  sumX4  | | c |   | sumX2Y |
-    
+
     // Using Cramer's rule for 3x3 system
-    const det = n * (sumX2 * sumX4 - sumX3 * sumX3) 
-              - sumX * (sumX * sumX4 - sumX3 * sumX2) 
-              + sumX2 * (sumX * sumX3 - sumX2 * sumX2);
-    
+    const det =
+      n * (sumX2 * sumX4 - sumX3 * sumX3) -
+      sumX * (sumX * sumX4 - sumX3 * sumX2) +
+      sumX2 * (sumX * sumX3 - sumX2 * sumX2);
+
     if (Math.abs(det) < 1e-10) {
       // Fallback to linear if matrix is singular
       const regression = linearRegression(data);
       const predict = linearRegressionLine(regression);
       const r2 = rSquared(data, predict);
-      
+
       if (r2 > R2_THRESHOLD) return null; // Hide if R² too high
-      
+
       const maxDayIndex = Math.max(...x);
       const trendPoints: { dayIndex: number; velocity: number }[] = [];
       for (let i = 0; i <= maxDayIndex; i++) {
         trendPoints.push({ dayIndex: i, velocity: predict(i) });
       }
-      
+
       let projectedPositionChange: number | null = null;
       if (raceDate) {
-        const raceDayIndex = Math.floor((new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24));
+        const raceDayIndex = Math.floor(
+          (new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24),
+        );
         if (raceDayIndex > maxDayIndex) {
           const daysRemaining = raceDayIndex - maxDayIndex;
           const avgVelocity = predict((maxDayIndex + raceDayIndex) / 2);
-          projectedPositionChange = Math.min(avgVelocity * daysRemaining, MAX_PROJECTION);
+          projectedPositionChange = Math.min(
+            avgVelocity * daysRemaining,
+            MAX_PROJECTION,
+          );
         }
       }
-      
+
       return {
         coefficients: [regression.b, regression.m],
         r2,
-        equation: `y = ${regression.m.toFixed(3)}x + ${regression.b.toFixed(2)}`.replace('+ -', '- '),
+        equation:
+          `y = ${regression.m.toFixed(3)}x + ${regression.b.toFixed(2)}`.replace(
+            "+ -",
+            "- ",
+          ),
         predict,
         trendPoints,
         projectedVelocityAtRace: null,
-        projectedPositionChange
+        projectedPositionChange,
       };
     }
-    
+
     // Solve for a, b, c using Cramer's rule
-    const detA = sumY * (sumX2 * sumX4 - sumX3 * sumX3) 
-               - sumX * (sumXY * sumX4 - sumX3 * sumX2Y) 
-               + sumX2 * (sumXY * sumX3 - sumX2 * sumX2Y);
-    const detB = n * (sumXY * sumX4 - sumX3 * sumX2Y) 
-               - sumY * (sumX * sumX4 - sumX3 * sumX2) 
-               + sumX2 * (sumX * sumX2Y - sumXY * sumX2);
-    const detC = n * (sumX2 * sumX2Y - sumXY * sumX3) 
-               - sumX * (sumX * sumX2Y - sumXY * sumX2) 
-               + sumY * (sumX * sumX3 - sumX2 * sumX2);
-    
+    const detA =
+      sumY * (sumX2 * sumX4 - sumX3 * sumX3) -
+      sumX * (sumXY * sumX4 - sumX3 * sumX2Y) +
+      sumX2 * (sumXY * sumX3 - sumX2 * sumX2Y);
+    const detB =
+      n * (sumXY * sumX4 - sumX3 * sumX2Y) -
+      sumY * (sumX * sumX4 - sumX3 * sumX2) +
+      sumX2 * (sumX * sumX2Y - sumXY * sumX2);
+    const detC =
+      n * (sumX2 * sumX2Y - sumXY * sumX3) -
+      sumX * (sumX * sumX2Y - sumXY * sumX2) +
+      sumY * (sumX * sumX3 - sumX2 * sumX2);
+
     const a = detA / det; // constant term
     const b = detB / det; // linear coefficient
     const c = detC / det; // quadratic coefficient
-    
+
     const predict = (xi: number) => a + b * xi + c * xi * xi;
-    
+
     // Calculate R²
     const yMean = sumY / n;
     const ssTot = y.reduce((acc, yi) => acc + (yi - yMean) ** 2, 0);
     const ssRes = y.reduce((acc, yi, i) => acc + (yi - predict(x[i])) ** 2, 0);
-    const r2 = ssTot > 0 ? 1 - (ssRes / ssTot) : 0;
-    
+    const r2 = ssTot > 0 ? 1 - ssRes / ssTot : 0;
+
     if (r2 > R2_THRESHOLD) return null; // Hide if R² too high (overfitting)
 
     // Generate trend points
@@ -349,12 +413,12 @@
     // Calculate race day projection with cap
     let projectedVelocityAtRace: number | null = null;
     let projectedPositionChange: number | null = null;
-    
+
     if (raceDate) {
       const raceDayIndex = Math.floor(
-        (new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24)
+        (new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24),
       );
-      
+
       if (raceDayIndex > maxDayIndex) {
         // Extend trend to race day (but limit to reasonable range for display)
         const extendTo = Math.min(raceDayIndex, maxDayIndex + 60); // Max 60 days ahead
@@ -362,7 +426,7 @@
           trendPoints.push({ dayIndex: i, velocity: Math.max(0, predict(i)) });
         }
         projectedVelocityAtRace = predict(raceDayIndex);
-        
+
         // Integrate using numerical approximation (trapezoidal)
         let totalChange = 0;
         for (let i = maxDayIndex; i < raceDayIndex; i++) {
@@ -371,12 +435,19 @@
           totalChange += (v1 + v2) / 2;
         }
         // Cap the projection
-        projectedPositionChange = Math.min(Math.max(-MAX_PROJECTION, totalChange), MAX_PROJECTION);
+        projectedPositionChange = Math.min(
+          Math.max(-MAX_PROJECTION, totalChange),
+          MAX_PROJECTION,
+        );
       }
     }
 
     // Format equation string (y = a + bx + cx²)
-    const equation = `y = ${a.toFixed(2)} + ${b.toFixed(3)}x + ${c.toFixed(4)}x²`.replace(/\+ -/g, '- ');
+    const equation =
+      `y = ${a.toFixed(2)} + ${b.toFixed(3)}x + ${c.toFixed(4)}x²`.replace(
+        /\+ -/g,
+        "- ",
+      );
 
     return {
       coefficients: [a, b, c],
@@ -385,14 +456,17 @@
       predict,
       trendPoints,
       projectedVelocityAtRace,
-      projectedPositionChange
+      projectedPositionChange,
     };
   }
 
   let activeEvents = $derived(
     activeEventsBase.map((e: PageEvent): EnrichedPageEvent => {
       const velocitySeries = calculateVelocitySeries(e);
-      const lastVelocity = velocitySeries.length > 0 ? velocitySeries[velocitySeries.length - 1].velocity : null;
+      const lastVelocity =
+        velocitySeries.length > 0
+          ? velocitySeries[velocitySeries.length - 1].velocity
+          : null;
       const regressionResult = calculateRegression(velocitySeries, race.date);
       const percentileStats = calculatePercentileVelocities(e);
       const competitiveness = calculateCompetitiveness(e.entrants);
@@ -402,9 +476,9 @@
         velocitySeries,
         regression: regressionResult,
         percentileStats,
-        competitiveness
+        competitiveness,
       };
-    })
+    }),
   );
 
   // Pre-calculate snapshot maps for each event (1d, 7d, 30d)
@@ -468,11 +542,16 @@
   let totalWaitlist = $derived(
     activeEvents.reduce(
       (acc: number, e: PageEvent) =>
-        acc + (e.data && e.data.length > 0 ? e.data[e.data.length - 1]?.count || 0 : 0),
+        acc +
+        (e.data && e.data.length > 0
+          ? e.data[e.data.length - 1]?.count || 0
+          : 0),
       0,
     ),
   );
-  let heroCompetitiveness = $derived(fieldCompetitiveness || activeEvents[0]?.competitiveness);
+  let heroCompetitiveness = $derived(
+    fieldCompetitiveness || activeEvents[0]?.competitiveness,
+  );
 
   const HIGH_PERFORMER_RANK = 85;
   const MIN_RESULTS = 5;
@@ -552,34 +631,38 @@
   });
 
   let title = $derived.by(() => {
-    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
-    
+    const waitlistSize =
+      activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants
+        ?.length ?? 0;
+
     // After race day, pivot to analysis-focused title for future registrants
     if (isRacePast) {
       return `${race.title} ${race.year} ${events[0]?.title} - Field Analysis & Competitiveness`;
     }
-    
+
     if (waitlistSize > 0) {
       return `${race.title} ${race.year} Waitlist (${waitlistSize} people) - Clearance Rates & Movement`;
     }
     return `${race.title} ${race.year} ${events[0]?.title} - Stats & Analysis`;
   });
-  
+
   let description = $derived.by(() => {
-    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
+    const waitlistSize =
+      activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants
+        ?.length ?? 0;
     const velocity = activeEvents[0]?.velocity;
     const competitiveness = activeEvents[0]?.competitiveness;
-    
+
     // After race day, focus on field strength and analysis
     if (isRacePast) {
-      let desc = `${race.year} ${race.title} ${events[0]?.title ?? ''} race analysis. `;
+      let desc = `${race.year} ${race.title} ${events[0]?.title ?? ""} race analysis. `;
       if (competitiveness) {
         desc += `Field had ${competitiveness.rankedEntrants} ranked runners with avg rank ${competitiveness.averageRank.toFixed(0)}. `;
       }
       desc += `View historical entrants, field competitiveness, and race insights.`;
       return desc;
     }
-    
+
     if (waitlistSize > 0) {
       let desc = `${race.year} ${race.title} waitlist has ${waitlistSize} people. `;
       if (velocity && velocity > 0) {
@@ -588,14 +671,16 @@
       desc += `Track waitlist movement, clearance history, and your chances of getting in.`;
       return desc;
     }
-    return `Detailed statistics and field analysis for the ${race.year} ${race.title} ${events[0]?.title ?? ''}.`;
+    return `Detailed statistics and field analysis for the ${race.year} ${race.title} ${events[0]?.title ?? ""}.`;
   });
 
   // FAQ structured data for search queries
   let faqJsonLd = $derived.by(() => {
-    const waitlistSize = activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants?.length ?? 0;
+    const waitlistSize =
+      activeEvents[0]?.data?.[activeEvents[0].data.length - 1]?.applicants
+        ?.length ?? 0;
     const competitiveness = activeEvents[0]?.competitiveness;
-    
+
     // For past races: FAQ for people planning to register next year
     if (isRacePast) {
       const questions = [
@@ -604,20 +689,21 @@
           name: `How long was the ${race.title} waitlist on race day?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: waitlistSize > 0 
-              ? `The ${race.year} ${race.title} ${events[0]?.title ?? ''} had ${waitlistSize} people still on the waitlist by race day.`
-              : `The ${race.year} ${race.title} ${events[0]?.title ?? ''} waitlist cleared before race day.`
-          }
+            text:
+              waitlistSize > 0
+                ? `The ${race.year} ${race.title} ${events[0]?.title ?? ""} had ${waitlistSize} people still on the waitlist by race day.`
+                : `The ${race.year} ${race.title} ${events[0]?.title ?? ""} waitlist cleared before race day.`,
+          },
         },
         {
           "@type": "Question",
           name: `How competitive is the ${race.title} field?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: competitiveness 
+            text: competitiveness
               ? `In ${race.year}, the field had ${competitiveness.rankedEntrants} ranked runners with an average rank of ${competitiveness.averageRank.toFixed(0)} and ${competitiveness.eliteCount} elite runners (90+ rank).`
-              : `The ${race.title} attracts a competitive field. Check this page for detailed field analysis.`
-          }
+              : `The ${race.title} attracts a competitive field. Check this page for detailed field analysis.`,
+          },
         },
 
         {
@@ -625,50 +711,51 @@
           name: `How many people were signed up for the ${race.title} in ${race.year}?`,
           acceptedAnswer: {
             "@type": "Answer",
-            text: competitiveness 
-              ? `The ${race.year} ${race.title} ${events[0]?.title ?? ''} had ${competitiveness.totalEntrants} registered entrants.`
-              : `View this page for complete entrant statistics.`
-          }
-        }
+            text: competitiveness
+              ? `The ${race.year} ${race.title} ${events[0]?.title ?? ""} had ${competitiveness.totalEntrants} registered entrants.`
+              : `View this page for complete entrant statistics.`,
+          },
+        },
       ];
-      
+
       return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: questions
+        mainEntity: questions,
       };
     }
-    
+
     // For upcoming races with waitlist: FAQ for current waitlist questions
     if (waitlistSize === 0) return null;
-    
+
     const velocity = activeEvents[0]?.velocity;
-    
+
     const questions = [
       {
         "@type": "Question",
         name: `How many people are on the ${race.title} waitlist?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `The ${race.year} ${race.title} ${events[0]?.title ?? ''} currently has ${waitlistSize} people on the waitlist.`
-        }
+          text: `The ${race.year} ${race.title} ${events[0]?.title ?? ""} currently has ${waitlistSize} people on the waitlist.`,
+        },
       },
       {
-        "@type": "Question", 
+        "@type": "Question",
         name: `How fast is the ${race.title} waitlist moving?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: velocity && velocity > 0 
-            ? `The waitlist is currently moving at approximately ${velocity.toFixed(1)} positions per day.`
-            : `The waitlist movement varies. Check the live tracker for current movement rates.`
-        }
-      }
+          text:
+            velocity && velocity > 0
+              ? `The waitlist is currently moving at approximately ${velocity.toFixed(1)} positions per day.`
+              : `The waitlist movement varies. Check the live tracker for current movement rates.`,
+        },
+      },
     ];
-    
+
     return {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: questions
+      mainEntity: questions,
     };
   });
 
@@ -736,7 +823,7 @@
     return applicants.map((name, i) => ({
       name,
       position: i + 1,
-      ...getPositionDiffs(eventId, name, i)
+      ...getPositionDiffs(eventId, name, i),
     }));
   }
 
@@ -750,17 +837,43 @@
     {#if diff === null}
       <span class="text-slate-200">-</span>
     {:else if diff === 0}
-      <svg class="w-3 h-3 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
+      <svg
+        class="w-3 h-3 text-slate-300"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          d="M5 12h14"
+        />
       </svg>
     {:else if diff > 0}
-      <svg class="w-3 h-3 text-green-500 fill-current" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+      <svg
+        class="w-3 h-3 text-green-500 fill-current"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+          clip-rule="evenodd"
+        />
       </svg>
       <span>{diff}</span>
     {:else}
-       <svg class="w-3 h-3 text-red-500 fill-current rotate-180" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+      <svg
+        class="w-3 h-3 text-red-500 fill-current rotate-180"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+          clip-rule="evenodd"
+        />
       </svg>
       <span class="text-red-500">{Math.abs(diff)}</span>
     {/if}
@@ -858,23 +971,35 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`} />
-  
+  <link
+    rel="canonical"
+    href={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`}
+  />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`} />
+  <meta
+    property="og:image"
+    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`}
+  />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`} />
-  
+  <meta
+    property="og:url"
+    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`}
+  />
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`} />
-  
+  <meta
+    name="twitter:image"
+    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`}
+  />
+
   {#each jsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
   {/each}
@@ -888,31 +1013,60 @@
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-100 overflow-hidden">
+  <div
+    class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-100 overflow-hidden"
+  >
     <!-- Topographic Contour Pattern - Mountain Lines -->
     <div class="absolute inset-0 opacity-[0.07]">
-      <svg class="w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="currentColor" stroke-width="1.5" class="text-white">
+      <svg
+        class="w-full h-full"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 800 400"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          class="text-white"
+        >
           <path d="M-50,350 Q100,300 200,320 T400,280 T600,310 T850,270" />
           <path d="M-50,300 Q80,250 180,270 T380,220 T580,250 T850,200" />
           <path d="M-50,250 Q60,180 200,210 T420,150 T620,190 T850,130" />
           <path d="M-50,200 Q120,140 250,160 T450,100 T650,140 T850,80" />
           <path d="M-50,150 Q100,80 220,110 T460,50 T680,90 T850,30" />
           <path d="M-50,100 Q80,40 200,60 T440,10 T660,40 T850,-20" />
-          <path d="M-50,325 Q90,280 190,300 T390,250 T590,280 T850,240" opacity="0.5" />
-          <path d="M-50,275 Q70,210 190,240 T400,180 T600,220 T850,160" opacity="0.5" />
-          <path d="M-50,175 Q110,100 230,130 T455,70 T665,110 T850,50" opacity="0.5" />
+          <path
+            d="M-50,325 Q90,280 190,300 T390,250 T590,280 T850,240"
+            opacity="0.5"
+          />
+          <path
+            d="M-50,275 Q70,210 190,240 T400,180 T600,220 T850,160"
+            opacity="0.5"
+          />
+          <path
+            d="M-50,175 Q110,100 230,130 T455,70 T665,110 T850,50"
+            opacity="0.5"
+          />
         </g>
       </svg>
     </div>
-    
+
     <!-- Gradient overlays for depth -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent"></div>
-    
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"
+    ></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent"
+    ></div>
+
     <!-- Accent glow -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
+    ></div>
+    <div
+      class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"
+    ></div>
 
     <div class="relative container mx-auto px-6 py-16 md:py-24">
       <Breadcrumb.Root class="mb-6">
@@ -986,8 +1140,22 @@
             >
           </div>
           <div class="flex flex-col gap-1 mb-2">
-            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}" class="text-xl md:text-2xl font-bold text-stone-400 hover:text-orange-400 transition-colors inline-flex items-center gap-2 group">
-              <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            <a
+              href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+              class="text-xl md:text-2xl font-bold text-stone-400 hover:text-orange-400 transition-colors inline-flex items-center gap-2 group"
+            >
+              <svg
+                class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                ></path></svg
+              >
               {race.title}
             </a>
             <h1
@@ -1130,15 +1298,28 @@
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Race Summary Card with Link Back -->
     {#if enrichment?.summary}
-      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-lg flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div
+        class="bg-white rounded-2xl p-6 border border-stone-200 shadow-lg flex flex-col sm:flex-row items-start sm:items-center gap-4"
+      >
         <div class="flex-1 min-w-0">
           <p class="text-stone-600 line-clamp-2">{enrichment.summary}</p>
         </div>
-        <a 
-          href="/ultras/races/{race.year}/{race.slug}/{race.id}" 
+        <a
+          href="/ultras/races/{race.year}/{race.slug}/{race.id}"
           class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path></svg
+          >
           View Race Details
         </a>
       </div>
@@ -1147,7 +1328,7 @@
     {#if activeEvents.length > 0}
       <div class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Statistics (moved before chart) -->
+          <!-- Statistics (moved before chart) -->
           <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="text-lg font-medium mb-4">Race Analysis</h3>
             <div class="space-y-4">
@@ -1155,51 +1336,105 @@
                 {#if event.data && event.data.length > 0}
                   {@const last = event.data[event.data.length - 1]}
                   <div class="border-b pb-4 last:border-0 last:pb-0">
-                    <div class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide">{event.title}</div>
-                    
+                    <div
+                      class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide"
+                    >
+                      {event.title}
+                    </div>
+
                     {#if event.competitiveness}
                       <div class="mb-4">
-                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Field Strength</div>
-                        
+                        <div
+                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
+                        >
+                          Field Strength
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2 mb-3">
                           <div class="bg-slate-50 rounded px-2 py-1.5">
                             <div class="text-xs text-stone-400">Avg Rank</div>
-                            <div class="font-mono text-lg font-bold text-slate-700">{event.competitiveness.averageRank.toFixed(1)}</div>
+                            <div
+                              class="font-mono text-lg font-bold text-slate-700"
+                            >
+                              {event.competitiveness.averageRank.toFixed(1)}
+                            </div>
                           </div>
                           <div class="bg-slate-50 rounded px-2 py-1.5">
                             <div class="text-xs text-stone-400">Median</div>
-                            <div class="font-mono text-lg font-bold text-slate-700">{event.competitiveness.medianRank.toFixed(1)}</div>
+                            <div
+                              class="font-mono text-lg font-bold text-slate-700"
+                            >
+                              {event.competitiveness.medianRank.toFixed(1)}
+                            </div>
                           </div>
                         </div>
 
                         <div class="space-y-1">
                           {#each event.competitiveness.rankDistribution as bucket}
                             <div class="flex items-center gap-2 text-xs">
-                              <span class="w-12 text-stone-500 font-medium">{bucket.label}</span>
-                              <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
-                                <div 
-                                  class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : bucket.label === 'New' ? 'bg-amber-400' : 'bg-slate-400'}"
+                              <span class="w-12 text-stone-500 font-medium"
+                                >{bucket.label}</span
+                              >
+                              <div
+                                class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"
+                              >
+                                <div
+                                  class="h-full rounded-full {bucket.label ===
+                                  '90+'
+                                    ? 'bg-purple-500'
+                                    : bucket.label === '80-89'
+                                      ? 'bg-blue-500'
+                                      : bucket.label === '60-79'
+                                        ? 'bg-green-500'
+                                        : bucket.label === 'New'
+                                          ? 'bg-amber-400'
+                                          : 'bg-slate-400'}"
                                   style="width: {bucket.percent}%"
                                 ></div>
                               </div>
-                              <span class="w-8 text-right text-stone-400">{bucket.count}</span>
+                              <span class="w-8 text-right text-stone-400"
+                                >{bucket.count}</span
+                              >
                             </div>
                           {/each}
                         </div>
 
                         {#if event.competitiveness.eliteCount > 0}
                           <div class="mt-2 text-xs text-purple-600 font-medium">
-                            {event.competitiveness.eliteCount} elite runner{event.competitiveness.eliteCount > 1 ? 's' : ''} (90+ rank)
+                            {event.competitiveness.eliteCount} elite runner{event
+                              .competitiveness.eliteCount > 1
+                              ? "s"
+                              : ""} (90+ rank)
                           </div>
                         {/if}
-                        <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
-                          <p><strong class="text-stone-500">About rankings:</strong> Stats based on {event.competitiveness.rankedEntrants} runners with 5+ finishes.</p>
+                        <div
+                          class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1"
+                        >
+                          <p>
+                            <strong class="text-stone-500"
+                              >About rankings:</strong
+                            >
+                            Stats based on {event.competitiveness
+                              .rankedEntrants} runners with 5+ finishes.
+                          </p>
                           {#if event.competitiveness.insufficientResultsCount > 0 || event.competitiveness.unrankedCount > 0}
                             <p class="text-stone-400/80">
-                              Excluded: {event.competitiveness.insufficientResultsCount > 0 ? `${event.competitiveness.insufficientResultsCount} with <5 finishes` : ''}{event.competitiveness.insufficientResultsCount > 0 && event.competitiveness.unrankedCount > 0 ? ', ' : ''}{event.competitiveness.unrankedCount > 0 ? `${event.competitiveness.unrankedCount} unranked` : ''}
+                              Excluded: {event.competitiveness
+                                .insufficientResultsCount > 0
+                                ? `${event.competitiveness.insufficientResultsCount} with <5 finishes`
+                                : ""}{event.competitiveness
+                                .insufficientResultsCount > 0 &&
+                              event.competitiveness.unrankedCount > 0
+                                ? ", "
+                                : ""}{event.competitiveness.unrankedCount > 0
+                                ? `${event.competitiveness.unrankedCount} unranked`
+                                : ""}
                             </p>
                           {/if}
-                          <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing</p>
+                          <p class="text-stone-400/80">
+                            90+ = Elite • 80-89 = Strong • 60-79 = Experienced •
+                            &lt;60 = Developing
+                          </p>
                         </div>
                       </div>
                     {/if}
@@ -1207,26 +1442,61 @@
                     <div class="grid grid-cols-2 gap-4">
                       <!-- Waitlist Size -->
                       <div class="bg-slate-50 rounded-lg p-3">
-                        <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Waitlist Size</div>
-                        <div class="text-2xl font-bold text-slate-800">{last.count}</div>
+                        <div
+                          class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                        >
+                          Waitlist Size
+                        </div>
+                        <div class="text-2xl font-bold text-slate-800">
+                          {last.count}
+                        </div>
                       </div>
-                      
+
                       <!-- Daily Position Change -->
                       {#if event.velocity !== null}
                         <div class="bg-slate-50 rounded-lg p-3">
-                          <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Daily Movement</div>
-                          <div class="text-2xl font-bold flex items-center gap-1 {event.velocity > 0 ? 'text-green-600' : event.velocity < 0 ? 'text-red-500' : 'text-slate-400'}">
+                          <div
+                            class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                          >
+                            Daily Movement
+                          </div>
+                          <div
+                            class="text-2xl font-bold flex items-center gap-1 {event.velocity >
+                            0
+                              ? 'text-green-600'
+                              : event.velocity < 0
+                                ? 'text-red-500'
+                                : 'text-slate-400'}"
+                          >
                             {#if event.velocity > 0}
-                              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                              <svg
+                                class="w-4 h-4 fill-current"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"
+                                />
                               </svg>
                             {:else if event.velocity < 0}
-                              <svg class="w-4 h-4 fill-current rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                              <svg
+                                class="w-4 h-4 fill-current rotate-180"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"
+                                />
                               </svg>
                             {/if}
                             <span>{Math.abs(event.velocity).toFixed(1)}</span>
-                            <span class="text-sm font-normal text-stone-400">/day</span>
+                            <span class="text-sm font-normal text-stone-400"
+                              >/day</span
+                            >
                           </div>
                         </div>
                       {/if}
@@ -1234,21 +1504,53 @@
 
                     {#if event.regression}
                       <div class="mt-4 pt-3 border-t border-stone-100">
-                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Trend Analysis</div>
+                        <div
+                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
+                        >
+                          Trend Analysis
+                        </div>
                         <div class="space-y-1.5">
-                          <div class="flex justify-between items-center text-sm">
+                          <div
+                            class="flex justify-between items-center text-sm"
+                          >
                             <span class="text-stone-500">Model</span>
-                            <code class="font-mono text-slate-600 bg-slate-50 px-2 py-0.5 rounded text-xs">{event.regression.equation}</code>
+                            <code
+                              class="font-mono text-slate-600 bg-slate-50 px-2 py-0.5 rounded text-xs"
+                              >{event.regression.equation}</code
+                            >
                           </div>
-                          <div class="flex justify-between items-center text-sm">
+                          <div
+                            class="flex justify-between items-center text-sm"
+                          >
                             <span class="text-stone-500">Fit (R²)</span>
-                            <span class="font-mono font-bold {event.regression.r2 > 0.7 ? 'text-green-600' : event.regression.r2 > 0.4 ? 'text-amber-600' : 'text-red-500'}">{(event.regression.r2 * 100).toFixed(1)}%</span>
+                            <span
+                              class="font-mono font-bold {event.regression.r2 >
+                              0.7
+                                ? 'text-green-600'
+                                : event.regression.r2 > 0.4
+                                  ? 'text-amber-600'
+                                  : 'text-red-500'}"
+                              >{(event.regression.r2 * 100).toFixed(1)}%</span
+                            >
                           </div>
                           {#if event.regression.projectedPositionChange !== null}
-                            <div class="flex justify-between items-center text-sm">
-                              <span class="text-stone-500">Est. by Race Day</span>
-                              <span class="font-mono font-bold {event.regression.projectedPositionChange > 0 ? 'text-green-600' : 'text-red-500'}">
-                                {event.regression.projectedPositionChange > 0 ? '+' : ''}{Math.round(event.regression.projectedPositionChange)} pos
+                            <div
+                              class="flex justify-between items-center text-sm"
+                            >
+                              <span class="text-stone-500"
+                                >Est. by Race Day</span
+                              >
+                              <span
+                                class="font-mono font-bold {event.regression
+                                  .projectedPositionChange > 0
+                                  ? 'text-green-600'
+                                  : 'text-red-500'}"
+                              >
+                                {event.regression.projectedPositionChange > 0
+                                  ? "+"
+                                  : ""}{Math.round(
+                                  event.regression.projectedPositionChange,
+                                )} pos
                               </span>
                             </div>
                           {/if}
@@ -1258,15 +1560,34 @@
 
                     {#if event.percentileStats && event.percentileStats.length > 0}
                       <div class="mt-4 pt-3 border-t border-stone-100">
-                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Queue Progress</div>
+                        <div
+                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
+                        >
+                          Queue Progress
+                        </div>
                         <div class="grid grid-cols-3 gap-2">
                           {#each event.percentileStats as stat}
-                            <div class="bg-slate-50 rounded px-2 py-1.5 flex flex-col items-center">
+                            <div
+                              class="bg-slate-50 rounded px-2 py-1.5 flex flex-col items-center"
+                            >
                               <span class="text-xs text-stone-400 mb-0.5">
-                                {stat.percentile === 25 ? 'Front' : stat.percentile === 50 ? 'Middle' : 'Back'}
+                                {stat.percentile === 25
+                                  ? "Front"
+                                  : stat.percentile === 50
+                                    ? "Middle"
+                                    : "Back"}
                               </span>
-                              <span class="font-mono text-sm font-medium {stat.velocity > 0 ? 'text-green-600' : stat.velocity < 0 ? 'text-red-500' : 'text-slate-400'}">
-                                {stat.velocity > 0 ? '+' : ''}{stat.velocity.toFixed(1)}/d
+                              <span
+                                class="font-mono text-sm font-medium {stat.velocity >
+                                0
+                                  ? 'text-green-600'
+                                  : stat.velocity < 0
+                                    ? 'text-red-500'
+                                    : 'text-slate-400'}"
+                              >
+                                {stat.velocity > 0
+                                  ? "+"
+                                  : ""}{stat.velocity.toFixed(1)}/d
                               </span>
                             </div>
                           {/each}
@@ -1297,13 +1618,13 @@
           <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="text-lg font-medium mb-4">Waitlist Trends</h3>
             {#if activeEvents.some((e: any) => e.data && e.data.length > 1)}
-              <WaitlistChart 
+              <WaitlistChart
                 events={activeEvents.map((e: any) => ({
                   title: e.title,
                   data: e.data || [],
                   velocityData: e.velocitySeries || [],
-                  regression: e.regression
-                }))} 
+                  regression: e.regression,
+                }))}
                 raceDate={race.date}
               />
             {:else}
@@ -1333,64 +1654,122 @@
           <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="text-lg font-medium mb-4">Field Analysis</h3>
             <div class="border-b pb-4 last:border-0 last:pb-0">
-              <div class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide">{events[0]?.title}</div>
-              
+              <div
+                class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide"
+              >
+                {events[0]?.title}
+              </div>
+
               <div class="mb-4">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Field Strength</div>
-                
+                <div
+                  class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
+                >
+                  Field Strength
+                </div>
+
                 <div class="grid grid-cols-2 gap-2 mb-3">
                   <div class="bg-slate-50 rounded px-2 py-1.5">
                     <div class="text-xs text-stone-400">Avg Rank</div>
-                    <div class="font-mono text-lg font-bold text-slate-700">{fieldCompetitiveness.averageRank.toFixed(1)}</div>
+                    <div class="font-mono text-lg font-bold text-slate-700">
+                      {fieldCompetitiveness.averageRank.toFixed(1)}
+                    </div>
                   </div>
                   <div class="bg-slate-50 rounded px-2 py-1.5">
                     <div class="text-xs text-stone-400">Median</div>
-                    <div class="font-mono text-lg font-bold text-slate-700">{fieldCompetitiveness.medianRank.toFixed(1)}</div>
+                    <div class="font-mono text-lg font-bold text-slate-700">
+                      {fieldCompetitiveness.medianRank.toFixed(1)}
+                    </div>
                   </div>
                 </div>
 
                 <div class="space-y-1">
                   {#each fieldCompetitiveness.rankDistribution as bucket}
                     <div class="flex items-center gap-2 text-xs">
-                      <span class="w-12 text-stone-500 font-medium">{bucket.label}</span>
-                      <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden">
-                        <div 
-                          class="h-full rounded-full {bucket.label === '90+' ? 'bg-purple-500' : bucket.label === '80-89' ? 'bg-blue-500' : bucket.label === '60-79' ? 'bg-green-500' : bucket.label === 'New' ? 'bg-amber-400' : 'bg-slate-400'}"
+                      <span class="w-12 text-stone-500 font-medium"
+                        >{bucket.label}</span
+                      >
+                      <div
+                        class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"
+                      >
+                        <div
+                          class="h-full rounded-full {bucket.label === '90+'
+                            ? 'bg-purple-500'
+                            : bucket.label === '80-89'
+                              ? 'bg-blue-500'
+                              : bucket.label === '60-79'
+                                ? 'bg-green-500'
+                                : bucket.label === 'New'
+                                  ? 'bg-amber-400'
+                                  : 'bg-slate-400'}"
                           style="width: {bucket.percent}%"
                         ></div>
                       </div>
-                      <span class="w-8 text-right text-stone-400">{bucket.count}</span>
+                      <span class="w-8 text-right text-stone-400"
+                        >{bucket.count}</span
+                      >
                     </div>
                   {/each}
                 </div>
 
                 {#if fieldCompetitiveness.eliteCount > 0}
                   <div class="mt-2 text-xs text-purple-600 font-medium">
-                    {fieldCompetitiveness.eliteCount} elite runner{fieldCompetitiveness.eliteCount > 1 ? 's' : ''} (90+ rank)
+                    {fieldCompetitiveness.eliteCount} elite runner{fieldCompetitiveness.eliteCount >
+                    1
+                      ? "s"
+                      : ""} (90+ rank)
                   </div>
                 {/if}
-                <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
-                  <p><strong class="text-stone-500">About rankings:</strong> Stats based on {fieldCompetitiveness.rankedEntrants} runners with 5+ finishes (UltraSignup requirement for stable rankings).</p>
+                <div
+                  class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1"
+                >
+                  <p>
+                    <strong class="text-stone-500">About rankings:</strong>
+                    Stats based on {fieldCompetitiveness.rankedEntrants} runners
+                    with 5+ finishes (UltraSignup requirement for stable rankings).
+                  </p>
                   {#if fieldCompetitiveness.insufficientResultsCount > 0 || fieldCompetitiveness.unrankedCount > 0}
                     <p class="text-stone-400/80">
-                      Excluded: {fieldCompetitiveness.insufficientResultsCount > 0 ? `${fieldCompetitiveness.insufficientResultsCount} with <5 finishes` : ''}{fieldCompetitiveness.insufficientResultsCount > 0 && fieldCompetitiveness.unrankedCount > 0 ? ', ' : ''}{fieldCompetitiveness.unrankedCount > 0 ? `${fieldCompetitiveness.unrankedCount} unranked` : ''}
+                      Excluded: {fieldCompetitiveness.insufficientResultsCount >
+                      0
+                        ? `${fieldCompetitiveness.insufficientResultsCount} with <5 finishes`
+                        : ""}{fieldCompetitiveness.insufficientResultsCount >
+                        0 && fieldCompetitiveness.unrankedCount > 0
+                        ? ", "
+                        : ""}{fieldCompetitiveness.unrankedCount > 0
+                        ? `${fieldCompetitiveness.unrankedCount} unranked`
+                        : ""}
                     </p>
                   {/if}
-                  <p class="text-stone-400/80">90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing</p>
+                  <p class="text-stone-400/80">
+                    90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60
+                    = Developing
+                  </p>
                 </div>
               </div>
 
               <div class="grid grid-cols-2 gap-4">
                 <!-- Total Entrants -->
                 <div class="bg-slate-50 rounded-lg p-3">
-                  <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Total Entrants</div>
-                  <div class="text-2xl font-bold text-slate-800">{fieldCompetitiveness.totalEntrants}</div>
+                  <div
+                    class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                  >
+                    Total Entrants
+                  </div>
+                  <div class="text-2xl font-bold text-slate-800">
+                    {fieldCompetitiveness.totalEntrants}
+                  </div>
                 </div>
-                
+
                 <!-- Ranked Entrants -->
                 <div class="bg-slate-50 rounded-lg p-3">
-                  <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">Ranked Runners</div>
-                  <div class="text-2xl font-bold text-slate-800">{fieldCompetitiveness.rankedEntrants}</div>
+                  <div
+                    class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                  >
+                    Ranked Runners
+                  </div>
+                  <div class="text-2xl font-bold text-slate-800">
+                    {fieldCompetitiveness.rankedEntrants}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1402,20 +1781,43 @@
     <!-- Related Blog Posts -->
     {#if relatedPosts.length > 0}
       <div class="mb-8">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-          <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        <h2
+          class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"
+        >
+          <svg
+            class="w-6 h-6 text-orange-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+            />
           </svg>
           Related Posts
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {#each relatedPosts as post}
-            <a href={post.relativeURL} class="group bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden hover:shadow-md transition-shadow">
+            <a
+              href={post.relativeURL}
+              class="group bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden hover:shadow-md transition-shadow"
+            >
               <div class="p-6">
-                <div class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-2">
-                  {new Date(post.pubDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}
+                <div
+                  class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-2"
+                >
+                  {new Date(post.pubDate).toLocaleDateString(undefined, {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
                 </div>
-                <h3 class="font-bold text-lg text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-2 mb-2">
+                <h3
+                  class="font-bold text-lg text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-2 mb-2"
+                >
                   {post.title}
                 </h3>
                 <p class="text-sm text-slate-600 line-clamp-3">
@@ -1424,7 +1826,10 @@
                 {#if post.tags && post.tags.length > 0}
                   <div class="flex flex-wrap gap-1 mt-3">
                     {#each post.tags.slice(0, 3) as tag}
-                      <span class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded">{tag}</span>
+                      <span
+                        class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded"
+                        >{tag}</span
+                      >
                     {/each}
                   </div>
                 {/if}
@@ -1437,9 +1842,21 @@
 
     {#if entrants.length > 0}
       <div class="mb-12 bg-stone-50">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-          <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        <h2
+          class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"
+        >
+          <svg
+            class="w-6 h-6 text-blue-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
           </svg>
           Field
         </h2>
@@ -1492,7 +1909,10 @@
               {#if last.applicants && last.applicants.length > 0}
                 <div class="mt-8">
                   <WaitlistTable
-                    applicants={getWaitlistApplicants(String(event.id), last.applicants)}
+                    applicants={getWaitlistApplicants(
+                      String(event.id),
+                      last.applicants,
+                    )}
                     eventId={String(event.id)}
                   />
                 </div>
@@ -1502,159 +1922,5 @@
         </div>
       </div>
     {/if}
-
-    <!-- Video Insights Section -->
-    {#if enrichment?.videoInsights}
-      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
-        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Race Insights from Videos</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {#if enrichment.videoInsights.proTips && enrichment.videoInsights.proTips.length > 0}
-            <div class="bg-green-50 rounded-xl p-6 border border-green-100">
-              <h3 class="flex items-center gap-2 text-green-800 font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Pro Tips
-              </h3>
-              <ul class="space-y-2">
-                {#each enrichment.videoInsights.proTips as tip}
-                  <li class="text-green-700 text-sm flex items-start gap-2">
-                    <span class="text-green-500 mt-1">•</span>
-                    {tip}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-          
-          {#if enrichment.videoInsights.challengingSections && enrichment.videoInsights.challengingSections.length > 0}
-            <div class="bg-amber-50 rounded-xl p-6 border border-amber-100">
-              <h3 class="flex items-center gap-2 text-amber-800 font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                Challenging Sections
-              </h3>
-              <ul class="space-y-2">
-                {#each enrichment.videoInsights.challengingSections as section}
-                  <li class="text-amber-700 text-sm flex items-start gap-2">
-                    <span class="text-amber-500 mt-1">•</span>
-                    {section}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-          
-          {#if enrichment.videoInsights.courseHighlights && enrichment.videoInsights.courseHighlights.length > 0}
-            <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
-              <h3 class="flex items-center gap-2 text-blue-800 font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                Course Highlights
-              </h3>
-              <ul class="space-y-2">
-                {#each enrichment.videoInsights.courseHighlights as highlight}
-                  <li class="text-blue-700 text-sm flex items-start gap-2">
-                    <span class="text-blue-500 mt-1">•</span>
-                    {highlight}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-          
-          {#if enrichment.videoInsights.dnfRisks && enrichment.videoInsights.dnfRisks.length > 0}
-            <div class="bg-red-50 rounded-xl p-6 border border-red-100">
-              <h3 class="flex items-center gap-2 text-red-800 font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
-                DNF Risks
-              </h3>
-              <ul class="space-y-2">
-                {#each enrichment.videoInsights.dnfRisks as risk}
-                  <li class="text-red-700 text-sm flex items-start gap-2">
-                    <span class="text-red-500 mt-1">•</span>
-                    {risk}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        </div>
-      </div>
-    {/if}
-
-    <!-- Videos Section -->
-    {#if enrichment?.videos && enrichment.videos.length > 0}
-      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
-        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Race Videos</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {#each enrichment.videos as video}
-            <a href={video.url} target="_blank" rel="noopener noreferrer" class="group block bg-stone-50 rounded-xl overflow-hidden border border-stone-200 hover:shadow-lg transition-all">
-              <div class="aspect-video bg-slate-900 relative">
-                {#if isYouTubeUrl(video.url)}
-                  {@const videoId = extractYouTubeId(video.url)}
-                  {#if videoId}
-                    <img src={getYouTubeThumbnail(videoId)} alt={video.title} class="w-full h-full object-cover" />
-                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
-                      <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-                      </div>
-                    </div>
-                  {/if}
-                {/if}
-              </div>
-              <div class="p-4">
-                <div class="flex items-start gap-2">
-                  {#if video.rank}
-                    <span class="px-2 py-0.5 rounded bg-orange-100 text-orange-700 text-xs font-bold">#{video.rank}</span>
-                  {/if}
-                  <h3 class="font-semibold text-slate-800 text-sm leading-tight group-hover:text-orange-600 transition-colors">{video.title}</h3>
-                </div>
-                {#if video.reason}
-                  <p class="text-stone-500 text-xs mt-2 line-clamp-2">{video.reason}</p>
-                {/if}
-              </div>
-            </a>
-          {/each}
-        </div>
-      </div>
-    {/if}
-
-    <!-- Media Coverage Section -->
-    {#if enrichment?.media && enrichment.media.length > 0}
-      <div class="bg-white rounded-2xl p-8 border border-stone-200 shadow-lg mb-8">
-        <h2 class="text-2xl font-black text-slate-800 mb-6 tracking-tight">Media Coverage</h2>
-        
-        <div class="space-y-4">
-          {#each enrichment.media as item}
-            <a href={item.url} target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-4 rounded-xl border border-stone-200 hover:border-orange-200 hover:bg-orange-50/50 transition-all">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 {item.type === 'podcast' ? 'bg-purple-100 text-purple-600' : item.type === 'news' ? 'bg-blue-100 text-blue-600' : item.type === 'interview' ? 'bg-green-100 text-green-600' : 'bg-stone-100 text-stone-600'}">
-                {#if item.type === 'podcast'}
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
-                {:else if item.type === 'news'}
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
-                {:else if item.type === 'interview'}
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                {:else}
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                {/if}
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-xs font-bold uppercase tracking-wide {item.type === 'podcast' ? 'text-purple-600' : item.type === 'news' ? 'text-blue-600' : item.type === 'interview' ? 'text-green-600' : 'text-stone-500'}">{item.type}</span>
-                  {#if item.source}
-                    <span class="text-xs text-stone-400">• {item.source}</span>
-                  {/if}
-                </div>
-                <h3 class="font-semibold text-slate-800 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                {#if item.summary}
-                  <p class="text-stone-500 text-sm mt-1 line-clamp-2">{item.summary}</p>
-                {/if}
-              </div>
-              <svg class="w-5 h-5 text-stone-400 group-hover:text-orange-600 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-          {/each}
-        </div>
-      </div>
-    {/if}
-
   </div>
 </div>
