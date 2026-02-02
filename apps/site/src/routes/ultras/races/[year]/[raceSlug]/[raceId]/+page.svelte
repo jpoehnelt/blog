@@ -207,7 +207,7 @@
               <h3 class="font-bold text-slate-800 group-hover:text-orange-600 transition-colors">{event.title}</h3>
               {#if event.stats}
                 <div class="flex items-center gap-3 text-xs text-stone-500">
-                  <span><strong class="text-slate-700">{event.stats.entrants}</strong> entrants</span>
+                  <span><strong class="text-slate-700">{event.stats.entrants > 0 ? event.stats.entrants : 'Unknown'}</strong> entrants</span>
                   {#if event.stats.waitlist > 0}
                     <span><strong class="text-orange-600">{event.stats.waitlist}</strong> waitlist</span>
                   {/if}

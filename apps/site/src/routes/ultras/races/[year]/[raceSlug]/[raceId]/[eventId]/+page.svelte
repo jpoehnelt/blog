@@ -181,23 +181,18 @@
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     );
 
-    // Get the two most recent snapshots with applicant data
+    // Get first and last snapshots with applicant data for 7D total
     const recent = sortedData.filter(
       (d) => d.applicants && d.applicants.length > 0,
     );
     if (recent.length < 2) return [];
 
-    const prev = recent[recent.length - 2];
-    const curr = recent[recent.length - 1];
+    const first = recent[0];
+    const last = recent[recent.length - 1];
 
-    if (!prev.applicants || !curr.applicants) return [];
+    if (!first.applicants || !last.applicants) return [];
 
-    const days =
-      (new Date(curr.date).getTime() - new Date(prev.date).getTime()) /
-      (1000 * 60 * 60 * 24);
-    if (days <= 0) return [];
-
-    const totalCount = curr.count;
+    const totalCount = last.count;
     const percentiles = [25, 50, 75];
 
     return percentiles.map((p) => {
@@ -205,26 +200,25 @@
       const position = Math.floor((p / 100) * totalCount);
 
       // Get the applicant at this position in current snapshot
-      const applicant = curr.applicants![position];
+      const applicant = last.applicants![position];
       if (!applicant)
         return { percentile: p, position: position + 1, velocity: 0 };
 
-      // Find their previous position
-      const prevPosition = prev.applicants!.indexOf(applicant);
+      // Find their position in first snapshot
+      const firstPosition = first.applicants!.indexOf(applicant);
 
-      if (prevPosition === -1) {
+      if (firstPosition === -1) {
         // New applicant, can't calculate velocity
         return { percentile: p, position: position + 1, velocity: 0 };
       }
 
-      // Calculate how many positions they moved per day
-      const positionChange = prevPosition - position; // Positive = moved up
-      const velocity = positionChange / days;
+      // Calculate total positions moved (not per day)
+      const positionChange = firstPosition - position; // Positive = moved up
 
       return {
         percentile: p,
         position: position + 1, // 1-indexed for display
-        velocity,
+        velocity: positionChange, // Now total, not per-day
       };
     });
   }
@@ -463,16 +457,17 @@
   let activeEvents = $derived(
     activeEventsBase.map((e: PageEvent): EnrichedPageEvent => {
       const velocitySeries = calculateVelocitySeries(e);
-      const lastVelocity =
+      // Calculate 7D movement by summing all daily velocities
+      const movement7d =
         velocitySeries.length > 0
-          ? velocitySeries[velocitySeries.length - 1].velocity
+          ? velocitySeries.reduce((sum, v) => sum + v.velocity, 0)
           : null;
       const regressionResult = calculateRegression(velocitySeries, race.date);
       const percentileStats = calculatePercentileVelocities(e);
       const competitiveness = calculateCompetitiveness(e.entrants);
       return {
         ...e,
-        velocity: lastVelocity,
+        velocity: movement7d,
         velocitySeries,
         regression: regressionResult,
         percentileStats,
@@ -1280,7 +1275,7 @@
                   Total Entrants
                 </div>
                 <div class="text-4xl font-black text-white">
-                  {heroCompetitiveness.totalEntrants.toLocaleString()}
+                  {heroCompetitiveness.totalEntrants > 0 ? heroCompetitiveness.totalEntrants.toLocaleString() : 'Unknown'}
                 </div>
                 <div
                   class="text-xs text-blue-400 font-medium mt-1 flex items-center gap-1"
@@ -1458,7 +1453,7 @@
                           <div
                             class="text-xs text-stone-400 uppercase tracking-wide mb-1"
                           >
-                            Daily Movement
+                            7D Movement
                           </div>
                           <div
                             class="text-2xl font-bold flex items-center gap-1 {event.velocity >
@@ -1493,9 +1488,9 @@
                                 />
                               </svg>
                             {/if}
-                            <span>{Math.abs(event.velocity).toFixed(1)}</span>
+                            <span>+{Math.abs(event.velocity).toFixed(0)}</span>
                             <span class="text-sm font-normal text-stone-400"
-                              >/day</span
+                              >positions</span
                             >
                           </div>
                         </div>
@@ -1563,7 +1558,7 @@
                         <div
                           class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
                         >
-                          Queue Progress
+                          7D Queue Progress
                         </div>
                         <div class="grid grid-cols-3 gap-2">
                           {#each event.percentileStats as stat}
@@ -1587,13 +1582,13 @@
                               >
                                 {stat.velocity > 0
                                   ? "+"
-                                  : ""}{stat.velocity.toFixed(1)}/d
+                                  : ""}{stat.velocity.toFixed(0)}
                               </span>
                             </div>
                           {/each}
                         </div>
                         <div class="text-xs text-stone-400 mt-2 italic">
-                          Avg daily position change by queue section
+                          Total position change over 7D
                         </div>
                       </div>
                     {/if}
@@ -1756,7 +1751,7 @@
                     Total Entrants
                   </div>
                   <div class="text-2xl font-bold text-slate-800">
-                    {fieldCompetitiveness.totalEntrants}
+                    {fieldCompetitiveness.totalEntrants > 0 ? fieldCompetitiveness.totalEntrants : 'Unknown'}
                   </div>
                 </div>
 
