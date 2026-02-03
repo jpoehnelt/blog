@@ -17,7 +17,7 @@ tags:
   import Snippet from "$lib/components/content/Snippet.svelte";
 </script>
 
-I recently formalized a workflow to extract high-signal engineering patterns from **Antigravity's** persistence layer to make them explicit and. By auditing the `~/.gemini/antigravity` directory—specifically the `walkthrough.md` artifacts generated after every task, we can systematically mine for architectural decisions, edge-case solutions, and codified rules that would otherwise vanish into the ether of chat logs.
+I recently formalized a workflow to extract high-signal engineering patterns from **Antigravity's** persistence layer to make them explicit and portable. By auditing the `~/.gemini/antigravity` directory—specifically the `walkthrough.md` artifacts generated after every task, we can systematically mine for architectural decisions, edge-case solutions, and codified rules that would otherwise vanish into the ether of chat logs.
 
 The structure of the `~/.gemini/antigravity` directory is purpose-built for this kind of extraction:
 
