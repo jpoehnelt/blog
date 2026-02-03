@@ -4,11 +4,12 @@
  * @return {string} The translated text suitable for a 19th-century gentleman or scholar.
  */
 function translateGenZtoVictorian_(emailBody) {
-  const projectId = "jpoehnelt-blog";
-  const region = "us-central1";
-  const modelName = "gemini-2.5-pro";
+  const PROJECT_ID = "your-project-id";
+  const REGION = "us-central1";
+  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+    `/publishers/google/models/gemini-2.5-flash`;
 
-  const model = `projects/${projectId}/locations/${region}/publishers/google/models/${modelName}`;
+  const model = MODEL; // back-compat for this snippet logic
 
   const prompt = `
     You are a distinguished Victorian-era scholar and translator. 

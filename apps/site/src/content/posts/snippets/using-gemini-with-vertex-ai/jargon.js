@@ -4,12 +4,12 @@
  * @return {string} The corporate jargon version.
  */
 function prioritizeSynergy_(simplePhrase) {
-  // TODO: Replace with your actual project ID
-  const projectId = "jpoehnelt-blog";
-  const region = "global";
-  const modelName = "gemini-3-pro-preview";
+  const PROJECT_ID = "your-project-id";
+  const REGION = "us-central1";
+  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+    `/publishers/google/models/gemini-2.5-flash`;
 
-  const model = `projects/${projectId}/locations/${region}/publishers/google/models/${modelName}`;
+  const model = MODEL;
 
   const prompt = `
     Rewrite the following simple phrase into overly complex, cringeworthy corporate jargon. 

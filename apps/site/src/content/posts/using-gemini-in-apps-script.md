@@ -151,6 +151,72 @@ The result:
 3:26:40 PM	Notice	Execution completed
 ```
 
+## Important Patterns
+
+Beyond simple text generation, the Vertex AI service supports powerful patterns that make your Apps Script integrations more robust and capable.
+
+### Structured Output
+
+Use `responseSchema` to force Gemini to return valid JSON matching your exact specification.
+[Docs →](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/control-generated-output)
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/structured-output.js" />
+
+### Google Search Grounding
+
+Enable Google Search to get real-time information with citations.
+[Docs →](https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/ground-with-google-search)
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/google-search.js" />
+
+### System Instructions & Multi-turn Chat
+
+Define persistent persona and rules. Pass conversation history for multi-turn.
+[Docs →](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/send-chat-prompts-gemini)
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/system-instructions.js" />
+
+### Safety Settings
+
+Adjust content filtering thresholds for your use case.
+[Docs →](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/configure-safety-filters)
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/safety-settings.js" />
+
+## More Use Case Examples (2026-02-02)
+
+Now that calling Gemini is significantly easier, here are five practical ideas to get you started.
+
+### 1. Automated Form Response Processor
+
+While Sheets now has a built-in `=AI()` function for simple prompts, Apps Script unlocks **event-driven automation**. This example triggers on form submissions, analyzes responses with Gemini, and writes enriched data back to your sheet—something `=AI()` can't do.
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/form-processor.js" />
+
+### 2. Automated Inbox Triage
+
+Create a time-based trigger that runs every hour to summarize long email threads, apply urgency labels, and suggest actions.
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/inbox-triage.js" />
+
+### 3. Drive File Organizer
+
+Use multimodal capabilities to scan receipt images in Google Drive, extract metadata (vendor, date, amount), rename files, and organize them into category folders.
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/drive-organizer.js" />
+
+### 4. Doc Writing Assistant
+
+Build a Docs sidebar that rewrites selected text in different styles—formal, casual, concise, or expanded.
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/doc-assistant.js" />
+
+### 5. Meeting Prep & Summaries
+
+Generate a daily briefing doc from your Calendar events, or summarize meeting notes and email action items to attendees.
+
+<Snippet src="./snippets/using-gemini-with-vertex-ai/meeting-prep.js" />
+
 ## Why this rocks
 
 - **No more `UrlFetchApp`**: The service handles the underlying network requests.
@@ -165,7 +231,7 @@ The result:
 
 If you see this error, it is likely due to **internal bugs in the Advanced Vertex AI Service**. It often happens when using models that aren't fully supported by the service's auto-discovery (like Preview models) or regional availability issues.
 
-To workaround this, try using a stable model like `gemini-1.5-flash` or revert to the `UrlFetchApp` method.
+To workaround this, try using a stable model like `gemini-2.5-flash` or revert to the `UrlFetchApp` method.
 
 If you need to use a preview model or `global` location with `UrlFetchApp`, here are some `const`s to help you out:
 

@@ -5,11 +5,12 @@
  * @return {string} The model's description of the image.
  */
 function analyzeImage_(data, mimeType) {
-  const projectId = "jpoehnelt-blog";
-  const region = "us-central1";
-  const modelName = "gemini-2.5-pro";
+  const PROJECT_ID = "your-project-id";
+  const REGION = "us-central1";
+  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+    `/publishers/google/models/gemini-2.5-flash`;
 
-  const model = `projects/${projectId}/locations/${region}/publishers/google/models/${modelName}`;
+  const model = MODEL;
   const payload = {
     contents: [
       {
