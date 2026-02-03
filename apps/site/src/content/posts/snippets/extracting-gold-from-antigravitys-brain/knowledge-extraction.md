@@ -1,6 +1,7 @@
 # Knowledge Extraction Workflow
 
-Extract challenges and patterns from past conversations/walkthroughs into project rules.
+Extract challenges and patterns from past conversations/walkthroughs
+into project rules.
 
 ## Prerequisites
 
