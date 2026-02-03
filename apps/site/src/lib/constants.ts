@@ -58,5 +58,3 @@ export const LANG_ICON_MAP = {
   conf: siNginx,
   gs: siGoogleappsscript,
 };
-
-export { SHIKI_LANGS, SHIKI_THEMES } from "@jpoehnelt/remark-snippet";
