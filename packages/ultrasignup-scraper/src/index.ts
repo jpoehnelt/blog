@@ -311,8 +311,10 @@ export class Scraper {
       const cells = Array.from(row.querySelectorAll("td"));
       if (cells.length === 0) continue;
 
-      if (cells.length < 13)
-        throw new Error(`Failed to find cells for id ${id}`);
+      if (cells.length < 13) {
+        // console.warn(`Skipping row with ${cells.length} cells`);
+        continue;
+      }
 
       const cols = {
         rank: cells[0],
