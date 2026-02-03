@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Marissa",
-    "lastName": "Doroshuk",
-    "age": "F30-39",
-    "location": "Edmonton, AB",
-    "rank": 100,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Carl",
     "lastName": "Pryce",
     "age": "M60-69",
@@ -19,7 +8,7 @@
     "ageRank": 99.2,
     "results": 44,
     "bib": "",
-    "finishes": 0
+    "finishes": 10
   },
   {
     "firstName": "Colin",
@@ -33,11 +22,11 @@
     "finishes": 0
   },
   {
-    "firstName": "Marta",
-    "lastName": "Bekeova",
-    "age": "F40-49",
-    "location": "Lethbridge, AB",
-    "rank": 87.2,
+    "firstName": "Marissa",
+    "lastName": "Doroshuk",
+    "age": "F30-39",
+    "location": "Edmonton, AB",
+    "rank": 100,
     "ageRank": 100,
     "results": 1,
     "bib": "",
@@ -52,18 +41,7 @@
     "ageRank": 95.4,
     "results": 5,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tracy",
-    "lastName": "Lee",
-    "age": "F40-49",
-    "location": "Cochrane, AB",
-    "rank": 83.9,
-    "ageRank": 100,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Joshua",
@@ -74,7 +52,7 @@
     "ageRank": 80.2,
     "results": 2,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Anthony",
@@ -84,28 +62,6 @@
     "rank": 77.9,
     "ageRank": 82.5,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mackenzie",
-    "lastName": "Chrapko",
-    "age": "F20-29",
-    "location": "Stirling, AB",
-    "rank": 77.4,
-    "ageRank": 81.7,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Erica",
-    "lastName": "Donnelly",
-    "age": "F30-39",
-    "location": "Kimberley, BC",
-    "rank": 77,
-    "ageRank": 78.2,
-    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -143,17 +99,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Marjolein",
-    "lastName": "Claassen",
-    "age": "F60-69",
-    "location": "Taber, AB",
-    "rank": 75,
-    "ageRank": 94.7,
-    "results": 11,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Trent",
     "lastName": "Schuler",
     "age": "M50-59",
@@ -162,49 +107,16 @@
     "ageRank": 83,
     "results": 16,
     "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
-    "firstName": "Barb",
-    "lastName": "Millar",
-    "age": "F60-69",
-    "location": "Calgary, AB",
-    "rank": 74.5,
-    "ageRank": 95.5,
-    "results": 24,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Cathy",
-    "lastName": "Metzler",
-    "age": "F50-59",
-    "location": "Lethbridge, AB",
-    "rank": 74.2,
-    "ageRank": 75.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Emma",
-    "lastName": "Loy",
-    "age": "F30-39",
-    "location": "Victoria, BC",
-    "rank": 73.6,
-    "ageRank": 78.9,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jennifer",
-    "lastName": "Stinson",
+    "firstName": "Marta",
+    "lastName": "Bekeova",
     "age": "F40-49",
-    "location": "Edmonton, AB",
-    "rank": 73.2,
-    "ageRank": 74.8,
-    "results": 2,
+    "location": "Lethbridge, AB",
+    "rank": 87.2,
+    "ageRank": 100,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -217,18 +129,7 @@
     "ageRank": 72.8,
     "results": 4,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ashley",
-    "lastName": "Rieseberg",
-    "age": "F30-39",
-    "location": "Calgary, AB",
-    "rank": 72.5,
-    "ageRank": 76,
-    "results": 12,
-    "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
     "firstName": "Drew",
@@ -238,6 +139,17 @@
     "rank": 71.9,
     "ageRank": 89.8,
     "results": 26,
+    "bib": "",
+    "finishes": 4
+  },
+  {
+    "firstName": "Tracy",
+    "lastName": "Lee",
+    "age": "F40-49",
+    "location": "Cochrane, AB",
+    "rank": 83.9,
+    "ageRank": 100,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -250,29 +162,7 @@
     "ageRank": 92.5,
     "results": 2,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kristin",
-    "lastName": "Swihart",
-    "age": "F50-59",
-    "location": "Lethbridge, AB",
-    "rank": 71.7,
-    "ageRank": 93.4,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Melissa",
-    "lastName": "Tilburn",
-    "age": "F40-49",
-    "location": "Edmonton, AB",
-    "rank": 71.6,
-    "ageRank": 73.3,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Don",
@@ -283,29 +173,7 @@
     "ageRank": 77.9,
     "results": 38,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lisa",
-    "lastName": "Plausteiner",
-    "age": "F40-49",
-    "location": "Lethbridge, AB",
-    "rank": 70.7,
-    "ageRank": 77.7,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Naomi",
-    "lastName": "Berry",
-    "age": "F40-49",
-    "location": "Nanton, AB",
-    "rank": 70.7,
-    "ageRank": 82,
-    "results": 10,
-    "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
     "firstName": "Ryan",
@@ -315,17 +183,6 @@
     "rank": 70.5,
     "ageRank": 83.7,
     "results": 12,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Melissa",
-    "lastName": "Hamilton",
-    "age": "F40-49",
-    "location": "Calgary, AB",
-    "rank": 70.4,
-    "ageRank": 72.7,
-    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -349,7 +206,7 @@
     "ageRank": 74.3,
     "results": 24,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Clint",
@@ -371,7 +228,7 @@
     "ageRank": 80.7,
     "results": 105,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Jeff",
@@ -382,7 +239,7 @@
     "ageRank": 73.5,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Chad",
@@ -393,18 +250,7 @@
     "ageRank": 75.8,
     "results": 2,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kyra",
-    "lastName": "Kruzer",
-    "age": "F30-39",
-    "location": "Lethbridge, AB",
-    "rank": 69.3,
-    "ageRank": 75.8,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Ian",
@@ -426,6 +272,358 @@
     "ageRank": 79.8,
     "results": 12,
     "bib": "",
+    "finishes": 4
+  },
+  {
+    "firstName": "Yannick",
+    "lastName": "Letailleur",
+    "age": "M40-49",
+    "location": "Edmonton, AB",
+    "rank": 66.8,
+    "ageRank": 68,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mackenzie",
+    "lastName": "Chrapko",
+    "age": "F20-29",
+    "location": "Stirling, AB",
+    "rank": 77.4,
+    "ageRank": 81.7,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Um",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
+    "rank": 66,
+    "ageRank": 75.7,
+    "results": 6,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Erica",
+    "lastName": "Donnelly",
+    "age": "F30-39",
+    "location": "Kimberley, BC",
+    "rank": 77,
+    "ageRank": 78.2,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Keegan",
+    "lastName": "McLeod",
+    "age": "M30-39",
+    "location": "Ponoka, AB",
+    "rank": 65.9,
+    "ageRank": 76.2,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Kevin",
+    "lastName": "Smith",
+    "age": "M60-69",
+    "location": "Brandon, SD",
+    "rank": 65.3,
+    "ageRank": 75.1,
+    "results": 37,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Robert",
+    "lastName": "Bishop",
+    "age": "M30-39",
+    "location": "Lethbridge, AB",
+    "rank": 65.3,
+    "ageRank": 75.5,
+    "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Evan",
+    "lastName": "Jamison",
+    "age": "M40-49",
+    "location": "St. Albert, AB",
+    "rank": 64.7,
+    "ageRank": 72.7,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Marjolein",
+    "lastName": "Claassen",
+    "age": "F60-69",
+    "location": "Taber, AB",
+    "rank": 75,
+    "ageRank": 94.7,
+    "results": 11,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Dean",
+    "lastName": "Reidt",
+    "age": "M60-69",
+    "location": "Kelowna, AB",
+    "rank": 64.1,
+    "ageRank": 70.9,
+    "results": 31,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Barb",
+    "lastName": "Millar",
+    "age": "F60-69",
+    "location": "Calgary, AB",
+    "rank": 74.5,
+    "ageRank": 95.5,
+    "results": 24,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Cathy",
+    "lastName": "Metzler",
+    "age": "F50-59",
+    "location": "Lethbridge, AB",
+    "rank": 74.2,
+    "ageRank": 75.3,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Steven",
+    "lastName": "Sommerfeldt",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
+    "rank": 63.1,
+    "ageRank": 70.3,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Loy",
+    "age": "F30-39",
+    "location": "Victoria, BC",
+    "rank": 73.6,
+    "ageRank": 78.9,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Simpson",
+    "age": "M20-29",
+    "location": "Lethbridge, AB",
+    "rank": 62.7,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Boldt",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
+    "rank": 62.7,
+    "ageRank": 66.3,
+    "results": 3,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Jennifer",
+    "lastName": "Stinson",
+    "age": "F40-49",
+    "location": "Edmonton, AB",
+    "rank": 73.2,
+    "ageRank": 74.8,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gregory",
+    "lastName": "Broadbent",
+    "age": "M60-69",
+    "location": "Lethbridge, AB",
+    "rank": 62.5,
+    "ageRank": 73.7,
+    "results": 10,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Ashley",
+    "lastName": "Rieseberg",
+    "age": "F30-39",
+    "location": "Calgary, AB",
+    "rank": 72.5,
+    "ageRank": 76,
+    "results": 12,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jaddon",
+    "lastName": "Park",
+    "age": "M50-59",
+    "location": "Lethbridge, AB",
+    "rank": 61.8,
+    "ageRank": 77.4,
+    "results": 2,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Rodney",
+    "lastName": "Nickle",
+    "age": "M50-59",
+    "location": "Calgary, AB",
+    "rank": 61.4,
+    "ageRank": 77.6,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kristin",
+    "lastName": "Swihart",
+    "age": "F50-59",
+    "location": "Lethbridge, AB",
+    "rank": 71.7,
+    "ageRank": 93.4,
+    "results": 2,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Melissa",
+    "lastName": "Tilburn",
+    "age": "F40-49",
+    "location": "Edmonton, AB",
+    "rank": 71.6,
+    "ageRank": 73.3,
+    "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Schauenberg",
+    "age": "M40-49",
+    "location": "Edmonton, AB",
+    "rank": 60.5,
+    "ageRank": 61.9,
+    "results": 7,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Lisa",
+    "lastName": "Plausteiner",
+    "age": "F40-49",
+    "location": "Lethbridge, AB",
+    "rank": 70.7,
+    "ageRank": 77.7,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Naomi",
+    "lastName": "Berry",
+    "age": "F40-49",
+    "location": "Nanton, AB",
+    "rank": 70.7,
+    "ageRank": 82,
+    "results": 10,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Melissa",
+    "lastName": "Hamilton",
+    "age": "F40-49",
+    "location": "Calgary, AB",
+    "rank": 70.4,
+    "ageRank": 72.7,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Hamilton",
+    "age": "M70+",
+    "location": "Calgary, AB",
+    "rank": 59.5,
+    "ageRank": 81.5,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kyra",
+    "lastName": "Kruzer",
+    "age": "F30-39",
+    "location": "Lethbridge, AB",
+    "rank": 69.3,
+    "ageRank": 75.8,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Dan",
+    "lastName": "Davy",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
+    "rank": 59.2,
+    "ageRank": 69.5,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Cregg",
+    "lastName": "Nicol",
+    "age": "M50-59",
+    "location": "coalhurst, AB",
+    "rank": 58.9,
+    "ageRank": 72.7,
+    "results": 2,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Oleta",
+    "age": "M30-39",
+    "location": "Lethbridge, AB",
+    "rank": 58.7,
+    "ageRank": 58.7,
+    "results": 1,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -440,6 +638,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Shawn",
+    "lastName": "Harding",
+    "age": "M50-59",
+    "location": "Stirling, AB",
+    "rank": 58.5,
+    "ageRank": 71.7,
+    "results": 7,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Peacock",
+    "age": "M70+",
+    "location": "Vernon, BC",
+    "rank": 58.1,
+    "ageRank": 92.5,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Manon",
     "lastName": "Fiola-Johnson",
     "age": "F60-69",
@@ -448,7 +668,7 @@
     "ageRank": 83.1,
     "results": 5,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Jodie",
@@ -459,7 +679,18 @@
     "ageRank": 67.9,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
+  },
+  {
+    "firstName": "Jade",
+    "lastName": "Coslovi",
+    "age": "M50-59",
+    "location": "lethbridge, AB",
+    "rank": 57.6,
+    "ageRank": 64.5,
+    "results": 13,
+    "bib": "",
+    "finishes": 8
   },
   {
     "firstName": "Helen",
@@ -470,18 +701,7 @@
     "ageRank": 82.6,
     "results": 6,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Yannick",
-    "lastName": "Letailleur",
-    "age": "M40-49",
-    "location": "Edmonton, AB",
-    "rank": 66.8,
-    "ageRank": 68,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Noreen",
@@ -492,7 +712,7 @@
     "ageRank": 76.3,
     "results": 2,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Jennifer",
@@ -503,7 +723,7 @@
     "ageRank": 83.8,
     "results": 51,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Susan",
@@ -514,29 +734,7 @@
     "ageRank": 97.8,
     "results": 19,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brian",
-    "lastName": "Um",
-    "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 66,
-    "ageRank": 75.7,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Keegan",
-    "lastName": "McLeod",
-    "age": "M30-39",
-    "location": "Ponoka, AB",
-    "rank": 65.9,
-    "ageRank": 76.2,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Ashley",
@@ -546,6 +744,17 @@
     "rank": 65.8,
     "ageRank": 70.9,
     "results": 12,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jordan",
+    "lastName": "Brown",
+    "age": "M40-49",
+    "location": "Taber, AB",
+    "rank": 56.2,
+    "ageRank": 75.4,
+    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -558,29 +767,7 @@
     "ageRank": 70.9,
     "results": 1,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kevin",
-    "lastName": "Smith",
-    "age": "M60-69",
-    "location": "Brandon, SD",
-    "rank": 65.3,
-    "ageRank": 75.1,
-    "results": 37,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Robert",
-    "lastName": "Bishop",
-    "age": "M30-39",
-    "location": "Lethbridge, AB",
-    "rank": 65.3,
-    "ageRank": 75.5,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Florene",
@@ -591,18 +778,7 @@
     "ageRank": 75.5,
     "results": 6,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Evan",
-    "lastName": "Jamison",
-    "age": "M40-49",
-    "location": "St. Albert, AB",
-    "rank": 64.7,
-    "ageRank": 72.7,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Kathy",
@@ -624,27 +800,49 @@
     "ageRank": 79.2,
     "results": 8,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Dean",
-    "lastName": "Reidt",
-    "age": "M60-69",
-    "location": "Kelowna, AB",
-    "rank": 64.1,
-    "ageRank": 70.9,
-    "results": 31,
+    "firstName": "Darcy",
+    "lastName": "Golden",
+    "age": "M50-59",
+    "location": "Wainwright, AB",
+    "rank": 54.7,
+    "ageRank": 89.1,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Steven",
-    "lastName": "Sommerfeldt",
+    "firstName": "Anthony",
+    "lastName": "Holgate",
     "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 63.1,
-    "ageRank": 70.3,
-    "results": 3,
+    "location": "Vulcan, AB",
+    "rank": 54.4,
+    "ageRank": 61.1,
+    "results": 9,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Shane",
+    "lastName": "Allen",
+    "age": "M40-49",
+    "location": "Stony Plain, AB",
+    "rank": 54.2,
+    "ageRank": 65.7,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Omar",
+    "lastName": "Khan",
+    "age": "M50-59",
+    "location": "Edmonton, AB",
+    "rank": 54,
+    "ageRank": 54,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -657,7 +855,7 @@
     "ageRank": 69.2,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Tricia",
@@ -668,38 +866,27 @@
     "ageRank": 63,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Jacob",
-    "lastName": "Simpson",
-    "age": "M20-29",
-    "location": "Lethbridge, AB",
-    "rank": 62.7,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jonathan",
-    "lastName": "Boldt",
-    "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 62.7,
-    "ageRank": 66.3,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Gregory",
-    "lastName": "Broadbent",
+    "firstName": "Andrew",
+    "lastName": "Giles",
     "age": "M60-69",
-    "location": "Lethbridge, AB",
-    "rank": 62.5,
-    "ageRank": 73.7,
-    "results": 10,
+    "location": "Edmonton, AB",
+    "rank": 53.5,
+    "ageRank": 81.3,
+    "results": 22,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Philippe",
+    "lastName": "Letailleur",
+    "age": "M70+",
+    "location": "Edmonton, AB",
+    "rank": 53.5,
+    "ageRank": 91.9,
+    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -723,7 +910,18 @@
     "ageRank": 75.7,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
+  },
+  {
+    "firstName": "Glenn",
+    "lastName": "McCray",
+    "age": "M60-69",
+    "location": "LETHBRIDGE, AB",
+    "rank": 53.4,
+    "ageRank": 63.9,
+    "results": 3,
+    "bib": "",
+    "finishes": 3
   },
   {
     "firstName": "Laura",
@@ -734,29 +932,29 @@
     "ageRank": 73.6,
     "results": 8,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Jaddon",
-    "lastName": "Park",
+    "firstName": "Chris",
+    "lastName": "Ward",
     "age": "M50-59",
-    "location": "Lethbridge, AB",
-    "rank": 61.8,
-    "ageRank": 77.4,
-    "results": 2,
+    "location": "Taber, AB",
+    "rank": 52.3,
+    "ageRank": 67.8,
+    "results": 10,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Rodney",
-    "lastName": "Nickle",
+    "firstName": "Charlie",
+    "lastName": "Paliwoda",
     "age": "M50-59",
-    "location": "Calgary, AB",
-    "rank": 61.4,
-    "ageRank": 77.6,
-    "results": 1,
+    "location": "Drayton Valley, AB",
+    "rank": 52.2,
+    "ageRank": 68.5,
+    "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Jonnie",
@@ -767,18 +965,7 @@
     "ageRank": 74.5,
     "results": 11,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jason",
-    "lastName": "Schauenberg",
-    "age": "M40-49",
-    "location": "Edmonton, AB",
-    "rank": 60.5,
-    "ageRank": 61.9,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
+    "finishes": 6
   },
   {
     "firstName": "Alie",
@@ -803,6 +990,50 @@
     "finishes": 0
   },
   {
+    "firstName": "Clayton",
+    "lastName": "Ross",
+    "age": "M30-39",
+    "location": "Lethbridge, AB",
+    "rank": 51.6,
+    "ageRank": 59.4,
+    "results": 2,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Leggat",
+    "age": "M50-59",
+    "location": "Lethbridge, AB",
+    "rank": 51.5,
+    "ageRank": 75,
+    "results": 6,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Mark",
+    "lastName": "Wobick",
+    "age": "M50-59",
+    "location": "Lethbridge, AB",
+    "rank": 51.4,
+    "ageRank": 65,
+    "results": 7,
+    "bib": "",
+    "finishes": 7
+  },
+  {
+    "firstName": "Jp",
+    "lastName": "Levesque",
+    "age": "M40-49",
+    "location": "Calgary, AB",
+    "rank": 51,
+    "ageRank": 54.2,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Terri",
     "lastName": "Maio",
     "age": "F50-59",
@@ -811,40 +1042,7 @@
     "ageRank": 53,
     "results": 6,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bob",
-    "lastName": "Hamilton",
-    "age": "M70+",
-    "location": "Calgary, AB",
-    "rank": 59.5,
-    "ageRank": 81.5,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dan",
-    "lastName": "Davy",
-    "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 59.2,
-    "ageRank": 69.5,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Cregg",
-    "lastName": "Nicol",
-    "age": "M50-59",
-    "location": "coalhurst, AB",
-    "rank": 58.9,
-    "ageRank": 72.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Laurel",
@@ -855,29 +1053,18 @@
     "ageRank": 51.4,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Mike",
-    "lastName": "Oleta",
-    "age": "M30-39",
-    "location": "Lethbridge, AB",
-    "rank": 58.7,
-    "ageRank": 58.7,
-    "results": 1,
+    "firstName": "Joshua",
+    "lastName": "Simpson",
+    "age": "M20-29",
+    "location": "Raymond, AB",
+    "rank": 50,
+    "ageRank": 85.5,
+    "results": 3,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shawn",
-    "lastName": "Harding",
-    "age": "M50-59",
-    "location": "Stirling, AB",
-    "rank": 58.5,
-    "ageRank": 71.7,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Danielle",
@@ -891,15 +1078,26 @@
     "finishes": 0
   },
   {
-    "firstName": "Bob",
-    "lastName": "Peacock",
-    "age": "M70+",
-    "location": "Vernon, BC",
-    "rank": 58.1,
-    "ageRank": 92.5,
+    "firstName": "Ryley",
+    "lastName": "Tolman",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
+    "rank": 49.8,
+    "ageRank": 53.6,
+    "results": 2,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Jeff",
+    "lastName": "Hamilton",
+    "age": "M60-69",
+    "location": "Taber, AB",
+    "rank": 49.7,
+    "ageRank": 61.4,
     "results": 5,
     "bib": "",
-    "finishes": 0
+    "finishes": 5
   },
   {
     "firstName": "Barb",
@@ -910,18 +1108,18 @@
     "ageRank": 62.6,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Jade",
-    "lastName": "Coslovi",
-    "age": "M50-59",
-    "location": "lethbridge, AB",
-    "rank": 57.6,
-    "ageRank": 64.5,
-    "results": 13,
+    "firstName": "Brad",
+    "lastName": "Tomlinson",
+    "age": "M30-39",
+    "location": "Carstairs, AB",
+    "rank": 49.1,
+    "ageRank": 53.9,
+    "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
     "firstName": "Marian",
@@ -932,7 +1130,7 @@
     "ageRank": 92,
     "results": 13,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Vickey",
@@ -943,18 +1141,18 @@
     "ageRank": 45.7,
     "results": 12,
     "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
-    "firstName": "Jordan",
-    "lastName": "Brown",
+    "firstName": "Dave",
+    "lastName": "McCaffrey",
     "age": "M40-49",
-    "location": "Taber, AB",
-    "rank": 56.2,
-    "ageRank": 75.4,
-    "results": 4,
+    "location": "Lethbridge, AB",
+    "rank": 48.3,
+    "ageRank": 51,
+    "results": 2,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Janene",
@@ -965,7 +1163,7 @@
     "ageRank": 71,
     "results": 13,
     "bib": "",
-    "finishes": 0
+    "finishes": 5
   },
   {
     "firstName": "Laura",
@@ -976,7 +1174,7 @@
     "ageRank": 65.6,
     "results": 13,
     "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Allisan",
@@ -990,48 +1188,37 @@
     "finishes": 0
   },
   {
-    "firstName": "Darcy",
-    "lastName": "Golden",
-    "age": "M50-59",
-    "location": "Wainwright, AB",
-    "rank": 54.7,
-    "ageRank": 89.1,
-    "results": 2,
+    "firstName": "Harvey",
+    "lastName": "Mathies",
+    "age": "M70+",
+    "location": "Saskatoon, SK",
+    "rank": 46.9,
+    "ageRank": 77,
+    "results": 8,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Anthony",
-    "lastName": "Holgate",
-    "age": "M40-49",
-    "location": "Vulcan, AB",
-    "rank": 54.4,
-    "ageRank": 61.1,
-    "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shane",
-    "lastName": "Allen",
-    "age": "M40-49",
-    "location": "Stony Plain, AB",
-    "rank": 54.2,
-    "ageRank": 65.7,
+    "firstName": "Nicholas",
+    "lastName": "Grant",
+    "age": "M30-39",
+    "location": "Ponoka, AB",
+    "rank": 46.2,
+    "ageRank": 54.4,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Omar",
-    "lastName": "Khan",
-    "age": "M50-59",
-    "location": "Edmonton, AB",
-    "rank": 54,
-    "ageRank": 54,
-    "results": 2,
+    "firstName": "Rory",
+    "lastName": "Gibson",
+    "age": "M30-39",
+    "location": "Lethbridge, AB",
+    "rank": 46.1,
+    "ageRank": 70,
+    "results": 6,
     "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Debbie",
@@ -1045,24 +1232,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Giles",
-    "age": "M60-69",
-    "location": "Edmonton, AB",
-    "rank": 53.5,
-    "ageRank": 81.3,
-    "results": 22,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Philippe",
-    "lastName": "Letailleur",
-    "age": "M70+",
-    "location": "Edmonton, AB",
-    "rank": 53.5,
-    "ageRank": 91.9,
-    "results": 5,
+    "firstName": "Kaleb",
+    "lastName": "Neil",
+    "age": "M20-29",
+    "location": "Lethbridge, AB",
+    "rank": 45.9,
+    "ageRank": 100,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -1075,18 +1251,7 @@
     "ageRank": 64.9,
     "results": 1,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Glenn",
-    "lastName": "McCray",
-    "age": "M60-69",
-    "location": "LETHBRIDGE, AB",
-    "rank": 53.4,
-    "ageRank": 63.9,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Karen",
@@ -1097,7 +1262,7 @@
     "ageRank": 77.4,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Barbara",
@@ -1108,29 +1273,18 @@
     "ageRank": 62.3,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
-    "firstName": "Chris",
-    "lastName": "Ward",
-    "age": "M50-59",
-    "location": "Taber, AB",
-    "rank": 52.3,
-    "ageRank": 67.8,
-    "results": 10,
+    "firstName": "Andrew",
+    "lastName": "Simpson",
+    "age": "M20-29",
+    "location": "Lethbridge, AB",
+    "rank": 44.9,
+    "ageRank": 100,
+    "results": 1,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Charlie",
-    "lastName": "Paliwoda",
-    "age": "M50-59",
-    "location": "Drayton Valley, AB",
-    "rank": 52.2,
-    "ageRank": 68.5,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Cindy",
@@ -1155,70 +1309,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Clayton",
-    "lastName": "Ross",
-    "age": "M30-39",
-    "location": "Lethbridge, AB",
-    "rank": 51.6,
-    "ageRank": 59.4,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Leggat",
-    "age": "M50-59",
-    "location": "Lethbridge, AB",
-    "rank": 51.5,
-    "ageRank": 75,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mark",
-    "lastName": "Wobick",
-    "age": "M50-59",
-    "location": "Lethbridge, AB",
-    "rank": 51.4,
-    "ageRank": 65,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jp",
-    "lastName": "Levesque",
-    "age": "M40-49",
-    "location": "Calgary, AB",
-    "rank": 51,
-    "ageRank": 54.2,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Joshua",
-    "lastName": "Simpson",
+    "firstName": "Karson",
+    "lastName": "Dewacht",
     "age": "M20-29",
-    "location": "Raymond, AB",
-    "rank": 50,
-    "ageRank": 85.5,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ryley",
-    "lastName": "Tolman",
-    "age": "M40-49",
     "location": "Lethbridge, AB",
-    "rank": 49.8,
-    "ageRank": 53.6,
+    "rank": 42.9,
+    "ageRank": 71.4,
     "results": 2,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Frances",
@@ -1229,18 +1328,7 @@
     "ageRank": 52.4,
     "results": 6,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jeff",
-    "lastName": "Hamilton",
-    "age": "M60-69",
-    "location": "Taber, AB",
-    "rank": 49.7,
-    "ageRank": 61.4,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Melissa",
@@ -1251,18 +1339,18 @@
     "ageRank": 49.6,
     "results": 2,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Brad",
-    "lastName": "Tomlinson",
-    "age": "M30-39",
-    "location": "Carstairs, AB",
-    "rank": 49.1,
-    "ageRank": 53.9,
+    "firstName": "MJ",
+    "lastName": "Kiss",
+    "age": "M50-59",
+    "location": "Calgary, AB",
+    "rank": 41.7,
+    "ageRank": 53.3,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Amy",
@@ -1276,17 +1364,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Dave",
-    "lastName": "McCaffrey",
-    "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 48.3,
-    "ageRank": 51,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Lisa",
     "lastName": "Ensign",
     "age": "F50-59",
@@ -1295,84 +1372,7 @@
     "ageRank": 68,
     "results": 1,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Harvey",
-    "lastName": "Mathies",
-    "age": "M70+",
-    "location": "Saskatoon, SK",
-    "rank": 46.9,
-    "ageRank": 77,
-    "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nicholas",
-    "lastName": "Grant",
-    "age": "M30-39",
-    "location": "Ponoka, AB",
-    "rank": 46.2,
-    "ageRank": 54.4,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rory",
-    "lastName": "Gibson",
-    "age": "M30-39",
-    "location": "Lethbridge, AB",
-    "rank": 46.1,
-    "ageRank": 70,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kaleb",
-    "lastName": "Neil",
-    "age": "M20-29",
-    "location": "Lethbridge, AB",
-    "rank": 45.9,
-    "ageRank": 100,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andrew",
-    "lastName": "Simpson",
-    "age": "M20-29",
-    "location": "Lethbridge, AB",
-    "rank": 44.9,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Karson",
-    "lastName": "Dewacht",
-    "age": "M20-29",
-    "location": "Lethbridge, AB",
-    "rank": 42.9,
-    "ageRank": 71.4,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "MJ",
-    "lastName": "Kiss",
-    "age": "M50-59",
-    "location": "Calgary, AB",
-    "rank": 41.7,
-    "ageRank": 53.3,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Joshua",
@@ -1383,7 +1383,7 @@
     "ageRank": 53,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Mindy",
@@ -1394,7 +1394,7 @@
     "ageRank": 51.3,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "David",
@@ -1441,6 +1441,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Liane",
+    "lastName": "Brown",
+    "age": "F30-39",
+    "location": "Fort Saskatchewan, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Michelle",
     "lastName": "Green",
     "age": "F30-39",
@@ -1452,21 +1463,21 @@
     "finishes": 0
   },
   {
-    "firstName": "Isabelle",
-    "lastName": "Jean",
-    "age": "F50-59",
-    "location": "St albert, AB",
+    "firstName": "Jason",
+    "lastName": "Richmond",
+    "age": "M40-49",
+    "location": "Lethbridge, AB",
     "rank": 0,
     "ageRank": 0,
-    "results": 1,
+    "results": 0,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Liane",
-    "lastName": "Brown",
-    "age": "F30-39",
-    "location": "Fort Saskatchewan, AB",
+    "firstName": "Layna",
+    "lastName": "Aschenmeier",
+    "age": "F40-49",
+    "location": "Edmonton, AB",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1595,28 +1606,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jason",
-    "lastName": "Richmond",
-    "age": "M40-49",
-    "location": "Lethbridge, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Layna",
-    "lastName": "Aschenmeier",
-    "age": "F40-49",
-    "location": "Edmonton, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jessie",
     "lastName": "Rieger",
     "age": "F30-39",
@@ -1661,6 +1650,39 @@
     "finishes": 0
   },
   {
+    "firstName": "Brittney",
+    "lastName": "Kiefer",
+    "age": "F30-39",
+    "location": "Calgary, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alexandra",
+    "lastName": "Dimitrescu",
+    "age": "F40-49",
+    "location": "Edmonton, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kayla",
+    "lastName": "Ladouceur",
+    "age": "F30-39",
+    "location": "Lethbridge, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Garland",
     "lastName": "Jonker",
     "age": "M50-59",
@@ -1694,46 +1716,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Kayla",
-    "lastName": "Ladouceur",
-    "age": "F30-39",
-    "location": "Lethbridge, AB",
+    "firstName": "Isabelle",
+    "lastName": "Jean",
+    "age": "F50-59",
+    "location": "St albert, AB",
     "rank": 0,
     "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brittney",
-    "lastName": "Kiefer",
-    "age": "F30-39",
-    "location": "Calgary, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alexandra",
-    "lastName": "Dimitrescu",
-    "age": "F40-49",
-    "location": "Edmonton, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Stacy",
-    "lastName": "Halonen",
-    "age": "M40-49",
-    "location": "Sudbury, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -2006,6 +1995,17 @@
     "lastName": "Simpson",
     "age": "F20-29",
     "location": "Lethbridge, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stacy",
+    "lastName": "Halonen",
+    "age": "M40-49",
+    "location": "Sudbury, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
