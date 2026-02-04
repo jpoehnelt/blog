@@ -99,6 +99,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Olan",
+    "lastName": "Johnson",
+    "age": "F30-39",
+    "location": "Alexandria, VA",
+    "rank": 70.8,
+    "ageRank": 71.7,
+    "results": 11,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Trudi",
     "lastName": "Schoening",
     "age": "F40-49",
@@ -106,17 +117,6 @@
     "rank": 70.3,
     "ageRank": 80.1,
     "results": 41,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Olan",
-    "lastName": "Johnson",
-    "age": "F30-39",
-    "location": "Alexandria, VA",
-    "rank": 70,
-    "ageRank": 71.7,
-    "results": 11,
     "bib": "",
     "finishes": 0
   },
@@ -143,17 +143,6 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Dillon",
-    "age": "M30-39",
-    "location": "Arvada, CO",
-    "rank": 53.6,
-    "ageRank": 53.6,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Amanda",
     "lastName": "Maes",
     "age": "F40-49",
@@ -176,24 +165,35 @@
     "finishes": 0
   },
   {
+    "firstName": "Tyler",
+    "lastName": "Murphy",
+    "age": "M30-39",
+    "location": "COLORADO SPRINGS, CO",
+    "rank": 48.5,
+    "ageRank": 49,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kari",
     "lastName": "Taylor-Romero",
     "age": "F40-49",
     "location": "Colorado Springs, CO",
-    "rank": 57,
+    "rank": 58.2,
     "ageRank": 64.3,
     "results": 171,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Tyler",
-    "lastName": "Murphy",
+    "firstName": "John",
+    "lastName": "Dillon",
     "age": "M30-39",
-    "location": "COLORADO SPRINGS, CO",
-    "rank": 44,
-    "ageRank": 49,
-    "results": 2,
+    "location": "Arvada, CO",
+    "rank": 47.2,
+    "ageRank": 53.6,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -220,66 +220,11 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephanie",
-    "lastName": "Telck",
-    "age": "F30-39",
-    "location": "Waverly Hall, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Robert",
-    "lastName": "Hutt",
-    "age": "M40-49",
-    "location": "Tecumseh, NE",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "Lawson",
-    "age": "M20-29",
-    "location": "Harrisburg, PA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Anna",
-    "lastName": "Champeau",
-    "age": "F30-39",
-    "location": "Littleton, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jacob",
-    "lastName": "Hogan",
-    "age": "M20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Lexi",
     "lastName": "Vialpando",
     "age": "F30-39",
     "location": "Roswell, GA",
-    "rank": 0,
+    "rank": 24.7,
     "ageRank": 0,
     "results": 1,
     "bib": "",
@@ -356,6 +301,61 @@
     "lastName": "Craft",
     "age": "F20-29",
     "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Robert",
+    "lastName": "Hutt",
+    "age": "M40-49",
+    "location": "Tecumseh, NE",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "James",
+    "lastName": "Lawson",
+    "age": "M20-29",
+    "location": "Harrisburg, PA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Anna",
+    "lastName": "Champeau",
+    "age": "F30-39",
+    "location": "Littleton, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Hogan",
+    "age": "M20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stephanie",
+    "lastName": "Telck",
+    "age": "F30-39",
+    "location": "Waverly Hall, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

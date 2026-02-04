@@ -55,26 +55,26 @@
     "finishes": 5
   },
   {
-    "firstName": "Tina",
-    "lastName": "Lake",
-    "age": "F50-59",
-    "location": "rockford, IL",
-    "rank": 81.9,
-    "ageRank": 90,
-    "results": 8,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Michael",
     "lastName": "Geier",
     "age": "M40-49",
     "location": "Matthews, NC",
-    "rank": 67.3,
+    "rank": 69,
     "ageRank": 70.4,
     "results": 19,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Tina",
+    "lastName": "Lake",
+    "age": "F50-59",
+    "location": "rockford, IL",
+    "rank": 83.9,
+    "ageRank": 90,
+    "results": 8,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Dominique",
@@ -110,6 +110,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Angela",
+    "lastName": "Pavlak",
+    "age": "F50-59",
+    "location": "Winnebago, IL",
+    "rank": 78.4,
+    "ageRank": 90.9,
+    "results": 13,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Samuel",
     "lastName": "Short",
     "age": "M20-29",
@@ -117,17 +128,6 @@
     "rank": 63.6,
     "ageRank": 100,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Angela",
-    "lastName": "Pavlak",
-    "age": "F50-59",
-    "location": "Winnebago, IL",
-    "rank": 76.6,
-    "ageRank": 90.9,
-    "results": 13,
     "bib": "",
     "finishes": 0
   },
@@ -165,17 +165,6 @@
     "finishes": 15
   },
   {
-    "firstName": "Christian",
-    "lastName": "Cuyno",
-    "age": "M50-59",
-    "location": "Fayetteville, NC",
-    "rank": 56.3,
-    "ageRank": 52,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Dan",
     "lastName": "Jones",
     "age": "M40-49",
@@ -196,6 +185,17 @@
     "results": 1,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Christian",
+    "lastName": "Cuyno",
+    "age": "M50-59",
+    "location": "Fayetteville, NC",
+    "rank": 54.2,
+    "ageRank": 52,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Pamela",
@@ -246,7 +246,7 @@
     "lastName": "Ralston",
     "age": "F40-49",
     "location": "Raleigh, NC",
-    "rank": 64.6,
+    "rank": 64.5,
     "ageRank": 74.5,
     "results": 115,
     "bib": "",
@@ -290,7 +290,7 @@
     "lastName": "Jordan",
     "age": "F40-49",
     "location": "Fayetteville, NC",
-    "rank": 56.8,
+    "rank": 58.9,
     "ageRank": 67,
     "results": 42,
     "bib": "",
@@ -433,6 +433,17 @@
     "lastName": "Du Sablon",
     "age": "M30-39",
     "location": "Gastonia, NC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Keeley",
+    "lastName": "Copper",
+    "age": "F20-29",
+    "location": "West End, NC",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

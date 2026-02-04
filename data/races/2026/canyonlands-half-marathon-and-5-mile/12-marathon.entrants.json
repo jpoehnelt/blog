@@ -4,11 +4,22 @@
     "lastName": "Guldan",
     "age": "M40-49",
     "location": "Denver, CO",
-    "rank": 85.5,
+    "rank": 85.1,
     "ageRank": 87.6,
     "results": 72,
     "bib": "",
     "finishes": 4
+  },
+  {
+    "firstName": "Anibel",
+    "lastName": "Erickson",
+    "age": "F<20",
+    "location": "Salt Lake City, UT",
+    "rank": 98.9,
+    "ageRank": 0,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Zane",
@@ -132,17 +143,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Julie",
-    "lastName": "Johnson",
-    "age": "F40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 89.1,
-    "ageRank": 92.2,
-    "results": 27,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jason",
     "lastName": "Bourget",
     "age": "M30-39",
@@ -154,6 +154,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Julie",
+    "lastName": "Johnson",
+    "age": "F40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 88.7,
+    "ageRank": 92.2,
+    "results": 27,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Alessandro",
     "lastName": "Houshmand",
     "age": "M20-29",
@@ -161,6 +172,17 @@
     "rank": 74.1,
     "ageRank": 74.1,
     "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Tiff",
+    "lastName": "Schwartz",
+    "age": "F30-39",
+    "location": "Salt Lake City, UT",
+    "rank": 88.1,
+    "ageRank": 91.5,
+    "results": 18,
     "bib": "",
     "finishes": 1
   },
@@ -187,17 +209,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Lindsey",
-    "lastName": "Fitzgerald",
-    "age": "F30-39",
-    "location": "Salt Lake City, UT",
-    "rank": 87.7,
-    "ageRank": 87.8,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Nancy",
     "lastName": "Kaiser",
     "age": "F50-59",
@@ -218,17 +229,6 @@
     "results": 1,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Tiff",
-    "lastName": "Schwartz",
-    "age": "F30-39",
-    "location": "Salt Lake City, UT",
-    "rank": 87.4,
-    "ageRank": 91.5,
-    "results": 18,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Lauren",
@@ -260,6 +260,17 @@
     "rank": 85.9,
     "ageRank": 88.6,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lindsey",
+    "lastName": "Fitzgerald",
+    "age": "F30-39",
+    "location": "Salt Lake City, UT",
+    "rank": 85.6,
+    "ageRank": 87.8,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -330,17 +341,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Ciara",
-    "lastName": "Gador",
-    "age": "F30-39",
-    "location": "Grand Junction, CO",
-    "rank": 81.8,
-    "ageRank": 82.1,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Michelle",
     "lastName": "Young",
     "age": "F40-49",
@@ -405,17 +405,6 @@
     "results": 1,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "Levi",
-    "lastName": "Siwek",
-    "age": "M20-29",
-    "location": "Denver, CO",
-    "rank": 67,
-    "ageRank": 67.1,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Krista",
@@ -506,17 +495,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Erica",
-    "lastName": "Foulser",
-    "age": "F30-39",
-    "location": "SALT LAKE CITY, UT",
-    "rank": 78.1,
-    "ageRank": 78.2,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Liz",
     "lastName": "Blei",
     "age": "F60-69",
@@ -548,6 +526,17 @@
     "results": 1,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Levi",
+    "lastName": "Siwek",
+    "age": "M20-29",
+    "location": "Denver, CO",
+    "rank": 64.9,
+    "ageRank": 67.1,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Leigh",
@@ -653,11 +642,22 @@
     "lastName": "Christiansen",
     "age": "F30-39",
     "location": "Pagosa Springs, CO",
-    "rank": 75.5,
+    "rank": 75.8,
     "ageRank": 80.2,
     "results": 24,
     "bib": "",
     "finishes": 3
+  },
+  {
+    "firstName": "Erica",
+    "lastName": "Foulser",
+    "age": "F30-39",
+    "location": "SALT LAKE CITY, UT",
+    "rank": 75.6,
+    "ageRank": 78.2,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Vanessa",
@@ -803,6 +803,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Peter",
+    "lastName": "Nelson",
+    "age": "M30-39",
+    "location": "Los Alamos, NM",
+    "rank": 61.2,
+    "ageRank": 60.6,
+    "results": 16,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Shideler",
     "lastName": "Bennett",
     "age": "M30-39",
@@ -869,17 +880,6 @@
     "finishes": 4
   },
   {
-    "firstName": "Jessie",
-    "lastName": "Smith",
-    "age": "F30-39",
-    "location": "Polson, MT",
-    "rank": 71.9,
-    "ageRank": 74.1,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Brendan",
     "lastName": "Ahern",
     "age": "M20-29",
@@ -942,6 +942,17 @@
     "rank": 59.6,
     "ageRank": 100,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rick",
+    "lastName": "Farrand",
+    "age": "M60-69",
+    "location": "Denver, CO",
+    "rank": 59.6,
+    "ageRank": 0,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -1023,6 +1034,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Ciara",
+    "lastName": "Gador",
+    "age": "F30-39",
+    "location": "Grand Junction, CO",
+    "rank": 69.7,
+    "ageRank": 82.1,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jake",
     "lastName": "Ryland",
     "age": "M30-39",
@@ -1078,6 +1100,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jessie",
+    "lastName": "Smith",
+    "age": "F30-39",
+    "location": "Polson, MT",
+    "rank": 68.8,
+    "ageRank": 74.1,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kennon",
     "lastName": "Shupe",
     "age": "M30-39",
@@ -1122,17 +1155,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Peter",
-    "lastName": "Nelson",
-    "age": "M30-39",
-    "location": "Los Alamos, NM",
-    "rank": 56.9,
-    "ageRank": 60.6,
-    "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Lisa",
     "lastName": "Carter",
     "age": "F30-39",
@@ -1162,6 +1184,17 @@
     "rank": 67.4,
     "ageRank": 67.4,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ashley",
+    "lastName": "Baxt",
+    "age": "F50-59",
+    "location": "Durango, CO",
+    "rank": 67.4,
+    "ageRank": 0,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -1252,6 +1285,17 @@
     "results": 3,
     "bib": "",
     "finishes": 2
+  },
+  {
+    "firstName": "Debbie",
+    "lastName": "Berg",
+    "age": "F60-69",
+    "location": "Enid, OK",
+    "rank": 66.4,
+    "ageRank": 0,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Carol",
@@ -1529,6 +1573,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Ellen",
+    "lastName": "Moeller",
+    "age": "F50-59",
+    "location": "Boulder, CO",
+    "rank": 63.1,
+    "ageRank": 55.6,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Luann",
     "lastName": "Bebee",
     "age": "F60-69",
@@ -1738,6 +1793,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Morgan",
+    "lastName": "Leyda",
+    "age": "F30-39",
+    "location": "Grand junction, CO",
+    "rank": 61,
+    "ageRank": 61.2,
+    "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Sheryl",
+    "lastName": "Hudson",
+    "age": "F60-69",
+    "location": "Colorado Springs, CO",
+    "rank": 60.8,
+    "ageRank": 80.7,
+    "results": 22,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Meaghan",
     "lastName": "Forbes",
     "age": "F20-29",
@@ -1870,17 +1947,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Kathryn",
-    "lastName": "Lein",
-    "age": "F60-69",
-    "location": "Grand Junction, CO",
-    "rank": 59.2,
-    "ageRank": 70.8,
-    "results": 39,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Megan",
     "lastName": "Harrison",
     "age": "F40-49",
@@ -1890,6 +1956,17 @@
     "results": 9,
     "bib": "",
     "finishes": 6
+  },
+  {
+    "firstName": "Kathryn",
+    "lastName": "Lein",
+    "age": "F60-69",
+    "location": "Grand Junction, CO",
+    "rank": 59.1,
+    "ageRank": 70.8,
+    "results": 39,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Mark",
@@ -1936,17 +2013,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Morgan",
-    "lastName": "Leyda",
-    "age": "F30-39",
-    "location": "Grand junction, CO",
-    "rank": 58.2,
-    "ageRank": 61.2,
-    "results": 2,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Jed",
     "lastName": "Edwards",
     "age": "M40-49",
@@ -1962,7 +2028,7 @@
     "lastName": "Kay",
     "age": "M30-39",
     "location": "Moab, UT",
-    "rank": 48.6,
+    "rank": 48.4,
     "ageRank": 57.8,
     "results": 16,
     "bib": "",
@@ -2101,17 +2167,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Sheryl",
-    "lastName": "Hudson",
-    "age": "F60-69",
-    "location": "Colorado Springs, CO",
-    "rank": 56.9,
-    "ageRank": 80.7,
-    "results": 22,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Amy",
     "lastName": "Taula",
     "age": "F40-49",
@@ -2143,17 +2198,6 @@
     "results": 2,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Sharon",
-    "lastName": "Appell",
-    "age": "F40-49",
-    "location": "Fort Collins, CO",
-    "rank": 56.6,
-    "ageRank": 58.5,
-    "results": 6,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Dakota",
@@ -2288,6 +2332,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Aranxa",
+    "lastName": "Ventura",
+    "age": "F30-39",
+    "location": "Durango, CO",
+    "rank": 55.3,
+    "ageRank": 0,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Candice",
     "lastName": "Cravins",
     "age": "F30-39",
@@ -2308,6 +2363,17 @@
     "results": 3,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Sharon",
+    "lastName": "Appell",
+    "age": "F40-49",
+    "location": "Fort Collins, CO",
+    "rank": 54.9,
+    "ageRank": 58.5,
+    "results": 6,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Lindsay",
@@ -2607,17 +2673,6 @@
     "finishes": 1
   },
   {
-    "firstName": "Ellen",
-    "lastName": "Moeller",
-    "age": "F50-59",
-    "location": "Boulder, CO",
-    "rank": 50.8,
-    "ageRank": 55.6,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Neil",
     "lastName": "Townsend",
     "age": "M60-69",
@@ -2816,6 +2871,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Susan",
+    "lastName": "Curnutte",
+    "age": "F70+",
+    "location": "Colorado Springs, CO",
+    "rank": 43.9,
+    "ageRank": 81.2,
+    "results": 66,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Shauna",
     "lastName": "Rosenlof",
     "age": "F60-69",
@@ -2825,17 +2891,6 @@
     "results": 1,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "Susan",
-    "lastName": "Curnutte",
-    "age": "F70+",
-    "location": "Colorado Springs, CO",
-    "rank": 43,
-    "ageRank": 81.2,
-    "results": 66,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Emily",
@@ -3355,10 +3410,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Jesse",
-    "lastName": "Goryl",
-    "age": "M30-39",
-    "location": "Fruita, CO",
+    "firstName": "Heidi",
+    "lastName": "Larrick",
+    "age": "F40-49",
+    "location": "Cortez, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3366,21 +3421,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Anibel",
-    "lastName": "Erickson",
-    "age": "F<20",
-    "location": "Salt Lake City, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Heidi",
-    "lastName": "Larrick",
-    "age": "F40-49",
-    "location": "Cortez, CO",
+    "firstName": "Jesse",
+    "lastName": "Goryl",
+    "age": "M30-39",
+    "location": "Fruita, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -6941,9 +6985,9 @@
     "finishes": 0
   },
   {
-    "firstName": "Charlie",
-    "lastName": "Davis",
-    "age": "M30-39",
+    "firstName": "Karly",
+    "lastName": "Puente",
+    "age": "F20-29",
     "location": "Denver, CO",
     "rank": 0,
     "ageRank": 0,
@@ -6952,9 +6996,130 @@
     "finishes": 0
   },
   {
-    "firstName": "Zoe",
-    "lastName": "Pangallo",
+    "firstName": "Thomas",
+    "lastName": "Harper",
+    "age": "M20-29",
+    "location": "DENVER, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Isabel",
+    "lastName": "Hinshaw",
+    "age": "F20-29",
+    "location": "Boulder, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kate",
+    "lastName": "Russo",
+    "age": "F<20",
+    "location": "Murray, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alexis",
+    "lastName": "Pinkley",
     "age": "F30-39",
+    "location": "Bend, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lindsey",
+    "lastName": "Case",
+    "age": "F30-39",
+    "location": "MERIDIAN, ID",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Case",
+    "age": "M40-49",
+    "location": "MERIDIAN, ID",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Parker",
+    "lastName": "Neeley",
+    "age": "M30-39",
+    "location": "Ogden, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Bastian",
+    "age": "M40-49",
+    "location": "South Weber, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "Johnson",
+    "age": "F20-29",
+    "location": "Charlotte, NC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Okalani",
+    "lastName": "Schnackenberg",
+    "age": "F20-29",
+    "location": "Charlotte, NC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Colin",
+    "lastName": "Larrick",
+    "age": "M40-49",
+    "location": "Cortez, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Lanz",
+    "age": "F20-29",
     "location": "Denver, CO",
     "rank": 0,
     "ageRank": 0,
@@ -6963,9 +7128,108 @@
     "finishes": 0
   },
   {
-    "firstName": "Nilesh",
-    "lastName": "Chaklasiya",
+    "firstName": "Cloie",
+    "lastName": "Neeley",
+    "age": "F20-29",
+    "location": "Mountain Green, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tanner",
+    "lastName": "Neeley",
+    "age": "M20-29",
+    "location": "Mountain Green, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Katianne",
+    "lastName": "Dunay",
+    "age": "F20-29",
+    "location": "Westminster, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rebecca",
+    "lastName": "Maxie",
+    "age": "F30-39",
+    "location": "Columbia Falls, MT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Thiery",
     "age": "M30-39",
+    "location": "Crown Point, IN",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steve",
+    "lastName": "Byers",
+    "age": "M40-49",
+    "location": "Castle Rock, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ivy",
+    "lastName": "Niederhauser",
+    "age": "F<20",
+    "location": "Smithfield, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Spencer",
+    "lastName": "Shelton",
+    "age": "M40-49",
+    "location": "Morgan, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Isabelle",
+    "lastName": "Mullen",
+    "age": "F<20",
+    "location": "Smithfield, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rachel",
+    "lastName": "Kroencke",
+    "age": "F30-39",
     "location": "Salt Lake City, UT",
     "rank": 0,
     "ageRank": 0,
@@ -6974,10 +7238,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Kent",
-    "lastName": "Hyer",
-    "age": "M50-59",
-    "location": "South Weber, UT",
+    "firstName": "James",
+    "lastName": "Blue",
+    "age": "M40-49",
+    "location": "Tucson, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7480,9 +7744,20 @@
     "finishes": 0
   },
   {
-    "firstName": "Karly",
-    "lastName": "Puente",
-    "age": "F20-29",
+    "firstName": "Allison",
+    "lastName": "Mosqueda",
+    "age": "F40-49",
+    "location": "Arvada, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kelsie",
+    "lastName": "Brandt",
+    "age": "F30-39",
     "location": "Denver, CO",
     "rank": 0,
     "ageRank": 0,
@@ -7491,76 +7766,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Thomas",
-    "lastName": "Harper",
-    "age": "M20-29",
-    "location": "DENVER, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Isabel",
-    "lastName": "Hinshaw",
-    "age": "F20-29",
-    "location": "Boulder, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kate",
-    "lastName": "Russo",
-    "age": "F<20",
-    "location": "Murray, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alexis",
-    "lastName": "Pinkley",
-    "age": "F30-39",
-    "location": "Bend, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lindsey",
-    "lastName": "Case",
-    "age": "F30-39",
-    "location": "MERIDIAN, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Matt",
-    "lastName": "Case",
-    "age": "M40-49",
-    "location": "MERIDIAN, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Parker",
-    "lastName": "Neeley",
+    "firstName": "Nate",
+    "lastName": "Decker",
     "age": "M30-39",
-    "location": "Ogden, UT",
+    "location": "Glenwood Springs, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7568,10 +7777,43 @@
     "finishes": 0
   },
   {
-    "firstName": "Mike",
-    "lastName": "Bastian",
+    "firstName": "Laura",
+    "lastName": "Gradiska",
+    "age": "F30-39",
+    "location": "Santa Cruz, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Erik",
+    "lastName": "Liu",
+    "age": "M30-39",
+    "location": "Morgantown, WV",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alexander",
+    "lastName": "Jensen",
+    "age": "M20-29",
+    "location": "Draper, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jon",
+    "lastName": "Strom",
     "age": "M40-49",
-    "location": "South Weber, UT",
+    "location": "Tarrytown, NY",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7579,21 +7821,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Maria",
-    "lastName": "Johnson",
-    "age": "F20-29",
-    "location": "Charlotte, NC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Okalani",
-    "lastName": "Schnackenberg",
-    "age": "F20-29",
-    "location": "Charlotte, NC",
+    "firstName": "Katie",
+    "lastName": "Mosehauer",
+    "age": "F40-49",
+    "location": "PALM SPRINGS, WA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7602,129 +7833,8 @@
   },
   {
     "firstName": "Colin",
-    "lastName": "Larrick",
-    "age": "M40-49",
-    "location": "Cortez, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jessica",
-    "lastName": "Lanz",
-    "age": "F20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Cloie",
-    "lastName": "Neeley",
-    "age": "F20-29",
-    "location": "Mountain Green, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tanner",
-    "lastName": "Neeley",
+    "lastName": "Lake",
     "age": "M20-29",
-    "location": "Mountain Green, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Katianne",
-    "lastName": "Dunay",
-    "age": "F20-29",
-    "location": "Westminster, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rebecca",
-    "lastName": "Maxie",
-    "age": "F30-39",
-    "location": "Columbia Falls, MT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ryan",
-    "lastName": "Thiery",
-    "age": "M30-39",
-    "location": "Crown Point, IN",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Steve",
-    "lastName": "Byers",
-    "age": "M40-49",
-    "location": "Castle Rock, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ivy",
-    "lastName": "Niederhauser",
-    "age": "F<20",
-    "location": "Smithfield, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Spencer",
-    "lastName": "Shelton",
-    "age": "M40-49",
-    "location": "Morgan, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Isabelle",
-    "lastName": "Mullen",
-    "age": "F<20",
-    "location": "Smithfield, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rachel",
-    "lastName": "Kroencke",
-    "age": "F30-39",
     "location": "Salt Lake City, UT",
     "rank": 0,
     "ageRank": 0,
@@ -7733,10 +7843,10 @@
     "finishes": 0
   },
   {
-    "firstName": "James",
-    "lastName": "Blue",
-    "age": "M40-49",
-    "location": "Tucson, AZ",
+    "firstName": "Brandt",
+    "lastName": "Saxey",
+    "age": "M50-59",
+    "location": "Alpine, UT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7744,10 +7854,120 @@
     "finishes": 0
   },
   {
-    "firstName": "Ashley",
-    "lastName": "Baxt",
-    "age": "F50-59",
-    "location": "Durango, CO",
+    "firstName": "Andrew",
+    "lastName": "Saxey",
+    "age": "M20-29",
+    "location": "Alpine, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Eric",
+    "lastName": "Faundez",
+    "age": "M30-39",
+    "location": "Lakewood, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rachel",
+    "lastName": "Tuttle",
+    "age": "F20-29",
+    "location": "Provo, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Charlie",
+    "lastName": "Davis",
+    "age": "M30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Zoe",
+    "lastName": "Pangallo",
+    "age": "F30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nilesh",
+    "lastName": "Chaklasiya",
+    "age": "M30-39",
+    "location": "Salt Lake City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kent",
+    "lastName": "Hyer",
+    "age": "M50-59",
+    "location": "South Weber, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jens",
+    "lastName": "Syre",
+    "age": "M<20",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Morgan",
+    "lastName": "Fullmer",
+    "age": "M40-49",
+    "location": "Parker, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Peter",
+    "lastName": "Syre",
+    "age": "M50-59",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alyssa",
+    "lastName": "Grams",
+    "age": "F30-39",
+    "location": "Cortez, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -7836,193 +8056,6 @@
     "lastName": "McGaha",
     "age": "M40-49",
     "location": "Delta, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rick",
-    "lastName": "Farrand",
-    "age": "M60-69",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jens",
-    "lastName": "Syre",
-    "age": "M<20",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Morgan",
-    "lastName": "Fullmer",
-    "age": "M40-49",
-    "location": "Parker, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Peter",
-    "lastName": "Syre",
-    "age": "M50-59",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alyssa",
-    "lastName": "Grams",
-    "age": "F30-39",
-    "location": "Cortez, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Aranxa",
-    "lastName": "Ventura",
-    "age": "F30-39",
-    "location": "Durango, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Allison",
-    "lastName": "Mosqueda",
-    "age": "F40-49",
-    "location": "Arvada, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kelsie",
-    "lastName": "Brandt",
-    "age": "F30-39",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nate",
-    "lastName": "Decker",
-    "age": "M30-39",
-    "location": "Glenwood Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Debbie",
-    "lastName": "Berg",
-    "age": "F60-69",
-    "location": "Enid, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Laura",
-    "lastName": "Gradiska",
-    "age": "F30-39",
-    "location": "Santa Cruz, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Erik",
-    "lastName": "Liu",
-    "age": "M30-39",
-    "location": "Morgantown, WV",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alexander",
-    "lastName": "Jensen",
-    "age": "M20-29",
-    "location": "Draper, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jon",
-    "lastName": "Strom",
-    "age": "M40-49",
-    "location": "Tarrytown, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Katie",
-    "lastName": "Mosehauer",
-    "age": "F40-49",
-    "location": "PALM SPRINGS, WA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Colin",
-    "lastName": "Lake",
-    "age": "M20-29",
-    "location": "Salt Lake City, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brandt",
-    "lastName": "Saxey",
-    "age": "M50-59",
-    "location": "Alpine, UT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

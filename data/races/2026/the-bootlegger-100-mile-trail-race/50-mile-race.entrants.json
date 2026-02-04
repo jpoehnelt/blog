@@ -15,7 +15,7 @@
     "lastName": "Mitchum",
     "age": "M40-49",
     "location": "Lanett, AL",
-    "rank": 79.8,
+    "rank": 80,
     "ageRank": 86.7,
     "results": 90,
     "bib": "",
@@ -59,11 +59,22 @@
     "lastName": "Dierkes",
     "age": "M60-69",
     "location": "Peachtree City, GA",
-    "rank": 70.3,
+    "rank": 70.2,
     "ageRank": 90.1,
     "results": 78,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Roy",
+    "age": "M60-69",
+    "location": "Vestavia Hills, AL",
+    "rank": 69.9,
+    "ageRank": 86.2,
+    "results": 77,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Jason",
@@ -92,7 +103,7 @@
     "lastName": "Myers",
     "age": "M50-59",
     "location": "Doraville, GA",
-    "rank": 68.1,
+    "rank": 67.9,
     "ageRank": 74.8,
     "results": 78,
     "bib": "",
@@ -180,9 +191,20 @@
     "lastName": "Guizard",
     "age": "M60-69",
     "location": "Fort Mill, SC",
-    "rank": 61.4,
+    "rank": 60.8,
     "ageRank": 76.5,
     "results": 36,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Adam",
+    "lastName": "Avenali",
+    "age": "M40-49",
+    "location": "Mableton, GA",
+    "rank": 60.4,
+    "ageRank": 61.1,
+    "results": 19,
     "bib": "",
     "finishes": 0
   },
@@ -191,11 +213,22 @@
     "lastName": "Carpenter",
     "age": "M70+",
     "location": "Knoxville, GA",
-    "rank": 59.7,
+    "rank": 60.4,
     "ageRank": 81.1,
     "results": 22,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Val",
+    "lastName": "Bohland",
+    "age": "F50-59",
+    "location": "McDonough, GA",
+    "rank": 74.8,
+    "ageRank": 79.6,
+    "results": 54,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Heather",
@@ -242,17 +275,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Val",
-    "lastName": "Bohland",
-    "age": "F50-59",
-    "location": "McDonough, GA",
-    "rank": 73.3,
-    "ageRank": 79.6,
-    "results": 54,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Robert",
     "lastName": "Alexander",
     "age": "M40-49",
@@ -290,20 +312,9 @@
     "lastName": "Goins",
     "age": "M50-59",
     "location": "Avondale, AZ",
-    "rank": 56.7,
+    "rank": 56.6,
     "ageRank": 73.8,
     "results": 22,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Adam",
-    "lastName": "Avenali",
-    "age": "M40-49",
-    "location": "Mableton, GA",
-    "rank": 55.4,
-    "ageRank": 61.1,
-    "results": 19,
     "bib": "",
     "finishes": 0
   },
@@ -374,28 +385,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jake",
-    "lastName": "Mitchiner",
-    "age": "M20-29",
-    "location": "Charlotte, NC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Hannah",
-    "lastName": "Partain",
-    "age": "F20-29",
-    "location": "Monticello, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Olivia",
     "lastName": "Duke",
     "age": "F30-39",
@@ -455,6 +444,28 @@
     "lastName": "Essex",
     "age": "F40-49",
     "location": "Gulf Breeze, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jake",
+    "lastName": "Mitchiner",
+    "age": "M20-29",
+    "location": "Charlotte, NC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hannah",
+    "lastName": "Partain",
+    "age": "F20-29",
+    "location": "Monticello, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

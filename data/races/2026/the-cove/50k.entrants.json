@@ -92,7 +92,7 @@
     "lastName": "Clark",
     "age": "M50-59",
     "location": "Avondale Estates, GA",
-    "rank": 81,
+    "rank": 81.5,
     "ageRank": 92.3,
     "results": 33,
     "bib": "",
@@ -143,6 +143,17 @@
     "finishes": 0
   },
   {
+    "firstName": "James",
+    "lastName": "Branch",
+    "age": "M40-49",
+    "location": "Marietta, GA",
+    "rank": 75.5,
+    "ageRank": 78.2,
+    "results": 25,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Hugh",
     "lastName": "Duling",
     "age": "M30-39",
@@ -165,22 +176,11 @@
     "finishes": 0
   },
   {
-    "firstName": "James",
-    "lastName": "Branch",
-    "age": "M40-49",
-    "location": "Marietta, GA",
-    "rank": 74.5,
-    "ageRank": 78.2,
-    "results": 25,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Holly",
     "lastName": "Adams",
     "age": "F40-49",
     "location": "Marietta, GA",
-    "rank": 88.7,
+    "rank": 88.5,
     "ageRank": 92.5,
     "results": 64,
     "bib": "",
@@ -198,6 +198,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jennifer",
+    "lastName": "Raby",
+    "age": "F40-49",
+    "location": "Decatur, GA",
+    "rank": 87.4,
+    "ageRank": 91.2,
+    "results": 60,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "John",
     "lastName": "McGee",
     "age": "M30-39",
@@ -209,26 +220,37 @@
     "finishes": 0
   },
   {
-    "firstName": "Jennifer",
-    "lastName": "Raby",
-    "age": "F40-49",
-    "location": "Decatur, GA",
-    "rank": 87.2,
-    "ageRank": 91.2,
-    "results": 60,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Dillard",
     "lastName": "Espy",
     "age": "M30-39",
     "location": "Cartersville, GA",
-    "rank": 0,
+    "rank": 69.8,
     "ageRank": 0,
     "results": 1,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Ian",
+    "lastName": "North",
+    "age": "M40-49",
+    "location": "Atlanta, GA",
+    "rank": 69.4,
+    "ageRank": 73.3,
+    "results": 54,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Schuster",
+    "age": "M40-49",
+    "location": "Woodstock, GA",
+    "rank": 69.3,
+    "ageRank": 73.9,
+    "results": 50,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Levi",
@@ -264,17 +286,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Ian",
-    "lastName": "North",
-    "age": "M40-49",
-    "location": "Atlanta, GA",
-    "rank": 68.8,
-    "ageRank": 73.3,
-    "results": 54,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "David",
     "lastName": "Tate",
     "age": "M40-49",
@@ -286,15 +297,15 @@
     "finishes": 2
   },
   {
-    "firstName": "Nick",
-    "lastName": "Schuster",
-    "age": "M40-49",
+    "firstName": "Andrew",
+    "lastName": "Griffin",
+    "age": "M50-59",
     "location": "Woodstock, GA",
-    "rank": 68.5,
-    "ageRank": 73.9,
-    "results": 50,
+    "rank": 68.6,
+    "ageRank": 78,
+    "results": 16,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Rebecca",
@@ -319,13 +330,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Griffin",
+    "firstName": "Shane",
+    "lastName": "Treadaway",
     "age": "M50-59",
-    "location": "Woodstock, GA",
+    "location": "Dawsonville, GA",
     "rank": 68.1,
-    "ageRank": 78,
-    "results": 16,
+    "ageRank": 77,
+    "results": 51,
     "bib": "",
     "finishes": 0
   },
@@ -334,20 +345,9 @@
     "lastName": "Patterson",
     "age": "M40-49",
     "location": "Sandy Springs, GA",
-    "rank": 68,
+    "rank": 67.5,
     "ageRank": 0,
     "results": 10,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shane",
-    "lastName": "Treadaway",
-    "age": "M50-59",
-    "location": "Dawsonville, GA",
-    "rank": 67.5,
-    "ageRank": 77,
-    "results": 51,
     "bib": "",
     "finishes": 0
   },
@@ -385,6 +385,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jamie",
+    "lastName": "Limbaugh",
+    "age": "F40-49",
+    "location": "Anniston, AL",
+    "rank": 81.4,
+    "ageRank": 86.3,
+    "results": 42,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Stewart",
     "lastName": "Duncan",
     "age": "M30-39",
@@ -400,20 +411,9 @@
     "lastName": "Hooper",
     "age": "M40-49",
     "location": "Winterville, GA",
-    "rank": 64.9,
+    "rank": 64.5,
     "ageRank": 68.3,
     "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jamie",
-    "lastName": "Limbaugh",
-    "age": "F40-49",
-    "location": "Anniston, AL",
-    "rank": 80.4,
-    "ageRank": 86.3,
-    "results": 42,
     "bib": "",
     "finishes": 0
   },
@@ -447,6 +447,17 @@
     "rank": 79.9,
     "ageRank": 84.3,
     "results": 21,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Spencer",
+    "lastName": "Gore",
+    "age": "M30-39",
+    "location": "Macon, GA",
+    "rank": 64,
+    "ageRank": 70.3,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -517,13 +528,13 @@
     "finishes": 1
   },
   {
-    "firstName": "Spencer",
-    "lastName": "Gore",
-    "age": "M30-39",
-    "location": "Macon, GA",
-    "rank": 60.8,
-    "ageRank": 70.3,
-    "results": 3,
+    "firstName": "Jonathan",
+    "lastName": "French",
+    "age": "M40-49",
+    "location": "Madison, TN",
+    "rank": 60.3,
+    "ageRank": 64.2,
+    "results": 79,
     "bib": "",
     "finishes": 0
   },
@@ -546,17 +557,6 @@
     "rank": 60.1,
     "ageRank": 61.2,
     "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jonathan",
-    "lastName": "French",
-    "age": "M40-49",
-    "location": "Madison, TN",
-    "rank": 59.8,
-    "ageRank": 64.2,
-    "results": 79,
     "bib": "",
     "finishes": 0
   },

@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Nicholas",
-    "lastName": "Steel",
-    "age": "M20-29",
-    "location": "Mankato, MN",
-    "rank": 88.7,
-    "ageRank": 96.2,
-    "results": 19,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Andrew",
     "lastName": "Komp",
     "age": "M40-49",
@@ -20,6 +9,17 @@
     "results": 45,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Nicholas",
+    "lastName": "Steel",
+    "age": "M20-29",
+    "location": "Mankato, MN",
+    "rank": 88.2,
+    "ageRank": 94.8,
+    "results": 20,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Beau",
@@ -66,17 +66,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Matt",
-    "lastName": "Hussung",
-    "age": "M50-59",
-    "location": "Mount Morris, IL",
-    "rank": 79.1,
-    "ageRank": 93.2,
-    "results": 26,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Zachary",
     "lastName": "Inskeep",
     "age": "M30-39",
@@ -84,6 +73,17 @@
     "rank": 78.7,
     "ageRank": 78.7,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Hussung",
+    "age": "M50-59",
+    "location": "Mount Morris, IL",
+    "rank": 78.7,
+    "ageRank": 93.2,
+    "results": 26,
     "bib": "",
     "finishes": 0
   },
@@ -114,7 +114,7 @@
     "lastName": "Lenard",
     "age": "M60-69",
     "location": "Johnsburg, IL",
-    "rank": 75.4,
+    "rank": 75,
     "ageRank": 85.2,
     "results": 65,
     "bib": "",
@@ -462,6 +462,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Lisa",
+    "lastName": "Posorske",
+    "age": "F40-49",
+    "location": "Champlin, MN",
+    "rank": 60.1,
+    "ageRank": 63,
+    "results": 31,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Alex",
     "lastName": "Carradine",
     "age": "M30-39",
@@ -495,13 +506,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Lisa",
-    "lastName": "Posorske",
-    "age": "F40-49",
-    "location": "Champlin, MN",
-    "rank": 57.2,
-    "ageRank": 63,
-    "results": 31,
+    "firstName": "Bryce",
+    "lastName": "Rehder",
+    "age": "M40-49",
+    "location": "Detroit Lakes, MN",
+    "rank": 48.9,
+    "ageRank": 54.5,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -513,17 +524,6 @@
     "rank": 48.9,
     "ageRank": 57.1,
     "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bryce",
-    "lastName": "Rehder",
-    "age": "M40-49",
-    "location": "Detroit Lakes, MN",
-    "rank": 48.9,
-    "ageRank": 54.5,
-    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -557,6 +557,17 @@
     "rank": 54.2,
     "ageRank": 58.8,
     "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bryan",
+    "lastName": "Blumenschein",
+    "age": "M30-39",
+    "location": "Maple Grove, MN",
+    "rank": 46,
+    "ageRank": 67.8,
+    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -601,17 +612,6 @@
     "rank": 42.2,
     "ageRank": 64,
     "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bryan",
-    "lastName": "Blumenschein",
-    "age": "M30-39",
-    "location": "Maple Grove, MN",
-    "rank": 39.6,
-    "ageRank": 67.8,
-    "results": 5,
     "bib": "",
     "finishes": 0
   },
