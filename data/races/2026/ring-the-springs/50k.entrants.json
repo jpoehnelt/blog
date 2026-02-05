@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Caleb",
-    "lastName": "Turner",
-    "age": "M30-39",
-    "location": "Ocala, FL",
-    "rank": 83.6,
-    "ageRank": 88.3,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Mackenzie",
     "lastName": "Macdonald",
     "age": "F30-39",
@@ -33,13 +22,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Tyrus",
-    "lastName": "Schmalz",
+    "firstName": "Caleb",
+    "lastName": "Turner",
     "age": "M30-39",
-    "location": "Littleton, CO",
-    "rank": 68.8,
-    "ageRank": 68.8,
-    "results": 1,
+    "location": "Ocala, FL",
+    "rank": 83.6,
+    "ageRank": 88.3,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -55,17 +44,6 @@
     "finishes": 0
   },
   {
-    "firstName": "David",
-    "lastName": "Coats",
-    "age": "M60-69",
-    "location": "Wichita Falls, TX",
-    "rank": 67.3,
-    "ageRank": 81.3,
-    "results": 42,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Kimberly",
     "lastName": "Stevenson",
     "age": "F40-49",
@@ -73,39 +51,6 @@
     "rank": 77.3,
     "ageRank": 81.1,
     "results": 17,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Steven",
-    "lastName": "Tran",
-    "age": "M40-49",
-    "location": "Seattle, WA",
-    "rank": 61.9,
-    "ageRank": 62.2,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Erich",
-    "lastName": "Weller",
-    "age": "M40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 61.3,
-    "ageRank": 63.7,
-    "results": 23,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Olan",
-    "lastName": "Johnson",
-    "age": "F30-39",
-    "location": "Alexandria, VA",
-    "rank": 70.8,
-    "ageRank": 71.7,
-    "results": 11,
     "bib": "",
     "finishes": 0
   },
@@ -121,13 +66,35 @@
     "finishes": 0
   },
   {
-    "firstName": "Nash",
-    "lastName": "Oliver",
+    "firstName": "Olan",
+    "lastName": "Johnson",
+    "age": "F30-39",
+    "location": "Alexandria, VA",
+    "rank": 70,
+    "ageRank": 71.7,
+    "results": 11,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tyrus",
+    "lastName": "Schmalz",
     "age": "M30-39",
-    "location": "Aurora, CO",
-    "rank": 56.7,
-    "ageRank": 62.2,
-    "results": 2,
+    "location": "Littleton, CO",
+    "rank": 68.8,
+    "ageRank": 68.8,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Coats",
+    "age": "M60-69",
+    "location": "Wichita Falls, TX",
+    "rank": 67.3,
+    "ageRank": 81.3,
+    "results": 42,
     "bib": "",
     "finishes": 0
   },
@@ -154,6 +121,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Steven",
+    "lastName": "Tran",
+    "age": "M40-49",
+    "location": "Seattle, WA",
+    "rank": 61.9,
+    "ageRank": 62.2,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Erich",
+    "lastName": "Weller",
+    "age": "M40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 61.3,
+    "ageRank": 63.7,
+    "results": 23,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jordan",
     "lastName": "Harrison",
     "age": "F20-29",
@@ -165,24 +154,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Tyler",
-    "lastName": "Murphy",
-    "age": "M30-39",
-    "location": "COLORADO SPRINGS, CO",
-    "rank": 48.5,
-    "ageRank": 49,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Kari",
     "lastName": "Taylor-Romero",
     "age": "F40-49",
     "location": "Colorado Springs, CO",
-    "rank": 58.2,
+    "rank": 57,
     "ageRank": 64.3,
     "results": 171,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nash",
+    "lastName": "Oliver",
+    "age": "M30-39",
+    "location": "Aurora, CO",
+    "rank": 56.7,
+    "ageRank": 62.2,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -191,9 +180,20 @@
     "lastName": "Dillon",
     "age": "M30-39",
     "location": "Arvada, CO",
-    "rank": 47.2,
+    "rank": 53.6,
     "ageRank": 53.6,
     "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Tarkowski",
+    "age": "M30-39",
+    "location": "Castle Rock, CO",
+    "rank": 50.9,
+    "ageRank": 50.9,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -209,6 +209,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Tyler",
+    "lastName": "Murphy",
+    "age": "M30-39",
+    "location": "COLORADO SPRINGS, CO",
+    "rank": 44,
+    "ageRank": 49,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Lauren",
     "lastName": "Boehm",
     "age": "F40-49",
@@ -220,11 +231,22 @@
     "finishes": 0
   },
   {
+    "firstName": "Stephanie",
+    "lastName": "Telck",
+    "age": "F30-39",
+    "location": "Waverly Hall, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Lexi",
     "lastName": "Vialpando",
     "age": "F30-39",
     "location": "Roswell, GA",
-    "rank": 24.7,
+    "rank": 0,
     "ageRank": 0,
     "results": 1,
     "bib": "",
@@ -308,17 +330,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Robert",
-    "lastName": "Hutt",
-    "age": "M40-49",
-    "location": "Tecumseh, NE",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "James",
     "lastName": "Lawson",
     "age": "M20-29",
@@ -352,10 +363,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephanie",
-    "lastName": "Telck",
-    "age": "F30-39",
-    "location": "Waverly Hall, GA",
+    "firstName": "Robert",
+    "lastName": "Hutt",
+    "age": "M40-49",
+    "location": "Tecumseh, NE",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

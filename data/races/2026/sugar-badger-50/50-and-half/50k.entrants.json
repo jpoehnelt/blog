@@ -55,17 +55,6 @@
     "finishes": 3
   },
   {
-    "firstName": "Aaron",
-    "lastName": "Neumann",
-    "age": "M50-59",
-    "location": "Appleton, WI",
-    "rank": 70,
-    "ageRank": 75.5,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Morgan",
     "lastName": "Powell",
     "age": "F30-39",
@@ -110,6 +99,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Aaron",
+    "lastName": "Neumann",
+    "age": "M50-59",
+    "location": "Appleton, WI",
+    "rank": 67.6,
+    "ageRank": 75.5,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "John",
     "lastName": "Kromminga",
     "age": "M60-69",
@@ -130,17 +130,6 @@
     "results": 1,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "John",
-    "lastName": "Hanrahan",
-    "age": "M50-59",
-    "location": "Chicago, IL",
-    "rank": 65.4,
-    "ageRank": 71.9,
-    "results": 12,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Matthew",
@@ -187,6 +176,17 @@
     "finishes": 0
   },
   {
+    "firstName": "John",
+    "lastName": "Hanrahan",
+    "age": "M50-59",
+    "location": "Chicago, IL",
+    "rank": 60.7,
+    "ageRank": 71.9,
+    "results": 12,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Suzanne",
     "lastName": "Bowser",
     "age": "F40-49",
@@ -220,17 +220,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jayne",
-    "lastName": "Foster",
-    "age": "F60-69",
-    "location": "Janesville, WI",
-    "rank": 73.5,
-    "ageRank": 90.9,
-    "results": 11,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Tara",
     "lastName": "Heign",
     "age": "F40-49",
@@ -242,13 +231,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Courtney",
-    "lastName": "Schuetz",
-    "age": "F30-39",
-    "location": "Brodhead, WI",
-    "rank": 69.8,
-    "ageRank": 71,
-    "results": 3,
+    "firstName": "Jayne",
+    "lastName": "Foster",
+    "age": "F60-69",
+    "location": "Janesville, WI",
+    "rank": 70.9,
+    "ageRank": 90.9,
+    "results": 11,
     "bib": "",
     "finishes": 0
   },
@@ -282,6 +271,17 @@
     "rank": 52.4,
     "ageRank": 61.6,
     "results": 27,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Courtney",
+    "lastName": "Schuetz",
+    "age": "F30-39",
+    "location": "Brodhead, WI",
+    "rank": 65.7,
+    "ageRank": 71,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -418,26 +418,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Linda",
-    "lastName": "Williams",
+    "firstName": "Ann",
+    "lastName": "Merfeld",
     "age": "F60-69",
-    "location": "Cottage Grove, MN",
-    "rank": 55.5,
-    "ageRank": 78.4,
-    "results": 22,
+    "location": "Clear Lake, IA",
+    "rank": 55.4,
+    "ageRank": 77.6,
+    "results": 29,
     "bib": "",
     "finishes": 2
-  },
-  {
-    "firstName": "Kelly",
-    "lastName": "Paulsen",
-    "age": "F30-39",
-    "location": "Chicago, IL",
-    "rank": 55.2,
-    "ageRank": 46.5,
-    "results": 11,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Mike",
@@ -447,6 +436,17 @@
     "rank": 41.7,
     "ageRank": 63.4,
     "results": 5,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Kelly",
+    "lastName": "Paulsen",
+    "age": "F30-39",
+    "location": "Chicago, IL",
+    "rank": 54.2,
+    "ageRank": 46.5,
+    "results": 11,
     "bib": "",
     "finishes": 1
   },
@@ -462,13 +462,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Ann",
-    "lastName": "Merfeld",
+    "firstName": "Charity",
+    "lastName": "Schmitz",
     "age": "F60-69",
-    "location": "Clear Lake, IA",
+    "location": "Hastings, MN",
     "rank": 53.8,
-    "ageRank": 77.6,
-    "results": 29,
+    "ageRank": 81,
+    "results": 28,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Linda",
+    "lastName": "Williams",
+    "age": "F60-69",
+    "location": "Cottage Grove, MN",
+    "rank": 53.6,
+    "ageRank": 78.4,
+    "results": 22,
     "bib": "",
     "finishes": 2
   },
@@ -491,17 +502,6 @@
     "rank": 40.3,
     "ageRank": 58.9,
     "results": 3,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Charity",
-    "lastName": "Schmitz",
-    "age": "F60-69",
-    "location": "Hastings, MN",
-    "rank": 52.2,
-    "ageRank": 81,
-    "results": 28,
     "bib": "",
     "finishes": 2
   },
@@ -546,6 +546,17 @@
     "rank": 40,
     "ageRank": 0,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kevin",
+    "lastName": "Panitch",
+    "age": "M30-39",
+    "location": "Hawthorn Woods, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -598,17 +609,6 @@
     "lastName": "Ljungqvist",
     "age": "F40-49",
     "location": "Delafield, WI",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kevin",
-    "lastName": "Panitch",
-    "age": "M30-39",
-    "location": "Hawthorn Woods, IL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

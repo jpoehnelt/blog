@@ -1,22 +1,22 @@
 [
   {
-    "firstName": "Seth",
-    "lastName": "Welsh",
-    "age": "M30-39",
-    "location": "Cochrane, AB",
-    "rank": 100,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Corry",
     "lastName": "Leduc",
     "age": "M50-59",
     "location": "Medicine Hat, AB",
     "rank": 100,
     "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Seth",
+    "lastName": "Welsh",
+    "age": "M30-39",
+    "location": "Cochrane, AB",
+    "rank": 0,
+    "ageRank": 0,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -44,13 +44,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Tom",
-    "lastName": "Gnapp",
-    "age": "M40-49",
-    "location": "Okotoks, AB",
-    "rank": 85,
-    "ageRank": 66.3,
-    "results": 10,
+    "firstName": "Ian",
+    "lastName": "Macnairn",
+    "age": "M30-39",
+    "location": "Red Deer, AB",
+    "rank": 84.6,
+    "ageRank": 86.8,
+    "results": 27,
     "bib": "",
     "finishes": 0
   },
@@ -77,13 +77,13 @@
     "finishes": 2
   },
   {
-    "firstName": "Ian",
-    "lastName": "Macnairn",
-    "age": "M30-39",
-    "location": "Red Deer, AB",
-    "rank": 81.8,
-    "ageRank": 86.8,
-    "results": 27,
+    "firstName": "Gillian",
+    "lastName": "Petit",
+    "age": "F30-39",
+    "location": "Okotoks, AB",
+    "rank": 86.8,
+    "ageRank": 87.1,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -97,17 +97,6 @@
     "results": 17,
     "bib": "",
     "finishes": 3
-  },
-  {
-    "firstName": "Gillian",
-    "lastName": "Petit",
-    "age": "F30-39",
-    "location": "Okotoks, AB",
-    "rank": 85.8,
-    "ageRank": 87.1,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Deidre",
@@ -143,17 +132,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Chris",
-    "lastName": "White-Gloria",
-    "age": "M30-39",
-    "location": "Calgary, AB",
-    "rank": 77.1,
-    "ageRank": 64.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jessica",
     "lastName": "Costain",
     "age": "F30-39",
@@ -165,6 +143,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Dennene",
+    "lastName": "Huntley",
+    "age": "F40-49",
+    "location": "Halifax, NS",
+    "rank": 79.4,
+    "ageRank": 77.8,
+    "results": 37,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Klemens",
     "lastName": "Von Eccher",
     "age": "M30-39",
@@ -172,17 +161,6 @@
     "rank": 75.1,
     "ageRank": 79.7,
     "results": 7,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Dennene",
-    "lastName": "Huntley",
-    "age": "F40-49",
-    "location": "Halifax, NS",
-    "rank": 79,
-    "ageRank": 77.8,
-    "results": 37,
     "bib": "",
     "finishes": 1
   },
@@ -451,17 +429,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Isabelle",
-    "lastName": "Pageau",
-    "age": "F50-59",
-    "location": "Calgary, AB",
-    "rank": 70.3,
-    "ageRank": 80.1,
-    "results": 10,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Barbara",
     "lastName": "Cake-Parsons",
     "age": "F50-59",
@@ -539,13 +506,13 @@
     "finishes": 3
   },
   {
-    "firstName": "Tanya",
-    "lastName": "Woods",
+    "firstName": "Isabelle",
+    "lastName": "Pageau",
     "age": "F50-59",
-    "location": "Coaldale, AB",
-    "rank": 68.8,
-    "ageRank": 77.7,
-    "results": 24,
+    "location": "Calgary, AB",
+    "rank": 68.9,
+    "ageRank": 80.1,
+    "results": 10,
     "bib": "",
     "finishes": 0
   },
@@ -594,6 +561,17 @@
     "finishes": 2
   },
   {
+    "firstName": "Tanya",
+    "lastName": "Woods",
+    "age": "F50-59",
+    "location": "Coaldale, AB",
+    "rank": 67.4,
+    "ageRank": 77.7,
+    "results": 24,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ria",
     "lastName": "Schneider",
     "age": "F40-49",
@@ -605,15 +583,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Curtis",
-    "lastName": "Hitchcock",
-    "age": "M50-59",
+    "firstName": "Chris",
+    "lastName": "White-Gloria",
+    "age": "M30-39",
     "location": "Calgary, AB",
-    "rank": 63.7,
-    "ageRank": 66.1,
-    "results": 5,
+    "rank": 63.4,
+    "ageRank": 64.7,
+    "results": 2,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Sheri",
@@ -623,6 +601,17 @@
     "rank": 66,
     "ageRank": 93.9,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Gnapp",
+    "age": "M40-49",
+    "location": "Okotoks, AB",
+    "rank": 62.3,
+    "ageRank": 66.3,
+    "results": 10,
     "bib": "",
     "finishes": 0
   },
@@ -836,17 +825,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Mike",
-    "lastName": "Mackenzie",
-    "age": "M40-49",
-    "location": "Stony Plain, AB",
-    "rank": 57.7,
-    "ageRank": 58.4,
-    "results": 10,
-    "bib": "",
-    "finishes": 3
-  },
-  {
     "firstName": "Wayne",
     "lastName": "Smith",
     "age": "M60-69",
@@ -876,6 +854,28 @@
     "rank": 57.2,
     "ageRank": 62.6,
     "results": 3,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Curtis",
+    "lastName": "Hitchcock",
+    "age": "M50-59",
+    "location": "Calgary, AB",
+    "rank": 57.1,
+    "ageRank": 66.1,
+    "results": 5,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Mackenzie",
+    "age": "M40-49",
+    "location": "Stony Plain, AB",
+    "rank": 56.7,
+    "ageRank": 58.4,
+    "results": 10,
     "bib": "",
     "finishes": 3
   },
