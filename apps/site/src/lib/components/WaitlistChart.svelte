@@ -2,7 +2,7 @@
   import { Area, Axis, Chart, Highlight, Tooltip, Spline, Svg, Points, LinearGradient, Rule, Text, Group } from "layerchart";
   import { scaleTime, scaleOrdinal, scaleLinear } from "d3-scale";
   import { format } from "date-fns";
-  import { curveCatmullRom } from "d3-shape";
+  import { curveCatmullRom, line } from "d3-shape";
   import { schemeTableau10 } from "d3-scale-chromatic";
 
   interface RegressionData {
@@ -11,11 +11,18 @@
     r2: number;
   }
 
+  interface WaitlistProjection {
+    projectedCount: number;
+    trendPoints: { date: string; count: number }[];
+    r2: number;
+  }
+
   interface ChartEvent {
     title: string;
     data: { date: string; count: number }[];
     velocityData?: { date: string; velocity: number }[];
     regression?: RegressionData | null;
+    waitlistProjection?: WaitlistProjection | null;
   }
 
   interface ProcessedDataPoint {
@@ -36,6 +43,11 @@
     velocity: number;
   }
 
+  interface ProjectionPoint {
+    date: Date;
+    count: number;
+  }
+
   let { events, raceDate } = $props<{ events: ChartEvent[]; raceDate?: string }>();
 
   const cScale = scaleOrdinal(schemeTableau10);
@@ -50,6 +62,16 @@
         velocity: velMap.get(d.date),
       }));
     }).sort((a: ProcessedDataPoint, b: ProcessedDataPoint) => a.date.getTime() - b.date.getTime());
+  });
+
+  let projectionData: ProjectionPoint[] = $derived.by((): ProjectionPoint[] => {
+    const event = events[0]; // Assuming single event for now as per current usage
+    if (!event?.waitlistProjection?.trendPoints) return [];
+    
+    return event.waitlistProjection.trendPoints.map((p: { date: string; count: number }) => ({
+      date: new Date(p.date),
+      count: p.count
+    }));
   });
 
   let processedVelocity: VelocityPoint[] = $derived(
@@ -84,20 +106,15 @@
     return [new Date(minDate), new Date(maxDate)];
   });
 
-  // Calculate Y2 Domain (Velocity)
+  // Calculate Y2 Domain (Velocity) - min is always 0, max is at least 10
   let y2Domain: [number, number] = $derived.by((): [number, number] => {
-    if (processedVelocity.length === 0) return [0, 2];
+    if (processedVelocity.length === 0) return [0, 10];
     
     const vels = processedVelocity.map((d: VelocityPoint) => d.velocity ?? 0);
-    const current = vels[vels.length - 1];
-    const min = Math.min(...vels);
-    const max = Math.max(...vels);
+    const max = Math.max(...vels, 10); // At least 10
     
-    // Center around 'current'
-    const maxDelta = Math.max(Math.abs(max - current), Math.abs(current - min));
-    const range = maxDelta === 0 ? 0.5 : maxDelta * 1.1; // Add 10% padding
-    
-    return [current - range, current + range];
+    // Min is always 0, max with some padding
+    return [0, max * 1.1];
   });
 
 
@@ -119,7 +136,7 @@
         <Tooltip.Item
         label="Daily Position Change"
         value={data.velocity.toFixed(2)}
-        color="rgb(251 113 133)"
+        color="rgb(245 158 11)"
       />
     {/if}
   </Tooltip.List>
@@ -139,9 +156,9 @@
       {#if processedVelocity.length > 0}
         <div class="flex items-center gap-1.5">
           <div class="flex items-center">
-            <div class="w-2 h-0.5 bg-rose-400"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-rose-400 -ml-0.5"></div>
-            <div class="w-2 h-0.5 bg-rose-400 -ml-0.5"></div>
+            <div class="w-2 h-0.5 bg-amber-500"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-500 -ml-0.5"></div>
+            <div class="w-2 h-0.5 bg-amber-500 -ml-0.5"></div>
           </div>
           <span class="text-xs font-bold text-slate-600">Daily Position Change</span>
         </div>
@@ -168,7 +185,8 @@
     tooltip={{ mode: "voronoi" }}
   >
 
-    {#snippet children({ width, height, padding }: any)}
+    {#snippet children({ context }: any)}
+      {@const { width, height, padding, xScale } = context}
       {@const velScale = scaleLinear().domain(y2Domain).range([(height ?? 300) - (padding?.bottom ?? 0), padding?.top ?? 0]).nice()}
       <Svg>
         <LinearGradient id="area-gradient" class="from-indigo-500/50 to-indigo-500/0" vertical />
@@ -211,37 +229,35 @@
         <Spline class="stroke-2 stroke-indigo-500" curve={curveCatmullRom} />
 
         <!-- Data Points (Count) -->
-        <Points r={4} class="fill-indigo-500 stroke-white stroke-2" />
+        <Points r={4} class="fill-indigo-500" />
 
         <!-- Secondary Data (Velocity) - using SVG directly for correct y2 scale -->
         {#if processedVelocity.length > 0}
-          {#each processedVelocity as d, i}
-            <circle
-              cx={((d.date.getTime() - (xDomain?.[0]?.getTime() ?? 0)) / ((xDomain?.[1]?.getTime() ?? 1) - (xDomain?.[0]?.getTime() ?? 0))) * ((width ?? 0) - (padding?.left ?? 0) - (padding?.right ?? 0)) + (padding?.left ?? 0)}
-              cy={velScale(d.velocity)}
-              r={3}
-              class="fill-rose-400 stroke-white"
-              style="stroke-width: 2;"
-            />
-          {/each}
           {#if processedVelocity.length >= 2}
+            {@const velocityLine = line<VelocityPoint>()
+              .x(d => xScale(d.date))
+              .y(d => velScale(d.velocity))
+              .curve(curveCatmullRom)}
             <path
-              d={`M ${processedVelocity.map((d: VelocityPoint) => {
-                const x = ((d.date.getTime() - (xDomain?.[0]?.getTime() ?? 0)) / ((xDomain?.[1]?.getTime() ?? 1) - (xDomain?.[0]?.getTime() ?? 0))) * ((width ?? 0) - (padding?.left ?? 0) - (padding?.right ?? 0)) + (padding?.left ?? 0);
-                const y = velScale(d.velocity);
-                return `${x},${y}`;
-              }).join(' L ')}`}
-              class="stroke-rose-400 fill-none"
-              style="stroke-width: 2;"
+              d={velocityLine(processedVelocity) ?? ''}
+              class="stroke-amber-500 fill-none stroke-2"
             />
           {/if}
+          {#each processedVelocity as d, i}
+            <circle
+              cx={xScale(d.date)}
+              cy={velScale(d.velocity)}
+              r={4}
+              class="fill-amber-500"
+            />
+          {/each}
         {/if}
 
         <!-- Trend Line (Regression) -->
         {#if trendLineData.length >= 2}
           <path
             d={`M ${trendLineData.map((d: TrendPoint) => {
-              const x = ((d.date.getTime() - (xDomain?.[0]?.getTime() ?? 0)) / ((xDomain?.[1]?.getTime() ?? 1) - (xDomain?.[0]?.getTime() ?? 0))) * ((width ?? 0) - (padding?.left ?? 0) - (padding?.right ?? 0)) + (padding?.left ?? 0);
+              const x = xScale(d.date);
               const y = velScale(d.velocity);
               return `${x},${y}`;
             }).join(' L ')}`}
@@ -258,6 +274,11 @@
       <Tooltip.Root children={tooltipContent} />
     {/snippet}
   </Chart>
+
+  <!-- Subtitle/Explanation -->
+  {#if processedVelocity.length > 0}
+    <p class="text-xs text-slate-500 mt-2">Daily Position Change shows the average number of positions applicants move up per day.</p>
+  {/if}
   
   <style>
     :global(.stroke-dashed) {

@@ -165,13 +165,22 @@
     velocity: number; // positions moved per day at this percentile
   }
 
+  // Placeholder for WaitlistProjection type
+  interface WaitlistProjection {
+    projectedCount: number;
+    trendPoints: { date: string; count: number }[];
+    r2: number;
+  }
+
   // Enriched event with computed analytics properties
   interface EnrichedPageEvent extends PageEvent {
     velocity: number | null;
     velocitySeries: { date: string; velocity: number }[];
     regression: RegressionResult | null;
+    waitlistProjection?: WaitlistProjection | null;
     percentileStats: PercentileStats[];
     competitiveness: CompetitivenessStats | null;
+    // Add other enriched properties here as needed
   }
 
   function calculatePercentileVelocities(event: PageEvent): PercentileStats[] {
@@ -240,9 +249,9 @@
       const curr = sortedData[i];
 
       if (!curr.applicants || !prev.applicants) continue;
-
-      // Cohort: Top 25 at current time t
-      const cohort = curr.applicants.slice(0, 25);
+      
+      // Calculate velocity for ALL applicants, not just top 25
+      const cohort = curr.applicants;
       const velocities: number[] = [];
 
       const days =
@@ -284,7 +293,7 @@
     velocitySeries: { date: string; velocity: number }[],
     raceDate: string | null,
   ): RegressionResult | null {
-    const MIN_SAMPLES = 10;
+    const MIN_SAMPLES = 30; // User suggested 30+ days for accuracy
     const MAX_PROJECTION = 500; // Cap projection at 500 positions
     const R2_THRESHOLD = 0.99; // R² above this suggests overfitting/few points
 
@@ -365,7 +374,9 @@
         predict,
         trendPoints,
         projectedVelocityAtRace: null,
-        projectedPositionChange,
+        projectedPositionChange: projectedPositionChange
+          ? Math.min(projectedPositionChange, MAX_PROJECTION)
+          : null,
       };
     }
 
@@ -454,22 +465,155 @@
     };
   }
 
+  function calculateWaitlistRegression(
+    eventData: PageEvent["data"] | undefined,
+    raceDate: string | null,
+  ): WaitlistProjection | null {
+    if (!eventData || eventData.length < 30) return null; // Need 30+ days for accuracy
+    
+    // Sort by date
+    const sortedData = [...eventData].sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+    );
+    
+    // Convert to [dayIndex, count]
+    const firstDate = new Date(sortedData[0].date).getTime();
+    const data: [number, number][] = sortedData.map(d => [
+      Math.floor((new Date(d.date).getTime() - firstDate) / (1000 * 60 * 60 * 24)),
+      d.count
+    ]);
+    
+    const x = data.map(d => d[0]);
+    const y = data.map(d => d[1]);
+    const n = x.length;
+    
+    // Quadratic Regression: y = a + bx + cx^2
+    const sumX = x.reduce((a, b) => a + b, 0);
+    const sumX2 = x.reduce((a, b) => a + b * b, 0);
+    const sumX3 = x.reduce((a, b) => a + b * b * b, 0);
+    const sumX4 = x.reduce((a, b) => a + b * b * b * b, 0);
+    const sumY = y.reduce((a, b) => a + b, 0);
+    const sumXY = x.reduce((a, xi, i) => a + xi * y[i], 0);
+    const sumX2Y = x.reduce((a, xi, i) => a + xi * xi * y[i], 0);
+    
+    // Matrix Determinants for Cramer's Rule
+    const det =
+      n * (sumX2 * sumX4 - sumX3 * sumX3) -
+      sumX * (sumX * sumX4 - sumX3 * sumX2) +
+      sumX2 * (sumX * sumX3 - sumX2 * sumX2);
+      
+    let predict: (xi: number) => number;
+    let r2 = 0;
+    
+    if (Math.abs(det) < 1e-10) {
+      // Fallback to Linear
+      const regression = linearRegression(data);
+      predict = linearRegressionLine(regression);
+      r2 = rSquared(data, predict);
+    } else {
+      // Solve Quadratic
+      const detA =
+        sumY * (sumX2 * sumX4 - sumX3 * sumX3) -
+        sumX * (sumXY * sumX4 - sumX3 * sumX2Y) +
+        sumX2 * (sumXY * sumX3 - sumX2 * sumX2Y);
+      const detB =
+        n * (sumXY * sumX4 - sumX3 * sumX2Y) -
+        sumY * (sumX * sumX4 - sumX3 * sumX2) +
+        sumX2 * (sumX * sumX2Y - sumXY * sumX2);
+      const detC =
+        n * (sumX2 * sumX2Y - sumXY * sumX3) -
+        sumX * (sumX * sumX2Y - sumXY * sumX2) +
+        sumY * (sumX * sumX3 - sumX2 * sumX2);
+        
+      const a = detA / det;
+      const b = detB / det;
+      const c = detC / det;
+      predict = (xi: number) => a + b * xi + c * xi * xi;
+      
+      const yMean = sumY / n;
+      const ssTot = y.reduce((acc, yi) => acc + (yi - yMean) ** 2, 0);
+      const ssRes = y.reduce((acc, yi, i) => acc + (yi - predict(x[i])) ** 2, 0);
+      r2 = ssTot > 0 ? 1 - ssRes / ssTot : 0;
+    }
+    
+    if (r2 < 0.1) return null; // Ignore very poor fits
+    
+    // Generate full trend line from start to race day
+    const trendPoints: { date: string; count: number }[] = [];
+    const maxDayIndex = Math.max(...x);
+    let raceDayIndex = maxDayIndex;
+    
+    if (raceDate) {
+      raceDayIndex = Math.floor((new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24));
+    }
+    
+    // Generate points for the entire range (start to race day)
+    for (let i = 0; i <= raceDayIndex; i++) {
+        const d = new Date(firstDate + i * 1000 * 60 * 60 * 24);
+        trendPoints.push({
+            date: d.toISOString(),
+            count: Math.round(predict(i)) 
+        });
+    }
+    
+    
+    // Ensure accurate last point
+    const finalCount = Math.round(predict(raceDayIndex));
+
+    // Sanity checks
+    const currentMax = Math.max(...y);
+    const currentCount = y[y.length - 1];
+
+    // 1. Curvature check
+    // High curvature means the trend is accelerating unrealistically
+    // With x in days, c > 0.05 is HUGE acceleration (1 person/day^2 => 100 people/day after 10 days)
+    // We only care if c is used (quadratic)
+    if (Math.abs(det) >= 1e-10) { 
+       const detC =
+        n * (sumX2 * sumX2Y - sumXY * sumX3) -
+        sumX * (sumX * sumX2Y - sumXY * sumX2) +
+        sumY * (sumX * sumX3 - sumX2 * sumX2);
+       const c = detC / det;
+       if (Math.abs(c) > 0.05) return null;
+    }
+
+    // 2. Growth check (stricter)
+    if (finalCount > currentMax * 1.1) return null; 
+    
+    // 3. Rapid clearing check
+    const daysToRace = raceDayIndex - maxDayIndex;
+    if (finalCount === 0 && daysToRace > 1 && currentCount > 200) {
+         if (daysToRace < 10) return null; 
+    }
+
+    if (r2 < 0.2) return null; // Stricter R2
+    
+    return {
+        projectedCount: Math.max(0, finalCount),
+        trendPoints,
+        r2
+    };
+  }
+
   let activeEvents = $derived(
     activeEventsBase.map((e: PageEvent): EnrichedPageEvent => {
       const velocitySeries = calculateVelocitySeries(e);
-      // Calculate 7D movement by summing all daily velocities
-      const movement7d =
-        velocitySeries.length > 0
-          ? velocitySeries.reduce((sum, v) => sum + v.velocity, 0)
-          : null;
       const regressionResult = calculateRegression(velocitySeries, race.date);
       const percentileStats = calculatePercentileVelocities(e);
       const competitiveness = calculateCompetitiveness(e.entrants);
+      const waitlistProjection = calculateWaitlistRegression(e.data, race.date);
+      
+      // Calculate 7D movement as average of percentile velocities for consistency
+      const movement7d = percentileStats.length > 0
+        ? Math.round(percentileStats.reduce((sum, p) => sum + p.velocity, 0) / percentileStats.length)
+        : null;
+      
       return {
         ...e,
         velocity: movement7d,
         velocitySeries,
         regression: regressionResult,
+        waitlistProjection,
         percentileStats,
         competitiveness,
       };
@@ -1619,6 +1763,7 @@
                   data: e.data || [],
                   velocityData: e.velocitySeries || [],
                   regression: e.regression,
+                  waitlistProjection: e.waitlistProjection,
                 }))}
                 raceDate={race.date}
               />
