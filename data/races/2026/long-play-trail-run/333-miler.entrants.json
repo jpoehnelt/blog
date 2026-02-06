@@ -1,5 +1,16 @@
 [
   {
+    "firstName": "Rebecca",
+    "lastName": "Connor",
+    "age": "F30-39",
+    "location": "Silver Springs, FL",
+    "rank": 100,
+    "ageRank": 100,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Eric",
     "lastName": "Zajac",
     "age": "M40-49",
@@ -7,6 +18,50 @@
     "rank": 100,
     "ageRank": 100,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Katie",
+    "lastName": "Rozar",
+    "age": "F30-39",
+    "location": "Saint Petersburg, FL",
+    "rank": 87.2,
+    "ageRank": 96.6,
+    "results": 30,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Missy",
+    "lastName": "Smith",
+    "age": "F30-39",
+    "location": "Beverly Hills, FL",
+    "rank": 85.3,
+    "ageRank": 94,
+    "results": 17,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Elise",
+    "lastName": "Helmbrecht",
+    "age": "F30-39",
+    "location": "Clearwater, FL",
+    "rank": 84.6,
+    "ageRank": 88.4,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kendra",
+    "lastName": "Eerdmans",
+    "age": "F30-39",
+    "location": "Minot, ND",
+    "rank": 84.2,
+    "ageRank": 86.5,
+    "results": 21,
     "bib": "",
     "finishes": 0
   },
@@ -22,127 +77,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Rebecca",
-    "lastName": "Connor",
-    "age": "F30-39",
-    "location": "Silver Springs, FL",
-    "rank": 100,
-    "ageRank": 100,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andrew",
-    "lastName": "Bell",
-    "age": "M40-49",
-    "location": "Palmetto, FL",
-    "rank": 78.5,
-    "ageRank": 84.2,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andy",
-    "lastName": "Mills",
-    "age": "M40-49",
-    "location": "Orlando, FL",
-    "rank": 78.4,
-    "ageRank": 91,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andy",
-    "lastName": "Dunn",
-    "age": "M40-49",
-    "location": "Hudson, FL",
-    "rank": 75.2,
-    "ageRank": 80.1,
-    "results": 21,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Joseph",
-    "lastName": "Miller",
-    "age": "M20-29",
-    "location": "Port Orange, FL",
-    "rank": 73.9,
-    "ageRank": 86,
-    "results": 9,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Katie",
-    "lastName": "Rozar",
-    "age": "F30-39",
-    "location": "Saint Petersburg, FL",
-    "rank": 87.2,
-    "ageRank": 96.6,
-    "results": 30,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Johan",
-    "lastName": "Quitian",
-    "age": "M30-39",
-    "location": "Kissimmee, FL",
-    "rank": 72.2,
-    "ageRank": 80.2,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Missy",
-    "lastName": "Smith",
-    "age": "F30-39",
-    "location": "Beverly Hills, FL",
-    "rank": 85.3,
-    "ageRank": 94,
-    "results": 17,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Josh",
-    "lastName": "Kramer",
-    "age": "M30-39",
-    "location": "Irondequoit, NY",
-    "rank": 71,
-    "ageRank": 76.5,
-    "results": 43,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Elise",
-    "lastName": "Helmbrecht",
-    "age": "F30-39",
-    "location": "Clearwater, FL",
-    "rank": 84.6,
-    "ageRank": 88.4,
-    "results": 5,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Kendra",
-    "lastName": "Eerdmans",
-    "age": "F30-39",
-    "location": "Minot, ND",
-    "rank": 84.2,
-    "ageRank": 86.5,
-    "results": 21,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ariel",
     "lastName": "Bernstein",
     "age": "F30-39",
@@ -151,7 +85,7 @@
     "ageRank": 89.8,
     "results": 24,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Brenda",
@@ -187,6 +121,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Andrew",
+    "lastName": "Bell",
+    "age": "M40-49",
+    "location": "Palmetto, FL",
+    "rank": 78.5,
+    "ageRank": 84.2,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andy",
+    "lastName": "Mills",
+    "age": "M40-49",
+    "location": "Orlando, FL",
+    "rank": 78.4,
+    "ageRank": 91,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Nicole",
     "lastName": "Fox",
     "age": "F40-49",
@@ -194,17 +150,6 @@
     "rank": 78.1,
     "ageRank": 86.5,
     "results": 26,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Crue",
-    "lastName": "Savage",
-    "age": "M20-29",
-    "location": "Bradenton, FL",
-    "rank": 64.2,
-    "ageRank": 81.4,
-    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -231,24 +176,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Gordon",
-    "lastName": "Bloom",
-    "age": "M50-59",
-    "location": "St Cloud, FL",
-    "rank": 62.9,
-    "ageRank": 78.6,
-    "results": 13,
-    "bib": "",
-    "finishes": 4
-  },
-  {
-    "firstName": "William Romain",
-    "lastName": "Spell",
-    "age": "M50-59",
-    "location": "Webster, FL",
-    "rank": 62.6,
-    "ageRank": 75.9,
-    "results": 1,
+    "firstName": "Andy",
+    "lastName": "Dunn",
+    "age": "M40-49",
+    "location": "Hudson, FL",
+    "rank": 75.2,
+    "ageRank": 80.1,
+    "results": 21,
     "bib": "",
     "finishes": 0
   },
@@ -264,48 +198,37 @@
     "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Fortenberry",
-    "age": "M40-49",
-    "location": "Jacksonville, FL",
-    "rank": 60.9,
-    "ageRank": 64.9,
+    "firstName": "Joseph",
+    "lastName": "Miller",
+    "age": "M20-29",
+    "location": "Port Orange, FL",
+    "rank": 73.9,
+    "ageRank": 86,
     "results": 9,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Robert",
-    "lastName": "Palmore",
-    "age": "M50-59",
-    "location": "Lakeland, FL",
-    "rank": 60.5,
-    "ageRank": 67.8,
-    "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "William",
-    "lastName": "Kramper",
-    "age": "M40-49",
-    "location": "Lakeland, FL",
-    "rank": 59.3,
-    "ageRank": 60.4,
+    "firstName": "Johan",
+    "lastName": "Quitian",
+    "age": "M30-39",
+    "location": "Kissimmee, FL",
+    "rank": 72.2,
+    "ageRank": 80.2,
     "results": 1,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Jason",
-    "lastName": "Kumlien",
-    "age": "M50-59",
-    "location": "Tampa, FL",
-    "rank": 58.4,
-    "ageRank": 75.8,
-    "results": 60,
+    "firstName": "Josh",
+    "lastName": "Kramer",
+    "age": "M30-39",
+    "location": "Irondequoit, NY",
+    "rank": 71,
+    "ageRank": 76.5,
+    "results": 43,
     "bib": "",
-    "finishes": 2
+    "finishes": 0
   },
   {
     "firstName": "Renea",
@@ -317,28 +240,6 @@
     "results": 4,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Kjell",
-    "lastName": "Eiken",
-    "age": "M50-59",
-    "location": "Celebration, FL",
-    "rank": 57,
-    "ageRank": 78.6,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Hubbard",
-    "age": "M60-69",
-    "location": "Clermont, FL",
-    "rank": 56,
-    "ageRank": 77.8,
-    "results": 12,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Christine",
@@ -363,13 +264,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Ralph",
-    "lastName": "Dumke",
+    "firstName": "Crue",
+    "lastName": "Savage",
+    "age": "M20-29",
+    "location": "Bradenton, FL",
+    "rank": 64.2,
+    "ageRank": 81.4,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Wesley",
+    "lastName": "Smith",
     "age": "M60-69",
-    "location": "Ponte Vedra Beach, FL",
-    "rank": 54.3,
-    "ageRank": 86.9,
-    "results": 8,
+    "location": "Sanford, FL",
+    "rank": 63.6,
+    "ageRank": 81.5,
+    "results": 48,
     "bib": "",
     "finishes": 0
   },
@@ -382,7 +294,29 @@
     "ageRank": 81.5,
     "results": 36,
     "bib": "",
-    "finishes": 6
+    "finishes": 0
+  },
+  {
+    "firstName": "Gordon",
+    "lastName": "Bloom",
+    "age": "M50-59",
+    "location": "St Cloud, FL",
+    "rank": 62.9,
+    "ageRank": 78.6,
+    "results": 13,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "William Romain",
+    "lastName": "Spell",
+    "age": "M50-59",
+    "location": "Webster, FL",
+    "rank": 62.6,
+    "ageRank": 75.9,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Jaimela",
@@ -393,7 +327,18 @@
     "ageRank": 85.7,
     "results": 13,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Fortenberry",
+    "age": "M40-49",
+    "location": "Jacksonville, FL",
+    "rank": 60.9,
+    "ageRank": 64.9,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Gloria",
@@ -407,6 +352,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Robert",
+    "lastName": "Palmore",
+    "age": "M50-59",
+    "location": "Lakeland, FL",
+    "rank": 60.5,
+    "ageRank": 67.8,
+    "results": 16,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Beverly",
     "lastName": "Miller",
     "age": "F40-49",
@@ -415,16 +371,60 @@
     "ageRank": 65.8,
     "results": 15,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Avers",
-    "age": "M60-69",
-    "location": "Sebastian, FL",
-    "rank": 49.8,
-    "ageRank": 100,
+    "firstName": "William",
+    "lastName": "Kramper",
+    "age": "M40-49",
+    "location": "Lakeland, FL",
+    "rank": 59.3,
+    "ageRank": 60.4,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Kumlien",
+    "age": "M50-59",
+    "location": "Tampa, FL",
+    "rank": 58.4,
+    "ageRank": 75.8,
+    "results": 60,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kjell",
+    "lastName": "Eiken",
+    "age": "M50-59",
+    "location": "Celebration, FL",
+    "rank": 57,
+    "ageRank": 78.6,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Hubbard",
+    "age": "M60-69",
+    "location": "Clermont, FL",
+    "rank": 56,
+    "ageRank": 77.8,
+    "results": 12,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ralph",
+    "lastName": "Dumke",
+    "age": "M60-69",
+    "location": "Ponte Vedra Beach, FL",
+    "rank": 54.3,
+    "ageRank": 86.9,
+    "results": 8,
     "bib": "",
     "finishes": 0
   },
@@ -436,6 +436,28 @@
     "rank": 52,
     "ageRank": 58.8,
     "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Buning",
+    "age": "M50-59",
+    "location": "Winter Park, FL",
+    "rank": 51.2,
+    "ageRank": 66.1,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Avers",
+    "age": "M60-69",
+    "location": "Sebastian, FL",
+    "rank": 49.8,
+    "ageRank": 100,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -477,17 +499,6 @@
     "lastName": "Metcalf",
     "age": "F40-49",
     "location": "Groveland, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Steve",
-    "lastName": "Wrona",
-    "age": "M30-39",
-    "location": "Land O’ Lakes, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -576,6 +587,17 @@
     "lastName": "Jones",
     "age": "F40-49",
     "location": "Naples, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steve",
+    "lastName": "Wrona",
+    "age": "M30-39",
+    "location": "Land O’ Lakes, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
