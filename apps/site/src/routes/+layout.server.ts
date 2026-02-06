@@ -47,7 +47,8 @@ export const load: LayoutServerLoad = async () => {
     })
     .filter(
       (r): r is MyRaceEntryResolved => r !== null && new Date(r.date) > now,
-    );
+    )
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
   return {
     myRaces,
