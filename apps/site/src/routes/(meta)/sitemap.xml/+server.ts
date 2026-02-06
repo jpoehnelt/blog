@@ -3,7 +3,7 @@ import { XMLBuilder } from "fast-xml-parser";
 import { BASE_URL } from "$lib/constants";
 import { type Post } from "$lib/content/posts";
 import { getAllTags, getPostsMetadata } from "$lib/content/posts.server";
-import { getStravaActivities, getActivitySlug } from "$lib/content/strava";
+
 import racesData from "$data/races.json";
 
 import type { RequestHandler } from "./$types";
@@ -13,7 +13,7 @@ export const prerender = true;
 export const GET: RequestHandler = async () => {
   const posts = getPostsMetadata();
   const tags = getAllTags();
-  const activities = await getStravaActivities();
+
   const today = new Date().toISOString().split("T")[0];
 
   // Get unique years from races
@@ -51,7 +51,6 @@ export const GET: RequestHandler = async () => {
         { loc: BASE_URL, lastmod: today },
         { loc: `${BASE_URL}posts/`, lastmod: today },
         { loc: `${BASE_URL}tags/`, lastmod: today },
-        { loc: `${BASE_URL}activities/`, lastmod: today },
         { loc: `${BASE_URL}ultras/races/`, lastmod: today },
         // Race year pages
         ...raceYears.map((year: number) => ({
@@ -73,13 +72,7 @@ export const GET: RequestHandler = async () => {
             lastmod: today,
           })),
         )
-        .concat(
-          // Activities
-          activities.map((activity) => ({
-            loc: `${BASE_URL}activities/${getActivitySlug(activity)}/`,
-            lastmod: new Date(activity.start_date).toISOString().split("T")[0],
-          })),
-        )
+
         .concat(raceUrls),
     },
   };
