@@ -3,7 +3,7 @@
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
   import Sparkline from "$lib/components/Sparkline.svelte";
-  import { getActivitySlug, type StravaActivitySimple } from "$lib/content/strava";
+  import { type StravaActivitySimple } from "$lib/content/strava";
   import { ExternalLink as ExternalLinkIcon, Footprints } from "@lucide/svelte";
 
   interface Props {
@@ -18,8 +18,10 @@
   <div class="min-w-0 flex-1">
     <div class="flex items-center gap-2">
       <a
-        href={`/activities/${getActivitySlug(activity)}`}
+        href={`https://www.strava.com/activities/${activity.id}`}
         class="hover:underline font-medium"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {activity.name}
       </a>
