@@ -95,7 +95,11 @@ export const load: PageServerLoad = async ({ fetch }) => {
     const year = activityDate.getFullYear();
     const dayOfWeek = activityDate.getDay();
     const month = activityDate.getMonth();
-    const hour = activityDate.getHours();
+    // Use start_date_local for hour to show actual local time of activity
+    const localDate = new Date(
+      (activity as any).start_date_local || activity.start_date,
+    );
+    const hour = localDate.getUTCHours(); // Use UTC since start_date_local has no timezone
     const hourBucket = Math.floor(hour / 3); // 0-7 (3-hour buckets)
 
     // Aggregate by year
