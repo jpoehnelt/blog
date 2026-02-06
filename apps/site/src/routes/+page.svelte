@@ -8,6 +8,7 @@
   import RunningChart from "$lib/components/RunningChart.svelte";
   import ActivityListItem from "$lib/components/ActivityListItem.svelte";
   import PostCard from "$lib/components/PostCard.svelte";
+  import StravaActivityHeatmap from "$lib/components/StravaActivityHeatmap.svelte";
   import RaceStatsBanner from "$lib/components/RaceStatsBanner.svelte";
   import MyNextRaceCard from "$lib/components/MyNextRaceCard.svelte";
   import HotWaitlistsCard from "$lib/components/HotWaitlistsCard.svelte";
@@ -40,6 +41,7 @@
   const hotWaitlists = data.hotWaitlists;
   const topEliteRaces = data.topEliteRaces;
   const upcomingRacesWidget = data.upcomingRacesWidget;
+  const heatmapData = data.heatmapData;
 
   const schema: WithContext<Thing>[] = [
     {
@@ -179,6 +181,23 @@
           <PostCard {post} />
         {/each}
 
+        <!-- Strava Activity Heatmap -->
+        <div class="md:col-span-2">
+          <StravaActivityHeatmap
+            dayOfWeekByYear={heatmapData.dayOfWeekByYear}
+            monthByYear={heatmapData.monthByYear}
+            hourByYear={heatmapData.hourByYear}
+            last12MonthsCalendar={heatmapData.last12MonthsCalendar}
+            stats={heatmapData.stats}
+            currentYear={heatmapData.currentYear}
+          />
+        </div>
+
+        <!-- Next 2 posts -->
+        {#each otherPosts.slice(4, 6) as post}
+          <PostCard {post} />
+        {/each}
+
         <!-- Elite Spotlight Card -->
         {#if topEliteRaces && topEliteRaces.length > 0}
           <div class="md:col-span-2">
@@ -187,7 +206,7 @@
         {/if}
 
         <!-- Remaining posts -->
-        {#each otherPosts.slice(4, 20) as post}
+        {#each otherPosts.slice(6, 20) as post}
           <PostCard {post} />
         {/each}
       </div>
@@ -246,4 +265,3 @@
     </div>
   </div>
 </main>
-

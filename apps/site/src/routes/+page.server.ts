@@ -48,6 +48,147 @@ export const load: PageServerLoad = async ({ fetch }) => {
     }
   }
 
+  // ========== HEATMAP DATA AGGREGATION ==========
+  const currentYear = today.getFullYear();
+
+  // Determine years to include (from earliest activity to current year)
+  const allYears = new Set<number>();
+  for (const activity of allActivities) {
+    if (activity.start_date) {
+      allYears.add(new Date(activity.start_date).getFullYear());
+    }
+  }
+  const yearsArray = Array.from(allYears).sort((a, b) => a - b);
+  const displayYears = yearsArray.slice(-8); // Last 8 years
+
+  // Initialize aggregation structures
+  const dayOfWeekByYear: Record<number, number[]> = {};
+  const monthByYear: Record<number, number[]> = {};
+  const hourByYear: Record<number, number[]> = {};
+
+  for (const year of displayYears) {
+    dayOfWeekByYear[year] = [0, 0, 0, 0, 0, 0, 0]; // Sun-Sat
+    monthByYear[year] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Jan-Dec
+    hourByYear[year] = [0, 0, 0, 0, 0, 0, 0, 0]; // 8 buckets (3-hour each)
+  }
+
+  // Calendar data for last 12 months
+  const last12MonthsCalendar: Record<
+    string,
+    { count: number; distance: number }
+  > = {};
+
+  // Stats accumulators
+  let totalWorkouts = 0;
+  let totalDistance = 0;
+  let totalTime = 0;
+  let totalElevation = 0;
+  const dowCounts = [0, 0, 0, 0, 0, 0, 0];
+  const monthCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  const hourCounts = [0, 0, 0, 0, 0, 0, 0, 0];
+
+  // Process all activities for heatmap
+  for (const activity of allActivities) {
+    if (!activity.start_date) continue;
+
+    const activityDate = new Date(activity.start_date);
+    const year = activityDate.getFullYear();
+    const dayOfWeek = activityDate.getDay();
+    const month = activityDate.getMonth();
+    const hour = activityDate.getHours();
+    const hourBucket = Math.floor(hour / 3); // 0-7 (3-hour buckets)
+
+    // Aggregate by year
+    if (displayYears.includes(year)) {
+      dayOfWeekByYear[year][dayOfWeek]++;
+      monthByYear[year][month]++;
+      hourByYear[year][hourBucket]++;
+    }
+
+    // Calendar data for last 12 months
+    const twelveMonthsAgo = new Date();
+    twelveMonthsAgo.setMonth(twelveMonthsAgo.getMonth() - 12);
+    if (activityDate >= twelveMonthsAgo) {
+      const dateStr = activityDate.toISOString().split("T")[0];
+      if (!last12MonthsCalendar[dateStr]) {
+        last12MonthsCalendar[dateStr] = { count: 0, distance: 0 };
+      }
+      last12MonthsCalendar[dateStr].count++;
+      last12MonthsCalendar[dateStr].distance += activity.distance || 0;
+    }
+
+    // YTD stats (current year only)
+    if (year === currentYear) {
+      totalWorkouts++;
+      totalDistance += activity.distance || 0;
+      totalTime += activity.moving_time || 0;
+      totalElevation += activity.total_elevation_gain || 0;
+    }
+
+    // Overall stats for most active
+    dowCounts[dayOfWeek]++;
+    monthCounts[month]++;
+    hourCounts[hourBucket]++;
+  }
+
+  // Find most active day, month, hour
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const hourNames = ["12a", "3a", "6a", "9a", "12p", "3p", "6p", "9p"];
+
+  const maxDowIdx = dowCounts.indexOf(Math.max(...dowCounts));
+  const maxMonthIdx = monthCounts.indexOf(Math.max(...monthCounts));
+  const maxHourIdx = hourCounts.indexOf(Math.max(...hourCounts));
+
+  const heatmapData = {
+    dayOfWeekByYear: displayYears.map((year) => ({
+      year,
+      data: dayOfWeekByYear[year],
+    })),
+    monthByYear: displayYears.map((year) => ({
+      year,
+      data: monthByYear[year],
+    })),
+    hourByYear: displayYears.map((year) => ({
+      year,
+      data: hourByYear[year],
+    })),
+    last12MonthsCalendar: Object.entries(last12MonthsCalendar).map(
+      ([date, val]) => ({
+        date,
+        count: val.count,
+        distance: val.distance,
+      }),
+    ),
+    currentYear,
+    stats: {
+      totalWorkouts,
+      totalDistance,
+      totalTime,
+      totalElevation,
+      mostActiveDay: dayNames[maxDowIdx],
+      mostActiveDayCount: dowCounts[maxDowIdx],
+      mostActiveMonth: monthNames[maxMonthIdx],
+      mostActiveMonthCount: monthCounts[maxMonthIdx],
+      peakHour: hourNames[maxHourIdx],
+      peakHourCount: hourCounts[maxHourIdx],
+    },
+  };
+  // ========== END HEATMAP DATA ==========
+
   // Load race data for homepage widgets
   const raceManager = new RaceDataManager(fetch);
   const allRaces = await raceManager.getRaces();
@@ -159,6 +300,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
     recentActivities: allActivities.slice(0, 10).map(mapStravaActivity),
     recentRaces: races.slice(0, 10).map(mapStravaActivity),
     runningChartData,
+    heatmapData,
     // Race widget data
     raceStats: {
       totalRaces,
