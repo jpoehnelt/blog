@@ -1,13 +1,13 @@
 <script lang="ts">
   import * as Sheet from "$lib/components/ui/sheet";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
   import MobileMenuIcon from "$lib/components/MobileMenuIcon.svelte";
+  import SocialLink from "$lib/components/SocialLink.svelte";
   import NavLink from "$lib/components/NavLink.svelte";
   import Search from "$lib/components/Search.svelte";
   import { DEFAULT_TITLE as siteTitle } from "$lib/constants";
   import { page } from "$app/state";
 
-  interface SocialLink {
+  interface SocialLinkData {
     name: string;
     url: string;
     icon: string;
@@ -16,7 +16,7 @@
   let {
     socialLinks = [],
   }: {
-    socialLinks?: SocialLink[];
+    socialLinks?: SocialLinkData[];
   } = $props();
 
   let mobileMenuOpen = $state(false);
@@ -74,21 +74,7 @@
           aria-label="Social links"
         >
           {#each socialLinks as social}
-            <ExternalLink
-              href={social.url}
-              class="text-foreground/60 hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded p-1"
-              aria-label={social.name}
-            >
-              <span class="sr-only">{social.name}</span>
-              <svg
-                class="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d={social.icon} />
-              </svg>
-            </ExternalLink>
+            <SocialLink {...social} />
           {/each}
         </div>
       {/if}
@@ -135,20 +121,7 @@
               </p>
               <div class="flex flex-col gap-2">
                 {#each socialLinks as social}
-                  <ExternalLink
-                    href={social.url}
-                    class="px-4 py-3 text-base font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 flex items-center gap-3"
-                  >
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d={social.icon} />
-                    </svg>
-                    {social.name}
-                  </ExternalLink>
+                  <SocialLink {...social} variant="mobile" />
                 {/each}
               </div>
             </div>
