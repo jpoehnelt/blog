@@ -66,23 +66,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Lizbeth",
-    "lastName": "Munoz",
-    "age": "F20-29",
-    "location": "Mesa, AZ",
-    "rank": 84.7,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Leslie",
     "lastName": "Sherlin",
     "age": "M50-59",
     "location": "Mesa, AZ",
     "rank": 76.6,
     "ageRank": 77.4,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lizbeth",
+    "lastName": "Munoz",
+    "age": "F20-29",
+    "location": "Mesa, AZ",
+    "rank": 84.7,
+    "ageRank": 100,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -165,17 +165,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Katie",
-    "lastName": "Houghton",
-    "age": "F30-39",
-    "location": "Peoria, AZ",
-    "rank": 72.3,
-    "ageRank": 72.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jake",
     "lastName": "Fedro",
     "age": "M30-39",
@@ -185,6 +174,28 @@
     "results": 11,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Troy",
+    "lastName": "Huisman",
+    "age": "M40-49",
+    "location": "Phoenix, AZ",
+    "rank": 65.1,
+    "ageRank": 77.1,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Katie",
+    "lastName": "Houghton",
+    "age": "F30-39",
+    "location": "Peoria, AZ",
+    "rank": 72.3,
+    "ageRank": 72.3,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Courtney",
@@ -209,15 +220,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Troy",
-    "lastName": "Huisman",
-    "age": "M40-49",
+    "firstName": "Corwin",
+    "lastName": "Brown",
+    "age": "M50-59",
     "location": "Phoenix, AZ",
-    "rank": 65.1,
-    "ageRank": 77.1,
-    "results": 3,
+    "rank": 62.5,
+    "ageRank": 73.9,
+    "results": 17,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Shawna",
@@ -231,17 +242,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Corwin",
-    "lastName": "Brown",
-    "age": "M50-59",
-    "location": "Phoenix, AZ",
-    "rank": 62.5,
-    "ageRank": 73.9,
-    "results": 17,
-    "bib": "",
-    "finishes": 2
-  },
-  {
     "firstName": "Nathan",
     "lastName": "Coury",
     "age": "M30-39",
@@ -249,17 +249,6 @@
     "rank": 61.6,
     "ageRank": 84.1,
     "results": 23,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Emily",
-    "lastName": "Reichman",
-    "age": "F50-59",
-    "location": "Phoenix, AZ",
-    "rank": 67.3,
-    "ageRank": 88.5,
-    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -286,13 +275,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Cecilia",
-    "lastName": "Cummins",
-    "age": "F60-69",
-    "location": "Apache Junction, AZ",
-    "rank": 66.3,
-    "ageRank": 95.4,
-    "results": 10,
+    "firstName": "Emily",
+    "lastName": "Reichman",
+    "age": "F50-59",
+    "location": "Phoenix, AZ",
+    "rank": 67.3,
+    "ageRank": 88.5,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -330,6 +319,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Cecilia",
+    "lastName": "Cummins",
+    "age": "F60-69",
+    "location": "Apache Junction, AZ",
+    "rank": 66.3,
+    "ageRank": 95.4,
+    "results": 10,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Daniel",
     "lastName": "De Anda",
     "age": "M40-49",
@@ -339,17 +339,6 @@
     "results": 1,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Andrea",
-    "lastName": "Hacker Davidson",
-    "age": "F40-49",
-    "location": "Phoenix, AZ",
-    "rank": 64.6,
-    "ageRank": 78.1,
-    "results": 7,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Devon",
@@ -385,6 +374,17 @@
     "finishes": 2
   },
   {
+    "firstName": "Andrea",
+    "lastName": "Hacker Davidson",
+    "age": "F40-49",
+    "location": "Phoenix, AZ",
+    "rank": 64.6,
+    "ageRank": 78.1,
+    "results": 7,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Jack",
     "lastName": "Sorrentino",
     "age": "M<20",
@@ -396,17 +396,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Katrina",
-    "lastName": "Detmer",
-    "age": "F20-29",
-    "location": "Phoenix, AZ",
-    "rank": 61.5,
-    "ageRank": 69.5,
-    "results": 9,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Michael",
     "lastName": "Amuso",
     "age": "M60-69",
@@ -414,17 +403,6 @@
     "rank": 55.9,
     "ageRank": 72.1,
     "results": 37,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alyssa",
-    "lastName": "Curtin",
-    "age": "F30-39",
-    "location": "Cave Creek, AZ",
-    "rank": 61.3,
-    "ageRank": 61.3,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -451,6 +429,50 @@
     "finishes": 0
   },
   {
+    "firstName": "Katrina",
+    "lastName": "Detmer",
+    "age": "F20-29",
+    "location": "Phoenix, AZ",
+    "rank": 61.5,
+    "ageRank": 69.5,
+    "results": 9,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Stephen",
+    "lastName": "Ochoa",
+    "age": "M60-69",
+    "location": "Mesa, AZ",
+    "rank": 54.9,
+    "ageRank": 66.5,
+    "results": 20,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alyssa",
+    "lastName": "Curtin",
+    "age": "F30-39",
+    "location": "Cave Creek, AZ",
+    "rank": 61.3,
+    "ageRank": 61.3,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "E.J.",
+    "lastName": "Valinski",
+    "age": "M50-59",
+    "location": "Phoenix, AZ",
+    "rank": 54.1,
+    "ageRank": 65.1,
+    "results": 30,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Eliana",
     "lastName": "Schonau",
     "age": "F30-39",
@@ -473,17 +495,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephen",
-    "lastName": "Ochoa",
-    "age": "M60-69",
-    "location": "Mesa, AZ",
-    "rank": 54.9,
-    "ageRank": 66.5,
-    "results": 20,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ann",
     "lastName": "Miller",
     "age": "F60-69",
@@ -493,17 +504,6 @@
     "results": 34,
     "bib": "",
     "finishes": 4
-  },
-  {
-    "firstName": "E.J.",
-    "lastName": "Valinski",
-    "age": "M50-59",
-    "location": "Phoenix, AZ",
-    "rank": 54.1,
-    "ageRank": 65.1,
-    "results": 30,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Carrie",
@@ -539,17 +539,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Karly",
-    "lastName": "Garrett",
-    "age": "F20-29",
-    "location": "Phoenix, AZ",
-    "rank": 57.6,
-    "ageRank": 79.8,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Garrett",
     "lastName": "Simmons",
     "age": "M30-39",
@@ -561,12 +550,34 @@
     "finishes": 0
   },
   {
+    "firstName": "Karly",
+    "lastName": "Garrett",
+    "age": "F20-29",
+    "location": "Phoenix, AZ",
+    "rank": 57.6,
+    "ageRank": 79.8,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Bradley",
     "lastName": "Mullen",
     "age": "M40-49",
     "location": "Phoenix, AZ",
     "rank": 51.2,
     "ageRank": 68.9,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Corey",
+    "lastName": "Frederic",
+    "age": "M60-69",
+    "location": "PHOENIX, AZ",
+    "rank": 49.7,
+    "ageRank": 72.7,
     "results": 2,
     "bib": "",
     "finishes": 0
@@ -592,17 +603,6 @@
     "results": 58,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "Corey",
-    "lastName": "Frederic",
-    "age": "M60-69",
-    "location": "PHOENIX, AZ",
-    "rank": 49.7,
-    "ageRank": 72.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Fernando",
@@ -671,17 +671,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Dina",
-    "lastName": "Lyashenko",
-    "age": "F30-39",
-    "location": "Harrisonburg, VA",
-    "rank": 46.7,
-    "ageRank": 55.8,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "John",
     "lastName": "Cunningham",
     "age": "M70+",
@@ -691,6 +680,17 @@
     "results": 24,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Dina",
+    "lastName": "Lyashenko",
+    "age": "F30-39",
+    "location": "Harrisonburg, VA",
+    "rank": 46.7,
+    "ageRank": 55.8,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Johanna",
@@ -715,17 +715,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Renee",
-    "lastName": "Morgan",
-    "age": "F50-59",
-    "location": "Phoenix, AZ",
-    "rank": 44,
-    "ageRank": 61.2,
-    "results": 3,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Bruce",
     "lastName": "Midkiff",
     "age": "M50-59",
@@ -733,6 +722,17 @@
     "rank": 39.5,
     "ageRank": 44.2,
     "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Renee",
+    "lastName": "Morgan",
+    "age": "F50-59",
+    "location": "Phoenix, AZ",
+    "rank": 44,
+    "ageRank": 61.2,
+    "results": 3,
     "bib": "",
     "finishes": 1
   },
@@ -862,6 +862,17 @@
     "lastName": "Bell",
     "age": "F60-69",
     "location": "Spring Hill, TN",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Justin",
+    "lastName": "Hoppmann",
+    "age": "M40-49",
+    "location": "CAVE CREEK, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1203,6 +1214,17 @@
     "lastName": "Newman",
     "age": "M<20",
     "location": "San Tan Valley, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Christina",
+    "lastName": "Brouwer",
+    "age": "F50-59",
+    "location": "Phoenix, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

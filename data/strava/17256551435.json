@@ -194,7 +194,7 @@
           "type_id": 7,
           "type": "segment_effort_count_leader",
           "rank": 1,
-          "effort_count": 11
+          "effort_count": 12
         }
       ],
       "visibility": "everyone",
@@ -1053,8 +1053,8 @@
   "hide_from_home": false,
   "embed_token": "ae15fb95bccaa8708fe85a25bc26ea596088797f",
   "similar_activities": {
-    "effort_count": 104,
-    "average_speed": 2.3337885980201496,
+    "effort_count": 105,
+    "average_speed": 2.3337753462547544,
     "min_average_speed": 1.8429583835946923,
     "mid_average_speed": 2.286169637875331,
     "max_average_speed": 3.0100547536087605,
@@ -1062,17 +1062,17 @@
     "frequency_milestone": null,
     "trend": {
       "speeds": [
-        2.3796882907931867,
         2.38739846998774,
         2.3614705550318913,
         2.3331369487431126,
-        2.3376166492397847
+        2.3376166492397847,
+        2.3276617109415225
       ],
-      "current_activity_index": 4,
+      "current_activity_index": 3,
       "min_speed": 1.8429583835946923,
       "mid_speed": 2.286169637875331,
       "max_speed": 3.0100547536087605,
-      "direction": 1
+      "direction": 0
     },
     "resource_state": 2
   },

@@ -44,17 +44,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Mary",
-    "lastName": "Mickler",
-    "age": "F30-39",
-    "location": "Flagstaff, AZ",
-    "rank": 90.9,
-    "ageRank": 92,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Shaun",
     "lastName": "Jones",
     "age": "M40-49",
@@ -869,17 +858,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Carolyn",
-    "lastName": "Freedman",
-    "age": "F50-59",
-    "location": "Salome, AZ",
-    "rank": 69.9,
-    "ageRank": 83.3,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Elizabeth",
     "lastName": "Mendoza",
     "age": "F40-49",
@@ -1342,17 +1320,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Monika",
-    "lastName": "Peterson",
-    "age": "F50-59",
-    "location": "Salem, OR",
-    "rank": 60.3,
-    "ageRank": 70.9,
-    "results": 13,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Carly",
     "lastName": "Harris",
     "age": "F50-59",
@@ -1595,61 +1562,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jim",
-    "lastName": "Raffone",
-    "age": "M50-59",
-    "location": "Manalapan, NJ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dillon",
-    "lastName": "Doeden",
-    "age": "M30-39",
-    "location": "Gretna, NE",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jacob",
-    "lastName": "Becker",
-    "age": "M30-39",
-    "location": "Las Vegas, NV",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rey",
-    "lastName": "Gulley",
-    "age": "M40-49",
-    "location": "Yuma, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Marcy",
-    "lastName": "Campbell",
-    "age": "F40-49",
-    "location": "Prescott, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Dominic",
     "lastName": "St George",
     "age": "M40-49",
@@ -1694,6 +1606,94 @@
     "finishes": 0
   },
   {
+    "firstName": "Chasity",
+    "lastName": "Cassel",
+    "age": "F30-39",
+    "location": "Stillwater, OK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amadeusz",
+    "lastName": "Bartosz",
+    "age": "M20-29",
+    "location": "Chicago, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Persing",
+    "age": "F30-39",
+    "location": "Richmond, VA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Marcy",
+    "lastName": "Campbell",
+    "age": "F40-49",
+    "location": "Prescott, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jim",
+    "lastName": "Raffone",
+    "age": "M50-59",
+    "location": "Manalapan, NJ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dillon",
+    "lastName": "Doeden",
+    "age": "M30-39",
+    "location": "Gretna, NE",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Becker",
+    "age": "M30-39",
+    "location": "Las Vegas, NV",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rey",
+    "lastName": "Gulley",
+    "age": "M40-49",
+    "location": "Yuma, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Daniel",
     "lastName": "Journell",
     "age": "M30-39",
@@ -1731,6 +1731,94 @@
     "lastName": "Perez",
     "age": "M20-29",
     "location": "HATILLO, PRI",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lisa",
+    "lastName": "Topete",
+    "age": "F30-39",
+    "location": "Palmdale, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Brenda",
+    "lastName": "Bloomfield",
+    "age": "F30-39",
+    "location": "Chino Valley, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nichole",
+    "lastName": "Bowlby",
+    "age": "F20-29",
+    "location": "Sand springs, OK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Don",
+    "lastName": "Yeoman",
+    "age": "M50-59",
+    "location": "Canon city, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gabriel",
+    "lastName": "Eurit",
+    "age": "M20-29",
+    "location": "Logansport, IN",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jenni",
+    "lastName": "Westphal",
+    "age": "F50-59",
+    "location": "Los Angeles, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Joe",
+    "lastName": "Morris",
+    "age": "M40-49",
+    "location": "Cascias, PRT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Freer",
+    "age": "M50-59",
+    "location": "Canon City, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1896,127 +1984,6 @@
     "lastName": "Branders",
     "age": "M40-49",
     "location": "Oro Valley, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Don",
-    "lastName": "Yeoman",
-    "age": "M50-59",
-    "location": "Canon city, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Gabriel",
-    "lastName": "Eurit",
-    "age": "M20-29",
-    "location": "Logansport, IN",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lisa",
-    "lastName": "Topete",
-    "age": "F30-39",
-    "location": "Palmdale, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brenda",
-    "lastName": "Bloomfield",
-    "age": "F30-39",
-    "location": "Chino Valley, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nichole",
-    "lastName": "Bowlby",
-    "age": "F20-29",
-    "location": "Sand springs, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chasity",
-    "lastName": "Cassel",
-    "age": "F30-39",
-    "location": "Stillwater, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Amadeusz",
-    "lastName": "Bartosz",
-    "age": "M20-29",
-    "location": "Chicago, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Olivia",
-    "lastName": "Persing",
-    "age": "F30-39",
-    "location": "Richmond, VA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jenni",
-    "lastName": "Westphal",
-    "age": "F50-59",
-    "location": "Los Angeles, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Joe",
-    "lastName": "Morris",
-    "age": "M40-49",
-    "location": "Cascias, PRT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Freer",
-    "age": "M50-59",
-    "location": "Canon City, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
