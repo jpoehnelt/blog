@@ -190,16 +190,25 @@
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     );
 
-    // Get first and last snapshots with applicant data for 7D total
-    const recent = sortedData.filter(
+    // Get snapshots with applicant data
+    const withApplicants = sortedData.filter(
       (d) => d.applicants && d.applicants.length > 0,
     );
-    if (recent.length < 2) return [];
+    if (withApplicants.length < 2) return [];
 
-    const first = recent[0];
-    const last = recent[recent.length - 1];
+    const last = withApplicants[withApplicants.length - 1];
+    if (!last.applicants) return [];
 
-    if (!first.applicants || !last.applicants) return [];
+    // Find the snapshot closest to 7 days ago as our baseline
+    const sevenDaysAgo = new Date(new Date(last.date).getTime() - 7 * 24 * 60 * 60 * 1000);
+    const baseline = withApplicants.reduce((closest, curr) => {
+      const currDiff = Math.abs(new Date(curr.date).getTime() - sevenDaysAgo.getTime());
+      const closestDiff = Math.abs(new Date(closest.date).getTime() - sevenDaysAgo.getTime());
+      return currDiff < closestDiff ? curr : closest;
+    });
+
+    // Don't compare a snapshot to itself
+    if (baseline === last || !baseline.applicants) return [];
 
     const totalCount = last.count;
     const percentiles = [0, 33, 66];
@@ -213,21 +222,21 @@
       if (!applicant)
         return { percentile: p, position: position + 1, velocity: 0 };
 
-      // Find their position in first snapshot
-      const firstPosition = first.applicants!.indexOf(applicant);
+      // Find their position in baseline (7 days ago) snapshot
+      const baselinePosition = baseline.applicants!.indexOf(applicant);
 
-      if (firstPosition === -1) {
-        // New applicant, can't calculate velocity
+      if (baselinePosition === -1) {
+        // Applicant wasn't on the waitlist 7 days ago
         return { percentile: p, position: position + 1, velocity: 0 };
       }
 
-      // Calculate total positions moved (not per day)
-      const positionChange = firstPosition - position; // Positive = moved up
+      // Calculate position change over the 7D window (positive = moved up)
+      const positionChange = baselinePosition - position;
 
       return {
         percentile: p,
         position: position + 1, // 1-indexed for display
-        velocity: positionChange, // Now total, not per-day
+        velocity: positionChange,
       };
     });
   }
@@ -294,16 +303,6 @@
       }
     }
     return { avg: avgSeries, front: frontSeries, median: medianSeries };
-  }
-
-  interface RegressionResult {
-    coefficients: number[];
-    r2: number;
-    equation: string;
-    predict: (x: number) => number;
-    trendPoints: { dayIndex: number; velocity: number }[];
-    projectedVelocityAtRace: number | null;
-    projectedPositionChange: number | null;
   }
 
   function calculateRegression(
