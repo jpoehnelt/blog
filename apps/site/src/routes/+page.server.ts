@@ -302,7 +302,13 @@ export const load: PageServerLoad = async ({ fetch }) => {
     posts,
     tags,
     recentActivities: allActivities.slice(0, 10).map(mapStravaActivity),
-    recentRaces: races.slice(0, 10).map(mapStravaActivity),
+    recentRaces: races
+      .slice(0, 10)
+      .map(mapStravaActivity)
+      .sort(
+        (a, b) =>
+          new Date(a.start_date).getTime() - new Date(b.start_date).getTime(),
+      ),
     runningChartData,
     heatmapData,
     // Race widget data
