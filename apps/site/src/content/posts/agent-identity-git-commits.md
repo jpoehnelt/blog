@@ -58,11 +58,11 @@ ssh-keygen -t ed25519 -C "bot@example.com" -f ~/.ssh/agent_key -N ""
 
 ## Why This Works
 
-| Scope | Effect |
-|-------|--------|
-| Your normal terminal | Uses your identity |
-| Command with env vars | Uses bot identity |
-| Next command | Back to your identity |
+| Scope                 | Effect                |
+| --------------------- | --------------------- |
+| Your normal terminal  | Uses your identity    |
+| Command with env vars | Uses bot identity     |
+| Next command          | Back to your identity |
 
 Your `~/.gitconfig` and `~/.ssh/config` are never modified. Each command is isolated.
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { raceUrl } from "$lib/race-urls";
   interface EliteRace {
     id: number;
     title: string;
@@ -29,7 +30,7 @@
     <div class="space-y-3">
       {#each races.slice(0, 3) as race}
         <a 
-          href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+          href={raceUrl(race)}
           class="block hover:bg-muted/50 -mx-2 px-2 py-2 rounded transition-colors"
         >
           <div class="font-medium mb-1">{race.title}</div>

@@ -108,13 +108,6 @@ async function saveRaceData(info: Race, outDir: string) {
     // Always write the waitlist file (even if empty) since races.json references it
     await fs.writeFile(waitlistPath, JSON.stringify(waitlistHistory, null, 2));
 
-    // Waitlist Latest
-    const waitlistLatestPath = path.join(
-      raceDir,
-      `${baseFilename}.waitlist.latest.json`,
-    );
-    await fs.writeFile(waitlistLatestPath, JSON.stringify(snapshot, null, 2));
-
     results.push({
       id: event.id,
       title: event.title,

@@ -6,14 +6,17 @@
 function queryWithSafety(prompt) {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   const payload = {
-    contents: [{
-      role: "user",
-      parts: [{ text: prompt }],
-    }],
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }],
+      },
+    ],
     safetySettings: [
       {
         category: "HARM_CATEGORY_HARASSMENT",

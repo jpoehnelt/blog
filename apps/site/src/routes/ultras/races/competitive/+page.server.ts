@@ -6,6 +6,7 @@ interface CompetitivenessStats {
   eliteCount: number;
   rankedEntrants: number;
   totalEntrants: number;
+  top20Rank: number | null;
 }
 
 function calculateCompetitiveness(
@@ -22,61 +23,90 @@ function calculateCompetitiveness(
   const sum = ranks.reduce((a, b) => a + b, 0);
   const averageRank = sum / ranks.length;
 
+  const top20Rank = ranks.length >= 20 ? ranks[19] : null;
+
   return {
     averageRank,
     eliteCount,
     rankedEntrants: rankedEntrants.length,
     totalEntrants: entrants.length,
+    top20Rank,
   };
+}
+
+interface CompetitiveEvent {
+  id: number;
+  eventId: number;
+  raceId: number;
+  title: string; // Event-specific title like "100K"
+  raceTitle: string; // Parent race title like "Black Canyon Ultras"
+  fullTitle: string; // Combined: "Black Canyon Ultras 100K"
+  year: number;
+  date: string;
+  location: string;
+  slug: string;
+  competitiveness: CompetitivenessStats | null;
 }
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ parent, fetch }) {
   const { races } = await parent();
 
-  // Load competitiveness for all races
-  const racesWithCompetitiveness = await Promise.all(
-    races.map(async (race: any) => {
-      const primaryEvent = race.events?.[0];
-      if (!primaryEvent) return { ...race, competitiveness: null };
+  // Flatten races into individual events with competitiveness
+  const eventsWithCompetitiveness: CompetitiveEvent[] = [];
 
-      try {
-        const dataFile = primaryEvent.entrants?.dataFile;
-        if (!dataFile) return { ...race, competitiveness: null };
+  await Promise.all(
+    races.flatMap((race: any) =>
+      (race.events || []).map(async (event: any) => {
+        try {
+          const dataFile = event.entrants?.dataFile;
+          if (!dataFile) return;
 
-        const entrantsPath = `/data/${dataFile}`;
-        const response = await fetch(entrantsPath);
-        if (!response.ok) return { ...race, competitiveness: null };
+          const entrantsPath = `/data/${dataFile}`;
+          const response = await fetch(entrantsPath);
+          if (!response.ok) return;
 
-        const data = await response.json();
-        const entrants = z.array(ParticipantSchema).safeParse(data);
-        if (!entrants.success) return { ...race, competitiveness: null };
+          const data = await response.json();
+          const entrants = z.array(ParticipantSchema).safeParse(data);
+          if (!entrants.success) return;
 
-        const competitiveness = calculateCompetitiveness(entrants.data);
-        return { ...race, competitiveness };
-      } catch {
-        return { ...race, competitiveness: null };
-      }
-    }),
+          const competitiveness = calculateCompetitiveness(entrants.data);
+          if (!competitiveness) return;
+
+          eventsWithCompetitiveness.push({
+            id: event.id,
+            eventId: event.id,
+            raceId: race.id,
+            title: event.title, // e.g., "100K"
+            raceTitle: race.title, // e.g., "Black Canyon Ultras"
+            fullTitle: `${race.title} ${event.title}`, // e.g., "Black Canyon Ultras 100K"
+            year: race.year,
+            date: race.date,
+            location: race.location,
+            slug: race.slug,
+            competitiveness,
+          });
+        } catch {
+          // Skip events with errors
+        }
+      }),
+    ),
   );
 
-  // Filter to only races with 10+ elites and sort by elite count, then avg rank
-  const competitiveRaces = racesWithCompetitiveness
-    .filter((r) => r.competitiveness && r.competitiveness.eliteCount >= 10)
-    .sort((a, b) => {
-      // Primary sort: elite count (descending)
-      const eliteDiff =
-        (b.competitiveness?.eliteCount ?? 0) -
-        (a.competitiveness?.eliteCount ?? 0);
-      if (eliteDiff !== 0) return eliteDiff;
-      // Secondary sort: average rank (descending)
-      return (
-        (b.competitiveness?.averageRank ?? 0) -
-        (a.competitiveness?.averageRank ?? 0)
-      );
-    });
+  // Sort by top20Rank (primary), then elite count (secondary)
+  const sortedEvents = eventsWithCompetitiveness.sort((a, b) => {
+    // Primary sort: top 20 rank (descending)
+    const top20Diff =
+      (b.competitiveness?.top20Rank ?? 0) - (a.competitiveness?.top20Rank ?? 0);
+    if (top20Diff !== 0) return top20Diff;
+    // Secondary sort: elite count (descending)
+    return (
+      (b.competitiveness?.eliteCount ?? 0) -
+      (a.competitiveness?.eliteCount ?? 0)
+    );
+  });
 
   return {
-    races: competitiveRaces,
+    races: sortedEvents,
   };
 }

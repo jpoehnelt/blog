@@ -4,6 +4,16 @@
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import * as Tabs from "$lib/components/ui/tabs";
   import type { Post } from "$lib/content/posts.shared";
+
+  // Race analytics components
+  import {
+    FieldStrengthCard,
+    FieldAnalysisPeers,
+    WaitlistStatsCard,
+    RaceHeroSection,
+  } from "$lib/components/race";
+  import type { CompetitivenessStats } from "$lib/components/race/types";
+  import { raceYearUrl, raceUrl, raceEventUrl, absoluteRaceYearUrl, absoluteRaceUrl, absoluteRaceEventUrl } from "$lib/race-urls";
   import {
     linearRegression,
     linearRegressionLine,
@@ -31,6 +41,10 @@
   let events = $derived(data.events || []);
   let relatedPosts = $derived(data.relatedPosts || []);
   let enrichment = $derived(data.enrichment);
+  // Strict: yearStats is guaranteed by server check
+  let yearStats = $derived(data.yearStats);
+  let peers = $derived(enrichment?.peers || []);
+  let strongestFields = $derived(enrichment?.strongestFields || []);
 
   // ... existing code ...
 
@@ -43,20 +57,7 @@
     bgAccent: "bg-stone-100",
   };
 
-  interface CompetitivenessStats {
-    totalEntrants: number;
-    rankedEntrants: number; // Runners with 5+ results
-    insufficientResultsCount: number; // Runners with rank but <5 results
-    unrankedCount: number; // Runners with no rank
-    averageRank: number;
-    medianRank: number;
-    eliteCount: number; // 90+ rank
-    strongCount: number; // 80-89.9 rank
-    midPackCount: number; // 60-79.9 rank
-    newcomerCount: number; // <60
-    topRunners: { name: string; rank: number; location: string }[];
-    rankDistribution: { label: string; count: number; percent: number }[];
-  }
+
 
   function calculateCompetitiveness(
     entrants: Participant[] | null,
@@ -88,6 +89,14 @@
     const sum = ranks.reduce((a, b) => a + b, 0);
     const averageRank = sum / ranks.length;
     const medianRank = ranks[Math.floor(ranks.length / 2)];
+
+    // Calculate Top 20 Stats
+    const top20Ranks = ranks.slice(0, 20);
+    const top20Rank = ranks.length >= 20 ? ranks[19] : null;
+    const top20Average =
+      top20Ranks.length > 0
+        ? top20Ranks.reduce((a, b) => a + b, 0) / top20Ranks.length
+        : null;
 
     // Get top 10 runners (from qualified entrants only)
     const topRunners = qualifiedEntrants
@@ -147,16 +156,30 @@
       newcomerCount,
       topRunners,
       rankDistribution,
+      top20Rank,
+      top20Average,
     };
   }
 
-  // Filter out events with 0 runners on the waitlist
+  // Inject fallback data for events with no waitlist, instead of filtering out
   let activeEventsBase = $derived(
-    events.filter((e: PageEvent) => {
-      if (!e.data || e.data.length === 0) return false;
-      const lastPoint = e.data[e.data.length - 1];
-      return (lastPoint?.count || 0) > 0;
-    }),
+    events.map((e: PageEvent) => {
+      // If data exists and has count > 0, return as is
+      if (e.data && e.data.length > 0) {
+         const lastPoint = e.data[e.data.length - 1];
+         if ((lastPoint?.count || 0) > 0) return e;
+      }
+      
+      // Otherwise inject fallback (count 0)
+      return {
+          ...e,
+          data: [{
+            date: new Date().toISOString(),
+            count: 0,
+            applicants: []
+          }]
+      };
+    })
   );
 
   interface PercentileStats {
@@ -202,7 +225,7 @@
     if (!first.applicants || !last.applicants) return [];
 
     const totalCount = last.count;
-    const percentiles = [25, 50, 75];
+    const percentiles = [0, 33, 66];
 
     return percentiles.map((p) => {
       // Position at this percentile (0-indexed)
@@ -234,14 +257,20 @@
 
   function calculateVelocitySeries(
     event: PageEvent,
-  ): { date: string; velocity: number }[] {
-    if (!event.data || event.data.length < 2) return [];
+  ): { 
+      avg: { date: string; velocity: number }[];
+      front: { date: string; velocity: number }[];
+      median: { date: string; velocity: number }[];
+  } {
+    if (!event.data || event.data.length < 2) return { avg: [], front: [], median: [] };
 
     // Ensure data is sorted by date
     const sortedData = [...event.data].sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     );
-    const series: { date: string; velocity: number }[] = [];
+    const avgSeries: { date: string; velocity: number }[] = [];
+    const frontSeries: { date: string; velocity: number }[] = [];
+    const medianSeries: { date: string; velocity: number }[] = [];
 
     // Iterate through snapshots starting from the second one
     for (let i = 1; i < sortedData.length; i++) {
@@ -250,7 +279,6 @@
 
       if (!curr.applicants || !prev.applicants) continue;
       
-      // Calculate velocity for ALL applicants, not just top 25
       const cohort = curr.applicants;
       const velocities: number[] = [];
 
@@ -259,9 +287,10 @@
         (1000 * 60 * 60 * 24);
       if (days <= 0) continue;
 
+      // Track individual velocities
       for (const applicant of cohort) {
         const prevPos = prev.applicants.indexOf(applicant);
-        const currPos = curr.applicants.indexOf(applicant); // Should be index in cohort basically
+        const currPos = curr.applicants.indexOf(applicant);
 
         if (prevPos !== -1 && currPos !== -1) {
           const posDiff = prevPos - currPos; // Positive = moved up
@@ -270,13 +299,24 @@
       }
 
       if (velocities.length > 0) {
+        // Average
         const total = velocities.reduce((sum, v) => sum + v, 0);
         const mean = total / velocities.length;
+        avgSeries.push({ date: curr.date, velocity: mean });
 
-        series.push({ date: curr.date, velocity: mean });
+        // Sort velocities to find front/median
+        velocities.sort((a, b) => b - a); // Descending (highest velocity first)
+
+        // Front (Top 10%)
+        const frontIndex = Math.floor(velocities.length * 0.1);
+        frontSeries.push({ date: curr.date, velocity: velocities[frontIndex] || velocities[0] });
+
+        // Median
+        const medianIndex = Math.floor(velocities.length * 0.5);
+        medianSeries.push({ date: curr.date, velocity: velocities[medianIndex] || velocities[0] });
       }
     }
-    return series;
+    return { avg: avgSeries, front: frontSeries, median: medianSeries };
   }
 
   interface RegressionResult {
@@ -596,9 +636,9 @@
   }
 
   let activeEvents = $derived(
-    activeEventsBase.map((e: PageEvent): EnrichedPageEvent => {
+    activeEventsBase.map((e: PageEvent) => {
       const velocitySeries = calculateVelocitySeries(e);
-      const regressionResult = calculateRegression(velocitySeries, race.date);
+      const regressionResult = calculateRegression(velocitySeries.avg, race.date);
       const percentileStats = calculatePercentileVelocities(e);
       const competitiveness = calculateCompetitiveness(e.entrants);
       const waitlistProjection = calculateWaitlistRegression(e.data, race.date);
@@ -611,7 +651,9 @@
       return {
         ...e,
         velocity: movement7d,
-        velocitySeries,
+        velocitySeries: velocitySeries.avg,
+        frontSeries: velocitySeries.front,
+        medianSeries: velocitySeries.median,
         regression: regressionResult,
         waitlistProjection,
         percentileStats,
@@ -913,13 +955,13 @@
           "@type": "ListItem",
           position: 2,
           name: `${race.year} Waitlists`,
-          item: `https://justin.poehnelt.com/ultras/races/${race.year}`,
+          item: absoluteRaceYearUrl(race.year),
         },
         {
           "@type": "ListItem",
           position: 3,
           name: race.title,
-          item: `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`,
+          item: absoluteRaceUrl(race),
         },
       ],
     },
@@ -933,7 +975,7 @@
         name: race.location || "TBD",
       },
       description: description,
-      url: `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`,
+      url: absoluteRaceUrl(race),
     },
   ]);
 
@@ -967,6 +1009,10 @@
   }
 
   let searchTerms: Record<string, string> = $state({});
+
+  const INITIAL_VISIBLE_COUNT = 5;
+  let showAllMen = $state(false);
+  let showAllWomen = $state(false);
 </script>
 
 {#snippet ChangeIndicator(diff: number | null)}
@@ -1023,9 +1069,11 @@
   list: Participant[],
   title: string,
   theme: "blue" | "rose",
+  expanded: boolean,
+  onToggle: () => void
 )}
   <div
-    class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden h-full"
+    class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden h-full flex flex-col"
   >
     <div
       class="px-6 py-4 border-b border-stone-100 bg-stone-50/50 flex justify-between items-center"
@@ -1040,8 +1088,8 @@
         >Rank Score</span
       >
     </div>
-    <div class="divide-y divide-stone-100">
-      {#each list as m}
+    <div class="divide-y divide-stone-100 flex-1">
+      {#each list.slice(0, expanded ? undefined : INITIAL_VISIBLE_COUNT) as m}
         <div
           class="px-6 py-4 hover:bg-stone-50 transition-colors flex items-center gap-4 group"
         >
@@ -1104,6 +1152,16 @@
         </div>
       {/each}
     </div>
+    {#if list.length > INITIAL_VISIBLE_COUNT}
+      <div class="p-2 bg-stone-50 border-t border-stone-100">
+        <button
+          onclick={onToggle}
+          class={`w-full py-2 text-xs font-bold uppercase tracking-wide rounded-lg transition-colors ${theme === "blue" ? "text-blue-600 hover:bg-blue-50" : "text-rose-600 hover:bg-rose-50"}`}
+        >
+          {expanded ? "Show Less" : `Show all ${list.length} runners`}
+        </button>
+      </div>
+    {/if}
   </div>
 {/snippet}
 
@@ -1112,7 +1170,7 @@
   <meta name="description" content={description} />
   <link
     rel="canonical"
-    href={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`}
+    href={absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}
   />
 
   <!-- Open Graph -->
@@ -1121,13 +1179,13 @@
   <meta property="og:description" content={description} />
   <meta
     property="og:image"
-    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`}
+    content={`${absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}/og.png`}
   />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta
     property="og:url"
-    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}`}
+    content={absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}
   />
 
   <!-- Twitter Card -->
@@ -1136,7 +1194,7 @@
   <meta name="twitter:description" content={description} />
   <meta
     name="twitter:image"
-    content={`https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}/${events[0]?.id}/og.png`}
+    content={`${absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}/og.png`}
   />
 
   {#each jsonLd as ld}
@@ -1152,287 +1210,7 @@
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <div
-    class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-stone-100 overflow-hidden"
-  >
-    <!-- Topographic Contour Pattern - Mountain Lines -->
-    <div class="absolute inset-0 opacity-[0.07]">
-      <svg
-        class="w-full h-full"
-        preserveAspectRatio="xMidYMid slice"
-        viewBox="0 0 800 400"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          class="text-white"
-        >
-          <path d="M-50,350 Q100,300 200,320 T400,280 T600,310 T850,270" />
-          <path d="M-50,300 Q80,250 180,270 T380,220 T580,250 T850,200" />
-          <path d="M-50,250 Q60,180 200,210 T420,150 T620,190 T850,130" />
-          <path d="M-50,200 Q120,140 250,160 T450,100 T650,140 T850,80" />
-          <path d="M-50,150 Q100,80 220,110 T460,50 T680,90 T850,30" />
-          <path d="M-50,100 Q80,40 200,60 T440,10 T660,40 T850,-20" />
-          <path
-            d="M-50,325 Q90,280 190,300 T390,250 T590,280 T850,240"
-            opacity="0.5"
-          />
-          <path
-            d="M-50,275 Q70,210 190,240 T400,180 T600,220 T850,160"
-            opacity="0.5"
-          />
-          <path
-            d="M-50,175 Q110,100 230,130 T455,70 T665,110 T850,50"
-            opacity="0.5"
-          />
-        </g>
-      </svg>
-    </div>
-
-    <!-- Gradient overlays for depth -->
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"
-    ></div>
-    <div
-      class="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent"
-    ></div>
-
-    <!-- Accent glow -->
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"
-    ></div>
-
-    <div class="relative container mx-auto px-6 py-16 md:py-24">
-      <Breadcrumb.Root class="mb-6">
-        <Breadcrumb.List>
-          <Breadcrumb.Item>
-            <Breadcrumb.Link
-              href="/"
-              class="text-stone-400 hover:text-white transition-colors"
-              >Home</Breadcrumb.Link
-            >
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator class="text-stone-600" />
-          <Breadcrumb.Item>
-            <Breadcrumb.Link
-              href="/ultras/races"
-              class="text-stone-400 hover:text-white transition-colors"
-              >Races</Breadcrumb.Link
-            >
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator class="text-stone-600" />
-          <Breadcrumb.Item>
-            <Breadcrumb.Link
-              href="/ultras/races/{race.year}"
-              class="text-stone-400 hover:text-white transition-colors"
-              >{race.year}</Breadcrumb.Link
-            >
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator class="text-stone-600" />
-          <Breadcrumb.Item>
-            <Breadcrumb.Link
-              href="/ultras/races/{race.year}/{race.slug}/{race.id}"
-              class="text-stone-400 hover:text-white transition-colors"
-              >{race.title}</Breadcrumb.Link
-            >
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator class="text-stone-600" />
-          <Breadcrumb.Item>
-            <Breadcrumb.Page
-              class="text-white font-medium max-w-[150px] md:max-w-none truncate"
-              >{events[0]?.title}</Breadcrumb.Page
-            >
-          </Breadcrumb.Item>
-        </Breadcrumb.List>
-      </Breadcrumb.Root>
-
-      <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6"
-      >
-        <div class="flex-1">
-          <div class="flex items-center gap-3 mb-2">
-            {#if activeEvents.length > 0}
-              <span
-                class="px-3 py-1 rounded-full bg-orange-600/20 text-orange-400 text-xs font-semibold tracking-wide border border-orange-600/30"
-                >WAITLIST ACTIVE</span
-              >
-            {:else}
-              <span
-                class="px-3 py-1 rounded-full bg-slate-700/50 text-slate-400 text-xs font-semibold tracking-wide border border-slate-600/50"
-                >REGISTRATION OPEN</span
-              >
-            {/if}
-            <span
-              class="text-stone-400 text-sm font-medium tracking-wide uppercase"
-              >{race.date
-                ? new Date(race.date).toLocaleDateString(undefined, {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })
-                : race.year}</span
-            >
-          </div>
-          <div class="flex flex-col gap-1 mb-2">
-            <a
-              href="/ultras/races/{race.year}/{race.slug}/{race.id}"
-              class="text-xl md:text-2xl font-bold text-stone-400 hover:text-orange-400 transition-colors inline-flex items-center gap-2 group"
-            >
-              <svg
-                class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                ></path></svg
-              >
-              {race.title}
-            </a>
-            <h1
-              class="text-4xl md:text-6xl font-black tracking-tight text-white"
-            >
-              {events[0]?.title}
-            </h1>
-          </div>
-          <div class="flex items-center text-stone-300 gap-2 mb-6">
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              ></path><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              ></path></svg
-            >
-            <span class="text-lg font-medium">{race.location}</span>
-          </div>
-
-          <!-- Quick Navigation -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            {#if entrants.length > 0}
-              <a
-                href="#top-men"
-                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-blue-600/30 border border-slate-600/50 hover:border-blue-500/50 text-stone-300 hover:text-blue-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
-              >
-                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                Top Men
-              </a>
-              <a
-                href="#top-women"
-                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-rose-600/30 border border-slate-600/50 hover:border-rose-500/50 text-stone-300 hover:text-rose-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
-              >
-                <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-                Top Women
-              </a>
-            {/if}
-            {#if activeEvents.some((e: EnrichedPageEvent) => e.data && e.data.length > 0 && e.data[e.data.length - 1].applicants?.length > 0)}
-              <a
-                href="#waitlist"
-                class="px-3 py-1.5 rounded-lg bg-slate-700/50 hover:bg-orange-600/30 border border-slate-600/50 hover:border-orange-500/50 text-stone-300 hover:text-orange-200 text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2"
-              >
-                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                Waitlist
-              </a>
-            {/if}
-          </div>
-
-          {#if race.events && race.events.filter((e: any) => String(e.id) !== String(activeEvents[0]?.id)).length > 0}
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs font-semibold uppercase tracking-wider text-stone-500 py-1.5"
-                >Other Distances:</span
-              >
-              {#each race.events.filter((e: any) => String(e.id) !== String(activeEvents[0]?.id)) as sibling}
-                <a
-                  href="/ultras/races/{race.year}/{race.slug}/{race.id}/{sibling.id}"
-                  class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-orange-600/20 hover:border-orange-500/50 border border-slate-700 text-stone-300 hover:text-orange-200 text-xs font-bold uppercase tracking-wide transition-all"
-                >
-                  {sibling.title}
-                </a>
-              {/each}
-            </div>
-          {/if}
-        </div>
-
-        {#if totalWaitlist > 0 || heroCompetitiveness}
-          <div class="flex gap-4">
-            {#if totalWaitlist > 0}
-              <div
-                class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
-              >
-                <div
-                  class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
-                >
-                  Waitlist Size
-                </div>
-                <div class="text-4xl font-black text-white">
-                  {totalWaitlist.toLocaleString()}
-                </div>
-                <div
-                  class="text-xs text-green-400 font-medium mt-1 flex items-center gap-1"
-                >
-                  Total Applicants
-                </div>
-              </div>
-            {/if}
-            {#if heroCompetitiveness}
-              <div
-                class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
-              >
-                <div
-                  class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
-                >
-                  Field Strength
-                </div>
-                <div class="text-4xl font-black text-white">
-                  {heroCompetitiveness.averageRank.toFixed(0)}
-                </div>
-                <div
-                  class="text-xs text-purple-400 font-medium mt-1 flex items-center gap-1"
-                >
-                  {heroCompetitiveness.eliteCount} Elite (90+)
-                </div>
-              </div>
-              <div
-                class="bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 shadow-xl"
-              >
-                <div
-                  class="text-stone-400 text-xs font-semibold uppercase tracking-wider mb-1"
-                >
-                  Total Entrants
-                </div>
-                <div class="text-4xl font-black text-white">
-                  {heroCompetitiveness.totalEntrants > 0 ? heroCompetitiveness.totalEntrants.toLocaleString() : 'Unknown'}
-                </div>
-                <div
-                  class="text-xs text-blue-400 font-medium mt-1 flex items-center gap-1"
-                >
-                  Registered Runners
-                </div>
-              </div>
-            {/if}
-          </div>
-        {/if}
-      </div>
-    </div>
-  </div>
+  <RaceHeroSection {race} {events} {activeEvents} {totalWaitlist} {heroCompetitiveness} />
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Race Summary Card with Link Back -->
@@ -1444,7 +1222,7 @@
           <p class="text-stone-600 line-clamp-2">{enrichment.summary}</p>
         </div>
         <a
-          href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+          href={raceUrl(race)}
           class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors"
         >
           <svg
@@ -1466,313 +1244,128 @@
 
     {#if activeEvents.length > 0}
       <div class="mb-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Statistics (moved before chart) -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-lg font-medium mb-4">Race Analysis</h3>
-            <div class="space-y-4">
-              {#each activeEvents as event}
-                {#if event.data && event.data.length > 0}
-                  {@const last = event.data[event.data.length - 1]}
-                  <div class="border-b pb-4 last:border-0 last:pb-0">
-                    <div
-                      class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide"
-                    >
-                      {event.title}
+        <div class="flex flex-wrap gap-6">
+          {#each activeEvents as event}
+            {#if event.competitiveness}
+              <!-- Field Strength Card -->
+              <div id="field-strength" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+                <h3 class="text-lg font-medium mb-4">Field Strength</h3>
+                <FieldStrengthCard
+                  competitiveness={event.competitiveness}
+                  {yearStats}
+                  eventTitle={event.title}
+                />
+              </div>
+
+              <div id="field-comparison" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+                <h3 class="text-lg font-medium mb-4">Field Comparison</h3>
+
+                <!-- Field Strength Meter -->
+                {#if yearStats && yearStats.maxTop20Rank > yearStats.minTop20Rank && event.competitiveness.top20Rank}
+                  {@const strengthRange = yearStats.maxTop20Rank - yearStats.minTop20Rank}
+                  {@const strengthPosition = Math.max(0, Math.min(100, ((event.competitiveness.top20Rank - yearStats.minTop20Rank) / strengthRange) * 100))}
+                  <div class="mb-4">
+                    <div class="flex justify-between items-end mb-1">
+                      <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Field Strength Meter</span>
                     </div>
-
-                    {#if event.competitiveness}
-                      <div class="mb-4">
-                        <div
-                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
-                        >
-                          Field Strength
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-2 mb-3">
-                          <div class="bg-slate-50 rounded px-2 py-1.5">
-                            <div class="text-xs text-stone-400">Avg Rank</div>
-                            <div
-                              class="font-mono text-lg font-bold text-slate-700"
-                            >
-                              {event.competitiveness.averageRank.toFixed(1)}
-                            </div>
-                          </div>
-                          <div class="bg-slate-50 rounded px-2 py-1.5">
-                            <div class="text-xs text-stone-400">Median</div>
-                            <div
-                              class="font-mono text-lg font-bold text-slate-700"
-                            >
-                              {event.competitiveness.medianRank.toFixed(1)}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="space-y-1">
-                          {#each event.competitiveness.rankDistribution as bucket}
-                            <div class="flex items-center gap-2 text-xs">
-                              <span class="w-12 text-stone-500 font-medium"
-                                >{bucket.label}</span
-                              >
-                              <div
-                                class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"
-                              >
-                                <div
-                                  class="h-full rounded-full {bucket.label ===
-                                  '90+'
-                                    ? 'bg-purple-500'
-                                    : bucket.label === '80-89'
-                                      ? 'bg-blue-500'
-                                      : bucket.label === '60-79'
-                                        ? 'bg-green-500'
-                                        : bucket.label === 'New'
-                                          ? 'bg-amber-400'
-                                          : 'bg-slate-400'}"
-                                  style="width: {bucket.percent}%"
-                                ></div>
-                              </div>
-                              <span class="w-8 text-right text-stone-400"
-                                >{bucket.count}</span
-                              >
-                            </div>
-                          {/each}
-                        </div>
-
-                        {#if event.competitiveness.eliteCount > 0}
-                          <div class="mt-2 text-xs text-purple-600 font-medium">
-                            {event.competitiveness.eliteCount} elite runner{event
-                              .competitiveness.eliteCount > 1
-                              ? "s"
-                              : ""} (90+ rank)
-                          </div>
-                        {/if}
-                        <div
-                          class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1"
-                        >
-                          <p>
-                            <strong class="text-stone-500"
-                              >About rankings:</strong
-                            >
-                            Stats based on {event.competitiveness
-                              .rankedEntrants} runners with 5+ finishes.
-                          </p>
-                          {#if event.competitiveness.insufficientResultsCount > 0 || event.competitiveness.unrankedCount > 0}
-                            <p class="text-stone-400/80">
-                              Excluded: {event.competitiveness
-                                .insufficientResultsCount > 0
-                                ? `${event.competitiveness.insufficientResultsCount} with <5 finishes`
-                                : ""}{event.competitiveness
-                                .insufficientResultsCount > 0 &&
-                              event.competitiveness.unrankedCount > 0
-                                ? ", "
-                                : ""}{event.competitiveness.unrankedCount > 0
-                                ? `${event.competitiveness.unrankedCount} unranked`
-                                : ""}
-                            </p>
-                          {/if}
-                          <p class="text-stone-400/80">
-                            90+ = Elite • 80-89 = Strong • 60-79 = Experienced •
-                            &lt;60 = Developing
-                          </p>
-                        </div>
-                      </div>
-                    {/if}
-
-                    <div class="grid grid-cols-2 gap-4">
-                      <!-- Waitlist Size -->
-                      <div class="bg-slate-50 rounded-lg p-3">
-                        <div
-                          class="text-xs text-stone-400 uppercase tracking-wide mb-1"
-                        >
-                          Waitlist Size
-                        </div>
-                        <div class="text-2xl font-bold text-slate-800">
-                          {last.count}
-                        </div>
-                      </div>
-
-                      <!-- Daily Position Change -->
-                      {#if event.velocity !== null}
-                        <div class="bg-slate-50 rounded-lg p-3">
-                          <div
-                            class="text-xs text-stone-400 uppercase tracking-wide mb-1"
-                          >
-                            7D Movement
-                          </div>
-                          <div
-                            class="text-2xl font-bold flex items-center gap-1 {event.velocity >
-                            0
-                              ? 'text-green-600'
-                              : event.velocity < 0
-                                ? 'text-red-500'
-                                : 'text-slate-400'}"
-                          >
-                            {#if event.velocity > 0}
-                              <svg
-                                class="w-4 h-4 fill-current"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                            {:else if event.velocity < 0}
-                              <svg
-                                class="w-4 h-4 fill-current rotate-180"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
-                                  clip-rule="evenodd"
-                                />
-                              </svg>
-                            {/if}
-                            <span>+{Math.abs(event.velocity).toFixed(0)}</span>
-                            <span class="text-sm font-normal text-stone-400"
-                              >positions</span
-                            >
-                          </div>
-                        </div>
-                      {/if}
+                    <div class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible">
+                      <div class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-blue-200 to-purple-300 opacity-60"></div>
+                      <div
+                        class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-2 border-slate-600 rounded-full shadow-sm z-10"
+                        style="left: {strengthPosition}%;"
+                        title="This event: {event.competitiveness.top20Rank.toFixed(1)}% (Rank of 20th)"
+                      ></div>
                     </div>
-
-                    {#if event.regression}
-                      <div class="mt-4 pt-3 border-t border-stone-100">
-                        <div
-                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
-                        >
-                          Trend Analysis
-                        </div>
-                        <div class="space-y-1.5">
-                          <div
-                            class="flex justify-between items-center text-sm"
-                          >
-                            <span class="text-stone-500">Model</span>
-                            <code
-                              class="font-mono text-slate-600 bg-slate-50 px-2 py-0.5 rounded text-xs"
-                              >{event.regression.equation}</code
-                            >
-                          </div>
-                          <div
-                            class="flex justify-between items-center text-sm"
-                          >
-                            <span class="text-stone-500">Fit (R²)</span>
-                            <span
-                              class="font-mono font-bold {event.regression.r2 >
-                              0.7
-                                ? 'text-green-600'
-                                : event.regression.r2 > 0.4
-                                  ? 'text-amber-600'
-                                  : 'text-red-500'}"
-                              >{(event.regression.r2 * 100).toFixed(1)}%</span
-                            >
-                          </div>
-                          {#if event.regression.projectedPositionChange !== null}
-                            <div
-                              class="flex justify-between items-center text-sm"
-                            >
-                              <span class="text-stone-500"
-                                >Est. by Race Day</span
-                              >
-                              <span
-                                class="font-mono font-bold {event.regression
-                                  .projectedPositionChange > 0
-                                  ? 'text-green-600'
-                                  : 'text-red-500'}"
-                              >
-                                {event.regression.projectedPositionChange > 0
-                                  ? "+"
-                                  : ""}{Math.round(
-                                  event.regression.projectedPositionChange,
-                                )} pos
-                              </span>
-                            </div>
-                          {/if}
-                        </div>
-                      </div>
-                    {/if}
-
-                    {#if event.percentileStats && event.percentileStats.length > 0}
-                      <div class="mt-4 pt-3 border-t border-stone-100">
-                        <div
-                          class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
-                        >
-                          7D Queue Progress
-                        </div>
-                        <div class="grid grid-cols-3 gap-2">
-                          {#each event.percentileStats as stat}
-                            <div
-                              class="bg-slate-50 rounded px-2 py-1.5 flex flex-col items-center"
-                            >
-                              <span class="text-xs text-stone-400 mb-0.5">
-                                {stat.percentile === 25
-                                  ? "Front"
-                                  : stat.percentile === 50
-                                    ? "Middle"
-                                    : "Back"}
-                              </span>
-                              <span
-                                class="font-mono text-sm font-medium {stat.velocity >
-                                0
-                                  ? 'text-green-600'
-                                  : stat.velocity < 0
-                                    ? 'text-red-500'
-                                    : 'text-slate-400'}"
-                              >
-                                {stat.velocity > 0
-                                  ? "+"
-                                  : ""}{stat.velocity.toFixed(0)}
-                              </span>
-                            </div>
-                          {/each}
-                        </div>
-                        <div class="text-xs text-stone-400 mt-2 italic">
-                          Total position change over 7D
-                        </div>
-                      </div>
-                    {/if}
-
-                    <div class="text-xs text-gray-400 mt-3">
-                      Updated: {new Date(last.date).toLocaleDateString(
-                        undefined,
-                        {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        },
-                      )}
+                    <div class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase">
+                      <span>Weakest ({yearStats.minTop20Rank.toFixed(0)}%)</span>
+                      <span>Strongest ({yearStats.maxTop20Rank.toFixed(0)}%)</span>
                     </div>
                   </div>
                 {/if}
-              {/each}
-            </div>
-          </div>
 
-          <!-- Waitlist Trends Chart -->
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-lg font-medium mb-4">Waitlist Trends</h3>
-            {#if activeEvents.some((e: any) => e.data && e.data.length > 1)}
+                <FieldAnalysisPeers
+                  racesForYear={strongestFields}
+                  currentRaceId={event.id}
+                  year={race.year}
+                />
+              </div>
+
+              <div id="registration" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+                <h3 class="text-lg font-medium mb-4">Registration Analysis</h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <!-- Total Entrants -->
+                  <div class="bg-slate-50 rounded-lg p-3">
+                    <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                      Total Entrants
+                    </div>
+                    <div class="text-2xl font-bold text-slate-800">
+                      {event.competitiveness?.totalEntrants > 0 ? event.competitiveness.totalEntrants : 'Unknown'}
+                    </div>
+                  </div>
+
+                  <!-- Ranked Entrants -->
+                  <div class="bg-slate-50 rounded-lg p-3">
+                    <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                      Ranked Runners
+                    </div>
+                    <div class="text-2xl font-bold text-slate-800">
+                      {event.competitiveness?.rankedEntrants}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Field Size Meter -->
+                {#if yearStats && yearStats.maxTotalEntrants > yearStats.minTotalEntrants}
+                  {@const sizeRange = yearStats.maxTotalEntrants - yearStats.minTotalEntrants}
+                  {@const sizePosition = Math.max(0, Math.min(100, ((event.competitiveness.totalEntrants - yearStats.minTotalEntrants) / sizeRange) * 100))}
+                  <div class="mt-3">
+                    <div class="flex justify-between items-end mb-1">
+                      <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Field Size Meter</span>
+                    </div>
+                    <div class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible">
+                      <div class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-emerald-200 to-teal-300 opacity-60"></div>
+                      <div
+                        class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-2 border-slate-600 rounded-full shadow-sm z-10"
+                        style="left: {sizePosition}%;"
+                        title="This event: {event.competitiveness.totalEntrants} entrants"
+                      ></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase">
+                      <span>Smallest ({yearStats.minTotalEntrants})</span>
+                      <span>Largest ({yearStats.maxTotalEntrants})</span>
+                    </div>
+                  </div>
+                {/if}
+
+                {#if event.data && event.data.length > 0 && event.data.some((d: any) => (d.count || 0) > 0)}
+                  {@const last = event.data[event.data.length - 1]}
+                  <div class="mt-4 pt-4 border-t border-stone-100">
+                    <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist</h4>
+                    <WaitlistStatsCard {event} lastSnapshot={last} />
+                  </div>
+                {/if}
+              </div>
+            {/if}
+          {/each}
+
+          <!-- Waitlist Trends Card (full width) -->
+          {#if activeEvents.some((e: any) => e.data && e.data.length > 1 && e.data.some((d: any) => (d.count || 0) > 0))}
+            <div class="bg-white p-6 rounded-lg shadow w-full">
+              <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist Trends</h4>
               <WaitlistChart
                 events={activeEvents.map((e: any) => ({
                   title: e.title,
                   data: e.data || [],
                   velocityData: e.velocitySeries || [],
+                  frontSeries: e.frontSeries || [],
+                  medianSeries: e.medianSeries || [],
                   regression: e.regression,
                   waitlistProjection: e.waitlistProjection,
                 }))}
                 raceDate={race.date}
               />
-            {:else}
-              <p class="text-gray-500">
-                Not enough data to calculate velocity yet.
-              </p>
-            {/if}
-          </div>
+            </div>
+          {/if}
         </div>
       </div>
     {/if}
@@ -1794,122 +1387,41 @@
           <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="text-lg font-medium mb-4">Field Analysis</h3>
             <div class="border-b pb-4 last:border-0 last:pb-0">
-              <div
-                class="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wide"
-              >
-                {events[0]?.title}
-              </div>
+              <FieldStrengthCard
+                competitiveness={fieldCompetitiveness}
+                {yearStats}
+                eventTitle={events[0]?.title}
+              />
 
-              <div class="mb-4">
-                <div
-                  class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2"
-                >
-                  Field Strength
+              <FieldAnalysisPeers
+                racesForYear={strongestFields}
+                currentRaceId={String(events[0]?.id)}
+                year={race.year}
+              />
+            </div>
+          </div>
+
+          <!-- Right Column: Entrant Stats -->
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-medium mb-4">Registration Analysis</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Total Entrants -->
+              <div class="bg-slate-50 rounded-lg p-3">
+                <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                  Total Entrants
                 </div>
-
-                <div class="grid grid-cols-2 gap-2 mb-3">
-                  <div class="bg-slate-50 rounded px-2 py-1.5">
-                    <div class="text-xs text-stone-400">Avg Rank</div>
-                    <div class="font-mono text-lg font-bold text-slate-700">
-                      {fieldCompetitiveness.averageRank.toFixed(1)}
-                    </div>
-                  </div>
-                  <div class="bg-slate-50 rounded px-2 py-1.5">
-                    <div class="text-xs text-stone-400">Median</div>
-                    <div class="font-mono text-lg font-bold text-slate-700">
-                      {fieldCompetitiveness.medianRank.toFixed(1)}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="space-y-1">
-                  {#each fieldCompetitiveness.rankDistribution as bucket}
-                    <div class="flex items-center gap-2 text-xs">
-                      <span class="w-12 text-stone-500 font-medium"
-                        >{bucket.label}</span
-                      >
-                      <div
-                        class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"
-                      >
-                        <div
-                          class="h-full rounded-full {bucket.label === '90+'
-                            ? 'bg-purple-500'
-                            : bucket.label === '80-89'
-                              ? 'bg-blue-500'
-                              : bucket.label === '60-79'
-                                ? 'bg-green-500'
-                                : bucket.label === 'New'
-                                  ? 'bg-amber-400'
-                                  : 'bg-slate-400'}"
-                          style="width: {bucket.percent}%"
-                        ></div>
-                      </div>
-                      <span class="w-8 text-right text-stone-400"
-                        >{bucket.count}</span
-                      >
-                    </div>
-                  {/each}
-                </div>
-
-                {#if fieldCompetitiveness.eliteCount > 0}
-                  <div class="mt-2 text-xs text-purple-600 font-medium">
-                    {fieldCompetitiveness.eliteCount} elite runner{fieldCompetitiveness.eliteCount >
-                    1
-                      ? "s"
-                      : ""} (90+ rank)
-                  </div>
-                {/if}
-                <div
-                  class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1"
-                >
-                  <p>
-                    <strong class="text-stone-500">About rankings:</strong>
-                    Stats based on {fieldCompetitiveness.rankedEntrants} runners
-                    with 5+ finishes (UltraSignup requirement for stable rankings).
-                  </p>
-                  {#if fieldCompetitiveness.insufficientResultsCount > 0 || fieldCompetitiveness.unrankedCount > 0}
-                    <p class="text-stone-400/80">
-                      Excluded: {fieldCompetitiveness.insufficientResultsCount >
-                      0
-                        ? `${fieldCompetitiveness.insufficientResultsCount} with <5 finishes`
-                        : ""}{fieldCompetitiveness.insufficientResultsCount >
-                        0 && fieldCompetitiveness.unrankedCount > 0
-                        ? ", "
-                        : ""}{fieldCompetitiveness.unrankedCount > 0
-                        ? `${fieldCompetitiveness.unrankedCount} unranked`
-                        : ""}
-                    </p>
-                  {/if}
-                  <p class="text-stone-400/80">
-                    90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60
-                    = Developing
-                  </p>
+                <div class="text-2xl font-bold text-slate-800">
+                  {fieldCompetitiveness.totalEntrants > 0 ? fieldCompetitiveness.totalEntrants : 'Unknown'}
                 </div>
               </div>
 
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Total Entrants -->
-                <div class="bg-slate-50 rounded-lg p-3">
-                  <div
-                    class="text-xs text-stone-400 uppercase tracking-wide mb-1"
-                  >
-                    Total Entrants
-                  </div>
-                  <div class="text-2xl font-bold text-slate-800">
-                    {fieldCompetitiveness.totalEntrants > 0 ? fieldCompetitiveness.totalEntrants : 'Unknown'}
-                  </div>
+              <!-- Ranked Entrants -->
+              <div class="bg-slate-50 rounded-lg p-3">
+                <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                  Ranked Runners
                 </div>
-
-                <!-- Ranked Entrants -->
-                <div class="bg-slate-50 rounded-lg p-3">
-                  <div
-                    class="text-xs text-stone-400 uppercase tracking-wide mb-1"
-                  >
-                    Ranked Runners
-                  </div>
-                  <div class="text-2xl font-bold text-slate-800">
-                    {fieldCompetitiveness.rankedEntrants}
-                  </div>
+                <div class="text-2xl font-bold text-slate-800">
+                  {fieldCompetitiveness.rankedEntrants}
                 </div>
               </div>
             </div>
@@ -2019,10 +1531,10 @@
               >
             </Tabs.List>
             <Tabs.Content value="men">
-              {@render ParticipantList(topMen, "Top Men", "blue")}
+              {@render ParticipantList(topMen, "Top Men", "blue", showAllMen, () => showAllMen = !showAllMen)}
             </Tabs.Content>
             <Tabs.Content value="women">
-              {@render ParticipantList(topWomen, "Top Women", "rose")}
+              {@render ParticipantList(topWomen, "Top Women", "rose", showAllWomen, () => showAllWomen = !showAllWomen)}
             </Tabs.Content>
           </Tabs.Root>
         </div>
@@ -2030,10 +1542,10 @@
         <!-- Desktop Grid -->
         <div class="hidden lg:grid grid-cols-2 gap-8">
           <div id="top-men">
-            {@render ParticipantList(topMen, "Top Men", "blue")}
+            {@render ParticipantList(topMen, "Top Men", "blue", showAllMen, () => showAllMen = !showAllMen)}
           </div>
           <div id="top-women">
-            {@render ParticipantList(topWomen, "Top Women", "rose")}
+            {@render ParticipantList(topWomen, "Top Women", "rose", showAllWomen, () => showAllWomen = !showAllWomen)}
           </div>
         </div>
       </div>

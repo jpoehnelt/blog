@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { raceEventUrl, absoluteRaceEventUrl } from "$lib/race-urls";
+  import RaceYearNav from "$lib/components/race/RaceYearNav.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
@@ -11,18 +13,19 @@
 
   let { data } = $props();
   let races = $derived(data.races);
+  let years = $derived(data.years);
 
   // TanStack Table sorting state - default sort by elite count descending
-  let sorting = $state<SortingState>([{ id: "eliteCount", desc: true }]);
+  let sorting = $state<SortingState>([{ id: "top20Rank", desc: true }]);
   let globalFilter = $state("");
 
   // Column definitions
   const columns: ColumnDef<any>[] = [
     {
       id: "title",
-      accessorKey: "title",
+      accessorKey: "fullTitle",
       header: "Race",
-      cell: ({ row }) => row.original.title,
+      cell: ({ row }) => row.original.fullTitle,
       enableSorting: true,
     },
     {
@@ -58,17 +61,26 @@
       enableSorting: true,
     },
     {
-      id: "averageRank",
-      accessorFn: (row) => row.competitiveness?.averageRank ?? 0,
-      header: "Avg Rank",
-      cell: ({ row }) => row.original.competitiveness?.averageRank?.toFixed(0) ?? "—",
+      id: "top20Rank",
+      accessorFn: (row) => row.competitiveness?.top20Rank ?? 0,
+      header: "Top 20 Rank",
+      cell: ({ row }) => row.original.competitiveness?.top20Rank ? row.original.competitiveness.top20Rank.toFixed(1) + "%" : "—",
       enableSorting: true,
     },
     {
-      id: "rankedEntrants",
-      accessorFn: (row) => row.competitiveness?.rankedEntrants ?? 0,
-      header: "Ranked",
-      cell: ({ row }) => row.original.competitiveness?.rankedEntrants ?? 0,
+      id: "elitePercent",
+      accessorFn: (row) => {
+        const ranked = row.competitiveness?.rankedEntrants ?? 0;
+        const elite = row.competitiveness?.eliteCount ?? 0;
+        return ranked > 0 ? (elite / ranked) * 100 : 0;
+      },
+      header: "Elite %",
+      cell: ({ row }) => {
+        const ranked = row.original.competitiveness?.rankedEntrants ?? 0;
+        const elite = row.original.competitiveness?.eliteCount ?? 0;
+        const percent = ranked > 0 ? (elite / ranked) * 100 : 0;
+        return percent > 0 ? percent.toFixed(1) + "%" : "—";
+      },
       enableSorting: true,
     },
   ];
@@ -94,7 +106,7 @@
       globalFilterFn: (row, _columnId, filterValue) => {
         const query = filterValue.toLowerCase();
         return (
-          row.original.title?.toLowerCase().includes(query) ||
+          row.original.fullTitle?.toLowerCase().includes(query) ||
           row.original.location?.toLowerCase().includes(query) ||
           String(row.original.year).includes(query)
         );
@@ -125,7 +137,7 @@
         "@type": "ListItem",
         position: index + 1,
         name: race.title,
-        url: `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`,
+        url: absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.raceId, eventId: race.eventId }),
       })),
     },
   ]);
@@ -203,6 +215,9 @@
   </div>
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
+    <!-- Year Selector -->
+    <RaceYearNav {years} activeCompetitive />
+
     <!-- Search Box -->
     <div class="relative max-w-md">
       <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -236,7 +251,7 @@
       <p class="text-stone-600 leading-relaxed">
         This ranking highlights ultramarathons with the deepest fields based on <a href="https://ultrasignup.com" target="_blank" rel="noopener" class="text-orange-600 hover:text-orange-700 font-medium">UltraSignup</a> runner rankings. 
         An "elite" runner is defined as having a rank of 90 or higher—placing them in approximately the top 10% of ultra runners. 
-        Races shown here have <strong>10 or more elite runners</strong> in their field. The "Avg Rank" column shows the average ranking across all ranked entrants, 
+        The "Avg Rank" column shows the average ranking across all ranked entrants, 
         giving insight into overall field depth. Click any column header to sort.
       </p>
     </div>
@@ -255,7 +270,7 @@
               <tr>
                 {#each headerGroup.headers as header}
                   <th
-                    class="text-left px-6 py-4 {header.id === 'location' ? 'hidden lg:table-cell' : ''} {header.id === 'rankedEntrants' ? 'hidden xl:table-cell' : ''} {['eliteCount', 'averageRank', 'rankedEntrants'].includes(header.id) ? 'text-center' : ''}"
+                    class="text-left px-6 py-4 {header.id === 'location' ? 'hidden lg:table-cell' : ''} {header.id === 'rankedEntrants' ? 'hidden xl:table-cell' : ''} {['eliteCount', 'top20Rank', 'rankedEntrants'].includes(header.id) ? 'text-center' : ''}"
                   >
                     {#if header.column.getCanSort()}
                       <button
@@ -292,8 +307,8 @@
             {#each table.getRowModel().rows as row}
               <tr class="hover:bg-stone-50 transition-colors">
                 <td class="px-6 py-4">
-                  <a href="/ultras/races/{row.original.year}/{row.original.slug}/{row.original.id}" class="font-semibold text-slate-900 hover:text-orange-600 transition-colors">
-                    {row.original.title}
+                  <a href={raceEventUrl({ year: row.original.year, slug: row.original.slug, raceId: row.original.raceId, eventId: row.original.eventId })} class="font-semibold text-slate-900 hover:text-orange-600 transition-colors">
+                    {row.original.fullTitle}
                   </a>
                 </td>
                 <td class="px-6 py-4 text-stone-500 text-sm">{row.original.year}</td>
@@ -306,16 +321,20 @@
                 </td>
                 <td class="px-6 py-4 text-center">
                   <span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold">
-                    {row.original.competitiveness?.averageRank?.toFixed(0) ?? "—"}
+                    {row.original.competitiveness?.top20Rank ? row.original.competitiveness.top20Rank.toFixed(1) + "%" : "—"}
                   </span>
                 </td>
                 <td class="px-6 py-4 text-center hidden xl:table-cell">
                   <span class="text-stone-500 text-sm">
-                    {row.original.competitiveness?.rankedEntrants ?? 0}
+                    {#if (row.original.competitiveness?.rankedEntrants ?? 0) > 0}
+                      {((row.original.competitiveness?.eliteCount ?? 0) / (row.original.competitiveness?.rankedEntrants ?? 1) * 100).toFixed(1)}%
+                    {:else}
+                      —
+                    {/if}
                   </span>
                 </td>
                 <td class="px-6 py-4 text-right">
-                  <a href="/ultras/races/{row.original.year}/{row.original.slug}/{row.original.id}" class="text-orange-600 hover:text-orange-700 text-sm font-medium">
+                  <a href={raceEventUrl({ year: row.original.year, slug: row.original.slug, raceId: row.original.raceId, eventId: row.original.eventId })} class="text-orange-600 hover:text-orange-700 text-sm font-medium">
                     View →
                   </a>
                 </td>

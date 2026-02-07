@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { raceUrl } from "$lib/race-urls";
   interface UpcomingRace {
     id: number;
     title: string;
@@ -25,7 +26,7 @@
       {#each races.slice(0, 5) as race}
         <li>
           <a 
-            href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+            href={raceUrl(race)}
             class="group flex gap-3"
           >
             <div class="shrink-0 w-12 text-center">

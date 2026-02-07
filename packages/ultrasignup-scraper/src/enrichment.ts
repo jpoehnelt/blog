@@ -218,9 +218,7 @@ async function generateSummary(race: Race) {
   }
 }
 
-async function searchForVideos(
-  race: Race,
-): Promise<
+async function searchForVideos(race: Race): Promise<
   Array<{
     url: string;
     title: string;

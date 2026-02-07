@@ -4,7 +4,8 @@
 function rewriteSelection(style) {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   const doc = DocumentApp.getActiveDocument();
@@ -26,10 +27,12 @@ function rewriteSelection(style) {
   };
 
   const payload = {
-    contents: [{
-      role: "user",
-      parts: [{ text: `${styles[style]} "${selected}"` }],
-    }],
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: `${styles[style]} "${selected}"` }],
+      },
+    ],
   };
 
   const response = VertexAI.Endpoints.generateContent(payload, MODEL);
@@ -48,6 +51,12 @@ function onOpen() {
     .addToUi();
 }
 
-function rewriteFormal() { rewriteSelection("formal"); }
-function rewriteCasual() { rewriteSelection("casual"); }
-function rewriteConcise() { rewriteSelection("concise"); }
+function rewriteFormal() {
+  rewriteSelection("formal");
+}
+function rewriteCasual() {
+  rewriteSelection("casual");
+}
+function rewriteConcise() {
+  rewriteSelection("concise");
+}

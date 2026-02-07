@@ -26,6 +26,7 @@
   // TanStack Table state
   let sorting = $state<SortingState>([{ id: "position", desc: false }]);
   let globalFilter = $state("");
+  let isExpanded = $state(false);
 
   // Column definitions
   const columns: ColumnDef<WaitlistApplicant>[] = [
@@ -43,18 +44,7 @@
       cell: ({ row }) => row.original.name,
       enableSorting: true,
     },
-    {
-      id: "d1",
-      accessorKey: "d1",
-      header: "1D",
-      cell: ({ row }) => row.original.d1,
-      enableSorting: true,
-      sortingFn: (rowA, rowB) => {
-        const a = rowA.original.d1 ?? -Infinity;
-        const b = rowB.original.d1 ?? -Infinity;
-        return a - b;
-      },
-    },
+
     {
       id: "d7",
       accessorKey: "d7",
@@ -161,7 +151,7 @@
     </div>
   </div>
 
-  <div class="overflow-x-auto max-h-[800px] overflow-y-auto">
+  <div class="overflow-x-auto">
     <table class="w-full text-sm text-left">
       <thead class="text-xs text-slate-500 uppercase bg-stone-50 sticky top-0 z-10 shadow-sm">
         {#each table.getHeaderGroups() as headerGroup}
@@ -197,7 +187,7 @@
         {/each}
       </thead>
       <tbody class="divide-y divide-stone-100 bg-white">
-        {#each table.getRowModel().rows as row}
+        {#each table.getRowModel().rows.slice(0, isExpanded ? undefined : 5) as row}
           <tr class="hover:bg-orange-50/50 transition-colors group">
             <td class="px-4 py-3 font-mono text-xs text-slate-400 text-center">{row.original.position}</td>
             <td class="px-4 py-3 font-medium text-slate-700">
@@ -210,7 +200,6 @@
                 {row.original.name}
               </a>
             </td>
-            <td class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d1)}</td>
             <td class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d7)}</td>
             <td class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d30)}</td>
           </tr>
@@ -218,4 +207,18 @@
       </tbody>
     </table>
   </div>
+  
+  {#if table.getRowModel().rows.length > 5}
+    <div class="p-3 border-t border-stone-100 flex justify-center bg-stone-50/30">
+        <button 
+            onclick={() => isExpanded = !isExpanded}
+            class="text-xs font-semibold text-slate-500 hover:text-orange-600 transition-colors flex items-center gap-1 bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow"
+        >
+            {isExpanded ? "Show Less" : "Show More"}
+            <svg class="w-3 h-3 {isExpanded ? 'rotate-180' : ''} transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+    </div>
+  {/if}
 </div>

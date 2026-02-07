@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { raceYearUrl, raceEventUrl, absoluteRaceYearUrl, absoluteRaceEventUrl } from "$lib/race-urls";
+  import RaceYearNav from "$lib/components/race/RaceYearNav.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
@@ -14,7 +16,7 @@
 
   let year = $derived(params.year);
   let years = $derived(data.years);
-  let racesForYear = $derived(data.racesForYear);
+  let eventsForYear = $derived(data.eventsForYear);
 
   // View mode state
   let viewMode = $state<"card" | "table">("table");
@@ -70,7 +72,7 @@
   // Create the table instance
   let table = $derived(
     createSvelteTable({
-      data: racesForYear,
+      data: eventsForYear,
       columns,
       state: {
         sorting,
@@ -121,7 +123,7 @@
           "@type": "ListItem",
           position: 3,
           name: year,
-          item: `https://justin.poehnelt.com/ultras/races/${year}`,
+          item: absoluteRaceYearUrl(year),
         },
       ],
     },
@@ -130,12 +132,12 @@
       "@type": "ItemList",
       name: `${year} Ultra Marathon Races`,
       description: description,
-      numberOfItems: racesForYear.length,
-      itemListElement: racesForYear.map((race: any, index: number) => ({
+      numberOfItems: eventsForYear.length,
+      itemListElement: eventsForYear.map((race: any, index: number) => ({
         "@type": "ListItem",
         position: index + 1,
         name: race.title,
-        url: `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`,
+        url: absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.raceId, eventId: race.eventId }),
       })),
     },
   ]);
@@ -146,7 +148,7 @@
   <meta name="description" content={description} />
   <link
     rel="canonical"
-    href={`https://justin.poehnelt.com/ultras/races/${year}`}
+    href={absoluteRaceYearUrl(year)}
   />
   {#each jsonLd as ld}
     {@html `<script type="application/ld+json">${JSON.stringify(ld)}</script>`}
@@ -216,28 +218,7 @@
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Year Selector -->
-    {#if years.length > 0}
-      <div class="bg-slate-800/80 backdrop-blur-sm p-4 rounded-2xl border border-slate-700/50 shadow-xl inline-flex flex-wrap gap-2">
-        {#each years as y}
-          <a
-            href="/ultras/races/{y}"
-            class="px-4 py-2 rounded-xl text-sm font-bold transition-all border
-          {y === Number(year)
-              ? 'bg-orange-600 text-white border-orange-500 shadow-lg shadow-orange-900/20'
-              : 'bg-slate-700/50 text-stone-400 border-slate-600 hover:bg-slate-700 hover:text-stone-200 hover:border-slate-500'}"
-          >
-            {y}
-          </a>
-        {/each}
-        <span class="w-px bg-slate-600 mx-1"></span>
-        <a
-          href="/ultras/races/competitive"
-          class="px-4 py-2 rounded-xl text-sm font-bold transition-all border bg-slate-700/50 text-stone-400 border-slate-600 hover:bg-slate-700 hover:text-stone-200 hover:border-slate-500"
-        >
-          🏆 Competitive
-        </a>
-      </div>
-    {/if}
+    <RaceYearNav {years} activeYear={year} />
 
     <!-- Search & Sort Controls -->
     <div class="flex flex-col sm:flex-row gap-4">
@@ -341,7 +322,7 @@
               {#each table.getRowModel().rows as row}
                 <tr class="hover:bg-stone-50 transition-colors">
                   <td class="px-6 py-4">
-                    <a href="/ultras/races/{row.original.year}/{row.original.slug}/{row.original.id}" class="font-semibold text-slate-900 hover:text-orange-600 transition-colors">
+                    <a href={raceEventUrl({ year: row.original.year, slug: row.original.slug, raceId: row.original.raceId, eventId: row.original.eventId })} class="font-semibold text-slate-900 hover:text-orange-600 transition-colors">
                       {row.original.title}
                     </a>
                   </td>
@@ -366,7 +347,7 @@
                     {/if}
                   </td>
                   <td class="px-6 py-4 text-right">
-                    <a href="/ultras/races/{row.original.year}/{row.original.slug}/{row.original.id}" class="text-orange-600 hover:text-orange-700 text-sm font-medium">
+                    <a href={raceEventUrl({ year: row.original.year, slug: row.original.slug, raceId: row.original.raceId, eventId: row.original.eventId })} class="text-orange-600 hover:text-orange-700 text-sm font-medium">
                       View →
                     </a>
                   </td>
@@ -381,7 +362,7 @@
           {#each table.getRowModel().rows as row}
             {@const race = row.original}
             <a
-              href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+              href={raceEventUrl({ year: race.year, slug: race.slug, raceId: race.raceId, eventId: race.eventId })}
               class="group block bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div class="h-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden group-hover:from-slate-800 group-hover:via-slate-700 group-hover:to-slate-800 transition-all duration-300">

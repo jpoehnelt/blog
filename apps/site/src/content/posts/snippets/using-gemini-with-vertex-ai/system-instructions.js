@@ -4,20 +4,25 @@
 function queryWithSystem(prompt) {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   const payload = {
     systemInstruction: {
-      parts: [{
-        text: `You are a helpful assistant. Be concise.
+      parts: [
+        {
+          text: `You are a helpful assistant. Be concise.
 Use bullet points for lists.`,
-      }],
+        },
+      ],
     },
-    contents: [{
-      role: "user",
-      parts: [{ text: prompt }],
-    }],
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }],
+      },
+    ],
   };
 
   const response = VertexAI.Endpoints.generateContent(payload, MODEL);
@@ -30,7 +35,8 @@ Use bullet points for lists.`,
 function chat(history, message) {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   history.push({
@@ -40,7 +46,7 @@ function chat(history, message) {
 
   const response = VertexAI.Endpoints.generateContent(
     { contents: history },
-    MODEL
+    MODEL,
   );
   const reply = response.candidates[0].content.parts[0].text;
 

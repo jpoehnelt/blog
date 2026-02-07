@@ -4,7 +4,8 @@
 function generateBriefing() {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   const today = new Date();
@@ -12,16 +13,20 @@ function generateBriefing() {
   const calendar = CalendarApp.getDefaultCalendar();
   const events = calendar.getEvents(today, tomorrow);
 
-  const list = events.map((e) => {
-    const time = e.getStartTime().toLocaleTimeString();
-    return `- ${time}: ${e.getTitle()}`;
-  }).join("\n");
+  const list = events
+    .map((e) => {
+      const time = e.getStartTime().toLocaleTimeString();
+      return `- ${time}: ${e.getTitle()}`;
+    })
+    .join("\n");
 
   const payload = {
-    contents: [{
-      role: "user",
-      parts: [{ text: `Create brief agenda with prep notes:\n${list}` }],
-    }],
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: `Create brief agenda with prep notes:\n${list}` }],
+      },
+    ],
   };
 
   const response = VertexAI.Endpoints.generateContent(payload, MODEL);
@@ -33,6 +38,6 @@ function generateBriefing() {
   GmailApp.sendEmail(
     Session.getActiveUser().getEmail(),
     "☀️ Daily Briefing",
-    `${doc.getUrl()}\n\n${briefing}`
+    `${doc.getUrl()}\n\n${briefing}`,
   );
 }

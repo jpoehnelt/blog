@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { raceYearUrl, raceUrl, raceEventUrl, absoluteRaceYearUrl, absoluteRaceUrl } from "$lib/race-urls";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import { extractYouTubeId, isYouTubeUrl } from "$lib/utils/youtube";
   let { data } = $props();
@@ -9,9 +10,7 @@
   let description = $derived(
     enrichment?.summary || `Comprehensive race information for the ${race.year} ${race.title} in ${race.location}. View course details, athlete insights, videos, and event distances.`
   );
-  let canonicalUrl = $derived(
-    `https://justin.poehnelt.com/ultras/races/${race.year}/${race.slug}/${race.id}`
-  );
+  let canonicalUrl = $derived(absoluteRaceUrl(race));
 
   let jsonLd = $derived([
     {
@@ -34,7 +33,7 @@
           "@type": "ListItem",
           position: 3,
           name: race.year,
-          item: `https://justin.poehnelt.com/ultras/races/${race.year}`,
+          item: absoluteRaceYearUrl(race.year),
         },
         {
           "@type": "ListItem",
@@ -135,7 +134,7 @@
             </Breadcrumb.Item>
             <Breadcrumb.Separator class="text-stone-600" />
             <Breadcrumb.Item>
-               <Breadcrumb.Link href="/ultras/races/{race.year}" class="text-stone-400 hover:text-white transition-colors">{race.year}</Breadcrumb.Link>
+               <Breadcrumb.Link href={raceYearUrl(race.year)} class="text-stone-400 hover:text-white transition-colors">{race.year}</Breadcrumb.Link>
             </Breadcrumb.Item>
             <Breadcrumb.Separator class="text-stone-600" />
             <Breadcrumb.Item>
@@ -161,7 +160,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <span class="text-stone-400 text-xs font-bold uppercase tracking-wider">Distances:</span>
             {#each race.events as event}
-              <a href="/ultras/races/{race.year}/{race.slug}/{race.id}/{event.id}" 
+              <a href={raceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: event.id })} 
                  class="px-4 py-1.5 rounded-full bg-slate-700/50 border border-slate-500/50 text-white text-sm font-bold uppercase tracking-wide hover:bg-orange-600 hover:border-orange-500 transition-all">
                 {event.title}
               </a>
@@ -203,7 +202,7 @@
       {#if race.events && race.events.length > 0}
         <div class="flex flex-wrap gap-3">
           {#each race.events as event}
-            <a href="/ultras/races/{race.year}/{race.slug}/{race.id}/{event.id}" class="group flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-stone-200 shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+            <a href={raceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: event.id })} class="group flex items-center gap-4 bg-white rounded-xl px-4 py-3 border border-stone-200 shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
               <h3 class="font-bold text-slate-800 group-hover:text-orange-600 transition-colors">{event.title}</h3>
               {#if event.stats}
                 <div class="flex items-center gap-3 text-xs text-stone-500">
