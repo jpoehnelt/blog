@@ -168,9 +168,11 @@
 
         <!-- Quick Navigation -->
         <nav class="flex flex-wrap gap-x-4 gap-y-1 mb-4">
-          <a href="#field-strength" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Field Strength</a>
-          <a href="#field-comparison" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Field Comparison</a>
-          <a href="#registration" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Registration</a>
+          {#if activeEvents.some((e) => e.competitiveness)}
+            <a href="#field-strength" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Field Strength</a>
+            <a href="#field-comparison" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Field Comparison</a>
+            <a href="#registration" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Registration</a>
+          {/if}
           {#if events.some((e) => e.entrants && e.entrants.length > 0)}
             <a href="#top-men" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Top Men</a>
             <a href="#top-women" class="text-stone-400 hover:text-white text-sm font-medium underline decoration-stone-600 hover:decoration-white underline-offset-4 transition-colors">Top Women</a>
