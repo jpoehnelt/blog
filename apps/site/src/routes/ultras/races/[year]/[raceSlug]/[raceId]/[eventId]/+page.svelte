@@ -12,26 +12,25 @@
     WaitlistStatsCard,
     RaceHeroSection,
   } from "$lib/components/race";
-  import type { CompetitivenessStats } from "$lib/components/race/types";
+  import type { 
+    CompetitivenessStats,
+    PageEvent,
+    EnrichedPageEvent,
+    PercentileStats,
+    WaitlistProjection,
+    RegressionResult,
+    Race,
+    WaitlistSnapshot,
+    Participant,
+    RaceEventSummary,
+    WaitlistHistory
+  } from "$lib/components/race/types";
   import { raceYearUrl, raceUrl, raceEventUrl, absoluteRaceYearUrl, absoluteRaceUrl, absoluteRaceEventUrl } from "$lib/race-urls";
   import {
     linearRegression,
     linearRegressionLine,
     rSquared,
   } from "simple-statistics";
-
-  import type {
-    Race,
-    WaitlistSnapshot,
-    Participant,
-    RaceEventSummary,
-    WaitlistHistory,
-  } from "@jpoehnelt/ultrasignup-scraper/types";
-
-  interface PageEvent extends Omit<RaceEventSummary, "entrants"> {
-    data: WaitlistHistory | null;
-    entrants: Participant[] | null;
-  }
 
   let { data } = $props<{
     data: { race: Race; events: PageEvent[]; relatedPosts: Post[] };
@@ -182,29 +181,7 @@
     })
   );
 
-  interface PercentileStats {
-    percentile: number;
-    position: number;
-    velocity: number; // positions moved per day at this percentile
-  }
 
-  // Placeholder for WaitlistProjection type
-  interface WaitlistProjection {
-    projectedCount: number;
-    trendPoints: { date: string; count: number }[];
-    r2: number;
-  }
-
-  // Enriched event with computed analytics properties
-  interface EnrichedPageEvent extends PageEvent {
-    velocity: number | null;
-    velocitySeries: { date: string; velocity: number }[];
-    regression: RegressionResult | null;
-    waitlistProjection?: WaitlistProjection | null;
-    percentileStats: PercentileStats[];
-    competitiveness: CompetitivenessStats | null;
-    // Add other enriched properties here as needed
-  }
 
   function calculatePercentileVelocities(event: PageEvent): PercentileStats[] {
     if (!event.data || event.data.length < 2) return [];

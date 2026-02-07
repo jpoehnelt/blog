@@ -6,6 +6,14 @@ import type {
   WaitlistHistory,
 } from "@jpoehnelt/ultrasignup-scraper/types";
 
+export type {
+  Race,
+  WaitlistSnapshot,
+  Participant,
+  RaceEventSummary,
+  WaitlistHistory,
+};
+
 /**
  * Statistics about the competitiveness of a race field.
  */
