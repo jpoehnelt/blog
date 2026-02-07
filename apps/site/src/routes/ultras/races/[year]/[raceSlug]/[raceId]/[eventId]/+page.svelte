@@ -264,42 +264,43 @@
       const curr = sortedData[i];
 
       if (!curr.applicants || !prev.applicants) continue;
-      
-      const cohort = curr.applicants;
-      const velocities: number[] = [];
 
       const days =
         (new Date(curr.date).getTime() - new Date(prev.date).getTime()) /
         (1000 * 60 * 60 * 24);
       if (days <= 0) continue;
 
-      // Track individual velocities
-      for (const applicant of cohort) {
-        const prevPos = prev.applicants.indexOf(applicant);
-        const currPos = curr.applicants.indexOf(applicant);
-
-        if (prevPos !== -1 && currPos !== -1) {
-          const posDiff = prevPos - currPos; // Positive = moved up
-          velocities.push(posDiff / days);
+      // Track movement of person at front of waitlist (position 0)
+      const frontApplicant = curr.applicants[0];
+      if (frontApplicant) {
+        const prevFrontPos = prev.applicants.indexOf(frontApplicant);
+        if (prevFrontPos !== -1) {
+          frontSeries.push({ date: curr.date, velocity: (prevFrontPos - 0) / days });
         }
       }
 
+      // Track movement of person at middle of waitlist
+      const midIndex = Math.floor(curr.applicants.length / 2);
+      const midApplicant = curr.applicants[midIndex];
+      if (midApplicant) {
+        const prevMidPos = prev.applicants.indexOf(midApplicant);
+        if (prevMidPos !== -1) {
+          medianSeries.push({ date: curr.date, velocity: (prevMidPos - midIndex) / days });
+        }
+      }
+
+      // Average velocity across all tracked applicants (for regression)
+      const velocities: number[] = [];
+      for (const applicant of curr.applicants) {
+        const prevPos = prev.applicants.indexOf(applicant);
+        const currPos = curr.applicants.indexOf(applicant);
+        if (prevPos !== -1 && currPos !== -1) {
+          velocities.push((prevPos - currPos) / days);
+        }
+      }
       if (velocities.length > 0) {
-        // Average
         const total = velocities.reduce((sum, v) => sum + v, 0);
-        const mean = total / velocities.length;
-        avgSeries.push({ date: curr.date, velocity: mean });
-
-        // Sort velocities to find front/median
-        velocities.sort((a, b) => b - a); // Descending (highest velocity first)
-
-        // Front (Top 10%)
-        const frontIndex = Math.floor(velocities.length * 0.1);
-        frontSeries.push({ date: curr.date, velocity: velocities[frontIndex] || velocities[0] });
-
-        // Median
-        const medianIndex = Math.floor(velocities.length * 0.5);
-        medianSeries.push({ date: curr.date, velocity: velocities[medianIndex] || velocities[0] });
+        avgSeries.push({ date: curr.date, velocity: total / velocities.length });
       }
     }
     return { avg: avgSeries, front: frontSeries, median: medianSeries };

@@ -165,14 +165,14 @@
     {/if}
     {#if data.frontVelocity !== undefined}
         <Tooltip.Item
-        label="Front Velocity"
+        label="Front Movement"
         value={data.frontVelocity.toFixed(2)}
         color="rgb(16 185 129)"
       />
     {/if}
     {#if data.medianVelocity !== undefined}
         <Tooltip.Item
-        label="Median Velocity"
+        label="Middle Movement"
         value={data.medianVelocity.toFixed(2)}
         color="rgb(245 158 11)"
       />
@@ -205,7 +205,7 @@
               <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-0.5"></div>
               <div class="w-2 h-0.5 bg-emerald-500 -ml-0.5"></div>
             </div>
-            <span class="text-xs font-bold text-slate-600">Waitlist Top</span>
+            <span class="text-xs font-bold text-slate-600">Front Movement</span>
         </button>
       {/if}
 
@@ -219,7 +219,7 @@
             <div class="w-1.5 h-1.5 rounded-full bg-amber-500 -ml-0.5"></div>
             <div class="w-2 h-0.5 bg-amber-500 -ml-0.5"></div>
           </div>
-          <span class="text-xs font-bold text-slate-600">Waitlist Middle</span>
+          <span class="text-xs font-bold text-slate-600">Middle Movement</span>
         </button>
       {/if}
 
