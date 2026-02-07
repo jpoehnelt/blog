@@ -20,7 +20,9 @@
   interface ChartEvent {
     title: string;
     data: { date: string; count: number }[];
-    velocityData?: { date: string; velocity: number }[];
+    velocityData: { date: string; velocity: number }[];
+    frontSeries: { date: string; velocity: number }[];
+    medianSeries: { date: string; velocity: number }[];
     regression?: RegressionData | null;
     waitlistProjection?: WaitlistProjection | null;
   }
@@ -29,13 +31,16 @@
     date: Date;
     value: number;
     label: string;
-    velocity?: number;
+    velocity?: number; // Keep for legacy/tooltip compatibility if needed
+    frontVelocity?: number;
+    medianVelocity?: number;
   }
 
   interface VelocityPoint {
     date: Date;
     velocity: number;
     label: string;
+    type: 'avg' | 'front' | 'median';
   }
 
   interface TrendPoint {
@@ -52,45 +57,73 @@
 
   const cScale = scaleOrdinal(schemeTableau10);
 
+  // Legend State
+  let visibleSeries = $state({
+    count: true,
+    front: true,
+    median: true,
+    trend: true
+  });
+
+  const toggleSeries = (key: keyof typeof visibleSeries) => {
+    visibleSeries[key] = !visibleSeries[key];
+  };
+
   let processedData = $derived.by((): ProcessedDataPoint[] => {
+    if (!visibleSeries.count) return [];
     return events.flatMap((event: ChartEvent) => {
-      const velMap = new Map(event.velocityData?.map((v: { date: string; velocity: number }) => [v.date, v.velocity]));
+      // ... logic remains same ...
+      const frontMap = new Map(event.frontSeries?.map((v) => [v.date, v.velocity]));
+      const medianMap = new Map(event.medianSeries?.map((v) => [v.date, v.velocity]));
+      
       return (event.data || []).map((d: { date: string; count: number }) => ({
         date: new Date(d.date),
         value: d.count,
         label: event.title,
-        velocity: velMap.get(d.date),
+        frontVelocity: frontMap.get(d.date),
+        medianVelocity: medianMap.get(d.date),
       }));
     }).sort((a: ProcessedDataPoint, b: ProcessedDataPoint) => a.date.getTime() - b.date.getTime());
   });
 
-  let projectionData: ProjectionPoint[] = $derived.by((): ProjectionPoint[] => {
-    const event = events[0]; // Assuming single event for now as per current usage
-    if (!event?.waitlistProjection?.trendPoints) return [];
-    
-    return event.waitlistProjection.trendPoints.map((p: { date: string; count: number }) => ({
-      date: new Date(p.date),
-      count: p.count
-    }));
+  let processedVelocities = $derived.by((): VelocityPoint[] => {
+      const points: VelocityPoint[] = [];
+      events.forEach((event: ChartEvent) => {
+          if (event.frontSeries) {
+              event.frontSeries.forEach((d: { date: string; velocity: number }) => {
+                  points.push({ date: new Date(d.date), velocity: d.velocity, label: event.title, type: 'front' });
+              });
+          }
+          if (event.medianSeries) {
+              event.medianSeries.forEach((d: { date: string; velocity: number }) => {
+                  points.push({ date: new Date(d.date), velocity: d.velocity, label: event.title, type: 'median' });
+              });
+          }
+      });
+      return points.sort((a, b) => a.date.getTime() - b.date.getTime());
   });
 
-  let processedVelocity: VelocityPoint[] = $derived(
-    events.flatMap((event: ChartEvent) => {
-       if (!event.velocityData) return [];
-       return event.velocityData.map((d: { date: string; velocity: number }) => ({
-         date: new Date(d.date),
-         velocity: d.velocity,
-         label: event.title,
-       }));
-    }).sort((a: VelocityPoint, b: VelocityPoint) => a.date.getTime() - b.date.getTime())
+  let frontSeriesData = $derived(
+    visibleSeries.front 
+      ? processedVelocities.filter((d: VelocityPoint) => d.type === 'front')
+      : []
+  );
+  let medianSeriesData = $derived(
+    visibleSeries.median
+      ? processedVelocities.filter((d: VelocityPoint) => d.type === 'median')
+      : []
   );
 
-  // Process trend line data from regression
   let trendLineData: TrendPoint[] = $derived.by((): TrendPoint[] => {
-    if (!events[0]?.regression?.trendPoints || events[0].regression.trendPoints.length < 2) return [];
-    if (!processedVelocity.length) return [];
+    if (!visibleSeries.trend) return [];
     
-    const firstVelDate = processedVelocity[0].date.getTime();
+    if (!events[0]?.regression?.trendPoints || events[0].regression.trendPoints.length < 2) return [];
+    if (!processedVelocities.length && !events[0].velocityData?.length) return [];
+    
+    const firstVelDateStr = events[0].velocityData?.[0]?.date || processedVelocities[0]?.date.toISOString();
+    if (!firstVelDateStr) return [];
+
+    const firstVelDate = new Date(firstVelDateStr).getTime();
     return events[0].regression.trendPoints.map((pt: { dayIndex: number; velocity: number }) => ({
       date: new Date(firstVelDate + pt.dayIndex * 24 * 60 * 60 * 1000),
       velocity: pt.velocity
@@ -108,21 +141,19 @@
 
   // Calculate Y2 Domain (Velocity) - min is always 0, max is at least 10
   let y2Domain: [number, number] = $derived.by((): [number, number] => {
-    if (processedVelocity.length === 0) return [0, 10];
+    if (processedVelocities.length === 0) return [0, 10];
     
-    const vels = processedVelocity.map((d: VelocityPoint) => d.velocity ?? 0);
+    const vels = processedVelocities.map((d: VelocityPoint) => d.velocity ?? 0);
     const max = Math.max(...vels, 10); // At least 10
     
     // Min is always 0, max with some padding
     return [0, max * 1.1];
   });
-
-
 </script>
 
 {#snippet tooltipContent({ data }: { data: ProcessedDataPoint })}
   <Tooltip.Header
-    >{Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(data.date)}</Tooltip.Header
+    >{Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(data.date)}</Tooltip.Header
   >
   <Tooltip.List>
     {#if data.value !== undefined}
@@ -132,10 +163,17 @@
         color="rgb(99 102 241)"
       />
     {/if}
-    {#if data.velocity !== undefined}
+    {#if data.frontVelocity !== undefined}
         <Tooltip.Item
-        label="Daily Position Change"
-        value={data.velocity.toFixed(2)}
+        label="Front Movement"
+        value={data.frontVelocity.toFixed(2)}
+        color="rgb(16 185 129)"
+      />
+    {/if}
+    {#if data.medianVelocity !== undefined}
+        <Tooltip.Item
+        label="Middle Movement"
+        value={data.medianVelocity.toFixed(2)}
         color="rgb(245 158 11)"
       />
     {/if}
@@ -145,29 +183,54 @@
 <div class="h-96 w-full p-4 mb-16 chart-wrapper">
     <!-- Legend -->
     <div class="flex items-center justify-end gap-4 mb-2">
-      <div class="flex items-center gap-1.5">
+      <button 
+        class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.count ? 'opacity-100' : 'opacity-40 grayscale'}"
+        onclick={() => toggleSeries('count')}
+      >
         <div class="flex items-center">
           <div class="w-2 h-0.5 bg-indigo-500"></div>
           <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 -ml-0.5"></div>
           <div class="w-2 h-0.5 bg-indigo-500 -ml-0.5"></div>
         </div>
         <span class="text-xs font-bold text-slate-600">Waitlist Size</span>
-      </div>
-      {#if processedVelocity.length > 0}
-        <div class="flex items-center gap-1.5">
+      </button>
+      
+      {#if processedVelocities.some(d => d.type === 'front')}
+        <button 
+          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.front ? 'opacity-100' : 'opacity-40 grayscale'}"
+          onclick={() => toggleSeries('front')}
+        >
+            <div class="flex items-center">
+              <div class="w-2 h-0.5 bg-emerald-500"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-0.5"></div>
+              <div class="w-2 h-0.5 bg-emerald-500 -ml-0.5"></div>
+            </div>
+            <span class="text-xs font-bold text-slate-600">Front Movement</span>
+        </button>
+      {/if}
+
+      {#if processedVelocities.some(d => d.type === 'median')}
+        <button 
+          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.median ? 'opacity-100' : 'opacity-40 grayscale'}"
+          onclick={() => toggleSeries('median')}
+        >
           <div class="flex items-center">
             <div class="w-2 h-0.5 bg-amber-500"></div>
             <div class="w-1.5 h-1.5 rounded-full bg-amber-500 -ml-0.5"></div>
             <div class="w-2 h-0.5 bg-amber-500 -ml-0.5"></div>
           </div>
-          <span class="text-xs font-bold text-slate-600">Daily Position Change</span>
-        </div>
+          <span class="text-xs font-bold text-slate-600">Middle Movement</span>
+        </button>
       {/if}
-      {#if trendLineData.length > 0}
-        <div class="flex items-center gap-1.5">
+
+      {#if events[0]?.regression?.trendPoints}
+        <button 
+          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.trend ? 'opacity-100' : 'opacity-40 grayscale'}"
+          onclick={() => toggleSeries('trend')}
+        >
           <div class="w-5 h-0 border-t-2 border-dashed border-violet-500"></div>
           <span class="text-xs font-bold text-slate-600">Trend</span>
-        </div>
+        </button>
       {/if}
     </div>
 
@@ -195,35 +258,40 @@
           placement="left" 
           grid 
           rule 
-          label="Applicants" 
+          label="Waitlist Size" 
           labelProps={{ class: "text-xs font-bold fill-indigo-600", dy: -10 }}
-          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-400" }}
+          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-500" }}
         />
         <Axis 
           placement="right" 
           scale={velScale}
           grid={false} 
           rule 
-          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-400" }}
+          label="Movement Speed"
+          labelProps={{ class: "text-xs font-bold fill-slate-500", dy: -10 }}
+          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-500" }}
         />
         <Axis 
           placement="bottom" 
           format={(d) => format(d, "MMM d")} 
           rule 
-          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-400" }}
+          tickLabelProps={{ class: "text-[10px] font-medium fill-slate-500" }}
         />
         
-        <Rule x={new Date(raceDate).getTime()} class="stroke-slate-300 stroke-dashed" />
-        <Group x={new Date(raceDate).getTime()}>
-          <Text 
-            y={0}
-            dy={4} 
-            dx={-6}
-            textAnchor="end" 
-            class="text-[10px] font-semibold fill-slate-400 uppercase tracking-widest" 
-            value="Race Day" 
-          />
-        </Group>
+        {#if raceDate && !isNaN(new Date(raceDate).getTime())}
+          {@const raceTime = new Date(raceDate).getTime()}
+          <Rule x={raceTime} class="stroke-slate-300 stroke-dashed" />
+          <Group x={raceTime}>
+            <Text 
+              y={0}
+              dy={4} 
+              dx={-6}
+              textAnchor="end" 
+              class="text-[10px] font-semibold fill-slate-400 uppercase tracking-widest" 
+              value="Race Day" 
+            />
+          </Group>
+        {/if}
 
         <!-- Primary Line (Count) -->
         <Spline class="stroke-2 stroke-indigo-500" curve={curveCatmullRom} />
@@ -231,26 +299,44 @@
         <!-- Data Points (Count) -->
         <Points r={4} class="fill-indigo-500" />
 
-        <!-- Secondary Data (Velocity) - using SVG directly for correct y2 scale -->
-        {#if processedVelocity.length > 0}
-          {#if processedVelocity.length >= 2}
-            {@const velocityLine = line<VelocityPoint>()
+        <!-- Front Velocity (Emerald) -->
+        {#if frontSeriesData.length >= 2}
+            {@const frontLine = line<VelocityPoint>()
               .x(d => xScale(d.date))
               .y(d => velScale(d.velocity))
               .curve(curveCatmullRom)}
             <path
-              d={velocityLine(processedVelocity) ?? ''}
+              d={frontLine(frontSeriesData) ?? ''}
+              class="stroke-emerald-500 fill-none stroke-2"
+            />
+            {#each frontSeriesData as d}
+              <circle 
+                cx={xScale(d.date)} 
+                cy={velScale(d.velocity)} 
+                r={4} 
+                class="fill-emerald-500" 
+              />
+            {/each}
+        {/if}
+
+        <!-- Median Velocity (Amber) -->
+        {#if medianSeriesData.length >= 2}
+            {@const medianLine = line<VelocityPoint>()
+              .x(d => xScale(d.date))
+              .y(d => velScale(d.velocity))
+              .curve(curveCatmullRom)}
+            <path
+              d={medianLine(medianSeriesData) ?? ''}
               class="stroke-amber-500 fill-none stroke-2"
             />
-          {/if}
-          {#each processedVelocity as d, i}
-            <circle
-              cx={xScale(d.date)}
-              cy={velScale(d.velocity)}
-              r={4}
-              class="fill-amber-500"
-            />
-          {/each}
+            {#each medianSeriesData as d}
+              <circle 
+                cx={xScale(d.date)} 
+                cy={velScale(d.velocity)} 
+                r={4} 
+                class="fill-amber-500" 
+              />
+            {/each}
         {/if}
 
         <!-- Trend Line (Regression) -->
@@ -276,8 +362,11 @@
   </Chart>
 
   <!-- Subtitle/Explanation -->
-  {#if processedVelocity.length > 0}
-    <p class="text-xs text-slate-500 mt-2">Daily Position Change shows the average number of positions applicants move up per day.</p>
+  {#if processedVelocities.length > 0}
+    <div class="text-xs text-slate-500 mt-2 space-y-1">
+        <p><span class="text-emerald-600 font-bold">Waitlist Top:</span> Movement speed of the applicant currently at position #1.</p>
+        <p><span class="text-amber-600 font-bold">Waitlist Middle:</span> Movement speed of applicants in the middle of the pack.</p>
+    </div>
   {/if}
   
   <style>

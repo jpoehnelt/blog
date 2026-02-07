@@ -3,6 +3,7 @@ title: Extracting Gold from Antigravity's Brain
 description: A workflow for extracting architectural patterns and challenges from AI agent walkthroughs.
 pubDate: "2026-02-03"
 tags:
+  - code
   - antigravity
   - gemini
   - ai
@@ -10,7 +11,6 @@ tags:
   - agents
   - workflows
   - automation
-
 ---
 
 <script>

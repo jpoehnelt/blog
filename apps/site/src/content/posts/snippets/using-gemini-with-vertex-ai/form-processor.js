@@ -5,7 +5,8 @@
 function onFormSubmit(e) {
   const PROJECT_ID = "your-project-id";
   const REGION = "us-central1";
-  const MODEL = `projects/${PROJECT_ID}/locations/${REGION}` +
+  const MODEL =
+    `projects/${PROJECT_ID}/locations/${REGION}` +
     `/publishers/google/models/gemini-2.5-flash`;
 
   const sheet = e.range.getSheet();
@@ -13,10 +14,12 @@ function onFormSubmit(e) {
   const feedback = e.values[2];
 
   const payload = {
-    contents: [{
-      role: "user",
-      parts: [{ text: `Analyze: "${feedback}"` }],
-    }],
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: `Analyze: "${feedback}"` }],
+      },
+    ],
     generationConfig: {
       responseMimeType: "application/json",
       responseSchema: {
@@ -41,7 +44,7 @@ function onFormSubmit(e) {
   const json = response.candidates[0].content.parts[0].text;
   const result = JSON.parse(json);
 
-  sheet.getRange(row, 4, 1, 3).setValues([
-    [result.sentiment, result.summary, result.priority],
-  ]);
+  sheet
+    .getRange(row, 4, 1, 3)
+    .setValues([[result.sentiment, result.summary, result.priority]]);
 }

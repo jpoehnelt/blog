@@ -84,4 +84,45 @@ export class RaceDataManager {
     const json = await res.json();
     return WaitlistHistorySchema.parse(json);
   }
+
+  /**
+   * Validate that a raceId is a real top-level race and eventId belongs to it.
+   * Throws during build/dev to catch broken URLs early.
+   */
+  async assertValidRaceEvent(
+    raceId: number,
+    eventId: number,
+    context?: string,
+  ): Promise<void> {
+    const races = await this.getRaces();
+    const race = races.find((r) => r.id === raceId);
+
+    if (!race) {
+      // Check if raceId is actually an event ID (common mistake)
+      const parentRace = races.find((r) =>
+        r.events.some((e) => e.id === raceId),
+      );
+      if (parentRace) {
+        throw new Error(
+          `URL validation failed${context ? ` (${context})` : ""}: ` +
+            `raceId=${raceId} is an event ID, not a race ID. ` +
+            `The parent race is "${parentRace.title}" (id=${parentRace.id}). ` +
+            `Use raceId=${parentRace.id} instead.`,
+        );
+      }
+      throw new Error(
+        `URL validation failed${context ? ` (${context})` : ""}: ` +
+          `raceId=${raceId} does not exist in races.json.`,
+      );
+    }
+
+    const event = race.events.find((e) => e.id === eventId);
+    if (!event) {
+      throw new Error(
+        `URL validation failed${context ? ` (${context})` : ""}: ` +
+          `eventId=${eventId} does not belong to race "${race.title}" (id=${race.id}). ` +
+          `Valid event IDs: ${race.events.map((e) => `${e.id} (${e.title})`).join(", ")}`,
+      );
+    }
+  }
 }

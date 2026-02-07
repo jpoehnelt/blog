@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { raceUrl } from "$lib/race-urls";
   interface HotRace {
     id: number;
     title: string;
@@ -28,7 +29,7 @@
     <div class="space-y-2">
       {#each races.slice(0, 5) as race, i}
         <a 
-          href="/ultras/races/{race.year}/{race.slug}/{race.id}"
+          href={raceUrl(race)}
           class="flex items-center justify-between py-1.5 hover:bg-muted/50 -mx-2 px-2 rounded transition-colors"
         >
           <div class="flex items-center gap-2 min-w-0">

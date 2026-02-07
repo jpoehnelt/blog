@@ -13,7 +13,7 @@ export const load = async ({ parent, params }) => {
   }
 
   return {
-    race,
+    race: { ...race, year: params.year },
     enrichment,
   };
 };

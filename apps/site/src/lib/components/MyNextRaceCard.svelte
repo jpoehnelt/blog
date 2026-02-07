@@ -1,6 +1,7 @@
 <script lang="ts">
   import { differenceInDays } from "date-fns";
   import type { MyRaceEntryResolved } from "@jpoehnelt/ultrasignup-scraper/types";
+  import { raceEventUrl } from "$lib/race-urls";
 
   interface Props {
     races: MyRaceEntryResolved[];
@@ -21,7 +22,7 @@
     <div class="space-y-4">
       {#each races as race}
         <a 
-          href="/ultras/races/{new Date(race.date).getFullYear()}/{race.slug}/{race.raceId}/{race.eventId}"
+          href={raceEventUrl({ year: new Date(race.date).getFullYear(), slug: race.slug, raceId: race.raceId, eventId: race.eventId })}
           class="block group"
         >
           <div class="space-y-2">
