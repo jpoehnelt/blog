@@ -11,14 +11,14 @@ interface CompetitivenessStats {
 }
 
 function calculateCompetitiveness(
-  entrants: { rank?: number | null }[],
+  entrants: z.infer<typeof ParticipantSchema>[],
 ): CompetitivenessStats | null {
   if (!entrants || entrants.length === 0) return null;
 
   // For accurate rankings, only include runners with 5+ results (UltraSignup requirement)
   const MIN_RESULTS_FOR_RANKING = 5;
   const rankedEntrants = entrants.filter(
-    (e: any) =>
+    (e: z.infer<typeof ParticipantSchema>) =>
       e.rank && e.rank > 0 && (e.results ?? 0) >= MIN_RESULTS_FOR_RANKING,
   );
   const ranks = rankedEntrants.map((e) => e.rank!).sort((a, b) => b - a);
@@ -46,19 +46,40 @@ function calculateCompetitiveness(
   };
 }
 
+// Minimal types for races.json structure
+interface RaceEvent {
+  id: number;
+  title: string;
+  slug?: string;
+  entrants?: { dataFile: string };
+}
+
+interface RaceSummary {
+  id: number;
+  title: string;
+  slug: string;
+  date: string | Date;
+  location: string;
+  events?: RaceEvent[];
+  parentId?: number;
+  website?: string;
+  lat?: number;
+  lng?: number;
+}
+
 export const load = async ({ parent, params, fetch }) => {
   const { races } = await parent();
 
   const racesForYear = races.filter(
-    (r: any) => new Date(r.date).getFullYear().toString() === params.year,
+    (r: RaceSummary) => new Date(r.date).getFullYear().toString() === params.year,
   );
 
   // Load competitiveness for each race
   // Load competitiveness for ALL events (flattened)
   const eventsForYear = (
     await Promise.all(
-      racesForYear.flatMap((race: any) =>
-        (race.events || []).map(async (event: any) => {
+      racesForYear.flatMap((race: RaceSummary) =>
+        (race.events || []).map(async (event: RaceEvent) => {
           // Use the entrants dataFile path from the specific event
           const dataFile = event.entrants?.dataFile;
           if (!dataFile) return null;
@@ -119,6 +140,14 @@ export const load = async ({ parent, params, fetch }) => {
 
   if (eventsWithStats.length > 0) {
     const avgRanks = eventsWithStats.map((r) => r.competitiveness!.averageRank);
+    const sortedAvgRanks = [...avgRanks].sort((a, b) => a - b);
+    
+    // Calculate Median Rank
+    const mid = Math.floor(sortedAvgRanks.length / 2);
+    yearStats.medianRank = sortedAvgRanks.length % 2 !== 0
+      ? sortedAvgRanks[mid]
+      : (sortedAvgRanks[mid - 1] + sortedAvgRanks[mid]) / 2;
+
     yearStats.averageRank =
       avgRanks.reduce((a, b) => a + b, 0) / avgRanks.length;
     yearStats.minAvgRank = Math.min(...avgRanks);

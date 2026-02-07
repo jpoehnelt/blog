@@ -10,9 +10,10 @@
     activeEvents: EnrichedPageEvent[];
     totalWaitlist: number;
     heroCompetitiveness: CompetitivenessStats | null;
+    currentEventId: number | string;
   }
 
-  let { race, events, activeEvents, totalWaitlist, heroCompetitiveness }: Props =
+  let { race, events, activeEvents, totalWaitlist, heroCompetitiveness, currentEventId }: Props =
     $props();
 
   // Check if any active event has waitlist applicants
@@ -27,7 +28,7 @@
 
   // Get sibling events (other distances)
   let siblingEvents = $derived(
-    race.events?.filter((e) => String(e.id) !== String(activeEvents[0]?.id)) ?? [],
+    race.events?.filter((e) => String(e.id) !== String(currentEventId)) ?? [],
   );
 </script>
 

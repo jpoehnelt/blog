@@ -11,6 +11,8 @@
     type SortingState,
   } from "@tanstack/table-core";
 
+  import type { CompetitiveEvent } from "./+page.server";
+
   let { data } = $props();
   let races = $derived(data.races);
   let years = $derived(data.years);
@@ -20,7 +22,7 @@
   let globalFilter = $state("");
 
   // Column definitions
-  const columns: ColumnDef<any>[] = [
+  const columns: ColumnDef<CompetitiveEvent>[] = [
     {
       id: "title",
       accessorKey: "fullTitle",
@@ -133,7 +135,7 @@
       name: "Most Competitive Ultramarathons",
       description: description,
       numberOfItems: races.length,
-      itemListElement: races.slice(0, 20).map((race: any, index: number) => ({
+      itemListElement: races.slice(0, 20).map((race: CompetitiveEvent, index: number) => ({
         "@type": "ListItem",
         position: index + 1,
         name: race.title,

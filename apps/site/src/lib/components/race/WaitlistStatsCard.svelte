@@ -37,7 +37,9 @@
           <span
             class="font-mono font-bold {event.regression.projectedPositionChange > 0
               ? 'text-green-600'
-              : 'text-red-500'}"
+              : event.regression.projectedPositionChange < 0
+                ? 'text-red-500'
+                : 'text-gray-500'}"
           >
             {event.regression.projectedPositionChange > 0 ? "+" : ""}{Math.round(
               event.regression.projectedPositionChange,

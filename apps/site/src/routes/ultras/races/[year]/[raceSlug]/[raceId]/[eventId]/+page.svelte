@@ -1210,7 +1210,7 @@
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <RaceHeroSection {race} {events} {activeEvents} {totalWaitlist} {heroCompetitiveness} />
+  <RaceHeroSection {race} {events} {activeEvents} {totalWaitlist} {heroCompetitiveness} currentEventId={events[0]?.id} />
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Race Summary Card with Link Back -->
@@ -1337,7 +1337,7 @@
                   </div>
                 {/if}
 
-                {#if event.data && event.data.length > 0 && event.data.some((d: any) => (d.count || 0) > 0)}
+                {#if event.data && event.data.length > 0 && event.data.some((d: WaitlistSnapshot) => (d.count || 0) > 0)}
                   {@const last = event.data[event.data.length - 1]}
                   <div class="mt-4 pt-4 border-t border-stone-100">
                     <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist</h4>
@@ -1349,11 +1349,11 @@
           {/each}
 
           <!-- Waitlist Trends Card (full width) -->
-          {#if activeEvents.some((e: any) => e.data && e.data.length > 1 && e.data.some((d: any) => (d.count || 0) > 0))}
+          {#if activeEvents.some((e: EnrichedPageEvent) => e.data && e.data.length > 1 && e.data.some((d: WaitlistSnapshot) => (d.count || 0) > 0))}
             <div class="bg-white p-6 rounded-lg shadow w-full">
               <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist Trends</h4>
               <WaitlistChart
-                events={activeEvents.map((e: any) => ({
+                events={activeEvents.map((e: EnrichedPageEvent) => ({
                   title: e.title,
                   data: e.data || [],
                   velocityData: e.velocitySeries || [],

@@ -34,7 +34,7 @@ function calculateCompetitiveness(
   };
 }
 
-interface CompetitiveEvent {
+export interface CompetitiveEvent {
   id: number;
   eventId: number;
   raceId: number;

@@ -102,7 +102,7 @@ export interface RaceWithCompetitiveness {
   eventId?: number;
   title: string;
   slug: string;
-  date: string;
+  date: string | Date;
   competitiveness: {
     top20Rank: number;
     totalEntrants: number;

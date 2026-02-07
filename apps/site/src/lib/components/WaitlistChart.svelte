@@ -278,17 +278,20 @@
           tickLabelProps={{ class: "text-[10px] font-medium fill-slate-500" }}
         />
         
-        <Rule x={new Date(raceDate).getTime()} class="stroke-slate-300 stroke-dashed" />
-        <Group x={new Date(raceDate).getTime()}>
-          <Text 
-            y={0}
-            dy={4} 
-            dx={-6}
-            textAnchor="end" 
-            class="text-[10px] font-semibold fill-slate-400 uppercase tracking-widest" 
-            value="Race Day" 
-          />
-        </Group>
+        {#if raceDate && !isNaN(new Date(raceDate).getTime())}
+          {@const raceTime = new Date(raceDate).getTime()}
+          <Rule x={raceTime} class="stroke-slate-300 stroke-dashed" />
+          <Group x={raceTime}>
+            <Text 
+              y={0}
+              dy={4} 
+              dx={-6}
+              textAnchor="end" 
+              class="text-[10px] font-semibold fill-slate-400 uppercase tracking-widest" 
+              value="Race Day" 
+            />
+          </Group>
+        {/if}
 
         <!-- Primary Line (Count) -->
         <Spline class="stroke-2 stroke-indigo-500" curve={curveCatmullRom} />

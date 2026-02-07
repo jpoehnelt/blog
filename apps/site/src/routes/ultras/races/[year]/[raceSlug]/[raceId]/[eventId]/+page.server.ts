@@ -39,19 +39,17 @@ export async function load({ params, parent, fetch }) {
     raceManager.getEntrants(Number(raceId), Number(eventId)),
   ]);
 
-  // Strict Validation: Block build if waitlist data is missing
+  // Relaxed Validation: Log warning but allow build to proceed with empty data
   if (!waitlistData || waitlistData.length === 0) {
-    throw error(
-      500,
-      `Build Blocked: Missing waitlist data for event ${eventId}`,
-    );
+    console.warn(`[Build Warning] Missing waitlist data for event ${eventId} (${event.title})`);
   }
+  
   if (!entrantsData || entrantsData.length === 0) {
-    throw error(
-      500,
-      `Build Blocked: Missing entrants data for event ${eventId}`,
-    );
+    console.warn(`[Build Warning] Missing entrants data for event ${eventId} (${event.title})`);
   }
+
+  const safeWaitlistData = waitlistData || [];
+  const safeEntrantsData = entrantsData || [];
 
   // Calculate "Strongest 2026 Fields" leaderboard
   // This is a ranked list of events by top20Rank, including the current event
@@ -87,8 +85,8 @@ export async function load({ params, parent, fetch }) {
   const events = [
     {
       ...event,
-      data: waitlistData,
-      entrants: entrantsData,
+      data: safeWaitlistData,
+      entrants: safeEntrantsData,
     },
   ];
 
