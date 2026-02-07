@@ -314,6 +314,8 @@
 <style>
   .strava-heatmap {
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     padding: 1rem;
     background: hsl(var(--muted) / 0.3);
     border-radius: 0.5rem;
@@ -330,12 +332,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    overflow: hidden;
   }
 
   .heatmap-panel {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    overflow: hidden;
+    min-width: 0;
   }
 
   .heatmap-labels-top {
@@ -350,6 +355,7 @@
   .heatmap-grid-wrapper {
     display: flex;
     gap: 0.25rem;
+    overflow: hidden;
   }
 
   .heatmap-labels-left {
@@ -373,6 +379,8 @@
     flex-direction: column;
     gap: 2px;
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .heatmap-row-cells {
@@ -384,25 +392,25 @@
     width: 12px;
     height: 12px;
     border-radius: 2px;
-    flex-shrink: 0;
+    flex-shrink: 1;
   }
 
   .dow-grid .heatmap-cell {
     flex: 1;
     width: auto;
-    min-width: 12px;
+    min-width: 0;
   }
 
   .month-grid .heatmap-cell {
     flex: 1;
     width: auto;
-    min-width: 10px;
+    min-width: 0;
   }
 
   .hour-grid .heatmap-cell {
     flex: 1;
     width: auto;
-    min-width: 10px;
+    min-width: 0;
   }
 
   /* Intensity colors - orange theme using site accent color */
@@ -458,12 +466,13 @@
 
   .calendar-content {
     flex: 1;
-    overflow-x: auto;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .calendar-months {
     display: grid;
-    grid-template-columns: repeat(53, 1fr);
+    grid-template-columns: repeat(53, minmax(0, 1fr));
     font-size: 0.625rem;
     color: hsl(var(--muted-foreground));
     font-family: var(--font-mono, monospace);
@@ -472,7 +481,8 @@
   }
 
   .calendar-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(53, minmax(0, 1fr));
     gap: 2px;
   }
 
@@ -480,6 +490,12 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+  }
+
+  .calendar-week .heatmap-cell {
+    width: auto;
+    aspect-ratio: 1;
+    flex-shrink: 1;
   }
 
   .calendar-stats {
