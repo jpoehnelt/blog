@@ -75,6 +75,11 @@
 
     gtag("config", "G-67SN6HNB0B");
   </script>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830"
+    crossorigin="anonymous"
+  ></script>
 </svelte:head>
 
 <a

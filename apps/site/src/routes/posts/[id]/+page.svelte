@@ -112,6 +112,14 @@
 
 <JsonLd {schema} />
 
+{#if !data.tags.some((tag) => tag.toLowerCase().includes("google"))}
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830"
+    crossorigin="anonymous"
+  ></script>
+{/if}
+
 {#snippet toc(items: typeof data.toc)}
   {#if items && items.length > 1}
     <div class="mb-8 lg:mb-0">
@@ -146,7 +154,9 @@
 
   <article class="prose flex-1 min-w-0">
     <div class="flex flex-col gap-2">
-      <h1 class="mb-0" style:view-transition-name="post-title-{data.id}">{data.title}</h1>
+      <h1 class="mb-0" style:view-transition-name="post-title-{data.id}">
+        {data.title}
+      </h1>
       <div class="flex flex-wrap gap-1 items-center">
         <span class="text-xs">
           Published on <b><FormattedDate date={data.pubDate} /></b>
