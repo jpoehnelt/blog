@@ -238,4 +238,13 @@
     @apply outline-2 outline-offset-2 outline-ring;
     @apply transition-all duration-150;
   }
+
+  /* TODO: TEMPORARY — remove after ad testing */
+  .adsbygoogle {
+    @apply bg-red-500 text-white font-bold text-center py-8 my-4 rounded;
+    &::before {
+      content: "AD PLACEHOLDER";
+      font-size: 1.5rem;
+    }
+  }
 }

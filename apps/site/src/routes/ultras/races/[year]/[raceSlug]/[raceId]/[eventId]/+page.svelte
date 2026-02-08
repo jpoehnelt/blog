@@ -12,7 +12,7 @@
     WaitlistStatsCard,
     RaceHeroSection,
   } from "$lib/components/race";
-  import type { 
+  import type {
     CompetitivenessStats,
     PageEvent,
     EnrichedPageEvent,
@@ -23,9 +23,16 @@
     WaitlistSnapshot,
     Participant,
     RaceEventSummary,
-    WaitlistHistory
+    WaitlistHistory,
   } from "$lib/components/race/types";
-  import { raceYearUrl, raceUrl, raceEventUrl, absoluteRaceYearUrl, absoluteRaceUrl, absoluteRaceEventUrl } from "$lib/race-urls";
+  import {
+    raceYearUrl,
+    raceUrl,
+    raceEventUrl,
+    absoluteRaceYearUrl,
+    absoluteRaceUrl,
+    absoluteRaceEventUrl,
+  } from "$lib/race-urls";
   import {
     linearRegression,
     linearRegressionLine,
@@ -55,8 +62,6 @@
     accent: "text-stone-500",
     bgAccent: "bg-stone-100",
   };
-
-
 
   function calculateCompetitiveness(
     entrants: Participant[] | null,
@@ -165,23 +170,23 @@
     events.map((e: PageEvent) => {
       // If data exists and has count > 0, return as is
       if (e.data && e.data.length > 0) {
-         const lastPoint = e.data[e.data.length - 1];
-         if ((lastPoint?.count || 0) > 0) return e;
+        const lastPoint = e.data[e.data.length - 1];
+        if ((lastPoint?.count || 0) > 0) return e;
       }
-      
+
       // Otherwise inject fallback (count 0)
       return {
-          ...e,
-          data: [{
+        ...e,
+        data: [
+          {
             date: new Date().toISOString(),
             count: 0,
-            applicants: []
-          }]
+            applicants: [],
+          },
+        ],
       };
-    })
+    }),
   );
-
-
 
   function calculatePercentileVelocities(event: PageEvent): PercentileStats[] {
     if (!event.data || event.data.length < 2) return [];
@@ -200,10 +205,16 @@
     if (!last.applicants) return [];
 
     // Find the snapshot closest to 7 days ago as our baseline
-    const sevenDaysAgo = new Date(new Date(last.date).getTime() - 7 * 24 * 60 * 60 * 1000);
+    const sevenDaysAgo = new Date(
+      new Date(last.date).getTime() - 7 * 24 * 60 * 60 * 1000,
+    );
     const baseline = withApplicants.reduce((closest, curr) => {
-      const currDiff = Math.abs(new Date(curr.date).getTime() - sevenDaysAgo.getTime());
-      const closestDiff = Math.abs(new Date(closest.date).getTime() - sevenDaysAgo.getTime());
+      const currDiff = Math.abs(
+        new Date(curr.date).getTime() - sevenDaysAgo.getTime(),
+      );
+      const closestDiff = Math.abs(
+        new Date(closest.date).getTime() - sevenDaysAgo.getTime(),
+      );
       return currDiff < closestDiff ? curr : closest;
     });
 
@@ -241,14 +252,13 @@
     });
   }
 
-  function calculateVelocitySeries(
-    event: PageEvent,
-  ): { 
-      avg: { date: string; velocity: number }[];
-      front: { date: string; velocity: number }[];
-      median: { date: string; velocity: number }[];
+  function calculateVelocitySeries(event: PageEvent): {
+    avg: { date: string; velocity: number }[];
+    front: { date: string; velocity: number }[];
+    median: { date: string; velocity: number }[];
   } {
-    if (!event.data || event.data.length < 2) return { avg: [], front: [], median: [] };
+    if (!event.data || event.data.length < 2)
+      return { avg: [], front: [], median: [] };
 
     // Ensure data is sorted by date
     const sortedData = [...event.data].sort(
@@ -275,7 +285,10 @@
       if (frontApplicant) {
         const prevFrontPos = prev.applicants.indexOf(frontApplicant);
         if (prevFrontPos !== -1) {
-          frontSeries.push({ date: curr.date, velocity: (prevFrontPos - 0) / days });
+          frontSeries.push({
+            date: curr.date,
+            velocity: (prevFrontPos - 0) / days,
+          });
         }
       }
 
@@ -285,7 +298,10 @@
       if (midApplicant) {
         const prevMidPos = prev.applicants.indexOf(midApplicant);
         if (prevMidPos !== -1) {
-          medianSeries.push({ date: curr.date, velocity: (prevMidPos - midIndex) / days });
+          medianSeries.push({
+            date: curr.date,
+            velocity: (prevMidPos - midIndex) / days,
+          });
         }
       }
 
@@ -300,7 +316,10 @@
       }
       if (velocities.length > 0) {
         const total = velocities.reduce((sum, v) => sum + v, 0);
-        avgSeries.push({ date: curr.date, velocity: total / velocities.length });
+        avgSeries.push({
+          date: curr.date,
+          velocity: total / velocities.length,
+        });
       }
     }
     return { avg: avgSeries, front: frontSeries, median: medianSeries };
@@ -487,23 +506,25 @@
     raceDate: string | null,
   ): WaitlistProjection | null {
     if (!eventData || eventData.length < 30) return null; // Need 30+ days for accuracy
-    
+
     // Sort by date
     const sortedData = [...eventData].sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     );
-    
+
     // Convert to [dayIndex, count]
     const firstDate = new Date(sortedData[0].date).getTime();
-    const data: [number, number][] = sortedData.map(d => [
-      Math.floor((new Date(d.date).getTime() - firstDate) / (1000 * 60 * 60 * 24)),
-      d.count
+    const data: [number, number][] = sortedData.map((d) => [
+      Math.floor(
+        (new Date(d.date).getTime() - firstDate) / (1000 * 60 * 60 * 24),
+      ),
+      d.count,
     ]);
-    
-    const x = data.map(d => d[0]);
-    const y = data.map(d => d[1]);
+
+    const x = data.map((d) => d[0]);
+    const y = data.map((d) => d[1]);
     const n = x.length;
-    
+
     // Quadratic Regression: y = a + bx + cx^2
     const sumX = x.reduce((a, b) => a + b, 0);
     const sumX2 = x.reduce((a, b) => a + b * b, 0);
@@ -512,16 +533,16 @@
     const sumY = y.reduce((a, b) => a + b, 0);
     const sumXY = x.reduce((a, xi, i) => a + xi * y[i], 0);
     const sumX2Y = x.reduce((a, xi, i) => a + xi * xi * y[i], 0);
-    
+
     // Matrix Determinants for Cramer's Rule
     const det =
       n * (sumX2 * sumX4 - sumX3 * sumX3) -
       sumX * (sumX * sumX4 - sumX3 * sumX2) +
       sumX2 * (sumX * sumX3 - sumX2 * sumX2);
-      
+
     let predict: (xi: number) => number;
     let r2 = 0;
-    
+
     if (Math.abs(det) < 1e-10) {
       // Fallback to Linear
       const regression = linearRegression(data);
@@ -541,39 +562,43 @@
         n * (sumX2 * sumX2Y - sumXY * sumX3) -
         sumX * (sumX * sumX2Y - sumXY * sumX2) +
         sumY * (sumX * sumX3 - sumX2 * sumX2);
-        
+
       const a = detA / det;
       const b = detB / det;
       const c = detC / det;
       predict = (xi: number) => a + b * xi + c * xi * xi;
-      
+
       const yMean = sumY / n;
       const ssTot = y.reduce((acc, yi) => acc + (yi - yMean) ** 2, 0);
-      const ssRes = y.reduce((acc, yi, i) => acc + (yi - predict(x[i])) ** 2, 0);
+      const ssRes = y.reduce(
+        (acc, yi, i) => acc + (yi - predict(x[i])) ** 2,
+        0,
+      );
       r2 = ssTot > 0 ? 1 - ssRes / ssTot : 0;
     }
-    
+
     if (r2 < 0.1) return null; // Ignore very poor fits
-    
+
     // Generate full trend line from start to race day
     const trendPoints: { date: string; count: number }[] = [];
     const maxDayIndex = Math.max(...x);
     let raceDayIndex = maxDayIndex;
-    
+
     if (raceDate) {
-      raceDayIndex = Math.floor((new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24));
+      raceDayIndex = Math.floor(
+        (new Date(raceDate).getTime() - firstDate) / (1000 * 60 * 60 * 24),
+      );
     }
-    
+
     // Generate points for the entire range (start to race day)
     for (let i = 0; i <= raceDayIndex; i++) {
-        const d = new Date(firstDate + i * 1000 * 60 * 60 * 24);
-        trendPoints.push({
-            date: d.toISOString(),
-            count: Math.round(predict(i)) 
-        });
+      const d = new Date(firstDate + i * 1000 * 60 * 60 * 24);
+      trendPoints.push({
+        date: d.toISOString(),
+        count: Math.round(predict(i)),
+      });
     }
-    
-    
+
     // Ensure accurate last point
     const finalCount = Math.round(predict(raceDayIndex));
 
@@ -585,46 +610,53 @@
     // High curvature means the trend is accelerating unrealistically
     // With x in days, c > 0.05 is HUGE acceleration (1 person/day^2 => 100 people/day after 10 days)
     // We only care if c is used (quadratic)
-    if (Math.abs(det) >= 1e-10) { 
-       const detC =
+    if (Math.abs(det) >= 1e-10) {
+      const detC =
         n * (sumX2 * sumX2Y - sumXY * sumX3) -
         sumX * (sumX * sumX2Y - sumXY * sumX2) +
         sumY * (sumX * sumX3 - sumX2 * sumX2);
-       const c = detC / det;
-       if (Math.abs(c) > 0.05) return null;
+      const c = detC / det;
+      if (Math.abs(c) > 0.05) return null;
     }
 
     // 2. Growth check (stricter)
-    if (finalCount > currentMax * 1.1) return null; 
-    
+    if (finalCount > currentMax * 1.1) return null;
+
     // 3. Rapid clearing check
     const daysToRace = raceDayIndex - maxDayIndex;
     if (finalCount === 0 && daysToRace > 1 && currentCount > 200) {
-         if (daysToRace < 10) return null; 
+      if (daysToRace < 10) return null;
     }
 
     if (r2 < 0.2) return null; // Stricter R2
-    
+
     return {
-        projectedCount: Math.max(0, finalCount),
-        trendPoints,
-        r2
+      projectedCount: Math.max(0, finalCount),
+      trendPoints,
+      r2,
     };
   }
 
   let activeEvents = $derived(
     activeEventsBase.map((e: PageEvent) => {
       const velocitySeries = calculateVelocitySeries(e);
-      const regressionResult = calculateRegression(velocitySeries.avg, race.date);
+      const regressionResult = calculateRegression(
+        velocitySeries.avg,
+        race.date,
+      );
       const percentileStats = calculatePercentileVelocities(e);
       const competitiveness = calculateCompetitiveness(e.entrants);
       const waitlistProjection = calculateWaitlistRegression(e.data, race.date);
-      
+
       // Calculate 7D movement as average of percentile velocities for consistency
-      const movement7d = percentileStats.length > 0
-        ? Math.round(percentileStats.reduce((sum, p) => sum + p.velocity, 0) / percentileStats.length)
-        : null;
-      
+      const movement7d =
+        percentileStats.length > 0
+          ? Math.round(
+              percentileStats.reduce((sum, p) => sum + p.velocity, 0) /
+                percentileStats.length,
+            )
+          : null;
+
       return {
         ...e,
         velocity: movement7d,
@@ -1047,7 +1079,7 @@
   title: string,
   theme: "blue" | "rose",
   expanded: boolean,
-  onToggle: () => void
+  onToggle: () => void,
 )}
   <div
     class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden h-full flex flex-col"
@@ -1147,7 +1179,12 @@
   <meta name="description" content={description} />
   <link
     rel="canonical"
-    href={absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}
+    href={absoluteRaceEventUrl({
+      year: race.year,
+      slug: race.slug,
+      raceId: race.id,
+      eventId: events[0]?.id,
+    })}
   />
 
   <!-- Open Graph -->
@@ -1162,7 +1199,12 @@
   <meta property="og:image:height" content="630" />
   <meta
     property="og:url"
-    content={absoluteRaceEventUrl({ year: race.year, slug: race.slug, raceId: race.id, eventId: events[0]?.id })}
+    content={absoluteRaceEventUrl({
+      year: race.year,
+      slug: race.slug,
+      raceId: race.id,
+      eventId: events[0]?.id,
+    })}
   />
 
   <!-- Twitter Card -->
@@ -1187,7 +1229,14 @@
 
 <div class="min-h-screen bg-stone-50 pb-20">
   <!-- Hero Section -->
-  <RaceHeroSection {race} {events} {activeEvents} {totalWaitlist} {heroCompetitiveness} currentEventId={events[0]?.id} />
+  <RaceHeroSection
+    {race}
+    {events}
+    {activeEvents}
+    {totalWaitlist}
+    {heroCompetitiveness}
+    currentEventId={events[0]?.id}
+  />
 
   <div class="container mx-auto px-6 -mt-8 relative z-10 space-y-8">
     <!-- Race Summary Card with Link Back -->
@@ -1225,7 +1274,10 @@
           {#each activeEvents as event}
             {#if event.competitiveness}
               <!-- Field Strength Card -->
-              <div id="field-strength" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+              <div
+                id="field-strength"
+                class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]"
+              >
                 <h3 class="text-lg font-medium mb-4">Field Strength</h3>
                 <FieldStrengthCard
                   competitiveness={event.competitiveness}
@@ -1234,28 +1286,55 @@
                 />
               </div>
 
-              <div id="field-comparison" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+              <div
+                id="field-comparison"
+                class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]"
+              >
                 <h3 class="text-lg font-medium mb-4">Field Comparison</h3>
 
                 <!-- Field Strength Meter -->
                 {#if yearStats && yearStats.maxTop20Rank > yearStats.minTop20Rank && event.competitiveness.top20Rank}
-                  {@const strengthRange = yearStats.maxTop20Rank - yearStats.minTop20Rank}
-                  {@const strengthPosition = Math.max(0, Math.min(100, ((event.competitiveness.top20Rank - yearStats.minTop20Rank) / strengthRange) * 100))}
+                  {@const strengthRange =
+                    yearStats.maxTop20Rank - yearStats.minTop20Rank}
+                  {@const strengthPosition = Math.max(
+                    0,
+                    Math.min(
+                      100,
+                      ((event.competitiveness.top20Rank -
+                        yearStats.minTop20Rank) /
+                        strengthRange) *
+                        100,
+                    ),
+                  )}
                   <div class="mb-4">
                     <div class="flex justify-between items-end mb-1">
-                      <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Field Strength Meter</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-slate-600"
+                        >Field Strength Meter</span
+                      >
                     </div>
-                    <div class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible">
-                      <div class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-blue-200 to-purple-300 opacity-60"></div>
+                    <div
+                      class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible"
+                    >
+                      <div
+                        class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-blue-200 to-purple-300 opacity-60"
+                      ></div>
                       <div
                         class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-2 border-slate-600 rounded-full shadow-sm z-10"
                         style="left: {strengthPosition}%;"
-                        title="This event: {event.competitiveness.top20Rank.toFixed(1)}% (Rank of 20th)"
+                        title="This event: {event.competitiveness.top20Rank.toFixed(
+                          1,
+                        )}% (Rank of 20th)"
                       ></div>
                     </div>
-                    <div class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase">
-                      <span>Weakest ({yearStats.minTop20Rank.toFixed(0)}%)</span>
-                      <span>Strongest ({yearStats.maxTop20Rank.toFixed(0)}%)</span>
+                    <div
+                      class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase"
+                    >
+                      <span>Weakest ({yearStats.minTop20Rank.toFixed(0)}%)</span
+                      >
+                      <span
+                        >Strongest ({yearStats.maxTop20Rank.toFixed(0)}%)</span
+                      >
                     </div>
                   </div>
                 {/if}
@@ -1267,22 +1346,31 @@
                 />
               </div>
 
-              <div id="registration" class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]">
+              <div
+                id="registration"
+                class="bg-white p-6 rounded-lg shadow flex-1 min-w-[320px] md:min-w-[400px]"
+              >
                 <h3 class="text-lg font-medium mb-4">Registration Analysis</h3>
                 <div class="grid grid-cols-2 gap-4">
                   <!-- Total Entrants -->
                   <div class="bg-slate-50 rounded-lg p-3">
-                    <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                    <div
+                      class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                    >
                       Total Entrants
                     </div>
                     <div class="text-2xl font-bold text-slate-800">
-                      {event.competitiveness?.totalEntrants > 0 ? event.competitiveness.totalEntrants : 'Unknown'}
+                      {event.competitiveness?.totalEntrants > 0
+                        ? event.competitiveness.totalEntrants
+                        : "Unknown"}
                     </div>
                   </div>
 
                   <!-- Ranked Entrants -->
                   <div class="bg-slate-50 rounded-lg p-3">
-                    <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                    <div
+                      class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                    >
                       Ranked Runners
                     </div>
                     <div class="text-2xl font-bold text-slate-800">
@@ -1293,21 +1381,41 @@
 
                 <!-- Field Size Meter -->
                 {#if yearStats && yearStats.maxTotalEntrants > yearStats.minTotalEntrants}
-                  {@const sizeRange = yearStats.maxTotalEntrants - yearStats.minTotalEntrants}
-                  {@const sizePosition = Math.max(0, Math.min(100, ((event.competitiveness.totalEntrants - yearStats.minTotalEntrants) / sizeRange) * 100))}
+                  {@const sizeRange =
+                    yearStats.maxTotalEntrants - yearStats.minTotalEntrants}
+                  {@const sizePosition = Math.max(
+                    0,
+                    Math.min(
+                      100,
+                      ((event.competitiveness.totalEntrants -
+                        yearStats.minTotalEntrants) /
+                        sizeRange) *
+                        100,
+                    ),
+                  )}
                   <div class="mt-3">
                     <div class="flex justify-between items-end mb-1">
-                      <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Field Size Meter</span>
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-slate-600"
+                        >Field Size Meter</span
+                      >
                     </div>
-                    <div class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible">
-                      <div class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-emerald-200 to-teal-300 opacity-60"></div>
+                    <div
+                      class="h-2 w-full bg-slate-100 rounded-full relative overflow-visible"
+                    >
+                      <div
+                        class="absolute inset-0 rounded-full bg-gradient-to-r from-slate-200 via-emerald-200 to-teal-300 opacity-60"
+                      ></div>
                       <div
                         class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-2 border-slate-600 rounded-full shadow-sm z-10"
                         style="left: {sizePosition}%;"
-                        title="This event: {event.competitiveness.totalEntrants} entrants"
+                        title="This event: {event.competitiveness
+                          .totalEntrants} entrants"
                       ></div>
                     </div>
-                    <div class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase">
+                    <div
+                      class="flex justify-between text-[9px] text-slate-300 mt-0.5 font-medium uppercase"
+                    >
                       <span>Smallest ({yearStats.minTotalEntrants})</span>
                       <span>Largest ({yearStats.maxTotalEntrants})</span>
                     </div>
@@ -1317,7 +1425,11 @@
                 {#if event.data && event.data.length > 0 && event.data.some((d: WaitlistSnapshot) => (d.count || 0) > 0)}
                   {@const last = event.data[event.data.length - 1]}
                   <div class="mt-4 pt-4 border-t border-stone-100">
-                    <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist</h4>
+                    <h4
+                      class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3"
+                    >
+                      Waitlist
+                    </h4>
                     <WaitlistStatsCard {event} lastSnapshot={last} />
                   </div>
                 {/if}
@@ -1328,7 +1440,11 @@
           <!-- Waitlist Trends Card (full width) -->
           {#if activeEvents.some((e: EnrichedPageEvent) => e.data && e.data.length > 1 && e.data.some((d: WaitlistSnapshot) => (d.count || 0) > 0))}
             <div class="bg-white p-6 rounded-lg shadow w-full">
-              <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Waitlist Trends</h4>
+              <h4
+                class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3"
+              >
+                Waitlist Trends
+              </h4>
               <WaitlistChart
                 events={activeEvents.map((e: EnrichedPageEvent) => ({
                   title: e.title,
@@ -1346,6 +1462,16 @@
         </div>
       </div>
     {/if}
+
+    <!-- In-page Ad -->
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-1251836334060830"
+      data-ad-slot="8468844777"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
 
     {#if activeEvents.length === 0 && entrants.length === 0}
       <div
@@ -1384,17 +1510,23 @@
             <div class="grid grid-cols-2 gap-4">
               <!-- Total Entrants -->
               <div class="bg-slate-50 rounded-lg p-3">
-                <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                <div
+                  class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                >
                   Total Entrants
                 </div>
                 <div class="text-2xl font-bold text-slate-800">
-                  {fieldCompetitiveness.totalEntrants > 0 ? fieldCompetitiveness.totalEntrants : 'Unknown'}
+                  {fieldCompetitiveness.totalEntrants > 0
+                    ? fieldCompetitiveness.totalEntrants
+                    : "Unknown"}
                 </div>
               </div>
 
               <!-- Ranked Entrants -->
               <div class="bg-slate-50 rounded-lg p-3">
-                <div class="text-xs text-stone-400 uppercase tracking-wide mb-1">
+                <div
+                  class="text-xs text-stone-400 uppercase tracking-wide mb-1"
+                >
                   Ranked Runners
                 </div>
                 <div class="text-2xl font-bold text-slate-800">
@@ -1508,10 +1640,22 @@
               >
             </Tabs.List>
             <Tabs.Content value="men">
-              {@render ParticipantList(topMen, "Top Men", "blue", showAllMen, () => showAllMen = !showAllMen)}
+              {@render ParticipantList(
+                topMen,
+                "Top Men",
+                "blue",
+                showAllMen,
+                () => (showAllMen = !showAllMen),
+              )}
             </Tabs.Content>
             <Tabs.Content value="women">
-              {@render ParticipantList(topWomen, "Top Women", "rose", showAllWomen, () => showAllWomen = !showAllWomen)}
+              {@render ParticipantList(
+                topWomen,
+                "Top Women",
+                "rose",
+                showAllWomen,
+                () => (showAllWomen = !showAllWomen),
+              )}
             </Tabs.Content>
           </Tabs.Root>
         </div>
@@ -1519,10 +1663,22 @@
         <!-- Desktop Grid -->
         <div class="hidden lg:grid grid-cols-2 gap-8">
           <div id="top-men">
-            {@render ParticipantList(topMen, "Top Men", "blue", showAllMen, () => showAllMen = !showAllMen)}
+            {@render ParticipantList(
+              topMen,
+              "Top Men",
+              "blue",
+              showAllMen,
+              () => (showAllMen = !showAllMen),
+            )}
           </div>
           <div id="top-women">
-            {@render ParticipantList(topWomen, "Top Women", "rose", showAllWomen, () => showAllWomen = !showAllWomen)}
+            {@render ParticipantList(
+              topWomen,
+              "Top Women",
+              "rose",
+              showAllWomen,
+              () => (showAllWomen = !showAllWomen),
+            )}
           </div>
         </div>
       </div>

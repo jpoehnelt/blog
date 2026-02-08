@@ -1,5 +1,6 @@
 <script lang="ts">
   import Navbar from "$lib/components/Navbar.svelte";
+  import AdProvider from "$lib/components/AdProvider.svelte";
   import { getDefaultSocialLinks } from "$lib/social-icons";
   import { AUTHOR_NAME, PROMPT_SYSTEM } from "$lib/constants";
   import { onMount } from "svelte";
@@ -75,11 +76,6 @@
 
     gtag("config", "G-67SN6HNB0B");
   </script>
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830"
-    crossorigin="anonymous"
-  ></script>
 </svelte:head>
 
 <a
@@ -91,9 +87,15 @@
 
 <Navbar {socialLinks} />
 
-<div id="main-content" tabindex="-1" class="outline-none flex flex-col flex-1">
-  {@render children()}
-</div>
+<AdProvider>
+  <div
+    id="main-content"
+    tabindex="-1"
+    class="outline-none flex flex-col flex-1"
+  >
+    {@render children()}
+  </div>
+</AdProvider>
 
 <footer class="mt-auto py-8 border-t">
   <div

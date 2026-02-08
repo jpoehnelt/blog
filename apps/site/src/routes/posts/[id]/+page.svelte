@@ -112,14 +112,6 @@
 
 <JsonLd {schema} />
 
-{#if !data.tags.some((tag) => tag.toLowerCase().includes("google"))}
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251836334060830"
-    crossorigin="anonymous"
-  ></script>
-{/if}
-
 {#snippet toc(items: typeof data.toc)}
   {#if items && items.length > 1}
     <div class="mb-8 lg:mb-0">
