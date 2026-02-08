@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge/index.js";
+  import StravaBadge from "$lib/components/StravaBadge.svelte";
 
   interface SegmentEffort {
     id: number | string;
@@ -29,26 +29,6 @@
     if (mins === 0) return `${secs}s`;
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   }
-
-  function getAchievementColor(achievement: { type: string; rank: number }) {
-    if (achievement.type === "kom")
-      return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    if (achievement.rank === 1)
-      return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    if (achievement.rank === 2)
-      return "bg-gray-100 text-gray-800 border-gray-200";
-    if (achievement.rank === 3)
-      return "bg-orange-100 text-orange-800 border-orange-200";
-    return "bg-secondary text-secondary-foreground";
-  }
-
-  function getAchievementLabel(achievement: { type: string; rank: number }) {
-    if (achievement.type === "kom") return "👑 KOM";
-    if (achievement.rank === 1) return "🥇 Personal Record";
-    if (achievement.rank === 2) return "🥈 2nd Personal Record";
-    if (achievement.rank === 3) return "🥉 3rd Personal Record";
-    return "Personal Record";
-  }
 </script>
 
 {#if segments && segments.length > 0}
@@ -73,11 +53,7 @@
               {#if segment.achievements && segment.achievements.length > 0}
                 <div class="flex gap-1">
                   {#each segment.achievements as achievement}
-                    <Badge
-                      class={`px-1.5 py-0 text-[10px] h-5 ${getAchievementColor(achievement)}`}
-                    >
-                      {getAchievementLabel(achievement)}
-                    </Badge>
+                    <StravaBadge {achievement} />
                   {/each}
                 </div>
               {/if}
