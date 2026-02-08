@@ -264,17 +264,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Drew",
-    "lastName": "Taylor",
-    "age": "M40-49",
-    "location": "Salt Lake City, UT",
-    "rank": 65.3,
-    "ageRank": 72.7,
-    "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ashley",
     "lastName": "Arentsen",
     "age": "F30-39",
@@ -282,6 +271,17 @@
     "rank": 65.3,
     "ageRank": 75,
     "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Drew",
+    "lastName": "Taylor",
+    "age": "M40-49",
+    "location": "Salt Lake City, UT",
+    "rank": 65.3,
+    "ageRank": 72.7,
+    "results": 8,
     "bib": "",
     "finishes": 0
   },
@@ -1045,17 +1045,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Heath",
-    "lastName": "Hazen",
-    "age": "M50-59",
-    "location": "Mulvane, KS",
-    "rank": 47.4,
-    "ageRank": 61.8,
-    "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Anita",
     "lastName": "Tendler",
     "age": "F20-29",
@@ -1074,6 +1063,17 @@
     "rank": 47.1,
     "ageRank": 55.8,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Heath",
+    "lastName": "Hazen",
+    "age": "M50-59",
+    "location": "Mulvane, KS",
+    "rank": 46.8,
+    "ageRank": 61.8,
+    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -1536,6 +1536,17 @@
     "rank": 56.8,
     "ageRank": 62.7,
     "results": 35,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sue",
+    "lastName": "Mocnik",
+    "age": "F60-69",
+    "location": "Congress, AZ",
+    "rank": 56.8,
+    "ageRank": 76.6,
+    "results": 18,
     "bib": "",
     "finishes": 0
   },
@@ -2068,17 +2079,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Wendy",
-    "lastName": "Zanders",
-    "age": "F40-49",
-    "location": "Buckeye, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Sharon",
     "lastName": "Thompson-Mike",
     "age": "F50-59",
@@ -2101,10 +2101,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Katherine",
-    "lastName": "Pavlik",
-    "age": "F30-39",
-    "location": "Flagstaff, AZ",
+    "firstName": "Timothy",
+    "lastName": "Jarvey",
+    "age": "M40-49",
+    "location": "Missoula, MT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2112,10 +2112,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Timothy",
-    "lastName": "Jarvey",
-    "age": "M40-49",
-    "location": "Missoula, MT",
+    "firstName": "Wendy",
+    "lastName": "Zanders",
+    "age": "F40-49",
+    "location": "Buckeye, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2149,39 +2149,6 @@
     "lastName": "Ojeda",
     "age": "M40-49",
     "location": "Flagstaff, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Gary",
-    "lastName": "Gonzalez",
-    "age": "M30-39",
-    "location": "Salt Lake City, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rachel",
-    "lastName": "Wong",
-    "age": "F30-39",
-    "location": "Salt Lake City, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Christine",
-    "lastName": "Westmoreland",
-    "age": "F30-39",
-    "location": "Denver, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2233,6 +2200,61 @@
     "finishes": 0
   },
   {
+    "firstName": "Katherine",
+    "lastName": "Pavlik",
+    "age": "F30-39",
+    "location": "Flagstaff, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gary",
+    "lastName": "Gonzalez",
+    "age": "M30-39",
+    "location": "Salt Lake City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rachel",
+    "lastName": "Wong",
+    "age": "F30-39",
+    "location": "Salt Lake City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Christine",
+    "lastName": "Westmoreland",
+    "age": "F30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ofelia",
+    "lastName": "Duran",
+    "age": "F30-39",
+    "location": "Torreon, MEX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Austin",
     "lastName": "Peed",
     "age": "M30-39",
@@ -2248,17 +2270,6 @@
     "lastName": "Clutter",
     "age": "M30-39",
     "location": "Chandler, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ofelia",
-    "lastName": "Duran",
-    "age": "F30-39",
-    "location": "Torreon, MEX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2365,50 +2376,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Erik",
-    "lastName": "Pokora",
-    "age": "M40-49",
-    "location": "Louisville, KY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rania",
-    "lastName": "Ramli",
-    "age": "F20-29",
-    "location": "Hanover, NH",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Cheryl",
-    "lastName": "Lukins",
-    "age": "F40-49",
-    "location": "Nicholasville, KY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andrew",
-    "lastName": "Harrington",
-    "age": "M30-39",
-    "location": "Gilbert, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Toni",
     "lastName": "Carlsen",
     "age": "F50-59",
@@ -2457,6 +2424,39 @@
     "lastName": "Zimmerman",
     "age": "M30-39",
     "location": "San Diego, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Erik",
+    "lastName": "Pokora",
+    "age": "M40-49",
+    "location": "Louisville, KY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rania",
+    "lastName": "Ramli",
+    "age": "F20-29",
+    "location": "Hanover, NH",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Harrington",
+    "age": "M30-39",
+    "location": "Gilbert, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2530,10 +2530,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Tynisha",
-    "lastName": "John",
-    "age": "F30-39",
-    "location": "Kayenta, AZ",
+    "firstName": "Cheryl",
+    "lastName": "Lukins",
+    "age": "F40-49",
+    "location": "Nicholasville, KY",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2556,6 +2556,17 @@
     "lastName": "Logg",
     "age": "M50-59",
     "location": "Laveen, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tynisha",
+    "lastName": "John",
+    "age": "F30-39",
+    "location": "Kayenta, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

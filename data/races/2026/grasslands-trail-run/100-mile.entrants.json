@@ -154,6 +154,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jacob",
+    "lastName": "Chavez",
+    "age": "M30-39",
+    "location": "Albuquerque, NM",
+    "rank": 73.2,
+    "ageRank": 78.7,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jorge",
     "lastName": "Borghes",
     "age": "M40-49",
@@ -260,17 +271,6 @@
     "rank": 67.9,
     "ageRank": 83.2,
     "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "Briggs",
-    "age": "M20-29",
-    "location": "Prescott, AZ",
-    "rank": 67.3,
-    "ageRank": 81.5,
-    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -886,7 +886,7 @@
     "location": "Edmond, OK",
     "rank": 67.4,
     "ageRank": 72.5,
-    "results": 20,
+    "results": 21,
     "bib": "",
     "finishes": 0
   },
@@ -1045,43 +1045,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Tate",
-    "lastName": "Murphy",
-    "age": "M20-29",
-    "location": "Wimberley, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Harris",
-    "age": "M40-49",
-    "location": "Crowley, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Levi",
-    "lastName": "Quiroz",
-    "age": "M30-39",
-    "location": "Edinburg, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "George",
-    "lastName": "Dickson",
-    "age": "M30-39",
-    "location": "Austin, AL",
+    "firstName": "Shannon",
+    "lastName": "Hart",
+    "age": "M50-59",
+    "location": "Weatherford, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1093,17 +1060,6 @@
     "lastName": "Wise",
     "age": "M20-29",
     "location": "Austin, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shannon",
-    "lastName": "Hart",
-    "age": "M50-59",
-    "location": "Weatherford, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1148,6 +1104,50 @@
     "lastName": "Garcia",
     "age": "M30-39",
     "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tate",
+    "lastName": "Murphy",
+    "age": "M20-29",
+    "location": "Wimberley, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Harris",
+    "age": "M40-49",
+    "location": "Crowley, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Levi",
+    "lastName": "Quiroz",
+    "age": "M30-39",
+    "location": "Edinburg, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "George",
+    "lastName": "Dickson",
+    "age": "M30-39",
+    "location": "Austin, AL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
