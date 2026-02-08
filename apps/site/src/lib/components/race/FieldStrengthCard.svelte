@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { CompetitivenessStats, YearStats } from "./types";
+  import RankingsMethodology from "./RankingsMethodology.svelte";
 
   interface Props {
     competitiveness: CompetitivenessStats;
@@ -11,7 +12,11 @@
 
   // Calculate position on strength meter
   let meterPosition = $derived.by(() => {
-    if (!yearStats || yearStats.minTop20Rank <= 0 || !competitiveness.top20Rank) {
+    if (
+      !yearStats ||
+      yearStats.minTop20Rank <= 0 ||
+      !competitiveness.top20Rank
+    ) {
       return null;
     }
     const range = yearStats.maxTop20Rank - yearStats.minTop20Rank;
@@ -51,8 +56,25 @@
   <div class="mb-4">
     <div class="grid grid-cols-2 gap-2 mb-3">
       <!-- Field Strength (Top 20 Rank) -->
-      <div class="bg-slate-50 rounded px-2 py-1.5 relative group">
-        <div class="text-xs text-stone-600">Field Strength</div>
+      <div
+        class="bg-slate-50 rounded px-2 py-1.5 relative group"
+        title="UltraSignup rank of the 20th strongest runner with 5+ finishes. Higher = deeper field."
+      >
+        <div class="text-xs text-stone-600 flex items-center gap-1">
+          Field Strength
+          <svg
+            class="w-3 h-3 text-stone-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            /></svg
+          >
+        </div>
         <div class="font-mono text-lg font-bold text-slate-700">
           {competitiveness.top20Rank
             ? competitiveness.top20Rank.toFixed(1)
@@ -68,7 +90,9 @@
             0
               ? 'bg-green-100 text-green-700'
               : 'bg-amber-100 text-amber-700'}"
-            title="Compared to year average ({yearStats?.averageTop20Rank.toFixed(1)}%)"
+            title="Compared to year average ({yearStats?.averageTop20Rank.toFixed(
+              1,
+            )}%)"
           >
             {top20Diff > 0 ? "+" : ""}{top20Diff.toFixed(1)}%
           </div>
@@ -83,7 +107,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- Rank Distribution Bars -->
     <div class="space-y-1">
@@ -111,12 +134,16 @@
 
     <!-- Elite Runners Section -->
     <div class="mt-3">
-      <div class="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
+      <div
+        class="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2"
+      >
         Elite Runners (90+)
       </div>
       <div class="grid grid-cols-2 gap-2">
         <!-- Count -->
-        <div class="bg-purple-50 rounded px-2 py-1.5 relative group border border-purple-100">
+        <div
+          class="bg-purple-50 rounded px-2 py-1.5 relative group border border-purple-100"
+        >
           <div class="text-xs text-purple-400">Count</div>
           <div class="font-mono text-lg font-bold text-purple-700">
             {competitiveness.eliteCount}
@@ -128,9 +155,12 @@
               0
                 ? 'bg-purple-200 text-purple-800'
                 : 'bg-slate-100 text-slate-500'}"
-              title="Compared to year average ({yearStats?.averageEliteCount.toFixed(1)})"
+              title="Compared to year average ({yearStats?.averageEliteCount.toFixed(
+                1,
+              )})"
             >
-              {eliteCountDiff > 0 ? "+" : ""}{eliteCountDiff.toFixed(1)} <span class="opacity-70 font-normal ml-0.5">vs avg</span>
+              {eliteCountDiff > 0 ? "+" : ""}{eliteCountDiff.toFixed(1)}
+              <span class="opacity-70 font-normal ml-0.5">vs avg</span>
             </div>
           {/if}
         </div>
@@ -150,36 +180,18 @@
               0
                 ? 'bg-purple-200 text-purple-800'
                 : 'bg-slate-100 text-slate-500'}"
-              title="Compared to year average ({yearStats?.averageElitePercent.toFixed(1)}%)"
+              title="Compared to year average ({yearStats?.averageElitePercent.toFixed(
+                1,
+              )}%)"
             >
-              {elitePercentDiff > 0 ? "+" : ""}{elitePercentDiff.toFixed(1)}% <span class="opacity-70 font-normal ml-0.5">vs avg</span>
+              {elitePercentDiff > 0 ? "+" : ""}{elitePercentDiff.toFixed(1)}%
+              <span class="opacity-70 font-normal ml-0.5">vs avg</span>
             </div>
           {/if}
         </div>
       </div>
     </div>
 
-    <!-- About Rankings -->
-    <div class="mt-3 pt-2 border-t border-stone-100 text-xs text-stone-400 space-y-1">
-      <p>
-        <strong class="text-stone-500">About rankings:</strong>
-        Stats based on {competitiveness.rankedEntrants} runners with 5+ finishes.
-      </p>
-      {#if competitiveness.insufficientResultsCount > 0 || competitiveness.unrankedCount > 0}
-        <p class="text-stone-400/80">
-          Excluded: {competitiveness.insufficientResultsCount > 0
-            ? `${competitiveness.insufficientResultsCount} with <5 finishes`
-            : ""}{competitiveness.insufficientResultsCount > 0 &&
-          competitiveness.unrankedCount > 0
-            ? ", "
-            : ""}{competitiveness.unrankedCount > 0
-            ? `${competitiveness.unrankedCount} unranked`
-            : ""}
-        </p>
-      {/if}
-      <p class="text-stone-400/80">
-        90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 = Developing
-      </p>
-    </div>
+    <RankingsMethodology {competitiveness} />
   </div>
 </div>

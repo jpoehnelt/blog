@@ -1,6 +1,8 @@
 <script lang="ts">
   import { raceEventUrl, absoluteRaceEventUrl } from "$lib/race-urls";
   import RaceYearNav from "$lib/components/race/RaceYearNav.svelte";
+  import { RankingsMethodology } from "$lib/components/race";
+  import RankResultsScatter from "$lib/components/race/RankResultsScatter.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
@@ -16,6 +18,7 @@
   let { data } = $props();
   let races = $derived(data.races);
   let years = $derived(data.years);
+  let scatterData = $derived(data.scatterData);
 
   // TanStack Table sorting state - default sort by elite count descending
   let sorting = $state<SortingState>([{ id: "top20Rank", desc: true }]);
@@ -344,24 +347,79 @@
         </button>
       {/if}
     </div>
-
-    <!-- Explanatory paragraph -->
+    <!-- Rankings Discussion + Scatter Plot -->
     <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-6">
-      <h2 class="text-lg font-bold text-slate-900 mb-3">
-        What Makes a Race Competitive?
-      </h2>
-      <p class="text-stone-600 leading-relaxed">
-        This ranking highlights ultramarathons with the deepest fields based on <a
-          href="https://ultrasignup.com"
-          target="_blank"
-          rel="noopener"
-          class="text-orange-600 hover:text-orange-700 font-medium"
-          >UltraSignup</a
-        > runner rankings. An "elite" runner is defined as having a rank of 90 or
-        higher—placing them in approximately the top 10% of ultra runners. The "Avg
-        Rank" column shows the average ranking across all ranked entrants, giving
-        insight into overall field depth. Click any column header to sort.
-      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Left: Discussion -->
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-3">
+            About Rankings &amp; Methodology
+          </h2>
+          <div class="space-y-3 text-stone-600 text-sm leading-relaxed">
+            <p>
+              Rankings are based on <a
+                href="https://ultrasignup.com"
+                target="_blank"
+                rel="noopener"
+                class="text-orange-600 hover:text-orange-700 font-medium"
+                >UltraSignup</a
+              >
+              runner rankings. Only runners with
+              <strong>5 or more finishes</strong> are included to ensure meaningful
+              rankings.
+            </p>
+            <p>
+              An "elite" runner has a rank of <strong>90 or higher</strong
+              >—approximately the top 10% of ultra runners. "Field Strength" is
+              the rank of the 20th strongest qualified runner—a higher value
+              indicates greater depth of talent.
+            </p>
+            <p>
+              The scatter plot shows the relationship between a runner's rank
+              and their number of UltraSignup finishes across all tracked
+              events. Runners with more experience tend to have more stable,
+              higher rankings.
+            </p>
+            <div class="pt-2 text-xs text-stone-500">
+              90+ = Elite • 80-89 = Strong • 60-79 = Experienced • &lt;60 =
+              Developing
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Scatter Plot -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-700 mb-1">
+            Rank vs. Race Experience
+          </h3>
+          <p class="text-xs text-stone-400 mb-2">
+            Each dot = one runner across all tracked events
+          </p>
+          <div class="flex gap-4 mb-2 text-xs text-stone-500">
+            <span class="flex items-center gap-1.5">
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-purple-500/60 border border-purple-700/80"
+              ></span>
+              Elite (90+)
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-stone-400/30 border border-stone-500/40"
+              ></span>
+              Other
+            </span>
+          </div>
+          {#if scatterData && scatterData.length > 0}
+            <RankResultsScatter data={scatterData} />
+          {:else}
+            <div
+              class="h-[380px] flex items-center justify-center text-stone-400 text-sm"
+            >
+              Loading chart data...
+            </div>
+          {/if}
+        </div>
+      </div>
     </div>
 
     <ins

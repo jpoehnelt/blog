@@ -752,11 +752,15 @@
     genderPrefix: string,
   ) {
     // 1. Filter by gender (M/F prefix in age string)
+    // 2. Exclude runners with fewer than 5 finishes (insufficient data for meaningful ranking)
     const genderParticipants = allParticipants.filter(
-      (e) => e.age && e.age.startsWith(genderPrefix),
+      (e) =>
+        e.age &&
+        e.age.startsWith(genderPrefix) &&
+        (e.results ?? 0) >= MIN_RESULTS,
     );
 
-    // 2. Sort by Rank (descending)
+    // 3. Sort by Rank (descending)
     // Rank is already a number from Zod schema (0-100)
     const sorted = [...genderParticipants].sort(
       (a, b) => (b.rank || 0) - (a.rank || 0),
@@ -766,22 +770,17 @@
     let count = 0;
 
     for (const e of sorted) {
-      const results = e.results || 0;
       const rank = e.rank || 0;
 
-      const isHighPerformer =
-        rank > HIGH_PERFORMER_RANK && results > MIN_RESULTS;
-      const isQualified = results >= MIN_RESULTS;
+      const isHighPerformer = rank > HIGH_PERFORMER_RANK;
 
-      // Always include high performers (>90% rank & >5 results)
-      // OR if we haven't reached our quota of 5 qualified runners yet
+      // Always include high performers (>85% rank)
+      // OR if we haven't reached our quota yet
       if (isHighPerformer || count < QUALIFIED_QUOTA) {
         topList.push(e);
-        if (isQualified) {
-          count++;
-        }
+        count++;
       } else {
-        // If we have 5 qualified runners and this isn't a high performer, stop
+        // If we have enough qualified runners and this isn't a high performer, stop
         // (Since list is sorted by rank, subsequent runners won't be high performers either)
         break;
       }

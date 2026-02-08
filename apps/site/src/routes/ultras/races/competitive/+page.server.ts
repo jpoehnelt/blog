@@ -9,12 +9,17 @@ interface CompetitivenessStats {
   top20Rank: number | null;
 }
 
+const MIN_RESULTS_FOR_RANKING = 5;
+
 function calculateCompetitiveness(
-  entrants: { rank?: number | null }[],
+  entrants: { rank?: number | null; results?: number | null }[],
 ): CompetitivenessStats | null {
   if (!entrants || entrants.length === 0) return null;
 
-  const rankedEntrants = entrants.filter((e) => e.rank && e.rank > 0);
+  // Only include runners with 5+ finishes for accurate rankings
+  const rankedEntrants = entrants.filter(
+    (e) => e.rank && e.rank > 0 && (e.results ?? 0) >= MIN_RESULTS_FOR_RANKING,
+  );
   const ranks = rankedEntrants.map((e) => e.rank!).sort((a, b) => b - a);
 
   if (ranks.length === 0) return null;
@@ -55,6 +60,9 @@ export async function load({ parent, fetch }) {
   // Flatten races into individual events with competitiveness
   const eventsWithCompetitiveness: CompetitiveEvent[] = [];
 
+  // Deduplicate runners by name across all events for scatter plot
+  const runnerMap = new Map<string, { rank: number; results: number }>();
+
   await Promise.all(
     races.flatMap((race: any) =>
       (race.events || []).map(async (event: any) => {
@@ -70,6 +78,16 @@ export async function load({ parent, fetch }) {
           const entrants = z.array(ParticipantSchema).safeParse(data);
           if (!entrants.success) return;
 
+          // Collect runner-level data for scatter plot (deduplicated by name)
+          for (const e of entrants.data) {
+            if (e.rank && e.rank > 0 && e.results && e.results > 0) {
+              const key = `${e.firstName}_${e.lastName}`;
+              if (!runnerMap.has(key)) {
+                runnerMap.set(key, { rank: e.rank, results: e.results });
+              }
+            }
+          }
+
           const competitiveness = calculateCompetitiveness(entrants.data);
           if (!competitiveness) return;
 
@@ -77,9 +95,9 @@ export async function load({ parent, fetch }) {
             id: event.id,
             eventId: event.id,
             raceId: race.id,
-            title: event.title, // e.g., "100K"
-            raceTitle: race.title, // e.g., "Black Canyon Ultras"
-            fullTitle: `${race.title} ${event.title}`, // e.g., "Black Canyon Ultras 100K"
+            title: event.title,
+            raceTitle: race.title,
+            fullTitle: `${race.title} ${event.title}`,
             year: race.year,
             date: race.date,
             location: race.location,
@@ -106,7 +124,15 @@ export async function load({ parent, fetch }) {
     );
   });
 
+  // Sample scatter data if too large (max 2000 points)
+  let scatterData = Array.from(runnerMap.values());
+  if (scatterData.length > 2000) {
+    const step = Math.ceil(scatterData.length / 2000);
+    scatterData = scatterData.filter((_, i) => i % step === 0);
+  }
+
   return {
     races: sortedEvents,
+    scatterData,
   };
 }
