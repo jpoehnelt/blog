@@ -238,4 +238,10 @@
     @apply outline-2 outline-offset-2 outline-ring;
     @apply transition-all duration-150;
   }
+
+  /* Hide ad slots when an ad blocker is detected */
+  :global([data-ads="blocked"]) .adsbygoogle,
+  :global([data-ads="blocked"]) .in-article-ad {
+    display: none !important;
+  }
 }

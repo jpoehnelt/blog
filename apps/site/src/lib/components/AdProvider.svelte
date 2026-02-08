@@ -17,6 +17,8 @@
 
   // Also push when status transitions to "allowed" (script may load after DOM)
   $effect(() => {
+    // Set data attribute for CSS-driven ad visibility
+    document.documentElement.dataset.ads = ads.status;
     if (ads.status === "allowed") {
       ads.pushAllAds();
     }
