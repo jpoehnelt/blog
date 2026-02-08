@@ -240,6 +240,8 @@
   }
 
   /* Hide ad slots when an ad blocker is detected */
+  :global([data-ad-status="unfilled]).adsbygoogle,
+  :global([data-ads=""]) .adsbygoogle,
   :global([data-ads="blocked"]) .adsbygoogle,
   :global([data-ads="blocked"]) .in-article-ad {
     display: none !important;
