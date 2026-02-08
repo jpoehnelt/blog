@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import remarkInlineLinks from "remark-inline-links";
 import remarkSnippet from "@jpoehnelt/remark-snippet";
-import rehypeInArticleAd from "./src/lib/rehype-in-article-ad.ts";
+import rehypeInArticleAd from "./src/lib/rehype-in-article-ad.js";
 
 /** @type {string} */
 const theme = "vitesse-light";

@@ -1,4 +1,3 @@
-import type { Root, Element, ElementContent, Parent } from "hast";
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 
@@ -17,7 +16,7 @@ const P_INTERVAL = 5;
 /** Hard cap on the number of ads per post. */
 const MAX_ADS = 2;
 
-function createAdNode(): ElementContent {
+function createAdNode() {
   return h("div", { class: "in-article-ad" }, [
     h("ins", {
       class: "adsbygoogle",
@@ -27,20 +26,14 @@ function createAdNode(): ElementContent {
       "data-ad-client": AD_CLIENT,
       "data-ad-slot": AD_SLOT,
     }),
-  ]) as ElementContent;
+  ]);
 }
 
-function collectInsertions(
-  tree: Root,
-  tag: string,
-  firstAt: number,
-  interval: number,
-  after: boolean,
-): { parent: Parent; index: number }[] {
+function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
-  const insertions: { parent: Parent; index: number }[] = [];
+  const insertions = [];
 
-  visit(tree, "element", (node: Element, index, parent) => {
+  visit(tree, "element", (node, index, parent) => {
     if (node.tagName !== tag) return;
     if (insertions.length >= MAX_ADS) return;
     count++;
@@ -65,10 +58,10 @@ function collectInsertions(
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
  */
 export default function rehypeInArticleAd() {
-  return (tree: Root) => {
+  return (tree) => {
     // Count h2s first to decide strategy
     let h2Count = 0;
-    visit(tree, "element", (node: Element) => {
+    visit(tree, "element", (node) => {
       if (node.tagName === "h2") h2Count++;
     });
 
