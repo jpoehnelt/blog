@@ -1,14 +1,36 @@
 [
   {
+    "firstName": "Andrea",
+    "lastName": "Deutsche",
+    "age": "F30-39",
+    "location": "Newcastle, CA",
+    "rank": 93,
+    "ageRank": 96.5,
+    "results": 25,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Kayla",
     "lastName": "Nimmo",
     "age": "F40-49",
     "location": "Greenwood, CA",
-    "rank": 81.9,
-    "ageRank": 91.9,
-    "results": 10,
+    "rank": 83.5,
+    "ageRank": 92.7,
+    "results": 11,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Deutsche",
+    "age": "M30-39",
+    "location": "Newcastle, CA",
+    "rank": 79.2,
+    "ageRank": 84.7,
+    "results": 17,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Leo",
@@ -42,17 +64,6 @@
     "results": 3,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Alejandro",
-    "lastName": "Bras",
-    "age": "M40-49",
-    "location": "Vallejo, CA",
-    "rank": 71.6,
-    "ageRank": 72.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Andrew",
@@ -121,13 +132,24 @@
     "finishes": 0
   },
   {
+    "firstName": "Alejandro",
+    "lastName": "Bras",
+    "age": "M40-49",
+    "location": "Vallejo, CA",
+    "rank": 66.5,
+    "ageRank": 71.4,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Kristine",
     "lastName": "Fuentes",
     "age": "F30-39",
     "location": "Fairfield, CA",
-    "rank": 67,
-    "ageRank": 69.9,
-    "results": 7,
+    "rank": 66.2,
+    "ageRank": 68.8,
+    "results": 8,
     "bib": "",
     "finishes": 1
   },
@@ -154,17 +176,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Brad",
-    "lastName": "Timmerman",
-    "age": "M40-49",
-    "location": "Auburn, CA",
-    "rank": 64.2,
-    "ageRank": 67.9,
-    "results": 32,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Aaron",
     "lastName": "Griffith",
     "age": "M50-59",
@@ -181,8 +192,8 @@
     "age": "F40-49",
     "location": "Auburn, CA",
     "rank": 64.5,
-    "ageRank": 74.7,
-    "results": 8,
+    "ageRank": 72.8,
+    "results": 9,
     "bib": "",
     "finishes": 1
   },
@@ -194,6 +205,17 @@
     "rank": 63.8,
     "ageRank": 65.4,
     "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Brad",
+    "lastName": "Timmerman",
+    "age": "M40-49",
+    "location": "Auburn, CA",
+    "rank": 63.7,
+    "ageRank": 67.3,
+    "results": 33,
     "bib": "",
     "finishes": 1
   },
@@ -253,6 +275,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Erin",
+    "lastName": "McGarry",
+    "age": "F40-49",
+    "location": "Vallejo, CA",
+    "rank": 60.9,
+    "ageRank": 68.2,
+    "results": 5,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Soren",
     "lastName": "Bergeson",
     "age": "M50-59",
@@ -297,13 +330,13 @@
     "finishes": 1
   },
   {
-    "firstName": "Erin",
-    "lastName": "McGarry",
-    "age": "F40-49",
+    "firstName": "Frankie",
+    "lastName": "Liang",
+    "age": "F30-39",
     "location": "Vallejo, CA",
     "rank": 58.3,
-    "ageRank": 65.6,
-    "results": 4,
+    "ageRank": 61.1,
+    "results": 7,
     "bib": "",
     "finishes": 1
   },
@@ -317,17 +350,6 @@
     "results": 1,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Frankie",
-    "lastName": "Liang",
-    "age": "F30-39",
-    "location": "Vallejo, CA",
-    "rank": 57.1,
-    "ageRank": 60.4,
-    "results": 6,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Greg",
@@ -348,6 +370,39 @@
     "rank": 53.3,
     "ageRank": 100,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Vendrell",
+    "age": "M50-59",
+    "location": "Concord, CA",
+    "rank": 49,
+    "ageRank": 72.7,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Craig",
+    "lastName": "Andre",
+    "age": "M20-29",
+    "location": "Kelseyville, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Baylie",
+    "lastName": "McIntyre",
+    "age": "F20-29",
+    "location": "Grass Valley, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -422,28 +477,6 @@
     "lastName": "Knox",
     "age": "M30-39",
     "location": "Sacramento, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Craig",
-    "lastName": "Andre",
-    "age": "M20-29",
-    "location": "Kelseyville, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Baylie",
-    "lastName": "McIntyre",
-    "age": "F20-29",
-    "location": "Grass Valley, CA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
