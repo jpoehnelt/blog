@@ -1,6 +1,14 @@
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 
+/**
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Element} Element
+ * @typedef {import('hast').Parent} Parent
+ *
+ * @typedef {{ parent: Parent, index: number }} Insertion
+ */
+
 const AD_CLIENT = "ca-pub-1251836334060830";
 const AD_SLOT = "3423675305";
 
@@ -29,8 +37,17 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @param {Root} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ * @returns {Insertion[]}
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {Insertion[]} */
   const insertions = [];
 
   visit(tree, "element", (node, index, parent) => {
@@ -56,6 +73,8 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  *
  * - Posts with ≥ 2 h2s: ads before h2 #2, then every 3 h2s (#5, #8, …)
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
+ *
+ * @returns {(tree: Root) => void}
  */
 export default function rehypeInArticleAd() {
   return (tree) => {
