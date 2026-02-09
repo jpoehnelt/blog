@@ -9,6 +9,7 @@
   let { children } = $props();
 
   const ads = setAds();
+  ads.status = "blocked";
 
   // Push all ads after every navigation (SPA page transitions + initial load)
   afterNavigate(() => {
@@ -25,6 +26,8 @@
   });
 
   onMount(() => {
+    // TODO(jpoehnelt): Remove this when I figure out how to properly integrate AdSense
+    return;
     // Check if the script is already loaded
     const existing = document.querySelector(`script[src="${ADSENSE_SRC}"]`);
 
