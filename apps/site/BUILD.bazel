@@ -21,19 +21,18 @@ _SRCS = glob(
 
 # ─── Build (vite build → static output) ─────────────────────────────────────
 # SvelteKit/Vite have complex peer dependency chains that don't resolve in
-# Bazel's sandboxed npm layout. We use genrule to run vite build with the
-# real pnpm node_modules in place. The workspace package deps (matter,
-# remark-snippet, ultrasignup-scraper) are listed so Bazel builds them first.
+# Bazel's sandboxed npm layout. We use genrule+local to run with the real
+# pnpm node_modules. Workspace deps are built locally first so their dist/
+# directories exist for node module resolution via pnpm workspace symlinks.
 
 genrule(
     name = "build",
-    srcs = _SRCS + [
-        "//packages/matter:pkg",
-        "//packages/remark-snippet:pkg",
-        "//packages/ultrasignup-scraper:pkg",
-    ],
+    srcs = _SRCS,
     outs = ["build_output.tar"],
     cmd = """
+        pnpm --filter @jpoehnelt/matter run build && \
+        pnpm --filter @jpoehnelt/remark-snippet run build && \
+        pnpm --filter @jpoehnelt/ultrasignup-scraper run build && \
         cd apps/site && \
         npx svelte-kit sync && \
         npx vite build && \
@@ -46,13 +45,12 @@ genrule(
 
 genrule(
     name = "check",
-    srcs = _SRCS + [
-        "//packages/matter:pkg",
-        "//packages/remark-snippet:pkg",
-        "//packages/ultrasignup-scraper:pkg",
-    ],
+    srcs = _SRCS,
     outs = ["check_result.txt"],
     cmd = """
+        pnpm --filter @jpoehnelt/matter run build && \
+        pnpm --filter @jpoehnelt/remark-snippet run build && \
+        pnpm --filter @jpoehnelt/ultrasignup-scraper run build && \
         cd apps/site && \
         npx svelte-kit sync && \
         npx svelte-check --tsconfig ./tsconfig.json && \
