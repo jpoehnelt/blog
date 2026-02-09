@@ -1,0 +1,16 @@
+# Build with bzlmod (default in Bazel 8, explicit for clarity)
+common --enable_bzlmod
+
+# Performance
+build --jobs=auto
+build --experimental_remote_merkle_tree_cache
+
+# Output streaming for interactive use
+build --show_progress_rate_limit=0
+test --test_output=errors
+
+# Convenience: short error messages
+build --verbose_failures
+
+# Allow pnpm workspace: protocol
+common --allow_unresolved_symlinks

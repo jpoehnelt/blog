@@ -1,0 +1,66 @@
+load("@npm//:defs.bzl", "npm_link_all_packages")
+
+npm_link_all_packages(name = "node_modules")
+
+# All source files for the SvelteKit app
+_SRCS = glob(
+    [
+        "src/**",
+        "static/**",
+        "*.ts",
+        "*.js",
+        "*.json",
+    ],
+    exclude = [
+        "node_modules/**",
+        "build/**",
+        ".svelte-kit/**",
+        "BUILD.bazel",
+    ],
+)
+
+# ─── Build (vite build → static output) ─────────────────────────────────────
+# SvelteKit/Vite have complex peer dependency chains that don't resolve in
+# Bazel's sandboxed npm layout. We use genrule to run vite build with the
+# real pnpm node_modules in place. The workspace package deps (matter,
+# remark-snippet, ultrasignup-scraper) are listed so Bazel builds them first.
+
+genrule(
+    name = "build",
+    srcs = _SRCS + [
+        "//packages/matter:pkg",
+        "//packages/remark-snippet:pkg",
+        "//packages/ultrasignup-scraper:pkg",
+    ],
+    outs = ["build_output.tar"],
+    cmd = """
+        cd apps/site && \
+        npx svelte-kit sync && \
+        npx vite build && \
+        tar -cf ../../$@ build/
+    """,
+    local = True,
+)
+
+# ─── Check (svelte-check) ───────────────────────────────────────────────────
+
+genrule(
+    name = "check",
+    srcs = _SRCS + [
+        "//packages/matter:pkg",
+        "//packages/remark-snippet:pkg",
+        "//packages/ultrasignup-scraper:pkg",
+    ],
+    outs = ["check_result.txt"],
+    cmd = """
+        cd apps/site && \
+        npx svelte-kit sync && \
+        npx svelte-check --tsconfig ./tsconfig.json && \
+        echo "OK" > ../../$@
+    """,
+    local = True,
+)
+
+# ─── Dev server ──────────────────────────────────────────────────────────────
+# Use `pnpm --filter site dev` directly for the dev server.
+# Interactive processes don't benefit from Bazel's build graph.

@@ -1,0 +1,23 @@
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+
+npm_link_all_packages(name = "node_modules")
+
+# Slidev theme is consumed as-is (no build step), just package it
+npm_package(
+    name = "pkg",
+    srcs = glob(
+        ["**/*"],
+        exclude = [
+            "node_modules/**",
+            "BUILD.bazel",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "slidev-theme-google-workspace",
+    actual = ":pkg",
+    visibility = ["//visibility:public"],
+)
