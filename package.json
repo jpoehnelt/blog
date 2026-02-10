@@ -20,6 +20,7 @@
   "devDependencies": {
     "@changesets/cli": "catalog:",
     "@slidev/cli": "catalog:",
+    "@types/unist": "^3.0.3",
     "prettier": "catalog:",
     "prettier-plugin-slidev": "catalog:",
     "tsx": "^4.19.2",
