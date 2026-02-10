@@ -1,6 +1,13 @@
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 
+/**
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Element} Element
+ * @typedef {import('unist').Node} Node
+ * @typedef {import('unist').Parent} Parent
+ */
+
 const AD_CLIENT = "ca-pub-1251836334060830";
 const AD_SLOT = "3423675305";
 
@@ -29,8 +36,17 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @param {Root} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ * @returns {{ parent: Parent, index: number }[]}
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {{ parent: Parent, index: number }[]} */
   const insertions = [];
 
   visit(tree, "element", (node, index, parent) => {
@@ -56,6 +72,8 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  *
  * - Posts with ≥ 2 h2s: ads before h2 #2, then every 3 h2s (#5, #8, …)
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
+ *
+ * @returns {(tree: Root) => void}
  */
 export default function rehypeInArticleAd() {
   return (tree) => {
@@ -73,6 +91,7 @@ export default function rehypeInArticleAd() {
     // Splice in reverse order so earlier indices stay valid
     for (let i = insertions.length - 1; i >= 0; i--) {
       const { parent, index } = insertions[i];
+      // @ts-ignore - parent.children is not typed as array
       parent.children.splice(index, 0, createAdNode());
     }
   };
