@@ -22,10 +22,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Ellie",
-    "lastName": "Baxter",
-    "age": "F20-29",
-    "location": "Snohomish, WA",
+    "firstName": "Debby",
+    "lastName": "Tanimoto",
+    "age": "F30-39",
+    "location": "Hillsboro, OR",
     "rank": 100,
     "ageRank": 100,
     "results": 1,
@@ -33,10 +33,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Debby",
-    "lastName": "Tanimoto",
-    "age": "F30-39",
-    "location": "Hillsboro, OR",
+    "firstName": "Ellie",
+    "lastName": "Baxter",
+    "age": "F20-29",
+    "location": "Snohomish, WA",
     "rank": 100,
     "ageRank": 100,
     "results": 1,
@@ -319,6 +319,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Sarah",
+    "lastName": "Lindemulder",
+    "age": "F30-39",
+    "location": "Springfield, MO",
+    "rank": 91,
+    "ageRank": 93.5,
+    "results": 24,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Cecelia",
     "lastName": "Williams",
     "age": "F30-39",
@@ -337,17 +348,6 @@
     "rank": 90.8,
     "ageRank": 92,
     "results": 40,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Lindemulder",
-    "age": "F30-39",
-    "location": "Springfield, MO",
-    "rank": 90.7,
-    "ageRank": 93.5,
-    "results": 23,
     "bib": "",
     "finishes": 0
   },
@@ -572,6 +572,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kevin",
+    "lastName": "Brightbill",
+    "age": "M30-39",
+    "location": "Coos Bay, OR",
+    "rank": 87.1,
+    "ageRank": 86.2,
+    "results": 38,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Sarah",
     "lastName": "Ostaszewski",
     "age": "F30-39",
@@ -579,17 +590,6 @@
     "rank": 86.7,
     "ageRank": 89.8,
     "results": 71,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kevin",
-    "lastName": "Brightbill",
-    "age": "M30-39",
-    "location": "Coos Bay, OR",
-    "rank": 86.7,
-    "ageRank": 85.6,
-    "results": 37,
     "bib": "",
     "finishes": 0
   },
@@ -2717,6 +2717,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Olivia",
+    "lastName": "Sather",
+    "age": "F20-29",
+    "location": "Boise, ID",
+    "rank": 69.6,
+    "ageRank": 83.8,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Trami",
     "lastName": "Pham",
     "age": "F30-39",
@@ -4697,17 +4708,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Christian",
-    "lastName": "Palacios",
-    "age": "M40-49",
-    "location": "Gresham, OR",
-    "rank": 53,
-    "ageRank": 61.4,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Tim",
     "lastName": "Weber",
     "age": "M60-69",
@@ -4884,9 +4884,9 @@
     "finishes": 0
   },
   {
-    "firstName": "David",
-    "lastName": "Eliason",
-    "age": "M50-59",
+    "firstName": "Albert",
+    "lastName": "Trinier",
+    "age": "M30-39",
     "location": "Seattle, WA",
     "rank": 0,
     "ageRank": 0,
@@ -4895,10 +4895,43 @@
     "finishes": 0
   },
   {
-    "firstName": "Albert",
-    "lastName": "Trinier",
+    "firstName": "Brigham",
+    "lastName": "Debry",
+    "age": "M20-29",
+    "location": "Tooele, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Martin",
+    "lastName": "Gomez",
     "age": "M30-39",
-    "location": "Seattle, WA",
+    "location": "San Leandro, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Zach",
+    "lastName": "Hogue",
+    "age": "M<20",
+    "location": "Mukilteo, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Philip",
+    "lastName": "Eckert",
+    "age": "M30-39",
+    "location": "Kansas City, MO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4983,43 +5016,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Brigham",
-    "lastName": "Debry",
-    "age": "M20-29",
-    "location": "Tooele, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Martin",
-    "lastName": "Gomez",
-    "age": "M30-39",
-    "location": "San Leandro, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zach",
-    "lastName": "Hogue",
-    "age": "M<20",
-    "location": "Mukilteo, WA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Philip",
-    "lastName": "Eckert",
-    "age": "M30-39",
-    "location": "Kansas City, MO",
+    "firstName": "David",
+    "lastName": "Eliason",
+    "age": "M50-59",
+    "location": "Seattle, WA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
