@@ -2,6 +2,7 @@
   import { Axis, Bars, Chart, Svg } from "layerchart";
   import { scaleBand } from "d3-scale";
   import { format, isSameMonth } from "date-fns";
+  import SectionHeadline from "$lib/components/SectionHeadline.svelte";
 
   interface Props {
     data: { date: Date; distance: number }[];
@@ -34,7 +35,7 @@
 </script>
 
 <div class="w-full">
-  <h2 class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4">Running Tracker (km)</h2>
+  <SectionHeadline class="mb-4">Running Tracker (km)</SectionHeadline>
   <div class="h-[150px] w-full">
     <Chart
       data={chartData}
