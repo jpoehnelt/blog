@@ -209,6 +209,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jessica",
+    "lastName": "Allen",
+    "age": "F30-39",
+    "location": "Decatur, TX",
+    "rank": 72.6,
+    "ageRank": 76.5,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Roman",
     "lastName": "Markin",
     "age": "M20-29",
@@ -649,17 +660,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Emily",
-    "lastName": "Smith",
-    "age": "F40-49",
-    "location": "Denton, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Elizabeth",
     "lastName": "Butler",
     "age": "F30-39",
@@ -781,32 +781,21 @@
     "finishes": 0
   },
   {
-    "firstName": "Josh",
-    "lastName": "Watson",
-    "age": "M20-29",
-    "location": "Frisco, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Wonderly",
-    "age": "M50-59",
-    "location": "Montgomery, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Elise",
     "lastName": "Grandsaert",
     "age": "F40-49",
     "location": "Burke, VA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Smith",
+    "age": "F40-49",
+    "location": "Denton, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -829,6 +818,28 @@
     "lastName": "Sherman",
     "age": "M40-49",
     "location": "Decatur, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Watson",
+    "age": "M20-29",
+    "location": "Frisco, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Wonderly",
+    "age": "M50-59",
+    "location": "Montgomery, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1005,6 +1016,17 @@
     "lastName": "Lee",
     "age": "F30-39",
     "location": "McKinney, AL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Austin",
+    "lastName": "Torres",
+    "age": "M40-49",
+    "location": "Weatherford, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

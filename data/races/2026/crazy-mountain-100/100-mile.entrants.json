@@ -297,17 +297,6 @@
     "finishes": 1
   },
   {
-    "firstName": "Justin",
-    "lastName": "Poehnelt",
-    "age": "M40-49",
-    "location": "Durango, CO",
-    "rank": 78.6,
-    "ageRank": 85,
-    "results": 31,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Annie",
     "lastName": "Hughes",
     "age": "F20-29",
@@ -348,6 +337,17 @@
     "rank": 77.8,
     "ageRank": 82.1,
     "results": 70,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Justin",
+    "lastName": "Poehnelt",
+    "age": "M40-49",
+    "location": "Durango, CO",
+    "rank": 77.7,
+    "ageRank": 85,
+    "results": 32,
     "bib": "",
     "finishes": 0
   },
@@ -803,17 +803,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Becky",
-    "lastName": "Bates",
-    "age": "F60-69",
-    "location": "Kimberley, BC",
-    "rank": 84.6,
-    "ageRank": 100,
-    "results": 32,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Emory",
     "lastName": "Atterberry",
     "age": "M30-39",
@@ -887,6 +876,17 @@
     "rank": 84.1,
     "ageRank": 88.5,
     "results": 14,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Becky",
+    "lastName": "Bates",
+    "age": "F60-69",
+    "location": "Kimberley, BC",
+    "rank": 83.9,
+    "ageRank": 100,
+    "results": 34,
     "bib": "",
     "finishes": 0
   },
@@ -1067,17 +1067,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Zach",
-    "lastName": "Schmidt",
-    "age": "M40-49",
-    "location": "Manhattan, MT",
-    "rank": 67.7,
-    "ageRank": 73.3,
-    "results": 4,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Randy",
     "lastName": "Tanner",
     "age": "M40-49",
@@ -1155,15 +1144,15 @@
     "finishes": 0
   },
   {
-    "firstName": "David",
-    "lastName": "Calder",
-    "age": "M30-39",
-    "location": "Deadman's Flats, AB",
-    "rank": 66.8,
-    "ageRank": 64.5,
-    "results": 8,
+    "firstName": "Zach",
+    "lastName": "Schmidt",
+    "age": "M40-49",
+    "location": "Manhattan, MT",
+    "rank": 67,
+    "ageRank": 63.9,
+    "results": 5,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Stephen",
@@ -1239,6 +1228,17 @@
     "rank": 65.9,
     "ageRank": 77.4,
     "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Calder",
+    "age": "M30-39",
+    "location": "Deadman's Flats, AB",
+    "rank": 65.9,
+    "ageRank": 63.7,
+    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -1419,6 +1419,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Laughton",
+    "lastName": "Wingate",
+    "age": "M20-29",
+    "location": "Leesburg, VA",
+    "rank": 64.2,
+    "ageRank": 100,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Blair",
     "lastName": "Speed",
     "age": "F40-49",
@@ -1426,17 +1437,6 @@
     "rank": 76.8,
     "ageRank": 83.7,
     "results": 19,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Laughton",
-    "lastName": "Wingate",
-    "age": "M20-29",
-    "location": "Leesburg, VA",
-    "rank": 64.1,
-    "ageRank": 100,
-    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -1661,6 +1661,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Sarah",
+    "lastName": "Malone",
+    "age": "F40-49",
+    "location": "Superior, CO",
+    "rank": 74.2,
+    "ageRank": 85,
+    "results": 17,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Allison",
     "lastName": "Michalski",
     "age": "F40-49",
@@ -1679,17 +1690,6 @@
     "rank": 61.7,
     "ageRank": 65.9,
     "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Malone",
-    "age": "F40-49",
-    "location": "Superior, CO",
-    "rank": 73.8,
-    "ageRank": 85.3,
-    "results": 16,
     "bib": "",
     "finishes": 0
   },
@@ -1864,7 +1864,7 @@
     "age": "M40-49",
     "location": "San Jose, CA",
     "rank": 59.7,
-    "ageRank": 66.4,
+    "ageRank": 67.3,
     "results": 87,
     "bib": "",
     "finishes": 0
@@ -1952,7 +1952,7 @@
     "age": "F40-49",
     "location": "Bozeman, MT",
     "rank": 70.1,
-    "ageRank": 78.5,
+    "ageRank": 84.1,
     "results": 15,
     "bib": "",
     "finishes": 0

@@ -11,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jason",
+    "lastName": "Lyle",
+    "age": "M40-49",
+    "location": "Lakeland, FL",
+    "rank": 76.6,
+    "ageRank": 86.5,
+    "results": 6,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Melinda",
     "lastName": "Snead",
     "age": "F50-59",
@@ -20,6 +31,17 @@
     "results": 1,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Tyler",
+    "lastName": "Pettey",
+    "age": "M30-39",
+    "location": "Port St. Lucie, FL",
+    "rank": 70.7,
+    "ageRank": 75.3,
+    "results": 24,
+    "bib": "",
+    "finishes": 4
   },
   {
     "firstName": "Stacy",
@@ -44,15 +66,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Jason",
-    "lastName": "Lyle",
+    "firstName": "Benjamin",
+    "lastName": "Giddings",
     "age": "M40-49",
-    "location": "Lakeland, FL",
-    "rank": 76.6,
-    "ageRank": 86.5,
-    "results": 6,
+    "location": "Seminole, FL",
+    "rank": 67.5,
+    "ageRank": 72.2,
+    "results": 26,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Elizabeth",
@@ -66,72 +88,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Michelle",
-    "lastName": "Hall",
-    "age": "F40-49",
-    "location": "Minneapolis, MN",
-    "rank": 71.9,
-    "ageRank": 80.3,
-    "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tyler",
-    "lastName": "Pettey",
-    "age": "M30-39",
-    "location": "Port St. Lucie, FL",
-    "rank": 70.7,
-    "ageRank": 75.3,
-    "results": 24,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mandy",
-    "lastName": "Venables",
-    "age": "F30-39",
-    "location": "Tampa, FL",
-    "rank": 68,
-    "ageRank": 80.3,
-    "results": 23,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Elena",
-    "lastName": "Smith",
-    "age": "F40-49",
-    "location": "Ocoee, FL",
-    "rank": 67.7,
-    "ageRank": 69,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Benjamin",
-    "lastName": "Giddings",
-    "age": "M40-49",
-    "location": "Seminole, FL",
-    "rank": 67.5,
-    "ageRank": 72.2,
-    "results": 26,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tatiana",
-    "lastName": "De La Garza",
-    "age": "F40-49",
-    "location": "Lithia, FL",
-    "rank": 66.8,
-    "ageRank": 76.5,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jesse",
     "lastName": "Helms",
     "age": "M40-49",
@@ -139,6 +95,17 @@
     "rank": 63.9,
     "ageRank": 81,
     "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michelle",
+    "lastName": "Hall",
+    "age": "F40-49",
+    "location": "Minneapolis, MN",
+    "rank": 71.9,
+    "ageRank": 80.3,
+    "results": 16,
     "bib": "",
     "finishes": 0
   },
@@ -161,6 +128,28 @@
     "rank": 63.4,
     "ageRank": 88.3,
     "results": 54,
+    "bib": "",
+    "finishes": 2
+  },
+  {
+    "firstName": "Mandy",
+    "lastName": "Venables",
+    "age": "F30-39",
+    "location": "Tampa, FL",
+    "rank": 68,
+    "ageRank": 80.3,
+    "results": 23,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Elena",
+    "lastName": "Smith",
+    "age": "F40-49",
+    "location": "Ocoee, FL",
+    "rank": 67.7,
+    "ageRank": 69,
+    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -187,12 +176,12 @@
     "finishes": 0
   },
   {
-    "firstName": "Alicia",
-    "lastName": "Renick",
-    "age": "F30-39",
-    "location": "Zephyrhills, FL",
-    "rank": 58.1,
-    "ageRank": 76.2,
+    "firstName": "Tatiana",
+    "lastName": "De La Garza",
+    "age": "F40-49",
+    "location": "Lithia, FL",
+    "rank": 66.8,
+    "ageRank": 76.5,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -205,17 +194,6 @@
     "rank": 58.1,
     "ageRank": 64.7,
     "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Joanne",
-    "lastName": "Untalan",
-    "age": "F40-49",
-    "location": "Tampa, FL",
-    "rank": 56.6,
-    "ageRank": 69.8,
-    "results": 12,
     "bib": "",
     "finishes": 0
   },
@@ -253,13 +231,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Sandra",
-    "lastName": "Smith",
-    "age": "F50-59",
-    "location": "Sandra, FL",
-    "rank": 51.2,
-    "ageRank": 58.6,
-    "results": 19,
+    "firstName": "Alicia",
+    "lastName": "Renick",
+    "age": "F30-39",
+    "location": "Zephyrhills, FL",
+    "rank": 58.1,
+    "ageRank": 76.2,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Joanne",
+    "lastName": "Untalan",
+    "age": "F40-49",
+    "location": "Tampa, FL",
+    "rank": 56.6,
+    "ageRank": 69.8,
+    "results": 12,
     "bib": "",
     "finishes": 0
   },
@@ -271,6 +260,17 @@
     "rank": 48.6,
     "ageRank": 53.8,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sandra",
+    "lastName": "Smith",
+    "age": "F50-59",
+    "location": "Sandra, FL",
+    "rank": 51.2,
+    "ageRank": 58.6,
+    "results": 19,
     "bib": "",
     "finishes": 0
   },
