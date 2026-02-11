@@ -29,11 +29,23 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @typedef {import('unist').Node} Node
+ * @typedef {import('unist').Parent} Parent
+ *
+ * @param {Node} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {Array<{parent: Parent, index: number}>} */
   const insertions = [];
 
   visit(tree, "element", (node, index, parent) => {
+    // @ts-ignore
     if (node.tagName !== tag) return;
     if (insertions.length >= MAX_ADS) return;
     count++;
@@ -58,10 +70,12 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
  */
 export default function rehypeInArticleAd() {
+  /** @param {Node} tree */
   return (tree) => {
     // Count h2s first to decide strategy
     let h2Count = 0;
     visit(tree, "element", (node) => {
+      // @ts-ignore
       if (node.tagName === "h2") h2Count++;
     });
 
@@ -73,6 +87,7 @@ export default function rehypeInArticleAd() {
     // Splice in reverse order so earlier indices stay valid
     for (let i = insertions.length - 1; i >= 0; i--) {
       const { parent, index } = insertions[i];
+      // @ts-ignore
       parent.children.splice(index, 0, createAdNode());
     }
   };
