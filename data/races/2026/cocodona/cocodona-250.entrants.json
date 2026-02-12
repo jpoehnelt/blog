@@ -38,7 +38,7 @@
     "age": "F40-49",
     "location": "Leadville, CO",
     "rank": 94.9,
-    "ageRank": 97.1,
+    "ageRank": 95.9,
     "results": 97,
     "bib": "",
     "finishes": 0
@@ -148,7 +148,7 @@
     "age": "M50-59",
     "location": "Flagstaff, AZ",
     "rank": 91.5,
-    "ageRank": 95.5,
+    "ageRank": 92.9,
     "results": 152,
     "bib": "",
     "finishes": 0
@@ -181,7 +181,7 @@
     "age": "M30-39",
     "location": "Costa Mesa, CA",
     "rank": 90.4,
-    "ageRank": 91.8,
+    "ageRank": 91,
     "results": 12,
     "bib": "",
     "finishes": 0
@@ -247,7 +247,7 @@
     "age": "M30-39",
     "location": "Flagstaff, AZ",
     "rank": 88.3,
-    "ageRank": 89.8,
+    "ageRank": 89.7,
     "results": 33,
     "bib": "",
     "finishes": 0
@@ -434,7 +434,7 @@
     "age": "F30-39",
     "location": "Brentwood, TN",
     "rank": 85.7,
-    "ageRank": 98.9,
+    "ageRank": 99.1,
     "results": 5,
     "bib": "",
     "finishes": 0
@@ -775,7 +775,7 @@
     "age": "M40-49",
     "location": "Columbia, MD",
     "rank": 80.7,
-    "ageRank": 84,
+    "ageRank": 83.8,
     "results": 20,
     "bib": "",
     "finishes": 0
@@ -1705,17 +1705,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Stoney",
-    "lastName": "Blouse",
-    "age": "M30-39",
-    "location": "Bozeman, MT",
-    "rank": 70.3,
-    "ageRank": 70,
-    "results": 14,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Sylvain",
     "lastName": "Lebreton",
     "age": "M50-59",
@@ -1886,7 +1875,7 @@
     "age": "M50-59",
     "location": "Richmond, VA",
     "rank": 69.5,
-    "ageRank": 86.6,
+    "ageRank": 84.1,
     "results": 13,
     "bib": "",
     "finishes": 0
@@ -1919,7 +1908,7 @@
     "age": "M30-39",
     "location": "Los Angeles, CA",
     "rank": 69.3,
-    "ageRank": 67.9,
+    "ageRank": 68.1,
     "results": 8,
     "bib": "",
     "finishes": 0
@@ -2931,8 +2920,19 @@
     "age": "M40-49",
     "location": "Seattle, WA",
     "rank": 61.5,
-    "ageRank": 66.9,
+    "ageRank": 63.8,
     "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tyler",
+    "lastName": "Jackson",
+    "age": "M30-39",
+    "location": "Powhatan, VA",
+    "rank": 61.4,
+    "ageRank": 61.2,
+    "results": 13,
     "bib": "",
     "finishes": 0
   },
@@ -3021,17 +3021,6 @@
     "rank": 60.2,
     "ageRank": 68.7,
     "results": 23,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tyler",
-    "lastName": "Jackson",
-    "age": "M30-39",
-    "location": "Powhatan, VA",
-    "rank": 60.1,
-    "ageRank": 61.2,
-    "results": 12,
     "bib": "",
     "finishes": 0
   },
@@ -3503,7 +3492,7 @@
     "age": "M40-49",
     "location": "Castle Cary, GBR",
     "rank": 53.7,
-    "ageRank": 0,
+    "ageRank": 53.7,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -3734,7 +3723,7 @@
     "age": "M50-59",
     "location": "Lafayette, CA",
     "rank": 47.5,
-    "ageRank": 58.9,
+    "ageRank": 58.2,
     "results": 82,
     "bib": "",
     "finishes": 0
@@ -3784,28 +3773,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Parley",
-    "lastName": "Hannan",
-    "age": "F20-29",
-    "location": "scarborough, ME",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Frankie",
-    "lastName": "Ralph",
-    "age": "M30-39",
-    "location": "Lossiemouth, GBR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Thomas",
     "lastName": "Plater",
     "age": "M40-49",
@@ -3821,6 +3788,28 @@
     "lastName": "Mayor",
     "age": "F50-59",
     "location": "Villa Rosa Pilar, ARG",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Parley",
+    "lastName": "Hannan",
+    "age": "F20-29",
+    "location": "scarborough, ME",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Frankie",
+    "lastName": "Ralph",
+    "age": "M30-39",
+    "location": "Lossiemouth, GBR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3861,10 +3850,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Adam",
-    "lastName": "Ellenstein",
-    "age": "M40-49",
-    "location": "Prescott, AZ",
+    "firstName": "Anthony",
+    "lastName": "Trujillo",
+    "age": "M20-29",
+    "location": "Glendale, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3872,10 +3861,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Anthony",
-    "lastName": "Trujillo",
-    "age": "M20-29",
-    "location": "Glendale, AZ",
+    "firstName": "Adam",
+    "lastName": "Ellenstein",
+    "age": "M40-49",
+    "location": "Prescott, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

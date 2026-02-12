@@ -258,7 +258,7 @@
     "age": "M40-49",
     "location": "Tacoma, WA",
     "rank": 65.7,
-    "ageRank": 73.1,
+    "ageRank": 72.9,
     "results": 30,
     "bib": "",
     "finishes": 0
@@ -1067,17 +1067,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Heath",
-    "lastName": "Hazen",
-    "age": "M50-59",
-    "location": "Mulvane, KS",
-    "rank": 47.4,
-    "ageRank": 61.8,
-    "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Anita",
     "lastName": "Tendler",
     "age": "F20-29",
@@ -1096,6 +1085,17 @@
     "rank": 47.1,
     "ageRank": 55.8,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Heath",
+    "lastName": "Hazen",
+    "age": "M50-59",
+    "location": "Mulvane, KS",
+    "rank": 46.8,
+    "ageRank": 61.8,
+    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -1925,17 +1925,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Annie",
-    "lastName": "Lutes",
-    "age": "F40-49",
-    "location": "Traverse City, MI",
-    "rank": 48.1,
-    "ageRank": 51.7,
-    "results": 1,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Henrry",
     "lastName": "Palacios",
     "age": "M30-39",
@@ -2007,7 +1996,7 @@
     "age": "F50-59",
     "location": "Gilbert, AZ",
     "rank": 43.9,
-    "ageRank": 57.4,
+    "ageRank": 57,
     "results": 31,
     "bib": "",
     "finishes": 0
@@ -2398,17 +2387,6 @@
     "finishes": 0
   },
   {
-    "firstName": "YuKristina@Gmail.Com",
-    "lastName": "Yu",
-    "age": "F50-59",
-    "location": "Albuquerque, NM",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Laurel",
     "lastName": "Tomlinson",
     "age": "F20-29",
@@ -2486,10 +2464,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Harrington",
+    "firstName": "Adam",
+    "lastName": "Johnson",
     "age": "M30-39",
-    "location": "Gilbert, AZ",
+    "location": "Phoenix, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2508,21 +2486,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Rob",
-    "lastName": "Fisher",
-    "age": "M40-49",
-    "location": "Toronto, ON",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jayson",
-    "lastName": "Logg",
-    "age": "M50-59",
-    "location": "Laveen, AZ",
+    "firstName": "Andrew",
+    "lastName": "Harrington",
+    "age": "M30-39",
+    "location": "Gilbert, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2556,6 +2523,39 @@
     "lastName": "Furtado",
     "age": "F40-49",
     "location": "TACOMA, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tynisha",
+    "lastName": "John",
+    "age": "F30-39",
+    "location": "Kayenta, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rob",
+    "lastName": "Fisher",
+    "age": "M40-49",
+    "location": "Toronto, ON",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jayson",
+    "lastName": "Logg",
+    "age": "M50-59",
+    "location": "Laveen, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -2618,10 +2618,54 @@
     "finishes": 0
   },
   {
-    "firstName": "Tynisha",
-    "lastName": "John",
-    "age": "F30-39",
-    "location": "Kayenta, AZ",
+    "firstName": "Kristina",
+    "lastName": "Yu",
+    "age": "F50-59",
+    "location": "Albuquerque, NM",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amy",
+    "lastName": "Tressler",
+    "age": "F40-49",
+    "location": "Flagstaff, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Christopher",
+    "lastName": "Tressler",
+    "age": "M50-59",
+    "location": "Flagstaff, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Meagan",
+    "lastName": "Elliott",
+    "age": "F40-49",
+    "location": "Flagstaff, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dimitra",
+    "lastName": "Zakas",
+    "age": "F40-49",
+    "location": "Phoenix, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
