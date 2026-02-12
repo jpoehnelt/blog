@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ExternalLink } from "@lucide/svelte";
+  import SectionHeadline from "$lib/components/SectionHeadline.svelte";
 
   interface YearData {
     year: number;
@@ -168,11 +169,9 @@
 </script>
 
 <section class="strava-heatmap" id="workout-frequency">
-  <h2
-    class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-6 tracking-wider"
-  >
+  <SectionHeadline class="mb-6">
     Workout Frequency
-  </h2>
+  </SectionHeadline>
 
   <div class="heatmap-container">
     <div class="heatmap-row">
