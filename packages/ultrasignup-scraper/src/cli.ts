@@ -94,8 +94,10 @@ async function saveRaceData(info: Race, outDir: string) {
       ),
     };
 
-    // Only append to history if there are actually waitlist entries
-    if (event.waitlist.length > 0) {
+    // Append if there are waitlist entries, or if the previous snapshot had entries
+    // (to record the transition to an empty waitlist)
+    const lastSnapshot = waitlistHistory[waitlistHistory.length - 1];
+    if (event.waitlist.length > 0 || (lastSnapshot && lastSnapshot.count > 0)) {
       // Deduplicate: remove today's entry if it exists
       waitlistHistory = waitlistHistory.filter((h) => h.date !== today);
       waitlistHistory.push(snapshot);

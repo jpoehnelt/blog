@@ -279,42 +279,6 @@
     "year": 2026
   },
   {
-    "id": 125776,
-    "title": "Black Canyon Ultras",
-    "slug": "black-canyon-ultras",
-    "parentId": 125776,
-    "date": "2026-02-14T07:00:00.000Z",
-    "location": "Mayer, AZ",
-    "website": "https://www.aravaiparunning.com/blackcanyon/",
-    "lat": 34.3487696,
-    "lng": -112.15952830000003,
-    "events": [
-      {
-        "id": 125776,
-        "title": "100K",
-        "slug": "100k",
-        "waitlist": {
-          "dataFile": "races/2026/black-canyon-ultras/100k.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/black-canyon-ultras/100k.entrants.json"
-        }
-      },
-      {
-        "id": 125777,
-        "title": "50K",
-        "slug": "50k",
-        "waitlist": {
-          "dataFile": "races/2026/black-canyon-ultras/50k.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/black-canyon-ultras/50k.entrants.json"
-        }
-      }
-    ],
-    "year": 2026
-  },
-  {
     "id": 129478,
     "title": "Skunk Apes Revenge 60K",
     "slug": "skunk-apes-revenge-60k",
@@ -392,6 +356,42 @@
         },
         "entrants": {
           "dataFile": "races/2026/frosty-15/15k.entrants.json"
+        }
+      }
+    ],
+    "year": 2026
+  },
+  {
+    "id": 125776,
+    "title": "Black Canyon Ultras",
+    "slug": "black-canyon-ultras",
+    "parentId": 125776,
+    "date": "2026-02-14T14:00:00.000Z",
+    "location": "Mayer, AZ",
+    "website": "https://www.aravaiparunning.com/blackcanyon/",
+    "lat": 34.3487696,
+    "lng": -112.15952830000003,
+    "events": [
+      {
+        "id": 125776,
+        "title": "100K",
+        "slug": "100k",
+        "waitlist": {
+          "dataFile": "races/2026/black-canyon-ultras/100k.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/black-canyon-ultras/100k.entrants.json"
+        }
+      },
+      {
+        "id": 125777,
+        "title": "50K",
+        "slug": "50k",
+        "waitlist": {
+          "dataFile": "races/2026/black-canyon-ultras/50k.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/black-canyon-ultras/50k.entrants.json"
         }
       }
     ],
