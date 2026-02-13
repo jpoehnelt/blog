@@ -1,0 +1,54 @@
+load("@aspect_rules_js//js:defs.bzl", "js_run_binary")
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@npm//packages/data-automation:tsx/package_json.bzl", tsx_bin = "bin")
+load("@npm//packages/data-automation:vitest/package_json.bzl", vitest_bin = "bin")
+
+npm_link_all_packages(name = "node_modules")
+
+tsx_bin.tsx_binary(
+    name = "tsx_bin",
+)
+
+# Use tsx to run a build script that invokes esbuild programmatically
+js_run_binary(
+    name = "build",
+    srcs = glob(["src/**/*.ts"]) + [
+        "package.json",
+        "tsconfig.json",
+        "build.mjs",
+        ":node_modules/esbuild",
+    ],
+    out_dirs = ["dist"],
+    tool = ":tsx_bin",
+    args = ["build.mjs"],
+    chdir = package_name(),
+)
+
+npm_package(
+    name = "pkg",
+    srcs = [
+        "package.json",
+        ":build",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "data-automation",
+    actual = ":pkg",
+    visibility = ["//visibility:public"],
+)
+
+# Test target
+vitest_bin.vitest_test(
+    name = "test",
+    args = ["run"],
+    data = glob(["src/**/*.ts"]) + [
+        "package.json",
+        "tsconfig.json",
+        "//:tsconfig",
+        ":node_modules",
+    ],
+    chdir = package_name(),
+)

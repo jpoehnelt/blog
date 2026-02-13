@@ -1,0 +1,61 @@
+load("@aspect_rules_js//js:defs.bzl", "js_run_binary")
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@npm//packages/ultrasignup-scraper:tsup/package_json.bzl", tsup_bin = "bin")
+load("@npm//packages/ultrasignup-scraper:vitest/package_json.bzl", vitest_bin = "bin")
+
+npm_link_all_packages(name = "node_modules")
+
+# tsup binary from npm
+tsup_bin.tsup_binary(
+    name = "tsup_bin",
+)
+
+# Build with tsup (replaces `pnpm build` which runs tsup)
+# Note: --dts is omitted because tsup's DTS generation needs the full type
+# dependency graph in the sandbox. Run `pnpm build` directly if you need .d.ts files.
+js_run_binary(
+    name = "build",
+    srcs = glob(["src/**/*.ts"]) + [
+        "package.json",
+        "tsconfig.json",
+    ],
+    args = [
+        "src/cli.ts",
+        "src/index.ts",
+        "src/types.ts",
+        "src/enrichment.ts",
+        "--format",
+        "esm,cjs",
+    ],
+    out_dirs = ["dist"],
+    tool = ":tsup_bin",
+    chdir = package_name(),
+)
+
+npm_package(
+    name = "pkg",
+    srcs = [
+        "package.json",
+        ":build",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "ultrasignup-scraper",
+    actual = ":pkg",
+    visibility = ["//visibility:public"],
+)
+
+# Test target
+vitest_bin.vitest_test(
+    name = "test",
+    args = ["run"],
+    data = glob(["src/**/*.ts"]) + [
+        "package.json",
+        "tsconfig.json",
+        ":node_modules",
+    ],
+    chdir = package_name(),
+)
