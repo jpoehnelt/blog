@@ -99,6 +99,17 @@
     "finishes": 0
   },
   {
+    "firstName": "John",
+    "lastName": "Frierson",
+    "age": "M50-59",
+    "location": "Athens, GA",
+    "rank": 60.9,
+    "ageRank": 73.8,
+    "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Molly",
     "lastName": "Peterson",
     "age": "F50-59",
@@ -139,17 +150,6 @@
     "rank": 52.7,
     "ageRank": 65.5,
     "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Stephen",
-    "lastName": "Ruhl",
-    "age": "M30-39",
-    "location": "Toccoa, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -213,6 +213,17 @@
     "lastName": "Maxey",
     "age": "M30-39",
     "location": "Bogar, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stephen",
+    "lastName": "Ruhl",
+    "age": "M30-39",
+    "location": "Toccoa, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
