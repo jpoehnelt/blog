@@ -121,6 +121,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Jeffrey",
+    "lastName": "Klapprodt",
+    "age": "M50-59",
+    "location": "Burleson, TX",
+    "rank": 71.1,
+    "ageRank": 83.7,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Terrance",
     "lastName": "Turpin",
     "age": "M40-49",
@@ -165,17 +176,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Gil",
-    "lastName": "Rios",
-    "age": "M40-49",
-    "location": "San Antonio, TX",
-    "rank": 67.7,
-    "ageRank": 67.7,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Andrew",
     "lastName": "Bair",
     "age": "M30-39",
@@ -183,6 +183,17 @@
     "rank": 67.7,
     "ageRank": 69.3,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gil",
+    "lastName": "Rios",
+    "age": "M40-49",
+    "location": "San Antonio, TX",
+    "rank": 67.7,
+    "ageRank": 67.7,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -594,6 +605,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kristina",
+    "lastName": "Walkup",
+    "age": "F30-39",
+    "location": "Highland Village, TX",
+    "rank": 61.6,
+    "ageRank": 64.1,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jennifer",
     "lastName": "Goodson",
     "age": "F40-49",
@@ -682,17 +704,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Nick",
-    "lastName": "Surface",
-    "age": "M40-49",
-    "location": "Prosper, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Garrett",
     "lastName": "Unclebach",
     "age": "M30-39",
@@ -704,10 +715,10 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Diaz",
+    "firstName": "Nick",
+    "lastName": "Surface",
     "age": "M40-49",
-    "location": "Haslet, TX",
+    "location": "Prosper, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -726,54 +737,21 @@
     "finishes": 0
   },
   {
+    "firstName": "John",
+    "lastName": "Diaz",
+    "age": "M40-49",
+    "location": "Haslet, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "James",
     "lastName": "Lewin",
     "age": "M30-39",
     "location": "Wylie, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ananda",
-    "lastName": "Straka",
-    "age": "F20-29",
-    "location": "Florence, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Steven",
-    "lastName": "Wagner",
-    "age": "M20-29",
-    "location": "Argyle, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Johnathan",
-    "lastName": "Mirkovich",
-    "age": "M20-29",
-    "location": "Richardson, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zachary",
-    "lastName": "Ford",
-    "age": "M<20",
-    "location": "San Marcos, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -924,6 +902,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Stephen",
+    "lastName": "Cima",
+    "age": "M40-49",
+    "location": "Escondido, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stephen",
+    "lastName": "Hurt",
+    "age": "M30-39",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Shawn",
     "lastName": "Meza",
     "age": "M30-39",
@@ -968,10 +968,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephen",
-    "lastName": "Cima",
-    "age": "M40-49",
-    "location": "Escondido, CA",
+    "firstName": "Ananda",
+    "lastName": "Straka",
+    "age": "F20-29",
+    "location": "Florence, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -979,10 +979,32 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephen",
-    "lastName": "Hurt",
-    "age": "M30-39",
-    "location": "Fort Worth, TX",
+    "firstName": "Steven",
+    "lastName": "Wagner",
+    "age": "M20-29",
+    "location": "Argyle, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Johnathan",
+    "lastName": "Mirkovich",
+    "age": "M20-29",
+    "location": "Richardson, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Zachary",
+    "lastName": "Ford",
+    "age": "M<20",
+    "location": "San Marcos, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

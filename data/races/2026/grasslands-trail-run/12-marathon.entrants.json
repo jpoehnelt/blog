@@ -1,5 +1,16 @@
 [
   {
+    "firstName": "Madden",
+    "lastName": "Smith",
+    "age": "M20-29",
+    "location": "dallas, TX",
+    "rank": 90.5,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Kyle",
     "lastName": "Ranallo",
     "age": "M30-39",
@@ -315,6 +326,17 @@
     "rank": 69.3,
     "ageRank": 69.3,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Haley",
+    "lastName": "Kosker",
+    "age": "F30-39",
+    "location": "Denton, TX",
+    "rank": 69,
+    "ageRank": 84.3,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -968,17 +990,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Josh",
-    "lastName": "Watson",
-    "age": "M20-29",
-    "location": "Frisco, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Philip",
     "lastName": "Dudley",
     "age": "M40-49",
@@ -1148,6 +1159,17 @@
     "lastName": "Wonderly",
     "age": "M50-59",
     "location": "Montgomery, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Watson",
+    "age": "M20-29",
+    "location": "Frisco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
