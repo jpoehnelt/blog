@@ -14,6 +14,7 @@
   import HotWaitlistsCard from "$lib/components/HotWaitlistsCard.svelte";
   import EliteSpotlightCard from "$lib/components/EliteSpotlightCard.svelte";
   import UpcomingRacesCard from "$lib/components/UpcomingRacesCard.svelte";
+  import SectionHeadline from "$lib/components/SectionHeadline.svelte";
   import {
     DEFAULT_TITLE,
     BASE_URL,
@@ -81,12 +82,9 @@
     >
       <div class="sticky top-8 space-y-8">
         <section class="space-y-4">
-          <h2
-            class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
-            id="about"
-          >
+          <SectionHeadline class="mb-4" id="about">
             About
-          </h2>
+          </SectionHeadline>
           <figure class="mb-4 block">
             <enhanced:img
               src={justinPoehneltImg}
@@ -233,12 +231,9 @@
 
       <!-- Races -->
       <section>
-        <h2
-          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
-          id="races"
-        >
+        <SectionHeadline class="mb-4" id="races">
           Race Results
-        </h2>
+        </SectionHeadline>
         {#if recentRaces.length > 0}
           <ul class="space-y-4 list-none p-0 m-0">
             {#each recentRaces as race}
@@ -252,12 +247,9 @@
 
       <!-- Activities-->
       <section>
-        <h2
-          class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 mb-4 tracking-wider"
-          id="activities"
-        >
+        <SectionHeadline class="mb-4" id="activities">
           Activities
-        </h2>
+        </SectionHeadline>
         <div class="max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
           <ActivityList activities={recentActivities.slice(0, 5)} />
         </div>
