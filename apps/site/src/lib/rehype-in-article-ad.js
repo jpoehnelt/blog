@@ -1,3 +1,10 @@
+/**
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Element} Element
+ * @typedef {import('hast').Parent} Parent
+ * @typedef {import('hast').ElementContent} ElementContent
+ */
+
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 
@@ -29,10 +36,20 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @param {Root} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ * @returns {{parent: Parent, index: number}[]}
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {{parent: Parent, index: number}[]} */
   const insertions = [];
 
+  // @ts-ignore - visit types are tricky with unist/hast
   visit(tree, "element", (node, index, parent) => {
     if (node.tagName !== tag) return;
     if (insertions.length >= MAX_ADS) return;
@@ -56,11 +73,14 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  *
  * - Posts with ≥ 2 h2s: ads before h2 #2, then every 3 h2s (#5, #8, …)
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
+ *
+ * @returns {(tree: Root) => void}
  */
 export default function rehypeInArticleAd() {
   return (tree) => {
     // Count h2s first to decide strategy
     let h2Count = 0;
+    // @ts-ignore - visit types are tricky with unist/hast
     visit(tree, "element", (node) => {
       if (node.tagName === "h2") h2Count++;
     });
