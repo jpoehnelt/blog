@@ -33,26 +33,26 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Jurgens",
-    "age": "M30-39",
-    "location": "Colorado Springs, CO",
-    "rank": 68.3,
-    "ageRank": 72.4,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Dan",
     "lastName": "Pulskamp",
     "age": "M40-49",
     "location": "Chesterfield, VA",
-    "rank": 68,
+    "rank": 67.9,
     "ageRank": 73,
-    "results": 49,
+    "results": 50,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "John",
+    "lastName": "Jurgens",
+    "age": "M30-39",
+    "location": "Colorado Springs, CO",
+    "rank": 67.3,
+    "ageRank": 71,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Dawn",
@@ -121,17 +121,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jess",
-    "lastName": "Shvedov",
-    "age": "F40-49",
-    "location": "DENVER, CO",
-    "rank": 69.8,
-    "ageRank": 84.5,
-    "results": 8,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Robert",
     "lastName": "Batesole",
     "age": "M40-49",
@@ -141,6 +130,17 @@
     "results": 9,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Jess",
+    "lastName": "Shvedov",
+    "age": "F40-49",
+    "location": "DENVER, CO",
+    "rank": 67.3,
+    "ageRank": 81.3,
+    "results": 9,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Cyrus",
@@ -183,6 +183,17 @@
     "rank": 57.5,
     "ageRank": 66.1,
     "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Julie",
+    "lastName": "Herrick",
+    "age": "F40-49",
+    "location": "Golden, CO",
+    "rank": 56.6,
+    "ageRank": 64,
+    "results": 7,
     "bib": "",
     "finishes": 0
   },
@@ -422,6 +433,17 @@
     "lastName": "McDonald",
     "age": "M50-59",
     "location": "Evergreen, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Melody",
+    "lastName": "Autumn",
+    "age": "F30-39",
+    "location": "Broomfield, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

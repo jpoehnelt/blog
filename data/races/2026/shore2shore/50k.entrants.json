@@ -440,17 +440,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Helen",
-    "lastName": "Huang",
-    "age": "F50-59",
-    "location": "Cold Spring Harbor, NY",
-    "rank": 77.8,
-    "ageRank": 93.5,
-    "results": 31,
-    "bib": "",
-    "finishes": 4
-  },
-  {
     "firstName": "Mark",
     "lastName": "Custodio",
     "age": "M40-49",
@@ -460,6 +449,17 @@
     "results": 2,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Helen",
+    "lastName": "Huang",
+    "age": "F50-59",
+    "location": "Cold Spring Harbor, NY",
+    "rank": 77.1,
+    "ageRank": 93.4,
+    "results": 32,
+    "bib": "",
+    "finishes": 4
   },
   {
     "firstName": "Allan",
@@ -512,6 +512,17 @@
     "location": "East Islip, NY",
     "rank": 61.4,
     "ageRank": 61.4,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Petrucci",
+    "age": "M40-49",
+    "location": "Smithtown, NY",
+    "rank": 61.4,
+    "ageRank": 71.8,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -612,17 +623,6 @@
     "rank": 59.8,
     "ageRank": 73.7,
     "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Anuj",
-    "lastName": "Kumar",
-    "age": "M40-49",
-    "location": "New York, NY",
-    "rank": 59.5,
-    "ageRank": 65.7,
-    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -1034,17 +1034,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Tim",
-    "lastName": "Rueda",
-    "age": "M30-39",
-    "location": "Huntington, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Amanda",
     "lastName": "Cresanti",
     "age": "F20-29",
@@ -1056,10 +1045,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Kenneth",
-    "lastName": "Procacci",
-    "age": "M20-29",
-    "location": "Franklin Square, NY",
+    "firstName": "Tim",
+    "lastName": "Rueda",
+    "age": "M30-39",
+    "location": "Huntington, NY",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1067,10 +1056,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Christian",
-    "lastName": "Corleto",
+    "firstName": "Kenneth",
+    "lastName": "Procacci",
     "age": "M20-29",
-    "location": "Elmira, NY",
+    "location": "Franklin Square, NY",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1093,6 +1082,17 @@
     "lastName": "Ross",
     "age": "M30-39",
     "location": "Rockaway beach, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Christian",
+    "lastName": "Corleto",
+    "age": "M20-29",
+    "location": "Elmira, NY",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

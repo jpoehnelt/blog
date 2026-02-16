@@ -231,17 +231,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jean",
-    "lastName": "Perez",
-    "age": "M30-39",
-    "location": "Dallas, TX",
-    "rank": 69.8,
-    "ageRank": 72.3,
-    "results": 17,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Brandon",
     "lastName": "Hurst",
     "age": "M40-49",
@@ -249,6 +238,17 @@
     "rank": 69.4,
     "ageRank": 73,
     "results": 25,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jean",
+    "lastName": "Perez",
+    "age": "M30-39",
+    "location": "Dallas, TX",
+    "rank": 69.3,
+    "ageRank": 71.7,
+    "results": 18,
     "bib": "",
     "finishes": 0
   },
@@ -473,17 +473,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Brandon",
-    "lastName": "Veltman",
-    "age": "M40-49",
-    "location": "Frisco, TX",
-    "rank": 60.6,
-    "ageRank": 68.1,
-    "results": 22,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jeff",
     "lastName": "Croy",
     "age": "M50-59",
@@ -504,6 +493,17 @@
     "results": 21,
     "bib": "",
     "finishes": 2
+  },
+  {
+    "firstName": "Brandon",
+    "lastName": "Veltman",
+    "age": "M40-49",
+    "location": "Frisco, TX",
+    "rank": 59.9,
+    "ageRank": 67.1,
+    "results": 23,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Justin",
@@ -972,9 +972,9 @@
     "lastName": "Espinosa",
     "age": "F40-49",
     "location": "McKinney, TX",
-    "rank": 63.4,
-    "ageRank": 69.7,
-    "results": 15,
+    "rank": 62,
+    "ageRank": 68.4,
+    "results": 16,
     "bib": "",
     "finishes": 0
   },
@@ -1023,10 +1023,21 @@
     "finishes": 0
   },
   {
-    "firstName": "Joseph",
-    "lastName": "Mikulencak",
-    "age": "M20-29",
-    "location": "San Antonio, TX",
+    "firstName": "Rodolfo",
+    "lastName": "Rocha",
+    "age": "M50-59",
+    "location": "Leander, TX",
+    "rank": 52.4,
+    "ageRank": 79.2,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gandy",
+    "lastName": "Bray",
+    "age": "M60-69",
+    "location": "Fort Worth, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1034,10 +1045,32 @@
     "finishes": 0
   },
   {
-    "firstName": "Nathan",
-    "lastName": "Steenport",
-    "age": "M40-49",
-    "location": "Texas, TX",
+    "firstName": "Patrick",
+    "lastName": "Delahoussaye",
+    "age": "M30-39",
+    "location": "COLLEYVILLE, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "William",
+    "lastName": "Gill",
+    "age": "M30-39",
+    "location": "Mansfield, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Samuel",
+    "lastName": "Meaders",
+    "age": "M20-29",
+    "location": "Princeton, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1111,50 +1144,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Gandy",
-    "lastName": "Bray",
-    "age": "M60-69",
-    "location": "Fort Worth, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Patrick",
-    "lastName": "Delahoussaye",
-    "age": "M30-39",
-    "location": "COLLEYVILLE, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "William",
-    "lastName": "Gill",
-    "age": "M30-39",
-    "location": "Mansfield, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Samuel",
-    "lastName": "Meaders",
-    "age": "M20-29",
-    "location": "Princeton, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Tate",
     "lastName": "Murphy",
     "age": "M20-29",
@@ -1203,6 +1192,28 @@
     "lastName": "Lowe",
     "age": "M40-49",
     "location": "Boerne, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Joseph",
+    "lastName": "Mikulencak",
+    "age": "M20-29",
+    "location": "San Antonio, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nathan",
+    "lastName": "Steenport",
+    "age": "M40-49",
+    "location": "Texas, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
