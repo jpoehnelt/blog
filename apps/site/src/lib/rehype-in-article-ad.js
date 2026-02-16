@@ -1,6 +1,12 @@
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 
+/**
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Element} Element
+ * @typedef {any} Parent
+ */
+
 const AD_CLIENT = "ca-pub-1251836334060830";
 const AD_SLOT = "3423675305";
 
@@ -29,10 +35,19 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @param {Root} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {Array<{parent: Parent, index: number}>} */
   const insertions = [];
 
+  // @ts-ignore
   visit(tree, "element", (node, index, parent) => {
     if (node.tagName !== tag) return;
     if (insertions.length >= MAX_ADS) return;
@@ -58,9 +73,11 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
  */
 export default function rehypeInArticleAd() {
+  /** @param {Root} tree */
   return (tree) => {
     // Count h2s first to decide strategy
     let h2Count = 0;
+    // @ts-ignore
     visit(tree, "element", (node) => {
       if (node.tagName === "h2") h2Count++;
     });
@@ -68,11 +85,13 @@ export default function rehypeInArticleAd() {
     const insertions =
       h2Count >= 2
         ? collectInsertions(tree, "h2", FIRST_AD_AT_H2, H2_INTERVAL, false)
-        : collectInsertions(tree, "p", FIRST_AD_AT_P, P_INTERVAL, true);
+        : // @ts-ignore
+          collectInsertions(tree, "p", FIRST_AD_AT_P, P_INTERVAL, true);
 
     // Splice in reverse order so earlier indices stay valid
     for (let i = insertions.length - 1; i >= 0; i--) {
       const { parent, index } = insertions[i];
+      // @ts-ignore
       parent.children.splice(index, 0, createAdNode());
     }
   };
