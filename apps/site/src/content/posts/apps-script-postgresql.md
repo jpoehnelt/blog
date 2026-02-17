@@ -202,8 +202,14 @@ Google Apps Script does **not** run on a static IP address. It runs on a massive
 - **The trap:** You try to secure your database by only allowing connections from your server's IP. Your script fails immediately.
 - **The failed fix:** You try to allow-list Google's IP ranges. The list is huge, changes often, and is a maintenance burden.
 - **The real fix:**
-  - **Option A (cloud providers):** Rely on **SSL/TLS authentication** rather than IP allow-listing. Set your firewall to `0.0.0.0/0` (allow all) but **enforce** `ssl=true` in your JDBC URL and use a strong, long password. This is the standard approach for most managed Postgres providers.
+  - **Option A (cloud providers):** Rely on **SSL/TLS authentication** rather than IP allow-listing. Configure your firewall to accept connections from any IP, but **enforce** `ssl=true` in your JDBC URL and use a strong, unique password.
   - **Option B (enterprise/on-prem):** If you _must_ have a static IP (e.g., for a corporate database), Apps Script can't connect directly. You might want to consider a proxy.
+
+<Note>
+
+**Opening your database to all IPs is a security tradeoff.** Only do this if SSL/TLS is enforced at the server level (not just in your connection string) _and_ you use long, random credentials. Most managed Postgres providers enforce SSL by default, but verify this in your provider's settings. If your database contains sensitive data, consider Option B with a proxy instead.
+
+</Note>
 
 ### 2. The "connection storm"
 
