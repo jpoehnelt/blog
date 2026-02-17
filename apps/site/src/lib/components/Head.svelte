@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BASE_URL, AUTHOR_NAME, DEFAULT_TITLE } from "$lib/constants";
+  import { BASE_URL, AUTHOR_NAME, AUTHOR_URL, DEFAULT_TITLE } from "$lib/constants";
 
   interface Props {
     title: string;
@@ -57,7 +57,7 @@
     {#if modifiedTime}
       <meta property="article:modified_time" content={modifiedTime} />
     {/if}
-    <meta property="article:author" content={AUTHOR_NAME} />
+    <meta property="article:author" content={AUTHOR_URL} />
   {/if}
 
   <meta property="twitter:card" content="summary_large_image" />

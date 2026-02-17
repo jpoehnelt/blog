@@ -18,6 +18,12 @@
     DEFAULT_TITLE,
     BASE_URL,
     AUTHOR_NAME,
+    AUTHOR_URL,
+    AUTHOR_IMAGE,
+    AUTHOR_JOB_TITLE,
+    AUTHOR_DESCRIPTION,
+    AUTHOR_SOCIAL_LINKS,
+    AUTHOR_KNOWS_ABOUT,
     DEFAULT_DESCRIPTION,
   } from "$lib/constants";
 
@@ -52,6 +58,7 @@
       author: {
         "@type": "Person",
         name: AUTHOR_NAME,
+        url: AUTHOR_URL,
       },
       description: DEFAULT_DESCRIPTION,
     },
@@ -59,13 +66,29 @@
       "@context": "https://schema.org",
       "@type": "Person",
       name: AUTHOR_NAME,
-      url: BASE_URL,
-      jobTitle: "Software Engineer",
-      sameAs: [
-        "https://github.com/jpoehnelt",
-        "https://www.linkedin.com/in/justin-poehnelt",
-        "https://www.strava.com/athletes/2170160",
+      url: AUTHOR_URL,
+      image: AUTHOR_IMAGE,
+      description: AUTHOR_DESCRIPTION,
+      jobTitle: AUTHOR_JOB_TITLE,
+      worksFor: {
+        "@type": "Organization",
+        name: "Google",
+        url: "https://about.google/",
+      },
+      affiliation: [
+        {
+          "@type": "Organization",
+          name: "Falls Creek Ranch Association, Inc.",
+          url: "https://fallscreekranch.org",
+        },
+        {
+          "@type": "Organization",
+          name: "Falls Creek Wildlands and Trails",
+          url: "https://fcwt.org",
+        },
       ],
+      knowsAbout: AUTHOR_KNOWS_ABOUT,
+      sameAs: AUTHOR_SOCIAL_LINKS,
     },
   ];
 </script>

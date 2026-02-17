@@ -3,14 +3,25 @@
   import Head from "$lib/components/Head.svelte";
   import PostList from "$lib/components/PostList.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
-  import { AUTHOR_NAME, LICENSE, BASE_URL } from "$lib/constants";
+  import {
+    AUTHOR_NAME,
+    AUTHOR_URL,
+    AUTHOR_IMAGE,
+    AUTHOR_JOB_TITLE,
+    AUTHOR_DESCRIPTION,
+    AUTHOR_SOCIAL_LINKS,
+    AUTHOR_KNOWS_ABOUT,
+    LICENSE,
+    BASE_URL,
+  } from "$lib/constants";
+  import { isGoogleRelated } from "$lib/utils";
   import { siMarkdown } from "simple-icons";
   import BrandIcon from "$lib/components/BrandIcon.svelte";
-  import GoogleDisclaimer from "$lib/components/content/GoogleDisclaimer.svelte";
 
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
+  let isGoogle = $derived(isGoogleRelated(data.tags));
   import JsonLd from "$lib/components/JsonLd.svelte";
   import type { Thing, WithContext, FAQPage } from "schema-dts";
 
@@ -36,22 +47,17 @@
       author: {
         "@type": "Person",
         name: AUTHOR_NAME,
+        url: AUTHOR_URL,
+        image: AUTHOR_IMAGE,
+        description: AUTHOR_DESCRIPTION,
+        jobTitle: AUTHOR_JOB_TITLE,
         worksFor: {
           "@type": "Organization",
           name: "Google",
+          url: "https://about.google/",
         },
-        affiliation: [
-          {
-            "@type": "Organization",
-            name: "Falls Creek Ranch Association, Inc.",
-            url: "https://fallscreekranch.org",
-          },
-          {
-            "@type": "Organization",
-            name: "Falls Creek Wildlands and Trails",
-            url: "https://fcwt.org",
-          },
-        ],
+        knowsAbout: AUTHOR_KNOWS_ABOUT,
+        sameAs: AUTHOR_SOCIAL_LINKS,
       },
       datePublished: data.pubDate.toISOString(),
       dateModified: (data.lastMod || data.pubDate).toISOString(),
@@ -149,13 +155,19 @@
       <h1 class="mb-0" style:view-transition-name="post-title-{data.id}">
         {data.title}
       </h1>
-      <div class="flex flex-wrap gap-1 items-center">
-        <span class="text-xs">
-          Published on <b><FormattedDate date={data.pubDate} /></b>
+      <div class="flex flex-wrap gap-1 items-center text-xs text-gray-600 dark:text-gray-400">
+        <span>
+          By <a href="/" class="font-semibold text-gray-900 dark:text-gray-100 no-underline hover:underline">{AUTHOR_NAME}</a>{#if isGoogle}<span class="text-gray-400 dark:text-gray-500">,
+            {AUTHOR_JOB_TITLE} at Google</span>{/if}
+        </span>
+        <span class="text-gray-300 dark:text-gray-600">·</span>
+        <span>
+          <FormattedDate date={data.pubDate} />
         </span>
         {#if data.lastMod}
-          <span class="text-xs">
-            Updated on <b><FormattedDate date={data.lastMod} /></b>
+          <span class="text-gray-300 dark:text-gray-600">·</span>
+          <span>
+            Updated <FormattedDate date={data.lastMod} />
           </span>
         {/if}
         <a
@@ -200,8 +212,13 @@
         </dl>
       </div>
     {/if}
-    <GoogleDisclaimer tags={data.tags} />
+
     <div class="mt-8">
+      {#if isGoogle}
+        <p class="text-xs text-gray-400 dark:text-gray-500 mb-2">
+          Opinions expressed are my own and do not necessarily represent those of Google.
+        </p>
+      {/if}
       <p class="text-xs">
         © {data.pubDate.getFullYear()} by {AUTHOR_NAME} is licensed under {LICENSE}
       </p>
