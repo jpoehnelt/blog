@@ -41,11 +41,15 @@ export async function load({ params, parent, fetch }) {
 
   // Relaxed Validation: Log warning but allow build to proceed with empty data
   if (!waitlistData || waitlistData.length === 0) {
-    console.warn(`[Build Warning] Missing waitlist data for event ${eventId} (${event.title})`);
+    console.warn(
+      `[Build Warning] Missing waitlist data for event ${eventId} (${event.title})`,
+    );
   }
-  
+
   if (!entrantsData || entrantsData.length === 0) {
-    console.warn(`[Build Warning] Missing entrants data for event ${eventId} (${event.title})`);
+    console.warn(
+      `[Build Warning] Missing entrants data for event ${eventId} (${event.title})`,
+    );
   }
 
   const safeWaitlistData = waitlistData || [];

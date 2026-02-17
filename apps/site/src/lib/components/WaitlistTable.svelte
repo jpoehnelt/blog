@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createSvelteTable, FlexRender, renderSnippet } from "$lib/components/ui/data-table";
+  import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
     getCoreRowModel,
     getSortedRowModel,
@@ -7,6 +7,16 @@
     type ColumnDef,
     type SortingState,
   } from "@tanstack/table-core";
+  import * as Table from "$lib/components/ui/table";
+  import { Input } from "$lib/components/ui/input";
+  import { Button } from "$lib/components/ui/button";
+  import { cn } from "$lib/utils";
+  import ArrowUp from "@lucide/svelte/icons/arrow-up";
+  import ArrowDown from "@lucide/svelte/icons/arrow-down";
+  import Minus from "@lucide/svelte/icons/minus";
+  import Search from "@lucide/svelte/icons/search";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
+  import ChevronUp from "@lucide/svelte/icons/chevron-up";
 
   interface WaitlistApplicant {
     name: string;
@@ -104,23 +114,17 @@
 
 {#snippet ChangeIndicator(diff: number | null)}
   <div
-    class={`flex items-center justify-end gap-1 text-xs font-bold w-full ${getChangeClass(diff)}`}
+    class={cn("flex items-center justify-end gap-1 text-xs font-bold w-full", getChangeClass(diff))}
   >
     {#if diff === null}
       <span class="text-slate-200">-</span>
     {:else if diff === 0}
-      <svg class="w-3 h-3 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14" />
-      </svg>
+      <Minus class="w-3 h-3 text-slate-300" />
     {:else if diff > 0}
-      <svg class="w-3 h-3 text-green-500 fill-current" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-      </svg>
+      <ArrowUp class="w-3 h-3 text-green-500" />
       <span class="tabular-nums">+{diff}</span>
     {:else}
-      <svg class="w-3 h-3 text-red-500 fill-current" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-      </svg>
+      <ArrowDown class="w-3 h-3 text-red-500" />
       <span class="tabular-nums">{diff}</span>
     {/if}
   </div>
@@ -137,14 +141,12 @@
     </h3>
     <div class="relative w-full md:w-64">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-        <svg class="w-4 h-4 text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-        </svg>
+        <Search class="w-4 h-4 text-slate-400" />
       </div>
-      <input
+      <Input
         type="text"
         id={`search-${eventId}`}
-        class="block w-full p-2 ps-10 text-sm text-slate-700 border border-slate-200 rounded-lg bg-white focus:ring-orange-500 focus:border-orange-500"
+        class="pl-10"
         placeholder="Search applicants..."
         bind:value={globalFilter}
       />
@@ -152,45 +154,51 @@
   </div>
 
   <div class="overflow-x-auto">
-    <table class="w-full text-sm text-left">
-      <thead class="text-xs text-slate-500 uppercase bg-stone-50 sticky top-0 z-10 shadow-sm">
+    <Table.Root>
+      <Table.Header class="bg-stone-50">
         {#each table.getHeaderGroups() as headerGroup}
-          <tr>
+          <Table.Row>
             {#each headerGroup.headers as header}
-              <th
-                class="px-4 py-3 {header.id === 'position' ? 'w-16 text-center' : ''} {header.id === 'name' ? '' : 'text-right'}"
+              <Table.Head
+                class={cn(
+                    "px-4 py-3",
+                    header.id === 'position' ? 'w-16 text-center' : '',
+                    header.id === 'name' ? '' : 'text-right'
+                )}
               >
                 {#if header.column.getCanSort()}
-                  <button
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onclick={() => header.column.toggleSorting()}
-                    class="font-semibold transition-colors flex items-center gap-1 {header.id !== 'name' ? 'justify-end w-full' : ''} {header.column.getIsSorted() ? 'text-orange-600' : 'text-slate-500 hover:text-slate-700'}"
+                    class={cn(
+                        "font-semibold transition-colors flex items-center gap-1 h-auto p-0 hover:bg-transparent",
+                        header.id !== 'name' ? 'justify-end w-full' : '',
+                        header.column.getIsSorted() ? 'text-orange-600' : 'text-slate-500 hover:text-slate-700'
+                    )}
                   >
                     <FlexRender content={header.column.columnDef.header} context={header.getContext()} />
                     {#if header.column.getIsSorted() === "asc"}
-                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                      </svg>
+                      <ArrowUp class="w-3 h-3" />
                     {:else if header.column.getIsSorted() === "desc"}
-                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <ArrowDown class="w-3 h-3" />
                     {/if}
-                  </button>
+                  </Button>
                 {:else}
                   <span class="font-semibold">
                     <FlexRender content={header.column.columnDef.header} context={header.getContext()} />
                   </span>
                 {/if}
-              </th>
+              </Table.Head>
             {/each}
-          </tr>
+          </Table.Row>
         {/each}
-      </thead>
-      <tbody class="divide-y divide-stone-100 bg-white">
+      </Table.Header>
+      <Table.Body class="divide-y divide-stone-100 bg-white">
         {#each table.getRowModel().rows.slice(0, isExpanded ? undefined : 5) as row}
-          <tr class="hover:bg-orange-50/50 transition-colors group">
-            <td class="px-4 py-3 font-mono text-xs text-slate-400 text-center">{row.original.position}</td>
-            <td class="px-4 py-3 font-medium text-slate-700">
+          <Table.Row class="hover:bg-orange-50/50 transition-colors group">
+            <Table.Cell class="px-4 py-3 font-mono text-xs text-slate-400 text-center">{row.original.position}</Table.Cell>
+            <Table.Cell class="px-4 py-3 font-medium text-slate-700">
               <a
                 href={`https://ultrasignup.com/results_participant.aspx?fname=${row.original.name.split(" ")[0]}&lname=${row.original.name.split(" ").slice(1).join(" ")}`}
                 target="_blank"
@@ -199,26 +207,30 @@
               >
                 {row.original.name}
               </a>
-            </td>
-            <td class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d7)}</td>
-            <td class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d30)}</td>
-          </tr>
+            </Table.Cell>
+            <Table.Cell class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d7)}</Table.Cell>
+            <Table.Cell class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d30)}</Table.Cell>
+          </Table.Row>
         {/each}
-      </tbody>
-    </table>
+      </Table.Body>
+    </Table.Root>
   </div>
   
   {#if table.getRowModel().rows.length > 5}
     <div class="p-3 border-t border-stone-100 flex justify-center bg-stone-50/30">
-        <button 
+        <Button
+            variant="outline"
+            size="sm"
             onclick={() => isExpanded = !isExpanded}
-            class="text-xs font-semibold text-slate-500 hover:text-orange-600 transition-colors flex items-center gap-1 bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow"
+            class="text-xs font-semibold text-slate-500 hover:text-orange-600 transition-colors flex items-center gap-1 rounded-full px-4 py-1.5 shadow-sm hover:shadow h-auto"
         >
             {isExpanded ? "Show Less" : "Show More"}
-            <svg class="w-3 h-3 {isExpanded ? 'rotate-180' : ''} transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
+            {#if isExpanded}
+                <ChevronUp class="w-3 h-3" />
+            {:else}
+                <ChevronDown class="w-3 h-3" />
+            {/if}
+        </Button>
     </div>
   {/if}
 </div>

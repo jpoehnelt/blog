@@ -71,7 +71,8 @@ export const load = async ({ parent, params, fetch }) => {
   const { races } = await parent();
 
   const racesForYear = races.filter(
-    (r: RaceSummary) => new Date(r.date).getFullYear().toString() === params.year,
+    (r: RaceSummary) =>
+      new Date(r.date).getFullYear().toString() === params.year,
   );
 
   // Load competitiveness for each race
@@ -141,12 +142,13 @@ export const load = async ({ parent, params, fetch }) => {
   if (eventsWithStats.length > 0) {
     const avgRanks = eventsWithStats.map((r) => r.competitiveness!.averageRank);
     const sortedAvgRanks = [...avgRanks].sort((a, b) => a - b);
-    
+
     // Calculate Median Rank
     const mid = Math.floor(sortedAvgRanks.length / 2);
-    yearStats.medianRank = sortedAvgRanks.length % 2 !== 0
-      ? sortedAvgRanks[mid]
-      : (sortedAvgRanks[mid - 1] + sortedAvgRanks[mid]) / 2;
+    yearStats.medianRank =
+      sortedAvgRanks.length % 2 !== 0
+        ? sortedAvgRanks[mid]
+        : (sortedAvgRanks[mid - 1] + sortedAvgRanks[mid]) / 2;
 
     yearStats.averageRank =
       avgRanks.reduce((a, b) => a + b, 0) / avgRanks.length;
