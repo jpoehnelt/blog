@@ -29,8 +29,16 @@ function createAdNode() {
   ]);
 }
 
+/**
+ * @param {import('hast').Root} tree
+ * @param {string} tag
+ * @param {number} firstAt
+ * @param {number} interval
+ * @param {boolean} after
+ */
 function collectInsertions(tree, tag, firstAt, interval, after) {
   let count = 0;
+  /** @type {any[]} */
   const insertions = [];
 
   visit(tree, "element", (node, index, parent) => {
@@ -58,6 +66,7 @@ function collectInsertions(tree, tag, firstAt, interval, after) {
  * - Posts with < 2 h2s: fallback to after paragraph #4, then every 5 paragraphs
  */
 export default function rehypeInArticleAd() {
+  /** @param {import('hast').Root} tree */
   return (tree) => {
     // Count h2s first to decide strategy
     let h2Count = 0;
