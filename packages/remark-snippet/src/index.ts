@@ -182,7 +182,10 @@ const remarkSnippet = (options: RemarkSnippetOptions = {}) => {
     const mergedNodesToProcess: NodeToProcess[] = [];
 
     visit(tree, "html", (node: any, index: number | undefined, parent: any) => {
-      if (typeof node.value === "string" && node.value.startsWith("<SnippetMerged")) {
+      if (
+        typeof node.value === "string" &&
+        node.value.startsWith("<SnippetMerged")
+      ) {
         if (typeof index === "number") {
           mergedNodesToProcess.push({ node, index, parent });
         }

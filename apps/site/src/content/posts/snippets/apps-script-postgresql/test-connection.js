@@ -6,10 +6,7 @@ function testConnection() {
 
   if (rs.next()) {
     const version = rs.getString(1);
-    console.log(
-      "   -> Connected: " +
-        version.substring(0, 40) + "..."
-    );
+    console.log("   -> Connected: " + version.substring(0, 40) + "...");
   }
 
   rs.close();

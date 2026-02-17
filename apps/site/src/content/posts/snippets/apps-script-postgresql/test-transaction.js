@@ -11,20 +11,17 @@ function testTransactionRollback() {
     // 1. Valid Insert
     stmt.execute(
       "INSERT INTO gas_test_types (data) " +
-        "VALUES ('{\"step\": \"transaction_start\"}')"
+        'VALUES (\'{"step": "transaction_start"}\')',
     );
 
     // 2. Simulate Error (e.g., bad SQL syntax or script logic error)
     // This SQL is invalid because column 'fake_col' doesn't exist
-    stmt.execute(
-      "INSERT INTO gas_test_types (fake_col) VALUES ('fail')"
-    );
+    stmt.execute("INSERT INTO gas_test_types (fake_col) VALUES ('fail')");
 
     conn.commit(); // Should not be reached
   } catch (e) {
     console.log(
-      "   -> Caught expected error: " +
-        e.message.substring(0, 50) + "..."
+      "   -> Caught expected error: " + e.message.substring(0, 50) + "...",
     );
     conn.rollback();
     console.log("   -> Rollback executed.");
@@ -37,7 +34,7 @@ function testTransactionRollback() {
   const verifyStmt = verifyConn.createStatement();
   const rs = verifyStmt.executeQuery(
     "SELECT count(*) FROM gas_test_types " +
-      "WHERE data->>'step' = 'transaction_start'"
+      "WHERE data->>'step' = 'transaction_start'",
   );
 
   rs.next();

@@ -16,14 +16,11 @@ function testModernTypes() {
   stmt.execute("DELETE FROM gas_test_types");
 
   const testData = '{"test": "json_parsing", "works": true}';
-  stmt.execute(
-    "INSERT INTO gas_test_types (data) VALUES ('" +
-      testData + "')"
-  );
+  stmt.execute("INSERT INTO gas_test_types (data) VALUES ('" + testData + "')");
 
   // FETCH: strictly cast to ::text to avoid JDBC driver errors
   const rs = stmt.executeQuery(
-    "SELECT id::text, data::text FROM gas_test_types LIMIT 1"
+    "SELECT id::text, data::text FROM gas_test_types LIMIT 1",
   );
 
   if (rs.next()) {

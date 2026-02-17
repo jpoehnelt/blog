@@ -78,7 +78,7 @@ function testPostGIS() {
     console.error("PostGIS Test Failed: " + e.message);
     console.error(
       "Ensure your database user has " +
-        "permission to 'CREATE EXTENSION postgis'"
+        "permission to 'CREATE EXTENSION postgis'",
     );
   } finally {
     conn.close();

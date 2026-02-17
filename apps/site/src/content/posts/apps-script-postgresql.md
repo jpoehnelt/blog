@@ -65,12 +65,12 @@ jdbc:postgresql://ep-cool-name-123.us-east-2.aws.neon.tech:5432/mydb?user=user&p
 
 Here's the full breakdown of what changes:
 
-| Component      | Modern Format (Neon, Supabase)        | Apps Script (JDBC)                           |
-| :------------- | :------------------------------------ | :------------------------------------------- |
-| **Protocol**   | `postgres://` or `postgresql://`      | `jdbc:postgresql://`                         |
-| **Auth**       | Inline: `user:password@host`          | Parameters: `?user=x&password=y`             |
-| **Port**       | Often implicit (defaults to 5432)     | Must be explicit: `:5432`                    |
-| **SSL**        | `sslmode=require`                     | `ssl=true` (JDBC doesn't support `sslmode`)  |
+| Component    | Modern Format (Neon, Supabase)    | Apps Script (JDBC)                          |
+| :----------- | :-------------------------------- | :------------------------------------------ |
+| **Protocol** | `postgres://` or `postgresql://`  | `jdbc:postgresql://`                        |
+| **Auth**     | Inline: `user:password@host`      | Parameters: `?user=x&password=y`            |
+| **Port**     | Often implicit (defaults to 5432) | Must be explicit: `:5432`                   |
+| **SSL**      | `sslmode=require`                 | `ssl=true` (JDBC doesn't support `sslmode`) |
 
 <Note>
 
