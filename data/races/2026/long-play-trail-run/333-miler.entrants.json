@@ -66,6 +66,17 @@
     "finishes": 2
   },
   {
+    "firstName": "Mark",
+    "lastName": "Gilman",
+    "age": "M50-59",
+    "location": "Beverly Hills, FL",
+    "rank": 74.1,
+    "ageRank": 91.2,
+    "results": 34,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Joseph",
     "lastName": "Miller",
     "age": "M20-29",
@@ -220,6 +231,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Nicole",
+    "lastName": "Fox",
+    "age": "F40-49",
+    "location": "Oldsmar, FL",
+    "rank": 78.4,
+    "ageRank": 86.5,
+    "results": 27,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "William",
     "lastName": "Zulas",
     "age": "M60-69",
@@ -229,17 +251,6 @@
     "results": 78,
     "bib": "",
     "finishes": 3
-  },
-  {
-    "firstName": "Nicole",
-    "lastName": "Fox",
-    "age": "F40-49",
-    "location": "Oldsmar, FL",
-    "rank": 78.1,
-    "ageRank": 86.5,
-    "results": 26,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Crue",
@@ -308,6 +319,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Roger",
+    "lastName": "Feeley",
+    "age": "M50-59",
+    "location": "Sarasota, FL",
+    "rank": 62.4,
+    "ageRank": 70.8,
+    "results": 9,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Dragana",
     "lastName": "Svraka",
     "age": "F40-49",
@@ -317,17 +339,6 @@
     "results": 8,
     "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Roger",
-    "lastName": "Feeley",
-    "age": "M50-59",
-    "location": "Sarasota, FL",
-    "rank": 62.2,
-    "ageRank": 68.5,
-    "results": 8,
-    "bib": "",
-    "finishes": 1
   },
   {
     "firstName": "Andrew",
@@ -440,6 +451,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Elaine",
+    "lastName": "Anthony",
+    "age": "F70+",
+    "location": "Pinellas Park, FL",
+    "rank": 65.7,
+    "ageRank": 83.3,
+    "results": 33,
+    "bib": "",
+    "finishes": 2
+  },
+  {
     "firstName": "Ralph",
     "lastName": "Dumke",
     "age": "M60-69",
@@ -528,6 +550,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Ashlly",
+    "lastName": "Connors",
+    "age": "F30-39",
+    "location": "New Port Richey, FL",
+    "rank": 54,
+    "ageRank": 76.6,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Rachel",
     "lastName": "Tucker",
     "age": "F40-49",
@@ -545,17 +578,6 @@
     "location": "Saint Petersburg, FL",
     "rank": 48.2,
     "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ashlly",
-    "lastName": "Connors",
-    "age": "F30-39",
-    "location": "New Port Richey, FL",
-    "rank": 47.3,
-    "ageRank": 61.3,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -594,21 +616,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Steve",
-    "lastName": "Wrona",
-    "age": "M30-39",
-    "location": "Land O’ Lakes, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Anthony",
-    "lastName": "Coy",
-    "age": "M30-39",
-    "location": "Parrish, FL",
+    "firstName": "Zachary",
+    "lastName": "Neumann",
+    "age": "M20-29",
+    "location": "Dunnellon, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -664,17 +675,6 @@
     "lastName": "Jones",
     "age": "F40-49",
     "location": "Naples, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zachary",
-    "lastName": "Neumann",
-    "age": "M20-29",
-    "location": "Dunnellon, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -796,6 +796,28 @@
     "lastName": "Tissot",
     "age": "M30-39",
     "location": "Tampa, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Anthony",
+    "lastName": "Coy",
+    "age": "M30-39",
+    "location": "Parrish, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steve",
+    "lastName": "Wrona",
+    "age": "M30-39",
+    "location": "Land O’ Lakes, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

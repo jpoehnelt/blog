@@ -330,6 +330,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Miko",
+    "lastName": "Devedzic",
+    "age": "M40-49",
+    "location": "Methuen, MA",
+    "rank": 62.8,
+    "ageRank": 56.6,
+    "results": 6,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Paul",
     "lastName": "LeCain",
     "age": "M50-59",
@@ -363,6 +374,17 @@
     "finishes": 2
   },
   {
+    "firstName": "Andrew",
+    "lastName": "Moore",
+    "age": "M40-49",
+    "location": "Wolfeboro, NH",
+    "rank": 60.5,
+    "ageRank": 59.9,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Jasper",
     "lastName": "Carter-Kelly",
     "age": "M<20",
@@ -385,15 +407,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Andrew",
-    "lastName": "Moore",
+    "firstName": "Rich",
+    "lastName": "Castor",
     "age": "M40-49",
-    "location": "Wolfeboro, NH",
-    "rank": 58.1,
-    "ageRank": 51.2,
-    "results": 2,
+    "location": "Surry, NH",
+    "rank": 59.9,
+    "ageRank": 69.5,
+    "results": 6,
     "bib": "",
-    "finishes": 1
+    "finishes": 2
   },
   {
     "firstName": "Bernard",
@@ -403,6 +425,17 @@
     "rank": 57.9,
     "ageRank": 71.4,
     "results": 50,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "McLaughlin",
+    "age": "M60-69",
+    "location": "Needham, MA",
+    "rank": 57.1,
+    "ageRank": 92.9,
+    "results": 10,
     "bib": "",
     "finishes": 0
   },
@@ -737,39 +770,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Colleen",
-    "lastName": "Nolan",
-    "age": "F30-39",
-    "location": "Sanbornton, NH",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Matt",
-    "lastName": "Riley",
-    "age": "M40-49",
-    "location": "North Easron, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Matthew",
-    "lastName": "Grandi",
-    "age": "M30-39",
-    "location": "TEMPLE, NH",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Christina",
     "lastName": "Kalinowsky",
     "age": "F40-49",
@@ -818,6 +818,39 @@
     "lastName": "Huizenga",
     "age": "M30-39",
     "location": "Montpelier, VT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Colleen",
+    "lastName": "Nolan",
+    "age": "F30-39",
+    "location": "Sanbornton, NH",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Riley",
+    "age": "M40-49",
+    "location": "North Easron, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matthew",
+    "lastName": "Grandi",
+    "age": "M30-39",
+    "location": "TEMPLE, NH",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
