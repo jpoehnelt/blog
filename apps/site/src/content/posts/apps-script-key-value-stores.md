@@ -188,7 +188,7 @@ To learn more about Firestore and its features, you can refer to the [official d
 
 ## Conclusion
 
-The choice of key-value store in Google Apps Script depends on the specific use case and requirements. Each option has its own advantages and limitations, and it's important to consider factors like item size, item count, cost, expiration, and access control when making a decision.
+The choice of key-value store in Google Apps Script depends on the specific use case and requirements. Each option has its own advantages and limitations, and it's important to consider factors like item size, item count, cost, expiration, and access control when making a decision. For relational data that outgrows key-value stores, see [Connecting PostgreSQL to Apps Script](/posts/apps-script-postgresql/).
 
 [Firestore]: https://firebase.google.com/docs/firestore
 [PropertiesService]: https://developers.google.com/apps-script/reference/properties/properties-service
