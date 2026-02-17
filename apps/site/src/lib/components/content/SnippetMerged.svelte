@@ -4,22 +4,32 @@
   import { LANG_ICON_MAP } from "$lib/constants";
 
   interface Props {
-    src: string;
+    srcs: string;
     description?: string;
-    githubUrl?: string;
+    githubUrls?: string;
     rawContent: string;
     code: string;
   }
 
-  let { src, description = "", githubUrl, rawContent, code }: Props = $props();
+  let { srcs, description = "", githubUrls, rawContent, code }: Props = $props();
 
   if (!code) {
-    throw new Error(`Snippet code not loaded for: ${src}`);
+    throw new Error(`SnippetMerged code not loaded for: ${srcs}`);
   }
 
-  const displaySrc = $derived(src.split("/").pop() || "");
+  const srcList = $derived(srcs.split(","));
+  const githubUrlList = $derived(githubUrls ? githubUrls.split(",") : []);
+  const displaySrcs = $derived(
+    srcList.map((s) => s.trim().split("/").pop() || "")
+  );
 
-  const ext = $derived(src.split(".").pop()?.toLowerCase() || "");
+  const ext = $derived(
+    srcList[0]
+      ?.trim()
+      .split(".")
+      .pop()
+      ?.toLowerCase() || ""
+  );
   const icon = $derived(
     (LANG_ICON_MAP as Record<string, any>)[ext] ||
       (ext === "gs" ? LANG_ICON_MAP.javascript : null)
@@ -57,19 +67,24 @@
       {#if icon}
         <BrandIcon {icon} size={14} />
       {/if}
-      <div class="flex gap-2 text-xs font-mono">
-        {#if githubUrl}
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-zinc-500 hover:text-zinc-900 hover:underline"
-          >
-            {displaySrc}
-          </a>
-        {:else}
-          <span class="text-zinc-500">{displaySrc}</span>
-        {/if}
+      <div class="flex gap-2 text-xs font-mono flex-wrap">
+        {#each displaySrcs as displaySrc, i}
+          {#if githubUrlList[i]}
+            <a
+              href={githubUrlList[i]}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-500 hover:text-zinc-900 hover:underline"
+            >
+              {displaySrc}
+            </a>
+          {:else}
+            <span class="text-zinc-500">{displaySrc}</span>
+          {/if}
+          {#if i < displaySrcs.length - 1}
+            <span class="text-zinc-300">+</span>
+          {/if}
+        {/each}
       </div>
     </div>
     <div class="flex items-center gap-2">
@@ -85,7 +100,7 @@
   </div>
   <div
     bind:this={codeEl}
-    id={src}
+    id={srcs}
     class="p-0 [&_pre]:!my-0 [&_pre]:!rounded-none [&_pre]:!border-0 [&_pre]:!bg-transparent [&_pre]:!p-0 [&_code]:!px-4 [&_code]:!pt-3 [&_code]:!pb-5 overflow-hidden transition-[max-height] duration-300 ease-in-out"
     style:max-height={collapsed ? '40vh' : 'none'}
   >
@@ -105,3 +120,4 @@
     </div>
   {/if}
 </div>
+
