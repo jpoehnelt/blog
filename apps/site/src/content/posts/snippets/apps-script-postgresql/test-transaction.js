@@ -16,12 +16,15 @@ function testTransactionRollback() {
 
     // 2. Simulate Error (e.g., bad SQL syntax or script logic error)
     // This SQL is invalid because column 'fake_col' doesn't exist
-    stmt.execute("INSERT INTO gas_test_types (fake_col) VALUES ('fail')");
+    stmt.execute(
+      "INSERT INTO gas_test_types (fake_col) VALUES ('fail')"
+    );
 
     conn.commit(); // Should not be reached
   } catch (e) {
     console.log(
-      "   -> Caught expected error: " + e.message.substring(0, 50) + "...",
+      "   -> Caught expected error: " +
+        e.message.substring(0, 50) + "...",
     );
     conn.rollback();
     console.log("   -> Rollback executed.");

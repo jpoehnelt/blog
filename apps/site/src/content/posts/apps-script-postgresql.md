@@ -1,7 +1,7 @@
 ---
 title: "How to Connect PostgreSQL to Google Apps Script (JDBC Guide)"
 description: >-
-  Learn how to connect Google Apps Script to PostgreSQL using the Jdbc service. Includes connection string conversion, JSONB/UUID workarounds, parameterized queries, transactions, PostGIS spatial queries, and a full test suite with performance benchmarks.
+  Connect Google Apps Script to PostgreSQL via JDBC. Covers connection strings, JSONB/UUID workarounds, parameterized queries, transactions, and PostGIS.
 pubDate: "2026-02-17"
 tags:
   - code
@@ -15,7 +15,7 @@ tags:
   - spatial
 faq:
   - question: "Does Google Apps Script support PostgreSQL?"
-    answer: "Yes! Apps Script's Jdbc service now supports PostgreSQL connections. You can connect to any PostgreSQL provider (Neon, Supabase, etc.) using the jdbc:postgresql:// connection format."
+    answer: "Yes! Apps Script's Jdbc service now supports PostgreSQL connections. You can connect to any PostgreSQL provider using the jdbc:postgresql:// connection format."
   - question: "Why does my Postgres connection string fail in Apps Script?"
     answer: "Apps Script uses a Java-based JDBC driver that doesn't support the modern postgres://user:pass@host/db URI syntax. You must convert it to the JDBC format: jdbc:postgresql://host:5432/db?user=x&password=y&ssl=true."
   - question: "How do I use JSONB and UUID types in Apps Script?"
@@ -27,7 +27,7 @@ faq:
   - question: "How fast is PostgreSQL from Apps Script?"
     answer: "Connection setup takes ~250ms. On an existing connection, batch writes average ~50ms/row and reads ~50ms/row. The main bottleneck is connection overhead, so reuse connections and use a connection pooler for production workloads."
   - question: "Does Apps Script support connection pooling with PostgreSQL?"
-    answer: "Apps Script itself doesn't pool connections, but most managed PostgreSQL providers (like Neon and Supabase) offer built-in connection poolers. Use the pooled connection URL to avoid exhausting database connections when multiple users trigger your script simultaneously."
+    answer: "Apps Script itself doesn't pool connections, but most managed PostgreSQL providers offer built-in connection poolers. Use the pooled connection URL to avoid exhausting database connections when multiple users trigger your script simultaneously."
 ---
 
 <script>
@@ -35,6 +35,7 @@ faq:
   import SnippetMerged from "$lib/components/content/SnippetMerged.svelte";
   import Note from '$lib/components/content/Note.svelte';
   import Tldr from '$lib/components/content/Tldr.svelte';
+  import Image from '$lib/components/content/Image.svelte';
 </script>
 
 <Tldr>
@@ -43,29 +44,31 @@ Apps Script now supports **PostgreSQL** through `Jdbc.getConnection()`. The catc
 
 </Tldr>
 
+<Image src="apps-script-postgresql-cover.png" alt="PostgreSQL connected to Google Apps Script" />
+
 Many of you have been waiting for this one. Google Apps Script's [`Jdbc` service] has quietly added **PostgreSQL support**, and it opens up a huge range of possibilities for connecting your spreadsheets, forms, and automations directly to one of the most popular relational databases in the world — no middleware required.
 
-But before you copy your Neon or Supabase connection string and paste it in, there's a gotcha you need to know about.
+But before you copy your provider's connection string and paste it in, there's a gotcha you need to know about.
 
 ## Converting your PostgreSQL connection string for Apps Script
 
-Every modern Postgres provider — [Neon](https://neon.tech), [Supabase](https://supabase.com), [Railway](https://railway.app) — gives you a connection string that looks like this:
+Every modern Postgres provider gives you a connection string that looks like this:
 
-```
-postgres://user:pass@ep-cool-name-123.us-east-2.aws.neon.tech/mydb?sslmode=require
+```text
+postgres://user:pass@your-host.example.com/mydb?sslmode=require
 ```
 
 **This will not work in Apps Script.** If you paste it directly into `Jdbc.getConnection()`, you'll get an unhelpful error.
 
 The fix is to convert it to the JDBC format that Apps Script expects:
 
-```
-jdbc:postgresql://ep-cool-name-123.us-east-2.aws.neon.tech:5432/mydb?user=user&password=pass&ssl=true
+```text
+jdbc:postgresql://your-host.example.com:5432/mydb?user=user&password=pass&ssl=true
 ```
 
 Here's the full breakdown of what changes:
 
-| Component    | Modern Format (Neon, Supabase)    | Apps Script (JDBC)                          |
+| Component    | Modern Format                     | Apps Script (JDBC)                          |
 | :----------- | :-------------------------------- | :------------------------------------------ |
 | **Protocol** | `postgres://` or `postgresql://`  | `jdbc:postgresql://`                        |
 | **Auth**     | Inline: `user:password@host`      | Parameters: `?user=x&password=y`            |
@@ -74,7 +77,7 @@ Here's the full breakdown of what changes:
 
 <Note>
 
-Store your JDBC URL in **Script Properties** (`Project Settings > Script Properties`), not in your source code. Never hardcode credentials. See [/posts/apps-script-secrets-management] for more on managing secrets in Apps Script.
+Store your JDBC URL in **Script Properties** (`Project Settings > Script Properties`), not in your source code. Never hardcode credentials. See [managing secrets in Apps Script](/posts/secure-secrets-google-apps-script/) for more.
 
 </Note>
 
@@ -88,7 +91,7 @@ Here's how I configure the connection. The JDBC URL is stored in Script Properti
 
 I put together a test suite to validate that the full PostgreSQL stack actually works from Apps Script. These aren't just "hello world" queries — each test targets a specific failure mode.
 
-Here's why I test these four things:
+Here's why I test these specific things:
 
 1. **Connectivity** — Validates the SSL handshake and credentials are all correct.
 2. **Modern Types** — Apps Script's JDBC driver fails on `JSONB` and `UUID` unless you cast to `::text`. This test proves the workaround.
@@ -149,7 +152,7 @@ Wire it all up with a single entry point:
 
 If everything is configured correctly, you should see:
 
-```
+```text
 === STARTING POSTGRES TESTS ===
 [1/4] Testing Basic Connection...
    -> Connected: PostgreSQL 18.1 (a027103) on aarch64-unk...
@@ -170,7 +173,7 @@ If everything is configured correctly, you should see:
 === ALL TESTS PASSED SUCCESSFULLY ===
 ```
 
-Your numbers will vary depending on the region of your database. These results are from a Neon instance in US East.
+Your numbers will vary depending on the region of your database.
 
 ## Bonus: PostGIS spatial queries
 
@@ -192,14 +195,14 @@ The `CREATE EXTENSION postgis` command may require admin/superuser privileges. M
 
 Once you've confirmed everything works, here are the four things that will bite you in production.
 
-### 1. The firewall "whitelisting" nightmare
+### 1. The firewall allow-listing nightmare
 
 Google Apps Script does **not** run on a static IP address. It runs on a massive, dynamic range of Google IPs that change frequently.
 
 - **The trap:** You try to secure your database by only allowing connections from your server's IP. Your script fails immediately.
-- **The failed fix:** You try to whitelist Google's IP ranges. The list is huge, changes often, and is a maintenance burden.
+- **The failed fix:** You try to allow-list Google's IP ranges. The list is huge, changes often, and is a maintenance burden.
 - **The real fix:**
-  - **Option A (cloud providers):** Rely on **SSL/TLS authentication** rather than IP whitelisting. Set your firewall to `0.0.0.0/0` (allow all) but **enforce** `ssl=true` in your JDBC URL and use a strong, long password. This is the standard approach for most managed Postgres providers.
+  - **Option A (cloud providers):** Rely on **SSL/TLS authentication** rather than IP allow-listing. Set your firewall to `0.0.0.0/0` (allow all) but **enforce** `ssl=true` in your JDBC URL and use a strong, long password. This is the standard approach for most managed Postgres providers.
   - **Option B (enterprise/on-prem):** If you _must_ have a static IP (e.g., for a corporate database), Apps Script can't connect directly. You might want to consider a proxy.
 
 ### 2. The "connection storm"

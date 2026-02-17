@@ -5,7 +5,8 @@
  *   jdbc:postgresql://HOST:5432/DB
  *     ?user=USER&password=PASS&ssl=true
  */
-const DB_URL = PropertiesService.getScriptProperties().getProperty("DB_URL");
+const DB_URL = PropertiesService
+  .getScriptProperties().getProperty("DB_URL");
 
 /**
  * HELPER: Centralized Connection Logic

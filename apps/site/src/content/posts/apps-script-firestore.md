@@ -27,7 +27,7 @@ faq:
   import Note from '$lib/components/content/Note.svelte';
 </script>
 
-When using Apps Script, sometimes the [CacheService] and [PropertiesService] do not match the requirements of the project -- perhaps there a need for a longer ttl or storing many more values. In these cases, Firestore can be used!
+When using Apps Script, sometimes the [CacheService] and [PropertiesService] do not match the requirements of the project -- perhaps there a need for a longer ttl or storing many more values. In these cases, Firestore can be used! If you need relational data with SQL queries instead of a document store, see [Connecting PostgreSQL to Apps Script](/posts/apps-script-postgresql/).
 
 ## Setup
 

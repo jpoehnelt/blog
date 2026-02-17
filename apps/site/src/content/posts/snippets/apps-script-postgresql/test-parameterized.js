@@ -7,7 +7,8 @@ function testParameterizedInsert() {
 
   // Bind variable to the first '?'
   // We stringify because JDBC doesn't know what a JS Object is
-  stmt.setString(1, JSON.stringify({ user: "Secure User", role: "admin" }));
+  const data = { user: "Secure User", role: "admin" };
+  stmt.setString(1, JSON.stringify(data));
 
   const rows = stmt.executeUpdate();
 

@@ -2,6 +2,7 @@
   import BrandIcon from "$lib/components/BrandIcon.svelte";
   import CodeToolbar from "$lib/components/CodeToolbar.svelte";
   import { LANG_ICON_MAP } from "$lib/constants";
+  import type { SimpleIcon } from "simple-icons";
 
   interface Props {
     srcs: string;
@@ -31,7 +32,7 @@
       ?.toLowerCase() || ""
   );
   const icon = $derived(
-    (LANG_ICON_MAP as Record<string, any>)[ext] ||
+    (LANG_ICON_MAP as Record<string, SimpleIcon>)[ext] ||
       (ext === "gs" ? LANG_ICON_MAP.javascript : null)
   );
 
@@ -100,7 +101,7 @@
   </div>
   <div
     bind:this={codeEl}
-    id={srcs}
+    id={srcs.replace(/[^a-zA-Z0-9-]/g, '-')}
     class="p-0 [&_pre]:!my-0 [&_pre]:!rounded-none [&_pre]:!border-0 [&_pre]:!bg-transparent [&_pre]:!p-0 [&_code]:!px-4 [&_code]:!pt-3 [&_code]:!pb-5 overflow-hidden transition-[max-height] duration-300 ease-in-out"
     style:max-height={collapsed ? '40vh' : 'none'}
   >

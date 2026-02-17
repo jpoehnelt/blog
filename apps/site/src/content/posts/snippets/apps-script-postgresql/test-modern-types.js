@@ -16,7 +16,12 @@ function testModernTypes() {
   stmt.execute("DELETE FROM gas_test_types");
 
   const testData = '{"test": "json_parsing", "works": true}';
-  stmt.execute("INSERT INTO gas_test_types (data) VALUES ('" + testData + "')");
+  const sql =
+    "INSERT INTO gas_test_types (data) VALUES (?::jsonb)";
+  const ps = conn.prepareStatement(sql);
+  ps.setString(1, testData);
+  ps.execute();
+  ps.close();
 
   // FETCH: strictly cast to ::text to avoid JDBC driver errors
   const rs = stmt.executeQuery(

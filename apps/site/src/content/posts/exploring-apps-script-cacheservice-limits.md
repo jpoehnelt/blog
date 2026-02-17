@@ -194,3 +194,4 @@ Since `cache.get()` does not reset the eviction timer (FIFO), you must manually 
 - [Memoization in Apps Script](/posts/apps-script-memoization) - Using CacheService to speed up expensive function calls.
 - [Apps Script V8 Runtime Limitations](/posts/apps-script-runtime-limitations-wintercg) - A broader look at Javascript runtime constraints.
 - [Secure Secrets in Google Apps Script](/posts/secure-secrets-google-apps-script) - How to safely cache secrets to avoid rate limits when using Cloud Secrets Manager.
+- [PostgreSQL from Apps Script](/posts/apps-script-postgresql/) - When you need a real database instead of CacheService.

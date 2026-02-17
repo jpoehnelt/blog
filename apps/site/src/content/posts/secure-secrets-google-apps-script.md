@@ -83,7 +83,7 @@ Here is how I retrieve and parse them effectively. Note that [`getProperty`](htt
 
 ## Google Cloud Secret Manager
 
-For high-value secrets—like database passwords, API keys, or service account keys, Script Properties might not be enough. They are still accessible to anyone with edit access to the script.
+For high-value secrets—like [database passwords](/posts/apps-script-postgresql/), API keys, or service account keys, Script Properties might not be enough. They are still accessible to anyone with edit access to the script.
 
 In these cases, I leverage the [**Google Cloud Secret Manager**](https://cloud.google.com/secret-manager). Since every Apps Script project is backed by a default Google Cloud project (or a standard one linked to it), I can use the [`UrlFetchApp`](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app) to retrieve secrets directly from the GCP API.
 

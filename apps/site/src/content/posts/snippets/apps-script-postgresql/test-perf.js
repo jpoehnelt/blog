@@ -66,7 +66,9 @@ function testPerformance() {
 
     const t2ReadStart = Date.now();
     stmt2 = conn2.createStatement();
-    rs2 = stmt2.executeQuery("SELECT id, value FROM gas_test_perf LIMIT 1");
+    const readSql =
+      "SELECT id, value FROM gas_test_perf LIMIT 1";
+    rs2 = stmt2.executeQuery(readSql);
 
     if (rs2.next()) {
       // Extract data to mimic real workload
@@ -147,6 +149,10 @@ function testPerformance() {
       rs4.getString("value");
     }
     const t4Ms = Date.now() - t4Start;
+
+    if (count === 0) {
+      throw new Error("Batch read returned 0 rows");
+    }
 
     console.log(
       "   batch read  (n=" +
