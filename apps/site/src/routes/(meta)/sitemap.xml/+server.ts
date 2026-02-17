@@ -49,6 +49,7 @@ export const GET: RequestHandler = async () => {
       url: [
         // Main pages
         { loc: BASE_URL, lastmod: today },
+        { loc: `${BASE_URL}about/`, lastmod: today },
         { loc: `${BASE_URL}posts/`, lastmod: today },
         { loc: `${BASE_URL}tags/`, lastmod: today },
         { loc: `${BASE_URL}ultras/races/`, lastmod: today },

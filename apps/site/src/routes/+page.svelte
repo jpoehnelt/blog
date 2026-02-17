@@ -122,7 +122,7 @@
           </figure>
           <div class="prose">
             <p>
-              I'm a Developer Relations Engineer at Google, focusing on Google
+              I'm a Senior Developer Relations Engineer at Google, focusing on Google
               Workspace. My work involves creating tools and supporting the
               open-source community.
             </p>
@@ -133,6 +133,9 @@
             <p>
               When I'm not coding, I'm usually running long distances in the
               mountains of Colorado.
+            </p>
+            <p>
+              <a href="/about">Read more →</a>
             </p>
           </div>
         </section>

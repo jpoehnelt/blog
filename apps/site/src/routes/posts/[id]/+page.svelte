@@ -157,7 +157,7 @@
       </h1>
       <div class="flex flex-wrap gap-1 items-center text-xs text-gray-600 dark:text-gray-400">
         <span>
-          By <a href="/" class="font-semibold text-gray-900 dark:text-gray-100 no-underline hover:underline">{AUTHOR_NAME}</a>{#if isGoogle}<span class="text-gray-400 dark:text-gray-500">,
+          By <a href="/about" class="font-semibold text-gray-900 dark:text-gray-100 no-underline hover:underline">{AUTHOR_NAME}</a>{#if isGoogle}<span class="text-gray-400 dark:text-gray-500">,
             {AUTHOR_JOB_TITLE} at Google</span>{/if}
         </span>
         <span class="text-gray-300 dark:text-gray-600">·</span>

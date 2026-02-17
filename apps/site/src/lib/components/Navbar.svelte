@@ -22,7 +22,7 @@
   let mobileMenuOpen = $state(false);
 
   const navLinks: { href: string; label: string }[] = [
-    { href: "/#about", label: "About" },
+    { href: "/about", label: "About" },
     { href: "/posts", label: "Posts" },
     { href: "/ultras/races", label: "Races" },
   ];
