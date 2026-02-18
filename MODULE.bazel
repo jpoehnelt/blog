@@ -1,0 +1,79 @@
+"""Bazel module definition for jpoehnelt/blog monorepo."""
+
+module(
+    name = "blog",
+    version = "0.0.1",
+)
+
+# ─── Core Rules ──────────────────────────────────────────────────────────────
+
+bazel_dep(name = "aspect_rules_js", version = "2.6.1")
+bazel_dep(name = "aspect_rules_ts", version = "3.8.4")
+bazel_dep(name = "bazel_skylib", version = "1.8.1")
+bazel_dep(name = "rules_nodejs", version = "6.3.5")
+bazel_dep(name = "aspect_bazel_lib", version = "2.14.0")
+
+# ─── Node.js Toolchain ──────────────────────────────────────────────────────
+
+node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
+node.toolchain(node_version = "22.14.0")
+
+# ─── pnpm ────────────────────────────────────────────────────────────────────
+
+pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
+pnpm.pnpm(
+    name = "pnpm",
+    pnpm_version = "10.17.1",
+)
+use_repo(pnpm, "pnpm")
+
+# ─── npm dependencies (translate pnpm-lock.yaml) ────────────────────────────
+
+npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm")
+npm.npm_translate_lock(
+    name = "npm",
+    bins = {
+        # Expose CLI binaries from npm packages
+        "typescript": [
+            "tsc=./bin/tsc",
+            "tsserver=./bin/tsserver",
+        ],
+        "svelte-kit": [
+            "svelte-kit=./bin.js",
+        ],
+        "svelte-check": [
+            "svelte-check=./bin/svelte-check",
+        ],
+        "vite": [
+            "vite=./bin/vite.js",
+        ],
+        "vitest": [
+            "vitest=./bin/vitest.mjs",
+        ],
+        "tsup": [
+            "tsup=./dist/cli-default.js",
+        ],
+        "esbuild": [
+            "esbuild=./bin/esbuild",
+        ],
+    },
+    data = [
+        "//:package.json",
+        "//:pnpm-workspace.yaml",
+        "//apps/site:package.json",
+        "//packages/data-automation:package.json",
+        "//packages/matter:package.json",
+        "//packages/remark-snippet:package.json",
+        "//packages/slidev-theme-google-workspace:package.json",
+        "//packages/ultrasignup-scraper:package.json",
+    ],
+    pnpm_lock = "//:pnpm-lock.yaml",
+    verify_node_modules_ignored = "//:.bazelignore",
+)
+use_repo(npm, "npm")
+
+# ─── TypeScript toolchain ────────────────────────────────────────────────────
+
+rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext")
+rules_ts_ext.deps(ts_version = "5.9.2")
+use_repo(rules_ts_ext, "npm_typescript")

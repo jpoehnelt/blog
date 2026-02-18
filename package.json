@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "build": "turbo build",
-    "check": "turbo check",
-    "dev": "turbo dev",
-    "test": "turbo test",
+    "build": "bazel build //...",
+    "check": "bazel build //apps/site:check",
+    "dev": "pnpm --filter site dev",
+    "test": "bazel test //...",
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write ."
   },
@@ -23,7 +23,6 @@
     "prettier": "catalog:",
     "prettier-plugin-slidev": "catalog:",
     "tsx": "^4.19.2",
-    "turbo": "catalog:",
     "typescript": "catalog:",
     "wrangler": "^3.90.0"
   },
