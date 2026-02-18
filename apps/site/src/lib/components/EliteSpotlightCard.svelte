@@ -1,5 +1,7 @@
 <script lang="ts">
   import { raceUrl } from "$lib/race-urls";
+  import MetricBadge from "$lib/components/MetricBadge.svelte";
+
   interface EliteRace {
     id: number;
     title: string;
@@ -35,12 +37,12 @@
         >
           <div class="font-medium mb-1">{race.title}</div>
           <div class="flex items-center gap-3 text-xs">
-            <span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-0.5 rounded font-bold">
+            <MetricBadge variant="orange" class="text-xs py-0.5">
               {race.eliteCount} elite
-            </span>
-            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-0.5 rounded font-bold">
+            </MetricBadge>
+            <MetricBadge variant="purple" class="text-xs py-0.5">
               {race.averageRank.toFixed(0)} avg rank
-            </span>
+            </MetricBadge>
           </div>
         </a>
       {/each}
