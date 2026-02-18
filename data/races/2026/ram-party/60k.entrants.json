@@ -66,6 +66,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Gregory",
+    "lastName": "Corey",
+    "age": "M40-49",
+    "location": "Superior, CO",
+    "rank": 72,
+    "ageRank": 80.5,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Julia",
     "lastName": "Loidolt",
     "age": "F30-39",
@@ -99,23 +110,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Paul",
-    "lastName": "Crawford",
-    "age": "M30-39",
-    "location": "Fountain, CO",
-    "rank": 67.5,
-    "ageRank": 52.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Enedina",
     "lastName": "Cruz",
     "age": "F40-49",
     "location": "Brighton, CO",
     "rank": 68.3,
     "ageRank": 73.2,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Paul",
+    "lastName": "Crawford",
+    "age": "M30-39",
+    "location": "Fountain, CO",
+    "rank": 67.5,
+    "ageRank": 52.7,
     "results": 2,
     "bib": "",
     "finishes": 0
@@ -154,17 +165,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Elias",
-    "lastName": "Lehnert",
-    "age": "M30-39",
-    "location": "Golden, CO",
-    "rank": 60.7,
-    "ageRank": 62.2,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Marlee",
     "lastName": "Stevens",
     "age": "F30-39",
@@ -176,13 +176,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Scott",
-    "lastName": "Mason",
-    "age": "M50-59",
-    "location": "Mesa, AZ",
-    "rank": 59.1,
-    "ageRank": 77.6,
-    "results": 113,
+    "firstName": "Elias",
+    "lastName": "Lehnert",
+    "age": "M30-39",
+    "location": "Golden, CO",
+    "rank": 60.7,
+    "ageRank": 62.2,
+    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -194,6 +194,17 @@
     "rank": 59.7,
     "ageRank": 74.3,
     "results": 19,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Mason",
+    "age": "M50-59",
+    "location": "Mesa, AZ",
+    "rank": 59.1,
+    "ageRank": 77.6,
+    "results": 113,
     "bib": "",
     "finishes": 0
   },
@@ -264,28 +275,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jackson",
-    "lastName": "Beil",
-    "age": "M<20",
-    "location": "Danbury, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nickolas",
-    "lastName": "Grimm",
-    "age": "M20-29",
-    "location": "Cape Girardeu, MO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Lacy",
     "lastName": "Franks",
     "age": "F30-39",
@@ -301,6 +290,28 @@
     "lastName": "Vance",
     "age": "M30-39",
     "location": "Morrison, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jackson",
+    "lastName": "Beil",
+    "age": "M<20",
+    "location": "Danbury, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nickolas",
+    "lastName": "Grimm",
+    "age": "M20-29",
+    "location": "Cape Girardeu, MO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
