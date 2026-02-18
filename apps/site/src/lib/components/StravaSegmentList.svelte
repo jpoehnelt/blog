@@ -1,5 +1,6 @@
 <script lang="ts">
   import StravaBadge from "$lib/components/StravaBadge.svelte";
+  import Metric from "$lib/components/Metric.svelte";
 
   interface SegmentEffort {
     id: number | string;
@@ -59,9 +60,9 @@
               {/if}
             </div>
             <div class="text-xs text-muted-foreground flex gap-3">
-              <span>{((segment.distance || 0) / 1000).toFixed(2)} km</span>
+              <Metric value={((segment.distance || 0) / 1000).toFixed(2)} unit="km" class="text-xs" />
               {#if segment.segment?.average_grade !== undefined}
-                <span>{segment.segment.average_grade}%</span>
+                <Metric value={segment.segment.average_grade} unit="%" class="text-xs" />
               {/if}
             </div>
           </div>
