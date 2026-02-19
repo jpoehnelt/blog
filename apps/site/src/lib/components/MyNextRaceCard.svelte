@@ -2,6 +2,7 @@
   import { differenceInDays } from "date-fns";
   import type { MyRaceEntryResolved } from "@jpoehnelt/ultrasignup-scraper/types";
   import { raceEventUrl } from "$lib/race-urls";
+  import MetricBadge from "$lib/components/MetricBadge.svelte";
 
   interface Props {
     races: MyRaceEntryResolved[];
@@ -34,19 +35,19 @@
             </div>
             
             <div class="flex items-center gap-4 text-sm">
-              <div class="flex items-center gap-1.5 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded font-bold">
+              <MetricBadge variant="orange">
                 ⏱️ {getDaysUntil(race.date)} days
-              </div>
-              
+              </MetricBadge>
+
               {#if race.type === "waitlist" && race.position}
-                <div class="flex items-center gap-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-1 rounded font-bold">
+                <MetricBadge variant="purple">
                   #{race.position}
                   <span class="font-normal text-xs">/ {race.totalCount}</span>
-                </div>
+                </MetricBadge>
               {:else if race.type === "entrant"}
-                <div class="flex items-center gap-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded font-bold">
+                <MetricBadge variant="green">
                   ✓ Registered
-                </div>
+                </MetricBadge>
               {/if}
             </div>
             
