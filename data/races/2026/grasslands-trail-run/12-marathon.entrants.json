@@ -11,6 +11,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Collin",
+    "lastName": "Bohne",
+    "age": "M30-39",
+    "location": "Fort Worth, TX",
+    "rank": 89.4,
+    "ageRank": 95.1,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kyle",
     "lastName": "Ranallo",
     "age": "M30-39",
@@ -231,6 +242,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Emarieli Michelle",
+    "lastName": "Passalacqua",
+    "age": "F30-39",
+    "location": "Mustang, OK",
+    "rank": 73.2,
+    "ageRank": 76.1,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ryan",
     "lastName": "Caputo",
     "age": "M30-39",
@@ -429,24 +451,13 @@
     "finishes": 7
   },
   {
-    "firstName": "Emarieli Michelle",
-    "lastName": "Passalacqua",
-    "age": "F30-39",
-    "location": "Mustang, OK",
-    "rank": 65.7,
-    "ageRank": 71.6,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Robert",
     "lastName": "Atkinson",
     "age": "M40-49",
     "location": "Mustang, OK",
     "rank": 59.9,
-    "ageRank": 64.2,
-    "results": 6,
+    "ageRank": 65.5,
+    "results": 7,
     "bib": "",
     "finishes": 0
   },
@@ -462,17 +473,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Tracy",
-    "lastName": "Ramirez",
-    "age": "F50-59",
-    "location": "Wichita Falls, TX",
-    "rank": 62.2,
-    "ageRank": 69.7,
-    "results": 5,
-    "bib": "",
-    "finishes": 5
-  },
-  {
     "firstName": "Elizabeth",
     "lastName": "Stewart",
     "age": "F30-39",
@@ -482,6 +482,17 @@
     "results": 2,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Tracy",
+    "lastName": "Ramirez",
+    "age": "F50-59",
+    "location": "Wichita Falls, TX",
+    "rank": 62.2,
+    "ageRank": 69.7,
+    "results": 5,
+    "bib": "",
+    "finishes": 5
   },
   {
     "firstName": "Cassie",
@@ -748,6 +759,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Louise",
+    "lastName": "Ferrill",
+    "age": "F60-69",
+    "location": "Denton, TX",
+    "rank": 49.1,
+    "ageRank": 73.5,
+    "results": 6,
+    "bib": "",
+    "finishes": 6
+  },
+  {
     "firstName": "Tim",
     "lastName": "Chapman",
     "age": "M50-59",
@@ -814,10 +836,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Elizabeth",
-    "lastName": "Butler",
-    "age": "F30-39",
-    "location": "Arlington, TX",
+    "firstName": "Elise",
+    "lastName": "Grandsaert",
+    "age": "F40-49",
+    "location": "Burke, VA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -825,21 +847,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Mackenzie",
-    "lastName": "McLellan",
+    "firstName": "Abbi",
+    "lastName": "O'Leary",
     "age": "F30-39",
     "location": "Fort Worth, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jason",
-    "lastName": "Robinson",
-    "age": "M40-49",
-    "location": "Dallas, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -880,10 +891,65 @@
     "finishes": 0
   },
   {
-    "firstName": "Elise",
-    "lastName": "Grandsaert",
-    "age": "F40-49",
-    "location": "Burke, VA",
+    "firstName": "Elizabeth",
+    "lastName": "Butler",
+    "age": "F30-39",
+    "location": "Arlington, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mackenzie",
+    "lastName": "McLellan",
+    "age": "F30-39",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Robinson",
+    "age": "M40-49",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jeffrey",
+    "lastName": "Korum",
+    "age": "M30-39",
+    "location": "Grand Prairie, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "McGrail",
+    "lastName": "Kevin",
+    "age": "M40-49",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mary",
+    "lastName": "Schultz",
+    "age": "F30-39",
+    "location": "Dallas, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -994,50 +1060,6 @@
     "lastName": "Afflerbach",
     "age": "F20-29",
     "location": "Sanger, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jeffrey",
-    "lastName": "Korum",
-    "age": "M30-39",
-    "location": "Grand Prairie, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "McGrail",
-    "lastName": "Kevin",
-    "age": "M40-49",
-    "location": "Fort Worth, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mary",
-    "lastName": "Schultz",
-    "age": "F30-39",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Abbi",
-    "lastName": "O'Leary",
-    "age": "F30-39",
-    "location": "Fort Worth, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1210,6 +1232,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Scott",
+    "lastName": "Wonderly",
+    "age": "M50-59",
+    "location": "Montgomery, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kenna",
     "lastName": "Philipp",
     "age": "F20-29",
@@ -1225,17 +1258,6 @@
     "lastName": "Watson",
     "age": "M20-29",
     "location": "Frisco, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Wonderly",
-    "age": "M50-59",
-    "location": "Montgomery, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

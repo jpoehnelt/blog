@@ -27,7 +27,7 @@
     "age": "F20-29",
     "location": "Seattle, WA",
     "rank": 100,
-    "ageRank": 0,
+    "ageRank": 100,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -1870,6 +1870,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kimberly",
+    "lastName": "Haven",
+    "age": "F40-49",
+    "location": "Wenatchee, WA",
+    "rank": 74.7,
+    "ageRank": 84.6,
+    "results": 18,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jocelyn",
     "lastName": "Winny",
     "age": "F30-39",
@@ -2097,17 +2108,6 @@
     "rank": 72.8,
     "ageRank": 80.7,
     "results": 24,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tabatha",
-    "lastName": "Collins",
-    "age": "F50-59",
-    "location": "Bremerton, WA",
-    "rank": 72.6,
-    "ageRank": 85.4,
-    "results": 99,
     "bib": "",
     "finishes": 0
   },
@@ -2854,8 +2854,8 @@
     "age": "M40-49",
     "location": "Celina, TX",
     "rank": 68.7,
-    "ageRank": 77.7,
-    "results": 26,
+    "ageRank": 77.6,
+    "results": 27,
     "bib": "",
     "finishes": 0
   },
