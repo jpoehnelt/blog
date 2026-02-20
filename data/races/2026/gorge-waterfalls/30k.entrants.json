@@ -44,6 +44,17 @@
     "finishes": 2
   },
   {
+    "firstName": "Tyler",
+    "lastName": "McCandless",
+    "age": "M30-39",
+    "location": "Fort Collins, CO",
+    "rank": 95.4,
+    "ageRank": 95.9,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Caleb",
     "lastName": "Olson",
     "age": "M30-39",
@@ -1193,17 +1204,6 @@
     "age": "F30-39",
     "location": "Boulder, CO",
     "rank": 77.8,
-    "ageRank": 82.2,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jalyn",
-    "lastName": "Devereaux",
-    "age": "F20-29",
-    "location": "Portland, OR",
-    "rank": 77.7,
     "ageRank": 82.2,
     "results": 4,
     "bib": "",
@@ -3498,10 +3498,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Sarah",
-    "lastName": "Miller",
-    "age": "F30-39",
-    "location": "Vancouver, WA",
+    "firstName": "Lisa",
+    "lastName": "Gulya",
+    "age": "F40-49",
+    "location": "St Paul, MN",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3509,10 +3509,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Lisa",
-    "lastName": "Gulya",
-    "age": "F40-49",
-    "location": "St Paul, MN",
+    "firstName": "Sarah",
+    "lastName": "Miller",
+    "age": "F30-39",
+    "location": "Vancouver, WA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4653,28 +4653,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Paige",
-    "lastName": "Martinez",
-    "age": "F20-29",
-    "location": "Salt Lake City, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Riley",
-    "lastName": "Robertson",
-    "age": "M30-39",
-    "location": "Boise, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Anna",
     "lastName": "Lee",
     "age": "F30-39",
@@ -4701,6 +4679,28 @@
     "lastName": "Wells",
     "age": "M30-39",
     "location": "Salt Lake City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Paige",
+    "lastName": "Martinez",
+    "age": "F20-29",
+    "location": "Salt Lake City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Riley",
+    "lastName": "Robertson",
+    "age": "M30-39",
+    "location": "Boise, ID",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

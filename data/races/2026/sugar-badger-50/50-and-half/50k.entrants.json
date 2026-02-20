@@ -33,6 +33,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Alex",
+    "lastName": "Ramsey",
+    "age": "M40-49",
+    "location": "Manchester, MO",
+    "rank": 79.3,
+    "ageRank": 82.8,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Larissa",
     "lastName": "Sprecher",
     "age": "F30-39",
@@ -352,6 +363,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Margaret",
+    "lastName": "Allmann",
+    "age": "F60-69",
+    "location": "Iron River, WI",
+    "rank": 62.9,
+    "ageRank": 88.6,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jess",
     "lastName": "Gibson",
     "age": "F30-39",
@@ -579,50 +601,6 @@
     "rank": 40,
     "ageRank": 0,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Edward",
-    "lastName": "Jackson",
-    "age": "M60-69",
-    "location": "Chicago, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Fouad",
-    "lastName": "Kaiboussi",
-    "age": "M40-49",
-    "location": "Chicago, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Megan",
-    "lastName": "Scheurell",
-    "age": "F30-39",
-    "location": "Brodhead, WI",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jenny",
-    "lastName": "Ljungqvist",
-    "age": "F40-49",
-    "location": "Delafield, WI",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -906,6 +884,50 @@
     "lastName": "Holbrook",
     "age": "M30-39",
     "location": "Duluth, MN",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Edward",
+    "lastName": "Jackson",
+    "age": "M60-69",
+    "location": "Chicago, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Fouad",
+    "lastName": "Kaiboussi",
+    "age": "M40-49",
+    "location": "Chicago, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Megan",
+    "lastName": "Scheurell",
+    "age": "F30-39",
+    "location": "Brodhead, WI",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jenny",
+    "lastName": "Ljungqvist",
+    "age": "F40-49",
+    "location": "Delafield, WI",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
