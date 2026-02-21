@@ -66,17 +66,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Steven",
-    "lastName": "Keller",
-    "age": "M40-49",
-    "location": "Virginia Beach, VA",
-    "rank": 93.2,
-    "ageRank": 95.3,
-    "results": 11,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Rachel",
     "lastName": "Entrekin",
     "age": "F30-39",
@@ -139,6 +128,17 @@
     "rank": 91.9,
     "ageRank": 85.7,
     "results": 10,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steven",
+    "lastName": "Keller",
+    "age": "M40-49",
+    "location": "Virginia Beach, VA",
+    "rank": 91.8,
+    "ageRank": 94.8,
+    "results": 12,
     "bib": "",
     "finishes": 0
   },
@@ -462,17 +462,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Mikaela",
-    "lastName": "Mulhall",
-    "age": "F20-29",
-    "location": "Fall City, WA",
-    "rank": 85.3,
-    "ageRank": 92.1,
-    "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Katherine",
     "lastName": "Edwards Anderson",
     "age": "F20-29",
@@ -748,17 +737,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Charles",
-    "lastName": "Poblenz",
-    "age": "M30-39",
-    "location": "Jacksonville, FL",
-    "rank": 80.3,
-    "ageRank": 87.5,
-    "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Russ",
     "lastName": "Ford",
     "age": "M40-49",
@@ -854,6 +832,17 @@
     "rank": 79,
     "ageRank": 82.9,
     "results": 27,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Charles",
+    "lastName": "Poblenz",
+    "age": "M30-39",
+    "location": "Jacksonville, FL",
+    "rank": 78.9,
+    "ageRank": 86.2,
+    "results": 16,
     "bib": "",
     "finishes": 0
   },
@@ -1309,17 +1298,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Garren",
-    "lastName": "Hill",
-    "age": "M50-59",
-    "location": "North Richland Hills, TX",
-    "rank": 74,
-    "ageRank": 86.8,
-    "results": 69,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Chris",
     "lastName": "Hewitt",
     "age": "M30-39",
@@ -1327,6 +1305,17 @@
     "rank": 74,
     "ageRank": 74,
     "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Garren",
+    "lastName": "Hill",
+    "age": "M50-59",
+    "location": "North Richland Hills, TX",
+    "rank": 73.9,
+    "ageRank": 86.8,
+    "results": 70,
     "bib": "",
     "finishes": 0
   },
@@ -3773,28 +3762,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Chance",
-    "lastName": "Thackston",
-    "age": "M30-39",
-    "location": "Abilene, KS",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Adam",
-    "lastName": "Ellenstein",
-    "age": "M40-49",
-    "location": "Prescott, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jen",
     "lastName": "Franklin",
     "age": "F40-49",
@@ -3806,21 +3773,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Anthony",
-    "lastName": "Trujillo",
-    "age": "M20-29",
-    "location": "Glendale, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Parley",
-    "lastName": "Hannan",
-    "age": "F20-29",
-    "location": "scarborough, ME",
+    "firstName": "Chance",
+    "lastName": "Thackston",
+    "age": "M30-39",
+    "location": "Abilene, KS",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3850,10 +3806,54 @@
     "finishes": 0
   },
   {
+    "firstName": "Adam",
+    "lastName": "Ellenstein",
+    "age": "M40-49",
+    "location": "Prescott, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Anthony",
+    "lastName": "Trujillo",
+    "age": "M20-29",
+    "location": "Glendale, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Parley",
+    "lastName": "Hannan",
+    "age": "F20-29",
+    "location": "scarborough, ME",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Aleksandr",
     "lastName": "Orlov",
     "age": "M30-39",
     "location": "Sochi, RUS",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mikaela",
+    "lastName": "Mulco",
+    "age": "F20-29",
+    "location": "Fall City, WA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

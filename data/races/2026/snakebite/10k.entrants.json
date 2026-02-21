@@ -11,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Andy",
+    "lastName": "Gavette",
+    "age": "M50-59",
+    "location": "Phoenix, AZ",
+    "rank": 74.9,
+    "ageRank": 79.8,
+    "results": 3,
+    "bib": "1809",
+    "finishes": 3
+  },
+  {
     "firstName": "Holly",
     "lastName": "Amend",
     "age": "F40-49",
@@ -30,18 +41,29 @@
     "ageRank": 88.7,
     "results": 6,
     "bib": "1819",
+    "finishes": 1
+  },
+  {
+    "firstName": "Masaru",
+    "lastName": "Ebihara",
+    "age": "M40-49",
+    "location": "Phoenix, AZ",
+    "rank": 62.2,
+    "ageRank": 71.2,
+    "results": 9,
+    "bib": "1806",
     "finishes": 0
   },
   {
-    "firstName": "Andy",
-    "lastName": "Gavette",
-    "age": "M50-59",
-    "location": "Phoenix, AZ",
-    "rank": 74.9,
-    "ageRank": 79.8,
-    "results": 3,
-    "bib": "1809",
-    "finishes": 0
+    "firstName": "Bill",
+    "lastName": "Ramsay",
+    "age": "M60-69",
+    "location": "Helena, MT",
+    "rank": 61.8,
+    "ageRank": 81.6,
+    "results": 38,
+    "bib": "1826",
+    "finishes": 1
   },
   {
     "firstName": "Stephanie",
@@ -52,6 +74,39 @@
     "ageRank": 73.4,
     "results": 1,
     "bib": "1832",
+    "finishes": 0
+  },
+  {
+    "firstName": "Larry",
+    "lastName": "Putman",
+    "age": "M60-69",
+    "location": "Tempe, AZ",
+    "rank": 59.6,
+    "ageRank": 73,
+    "results": 1,
+    "bib": "1825",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sean",
+    "lastName": "McManus",
+    "age": "M30-39",
+    "location": "Scottsdale, AZ",
+    "rank": 58.3,
+    "ageRank": 64.8,
+    "results": 15,
+    "bib": "1817",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Keller",
+    "age": "M30-39",
+    "location": "Scottsdale, AZ",
+    "rank": 56.2,
+    "ageRank": 65.6,
+    "results": 1,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -74,40 +129,18 @@
     "ageRank": 71,
     "results": 38,
     "bib": "1814",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Masaru",
-    "lastName": "Ebihara",
+    "firstName": "Jason",
+    "lastName": "Robletto",
     "age": "M40-49",
-    "location": "Phoenix, AZ",
-    "rank": 62.2,
-    "ageRank": 71.2,
-    "results": 9,
-    "bib": "1806",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bill",
-    "lastName": "Ramsay",
-    "age": "M60-69",
-    "location": "Helena, MT",
-    "rank": 61.8,
-    "ageRank": 81.6,
-    "results": 38,
-    "bib": "1826",
-    "finishes": 0
-  },
-  {
-    "firstName": "Larry",
-    "lastName": "Putman",
-    "age": "M60-69",
-    "location": "Tempe, AZ",
-    "rank": 59.6,
-    "ageRank": 73,
+    "location": "Cashion, OK",
+    "rank": 51.6,
+    "ageRank": 60.5,
     "results": 1,
-    "bib": "1825",
-    "finishes": 0
+    "bib": "1828",
+    "finishes": 1
   },
   {
     "firstName": "Patty",
@@ -118,18 +151,18 @@
     "ageRank": 70.8,
     "results": 9,
     "bib": "1816",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Sean",
-    "lastName": "McManus",
-    "age": "M30-39",
-    "location": "Scottsdale, AZ",
-    "rank": 58.3,
-    "ageRank": 64.8,
-    "results": 15,
-    "bib": "1817",
-    "finishes": 0
+    "firstName": "Connor",
+    "lastName": "Mezo",
+    "age": "M<20",
+    "location": "Gilbert, AZ",
+    "rank": 49.1,
+    "ageRank": 58.2,
+    "results": 10,
+    "bib": "1820",
+    "finishes": 1
   },
   {
     "firstName": "Sarah",
@@ -140,6 +173,17 @@
     "ageRank": 64.3,
     "results": 36,
     "bib": "1821",
+    "finishes": 2
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Valdez",
+    "age": "M50-59",
+    "location": "Flagstaff, AZ",
+    "rank": 47.8,
+    "ageRank": 32.3,
+    "results": 3,
+    "bib": "1836",
     "finishes": 0
   },
   {
@@ -151,39 +195,149 @@
     "ageRank": 63.3,
     "results": 36,
     "bib": "1833",
+    "finishes": 2
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Ullrich",
+    "age": "F20-29",
+    "location": "Etobicoke, ON",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1835",
     "finishes": 0
   },
   {
-    "firstName": "Jason",
-    "lastName": "Robletto",
+    "firstName": "Jackie",
+    "lastName": "Lagman",
+    "age": "F30-39",
+    "location": "Phoenix, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1813",
+    "finishes": 0
+  },
+  {
+    "firstName": "Shelby",
+    "lastName": "Lacina",
+    "age": "F30-39",
+    "location": "Gretna, NE",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1812",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kathleen",
+    "lastName": "Gibson",
+    "age": "F40-49",
+    "location": "Acworth, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1810",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Packman",
+    "age": "M30-39",
+    "location": "Peoria, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1823",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kira",
+    "lastName": "Bunker",
+    "age": "F30-39",
+    "location": "Peoria, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1800",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Pierson",
+    "age": "M30-39",
+    "location": "Glendale, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1824",
+    "finishes": 0
+  },
+  {
+    "firstName": "James",
+    "lastName": "Hope",
+    "age": "M30-39",
+    "location": "Phoenix, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1811",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Regis",
+    "age": "M30-39",
+    "location": "Glendale, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1827",
+    "finishes": 0
+  },
+  {
+    "firstName": "Clemence",
+    "lastName": "Demoncheaux",
+    "age": "F40-49",
+    "location": "Phoenix, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "1805",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kimber",
+    "lastName": "Ogren",
+    "age": "F30-39",
+    "location": "Mesa, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Manny",
+    "lastName": "Vega",
     "age": "M40-49",
-    "location": "Cashion, OK",
-    "rank": 51.6,
-    "ageRank": 60.5,
-    "results": 1,
-    "bib": "1828",
+    "location": "Apache Junction, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Connor",
-    "lastName": "Mezo",
-    "age": "M<20",
-    "location": "Gilbert, AZ",
-    "rank": 49.1,
-    "ageRank": 58.2,
-    "results": 10,
-    "bib": "1820",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brian",
-    "lastName": "Valdez",
-    "age": "M50-59",
-    "location": "Flagstaff, AZ",
-    "rank": 47.8,
-    "ageRank": 32.3,
-    "results": 3,
-    "bib": "1836",
+    "firstName": "Tara",
+    "lastName": "Keller",
+    "age": "F<20",
+    "location": "Tempe, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -316,138 +470,6 @@
     "ageRank": 0,
     "results": 0,
     "bib": "1807",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jessica",
-    "lastName": "Ullrich",
-    "age": "F20-29",
-    "location": "Etobicoke, ON",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1835",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jackie",
-    "lastName": "Lagman",
-    "age": "F30-39",
-    "location": "Phoenix, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1813",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shelby",
-    "lastName": "Lacina",
-    "age": "F30-39",
-    "location": "Gretna, NE",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1812",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kathleen",
-    "lastName": "Gibson",
-    "age": "F40-49",
-    "location": "Acworth, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1810",
-    "finishes": 0
-  },
-  {
-    "firstName": "Josh",
-    "lastName": "Packman",
-    "age": "M30-39",
-    "location": "Peoria, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1823",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kira",
-    "lastName": "Bunker",
-    "age": "F30-39",
-    "location": "Peoria, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1800",
-    "finishes": 0
-  },
-  {
-    "firstName": "David",
-    "lastName": "Pierson",
-    "age": "M30-39",
-    "location": "Glendale, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1824",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "Hope",
-    "age": "M30-39",
-    "location": "Phoenix, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1811",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Regis",
-    "age": "M30-39",
-    "location": "Glendale, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1827",
-    "finishes": 0
-  },
-  {
-    "firstName": "Clemence",
-    "lastName": "Demoncheaux",
-    "age": "F40-49",
-    "location": "Phoenix, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "1805",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kimber",
-    "lastName": "Ogren",
-    "age": "F30-39",
-    "location": "Mesa, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Manny",
-    "lastName": "Vega",
-    "age": "M40-49",
-    "location": "Apache Junction, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
     "finishes": 0
   }
 ]

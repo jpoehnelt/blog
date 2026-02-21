@@ -363,6 +363,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Rick",
+    "lastName": "Ritacco",
+    "age": "M30-39",
+    "location": "Brookfield, CT",
+    "rank": 64.3,
+    "ageRank": 0,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jason",
     "lastName": "Odell",
     "age": "M50-59",
@@ -394,6 +405,17 @@
     "results": 63,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "David",
+    "lastName": "Johnston",
+    "age": "M40-49",
+    "location": "Worcester, MA",
+    "rank": 63.2,
+    "ageRank": 82.9,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Curt",
@@ -748,43 +770,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Hayden",
-    "lastName": "Accola",
-    "age": "M30-39",
-    "location": "Elk Grove Village, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "Patton",
-    "age": "M60-69",
-    "location": "Loudon, TN",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jeremy",
-    "lastName": "Pelto",
-    "age": "M30-39",
-    "location": "WINDSOR, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Raymond",
-    "lastName": "Fiondella",
-    "age": "M30-39",
-    "location": "Manchester, CT",
+    "firstName": "Jordan",
+    "lastName": "Marchand",
+    "age": "X20-29",
+    "location": "Hamden, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -796,17 +785,6 @@
     "lastName": "Goldman",
     "age": "X30-39",
     "location": "Providence, RI",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jordan",
-    "lastName": "Marchand",
-    "age": "X20-29",
-    "location": "Hamden, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -847,10 +825,21 @@
     "finishes": 0
   },
   {
+    "firstName": "Hayden",
+    "lastName": "Accola",
+    "age": "M30-39",
+    "location": "Elk Grove Village, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "James",
-    "lastName": "Robitaille",
-    "age": "M20-29",
-    "location": "South Boston, MA",
+    "lastName": "Patton",
+    "age": "M60-69",
+    "location": "Loudon, TN",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -858,32 +847,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Carole",
-    "lastName": "Marullaz",
-    "age": "F20-29",
-    "location": "New Haven, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Patrick",
-    "lastName": "Cosgrove",
-    "age": "M20-29",
-    "location": "Wallingford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Austin",
-    "lastName": "Johansen",
+    "firstName": "Jeremy",
+    "lastName": "Pelto",
     "age": "M30-39",
-    "location": "Newington, CT",
+    "location": "WINDSOR, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -891,21 +858,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Jack",
-    "lastName": "McCarthy",
-    "age": "M20-29",
-    "location": "Norwalk, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "David",
-    "lastName": "Engel",
+    "firstName": "Raymond",
+    "lastName": "Fiondella",
     "age": "M30-39",
-    "location": "Stamford, CT",
+    "location": "Manchester, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1027,6 +983,83 @@
     "lastName": "Chzhen",
     "age": "F30-39",
     "location": "Weymouth, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Greinig",
+    "age": "M30-39",
+    "location": "New Haven, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "James",
+    "lastName": "Robitaille",
+    "age": "M20-29",
+    "location": "South Boston, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Carole",
+    "lastName": "Marullaz",
+    "age": "F20-29",
+    "location": "New Haven, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Patrick",
+    "lastName": "Cosgrove",
+    "age": "M20-29",
+    "location": "Wallingford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Austin",
+    "lastName": "Johansen",
+    "age": "M30-39",
+    "location": "Newington, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jack",
+    "lastName": "McCarthy",
+    "age": "M20-29",
+    "location": "Norwalk, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Engel",
+    "age": "M30-39",
+    "location": "Stamford, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
