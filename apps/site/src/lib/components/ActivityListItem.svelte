@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
   import Sparkline from "$lib/components/Sparkline.svelte";
@@ -36,7 +36,7 @@
     <div
       class="text-xs mt-0.5 flex items-center gap-2 flex-wrap text-muted-foreground"
     >
-      <FormattedDate date={new Date(activity.start_date)} />
+      <DateDisplay date={new Date(activity.start_date)} />
       <MetadataSeparator />
       {#if activity.sport_type === "TrailRun" || (activity as any).type === "TrailRun"}
         <Footprints size={14} aria-label="Trail Run" />

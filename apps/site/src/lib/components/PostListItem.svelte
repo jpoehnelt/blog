@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
   import type { Post } from "$lib/content/posts";
@@ -36,7 +36,7 @@
       <p class="text-sm text-muted-foreground">{post.description}</p>
     {/if}
     <div class="text-xs mt-0.5 flex items-center gap-2 flex-wrap">
-      <FormattedDate date={post.pubDate} />
+      <DateDisplay date={post.pubDate} />
       {#if post.tags && post.tags.length > 0 && showTags}
         <MetadataSeparator />
         <div class="flex gap-1 flex-wrap">
