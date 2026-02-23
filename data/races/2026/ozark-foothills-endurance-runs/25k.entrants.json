@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Pamela",
-    "lastName": "Volk",
-    "age": "F40-49",
-    "location": "Columbia, MO",
-    "rank": 91.4,
-    "ageRank": 93.9,
-    "results": 14,
-    "bib": "",
-    "finishes": 3
-  },
-  {
     "firstName": "Ed",
     "lastName": "Mosier",
     "age": "M50-59",
@@ -20,6 +9,17 @@
     "results": 7,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Pamela",
+    "lastName": "Volk",
+    "age": "F40-49",
+    "location": "Columbia, MO",
+    "rank": 90,
+    "ageRank": 94,
+    "results": 15,
+    "bib": "",
+    "finishes": 3
   },
   {
     "firstName": "Shannon",
@@ -66,23 +66,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Abigail",
-    "lastName": "Batha",
-    "age": "F40-49",
-    "location": "Lebanon, IL",
-    "rank": 73.8,
-    "ageRank": 72.4,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Aimee",
     "lastName": "Love",
     "age": "F50-59",
     "location": "Grand Rapids, MN",
     "rank": 71.1,
     "ageRank": 87.8,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Abigail",
+    "lastName": "Batha",
+    "age": "F40-49",
+    "location": "Lebanon, IL",
+    "rank": 67.7,
+    "ageRank": 70.9,
     "results": 4,
     "bib": "",
     "finishes": 0
@@ -290,6 +290,17 @@
     "lastName": "Schaedler",
     "age": "M30-39",
     "location": "Saint Louis, MO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Austin",
+    "lastName": "Taschler",
+    "age": "M20-29",
+    "location": "Wildwood, MO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
