@@ -16,8 +16,7 @@ function testModernTypes() {
   stmt.execute("DELETE FROM gas_test_types");
 
   const testData = '{"test": "json_parsing", "works": true}';
-  const sql =
-    "INSERT INTO gas_test_types (data) VALUES (?::jsonb)";
+  const sql = "INSERT INTO gas_test_types (data) VALUES (?::jsonb)";
   const ps = conn.prepareStatement(sql);
   ps.setString(1, testData);
   ps.execute();

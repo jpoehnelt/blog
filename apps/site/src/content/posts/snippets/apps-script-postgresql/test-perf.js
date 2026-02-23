@@ -66,8 +66,7 @@ function testPerformance() {
 
     const t2ReadStart = Date.now();
     stmt2 = conn2.createStatement();
-    const readSql =
-      "SELECT id, value FROM gas_test_perf LIMIT 1";
+    const readSql = "SELECT id, value FROM gas_test_perf LIMIT 1";
     rs2 = stmt2.executeQuery(readSql);
 
     if (rs2.next()) {
