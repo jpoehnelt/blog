@@ -1,5 +1,27 @@
 [
   {
+    "firstName": "Joshua",
+    "lastName": "Lemoi",
+    "age": "M30-39",
+    "location": "Monument, CO",
+    "rank": 100,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hans",
+    "lastName": "Van Zanten",
+    "age": "M50-59",
+    "location": "Kansas City, MO",
+    "rank": 83,
+    "ageRank": 90.4,
+    "results": 52,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Brista",
     "lastName": "Mayfield",
     "age": "F30-39",
@@ -11,13 +33,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Joshua",
-    "lastName": "Lemoi",
+    "firstName": "Jake",
+    "lastName": "Wyatt",
     "age": "M30-39",
-    "location": "Monument, CO",
-    "rank": 100,
-    "ageRank": 100,
-    "results": 1,
+    "location": "Kremmling, CO",
+    "rank": 73.7,
+    "ageRank": 76.5,
+    "results": 38,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Glen",
+    "lastName": "Maxson",
+    "age": "M40-49",
+    "location": "Moab, UT",
+    "rank": 72.2,
+    "ageRank": 78.7,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -40,105 +73,6 @@
     "rank": 88.5,
     "ageRank": 91,
     "results": 20,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kimberly",
-    "lastName": "Monge Fera",
-    "age": "F30-39",
-    "location": "Charlottesville, VA",
-    "rank": 84.2,
-    "ageRank": 90.6,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Hans",
-    "lastName": "Van Zanten",
-    "age": "M50-59",
-    "location": "Kansas City, MO",
-    "rank": 83,
-    "ageRank": 90.4,
-    "results": 52,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kim",
-    "lastName": "Arena",
-    "age": "F30-39",
-    "location": "Denver, CO",
-    "rank": 79.9,
-    "ageRank": 88.2,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Colette",
-    "lastName": "Boulet",
-    "age": "F20-29",
-    "location": "Vail, CO",
-    "rank": 77.9,
-    "ageRank": 93.7,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Julia",
-    "lastName": "Maisto",
-    "age": "F30-39",
-    "location": "Denver, CO",
-    "rank": 77.6,
-    "ageRank": 83.2,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jake",
-    "lastName": "Wyatt",
-    "age": "M30-39",
-    "location": "Kremmling, CO",
-    "rank": 73.7,
-    "ageRank": 76.5,
-    "results": 38,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Miranda",
-    "lastName": "Williamson",
-    "age": "F40-49",
-    "location": "Boulder, CO",
-    "rank": 73.4,
-    "ageRank": 79.7,
-    "results": 22,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Abbey",
-    "lastName": "McCasland",
-    "age": "F20-29",
-    "location": "Moab, UT",
-    "rank": 72.6,
-    "ageRank": 78.4,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Glen",
-    "lastName": "Maxson",
-    "age": "M40-49",
-    "location": "Moab, UT",
-    "rank": 72.2,
-    "ageRank": 78.7,
-    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -176,6 +110,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kimberly",
+    "lastName": "Monge Fera",
+    "age": "F30-39",
+    "location": "Charlottesville, VA",
+    "rank": 84.2,
+    "ageRank": 90.6,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Brian",
     "lastName": "Chontosh",
     "age": "M50-59",
@@ -209,17 +154,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Daniela",
-    "lastName": "Sadorf",
-    "age": "F30-39",
-    "location": "San Leandro, CA",
-    "rank": 65.9,
-    "ageRank": 67.1,
-    "results": 14,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "John",
     "lastName": "Stanczak",
     "age": "M30-39",
@@ -242,6 +176,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kim",
+    "lastName": "Arena",
+    "age": "F30-39",
+    "location": "Denver, CO",
+    "rank": 79.9,
+    "ageRank": 88.2,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Tyler",
     "lastName": "Fenton",
     "age": "M30-39",
@@ -249,6 +194,17 @@
     "rank": 63.7,
     "ageRank": 66.9,
     "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Colette",
+    "lastName": "Boulet",
+    "age": "F20-29",
+    "location": "Vail, CO",
+    "rank": 77.9,
+    "ageRank": 93.7,
+    "results": 7,
     "bib": "",
     "finishes": 0
   },
@@ -271,6 +227,17 @@
     "rank": 62.5,
     "ageRank": 67.5,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Julia",
+    "lastName": "Maisto",
+    "age": "F30-39",
+    "location": "Denver, CO",
+    "rank": 77.6,
+    "ageRank": 83.2,
+    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -352,6 +319,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Miranda",
+    "lastName": "Williamson",
+    "age": "F40-49",
+    "location": "Boulder, CO",
+    "rank": 73.4,
+    "ageRank": 79.7,
+    "results": 22,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Abbey",
+    "lastName": "McCasland",
+    "age": "F20-29",
+    "location": "Moab, UT",
+    "rank": 72.6,
+    "ageRank": 78.4,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Rex",
     "lastName": "Mitchell",
     "age": "M60-69",
@@ -370,6 +359,17 @@
     "rank": 57.3,
     "ageRank": 57.9,
     "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Daniela",
+    "lastName": "Sadorf",
+    "age": "F30-39",
+    "location": "San Leandro, CA",
+    "rank": 65.9,
+    "ageRank": 67.1,
+    "results": 14,
     "bib": "",
     "finishes": 0
   },
