@@ -1,27 +1,5 @@
 [
   {
-    "firstName": "Carley",
-    "lastName": "Ellis",
-    "age": "F30-39",
-    "location": "Fairway, KS",
-    "rank": 89.3,
-    "ageRank": 92.8,
-    "results": 20,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kelly",
-    "lastName": "Sarkis",
-    "age": "F20-29",
-    "location": "Denver, CO",
-    "rank": 81.1,
-    "ageRank": 91.6,
-    "results": 13,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jean-Marie",
     "lastName": "Laigle",
     "age": "M40-49",
@@ -33,13 +11,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Olga",
-    "lastName": "King",
-    "age": "F50-59",
-    "location": ", AL",
-    "rank": 80.6,
-    "ageRank": 89.6,
-    "results": 140,
+    "firstName": "Carley",
+    "lastName": "Ellis",
+    "age": "F30-39",
+    "location": "Fairway, KS",
+    "rank": 89.3,
+    "ageRank": 92.8,
+    "results": 20,
     "bib": "",
     "finishes": 0
   },
@@ -55,17 +33,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Emma",
-    "lastName": "Bruno",
-    "age": "F20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 79.1,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Matthew",
     "lastName": "De Ruyter",
     "age": "M30-39",
@@ -77,13 +44,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Nicole",
-    "lastName": "Lukinbeal",
+    "firstName": "Kelly",
+    "lastName": "Sarkis",
     "age": "F20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 74.6,
-    "ageRank": 74.6,
-    "results": 1,
+    "location": "Denver, CO",
+    "rank": 81.1,
+    "ageRank": 91.6,
+    "results": 13,
     "bib": "",
     "finishes": 0
   },
@@ -95,6 +62,28 @@
     "rank": 73.3,
     "ageRank": 77.4,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Olga",
+    "lastName": "King",
+    "age": "F50-59",
+    "location": ", AL",
+    "rank": 80.6,
+    "ageRank": 89.6,
+    "results": 140,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Bruno",
+    "age": "F20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 79.1,
+    "ageRank": 0,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -140,6 +129,17 @@
     "ageRank": 81.6,
     "results": 2,
     "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Nicole",
+    "lastName": "Lukinbeal",
+    "age": "F20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 74.6,
+    "ageRank": 74.6,
+    "results": 1,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -165,28 +165,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Stacy",
-    "lastName": "Hernandez",
-    "age": "F40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 66,
-    "ageRank": 74.5,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Maya",
-    "lastName": "Kita",
-    "age": "F20-29",
-    "location": "Emmaus, PA",
-    "rank": 62.4,
-    "ageRank": 69,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Rusty",
     "lastName": "Taylor",
     "age": "M40-49",
@@ -194,17 +172,6 @@
     "rank": 61.8,
     "ageRank": 68.9,
     "results": 51,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jill",
-    "lastName": "Fragoso",
-    "age": "F50-59",
-    "location": "New Orleans, LA",
-    "rank": 61.5,
-    "ageRank": 81.4,
-    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -231,6 +198,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Stacy",
+    "lastName": "Hernandez",
+    "age": "F40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 66,
+    "ageRank": 74.5,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Greg",
     "lastName": "Peters",
     "age": "M60-69",
@@ -239,7 +217,7 @@
     "ageRank": 83,
     "results": 8,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Charles",
@@ -260,6 +238,17 @@
     "rank": 57.8,
     "ageRank": 62.2,
     "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Maya",
+    "lastName": "Kita",
+    "age": "F20-29",
+    "location": "Emmaus, PA",
+    "rank": 62.4,
+    "ageRank": 69,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -286,6 +275,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jill",
+    "lastName": "Fragoso",
+    "age": "F50-59",
+    "location": "New Orleans, LA",
+    "rank": 61.5,
+    "ageRank": 81.4,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ron",
     "lastName": "Stivers",
     "age": "M60-69",
@@ -294,7 +294,7 @@
     "ageRank": 79.4,
     "results": 21,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Matt",
@@ -334,6 +334,17 @@
     "lastName": "Minicucci",
     "age": "F20-29",
     "location": "Columbia, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Luca",
+    "lastName": "Giordano",
+    "age": "M<20",
+    "location": "Greensboro, NC",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

@@ -30,7 +30,7 @@
     "ageRank": 100,
     "results": 1,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Mary",
@@ -52,7 +52,7 @@
     "ageRank": 90.7,
     "results": 2,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Emily",
@@ -63,7 +63,7 @@
     "ageRank": 100,
     "results": 1,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Nancy",
@@ -191,6 +191,17 @@
     "lastName": "Hourihan",
     "age": "F60-69",
     "location": "Parker, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Brooke",
+    "lastName": "Girlando",
+    "age": "F30-39",
+    "location": "Colorado Springs, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
