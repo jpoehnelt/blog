@@ -1,4 +1,5 @@
 <script lang="ts">
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   import { raceUrl } from "$lib/race-urls";
   interface UpcomingRace {
     id: number;
@@ -31,10 +32,10 @@
           >
             <div class="shrink-0 w-12 text-center">
               <div class="text-xs font-bold uppercase text-muted-foreground">
-                {new Date(race.date).toLocaleDateString(undefined, { month: "short" })}
+                <DateDisplay date={race.date} format={{ month: "short" }} />
               </div>
               <div class="text-lg font-black">
-                {new Date(race.date).getDate()}
+                <DateDisplay date={race.date} format={{ day: "numeric" }} />
               </div>
             </div>
             <div class="min-w-0">
