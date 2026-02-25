@@ -1,6 +1,6 @@
 <script lang="ts">
   import Head from "$lib/components/Head.svelte";
-  import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   // @ts-ignore - TS fails to match the complex query string to the *&enhanced ambient module declaration
   import justinPoehneltImg from "$lib/images/justin-poehnelt.jpg?w=1326;800;400&enhanced";
   import ActivityList from "$lib/components/ActivityList.svelte";
@@ -173,7 +173,7 @@
           class="flex flex-wrap md:flex-nowrap items-center gap-x-4 mb-4 text-sm font-mono text-muted-foreground border-y border-border py-1"
         >
           <div class="whitespace-nowrap shrink-0">
-            <FormattedDate date={featuredPost.pubDate} />
+            <DateDisplay date={featuredPost.pubDate} />
           </div>
           {#if featuredPost.tags}
             <span class="hidden md:inline text-border">|</span>
