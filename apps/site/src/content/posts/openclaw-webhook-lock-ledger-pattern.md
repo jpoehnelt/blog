@@ -125,6 +125,46 @@ The receiver is managed with `launchd` and exposes:
 
 `/status` returns queue depth, active locks, lock policy, and recent item states.
 
+## Redis upgrade for TTL-driven coordination
+
+After running this pattern for real churn, I moved lock coordination to Redis for better lease semantics:
+
+- `LOCK_BACKEND=redis`
+- lock leases with `SET NX PX`
+- delivery dedupe keys with TTL
+- per-prefix state + version counters for stale-work detection
+
+I kept the local JSONL audit log for durable debugging and postmortems.
+
+## Volatile work profile (heavy churn)
+
+For high-churn queues, the best strategy is cheap cancellation over completion:
+
+- `VOLATILE_MODE=true`
+- `VOLATILE_DEBOUNCE_MS=60000`
+- `VOLATILE_MAX_STALENESS_MS=1800000`
+- `VOLATILE_STREAM_MAXLEN=1000`
+- `PREFIX_STATE_TTL_MS=86400000`
+
+In this mode:
+
+- each enqueue bumps `version:<prefix>`
+- workers re-check version on lock acquisition
+- stale jobs are marked `obsolete`
+- queue discipline keeps latest work for a prefix
+
+## CLI operations for lock/queue visibility
+
+As this grew beyond a webhook-only flow, I consolidated operations into one CLI:
+
+- `node scripts/work-lock-cli.mjs status --queue`
+- `node scripts/work-lock-cli.mjs tail -n 100`
+- `node scripts/work-lock-cli.mjs events github:repo:owner/name:pr:123`
+- `node scripts/work-lock-cli.mjs acquire github:repo:owner/name:pr:123 --owner justin --ttl-ms 120000`
+- `node scripts/work-lock-cli.mjs release github:repo:owner/name:pr:123 --owner justin`
+
+This made it much easier to inspect queue state, lock conflicts, and churn without hopping between files and Redis commands.
+
 ## Config knobs that matter
 
 These controls made tuning easy:
@@ -134,6 +174,7 @@ These controls made tuning easy:
 - `MAX_CONCURRENCY=1` (start conservative)
 - `LEASE_MS=600000`
 - `DEDUPE_TTL_MS=1800000`
+- `LOCK_BACKEND=redis`
 
 ## Takeaways
 
