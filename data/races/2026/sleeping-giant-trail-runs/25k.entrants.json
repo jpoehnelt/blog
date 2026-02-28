@@ -176,6 +176,17 @@
     "finishes": 0
   },
   {
+    "firstName": "David",
+    "lastName": "Jacobs",
+    "age": "M30-39",
+    "location": "Mashpee, MA",
+    "rank": 68.5,
+    "ageRank": 69.1,
+    "results": 1,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Benjamin",
     "lastName": "Gardiner",
     "age": "M20-29",
@@ -770,17 +781,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Brian",
-    "lastName": "Zaboski",
-    "age": "M30-39",
-    "location": "Wallingford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jacob",
     "lastName": "Lester",
     "age": "M20-29",
@@ -913,21 +913,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Oona",
-    "lastName": "Harrington",
-    "age": "F40-49",
-    "location": "Franklin, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bill",
-    "lastName": "Campbell",
+    "firstName": "Brian",
+    "lastName": "Zaboski",
     "age": "M30-39",
-    "location": "Plainville, MA",
+    "location": "Wallingford, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -935,43 +924,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Fraser",
-    "lastName": "Lawrence",
-    "age": "M40-49",
-    "location": "GUILFORD, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Wendy",
-    "lastName": "Forman",
-    "age": "F40-49",
-    "location": "Westport, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Stephanie",
-    "lastName": "Wowk",
-    "age": "F30-39",
-    "location": "Seymour, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Frank",
-    "lastName": "Aguirre",
-    "age": "M40-49",
-    "location": "Avon, CT",
+    "firstName": "Sean",
+    "lastName": "McCurley",
+    "age": "M<20",
+    "location": "Fairfield, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1045,10 +1001,76 @@
     "finishes": 0
   },
   {
-    "firstName": "Sean",
-    "lastName": "McCurley",
-    "age": "M<20",
-    "location": "Fairfield, CT",
+    "firstName": "Oona",
+    "lastName": "Harrington",
+    "age": "F40-49",
+    "location": "Franklin, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bill",
+    "lastName": "Campbell",
+    "age": "M30-39",
+    "location": "Plainville, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Fraser",
+    "lastName": "Lawrence",
+    "age": "M40-49",
+    "location": "GUILFORD, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Wendy",
+    "lastName": "Forman",
+    "age": "F40-49",
+    "location": "Westport, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stephanie",
+    "lastName": "Wowk",
+    "age": "F30-39",
+    "location": "Seymour, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Frank",
+    "lastName": "Aguirre",
+    "age": "M40-49",
+    "location": "Avon, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bradford",
+    "lastName": "Townsend",
+    "age": "M50-59",
+    "location": "Bourne, MA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

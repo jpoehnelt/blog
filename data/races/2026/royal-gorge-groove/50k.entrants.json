@@ -44,6 +44,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Armand",
+    "lastName": "Figueroa",
+    "age": "M20-29",
+    "location": "Denver, CO",
+    "rank": 83.3,
+    "ageRank": 83.3,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Grayson",
     "lastName": "Lee",
     "age": "M20-29",
@@ -209,6 +220,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jocelyn",
+    "lastName": "Johnston",
+    "age": "F30-39",
+    "location": "Hot Sulphur Springs, CO",
+    "rank": 86.7,
+    "ageRank": 89.5,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Katie",
     "lastName": "Chehowy",
     "age": "F20-29",
@@ -281,6 +303,17 @@
     "location": "Sheridan, WY",
     "rank": 64.2,
     "ageRank": 70.4,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Seth",
+    "lastName": "Hughes",
+    "age": "M40-49",
+    "location": "Denver, CO",
+    "rank": 64.2,
+    "ageRank": 78,
     "results": 3,
     "bib": "",
     "finishes": 0
@@ -737,76 +770,65 @@
     "finishes": 0
   },
   {
-    "firstName": "Ally",
-    "lastName": "Fitts",
+    "firstName": "Caely",
+    "lastName": "Ledford",
     "age": "F20-29",
+    "location": "Buena Vista, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Kooker",
+    "age": "F30-39",
+    "location": "Golden, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Brent",
+    "lastName": "Gordon",
+    "age": "M30-39",
+    "location": "Longmont, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Elizabeth",
+    "lastName": "Query",
+    "age": "F30-39",
+    "location": "Lafayette, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Greg",
+    "lastName": "Misiak",
+    "age": "M30-39",
+    "location": "Brush, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jay",
+    "lastName": "Thomas",
+    "age": "M40-49",
     "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nolan",
-    "lastName": "Rudd",
-    "age": "M20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andrew",
-    "lastName": "Buchanan",
-    "age": "M20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ryan",
-    "lastName": "Cavanaugh",
-    "age": "M20-29",
-    "location": "Highlands Ranch, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Drake",
-    "lastName": "Ingold",
-    "age": "M20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sara",
-    "lastName": "Smith",
-    "age": "F20-29",
-    "location": "Greeley, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Eric",
-    "lastName": "Scott",
-    "age": "M20-29",
-    "location": "Colorado Springs, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -902,6 +924,83 @@
     "finishes": 0
   },
   {
+    "firstName": "Ally",
+    "lastName": "Fitts",
+    "age": "F20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nolan",
+    "lastName": "Rudd",
+    "age": "M20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Buchanan",
+    "age": "M20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Cavanaugh",
+    "age": "M20-29",
+    "location": "Highlands Ranch, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Drake",
+    "lastName": "Ingold",
+    "age": "M20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sara",
+    "lastName": "Smith",
+    "age": "F20-29",
+    "location": "Greeley, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Eric",
+    "lastName": "Scott",
+    "age": "M20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Joshua",
     "lastName": "White",
     "age": "M20-29",
@@ -972,72 +1071,6 @@
     "lastName": "Sciorilli",
     "age": "F40-49",
     "location": "Aurora, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Caely",
-    "lastName": "Ledford",
-    "age": "F20-29",
-    "location": "Buena Vista, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jessica",
-    "lastName": "Kooker",
-    "age": "F30-39",
-    "location": "Golden, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brent",
-    "lastName": "Gordon",
-    "age": "M30-39",
-    "location": "Longmont, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Elizabeth",
-    "lastName": "Query",
-    "age": "F30-39",
-    "location": "Lafayette, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Greg",
-    "lastName": "Misiak",
-    "age": "M30-39",
-    "location": "Brush, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jay",
-    "lastName": "Thomas",
-    "age": "M40-49",
-    "location": "Denver, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

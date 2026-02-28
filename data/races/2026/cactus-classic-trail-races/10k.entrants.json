@@ -19,73 +19,7 @@
     "ageRank": 100,
     "results": 2,
     "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Peter",
-    "lastName": "Ahart",
-    "age": "M40-49",
-    "location": "Lincoln, IL",
-    "rank": 87.8,
-    "ageRank": 90.3,
-    "results": 8,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Jackson",
-    "lastName": "Ahart",
-    "age": "M<20",
-    "location": "Lincoln, IL",
-    "rank": 85.8,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
     "finishes": 0
-  },
-  {
-    "firstName": "Andrew",
-    "lastName": "Cook",
-    "age": "M50-59",
-    "location": "Peoria, IL",
-    "rank": 81.3,
-    "ageRank": 83.6,
-    "results": 3,
-    "bib": "",
-    "finishes": 3
-  },
-  {
-    "firstName": "Marcus",
-    "lastName": "Sondag",
-    "age": "M30-39",
-    "location": "Manito, IL",
-    "rank": 79.7,
-    "ageRank": 95.9,
-    "results": 3,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Ted",
-    "lastName": "Golden",
-    "age": "M40-49",
-    "location": "Pekin, IL",
-    "rank": 71.2,
-    "ageRank": 76.8,
-    "results": 22,
-    "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Bob",
-    "lastName": "Clary",
-    "age": "M60-69",
-    "location": "Bloomington, IL",
-    "rank": 69.5,
-    "ageRank": 100,
-    "results": 3,
-    "bib": "",
-    "finishes": 2
   },
   {
     "firstName": "Simantini",
@@ -99,6 +33,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Peter",
+    "lastName": "Ahart",
+    "age": "M40-49",
+    "location": "Lincoln, IL",
+    "rank": 87.8,
+    "ageRank": 90.3,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kristi",
     "lastName": "Bunn",
     "age": "F40-49",
@@ -107,27 +52,71 @@
     "ageRank": 100,
     "results": 2,
     "bib": "",
-    "finishes": 2
+    "finishes": 0
   },
   {
-    "firstName": "Lupe",
-    "lastName": "Martinez",
-    "age": "M50-59",
-    "location": "Peoria, IL",
-    "rank": 60.7,
-    "ageRank": 73.2,
-    "results": 29,
+    "firstName": "Jackson",
+    "lastName": "Ahart",
+    "age": "M<20",
+    "location": "Lincoln, IL",
+    "rank": 85.8,
+    "ageRank": 100,
+    "results": 1,
     "bib": "",
-    "finishes": 2
+    "finishes": 0
   },
   {
-    "firstName": "Steve",
-    "lastName": "Smith",
+    "firstName": "Hannah",
+    "lastName": "Roberts",
+    "age": "F20-29",
+    "location": "Springfield, IL",
+    "rank": 82.4,
+    "ageRank": 100,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Cook",
     "age": "M50-59",
     "location": "Peoria, IL",
-    "rank": 54.8,
-    "ageRank": 75.7,
-    "results": 8,
+    "rank": 81.3,
+    "ageRank": 83.6,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Marcus",
+    "lastName": "Sondag",
+    "age": "M30-39",
+    "location": "Manito, IL",
+    "rank": 79.7,
+    "ageRank": 95.9,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ted",
+    "lastName": "Golden",
+    "age": "M40-49",
+    "location": "Pekin, IL",
+    "rank": 71.2,
+    "ageRank": 76.8,
+    "results": 22,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Clary",
+    "age": "M60-69",
+    "location": "Bloomington, IL",
+    "rank": 69.5,
+    "ageRank": 100,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -143,15 +132,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Jameson",
-    "lastName": "Erdmann",
-    "age": "M20-29",
+    "firstName": "Lupe",
+    "lastName": "Martinez",
+    "age": "M50-59",
     "location": "Peoria, IL",
-    "rank": 48.8,
-    "ageRank": 90.3,
-    "results": 2,
+    "rank": 60.7,
+    "ageRank": 73.2,
+    "results": 29,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Kristy",
@@ -162,18 +151,7 @@
     "ageRank": 82,
     "results": 2,
     "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Noah",
-    "lastName": "Currie",
-    "age": "M20-29",
-    "location": "Joliet, IL",
-    "rank": 43.9,
-    "ageRank": 60.5,
-    "results": 1,
-    "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Mary",
@@ -184,7 +162,40 @@
     "ageRank": 63.7,
     "results": 1,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
+  },
+  {
+    "firstName": "Steve",
+    "lastName": "Smith",
+    "age": "M50-59",
+    "location": "Peoria, IL",
+    "rank": 54.8,
+    "ageRank": 75.7,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jameson",
+    "lastName": "Erdmann",
+    "age": "M20-29",
+    "location": "Peoria, IL",
+    "rank": 48.8,
+    "ageRank": 90.3,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Currie",
+    "age": "M20-29",
+    "location": "Joliet, IL",
+    "rank": 43.9,
+    "ageRank": 60.5,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Chad",
@@ -195,7 +206,7 @@
     "ageRank": 51.2,
     "results": 7,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Stan",
@@ -206,7 +217,7 @@
     "ageRank": 90.7,
     "results": 17,
     "bib": "",
-    "finishes": 3
+    "finishes": 0
   },
   {
     "firstName": "Cassidy",
@@ -334,6 +345,28 @@
     "lastName": "Esquivel",
     "age": "F20-29",
     "location": "Joliet, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Brady",
+    "lastName": "Sexton",
+    "age": "M20-29",
+    "location": "Peru, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josephine",
+    "lastName": "D’Ambrosio",
+    "age": "F20-29",
+    "location": "Peru, IL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

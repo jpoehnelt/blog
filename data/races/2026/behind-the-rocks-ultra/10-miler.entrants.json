@@ -11,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "John",
+    "lastName": "Quigley",
+    "age": "M60-69",
+    "location": "Charlotte, NC",
+    "rank": 69.1,
+    "ageRank": 74.9,
+    "results": 2,
+    "bib": "3007",
+    "finishes": 0
+  },
+  {
     "firstName": "Morgan",
     "lastName": "Waters",
     "age": "F30-39",
@@ -19,6 +30,17 @@
     "ageRank": 91.2,
     "results": 3,
     "bib": "3002",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Whittaker",
+    "age": "M50-59",
+    "location": "West Valley City, UT",
+    "rank": 67.2,
+    "ageRank": 78.2,
+    "results": 2,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -52,7 +74,7 @@
     "ageRank": 89.2,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Ashlee",
@@ -63,7 +85,7 @@
     "ageRank": 77.8,
     "results": 24,
     "bib": "3004",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Jaime",
@@ -74,7 +96,7 @@
     "ageRank": 79.3,
     "results": 10,
     "bib": "3005",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Lizzie",
@@ -88,17 +110,6 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Quigley",
-    "age": "M60-69",
-    "location": "Charlotte, NC",
-    "rank": 69.1,
-    "ageRank": 74.9,
-    "results": 2,
-    "bib": "3007",
-    "finishes": 0
-  },
-  {
     "firstName": "Ashley",
     "lastName": "Bennett-Walton",
     "age": "F30-39",
@@ -107,17 +118,17 @@
     "ageRank": 72.2,
     "results": 3,
     "bib": "3008",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Bob",
-    "lastName": "Whittaker",
-    "age": "M50-59",
-    "location": "West Valley City, UT",
-    "rank": 67.2,
-    "ageRank": 78.2,
-    "results": 2,
-    "bib": "",
+    "firstName": "Erik",
+    "lastName": "Scherf",
+    "age": "M30-39",
+    "location": "Dolores, CO",
+    "rank": 57.1,
+    "ageRank": 60.5,
+    "results": 20,
+    "bib": "3014",
     "finishes": 0
   },
   {
@@ -143,6 +154,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Travis",
+    "lastName": "Lowry",
+    "age": "M30-39",
+    "location": "BOZEMAN, MT",
+    "rank": 51.3,
+    "ageRank": 54.9,
+    "results": 2,
+    "bib": "3017",
+    "finishes": 0
+  },
+  {
     "firstName": "Tammie",
     "lastName": "Bigley",
     "age": "F50-59",
@@ -162,7 +184,7 @@
     "ageRank": 66.6,
     "results": 24,
     "bib": "3012",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Grace",
@@ -184,17 +206,6 @@
     "ageRank": 78.2,
     "results": 3,
     "bib": "3013",
-    "finishes": 0
-  },
-  {
-    "firstName": "Erik",
-    "lastName": "Scherf",
-    "age": "M30-39",
-    "location": "Dolores, CO",
-    "rank": 57.1,
-    "ageRank": 60.5,
-    "results": 20,
-    "bib": "3014",
     "finishes": 0
   },
   {
@@ -220,17 +231,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Travis",
-    "lastName": "Lowry",
-    "age": "M30-39",
-    "location": "BOZEMAN, MT",
-    "rank": 51.3,
-    "ageRank": 54.9,
-    "results": 2,
-    "bib": "3017",
-    "finishes": 0
-  },
-  {
     "firstName": "Robert",
     "lastName": "Coleman",
     "age": "M60-69",
@@ -239,6 +239,61 @@
     "ageRank": 84.8,
     "results": 5,
     "bib": "3018",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kathleen",
+    "lastName": "Knight",
+    "age": "F30-39",
+    "location": "Rifle, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "3029",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ashleigh",
+    "lastName": "Walker",
+    "age": "F30-39",
+    "location": "Roosevelt, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hank",
+    "lastName": "Fitch",
+    "age": "M30-39",
+    "location": "Arbon, ID",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amelie",
+    "lastName": "Whittaker",
+    "age": "F<20",
+    "location": "West Valley City, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Foster",
+    "age": "F20-29",
+    "location": "Phoenix, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "3023",
     "finishes": 0
   },
   {
@@ -488,50 +543,6 @@
     "lastName": "Reents",
     "age": "F20-29",
     "location": "Springfield, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Hank",
-    "lastName": "Fitch",
-    "age": "M30-39",
-    "location": "Arbon, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Foster",
-    "age": "F20-29",
-    "location": "Phoenix, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "3023",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kathleen",
-    "lastName": "Knight",
-    "age": "F30-39",
-    "location": "Rifle, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "3029",
-    "finishes": 0
-  },
-  {
-    "firstName": "Amelie",
-    "lastName": "Whittaker",
-    "age": "F<20",
-    "location": "West Valley City, UT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
