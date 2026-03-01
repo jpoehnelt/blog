@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ActionLink from "$lib/components/ActionLink.svelte";
+
   interface Props {
     totalRaces: number;
     eliteRunners: number;
@@ -23,7 +25,7 @@
     <span class="text-base">📋</span>
     <span><strong class="text-foreground">{activeWaitlists}</strong> active waitlists</span>
   </div>
-  <a href="/ultras/races" class="ml-4 text-xs font-bold uppercase tracking-wider hover:underline">
+  <ActionLink href="/ultras/races" variant="uppercase" class="ml-4">
     View All →
-  </a>
+  </ActionLink>
 </div>
