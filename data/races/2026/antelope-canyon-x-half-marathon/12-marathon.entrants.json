@@ -110,17 +110,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Albert",
-    "lastName": "Demarco",
-    "age": "M40-49",
-    "location": "Bayfield, CO",
-    "rank": 71.6,
-    "ageRank": 78.4,
-    "results": 7,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Dinesh",
     "lastName": "McCoy",
     "age": "M30-39",
@@ -132,13 +121,24 @@
     "finishes": 1
   },
   {
+    "firstName": "Albert",
+    "lastName": "Demarco",
+    "age": "M40-49",
+    "location": "Bayfield, CO",
+    "rank": 69.3,
+    "ageRank": 75.7,
+    "results": 8,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Samantha",
     "lastName": "Cvetkovski",
     "age": "F30-39",
     "location": "Los Angeles, CA",
     "rank": 81.2,
-    "ageRank": 85.5,
-    "results": 7,
+    "ageRank": 84.9,
+    "results": 8,
     "bib": "",
     "finishes": 0
   },
@@ -183,6 +183,17 @@
     "rank": 78.8,
     "ageRank": 78.8,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hannah",
+    "lastName": "Stoughton",
+    "age": "F30-39",
+    "location": "Park City, UT",
+    "rank": 77.3,
+    "ageRank": 79.5,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -334,9 +345,9 @@
     "lastName": "Demarco",
     "age": "F40-49",
     "location": "Bayfield, CO",
-    "rank": 71.1,
-    "ageRank": 79.3,
-    "results": 10,
+    "rank": 71,
+    "ageRank": 79.1,
+    "results": 11,
     "bib": "",
     "finishes": 1
   },
@@ -792,6 +803,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Rebecca",
+    "lastName": "Flinders",
+    "age": "F40-49",
+    "location": "Bayfield, CO",
+    "rank": 60,
+    "ageRank": 67,
+    "results": 25,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ashlee",
     "lastName": "Flowers",
     "age": "F50-59",
@@ -823,17 +845,6 @@
     "results": 1,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "Rebecca",
-    "lastName": "Flinders",
-    "age": "F40-49",
-    "location": "Bayfield, CO",
-    "rank": 59.6,
-    "ageRank": 66.6,
-    "results": 24,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Andrea",
@@ -1096,17 +1107,6 @@
     "rank": 45.2,
     "ageRank": 62.5,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Hannah",
-    "lastName": "Stoughton",
-    "age": "F30-39",
-    "location": "Park City, UT",
-    "rank": 77.3,
-    "ageRank": 79.5,
-    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -1485,6 +1485,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Nicky",
+    "lastName": "Lane",
+    "age": "M40-49",
+    "location": "AZTEC, NM",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alejandra",
+    "lastName": "Gonzalez",
+    "age": "F30-39",
+    "location": "Watertown, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Zoe",
     "lastName": "Gineris",
     "age": "F20-29",
@@ -1639,6 +1661,50 @@
     "finishes": 0
   },
   {
+    "firstName": "Chelsea",
+    "lastName": "Begay",
+    "age": "F30-39",
+    "location": "Tuba City, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Naiche",
+    "lastName": "Evesole",
+    "age": "M30-39",
+    "location": "Durango, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Yeargin",
+    "age": "M50-59",
+    "location": "Durango, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Candace",
+    "lastName": "Poleyestewa",
+    "age": "F40-49",
+    "location": "Flagstaff, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Douglas",
     "lastName": "Csaszar",
     "age": "M50-59",
@@ -1731,50 +1797,6 @@
     "lastName": "Julnes",
     "age": "M20-29",
     "location": "Manitou Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Yeargin",
-    "age": "M50-59",
-    "location": "Durango, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nicky",
-    "lastName": "Lane",
-    "age": "M40-49",
-    "location": "AZTEC, NM",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alejandra",
-    "lastName": "Gonzalez",
-    "age": "F30-39",
-    "location": "Watertown, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Candace",
-    "lastName": "Poleyestewa",
-    "age": "F40-49",
-    "location": "Flagstaff, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

@@ -11,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Aaron",
+    "lastName": "Dockter",
+    "age": "M20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 75.3,
+    "ageRank": 93,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jessie",
     "lastName": "Dejong",
     "age": "F30-39",
@@ -18,39 +29,6 @@
     "rank": 85.2,
     "ageRank": 85.2,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Regan",
-    "lastName": "Sikes",
-    "age": "F20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 84.1,
-    "ageRank": 88.8,
-    "results": 17,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Laura",
-    "lastName": "Smith",
-    "age": "F40-49",
-    "location": "Port Washington, WI",
-    "rank": 74.8,
-    "ageRank": 76.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Richard",
-    "lastName": "Neufeld",
-    "age": "M40-49",
-    "location": "Littleton, CO",
-    "rank": 72.9,
-    "ageRank": 84.5,
-    "results": 11,
     "bib": "",
     "finishes": 0
   },
@@ -75,6 +53,28 @@
     "results": 72,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Richard",
+    "lastName": "Neufeld",
+    "age": "M40-49",
+    "location": "Littleton, CO",
+    "rank": 72.1,
+    "ageRank": 83.8,
+    "results": 12,
+    "bib": "",
+    "finishes": 3
+  },
+  {
+    "firstName": "Regan",
+    "lastName": "Sikes",
+    "age": "F20-29",
+    "location": "Colorado Springs, CO",
+    "rank": 84.1,
+    "ageRank": 88.8,
+    "results": 17,
+    "bib": "",
+    "finishes": 2
   },
   {
     "firstName": "Brandon",
@@ -106,17 +106,6 @@
     "rank": 68,
     "ageRank": 83.4,
     "results": 14,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Summer",
-    "lastName": "Owsley",
-    "age": "F30-39",
-    "location": "Pittsburgh, PA",
-    "rank": 67.9,
-    "ageRank": 69.5,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -165,24 +154,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Jacqueline",
-    "lastName": "Villarreal",
+    "firstName": "Laura",
+    "lastName": "Smith",
     "age": "F40-49",
-    "location": "Pharr, TX",
-    "rank": 62.3,
-    "ageRank": 67.8,
+    "location": "Port Washington, WI",
+    "rank": 74.8,
+    "ageRank": 76.3,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Wyna",
-    "lastName": "Todd",
-    "age": "F50-59",
-    "location": "Pueblo, CO",
-    "rank": 57.5,
-    "ageRank": 84.3,
-    "results": 7,
+    "firstName": "Summer",
+    "lastName": "Owsley",
+    "age": "F30-39",
+    "location": "Pittsburgh, PA",
+    "rank": 67.9,
+    "ageRank": 69.5,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -228,7 +217,7 @@
     "ageRank": 63.9,
     "results": 14,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Tony",
@@ -242,6 +231,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Jacqueline",
+    "lastName": "Villarreal",
+    "age": "F40-49",
+    "location": "Pharr, TX",
+    "rank": 62.3,
+    "ageRank": 67.8,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Wyna",
+    "lastName": "Todd",
+    "age": "F50-59",
+    "location": "Pueblo, CO",
+    "rank": 57.5,
+    "ageRank": 84.3,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kathy",
     "lastName": "Powell",
     "age": "F60-69",
@@ -249,17 +260,6 @@
     "rank": 52,
     "ageRank": 71.8,
     "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Emma",
-    "lastName": "Gordon",
-    "age": "F30-39",
-    "location": "Santa Fe, NM",
-    "rank": 44.2,
-    "ageRank": 44.2,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -297,46 +297,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Aubrey",
-    "lastName": "Condor",
+    "firstName": "Emma",
+    "lastName": "Gordon",
     "age": "F30-39",
-    "location": "Charlotte, NC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Borland",
-    "age": "M30-39",
-    "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Josh",
-    "lastName": "Anderson",
-    "age": "M20-29",
-    "location": "San Diego, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Betsy",
-    "lastName": "Davila",
-    "age": "F40-49",
-    "location": "Rifle, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
+    "location": "Santa Fe, NM",
+    "rank": 44.2,
+    "ageRank": 44.2,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -510,6 +477,50 @@
     "lastName": "Burns",
     "age": "F20-29",
     "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Aubrey",
+    "lastName": "Condor",
+    "age": "F30-39",
+    "location": "Charlotte, NC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Borland",
+    "age": "M30-39",
+    "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Anderson",
+    "age": "M20-29",
+    "location": "San Diego, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Betsy",
+    "lastName": "Davila",
+    "age": "F40-49",
+    "location": "Rifle, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

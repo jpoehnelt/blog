@@ -165,6 +165,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Fred",
+    "lastName": "Kile",
+    "age": "M70+",
+    "location": "Davis, IL",
+    "rank": 75.4,
+    "ageRank": 94.1,
+    "results": 17,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ed",
     "lastName": "Scheer",
     "age": "M50-59",
@@ -253,17 +264,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Steven",
-    "lastName": "Frankel",
-    "age": "M50-59",
-    "location": "Aurora, IL",
-    "rank": 69.2,
-    "ageRank": 76.9,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ryan",
     "lastName": "Braner",
     "age": "M40-49",
@@ -273,6 +273,17 @@
     "results": 1,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Steven",
+    "lastName": "Frankel",
+    "age": "M50-59",
+    "location": "Aurora, IL",
+    "rank": 69.2,
+    "ageRank": 76.9,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Martin",
@@ -506,6 +517,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Alex",
+    "lastName": "Wood",
+    "age": "M30-39",
+    "location": "St. Charles, IL",
+    "rank": 57.4,
+    "ageRank": 57.6,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Joshua",
     "lastName": "Meacham",
     "age": "M40-49",
@@ -737,39 +759,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Michle",
-    "lastName": "Walker",
-    "age": "F50-59",
-    "location": "Winnebago, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Adam",
-    "lastName": "Giganti",
-    "age": "M40-49",
-    "location": "Joliet, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ryan",
-    "lastName": "Glassman",
-    "age": "M40-49",
-    "location": "Plainfield, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Julia",
     "lastName": "Adams",
     "age": "F40-49",
@@ -829,6 +818,39 @@
     "lastName": "Wasmund",
     "age": "F<20",
     "location": "Elizabeth, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michle",
+    "lastName": "Walker",
+    "age": "F50-59",
+    "location": "Winnebago, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Adam",
+    "lastName": "Giganti",
+    "age": "M40-49",
+    "location": "Joliet, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Glassman",
+    "age": "M40-49",
+    "location": "Plainfield, IL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
