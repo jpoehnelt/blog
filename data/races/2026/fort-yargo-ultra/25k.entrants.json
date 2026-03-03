@@ -121,17 +121,6 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Frierson",
-    "age": "M50-59",
-    "location": "Athens, GA",
-    "rank": 60.9,
-    "ageRank": 73.8,
-    "results": 2,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Molly",
     "lastName": "Peterson",
     "age": "F50-59",
@@ -141,6 +130,17 @@
     "results": 8,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "John",
+    "lastName": "Frierson",
+    "age": "M50-59",
+    "location": "Athens, GA",
+    "rank": 60.1,
+    "ageRank": 74.2,
+    "results": 3,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Robert",
@@ -257,6 +257,17 @@
     "lastName": "Sanders",
     "age": "M40-49",
     "location": "Monroe, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jake",
+    "lastName": "McClure",
+    "age": "M30-39",
+    "location": "Statham, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

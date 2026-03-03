@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Gwenaelle",
-    "lastName": "Begue",
-    "age": "F40-49",
-    "location": "Sacramento, CA",
-    "rank": 92.4,
-    "ageRank": 94,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Daniel",
     "lastName": "Cervantes",
     "age": "M30-39",
@@ -19,16 +8,16 @@
     "ageRank": 100,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Amanda",
-    "lastName": "Morris",
-    "age": "F30-39",
-    "location": "Fair oaks, CA",
-    "rank": 77.1,
-    "ageRank": 87.5,
-    "results": 2,
+    "firstName": "Gwenaelle",
+    "lastName": "Begue",
+    "age": "F40-49",
+    "location": "Sacramento, CA",
+    "rank": 92.4,
+    "ageRank": 94,
+    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -63,29 +52,7 @@
     "ageRank": 86.8,
     "results": 4,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Amber",
-    "lastName": "Riley",
-    "age": "F30-39",
-    "location": "Chico, CA",
-    "rank": 72.2,
-    "ageRank": 72.2,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brenna",
-    "lastName": "Ballestero-Toth",
-    "age": "F40-49",
-    "location": "Fair Oaks, CA",
-    "rank": 72,
-    "ageRank": 84.5,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Richard",
@@ -96,7 +63,7 @@
     "ageRank": 95.6,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Christopher",
@@ -107,27 +74,16 @@
     "ageRank": 70.2,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Sonni",
-    "lastName": "Schafer",
-    "age": "F30-39",
-    "location": "Reno, NV",
-    "rank": 68.8,
-    "ageRank": 84.2,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dawn",
-    "lastName": "Abney",
-    "age": "F40-49",
-    "location": "Reno, NV",
-    "rank": 68.1,
-    "ageRank": 76.2,
-    "results": 20,
+    "firstName": "Eric",
+    "lastName": "Richard",
+    "age": "M30-39",
+    "location": "Rocklin, CA",
+    "rank": 68.5,
+    "ageRank": 69.6,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -140,7 +96,7 @@
     "ageRank": 85.7,
     "results": 3,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "John",
@@ -162,29 +118,7 @@
     "ageRank": 88,
     "results": 4,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Amy",
-    "lastName": "Weatherford Smith",
-    "age": "F40-49",
-    "location": "Sacramento, CA",
-    "rank": 66.3,
-    "ageRank": 72.3,
-    "results": 10,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Daniela",
-    "lastName": "Sadorf",
-    "age": "F30-39",
-    "location": "San Leandro, CA",
-    "rank": 65.9,
-    "ageRank": 67.1,
-    "results": 14,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Quincy",
@@ -195,16 +129,16 @@
     "ageRank": 79.9,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
-    "firstName": "Angela",
-    "lastName": "Dewitt",
-    "age": "F40-49",
-    "location": "BOONVILLE, CA",
-    "rank": 65.1,
-    "ageRank": 69.6,
-    "results": 1,
+    "firstName": "Amanda",
+    "lastName": "Morris",
+    "age": "F30-39",
+    "location": "Fair oaks, CA",
+    "rank": 77.1,
+    "ageRank": 87.5,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -231,15 +165,37 @@
     "finishes": 0
   },
   {
-    "firstName": "Rachel",
-    "lastName": "Barrington",
+    "firstName": "Amber",
+    "lastName": "Riley",
     "age": "F30-39",
-    "location": "Rocklin, CA",
-    "rank": 60.8,
-    "ageRank": 64.9,
-    "results": 20,
+    "location": "Chico, CA",
+    "rank": 72.2,
+    "ageRank": 72.2,
+    "results": 3,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Brenna",
+    "lastName": "Ballestero-Toth",
+    "age": "F40-49",
+    "location": "Fair Oaks, CA",
+    "rank": 72,
+    "ageRank": 84.5,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Sonni",
+    "lastName": "Schafer",
+    "age": "F30-39",
+    "location": "Reno, NV",
+    "rank": 68.8,
+    "ageRank": 84.2,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Garrison",
@@ -253,13 +209,35 @@
     "finishes": 0
   },
   {
-    "firstName": "Christian",
-    "lastName": "Knox",
-    "age": "F50-59",
-    "location": "Galt, CA",
-    "rank": 56.3,
-    "ageRank": 62.1,
+    "firstName": "Dawn",
+    "lastName": "Abney",
+    "age": "F40-49",
+    "location": "Reno, NV",
+    "rank": 68.1,
+    "ageRank": 76.2,
+    "results": 20,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Amy",
+    "lastName": "Weatherford Smith",
+    "age": "F40-49",
+    "location": "Sacramento, CA",
+    "rank": 66.3,
+    "ageRank": 72.3,
     "results": 10,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Daniela",
+    "lastName": "Sadorf",
+    "age": "F30-39",
+    "location": "San Leandro, CA",
+    "rank": 65.9,
+    "ageRank": 67.1,
+    "results": 14,
     "bib": "",
     "finishes": 0
   },
@@ -275,15 +253,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Cindy",
-    "lastName": "Pawlowski",
-    "age": "F60-69",
-    "location": "Nevada City, CA",
-    "rank": 52.2,
-    "ageRank": 61.5,
-    "results": 3,
+    "firstName": "Rachel",
+    "lastName": "Barrington",
+    "age": "F30-39",
+    "location": "Rocklin, CA",
+    "rank": 60.8,
+    "ageRank": 64.9,
+    "results": 20,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Michael",
@@ -293,6 +271,28 @@
     "rank": 50,
     "ageRank": 51.4,
     "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Christian",
+    "lastName": "Knox",
+    "age": "F50-59",
+    "location": "Galt, CA",
+    "rank": 56.3,
+    "ageRank": 62.1,
+    "results": 10,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Cindy",
+    "lastName": "Pawlowski",
+    "age": "F60-69",
+    "location": "Nevada City, CA",
+    "rank": 52.2,
+    "ageRank": 61.5,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -444,6 +444,17 @@
     "lastName": "Legge",
     "age": "M40-49",
     "location": "Nevada City, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hali",
+    "lastName": "Wilcox",
+    "age": "F30-39",
+    "location": "Manteca, CA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

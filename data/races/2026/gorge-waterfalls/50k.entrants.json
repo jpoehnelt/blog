@@ -81,9 +81,9 @@
     "lastName": "Kowalczyk",
     "age": "F30-39",
     "location": "Nederland, CO",
-    "rank": 96.3,
-    "ageRank": 97.2,
-    "results": 14,
+    "rank": 96.4,
+    "ageRank": 97.3,
+    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -1012,17 +1012,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Chelsea",
-    "lastName": "Olson",
-    "age": "F30-39",
-    "location": "vancouver, WA",
-    "rank": 78.6,
-    "ageRank": 81.2,
-    "results": 64,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Bradley",
     "lastName": "Mrozinski",
     "age": "M30-39",
@@ -1030,6 +1019,17 @@
     "rank": 78.6,
     "ageRank": 91.3,
     "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chelsea",
+    "lastName": "Olson",
+    "age": "F30-39",
+    "location": "vancouver, WA",
+    "rank": 78.5,
+    "ageRank": 81.4,
+    "results": 65,
     "bib": "",
     "finishes": 0
   },
@@ -2728,6 +2728,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jason",
+    "lastName": "Graebner",
+    "age": "M40-49",
+    "location": "Covington, WA",
+    "rank": 63,
+    "ageRank": 66,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Lindsay",
     "lastName": "Britton",
     "age": "F30-39",
@@ -3014,6 +3025,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Matthew",
+    "lastName": "Hempel",
+    "age": "M30-39",
+    "location": "Phoenix, AZ",
+    "rank": 59.7,
+    "ageRank": 64.3,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Michael",
     "lastName": "Goria",
     "age": "M40-49",
@@ -3175,17 +3197,6 @@
     "rank": 58.2,
     "ageRank": 59.9,
     "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Anne",
-    "lastName": "Gilliland",
-    "age": "F30-39",
-    "location": "New York, NY",
-    "rank": 58.2,
-    "ageRank": 62.7,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -3938,10 +3949,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Catherine",
-    "lastName": "Miney",
-    "age": "F30-39",
-    "location": "Salt Lake City, UT",
+    "firstName": "Svyatoslav",
+    "lastName": "Bilochenko",
+    "age": "M20-29",
+    "location": "San Francisco, CA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -3949,10 +3960,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Svyatoslav",
-    "lastName": "Bilochenko",
-    "age": "M20-29",
-    "location": "San Francisco, CA",
+    "firstName": "Catherine",
+    "lastName": "Miney",
+    "age": "F30-39",
+    "location": "Salt Lake City, UT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4477,39 +4488,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Danika",
-    "lastName": "Brandvold",
-    "age": "F30-39",
-    "location": "Rossland, BC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Claire",
-    "lastName": "McCarthy",
-    "age": "F20-29",
-    "location": "Tacoma, WA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Will",
-    "lastName": "T",
-    "age": "M30-39",
-    "location": "California, AL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Joshua",
     "lastName": "Martin",
     "age": "M40-49",
@@ -4624,6 +4602,50 @@
     "lastName": "Graham",
     "age": "M20-29",
     "location": "Salem, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Danika",
+    "lastName": "Brandvold",
+    "age": "F30-39",
+    "location": "Rossland, BC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Caroline",
+    "lastName": "Harris",
+    "age": "F20-29",
+    "location": "Bend, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Claire",
+    "lastName": "McCarthy",
+    "age": "F20-29",
+    "location": "Tacoma, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Will",
+    "lastName": "T",
+    "age": "M30-39",
+    "location": "California, AL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4818,10 +4840,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Caroline",
-    "lastName": "Harris",
-    "age": "F20-29",
-    "location": "Bend, OR",
+    "firstName": "Sergio",
+    "lastName": "Martinez",
+    "age": "M30-39",
+    "location": "PORTLAND, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4833,17 +4855,6 @@
     "lastName": "Yang",
     "age": "M30-39",
     "location": "San Francisco, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sergio",
-    "lastName": "Martinez",
-    "age": "M30-39",
-    "location": "PORTLAND, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
