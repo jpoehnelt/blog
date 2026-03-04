@@ -178,7 +178,7 @@ These controls made tuning easy:
 
 ## Takeaways
 
-If you are wiring webhooks to agents, treat this as a distributed-systems problem, not just an integration task.
+If you are wiring webhooks to agents, treat this as a distributed-system problem, not just an integration task.
 
 The pattern that worked for me:
 
