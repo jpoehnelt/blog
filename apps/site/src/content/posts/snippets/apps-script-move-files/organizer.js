@@ -15,12 +15,17 @@ function organizeFolder(sourceFolderId) {
     'Other': getOrCreateSubfolder(folder, 'Other')
   };
 
-  // Process files
+  // Collect all files into an array first to avoid modifying the iterator
+  // while it is still in use (moving a file out of the folder can cause the
+  // FileIterator to skip remaining items).
   const files = folder.getFiles();
-  let moved = 0;
-
+  const fileList = [];
   while (files.hasNext()) {
-    const file = files.next();
+    fileList.push(files.next());
+  }
+
+  let moved = 0;
+  for (const file of fileList) {
     const mimeType = file.getMimeType();
     let targetFolder;
 

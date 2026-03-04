@@ -11,22 +11,21 @@ function refreshTableOfContents(docId) {
       const startIndex = element.startIndex;
       const endIndex = element.endIndex;
 
-      // Delete the existing TOC
+      // Combine delete + insert into a single atomic batchUpdate so both
+      // operations succeed or fail together and only one API round-trip is made.
       Docs.Documents.batchUpdate({
-        requests: [{
-          deleteContentRange: {
-            range: { startIndex, endIndex }
+        requests: [
+          {
+            deleteContentRange: {
+              range: { startIndex, endIndex }
+            }
+          },
+          {
+            insertTableOfContents: {
+              location: { index: startIndex }
+            }
           }
-        }]
-      }, docId);
-
-      // Insert a new TOC at the same position
-      Docs.Documents.batchUpdate({
-        requests: [{
-          insertTableOfContents: {
-            location: { index: startIndex }
-          }
-        }]
+        ]
       }, docId);
 
       Logger.log('Table of Contents refreshed');

@@ -6,8 +6,9 @@
  * @param {number} numCols - Number of columns
  */
 function removeTableBorders(docId, tableStartIndex, numRows, numCols) {
+  // Set border width to 0 to truly remove it. Setting color to white is not
+  // robust — the border remains visible on non-white backgrounds.
   const noBorder = {
-    color: { color: { rgbColor: { red: 1, green: 1, blue: 1 } } },
     width: { magnitude: 0, unit: 'PT' }
   };
 

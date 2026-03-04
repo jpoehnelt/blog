@@ -6,6 +6,8 @@
  * @param {boolean} checked - Whether to check or uncheck
  */
 function setCheckboxState(docId, paragraphStart, paragraphEnd, checked) {
+  // Use `checkedListItem` in paragraphStyle to toggle the checkbox state.
+  // Setting fields to 'checkedListItem' ensures only that property is updated.
   Docs.Documents.batchUpdate({
     requests: [{
       updateParagraphStyle: {
@@ -14,34 +16,46 @@ function setCheckboxState(docId, paragraphStart, paragraphEnd, checked) {
           endIndex: paragraphEnd
         },
         paragraphStyle: {
-          // Note: This requires the paragraph to already be a checkbox list
-          // The effect is marking the checkbox as checked/unchecked
+          checkedListItem: checked
         },
-        fields: '*'
+        fields: 'checkedListItem'
       }
     }]
   }, docId);
 }
 
 /**
- * Finds all checkbox list items and logs their status.
+ * Finds all checkbox list items in the active document and logs their status.
  */
 function findCheckboxItems() {
   const docId = DocumentApp.getActiveDocument().getId();
   const doc = Docs.Documents.get(docId);
+  const lists = doc.lists || {};
+
+  // Unicode glyphs used by the Docs checkbox list preset.
+  const CHECKBOX_UNCHECKED = '\u2610'; // ☐
+  const CHECKBOX_CHECKED   = '\u2611'; // ☑
 
   for (const element of doc.body.content) {
-    if (element.paragraph && element.paragraph.bullet) {
-      const bullet = element.paragraph.bullet;
-      const text = element.paragraph.elements
-        ?.map(e => e.textRun?.content || '')
-        .join('')
-        .trim();
+    if (!element.paragraph?.bullet) continue;
 
-      // Check if it's a checkbox by examining the list properties
-      if (bullet.listId) {
-        Logger.log(`Found bullet item: "${text}"`);
-      }
+    const bullet = element.paragraph.bullet;
+    const nestingLevel = bullet.nestingLevel || 0;
+    const nestingLevelProps =
+      lists[bullet.listId]?.listProperties?.nestingLevels?.[nestingLevel];
+    const glyphSymbol = nestingLevelProps?.glyphSymbol;
+
+    // Only process paragraphs whose list uses a checkbox glyph.
+    if (glyphSymbol !== CHECKBOX_UNCHECKED && glyphSymbol !== CHECKBOX_CHECKED) {
+      continue;
     }
+
+    const text = element.paragraph.elements
+      ?.map(e => e.textRun?.content || '')
+      .join('')
+      .trim();
+
+    const isChecked = element.paragraph.paragraphStyle?.checkedListItem === true;
+    Logger.log(`Checkbox: "${text}" — ${isChecked ? 'checked' : 'unchecked'}`);
   }
 }

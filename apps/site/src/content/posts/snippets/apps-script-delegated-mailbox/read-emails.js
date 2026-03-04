@@ -14,6 +14,9 @@ function getEmailsFromSharedMailbox(sharedEmail, maxResults = 10) {
     return [];
   }
 
+  // Note: this fetches one message detail per iteration (N+1 pattern).
+  // For better performance with large inboxes, use the Gmail batch endpoint
+  // (/batch/gmail/v1) to retrieve all message details in a single request.
   return messages.messages.map(msg => {
     const full = gmailApiRequest(sharedEmail, `messages/${msg.id}`, {
       format: 'metadata',
