@@ -1,6 +1,6 @@
 ---
 title: "You Need to Rewrite Your CLI for AI Agents"
-description: "Human DX optimizes for discoverability and forgiveness. Agent DX optimizes for predictability and defense-in-depth. Here's what I learned building a CLI for agents first."
+description: "Human DX optimizes for discoverability. Agent DX optimizes for predictability. What I learned building a CLI for agents first."
 pubDate: "2026-03-04"
 tags:
   - ai
@@ -11,6 +11,8 @@ tags:
   - code
   - security
   - agents
+  - openclaw
+  - google
 ---
 
 <script>
