@@ -1,0 +1,235 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Indoor Cycling",
+  "distance": 5820.3,
+  "moving_time": 902,
+  "elapsed_time": 902,
+  "total_elevation_gain": 0,
+  "type": "Ride",
+  "sport_type": "Ride",
+  "workout_type": null,
+  "device_name": "Wahoo",
+  "id": 17595944590,
+  "start_date": "2026-03-04T02:17:44Z",
+  "start_date_local": "2026-03-03T19:17:44Z",
+  "timezone": "(GMT-07:00) America/Boise",
+  "utc_offset": -25200,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a17595944590",
+    "polyline": "",
+    "resource_state": 3,
+    "summary_polyline": ""
+  },
+  "trainer": true,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [],
+  "end_latlng": [],
+  "average_speed": 6.453,
+  "max_speed": 8.72,
+  "average_cadence": 83.7,
+  "average_watts": 120.5,
+  "max_watts": 196,
+  "weighted_average_watts": 126,
+  "device_watts": true,
+  "kilojoules": 109.1,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "elev_high": 0,
+  "elev_low": 0,
+  "upload_id": 18693846842,
+  "upload_id_str": "18693846842",
+  "external_id": "2026-03-04-021744-WAHOOAPPDROID46B6-6-020260303-7149-2b2vbr.fit",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "description": "",
+  "calories": 109,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 1005.5,
+      "elapsed_time": 172,
+      "elevation_difference": 0,
+      "moving_time": 172,
+      "split": 1,
+      "average_speed": 5.85,
+      "average_grade_adjusted_speed": 5.85,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 173,
+      "elevation_difference": 0,
+      "moving_time": 173,
+      "split": 2,
+      "average_speed": 5.78,
+      "average_grade_adjusted_speed": 5.78,
+      "pace_zone": 0
+    },
+    {
+      "distance": 997.5,
+      "elapsed_time": 150,
+      "elevation_difference": 0,
+      "moving_time": 150,
+      "split": 3,
+      "average_speed": 6.65,
+      "average_grade_adjusted_speed": 6.65,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1002,
+      "elapsed_time": 154,
+      "elevation_difference": 0,
+      "moving_time": 154,
+      "split": 4,
+      "average_speed": 6.51,
+      "average_grade_adjusted_speed": 6.51,
+      "pace_zone": 0
+    },
+    {
+      "distance": 995.8,
+      "elapsed_time": 138,
+      "elevation_difference": 0,
+      "moving_time": 138,
+      "split": 5,
+      "average_speed": 7.22,
+      "average_grade_adjusted_speed": 7.22,
+      "pace_zone": 0
+    },
+    {
+      "distance": 819.6,
+      "elapsed_time": 115,
+      "elevation_difference": 0,
+      "moving_time": 115,
+      "split": 6,
+      "average_speed": 7.13,
+      "average_grade_adjusted_speed": 7.13,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1614.1,
+      "elapsed_time": 281,
+      "elevation_difference": 0,
+      "moving_time": 281,
+      "split": 1,
+      "average_speed": 5.74,
+      "average_grade_adjusted_speed": 5.74,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1610.6,
+      "elapsed_time": 248,
+      "elevation_difference": 0,
+      "moving_time": 248,
+      "split": 2,
+      "average_speed": 6.49,
+      "average_grade_adjusted_speed": 6.49,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.3,
+      "elapsed_time": 233,
+      "elevation_difference": 0,
+      "moving_time": 233,
+      "split": 3,
+      "average_speed": 6.9,
+      "average_grade_adjusted_speed": 6.9,
+      "pace_zone": 0
+    },
+    {
+      "distance": 987.3,
+      "elapsed_time": 140,
+      "elevation_difference": 0,
+      "moving_time": 140,
+      "split": 4,
+      "average_speed": 7.05,
+      "average_grade_adjusted_speed": 7.05,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 62890088204,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 17595944590,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 903,
+      "moving_time": 903,
+      "start_date": "2026-03-04T02:17:44Z",
+      "start_date_local": "2026-03-03T19:17:44Z",
+      "distance": 5831.19,
+      "average_speed": 6.46,
+      "max_speed": 8.72,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 902,
+      "total_elevation_gain": 0,
+      "average_cadence": 83.7,
+      "device_watts": true,
+      "average_watts": 120.5
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "8201eac36f7df4a78410c015155dfb08c6ac5b73",
+  "available_zones": [
+    "power"
+  ]
+}

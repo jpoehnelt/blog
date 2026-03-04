@@ -121,6 +121,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Garren",
+    "lastName": "Hill",
+    "age": "M50-59",
+    "location": "North Richland Hills, TX",
+    "rank": 73.9,
+    "ageRank": 86.8,
+    "results": 70,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "John",
     "lastName": "Stasulli",
     "age": "M50-59",
@@ -128,6 +139,17 @@
     "rank": 73.3,
     "ageRank": 80.4,
     "results": 32,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ben",
+    "lastName": "Shearer",
+    "age": "M30-39",
+    "location": "Durant, OK",
+    "rank": 72.6,
+    "ageRank": 79,
+    "results": 12,
     "bib": "",
     "finishes": 0
   },
@@ -183,6 +205,17 @@
     "rank": 69,
     "ageRank": 89.4,
     "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tj",
+    "lastName": "Clowdus",
+    "age": "M30-39",
+    "location": "Duncanville, TX",
+    "rank": 68.7,
+    "ageRank": 66.8,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -339,6 +372,17 @@
     "results": 1,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Thomas",
+    "lastName": "Okazaki",
+    "age": "M60-69",
+    "location": "Southlake, TX",
+    "rank": 61.2,
+    "ageRank": 73.2,
+    "results": 54,
+    "bib": "",
+    "finishes": 2
   },
   {
     "firstName": "Elise",
@@ -792,39 +836,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Cristopher",
-    "lastName": "McCarty",
-    "age": "M30-39",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Saul",
-    "lastName": "Calixto",
-    "age": "M20-29",
-    "location": "Lewisville, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Webber",
-    "age": "M40-49",
-    "location": "Waxahachie, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Aidan",
     "lastName": "Hutchins",
     "age": "M20-29",
@@ -928,6 +939,50 @@
     "lastName": "Earlman",
     "age": "M20-29",
     "location": "Weatherford, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Cristopher",
+    "lastName": "McCarty",
+    "age": "M30-39",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Saul",
+    "lastName": "Calixto",
+    "age": "M20-29",
+    "location": "Lewisville, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Webber",
+    "age": "M40-49",
+    "location": "Waxahachie, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mathew",
+    "lastName": "Kuzhippil",
+    "age": "M<20",
+    "location": "Frisco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
