@@ -8,6 +8,9 @@ exports_files([
     "tsconfig.base.json",
     "package.json",
     "pnpm-lock.yaml",
+    # Exported so package BUILD.bazel files that reference the workspace
+    # definition can declare it as an explicit dependency.
+    "pnpm-workspace.yaml",
 ])
 
 js_library(

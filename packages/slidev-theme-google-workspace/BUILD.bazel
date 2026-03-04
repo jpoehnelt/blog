@@ -3,6 +3,8 @@ load("@aspect_rules_js//npm:defs.bzl", "npm_package")
 
 npm_link_all_packages(name = "node_modules")
 
+exports_files(["package.json"])
+
 # Slidev theme is consumed as-is (no build step), just package it
 npm_package(
     name = "pkg",

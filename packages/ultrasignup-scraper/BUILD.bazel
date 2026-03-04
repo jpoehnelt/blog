@@ -6,27 +6,26 @@ load("@npm//packages/ultrasignup-scraper:vitest/package_json.bzl", vitest_bin = 
 
 npm_link_all_packages(name = "node_modules")
 
+exports_files(["package.json"])
+
 # tsup binary from npm
 tsup_bin.tsup_binary(
     name = "tsup_bin",
 )
 
-# Build with tsup (replaces `pnpm build` which runs tsup)
-# Note: --dts is omitted because tsup's DTS generation needs the full type
-# dependency graph in the sandbox. Run `pnpm build` directly if you need .d.ts files.
+# Build with tsup using tsup.config.ts so entry points are defined in one place.
+# Note: --dts is omitted from the config; tsup's DTS generation needs the full
+# type dependency graph in the sandbox. Run `pnpm build` directly for .d.ts output.
 js_run_binary(
     name = "build",
     srcs = glob(["src/**/*.ts"]) + [
         "package.json",
         "tsconfig.json",
+        "tsup.config.ts",
     ],
     args = [
-        "src/cli.ts",
-        "src/index.ts",
-        "src/types.ts",
-        "src/enrichment.ts",
-        "--format",
-        "esm,cjs",
+        "--config",
+        "tsup.config.ts",
     ],
     out_dirs = ["dist"],
     tool = ":tsup_bin",

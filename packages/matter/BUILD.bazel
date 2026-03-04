@@ -5,6 +5,8 @@ load("@npm//packages/matter:vitest/package_json.bzl", vitest_bin = "bin")
 
 npm_link_all_packages(name = "node_modules")
 
+exports_files(["package.json"])
+
 ts_project(
     name = "ts",
     srcs = glob(

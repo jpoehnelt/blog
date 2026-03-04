@@ -6,6 +6,8 @@ load("@npm//packages/data-automation:vitest/package_json.bzl", vitest_bin = "bin
 
 npm_link_all_packages(name = "node_modules")
 
+exports_files(["package.json"])
+
 tsx_bin.tsx_binary(
     name = "tsx_bin",
 )
