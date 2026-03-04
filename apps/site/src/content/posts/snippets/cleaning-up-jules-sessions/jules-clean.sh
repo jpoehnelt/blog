@@ -8,70 +8,52 @@ DAYS_OLD=5
 THRESHOLD_DATE=$(date -u -d "$DAYS_OLD days ago" +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || \
                  date -u -v-"$DAYS_OLD"d +"%Y-%m-%dT%H:%M:%SZ")
 
-if [ -z "$JULES_API_KEY" ]; then
-    echo "Error: JULES_API_KEY environment variable is not set."
+# Use [[ ]] for tests throughout; redirect error messages to stderr.
+if [[ -z "$JULES_API_KEY" ]]; then
+    echo "Error: JULES_API_KEY environment variable is not set." >&2
     exit 1
 fi
 
 echo "Searching for sessions created before $THRESHOLD_DATE..."
 
 NEXT_PAGE_TOKEN=""
-SESSIONS_TO_DELETE=""
+DELETED=0
+FAILED=0
 
-# Loop to fetch all pages
+# Fetch all pages and process (delete) sessions inline — avoids accumulating
+# an unbounded list in memory before starting deletes.
 while : ; do
     URL="$API_BASE/sessions?pageSize=100"
-    if [ -n "$NEXT_PAGE_TOKEN" ]; then
+    if [[ -n "$NEXT_PAGE_TOKEN" ]]; then
         URL="$URL&pageToken=$NEXT_PAGE_TOKEN"
     fi
 
     RESPONSE_JSON=$(curl -s -H "x-goog-api-key: $JULES_API_KEY" "$URL")
 
-    # Extract sessions to delete from the current page
-    PAGE_SESSIONS=$(echo "$RESPONSE_JSON" | jq -r --arg date "$THRESHOLD_DATE" \
-        '.sessions[]? | select(.createTime < $date) | .name')
+    # Process sessions from this page immediately instead of accumulating them.
+    while IFS= read -r SESSION_NAME; do
+        [[ -z "$SESSION_NAME" ]] && continue
 
-    if [ -n "$PAGE_SESSIONS" ]; then
-        if [ -n "$SESSIONS_TO_DELETE" ]; then
-            SESSIONS_TO_DELETE="$SESSIONS_TO_DELETE
-$PAGE_SESSIONS"
+        echo "Deleting $SESSION_NAME..."
+
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X DELETE \
+            -H "x-goog-api-key: $JULES_API_KEY" \
+            "$API_BASE/$SESSION_NAME")
+
+        if [[ "$HTTP_CODE" == "200" || "$HTTP_CODE" == "204" ]]; then
+            echo "Successfully deleted $SESSION_NAME."
+            ((DELETED++))
         else
-            SESSIONS_TO_DELETE="$PAGE_SESSIONS"
+            echo "Failed to delete $SESSION_NAME (HTTP $HTTP_CODE)." >&2
+            ((FAILED++))
         fi
-    fi
+    done < <(echo "$RESPONSE_JSON" | jq -r --arg date "$THRESHOLD_DATE" \
+        '.sessions[]? | select(.createTime < $date) | .name')
 
     # Check for next page token
     NEXT_PAGE_TOKEN=$(echo "$RESPONSE_JSON" | jq -r '.nextPageToken // empty')
 
-    if [ -z "$NEXT_PAGE_TOKEN" ]; then
-        break
-    fi
+    [[ -z "$NEXT_PAGE_TOKEN" ]] && break
 done
 
-if [ -z "$SESSIONS_TO_DELETE" ]; then
-    echo "No sessions older than $DAYS_OLD days found."
-    exit 0
-fi
-
-# Iterate and delete using while read for safety
-echo "$SESSIONS_TO_DELETE" | while IFS= read -r SESSION_NAME; do
-    if [ -z "$SESSION_NAME" ]; then
-        continue
-    fi
-
-    echo "Deleting $SESSION_NAME..."
-
-    # The API expects: DELETE /v1alpha/{session_name}
-    # where session_name is "sessions/12345"
-    RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X DELETE \
-        -H "x-goog-api-key: $JULES_API_KEY" \
-        "$API_BASE/$SESSION_NAME")
-
-    if [ "$RESPONSE" == "200" ] || [ "$RESPONSE" == "204" ]; then
-        echo "Successfully deleted $SESSION_NAME."
-    else
-        echo "Failed to delete $SESSION_NAME (HTTP $RESPONSE)."
-    fi
-done
-
-echo "Done."
+echo "Done. Deleted: $DELETED, Failed: $FAILED."
