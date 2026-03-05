@@ -11,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Sam",
+    "lastName": "Kuhn",
+    "age": "M40-49",
+    "location": "Auburn, AL",
+    "rank": 89.6,
+    "ageRank": 93.5,
+    "results": 18,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ronald",
     "lastName": "Robinette",
     "age": "M30-39",
@@ -363,17 +374,6 @@
     "finishes": 0
   },
   {
-    "firstName": "John",
-    "lastName": "Furey",
-    "age": "M40-49",
-    "location": "Ridge, NY",
-    "rank": 74.3,
-    "ageRank": 86.2,
-    "results": 2,
-    "bib": "54",
-    "finishes": 0
-  },
-  {
     "firstName": "Matt",
     "lastName": "Johnson",
     "age": "M30-39",
@@ -404,6 +404,17 @@
     "ageRank": 76.1,
     "results": 28,
     "bib": "204",
+    "finishes": 0
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Sharp",
+    "age": "M20-29",
+    "location": "Fort Moore, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 1,
+    "bib": "174",
     "finishes": 0
   },
   {
@@ -471,17 +482,6 @@
     "results": 6,
     "bib": "28",
     "finishes": 0
-  },
-  {
-    "firstName": "Joe",
-    "lastName": "Perdue",
-    "age": "M40-49",
-    "location": "Lafayette, AL",
-    "rank": 71.6,
-    "ageRank": 77,
-    "results": 53,
-    "bib": "150",
-    "finishes": 1
   },
   {
     "firstName": "Matt",
@@ -891,6 +891,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Allen",
+    "lastName": "Miller",
+    "age": "M50-59",
+    "location": "Crestview, FL",
+    "rank": 65.5,
+    "ageRank": 82.2,
+    "results": 17,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Juan",
     "lastName": "Saavedra",
     "age": "M40-49",
@@ -899,17 +910,6 @@
     "ageRank": 75.2,
     "results": 7,
     "bib": "165",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sean",
-    "lastName": "Mullett",
-    "age": "M50-59",
-    "location": "Cleveland, TN",
-    "rank": 65.1,
-    "ageRank": 71.8,
-    "results": 60,
-    "bib": "135",
     "finishes": 0
   },
   {
@@ -1076,17 +1076,6 @@
     "results": 16,
     "bib": "99",
     "finishes": 1
-  },
-  {
-    "firstName": "Kristen",
-    "lastName": "Mullett",
-    "age": "F50-59",
-    "location": "Cleveland, TN",
-    "rank": 78.1,
-    "ageRank": 87.5,
-    "results": 47,
-    "bib": "134",
-    "finishes": 0
   },
   {
     "firstName": "Gena",
@@ -2057,72 +2046,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Daniel",
-    "lastName": "Sharp",
-    "age": "M20-29",
-    "location": "Fort Moore, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "174",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ian",
-    "lastName": "Timmins",
-    "age": "M30-39",
-    "location": "Atlanta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "197",
-    "finishes": 0
-  },
-  {
-    "firstName": "Charles",
-    "lastName": "Britt",
-    "age": "M40-49",
-    "location": "Alexandria, VA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "17",
-    "finishes": 0
-  },
-  {
-    "firstName": "David",
-    "lastName": "Elliott",
-    "age": "M30-39",
-    "location": "Savannah, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "44",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nick",
-    "lastName": "Mann",
-    "age": "M40-49",
-    "location": "Pensacola, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "114",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dyllan",
-    "lastName": "Feste",
-    "age": "M20-29",
-    "location": "Atlanta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Trey",
     "lastName": "Smith",
     "age": "M20-29",
@@ -2178,17 +2101,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Tyler",
-    "lastName": "Heath",
-    "age": "M30-39",
-    "location": "Richmond Hill, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "75",
-    "finishes": 0
-  },
-  {
     "firstName": "Onur",
     "lastName": "Gulenc",
     "age": "M30-39",
@@ -2197,6 +2109,61 @@
     "ageRank": 0,
     "results": 0,
     "bib": "66",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ian",
+    "lastName": "Timmins",
+    "age": "M30-39",
+    "location": "Atlanta, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "197",
+    "finishes": 0
+  },
+  {
+    "firstName": "Charles",
+    "lastName": "Britt",
+    "age": "M40-49",
+    "location": "Alexandria, VA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "17",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Elliott",
+    "age": "M30-39",
+    "location": "Savannah, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "44",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Mann",
+    "age": "M40-49",
+    "location": "Pensacola, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "114",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dyllan",
+    "lastName": "Feste",
+    "age": "M20-29",
+    "location": "Atlanta, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
     "finishes": 0
   },
   {
