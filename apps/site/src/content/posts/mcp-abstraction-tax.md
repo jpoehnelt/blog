@@ -28,7 +28,7 @@ faq:
 
 <Tldr>
 
-- Every layer — App → API → MCP — introduces an **abstraction tax**.
+- Every layer — Data → API → MCP — introduces an **abstraction tax**.
 - Humans need simplified abstractions to manage cognitive load. **LLMs can navigate a complex CLI** via `--help` and call precise APIs in seconds.
 - MCP and CLIs optimize for **different things**. Understanding what each one costs you is more useful than picking a winner.
 - For complex enterprise APIs, the fidelity loss at each layer **compounds** in ways that matter.
@@ -50,11 +50,6 @@ Consider the layers between an agent's intent and a Google Sheets cell:
   ┌─────────────┐
   │  MCP Tool   │  ← abstraction tax
   │  Definition │
-  └──────┬──────┘
-         │
-  ┌──────▼──────┐
-  │  MCP Server │  ← abstraction tax
-  │  Logic      │
   └──────┬──────┘
          │
   ┌──────▼──────┐
