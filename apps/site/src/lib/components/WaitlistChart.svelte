@@ -4,6 +4,7 @@
   import { format } from "date-fns";
   import { curveCatmullRom, line } from "d3-shape";
   import { schemeTableau10 } from "d3-scale-chromatic";
+  import ChartLegendItem from "$lib/components/ChartLegendItem.svelte";
 
   interface RegressionData {
     trendPoints: { dayIndex: number; velocity: number }[];
@@ -183,54 +184,41 @@
 <div class="h-96 w-full p-4 mb-16 chart-wrapper">
     <!-- Legend -->
     <div class="flex items-center justify-end gap-4 mb-2">
-      <button 
-        class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.count ? 'opacity-100' : 'opacity-40 grayscale'}"
+      <ChartLegendItem
+        label="Waitlist Size"
+        color="bg-indigo-500"
+        active={visibleSeries.count}
         onclick={() => toggleSeries('count')}
-      >
-        <div class="flex items-center">
-          <div class="w-2 h-0.5 bg-indigo-500"></div>
-          <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 -ml-0.5"></div>
-          <div class="w-2 h-0.5 bg-indigo-500 -ml-0.5"></div>
-        </div>
-        <span class="text-xs font-bold text-slate-600">Waitlist Size</span>
-      </button>
+      />
       
       {#if processedVelocities.some(d => d.type === 'front')}
-        <button 
-          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.front ? 'opacity-100' : 'opacity-40 grayscale'}"
+        <ChartLegendItem
+          label="Front Movement"
+          color="bg-emerald-500"
+          active={visibleSeries.front}
           onclick={() => toggleSeries('front')}
-        >
-            <div class="flex items-center">
-              <div class="w-2 h-0.5 bg-emerald-500"></div>
-              <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 -ml-0.5"></div>
-              <div class="w-2 h-0.5 bg-emerald-500 -ml-0.5"></div>
-            </div>
-            <span class="text-xs font-bold text-slate-600">Front Movement</span>
-        </button>
+        />
       {/if}
 
       {#if processedVelocities.some(d => d.type === 'median')}
-        <button 
-          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.median ? 'opacity-100' : 'opacity-40 grayscale'}"
+        <ChartLegendItem
+          label="Middle Movement"
+          color="bg-amber-500"
+          active={visibleSeries.median}
           onclick={() => toggleSeries('median')}
-        >
-          <div class="flex items-center">
-            <div class="w-2 h-0.5 bg-amber-500"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-amber-500 -ml-0.5"></div>
-            <div class="w-2 h-0.5 bg-amber-500 -ml-0.5"></div>
-          </div>
-          <span class="text-xs font-bold text-slate-600">Middle Movement</span>
-        </button>
+        />
       {/if}
 
       {#if events[0]?.regression?.trendPoints}
-        <button 
-          class="flex items-center gap-1.5 transition-opacity hover:opacity-80 {visibleSeries.trend ? 'opacity-100' : 'opacity-40 grayscale'}"
+        <ChartLegendItem
+          label="Trend"
+          active={visibleSeries.trend}
           onclick={() => toggleSeries('trend')}
         >
-          <div class="w-5 h-0 border-t-2 border-dashed border-violet-500"></div>
-          <span class="text-xs font-bold text-slate-600">Trend</span>
-        </button>
+          {#snippet icon()}
+            <div class="w-5 h-0 border-t-2 border-dashed border-violet-500"></div>
+          {/snippet}
+        </ChartLegendItem>
       {/if}
     </div>
 
