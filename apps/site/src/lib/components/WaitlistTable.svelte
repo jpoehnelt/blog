@@ -11,9 +11,9 @@
   import { Input } from "$lib/components/ui/input";
   import { Button } from "$lib/components/ui/button";
   import { cn } from "$lib/utils";
+  import TrendIndicator from "$lib/components/TrendIndicator.svelte";
   import ArrowUp from "@lucide/svelte/icons/arrow-up";
   import ArrowDown from "@lucide/svelte/icons/arrow-down";
-  import Minus from "@lucide/svelte/icons/minus";
   import Search from "@lucide/svelte/icons/search";
   import ChevronDown from "@lucide/svelte/icons/chevron-down";
   import ChevronUp from "@lucide/svelte/icons/chevron-up";
@@ -105,30 +105,7 @@
     })
   );
 
-  function getChangeClass(diff: number | null): string {
-    if (diff === null) return "text-slate-200";
-    if (diff === 0) return "text-slate-300";
-    return "text-green-500";
-  }
 </script>
-
-{#snippet ChangeIndicator(diff: number | null)}
-  <div
-    class={cn("flex items-center justify-end gap-1 text-xs font-bold w-full", getChangeClass(diff))}
-  >
-    {#if diff === null}
-      <span class="text-slate-200">-</span>
-    {:else if diff === 0}
-      <Minus class="w-3 h-3 text-slate-300" />
-    {:else if diff > 0}
-      <ArrowUp class="w-3 h-3 text-green-500" />
-      <span class="tabular-nums">+{diff}</span>
-    {:else}
-      <ArrowDown class="w-3 h-3 text-red-500" />
-      <span class="tabular-nums">{diff}</span>
-    {/if}
-  </div>
-{/snippet}
 
 <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden">
   <div class="px-6 py-4 border-b border-stone-100 bg-stone-50/50 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -208,8 +185,8 @@
                 {row.original.name}
               </a>
             </Table.Cell>
-            <Table.Cell class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d7)}</Table.Cell>
-            <Table.Cell class="px-4 py-3 text-right">{@render ChangeIndicator(row.original.d30)}</Table.Cell>
+            <Table.Cell class="px-4 py-3 text-right"><TrendIndicator value={row.original.d7} class="w-full justify-end" /></Table.Cell>
+            <Table.Cell class="px-4 py-3 text-right"><TrendIndicator value={row.original.d30} class="w-full justify-end" /></Table.Cell>
           </Table.Row>
         {/each}
       </Table.Body>
