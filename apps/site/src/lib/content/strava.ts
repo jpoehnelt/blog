@@ -44,6 +44,22 @@ export interface StravaActivitySimple {
   elevation_profile?: number[];
 }
 
+export interface SegmentEffort {
+  id: number | string;
+  name: string;
+  elapsed_time: number;
+  distance: number;
+  average_grade?: number;
+  segment: {
+    id: number;
+    average_grade: number;
+  };
+  achievements?: {
+    type: string;
+    rank: number;
+  }[];
+}
+
 export function mapStravaActivity(
   activity: DetailedActivityResponse,
 ): StravaActivitySimple {
