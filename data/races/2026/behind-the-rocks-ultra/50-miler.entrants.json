@@ -198,17 +198,6 @@
     "finishes": 1
   },
   {
-    "firstName": "John",
-    "lastName": "Lee",
-    "age": "M30-39",
-    "location": "Salida, CO",
-    "rank": 70,
-    "ageRank": 73.4,
-    "results": 25,
-    "bib": "21",
-    "finishes": 0
-  },
-  {
     "firstName": "Daniel",
     "lastName": "Stackowicz",
     "age": "M30-39",
@@ -693,138 +682,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Alex",
-    "lastName": "Garcia",
-    "age": "M20-29",
-    "location": "Newport Beach, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "70",
-    "finishes": 0
-  },
-  {
-    "firstName": "Eric",
-    "lastName": "Benally",
-    "age": "M20-29",
-    "location": "Millcreek, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "64",
-    "finishes": 0
-  },
-  {
-    "firstName": "Corey",
-    "lastName": "Gilbert",
-    "age": "M30-39",
-    "location": "Lehi, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "72",
-    "finishes": 0
-  },
-  {
-    "firstName": "Harrison",
-    "lastName": "Smedley",
-    "age": "M20-29",
-    "location": "Sandy, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "82",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chelseigh",
-    "lastName": "Newkerk",
-    "age": "F30-39",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "77",
-    "finishes": 0
-  },
-  {
-    "firstName": "Matthew",
-    "lastName": "Gardner",
-    "age": "M20-29",
-    "location": "Delray Beach, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "71",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jake",
-    "lastName": "Wall",
-    "age": "M20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "85",
-    "finishes": 0
-  },
-  {
-    "firstName": "Derrick",
-    "lastName": "Deaton",
-    "age": "M40-49",
-    "location": "Riverton, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "67",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kim",
-    "lastName": "Deaton",
-    "age": "F40-49",
-    "location": "Riverton, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "68",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ben",
-    "lastName": "Gordon",
-    "age": "M20-29",
-    "location": "Herriman, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "73",
-    "finishes": 0
-  },
-  {
-    "firstName": "Easton",
-    "lastName": "Adamson",
-    "age": "M20-29",
-    "location": "Sandy, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "63",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jonathan",
-    "lastName": "Cutler",
-    "age": "M20-29",
-    "location": "Sandy, UT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "66",
-    "finishes": 0
-  },
-  {
     "firstName": "Dean",
     "lastName": "Patterson",
     "age": "M30-39",
@@ -833,6 +690,17 @@
     "ageRank": 0,
     "results": 0,
     "bib": "79",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alex",
+    "lastName": "Garcia",
+    "age": "M20-29",
+    "location": "Newport Beach, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "70",
     "finishes": 0
   },
   {
@@ -954,6 +822,127 @@
     "ageRank": 0,
     "results": 0,
     "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Harrison",
+    "lastName": "Smedley",
+    "age": "M20-29",
+    "location": "Sandy, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "82",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chelseigh",
+    "lastName": "Newkerk",
+    "age": "F30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "77",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matthew",
+    "lastName": "Gardner",
+    "age": "M20-29",
+    "location": "Delray Beach, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "71",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jake",
+    "lastName": "Wall",
+    "age": "M20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "85",
+    "finishes": 0
+  },
+  {
+    "firstName": "Derrick",
+    "lastName": "Deaton",
+    "age": "M40-49",
+    "location": "Riverton, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "67",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kim",
+    "lastName": "Deaton",
+    "age": "F40-49",
+    "location": "Riverton, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "68",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ben",
+    "lastName": "Gordon",
+    "age": "M20-29",
+    "location": "Herriman, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "73",
+    "finishes": 0
+  },
+  {
+    "firstName": "Easton",
+    "lastName": "Adamson",
+    "age": "M20-29",
+    "location": "Sandy, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "63",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Cutler",
+    "age": "M20-29",
+    "location": "Sandy, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "66",
+    "finishes": 0
+  },
+  {
+    "firstName": "Eric",
+    "lastName": "Benally",
+    "age": "M20-29",
+    "location": "Millcreek, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "64",
+    "finishes": 0
+  },
+  {
+    "firstName": "Corey",
+    "lastName": "Gilbert",
+    "age": "M30-39",
+    "location": "Lehi, UT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "72",
     "finishes": 0
   }
 ]
