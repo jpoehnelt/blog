@@ -35,3 +35,10 @@ export function slugify(text: string): string {
     .replace(/^-+/, "") // Trim - from start of text
     .replace(/-+$/, ""); // Trim - from end of text
 }
+
+export function formatDuration(seconds: number): string {
+  const roundedSeconds = Math.round(seconds);
+  const mins = Math.floor(roundedSeconds / 60);
+  const secs = roundedSeconds % 60;
+  return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
