@@ -2,6 +2,7 @@
   import { Axis, Bars, Chart, Svg } from "layerchart";
   import { scaleBand } from "d3-scale";
   import { format, isSameMonth } from "date-fns";
+  import Metric from "$lib/components/Metric.svelte";
 
   interface Props {
     data: { date: Date; distance: number }[];
@@ -71,6 +72,6 @@
     </Chart>
   </div>
   <div class="text-[10px] font-mono text-muted-foreground text-right mt-2 uppercase tracking-widest">
-    Year-to-Date Distance: <span class="text-foreground font-bold">{totalDistance.toFixed(1)} km</span>
+    Year-to-Date Distance: <Metric value={totalDistance.toFixed(1)} unit="km" class="text-foreground font-bold text-[10px]" />
   </div>
 </div>
