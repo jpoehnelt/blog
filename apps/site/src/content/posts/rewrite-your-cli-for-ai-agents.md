@@ -43,6 +43,8 @@ I built a CLI for [Google Workspace](https://github.com/googleworkspace/cli) —
 
 CLIs are increasingly the lowest-friction interface for AI agents to reach external systems. Agents don't need GUIs. They need deterministic, machine-readable output, self-describing schemas they can introspect at runtime, and safety rails against their own hallucinations.
 
+**Update:** I wrote a followup exploring what happens when you add protocol layers like MCP on top of these APIs: [The MCP Abstraction Tax](/posts/mcp-abstraction-tax).
+
 The real question: what does it actually look like to build for this?
 
 ## Raw JSON Payloads > Bespoke Flags
