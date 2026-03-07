@@ -32,7 +32,7 @@ faq:
 </script>
 
 ```bash
-npx skills install jpoehnelt/blog/agent-dx-cli-scale
+npx skills install jpoehnelt/skills/agent-dx-cli-scale
 ```
 
 <Tldr>
