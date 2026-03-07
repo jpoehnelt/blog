@@ -31,6 +31,10 @@ faq:
   import Tldr from '$lib/components/content/Tldr.svelte';
 </script>
 
+```bash
+npx skills install jpoehnelt/blog/agent-dx-cli-scale
+```
+
 <Tldr>
 
 - **Human DX** optimizes for discoverability and forgiveness.
