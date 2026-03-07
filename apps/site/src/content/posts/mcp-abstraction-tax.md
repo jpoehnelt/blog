@@ -6,10 +6,8 @@ tags:
   - ai
   - cli
   - mcp
-  - google workspace
   - agents
   - code
-  - google
 faq:
   - question: What is the abstraction tax?
     answer: Every layer between the user's intent and the API — from the app to the protocol to the tool definition — loses fidelity. MCP adds a layer. That layer costs you expressiveness, and the cost compounds with complex APIs.
@@ -37,14 +35,14 @@ faq:
 
 My [last post](/posts/rewrite-your-cli-for-ai-agents) argued that CLIs need to be redesigned for AI agents. That post was about *how* to build. This one is about what happens at the boundaries — the fidelity you lose every time you add a layer between an agent and an API.
 
-A conversation about building an MCP server for Google Workspace crystallized something I'd been feeling but hadn't articulated: **every protocol layer between an agent and an API is a tax on fidelity.** The tax is sometimes worth paying. But you should understand what you're giving up at each layer, because the costs compound — especially with complex enterprise APIs. Others have explored this from different angles — Jeremiah Lowin's [Code Mode](https://www.jlowin.dev/blog/fastmcp-3-1-code-mode) makes the case that most MCP servers treat agents like humans rather than leveraging their ability to write code. I want to focus on a related but distinct problem: what happens to fidelity when the API underneath is already hostile.
+A conversation about building an MCP server for a complex enterprise CRM crystallized something I'd been feeling but hadn't articulated: **every protocol layer between an agent and an API is a tax on fidelity.** The tax is sometimes worth paying. But you should understand what you're giving up at each layer, because the costs compound — especially with complex enterprise APIs. Others have explored this from different angles — Jeremiah Lowin's [Code Mode](https://www.jlowin.dev/blog/fastmcp-3-1-code-mode) makes the case that most MCP servers treat agents like humans rather than leveraging their ability to write code. I want to focus on a related but distinct problem: what happens to fidelity when the API underneath is already hostile.
 
 ## The Abstraction Stack
 
-Consider the layers between an agent's intent and a Google Sheets cell:
+Consider the layers between an agent's intent and a CRM opportunity record:
 
 ```
-  Agent Intent: "Add a row to my budget spreadsheet"
+  Agent Intent: "Update the probability on the ACME corp deal"
        │
        ▼
   ┌─────────────┐
@@ -54,7 +52,7 @@ Consider the layers between an agent's intent and a Google Sheets cell:
          │
   ┌──────▼──────┐
   │  REST API   │  ← abstraction tax
-  │  (Sheets)   │
+  │  (CRM)      │
   └──────┬──────┘
          │
   ┌──────▼──────┐
@@ -63,7 +61,7 @@ Consider the layers between an agent's intent and a Google Sheets cell:
   └─────────────┘
 ```
 
-Each layer is an abstraction. Each abstraction loses something. The fidelity loss starts before MCP even enters the picture — the REST API is itself an imperfect projection of the underlying data model. A Google Doc's internal representation is richer than what the Docs API exposes. MCP adds another layer on top of that.
+Each layer is an abstraction. Each abstraction loses something. The fidelity loss starts before MCP even enters the picture — the REST API is itself an imperfect projection of the underlying data model. A CRM's internal object representation is richer than what the standard REST API exposes. MCP adds another layer on top of that.
 
 The question at each layer is whether what you gain — discoverability, safety, standardization — is worth what you lose.
 
@@ -71,33 +69,33 @@ But for complex enterprise APIs, the math changes.
 
 ## The Two-Path Problem
 
-When you build an MCP server for an API like Google Docs, Sheets, or Slides, you face a choice:
+When you build an MCP server for an enterprise API like a mature CRM, you face a choice:
 
-**Path 1: Constrained tools.** You expose a handful of high-level operations — `create_document`, `append_text`, `insert_table`. These are easy for models to call, fit comfortably in a context window, and provide a clean developer experience. But they're lossy. The Sheets `batchUpdate` API accepts dozens of request types with deeply nested structures. You can't express "merge cells B2:D4, apply conditional formatting based on a custom formula, and set data validation with a dropdown from a named range" through `insert_table`.
+**Path 1: Constrained tools.** You expose a handful of high-level operations — `create_account`, `update_opportunity`, `add_contact`. These are easy for models to call, fit comfortably in a context window, and provide a clean developer experience. But they're lossy. The CRM's `bulkUpdate` API accepts dozens of request types with deeply nested relationships and custom fields. You can't express "update the stage on 50 opportunities, recalculate their custom revenue formulas, and reassign the related tasks to the new account owner" through `update_opportunity`.
 
-**Path 2: Full surface.** You expose every API method as a tool with its full request schema. This preserves fidelity but explodes the context window. The [Google Workspace CLI](https://github.com/googleworkspace/cli) covers 20+ services with hundreds of commands mapping directly to the underlying APIs. Loading all of those tool definitions into an MCP context at once would consume a meaningful fraction of an agent's reasoning capacity — and most of them would be irrelevant to any given task.
+**Path 2: Full surface.** You expose every API method as a tool with its full request schema. This preserves fidelity but explodes the context window. A full-featured enterprise CLI covers dozens of services with hundreds of commands mapping directly to the underlying APIs. Loading all of those tool definitions into an MCP context at once would consume a meaningful fraction of an agent's reasoning capacity — and most of them would be irrelevant to any given task.
 
 Neither path is great. The first is too limited. The second is too expensive. And every team building an MCP server for a large API surface hits this same wall.
 
 ## Why the APIs Are Hostile
 
-This isn't just a protocol problem. It's an API problem. The Docs, Sheets, and Slides APIs were designed for human developers who would read docs, understand the data model, and carefully construct requests. They have sharp edges — positional index tracking across batchUpdates, opaque serialization formats, missing capabilities for operations that feel basic. I covered the input hardening side of this in my [previous post](/posts/rewrite-your-cli-for-ai-agents). The point here is that these APIs are not friendly to AI agents, and forcing agents through a simplified MCP abstraction on top of an already-unfriendly API compounds the fidelity loss.
+This isn't just a protocol problem. It's an API problem. Enterprise CRM APIs were designed for human developers who would read docs, understand the complex data model, and carefully construct requests. They have sharp edges — opaque relationship identifiers, polymorphic custom fields, deeply nested JSON structures, missing capabilities for operations that feel basic. I covered the input hardening side of this in my [previous post](/posts/rewrite-your-cli-for-ai-agents). The point here is that these APIs are not friendly to AI agents, and forcing agents through a simplified MCP abstraction on top of an already-unfriendly API compounds the fidelity loss.
 
 ## Skills Manage Context, Not Just Commands
 
-This is the insight that drove the [Google Workspace CLI](https://github.com/googleworkspace/cli) architecture and the [Skills approach](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/prompt_caching.md): **you don't need to load everything at once.**
+This is the insight that drove a more sophisticated CLI architecture and the [Skills approach](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/prompt_caching.md): **you don't need to load everything at once.**
 
-A CLI with 700+ commands doesn't present all 700 in the system prompt. The agent starts with `--help`, discovers the service, runs `gws schema sheets.spreadsheets.batchUpdate`, and gets exactly the schema it needs — at runtime, on demand, paid for only when relevant.
+A CLI with 700+ commands doesn't present all 700 in the system prompt. The agent starts with `--help`, discovers the service, runs `crm schema opportunities.bulkUpdate`, and gets exactly the schema it needs — at runtime, on demand, paid for only when relevant.
 
 Skills — markdown files containing task-specific documentation, prompt instructions, and CLI usage patterns — extend this further. Each `SKILL.md` file is a self-contained unit of agent knowledge:
 
 ```
 skills/
-├── gws-sheets/SKILL.md           # Core Sheets operations
-├── gws-sheets-advanced/SKILL.md  # Conditional formatting, pivots
+├── crm-opportunities/SKILL.md           # Core opportunity operations
+├── crm-opportunities-advanced/SKILL.md  # Custom fields, bulk updates
 ```
 
-The agent loads `gws-sheets` when it needs Sheets. It loads `gws-sheets-advanced` only when the task requires conditional formatting. The context cost scales with the task, not with the API surface.
+The agent loads `crm-opportunities` when it needs to manage opportunities. It loads `crm-opportunities-advanced` only when the task requires bulk updates. The context cost scales with the task, not with the API surface.
 
 MCP doesn't have this mechanism natively. Every tool definition is loaded upfront — what Lowin calls the ["dictionary problem"](https://www.jlowin.dev/blog/fastmcp-3-1-code-mode), where all tool definitions travel with every message. Some clients support enabling and disabling tools, and some are exploring tool search — but these are client-side features, not protocol guarantees. If you're building an MCP server, you can't assume the client will be smart about context management.
 
@@ -106,10 +104,10 @@ MCP doesn't have this mechanism natively. Every tool definition is loaded upfron
 A more sophisticated approach: the MCP server exposes a meta-tool — something like `discover_tools` or `enable_service` — that lets the agent dynamically expand its available tool set as the conversation evolves. The agent starts with a minimal surface and pulls in capabilities as needed.
 
 ```
-Agent: "I need to work with Google Sheets"
-  → calls discover_tools(service: "sheets")
-  → server registers sheets tools
-  → agent now has sheets capabilities
+Agent: "I need to work with CRM opportunities"
+  → calls discover_tools(service: "opportunities")
+  → server registers opportunity tools
+  → agent now has opportunity capabilities
 ```
 
 This isn't standardized in MCP today, but the ecosystem is converging on it. FastMCP 3.1 recently shipped a two-stage discovery pattern using `Search` and `GetSchemas` meta-tools to solve this exact problem. It trades one upfront context cost (all tools loaded at startup) for a small per-request cost (the discover call) plus targeted context (only the tools that matter).
