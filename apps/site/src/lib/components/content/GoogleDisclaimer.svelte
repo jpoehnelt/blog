@@ -5,13 +5,11 @@
 
   let { tags = [] }: { tags?: string[] } = $props();
 
-  let showDisclaimer = $derived(isGoogleRelated(tags));
+  let showDisclaimer = $derived(isGoogleRelated(tags) || tags.some(t => t.toLowerCase() === 'code'));
 </script>
 
 {#if showDisclaimer}
   <Note>
-    <strong>Disclaimer:</strong> I am a member of the Google Workspace Developer
-    Relations team. The opinions expressed here are my own and do not necessarily
-    represent those of Google.
+    Opinions are my own and not the views of my employer.
   </Note>
 {/if}

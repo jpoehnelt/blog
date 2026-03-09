@@ -22,6 +22,7 @@
 
   let { data }: PageProps = $props();
   let isGoogle = $derived(isGoogleRelated(data.tags));
+  let showDisclaimer = $derived(isGoogle || (data.tags || []).some(t => t.toLowerCase() === 'code'));
   import JsonLd from "$lib/components/JsonLd.svelte";
   import type { Thing, WithContext, FAQPage } from "schema-dts";
 
@@ -214,9 +215,9 @@
     {/if}
 
     <div class="mt-8">
-      {#if isGoogle}
+      {#if showDisclaimer}
         <p class="text-xs text-gray-400 dark:text-gray-500 mb-2">
-          Opinions expressed are my own and do not necessarily represent those of Google.
+          Opinions are my own and not the views of my employer.
         </p>
       {/if}
       <p class="text-xs">
