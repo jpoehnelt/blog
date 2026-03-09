@@ -66,6 +66,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Luke",
+    "lastName": "Bateman",
+    "age": "M30-39",
+    "location": "Dallas, TX",
+    "rank": 83,
+    "ageRank": 86.6,
+    "results": 20,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Thomas",
     "lastName": "Brossard",
     "age": "M30-39",
@@ -407,17 +418,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Barry",
-    "lastName": "Sterling",
-    "age": "M50-59",
-    "location": "Whitesboro, TX",
-    "rank": 62.9,
-    "ageRank": 74,
-    "results": 21,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Paul",
     "lastName": "Cherry",
     "age": "M40-49",
@@ -462,6 +462,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Josh",
+    "lastName": "Vollmer",
+    "age": "M30-39",
+    "location": "Anna, TX",
+    "rank": 61.9,
+    "ageRank": 68.2,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Henry",
     "lastName": "Bickerstaff",
     "age": "M70+",
@@ -491,17 +502,6 @@
     "rank": 61.5,
     "ageRank": 71.3,
     "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Rachel",
-    "lastName": "Aumann",
-    "age": "F40-49",
-    "location": "Greenville, TX",
-    "rank": 77.5,
-    "ageRank": 85.6,
-    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -774,9 +774,9 @@
     "lastName": "Ramirez",
     "age": "F50-59",
     "location": "75482, TX",
-    "rank": 64.4,
-    "ageRank": 81.6,
-    "results": 52,
+    "rank": 64.6,
+    "ageRank": 81.5,
+    "results": 53,
     "bib": "",
     "finishes": 1
   },
@@ -818,9 +818,9 @@
     "lastName": "Rysted",
     "age": "M60-69",
     "location": "Las Cruces, NM",
-    "rank": 49.6,
-    "ageRank": 72.7,
-    "results": 16,
+    "rank": 49.1,
+    "ageRank": 72.1,
+    "results": 17,
     "bib": "",
     "finishes": 0
   },
@@ -979,6 +979,105 @@
     "finishes": 0
   },
   {
+    "firstName": "Chase",
+    "lastName": "Binder",
+    "age": "M20-29",
+    "location": "Lorena, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Carlos",
+    "lastName": "Candia",
+    "age": "M40-49",
+    "location": "Frisco, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Heather",
+    "lastName": "Robinett",
+    "age": "F40-49",
+    "location": "celina, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jose",
+    "lastName": "Vasquez",
+    "age": "M30-39",
+    "location": "Royse City, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Donovan",
+    "lastName": "Hargett",
+    "age": "M20-29",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Garrett",
+    "lastName": "Larimer",
+    "age": "M30-39",
+    "location": "Denton, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steven",
+    "lastName": "Wagner",
+    "age": "M20-29",
+    "location": "Argyle, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Johnathan",
+    "lastName": "Mirkovich",
+    "age": "M20-29",
+    "location": "Richardson, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Zachary",
+    "lastName": "Ford",
+    "age": "M<20",
+    "location": "San Marcos, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "James",
     "lastName": "Lewin",
     "age": "M30-39",
@@ -1089,98 +1188,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Jose",
-    "lastName": "Vasquez",
-    "age": "M30-39",
-    "location": "Royse City, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Donovan",
-    "lastName": "Hargett",
-    "age": "M20-29",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Garrett",
-    "lastName": "Larimer",
-    "age": "M30-39",
-    "location": "Denton, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Steven",
-    "lastName": "Wagner",
-    "age": "M20-29",
-    "location": "Argyle, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Johnathan",
-    "lastName": "Mirkovich",
-    "age": "M20-29",
-    "location": "Richardson, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zachary",
-    "lastName": "Ford",
-    "age": "M<20",
-    "location": "San Marcos, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chase",
-    "lastName": "Binder",
-    "age": "M20-29",
-    "location": "Lorena, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Carlos",
-    "lastName": "Candia",
+    "firstName": "Jinson",
+    "lastName": "Jose",
     "age": "M40-49",
     "location": "Frisco, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Heather",
-    "lastName": "Robinett",
-    "age": "F40-49",
-    "location": "celina, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1258,17 +1269,6 @@
     "lastName": "Stumpf",
     "age": "M20-29",
     "location": "Arlington, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jinson",
-    "lastName": "Jose",
-    "age": "M40-49",
-    "location": "Frisco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
