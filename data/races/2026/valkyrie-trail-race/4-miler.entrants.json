@@ -30,7 +30,7 @@
     "ageRank": 100,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Mary",
@@ -63,7 +63,7 @@
     "ageRank": 64.7,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Nancy",
@@ -103,6 +103,17 @@
     "lastName": "Podolsky",
     "age": "F20-29",
     "location": "Colorado Springs, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lainee",
+    "lastName": "Munhollon",
+    "age": "F50-59",
+    "location": "Peyton, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

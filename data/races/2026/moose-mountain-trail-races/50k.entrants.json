@@ -114,9 +114,9 @@
     "lastName": "Lazorko",
     "age": "M50-59",
     "location": "Calgary, AB",
-    "rank": 75.1,
-    "ageRank": 88.6,
-    "results": 27,
+    "rank": 75,
+    "ageRank": 88,
+    "results": 28,
     "bib": "",
     "finishes": 0
   },
@@ -198,17 +198,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Paul",
-    "lastName": "O'Grady",
-    "age": "M40-49",
-    "location": "Calgary, AB",
-    "rank": 64.3,
-    "ageRank": 78.5,
-    "results": 9,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Patrick",
     "lastName": "Mah",
     "age": "M40-49",
@@ -218,6 +207,17 @@
     "results": 1,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Paul",
+    "lastName": "O'Grady",
+    "age": "M40-49",
+    "location": "Calgary, AB",
+    "rank": 63.5,
+    "ageRank": 75.4,
+    "results": 10,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Chris",
@@ -297,13 +297,24 @@
     "finishes": 0
   },
   {
+    "firstName": "Ashley",
+    "lastName": "Minni",
+    "age": "F30-39",
+    "location": "Grande Prairie, AB",
+    "rank": 69.6,
+    "ageRank": 76.1,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kyle",
     "lastName": "Paterson",
     "age": "M40-49",
     "location": "Lethbridge, AB",
-    "rank": 60.5,
-    "ageRank": 73.6,
-    "results": 9,
+    "rank": 60.1,
+    "ageRank": 71.2,
+    "results": 10,
     "bib": "",
     "finishes": 1
   },
@@ -313,7 +324,7 @@
     "age": "M60-69",
     "location": "Lethbridge, AB",
     "rank": 59.7,
-    "ageRank": 83.8,
+    "ageRank": 84.3,
     "results": 43,
     "bib": "",
     "finishes": 0
@@ -447,39 +458,6 @@
     "rank": 46.7,
     "ageRank": 46.7,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Andrii",
-    "lastName": "Trokoz",
-    "age": "M30-39",
-    "location": "Elmira, ON",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ashley",
-    "lastName": "Minni",
-    "age": "F30-39",
-    "location": "Grande Prairie, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nouell",
-    "lastName": "Larioza",
-    "age": "M20-29",
-    "location": "Calgary, AB",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -707,6 +685,28 @@
     "firstName": "Katie",
     "lastName": "Burkell",
     "age": "F30-39",
+    "location": "Calgary, AB",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Andrii",
+    "lastName": "Trokoz",
+    "age": "M30-39",
+    "location": "Elmira, ON",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nouell",
+    "lastName": "Larioza",
+    "age": "M20-29",
     "location": "Calgary, AB",
     "rank": 0,
     "ageRank": 0,

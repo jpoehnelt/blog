@@ -44,17 +44,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Dylan",
-    "lastName": "Harkavy",
-    "age": "M30-39",
-    "location": "Morganton, GA",
-    "rank": 87.1,
-    "ageRank": 87.7,
-    "results": 8,
-    "bib": "70",
-    "finishes": 0
-  },
-  {
     "firstName": "Drew",
     "lastName": "McCormack",
     "age": "M20-29",
@@ -66,14 +55,14 @@
     "finishes": 0
   },
   {
-    "firstName": "Matt",
-    "lastName": "Kipp",
-    "age": "M20-29",
-    "location": "Atlanta, GA",
-    "rank": 86.8,
-    "ageRank": 89.3,
-    "results": 3,
-    "bib": "100",
+    "firstName": "Dylan",
+    "lastName": "Harkavy",
+    "age": "M30-39",
+    "location": "Morganton, GA",
+    "rank": 86.5,
+    "ageRank": 88.3,
+    "results": 9,
+    "bib": "70",
     "finishes": 0
   },
   {
@@ -107,6 +96,17 @@
     "ageRank": 89.3,
     "results": 31,
     "bib": "193",
+    "finishes": 0
+  },
+  {
+    "firstName": "Matt",
+    "lastName": "Kipp",
+    "age": "M20-29",
+    "location": "Atlanta, GA",
+    "rank": 82.3,
+    "ageRank": 86.6,
+    "results": 4,
+    "bib": "100",
     "finishes": 0
   },
   {
@@ -236,8 +236,8 @@
     "age": "M30-39",
     "location": "BALTIMORE, MD",
     "rank": 79.5,
-    "ageRank": 82.4,
-    "results": 56,
+    "ageRank": 82.8,
+    "results": 57,
     "bib": "119",
     "finishes": 0
   },
@@ -537,17 +537,6 @@
     "results": 40,
     "bib": "72",
     "finishes": 0
-  },
-  {
-    "firstName": "Lee",
-    "lastName": "Vaughn",
-    "age": "M40-49",
-    "location": "Jenkinsburg, GA",
-    "rank": 70.8,
-    "ageRank": 80.4,
-    "results": 35,
-    "bib": "199",
-    "finishes": 2
   },
   {
     "firstName": "Oscar",
@@ -1038,9 +1027,9 @@
     "lastName": "Denbleyker",
     "age": "F50-59",
     "location": "Fennville, MI",
-    "rank": 79.5,
-    "ageRank": 90.1,
-    "results": 98,
+    "rank": 79.3,
+    "ageRank": 90.2,
+    "results": 99,
     "bib": "",
     "finishes": 0
   },
@@ -2046,72 +2035,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Ian",
-    "lastName": "Timmins",
-    "age": "M30-39",
-    "location": "Atlanta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "197",
-    "finishes": 0
-  },
-  {
-    "firstName": "Charles",
-    "lastName": "Britt",
-    "age": "M40-49",
-    "location": "Alexandria, VA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "17",
-    "finishes": 0
-  },
-  {
-    "firstName": "David",
-    "lastName": "Elliott",
-    "age": "M30-39",
-    "location": "Savannah, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "44",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nick",
-    "lastName": "Mann",
-    "age": "M40-49",
-    "location": "Pensacola, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "114",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dyllan",
-    "lastName": "Feste",
-    "age": "M20-29",
-    "location": "Atlanta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jade",
-    "lastName": "Styck",
-    "age": "M20-29",
-    "location": "Woodstock, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Trey",
     "lastName": "Smith",
     "age": "M20-29",
@@ -2175,6 +2098,72 @@
     "ageRank": 0,
     "results": 0,
     "bib": "66",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ian",
+    "lastName": "Timmins",
+    "age": "M30-39",
+    "location": "Atlanta, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "197",
+    "finishes": 0
+  },
+  {
+    "firstName": "Charles",
+    "lastName": "Britt",
+    "age": "M40-49",
+    "location": "Alexandria, VA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "17",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Elliott",
+    "age": "M30-39",
+    "location": "Savannah, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "44",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Mann",
+    "age": "M40-49",
+    "location": "Pensacola, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "114",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dyllan",
+    "lastName": "Feste",
+    "age": "M20-29",
+    "location": "Atlanta, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jade",
+    "lastName": "Styck",
+    "age": "M20-29",
+    "location": "Woodstock, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
     "finishes": 0
   },
   {

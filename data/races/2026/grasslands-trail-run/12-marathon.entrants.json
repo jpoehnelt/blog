@@ -77,6 +77,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Mara",
+    "lastName": "Pineau",
+    "age": "F30-39",
+    "location": "Granbury, TX",
+    "rank": 88.5,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Aaron",
     "lastName": "Ferrell",
     "age": "M50-59",
@@ -152,6 +163,17 @@
     "results": 4,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Lane",
+    "age": "F50-59",
+    "location": "Jacksboro, TX",
+    "rank": 80.9,
+    "ageRank": 94.1,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Steven",
@@ -1166,87 +1188,10 @@
     "finishes": 1
   },
   {
-    "firstName": "Emily",
-    "lastName": "Smith",
-    "age": "F40-49",
-    "location": "Denton, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Elise",
     "lastName": "Grandsaert",
     "age": "F40-49",
     "location": "Burke, VA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Elizabeth",
-    "lastName": "Butler",
-    "age": "F30-39",
-    "location": "Arlington, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mackenzie",
-    "lastName": "McLellan",
-    "age": "F30-39",
-    "location": "Fort Worth, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jason",
-    "lastName": "Robinson",
-    "age": "M40-49",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jeffrey",
-    "lastName": "Korum",
-    "age": "M30-39",
-    "location": "Grand Prairie, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "McGrail",
-    "lastName": "Kevin",
-    "age": "M40-49",
-    "location": "Fort Worth, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mary",
-    "lastName": "Schultz",
-    "age": "F30-39",
-    "location": "Dallas, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1280,6 +1225,39 @@
     "lastName": "Messerer",
     "age": "M40-49",
     "location": "Carrollton, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Elizabeth",
+    "lastName": "Butler",
+    "age": "F30-39",
+    "location": "Arlington, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mackenzie",
+    "lastName": "McLellan",
+    "age": "F30-39",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Robinson",
+    "age": "M40-49",
+    "location": "Dallas, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1518,32 +1496,43 @@
     "finishes": 0
   },
   {
+    "firstName": "Jeffrey",
+    "lastName": "Korum",
+    "age": "M30-39",
+    "location": "Grand Prairie, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "McGrail",
+    "lastName": "Kevin",
+    "age": "M40-49",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mary",
+    "lastName": "Schultz",
+    "age": "F30-39",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Kenna",
     "lastName": "Philipp",
     "age": "F20-29",
     "location": "Rocksprings, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Wonderly",
-    "age": "M50-59",
-    "location": "Montgomery, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Josh",
-    "lastName": "Watson",
-    "age": "M20-29",
-    "location": "Frisco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1705,10 +1694,43 @@
     "finishes": 0
   },
   {
+    "firstName": "Emily",
+    "lastName": "Smith",
+    "age": "F40-49",
+    "location": "Denton, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jonathan Luke",
     "lastName": "White",
     "age": "M30-39",
     "location": "Denton, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Wonderly",
+    "age": "M50-59",
+    "location": "Montgomery, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Watson",
+    "age": "M20-29",
+    "location": "Frisco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
