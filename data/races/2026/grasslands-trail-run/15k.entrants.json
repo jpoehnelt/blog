@@ -110,13 +110,24 @@
     "finishes": 2
   },
   {
+    "firstName": "Travis",
+    "lastName": "Trachta",
+    "age": "M50-59",
+    "location": "Plano, TX",
+    "rank": 57.2,
+    "ageRank": 64.6,
+    "results": 50,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Anna",
     "lastName": "Bugbee",
     "age": "F60-69",
     "location": "Fort Worth, TX",
     "rank": 69.4,
-    "ageRank": 92.3,
-    "results": 99,
+    "ageRank": 92.4,
+    "results": 100,
     "bib": "",
     "finishes": 1
   },
@@ -220,6 +231,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Krista",
+    "lastName": "Jones",
+    "age": "F50-59",
+    "location": "Plano, TX",
+    "rank": 61.6,
+    "ageRank": 70.2,
+    "results": 27,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Anne",
     "lastName": "Maker",
     "age": "F30-39",
@@ -286,50 +308,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Natasha",
-    "lastName": "Lee",
-    "age": "F30-39",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Grant",
-    "lastName": "Fudge",
-    "age": "M30-39",
-    "location": "Azle, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "David",
-    "lastName": "Harrison",
-    "age": "M30-39",
-    "location": "Dallas, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Holly",
-    "lastName": "Harris",
-    "age": "F40-49",
-    "location": "Waco, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Jesse",
     "lastName": "Maker",
     "age": "M30-39",
@@ -367,6 +345,50 @@
     "lastName": "Tischler",
     "age": "F20-29",
     "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Natasha",
+    "lastName": "Lee",
+    "age": "F30-39",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Grant",
+    "lastName": "Fudge",
+    "age": "M30-39",
+    "location": "Azle, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Harrison",
+    "age": "M30-39",
+    "location": "Dallas, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Holly",
+    "lastName": "Harris",
+    "age": "F40-49",
+    "location": "Waco, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

@@ -539,6 +539,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Nick",
+    "lastName": "McDowell",
+    "age": "M30-39",
+    "location": "Libertyville, IL",
+    "rank": 65.3,
+    "ageRank": 65.8,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ryan",
     "lastName": "George",
     "age": "M30-39",
@@ -546,6 +557,17 @@
     "rank": 65.3,
     "ageRank": 70.9,
     "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bethany",
+    "lastName": "Boll",
+    "age": "F40-49",
+    "location": "Syracuse, NY",
+    "rank": 76.7,
+    "ageRank": 0,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -579,17 +601,6 @@
     "rank": 64.8,
     "ageRank": 66.1,
     "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Bethany",
-    "lastName": "Boll",
-    "age": "F40-49",
-    "location": "Syracuse, NY",
-    "rank": 76.5,
-    "ageRank": 0,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -1001,17 +1012,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Erin",
-    "lastName": "Nielsen",
-    "age": "F40-49",
-    "location": "Mesa, AZ",
-    "rank": 70,
-    "ageRank": 74.9,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Raimund",
     "lastName": "McClain",
     "age": "M50-59",
@@ -1100,6 +1100,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Justin",
+    "lastName": "Martin",
+    "age": "F50-59",
+    "location": "Rockford, IL",
+    "rank": 68.6,
+    "ageRank": 81.1,
+    "results": 20,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Taylor",
     "lastName": "Bradford",
     "age": "F30-39",
@@ -1118,17 +1129,6 @@
     "rank": 68.5,
     "ageRank": 72.8,
     "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Justin",
-    "lastName": "Martin",
-    "age": "F50-59",
-    "location": "Rockford, IL",
-    "rank": 68.2,
-    "ageRank": 79.8,
-    "results": 19,
     "bib": "",
     "finishes": 0
   },
@@ -1771,17 +1771,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Will",
-    "lastName": "Lyon",
-    "age": "M40-49",
-    "location": "Estoril, PRT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Dillon",
     "lastName": "Doeden",
     "age": "M30-39",
@@ -1819,6 +1808,116 @@
     "lastName": "Journell",
     "age": "M30-39",
     "location": "Vacaville, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Will",
+    "lastName": "Lyon",
+    "age": "M40-49",
+    "location": "Estoril, PRT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tifany",
+    "lastName": "Prewett",
+    "age": "F50-59",
+    "location": "Alamogordo, NM",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Patrick",
+    "lastName": "Vacca",
+    "age": "M20-29",
+    "location": "Pointe-Claire, QC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chasity",
+    "lastName": "Cassel",
+    "age": "F30-39",
+    "location": "Stillwater, OK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amadeusz",
+    "lastName": "Bartosz",
+    "age": "M20-29",
+    "location": "Chicago, IL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Persing",
+    "age": "F30-39",
+    "location": "Richmond, VA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Marcy",
+    "lastName": "Campbell",
+    "age": "F40-49",
+    "location": "Prescott, AZ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jenni",
+    "lastName": "Westphal",
+    "age": "F50-59",
+    "location": "Los Angeles, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Joe",
+    "lastName": "Morris",
+    "age": "M40-49",
+    "location": "Cascias, PRT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Freer",
+    "age": "M50-59",
+    "location": "Canon City, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1940,105 +2039,6 @@
     "lastName": "Herrera",
     "age": "F20-29",
     "location": "Mission Viejo, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tifany",
-    "lastName": "Prewett",
-    "age": "F50-59",
-    "location": "Alamogordo, NM",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Patrick",
-    "lastName": "Vacca",
-    "age": "M20-29",
-    "location": "Pointe-Claire, QC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chasity",
-    "lastName": "Cassel",
-    "age": "F30-39",
-    "location": "Stillwater, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Amadeusz",
-    "lastName": "Bartosz",
-    "age": "M20-29",
-    "location": "Chicago, IL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Olivia",
-    "lastName": "Persing",
-    "age": "F30-39",
-    "location": "Richmond, VA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Marcy",
-    "lastName": "Campbell",
-    "age": "F40-49",
-    "location": "Prescott, AZ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jenni",
-    "lastName": "Westphal",
-    "age": "F50-59",
-    "location": "Los Angeles, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Joe",
-    "lastName": "Morris",
-    "age": "M40-49",
-    "location": "Cascias, PRT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Freer",
-    "age": "M50-59",
-    "location": "Canon City, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

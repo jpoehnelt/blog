@@ -118,7 +118,7 @@
     "ageRank": 85.5,
     "results": 23,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Helena",
@@ -140,7 +140,7 @@
     "ageRank": 85.1,
     "results": 6,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Gunnar",
@@ -173,7 +173,7 @@
     "ageRank": 81.8,
     "results": 92,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Timothy",
@@ -239,7 +239,7 @@
     "ageRank": 69,
     "results": 7,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Gregory",
@@ -283,7 +283,7 @@
     "ageRank": 94.5,
     "results": 135,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Yash",
@@ -305,7 +305,7 @@
     "ageRank": 77.3,
     "results": 5,
     "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
     "firstName": "Hector",
@@ -426,7 +426,7 @@
     "ageRank": 59.7,
     "results": 5,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Tim",
@@ -458,6 +458,17 @@
     "rank": 54.8,
     "ageRank": 77.7,
     "results": 23,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Suzanne",
+    "lastName": "Sandrue",
+    "age": "F40-49",
+    "location": "Franklin, NJ",
+    "rank": 64.9,
+    "ageRank": 72.5,
+    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -503,7 +514,7 @@
     "ageRank": 53.9,
     "results": 4,
     "bib": "",
-    "finishes": 0
+    "finishes": 2
   },
   {
     "firstName": "Douglas",
@@ -660,39 +671,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Sofie",
-    "lastName": "Batt",
-    "age": "F20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Josh",
-    "lastName": "Salzman",
-    "age": "M20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lucy",
-    "lastName": "Milbourn",
-    "age": "F20-29",
-    "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ritu",
     "lastName": "Raj",
     "age": "M20-29",
@@ -730,6 +708,39 @@
     "lastName": "Battis",
     "age": "M30-39",
     "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sofie",
+    "lastName": "Batt",
+    "age": "F20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Salzman",
+    "age": "M20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lucy",
+    "lastName": "Milbourn",
+    "age": "F20-29",
+    "location": "Colorado Springs, CO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
