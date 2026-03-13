@@ -1402,24 +1402,13 @@
     "id": 127413,
     "title": "Ozark Foothills Endurance Runs",
     "slug": "ozark-foothills-endurance-runs",
-    "parentId": 127422,
+    "parentId": 127413,
     "date": "2026-04-10T06:00:00.000Z",
     "location": "Wildwood, MO",
     "website": "http://www.terraintrailrunners.com/ozark-foothills.html",
     "lat": 38.533029,
     "lng": -90.68737780000004,
     "events": [
-      {
-        "id": 127422,
-        "title": "Kids Fun Run",
-        "slug": "kids-fun-run",
-        "waitlist": {
-          "dataFile": "races/2026/ozark-foothills-endurance-runs/kids-fun-run.waitlist.json"
-        },
-        "entrants": {
-          "dataFile": "races/2026/ozark-foothills-endurance-runs/kids-fun-run.entrants.json"
-        }
-      },
       {
         "id": 127413,
         "title": "100M",
@@ -1517,6 +1506,17 @@
         },
         "entrants": {
           "dataFile": "races/2026/ozark-foothills-endurance-runs/25k.entrants.json"
+        }
+      },
+      {
+        "id": 127422,
+        "title": "Kids Fun Run",
+        "slug": "kids-fun-run",
+        "waitlist": {
+          "dataFile": "races/2026/ozark-foothills-endurance-runs/kids-fun-run.waitlist.json"
+        },
+        "entrants": {
+          "dataFile": "races/2026/ozark-foothills-endurance-runs/kids-fun-run.entrants.json"
         }
       }
     ],

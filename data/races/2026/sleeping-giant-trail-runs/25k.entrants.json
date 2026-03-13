@@ -11,6 +11,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Daniel",
+    "lastName": "Rogoz",
+    "age": "M30-39",
+    "location": "Hamden, CT",
+    "rank": 93.4,
+    "ageRank": 95.1,
+    "results": 31,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Chris",
     "lastName": "Sina-Jessiman",
     "age": "M50-59",
@@ -29,6 +40,17 @@
     "rank": 88.7,
     "ageRank": 90.7,
     "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Steven",
+    "lastName": "Erickson",
+    "age": "M30-39",
+    "location": "West Haven, CT",
+    "rank": 79.2,
+    "ageRank": 94.5,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -251,6 +273,17 @@
     "results": 44,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Thomas",
+    "lastName": "Jourdak",
+    "age": "M30-39",
+    "location": "Chester, MD",
+    "rank": 65.1,
+    "ageRank": 65.1,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "William",
@@ -495,17 +528,6 @@
     "finishes": 1
   },
   {
-    "firstName": "Anthony",
-    "lastName": "Perez",
-    "age": "M20-29",
-    "location": "Stamford, CT",
-    "rank": 58.5,
-    "ageRank": 64.8,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Benjamin",
     "lastName": "Thomas",
     "age": "M40-49",
@@ -513,6 +535,17 @@
     "rank": 58.5,
     "ageRank": 67.9,
     "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Anthony",
+    "lastName": "Perez",
+    "age": "M20-29",
+    "location": "Stamford, CT",
+    "rank": 58.5,
+    "ageRank": 64.8,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -656,6 +689,17 @@
     "rank": 53.1,
     "ageRank": 54.2,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lu",
+    "lastName": "Neuse",
+    "age": "F40-49",
+    "location": "Brattleboro, VT",
+    "rank": 69.1,
+    "ageRank": 72.5,
+    "results": 11,
     "bib": "",
     "finishes": 0
   },
@@ -825,6 +869,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Robert",
+    "lastName": "Rhone",
+    "age": "M40-49",
+    "location": "North Haven, CT",
+    "rank": 43.5,
+    "ageRank": 30.2,
+    "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Crystal",
     "lastName": "Pearce",
     "age": "F40-49",
@@ -990,50 +1045,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Brian",
-    "lastName": "Zaboski",
-    "age": "M30-39",
-    "location": "Wallingford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sean",
-    "lastName": "McCurley",
-    "age": "M<20",
-    "location": "Fairfield, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jacob",
-    "lastName": "Lester",
-    "age": "M20-29",
-    "location": "New York, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Mobilio",
-    "age": "M30-39",
-    "location": "Meriden, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Oona",
     "lastName": "Harrington",
     "age": "F40-49",
@@ -1111,6 +1122,50 @@
     "finishes": 0
   },
   {
+    "firstName": "Annette",
+    "lastName": "Muller-Schwarze",
+    "age": "F50-59",
+    "location": "Cheshire, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Zaboski",
+    "age": "M30-39",
+    "location": "Wallingford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Lester",
+    "age": "M20-29",
+    "location": "New York, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Mobilio",
+    "age": "M30-39",
+    "location": "Meriden, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Chris",
     "lastName": "Gathers",
     "age": "M50-59",
@@ -1170,6 +1225,17 @@
     "lastName": "Kulacz",
     "age": "F30-39",
     "location": "Oxford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sean",
+    "lastName": "McCurley",
+    "age": "M<20",
+    "location": "Fairfield, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

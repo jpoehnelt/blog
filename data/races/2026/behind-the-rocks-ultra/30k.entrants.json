@@ -363,6 +363,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Preston",
+    "lastName": "Fleagle",
+    "age": "M20-29",
+    "location": "Heber City, UT",
+    "rank": 59.1,
+    "ageRank": 59.1,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Mark",
     "lastName": "Moyer",
     "age": "M60-69",
@@ -382,6 +393,17 @@
     "ageRank": 82,
     "results": 11,
     "bib": "2022",
+    "finishes": 0
+  },
+  {
+    "firstName": "Annabelle",
+    "lastName": "Oung",
+    "age": "F40-49",
+    "location": "Nordegg, AB",
+    "rank": 69,
+    "ageRank": 76.6,
+    "results": 2,
+    "bib": "",
     "finishes": 0
   },
   {
@@ -765,9 +787,9 @@
     "location": "Colorado Springs, CO",
     "rank": 55.5,
     "ageRank": 67.1,
-    "results": 23,
+    "results": 25,
     "bib": "1085",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Joi",
@@ -1067,83 +1089,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Kyle",
-    "lastName": "Adams",
-    "age": "M30-39",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2072",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zoe",
-    "lastName": "Camp",
-    "age": "F20-29",
-    "location": "Tulsa, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2080",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sam",
-    "lastName": "Miller",
-    "age": "M30-39",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2099",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lauren",
-    "lastName": "Marquis",
-    "age": "F20-29",
-    "location": "Denver, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2093",
-    "finishes": 0
-  },
-  {
-    "firstName": "Honey",
-    "lastName": "Darji",
-    "age": "F20-29",
-    "location": "Thronton, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2083",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sofija",
-    "lastName": "Andrew",
-    "age": "F20-29",
-    "location": "Gunnison, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2073",
-    "finishes": 0
-  },
-  {
-    "firstName": "Madeline",
-    "lastName": "Harvey",
-    "age": "F20-29",
-    "location": "Arvada, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "2086",
-    "finishes": 0
-  },
-  {
     "firstName": "Alexie",
     "lastName": "Millikin",
     "age": "F30-39",
@@ -1320,6 +1265,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Eila",
+    "lastName": "Saarni",
+    "age": "F30-39",
+    "location": "San Francisco, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ilyssa",
     "lastName": "Stark",
     "age": "F30-39",
@@ -1372,6 +1328,83 @@
     "ageRank": 0,
     "results": 0,
     "bib": "2079",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kyle",
+    "lastName": "Adams",
+    "age": "M30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2072",
+    "finishes": 0
+  },
+  {
+    "firstName": "Zoe",
+    "lastName": "Camp",
+    "age": "F20-29",
+    "location": "Tulsa, OK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2080",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sam",
+    "lastName": "Miller",
+    "age": "M30-39",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2099",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lauren",
+    "lastName": "Marquis",
+    "age": "F20-29",
+    "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2093",
+    "finishes": 0
+  },
+  {
+    "firstName": "Honey",
+    "lastName": "Darji",
+    "age": "F20-29",
+    "location": "Thronton, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2083",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sofija",
+    "lastName": "Andrew",
+    "age": "F20-29",
+    "location": "Gunnison, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2073",
+    "finishes": 0
+  },
+  {
+    "firstName": "Madeline",
+    "lastName": "Harvey",
+    "age": "F20-29",
+    "location": "Arvada, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "2086",
     "finishes": 0
   }
 ]
