@@ -123,7 +123,13 @@ dist
 
 **/credentials.json
 
+# Turbo
 .turbo
+
+# Bazel
+/bazel-*
+.bazel_cache
+user.bazelrc
 .cache
 .playwright-mcp
 .svelte-kit

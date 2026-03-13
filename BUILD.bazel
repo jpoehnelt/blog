@@ -1,0 +1,23 @@
+load("@aspect_rules_js//js:defs.bzl", "js_library")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+
+npm_link_all_packages(name = "node_modules")
+
+exports_files([
+    "tsconfig.json",
+    "tsconfig.base.json",
+    "package.json",
+    "pnpm-lock.yaml",
+    # Exported so package BUILD.bazel files that reference the workspace
+    # definition can declare it as an explicit dependency.
+    "pnpm-workspace.yaml",
+])
+
+js_library(
+    name = "tsconfig",
+    srcs = [
+        "tsconfig.json",
+        "tsconfig.base.json",
+    ],
+    visibility = ["//visibility:public"],
+)
