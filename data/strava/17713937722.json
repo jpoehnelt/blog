@@ -1,0 +1,194 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 2170160,
+    "resource_state": 1
+  },
+  "name": "Evening Hike",
+  "distance": 2652.9,
+  "moving_time": 2433,
+  "elapsed_time": 2433,
+  "total_elevation_gain": 132,
+  "type": "Hike",
+  "sport_type": "Hike",
+  "device_name": "Garmin Enduro 3",
+  "id": 17713937722,
+  "start_date": "2026-03-14T00:36:07Z",
+  "start_date_local": "2026-03-13T18:36:07Z",
+  "timezone": "(GMT-07:00) America/Denver",
+  "utc_offset": -21600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a17713937722",
+    "polyline": "yybsFt_raS@BH@\\A\\IZA`AM~ADXFZJ`@TVVXPrBp@dAV\\Nr@n@PHf@PFFfAvAd@t@XXHN|@dAh@t@HRFb@I`@GPOHiAKUDEBEF@b@BRPf@R\\PHb@Np@^^h@d@h@EJW?QFM?UL_@F]T]DMRSJIHEPBTAp@[~@SZAFi@jAEX?b@EH_@DQAi@OWCW@WEYUUESOKEcAHKFWAOGG?SHYAcAVm@G]IIGMCmAQ_@TI?GG[o@}@qAMc@DmAZ{@JGPA`@KLILQ`@SPMOWEO?[HQNORw@R]E]EQSISQa@q@W[UMWIg@EW@_@LYDEDIj@EFGBKA_@UY_@IWEU@_BMq@EG]IGE_@y@EMh@_Ah@w@^eA\\[|@cANCLGl@EDGCQ",
+    "resource_state": 3,
+    "summary_polyline": "yybsFt_raS@BH@\\A\\IZA`AM~ADXFZJ`@TVVXPrBp@dAV\\Nr@n@PHf@PFFfAvAd@t@XXHN|@dAh@t@HRFb@I`@GPOHiAKUDEBEF@b@BRPf@R\\PHb@Np@^^h@d@h@EJW?QFM?UL_@F]T]DMRSJIHEPBTAp@[~@SZAFi@jAEX?b@EH_@DQAi@OWCW@WEYUUESOKEcAHKFWAOGG?SHYAcAVm@G]IIGMCmAQ_@TI?GG[o@}@qAMc@DmAZ{@JGPA`@KLILQ`@SPMOWEO?[HQNORw@R]E]EQSISQa@q@W[UMWIg@EW@_@LYDEDIj@EFGBKA_@UY_@IWEU@_BMq@EG]IGE_@y@EMh@_Ah@w@^eA\\[|@cANCLGl@EDGCQ"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": null,
+  "start_latlng": [
+    39.996612,
+    -105.282667
+  ],
+  "end_latlng": [
+    39.996856,
+    -105.282555
+  ],
+  "average_speed": 1.09,
+  "max_speed": 1.78,
+  "average_cadence": 50.7,
+  "has_heartrate": true,
+  "average_heartrate": 98.9,
+  "max_heartrate": 128,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 1881,
+  "elev_low": 1749,
+  "upload_id": 18812488002,
+  "upload_id_str": "18812488002",
+  "external_id": "garmin_ping_545923101592",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 5,
+  "description": null,
+  "calories": 205,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [],
+  "splits_metric": [
+    {
+      "distance": 1004,
+      "elapsed_time": 891,
+      "elevation_difference": 114.2,
+      "moving_time": 891,
+      "split": 1,
+      "average_speed": 1.13,
+      "average_grade_adjusted_speed": 1.75,
+      "average_heartrate": 116.97044917257683,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.9,
+      "elapsed_time": 925,
+      "elevation_difference": -68,
+      "moving_time": 925,
+      "split": 2,
+      "average_speed": 1.08,
+      "average_grade_adjusted_speed": 1.11,
+      "average_heartrate": 91.503884572697,
+      "pace_zone": 0
+    },
+    {
+      "distance": 650,
+      "elapsed_time": 617,
+      "elevation_difference": -45,
+      "moving_time": 617,
+      "split": 3,
+      "average_speed": 1.05,
+      "average_grade_adjusted_speed": 1.06,
+      "average_heartrate": 84.48414023372287,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1610.1,
+      "elapsed_time": 1446,
+      "elevation_difference": 84,
+      "moving_time": 1446,
+      "split": 1,
+      "average_speed": 1.11,
+      "average_grade_adjusted_speed": 1.53,
+      "average_heartrate": 109.31749460043197,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1042.8,
+      "elapsed_time": 987,
+      "elevation_difference": -82.8,
+      "moving_time": 987,
+      "split": 2,
+      "average_speed": 1.06,
+      "average_grade_adjusted_speed": 1.05,
+      "average_heartrate": 83.7680250783699,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 63324818985,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 17713937722,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 2170160,
+        "resource_state": 1
+      },
+      "elapsed_time": 2433,
+      "moving_time": 2433,
+      "start_date": "2026-03-14T00:36:07Z",
+      "start_date_local": "2026-03-13T18:36:07Z",
+      "distance": 2652.95,
+      "average_speed": 1.09,
+      "max_speed": 1.78,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 609,
+      "total_elevation_gain": 134.8,
+      "average_cadence": 50.7,
+      "device_watts": false,
+      "average_heartrate": 98.9,
+      "max_heartrate": 128
+    }
+  ],
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "embed_token": "b8a9b93fcedfae9111b52dafacd4c54e789656b0",
+  "available_zones": [
+    "heartrate"
+  ]
+}
