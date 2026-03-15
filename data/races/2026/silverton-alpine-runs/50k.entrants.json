@@ -1,49 +1,5 @@
 [
   {
-    "firstName": "Brian",
-    "lastName": "Hancock",
-    "age": "M30-39",
-    "location": "Columbia, MO",
-    "rank": 81,
-    "ageRank": 86.7,
-    "results": 13,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ross",
-    "lastName": "Himes",
-    "age": "M30-39",
-    "location": "Lakewood, CO",
-    "rank": 77.6,
-    "ageRank": 91.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Carson",
-    "lastName": "Speicher",
-    "age": "M20-29",
-    "location": "Allenspark, CO",
-    "rank": 77.3,
-    "ageRank": 81.2,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Patrizi",
-    "age": "M40-49",
-    "location": "Georgetown, CO",
-    "rank": 76.3,
-    "ageRank": 80,
-    "results": 19,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Savannah",
     "lastName": "Crowley",
     "age": "F40-49",
@@ -62,39 +18,6 @@
     "rank": 88.9,
     "ageRank": 91.1,
     "results": 14,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jack",
-    "lastName": "White",
-    "age": "M20-29",
-    "location": "Durango, CO",
-    "rank": 74.1,
-    "ageRank": 100,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jared",
-    "lastName": "Wolf",
-    "age": "M20-29",
-    "location": "Durango, CO",
-    "rank": 72.7,
-    "ageRank": 72.7,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Anthony",
-    "lastName": "Federico",
-    "age": "M30-39",
-    "location": "Dacono, CO",
-    "rank": 72.1,
-    "ageRank": 82.3,
-    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -118,7 +41,7 @@
     "ageRank": 85.5,
     "results": 23,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Helena",
@@ -140,60 +63,16 @@
     "ageRank": 85.1,
     "results": 6,
     "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Gunnar",
-    "lastName": "Elliott",
-    "age": "M20-29",
-    "location": "Littleton, CO",
-    "rank": 68.5,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Frazer",
-    "lastName": "Mayson",
-    "age": "M40-49",
-    "location": "Athens, GA",
-    "rank": 68,
-    "ageRank": 83.5,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "English",
-    "age": "M50-59",
-    "location": "Santa Fe, NM",
-    "rank": 67.1,
-    "ageRank": 81.8,
-    "results": 92,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Timothy",
-    "lastName": "Lord",
-    "age": "M40-49",
-    "location": "Erie, CO",
-    "rank": 66.8,
-    "ageRank": 71.9,
-    "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Justin",
-    "lastName": "Compton",
-    "age": "M40-49",
-    "location": "Erie, CO",
-    "rank": 66.8,
-    "ageRank": 74.6,
-    "results": 18,
+    "firstName": "Brian",
+    "lastName": "Hancock",
+    "age": "M30-39",
+    "location": "Columbia, MO",
+    "rank": 81,
+    "ageRank": 86.7,
+    "results": 13,
     "bib": "",
     "finishes": 0
   },
@@ -220,6 +99,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Ross",
+    "lastName": "Himes",
+    "age": "M30-39",
+    "location": "Lakewood, CO",
+    "rank": 77.6,
+    "ageRank": 91.3,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Katrina",
     "lastName": "Slater",
     "age": "F30-39",
@@ -242,6 +132,171 @@
     "finishes": 0
   },
   {
+    "firstName": "Carson",
+    "lastName": "Speicher",
+    "age": "M20-29",
+    "location": "Allenspark, CO",
+    "rank": 77.3,
+    "ageRank": 81.2,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Patrizi",
+    "age": "M40-49",
+    "location": "Georgetown, CO",
+    "rank": 76.3,
+    "ageRank": 80,
+    "results": 19,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jack",
+    "lastName": "White",
+    "age": "M20-29",
+    "location": "Durango, CO",
+    "rank": 74.1,
+    "ageRank": 100,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amy",
+    "lastName": "Gaber",
+    "age": "F30-39",
+    "location": "Parker, CO",
+    "rank": 73.2,
+    "ageRank": 77.3,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Arielle",
+    "lastName": "Breight",
+    "age": "F30-39",
+    "location": "Waukesha, WI",
+    "rank": 72.8,
+    "ageRank": 68.3,
+    "results": 10,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jared",
+    "lastName": "Wolf",
+    "age": "M20-29",
+    "location": "Durango, CO",
+    "rank": 72.7,
+    "ageRank": 72.7,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Anthony",
+    "lastName": "Federico",
+    "age": "M30-39",
+    "location": "Dacono, CO",
+    "rank": 72.1,
+    "ageRank": 82.3,
+    "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Shirley",
+    "lastName": "Zelinski",
+    "age": "F50-59",
+    "location": "Hartland, WI",
+    "rank": 71.8,
+    "ageRank": 86.5,
+    "results": 16,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Martin",
+    "age": "F60-69",
+    "location": "Albuquerque, NM",
+    "rank": 71.5,
+    "ageRank": 73.3,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gunnar",
+    "lastName": "Elliott",
+    "age": "M20-29",
+    "location": "Littleton, CO",
+    "rank": 68.5,
+    "ageRank": 0,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Frazer",
+    "lastName": "Mayson",
+    "age": "M40-49",
+    "location": "Athens, GA",
+    "rank": 68,
+    "ageRank": 83.5,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sydney",
+    "lastName": "Maloy",
+    "age": "F20-29",
+    "location": "Laramie, WY",
+    "rank": 67.3,
+    "ageRank": 67.6,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "James",
+    "lastName": "English",
+    "age": "M50-59",
+    "location": "Santa Fe, NM",
+    "rank": 67.1,
+    "ageRank": 81.8,
+    "results": 92,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Justin",
+    "lastName": "Compton",
+    "age": "M40-49",
+    "location": "Erie, CO",
+    "rank": 67,
+    "ageRank": 75.1,
+    "results": 19,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Timothy",
+    "lastName": "Lord",
+    "age": "M40-49",
+    "location": "Erie, CO",
+    "rank": 66.8,
+    "ageRank": 71.9,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Andrew",
     "lastName": "Whittle",
     "age": "M30-39",
@@ -250,7 +305,29 @@
     "ageRank": 69,
     "results": 7,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
+  },
+  {
+    "firstName": "Suzanne",
+    "lastName": "Sandrue",
+    "age": "F40-49",
+    "location": "Franklin, NJ",
+    "rank": 64.9,
+    "ageRank": 72.5,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Karissa",
+    "lastName": "Johnson",
+    "age": "F40-49",
+    "location": "Littleton, CO",
+    "rank": 64.6,
+    "ageRank": 69.6,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Gregory",
@@ -275,6 +352,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Katie",
+    "lastName": "Colasono",
+    "age": "F30-39",
+    "location": "Boulder, CO",
+    "rank": 63.8,
+    "ageRank": 73.7,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jon",
     "lastName": "Aaron",
     "age": "M30-39",
@@ -294,7 +382,18 @@
     "ageRank": 94.5,
     "results": 135,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
+  },
+  {
+    "firstName": "Jennifer",
+    "lastName": "Cawley",
+    "age": "F60-69",
+    "location": "Colorado Springs, CO",
+    "rank": 63.4,
+    "ageRank": 82.1,
+    "results": 21,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Yash",
@@ -308,17 +407,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Amy",
-    "lastName": "Gaber",
-    "age": "F30-39",
-    "location": "Parker, CO",
-    "rank": 73.2,
-    "ageRank": 77.3,
-    "results": 5,
-    "bib": "",
-    "finishes": 3
-  },
-  {
     "firstName": "Hector",
     "lastName": "Robledo",
     "age": "M30-39",
@@ -330,13 +418,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Arielle",
-    "lastName": "Breight",
-    "age": "F30-39",
-    "location": "Waukesha, WI",
-    "rank": 72.8,
-    "ageRank": 68.3,
-    "results": 10,
+    "firstName": "Stephanie",
+    "lastName": "Galeotti",
+    "age": "F40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 61.6,
+    "ageRank": 80.2,
+    "results": 18,
     "bib": "",
     "finishes": 0
   },
@@ -359,28 +447,6 @@
     "rank": 61.3,
     "ageRank": 63.7,
     "results": 23,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Shirley",
-    "lastName": "Zelinski",
-    "age": "F50-59",
-    "location": "Hartland, WI",
-    "rank": 71.8,
-    "ageRank": 86.5,
-    "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Martin",
-    "age": "F60-69",
-    "location": "Albuquerque, NM",
-    "rank": 71.5,
-    "ageRank": 73.3,
-    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -418,17 +484,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Sydney",
-    "lastName": "Maloy",
-    "age": "F20-29",
-    "location": "Laramie, WY",
-    "rank": 67.3,
-    "ageRank": 67.6,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Matthew",
     "lastName": "Vigil",
     "age": "M30-39",
@@ -437,7 +492,18 @@
     "ageRank": 59.7,
     "results": 5,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
+  },
+  {
+    "firstName": "Heather",
+    "lastName": "Graddy",
+    "age": "F40-49",
+    "location": "Lakewood, CO",
+    "rank": 56,
+    "ageRank": 68.2,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Tim",
@@ -473,46 +539,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Suzanne",
-    "lastName": "Sandrue",
-    "age": "F40-49",
-    "location": "Franklin, NJ",
-    "rank": 64.9,
-    "ageRank": 72.5,
-    "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Karissa",
-    "lastName": "Johnson",
-    "age": "F40-49",
-    "location": "Littleton, CO",
-    "rank": 64.6,
-    "ageRank": 69.6,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Katie",
-    "lastName": "Colasono",
-    "age": "F30-39",
-    "location": "Boulder, CO",
-    "rank": 63.8,
-    "ageRank": 73.7,
+    "firstName": "Mary Cathryn",
+    "lastName": "Lord",
+    "age": "F20-29",
+    "location": "Durango, CO",
+    "rank": 54.7,
+    "ageRank": 54.7,
     "results": 2,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Jennifer",
-    "lastName": "Cawley",
-    "age": "F60-69",
-    "location": "Colorado Springs, CO",
-    "rank": 63.4,
-    "ageRank": 82.1,
-    "results": 21,
+    "firstName": "Rebecca",
+    "lastName": "Hanson",
+    "age": "F50-59",
+    "location": "Coxs Creek, KY",
+    "rank": 53.9,
+    "ageRank": 71.1,
+    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -525,7 +569,7 @@
     "ageRank": 53.9,
     "results": 4,
     "bib": "",
-    "finishes": 2
+    "finishes": 0
   },
   {
     "firstName": "Douglas",
@@ -535,6 +579,17 @@
     "rank": 52.3,
     "ageRank": 59.4,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Stevenson",
+    "age": "M30-39",
+    "location": "Denver, CO",
+    "rank": 52.2,
+    "ageRank": 53.9,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -550,13 +605,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Stephanie",
-    "lastName": "Galeotti",
+    "firstName": "Rachel",
+    "lastName": "Easterwood",
     "age": "F40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 61.6,
-    "ageRank": 80.2,
-    "results": 18,
+    "location": "Pagosa Springs, CO",
+    "rank": 51,
+    "ageRank": 55.3,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -583,28 +638,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Heather",
-    "lastName": "Graddy",
-    "age": "F40-49",
-    "location": "Lakewood, CO",
-    "rank": 56,
-    "ageRank": 68.2,
-    "results": 8,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mary Cathryn",
-    "lastName": "Lord",
-    "age": "F20-29",
-    "location": "Durango, CO",
-    "rank": 54.7,
-    "ageRank": 54.7,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "James",
     "lastName": "Keeling",
     "age": "M20-29",
@@ -627,17 +660,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Rebecca",
-    "lastName": "Hanson",
-    "age": "F50-59",
-    "location": "Coxs Creek, KY",
-    "rank": 53.9,
-    "ageRank": 71.1,
-    "results": 5,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Bruce",
     "lastName": "Mastriona",
     "age": "M60-69",
@@ -649,13 +671,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Rachel",
-    "lastName": "Easterwood",
-    "age": "F40-49",
-    "location": "Pagosa Springs, CO",
-    "rank": 51,
-    "ageRank": 55.3,
-    "results": 2,
+    "firstName": "Roberto",
+    "lastName": "Torres",
+    "age": "M40-49",
+    "location": "Santa Fe, NM",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -664,17 +686,6 @@
     "lastName": "Wright",
     "age": "F50-59",
     "location": "Silverton, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Benjamin",
-    "lastName": "Acker",
-    "age": "M30-39",
-    "location": "Las Cruces, NM",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -726,6 +737,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Benjamin",
+    "lastName": "Acker",
+    "age": "M30-39",
+    "location": "Las Cruces, NM",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Sofie",
     "lastName": "Batt",
     "age": "F20-29",
@@ -752,17 +774,6 @@
     "lastName": "Milbourn",
     "age": "F20-29",
     "location": "Colorado Springs, CO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Roberto",
-    "lastName": "Torres",
-    "age": "M40-49",
-    "location": "Santa Fe, NM",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
