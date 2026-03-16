@@ -37,17 +37,13 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: "pnpm"
-      - uses: actions/cache@v4
+      - uses: bazel-contrib/setup-bazel@0.14.0
         with:
-          path: |
-            .turbo
-            node_modules/.cache
-            apps/site/node_modules/.cache
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
       - run: pnpm i
-      - run: pnpm build
+      - run: bazel build //...
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
