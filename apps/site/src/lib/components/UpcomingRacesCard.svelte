@@ -1,5 +1,7 @@
 <script lang="ts">
   import { raceUrl } from "$lib/race-urls";
+  import SectionHeadline from "$lib/components/SectionHeadline.svelte";
+
   interface UpcomingRace {
     id: number;
     title: string;
@@ -17,9 +19,9 @@
 </script>
 
 <section class="space-y-4">
-  <h2 class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 tracking-wider">
+  <SectionHeadline>
     Upcoming Races
-  </h2>
+  </SectionHeadline>
   
   {#if races.length > 0}
     <ul class="space-y-3">
