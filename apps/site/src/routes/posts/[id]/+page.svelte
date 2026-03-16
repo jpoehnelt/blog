@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   import Head from "$lib/components/Head.svelte";
   import PostList from "$lib/components/PostList.svelte";
   import TagButton from "$lib/components/TagButton.svelte";
@@ -163,12 +163,12 @@
         </span>
         <span class="text-gray-300 dark:text-gray-600">·</span>
         <span>
-          <FormattedDate date={data.pubDate} />
+          <DateDisplay date={data.pubDate} />
         </span>
         {#if data.lastMod}
           <span class="text-gray-300 dark:text-gray-600">·</span>
           <span>
-            Updated <FormattedDate date={data.lastMod} />
+            Updated <DateDisplay date={data.lastMod} />
           </span>
         {/if}
         <a

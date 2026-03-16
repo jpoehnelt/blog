@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import DateDisplay from "$lib/components/DateDisplay.svelte";
   import type { Post } from "$lib/content/posts";
   import { cn } from "$lib/utils";
 
@@ -22,7 +22,7 @@
     </a>
   </h4>
   <div class="text-xs text-muted-foreground mb-2">
-    <FormattedDate date={post.pubDate} />
+    <DateDisplay date={post.pubDate} />
   </div>
   <p class="text-sm line-clamp-3 text-muted-foreground flex-grow">
     {post.description}
