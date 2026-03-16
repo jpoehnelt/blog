@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Axis, Chart, Points, Svg } from "layerchart";
   import { scaleLinear } from "d3-scale";
+  import { formatDuration } from "$lib/utils.js";
 
   interface DataPoint {
     elapsed_time: number;
@@ -23,13 +24,6 @@
   const filteredData = $derived(
     data.filter((d) => d.elapsed_time / minElapsedTime < 3)
   );
-
-  // Format elapsed time as mm:ss
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.round(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
-  };
 </script>
 
 <div class="h-[300px] w-full p-4 text-foreground">
@@ -43,7 +37,7 @@
     padding={{ top: 20, bottom: 40, left: 40, right: 20 }}
   >
     <Svg>
-      <Axis placement="bottom" format={formatTime} rule />
+      <Axis placement="bottom" format={formatDuration} rule />
       <Axis placement="left" rule />
       <Points r={4} class="stroke-background stroke-2" />
     </Svg>
