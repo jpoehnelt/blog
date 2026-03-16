@@ -2,6 +2,7 @@
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import MetadataSeparator from "$lib/components/MetadataSeparator.svelte";
+  import Metric from "$lib/components/Metric.svelte";
   import Sparkline from "$lib/components/Sparkline.svelte";
   import { type StravaActivitySimple } from "$lib/content/strava";
   import { ExternalLink as ExternalLinkIcon, Footprints } from "@lucide/svelte";
@@ -44,10 +45,10 @@
         <span>{activity.sport_type || (activity as any).type}</span>
       {/if}
       <MetadataSeparator />
-      <span>{((activity.distance || 0) / 1000).toFixed(2)} km</span>
+      <Metric value={((activity.distance || 0) / 1000).toFixed(2)} unit="km" class="text-xs" />
       {#if (activity.total_elevation_gain || 0) > 0}
         <MetadataSeparator />
-        <span>{activity.total_elevation_gain} m</span>
+        <Metric value={activity.total_elevation_gain ?? 0} unit="m" class="text-xs" />
       {/if}
     </div>
     {#if activity.elevation_profile && activity.elevation_profile.length > 1}
