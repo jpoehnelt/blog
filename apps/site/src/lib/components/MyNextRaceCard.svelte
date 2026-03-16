@@ -2,6 +2,7 @@
   import { differenceInDays } from "date-fns";
   import type { MyRaceEntryResolved } from "@jpoehnelt/ultrasignup-scraper/types";
   import { raceEventUrl } from "$lib/race-urls";
+  import SectionHeading from "$lib/components/SectionHeading.svelte";
 
   interface Props {
     races: MyRaceEntryResolved[];
@@ -16,9 +17,9 @@
 
 {#if races.length > 0}
   <section class="space-y-4">
-    <h2 class="text-xl font-bold uppercase border-b-2 border-foreground pb-1 tracking-wider">
+    <SectionHeading>
       My Race{races.length > 1 ? "s" : ""}
-    </h2>
+    </SectionHeading>
     <div class="space-y-4">
       {#each races as race}
         <a 
