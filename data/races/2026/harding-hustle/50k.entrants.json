@@ -1,16 +1,5 @@
 [
   {
-    "firstName": "Colby",
-    "lastName": "Piehler-Pike",
-    "age": "M20-29",
-    "location": "Menifee, CA",
-    "rank": 89.2,
-    "ageRank": 100,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Georgie",
     "lastName": "Okell",
     "age": "X30-39",
@@ -22,6 +11,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Colby",
+    "lastName": "Piehler-Pike",
+    "age": "M20-29",
+    "location": "Menifee, CA",
+    "rank": 89.7,
+    "ageRank": 100,
+    "results": 7,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Cooper",
     "lastName": "Ras",
     "age": "M20-29",
@@ -29,6 +29,17 @@
     "rank": 86.4,
     "ageRank": 94,
     "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Rebecca",
+    "lastName": "McQuinn",
+    "age": "F30-39",
+    "location": "Rancho Santa Margarita, CA",
+    "rank": 84.5,
+    "ageRank": 91,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -51,6 +62,28 @@
     "rank": 83.7,
     "ageRank": 93.1,
     "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Heather",
+    "lastName": "Bell",
+    "age": "F40-49",
+    "location": "Las Vegas, NV",
+    "rank": 82.9,
+    "ageRank": 89.3,
+    "results": 21,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gardner",
+    "lastName": "Shearouse",
+    "age": "M20-29",
+    "location": "Costa Mesa, CA",
+    "rank": 82.5,
+    "ageRank": 89.7,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -88,15 +121,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Rebecca",
-    "lastName": "McQuinn",
-    "age": "F30-39",
+    "firstName": "Melissa",
+    "lastName": "Gutierrez",
+    "age": "F40-49",
     "location": "Rancho Santa Margarita, CA",
-    "rank": 84.5,
-    "ageRank": 91,
-    "results": 3,
+    "rank": 74.3,
+    "ageRank": 82.9,
+    "results": 8,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Christopher",
@@ -110,17 +143,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Heather",
-    "lastName": "Bell",
-    "age": "F40-49",
-    "location": "Las Vegas, NV",
-    "rank": 82.9,
-    "ageRank": 89.3,
-    "results": 21,
-    "bib": "",
-    "finishes": 1
-  },
-  {
     "firstName": "Eric",
     "lastName": "Luoma",
     "age": "M40-49",
@@ -128,6 +150,17 @@
     "rank": 71.9,
     "ageRank": 76.9,
     "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Daniella",
+    "lastName": "Chong",
+    "age": "F40-49",
+    "location": "West Hollywood, CA",
+    "rank": 71.9,
+    "ageRank": 75,
+    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -140,7 +173,7 @@
     "ageRank": 82.1,
     "results": 5,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Jeremy",
@@ -202,11 +235,22 @@
     "lastName": "Brunken",
     "age": "M60-69",
     "location": "Moreno Valley, CA",
-    "rank": 68,
-    "ageRank": 79.1,
-    "results": 70,
+    "rank": 67.7,
+    "ageRank": 78.8,
+    "results": 71,
     "bib": "",
-    "finishes": 3
+    "finishes": 0
+  },
+  {
+    "firstName": "Tricia",
+    "lastName": "Kelsey",
+    "age": "F50-59",
+    "location": "Fresno, CA",
+    "rank": 66.2,
+    "ageRank": 77.5,
+    "results": 50,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Carlos",
@@ -228,17 +272,6 @@
     "ageRank": 70.5,
     "results": 10,
     "bib": "",
-    "finishes": 2
-  },
-  {
-    "firstName": "Melissa",
-    "lastName": "Gutierrez",
-    "age": "F40-49",
-    "location": "Rancho Santa Margarita, CA",
-    "rank": 74.3,
-    "ageRank": 82.9,
-    "results": 8,
-    "bib": "",
     "finishes": 0
   },
   {
@@ -249,17 +282,6 @@
     "rank": 63.8,
     "ageRank": 75.5,
     "results": 41,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Daniella",
-    "lastName": "Chong",
-    "age": "F40-49",
-    "location": "West Hollywood, CA",
-    "rank": 71.9,
-    "ageRank": 75,
-    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -279,11 +301,11 @@
     "lastName": "Cotton",
     "age": "M40-49",
     "location": "Mission Viejo, CA",
-    "rank": 60.9,
-    "ageRank": 71.9,
-    "results": 12,
+    "rank": 60.3,
+    "ageRank": 71.1,
+    "results": 13,
     "bib": "",
-    "finishes": 2
+    "finishes": 0
   },
   {
     "firstName": "Richard",
@@ -297,13 +319,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Tricia",
-    "lastName": "Kelsey",
-    "age": "F50-59",
-    "location": "Fresno, CA",
-    "rank": 66.2,
-    "ageRank": 77.5,
-    "results": 50,
+    "firstName": "Lindsay",
+    "lastName": "Keller",
+    "age": "F30-39",
+    "location": "Aliso Viejo, CA",
+    "rank": 58.2,
+    "ageRank": 58.2,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -338,7 +360,7 @@
     "ageRank": 68.5,
     "results": 34,
     "bib": "",
-    "finishes": 3
+    "finishes": 0
   },
   {
     "firstName": "Brian",
@@ -363,17 +385,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Lindsay",
-    "lastName": "Keller",
-    "age": "F30-39",
-    "location": "Aliso Viejo, CA",
-    "rank": 58.2,
-    "ageRank": 58.2,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Alfonso",
     "lastName": "Campa",
     "age": "M40-49",
@@ -385,23 +396,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Sam",
-    "lastName": "Larson",
-    "age": "M20-29",
-    "location": "los angeles, CA",
-    "rank": 45.4,
-    "ageRank": 48.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Julie",
     "lastName": "Kling",
     "age": "F60-69",
     "location": "New York, NY",
     "rank": 48.4,
     "ageRank": 100,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sam",
+    "lastName": "Larson",
+    "age": "M20-29",
+    "location": "los angeles, CA",
+    "rank": 45.4,
+    "ageRank": 48.3,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -433,50 +444,6 @@
     "lastName": "Edson",
     "age": "M40-49",
     "location": "Lakewood, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Patrick",
-    "lastName": "Green",
-    "age": "M50-59",
-    "location": "Woodside, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alex",
-    "lastName": "Swanson",
-    "age": "M30-39",
-    "location": "Huntington Beach, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Paul",
-    "lastName": "Wentworth",
-    "age": "M30-39",
-    "location": "Portland, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dillon",
-    "lastName": "White",
-    "age": "M30-39",
-    "location": "phoenix, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -726,6 +693,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Rick",
+    "lastName": "Wehrmeyer",
+    "age": "M30-39",
+    "location": "Yorba Linda, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Angel",
     "lastName": "Hernandez",
     "age": "M30-39",
@@ -737,10 +715,43 @@
     "finishes": 0
   },
   {
-    "firstName": "Rick",
-    "lastName": "Wehrmeyer",
+    "firstName": "Patrick",
+    "lastName": "Green",
+    "age": "M50-59",
+    "location": "Woodside, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alex",
+    "lastName": "Swanson",
     "age": "M30-39",
-    "location": "Yorba Linda, CA",
+    "location": "Huntington Beach, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Paul",
+    "lastName": "Wentworth",
+    "age": "M30-39",
+    "location": "Portland, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dillon",
+    "lastName": "White",
+    "age": "M30-39",
+    "location": "phoenix, AZ",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
