@@ -1,5 +1,9 @@
 <script lang="ts">
   import type { Participant } from "@jpoehnelt/ultrasignup-scraper/types";
+  import InitialsAvatar from "$lib/components/InitialsAvatar.svelte";
+  import ProgressBar from "$lib/components/ProgressBar.svelte";
+  import MapPin from "@lucide/svelte/icons/map-pin";
+  import ChevronDown from "@lucide/svelte/icons/chevron-down";
 
   interface Props {
     list: Participant[];
@@ -33,11 +37,11 @@
       <div
         class="px-6 py-4 hover:bg-stone-50 transition-colors flex items-center gap-4 group"
       >
-        <div
-          class={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm border-2 border-white shadow-sm ring-1 ring-stone-100 ${theme === "blue" ? "bg-slate-100 text-slate-500" : "bg-rose-50 text-rose-500"}`}
-        >
-          {m.firstName[0]}{m.lastName[0]}
-        </div>
+        <InitialsAvatar
+          firstName={m.firstName}
+          lastName={m.lastName}
+          {theme}
+        />
         <div class="flex-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1">
             <div
@@ -52,33 +56,10 @@
               {m.results} results
             </div>
           </div>
-          <div
-            class="relative h-2 w-full bg-stone-100 rounded-full overflow-hidden"
-          >
-            <div
-              class={`absolute h-full rounded-full transition-all duration-500 ease-out ${theme === "blue" ? "bg-blue-500" : "bg-rose-500"}`}
-              style="width: {m.rank}%"
-            ></div>
-          </div>
+          <ProgressBar value={m.rank || 0} {theme} />
           <div class="flex justify-between mt-1.5 text-xs text-stone-500">
             <div class="flex items-center gap-1">
-              <svg
-                class="w-3 h-3 text-stone-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                /><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                /></svg
-              >
+              <MapPin class="w-3 h-3 text-stone-400" />
               {m.location || "Unknown"}
             </div>
             <span class="font-mono font-bold text-slate-700"
@@ -94,12 +75,11 @@
     <div class="p-3 border-t border-stone-100 flex justify-center bg-stone-50/30">
         <button 
             onclick={() => isExpanded = !isExpanded}
+            aria-expanded={isExpanded}
             class={`text-xs font-semibold ${theme === "blue" ? "text-blue-600 hover:text-blue-700" : "text-rose-600 hover:text-rose-700"} transition-colors flex items-center gap-1 bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow`}
         >
             {isExpanded ? "Show Less" : "Show More"}
-            <svg class="w-3 h-3 {isExpanded ? 'rotate-180' : ''} transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+            <ChevronDown class="w-3 h-3 {isExpanded ? 'rotate-180' : ''} transition-transform" />
         </button>
     </div>
   {/if}
