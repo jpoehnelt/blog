@@ -1,5 +1,6 @@
 <script lang="ts">
   import { raceUrl } from "$lib/race-urls";
+  import ActionLink from "$lib/components/ActionLink.svelte";
   interface UpcomingRace {
     id: number;
     title: string;
@@ -49,9 +50,9 @@
         </li>
       {/each}
     </ul>
-    <a href="/ultras/races" class="text-xs font-bold uppercase tracking-wider hover:underline block">
+    <ActionLink href="/ultras/races" variant="uppercase" class="block">
       View All Races →
-    </a>
+    </ActionLink>
   {:else}
     <p class="text-sm text-muted-foreground italic">No upcoming races</p>
   {/if}

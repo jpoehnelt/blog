@@ -1,5 +1,6 @@
 <script lang="ts">
   import { raceUrl } from "$lib/race-urls";
+  import ActionLink from "$lib/components/ActionLink.svelte";
   interface EliteRace {
     id: number;
     title: string;
@@ -21,9 +22,9 @@
     <h3 class="font-bold text-sm uppercase tracking-wider flex items-center gap-2">
       ⭐ Elite Fields
     </h3>
-    <a href="/ultras/races" class="text-xs text-muted-foreground hover:underline">
+    <ActionLink href="/ultras/races" variant="muted">
       See all →
-    </a>
+    </ActionLink>
   </div>
   
   {#if races.length > 0}
