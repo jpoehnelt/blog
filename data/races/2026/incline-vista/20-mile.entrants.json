@@ -22,17 +22,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jordan",
-    "lastName": "Wahlin",
-    "age": "M40-49",
-    "location": "Spokane, WA",
-    "rank": 81.4,
-    "ageRank": 81.4,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Morgen",
     "lastName": "Pack",
     "age": "F30-39",
@@ -40,6 +29,17 @@
     "rank": 86.1,
     "ageRank": 90,
     "results": 23,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jordan",
+    "lastName": "Wahlin",
+    "age": "M40-49",
+    "location": "Spokane, WA",
+    "rank": 81.4,
+    "ageRank": 81.4,
+    "results": 2,
     "bib": "",
     "finishes": 0
   },
@@ -63,7 +63,7 @@
     "ageRank": 85.7,
     "results": 17,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Chris",
@@ -73,50 +73,6 @@
     "rank": 77.9,
     "ageRank": 83.2,
     "results": 44,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jack",
-    "lastName": "Schniepp",
-    "age": "M50-59",
-    "location": "Bend, OR",
-    "rank": 75,
-    "ageRank": 93.7,
-    "results": 39,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Eddie",
-    "lastName": "Schmidt",
-    "age": "M60-69",
-    "location": "Redmond, OR",
-    "rank": 74.1,
-    "ageRank": 86.8,
-    "results": 59,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Anthony",
-    "lastName": "Svendsen",
-    "age": "M30-39",
-    "location": "Roseburg, OR",
-    "rank": 72.9,
-    "ageRank": 78.2,
-    "results": 3,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Travis",
-    "lastName": "Meyer",
-    "age": "M30-39",
-    "location": "Sisters, OR",
-    "rank": 71.7,
-    "ageRank": 71.7,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -143,13 +99,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Jake",
-    "lastName": "Carvitto",
-    "age": "M40-49",
-    "location": "LEAVENWORTH, WA",
-    "rank": 70.3,
-    "ageRank": 80,
-    "results": 5,
+    "firstName": "Jack",
+    "lastName": "Schniepp",
+    "age": "M50-59",
+    "location": "Bend, OR",
+    "rank": 75,
+    "ageRank": 93.7,
+    "results": 39,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Eddie",
+    "lastName": "Schmidt",
+    "age": "M60-69",
+    "location": "Redmond, OR",
+    "rank": 74.1,
+    "ageRank": 86.8,
+    "results": 59,
     "bib": "",
     "finishes": 0
   },
@@ -165,6 +132,39 @@
     "finishes": 0
   },
   {
+    "firstName": "Anthony",
+    "lastName": "Svendsen",
+    "age": "M30-39",
+    "location": "Roseburg, OR",
+    "rank": 72.9,
+    "ageRank": 78.2,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Travis",
+    "lastName": "Meyer",
+    "age": "M30-39",
+    "location": "Sisters, OR",
+    "rank": 71.7,
+    "ageRank": 71.7,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jake",
+    "lastName": "Carvitto",
+    "age": "M40-49",
+    "location": "LEAVENWORTH, WA",
+    "rank": 70.3,
+    "ageRank": 80,
+    "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Samuel",
     "lastName": "Roberts",
     "age": "M40-49",
@@ -172,17 +172,6 @@
     "rank": 68.6,
     "ageRank": 80.4,
     "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kevin",
-    "lastName": "Jorissen",
-    "age": "M40-49",
-    "location": "Seattle, WA",
-    "rank": 67.7,
-    "ageRank": 73.1,
-    "results": 17,
     "bib": "",
     "finishes": 0
   },
@@ -198,6 +187,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kevin",
+    "lastName": "Jorissen",
+    "age": "M40-49",
+    "location": "Seattle, WA",
+    "rank": 67.7,
+    "ageRank": 73.1,
+    "results": 17,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Letia",
     "lastName": "Arendes",
     "age": "F40-49",
@@ -209,13 +209,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Todd",
-    "lastName": "Sheldon",
-    "age": "M50-59",
-    "location": "Sisters, OR",
-    "rank": 59.7,
-    "ageRank": 97.4,
-    "results": 3,
+    "firstName": "Peter",
+    "lastName": "Stirling",
+    "age": "M60-69",
+    "location": "Seattle, WA",
+    "rank": 65.8,
+    "ageRank": 84.7,
+    "results": 33,
     "bib": "",
     "finishes": 0
   },
@@ -231,13 +231,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Paul",
-    "lastName": "Dlug",
-    "age": "M40-49",
-    "location": "Bend, OR",
-    "rank": 55.7,
-    "ageRank": 60.1,
-    "results": 60,
+    "firstName": "Jessica",
+    "lastName": "Jackovich",
+    "age": "F30-39",
+    "location": "Vancouver, WA",
+    "rank": 62.3,
+    "ageRank": 71.9,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -246,20 +246,31 @@
     "lastName": "Harper",
     "age": "F20-29",
     "location": "Corvallis, OR",
-    "rank": 58.4,
-    "ageRank": 70.1,
-    "results": 5,
+    "rank": 60.2,
+    "ageRank": 70.7,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Aaron",
-    "lastName": "Liere",
+    "firstName": "Todd",
+    "lastName": "Sheldon",
     "age": "M50-59",
-    "location": "Portland, OR",
-    "rank": 54.8,
-    "ageRank": 71.8,
-    "results": 9,
+    "location": "Sisters, OR",
+    "rank": 59.7,
+    "ageRank": 97.4,
+    "results": 3,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nicholas",
+    "lastName": "Helgren",
+    "age": "M30-39",
+    "location": "vancouver, WA",
+    "rank": 58.1,
+    "ageRank": 60.7,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -275,23 +286,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Brent",
-    "lastName": "Murphy",
-    "age": "M50-59",
-    "location": "Roseburg, OR",
-    "rank": 53,
-    "ageRank": 69,
-    "results": 35,
+    "firstName": "Paul",
+    "lastName": "Dlug",
+    "age": "M40-49",
+    "location": "Bend, OR",
+    "rank": 55.7,
+    "ageRank": 60.1,
+    "results": 60,
     "bib": "",
     "finishes": 0
   },
   {
-    "firstName": "Bao",
-    "lastName": "Nguyen",
-    "age": "M30-39",
+    "firstName": "Aaron",
+    "lastName": "Liere",
+    "age": "M50-59",
     "location": "Portland, OR",
-    "rank": 52.8,
-    "ageRank": 54.3,
+    "rank": 54.8,
+    "ageRank": 71.8,
     "results": 9,
     "bib": "",
     "finishes": 0
@@ -319,6 +330,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Brent",
+    "lastName": "Murphy",
+    "age": "M50-59",
+    "location": "Roseburg, OR",
+    "rank": 53,
+    "ageRank": 69,
+    "results": 35,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Bao",
+    "lastName": "Nguyen",
+    "age": "M30-39",
+    "location": "Portland, OR",
+    "rank": 52.8,
+    "ageRank": 54.3,
+    "results": 9,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Maddie",
     "lastName": "Orf",
     "age": "F30-39",
@@ -341,23 +374,23 @@
     "finishes": 0
   },
   {
-    "firstName": "Riley",
-    "lastName": "Corbitt",
-    "age": "M20-29",
-    "location": "97008, OR",
-    "rank": 47.8,
-    "ageRank": 47.8,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Faith",
     "lastName": "Alstot",
     "age": "F40-49",
     "location": "Portland, OR",
     "rank": 48,
     "ageRank": 48,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Riley",
+    "lastName": "Corbitt",
+    "age": "M20-29",
+    "location": "97008, OR",
+    "rank": 47.8,
+    "ageRank": 47.8,
     "results": 1,
     "bib": "",
     "finishes": 0
@@ -381,17 +414,6 @@
     "rank": 40.9,
     "ageRank": 41.2,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ana Rae",
-    "lastName": "Miller",
-    "age": "F30-39",
-    "location": "bend, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -499,6 +521,17 @@
     "lastName": "Finch",
     "age": "M30-39",
     "location": "Bend, AL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ana Rae",
+    "lastName": "Miller",
+    "age": "F30-39",
+    "location": "bend, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
