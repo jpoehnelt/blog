@@ -27,7 +27,7 @@
     "age": "F40-49",
     "location": "Leadville, CO",
     "rank": 95,
-    "ageRank": 96,
+    "ageRank": 97.2,
     "results": 99,
     "bib": "",
     "finishes": 0
@@ -38,7 +38,7 @@
     "age": "M30-39",
     "location": "Truckee, CA",
     "rank": 94.9,
-    "ageRank": 95.5,
+    "ageRank": 97.1,
     "results": 70,
     "bib": "",
     "finishes": 0
@@ -104,7 +104,7 @@
     "age": "F30-39",
     "location": "Santa Fe, NM",
     "rank": 92.4,
-    "ageRank": 94.5,
+    "ageRank": 92.4,
     "results": 74,
     "bib": "",
     "finishes": 0
@@ -126,7 +126,7 @@
     "age": "F40-49",
     "location": "Bend, OR",
     "rank": 91.9,
-    "ageRank": 85.7,
+    "ageRank": 95.2,
     "results": 10,
     "bib": "",
     "finishes": 0
@@ -159,7 +159,7 @@
     "age": "M50-59",
     "location": "Flagstaff, AZ",
     "rank": 91.5,
-    "ageRank": 92.9,
+    "ageRank": 95.5,
     "results": 152,
     "bib": "",
     "finishes": 0
@@ -247,7 +247,7 @@
     "age": "M30-39",
     "location": "Ithaca, NY",
     "rank": 88.1,
-    "ageRank": 89.4,
+    "ageRank": 90.2,
     "results": 14,
     "bib": "",
     "finishes": 0
@@ -280,7 +280,7 @@
     "age": "F40-49",
     "location": "Moià, ESP",
     "rank": 87.8,
-    "ageRank": 86.3,
+    "ageRank": 90,
     "results": 27,
     "bib": "",
     "finishes": 0
@@ -291,7 +291,7 @@
     "age": "M30-39",
     "location": "Montrose, CO",
     "rank": 87.8,
-    "ageRank": 88.5,
+    "ageRank": 91.2,
     "results": 37,
     "bib": "",
     "finishes": 0
@@ -302,7 +302,7 @@
     "age": "F40-49",
     "location": "Huntington Beach, CA",
     "rank": 87.5,
-    "ageRank": 87.5,
+    "ageRank": 91.1,
     "results": 53,
     "bib": "",
     "finishes": 0
@@ -511,7 +511,7 @@
     "age": "M30-39",
     "location": "Smithfield, UT",
     "rank": 84.1,
-    "ageRank": 90.3,
+    "ageRank": 92,
     "results": 60,
     "bib": "",
     "finishes": 0
@@ -577,7 +577,7 @@
     "age": "F40-49",
     "location": "phoenix, AZ",
     "rank": 82.9,
-    "ageRank": 88.6,
+    "ageRank": 89.7,
     "results": 11,
     "bib": "",
     "finishes": 0
@@ -632,7 +632,7 @@
     "age": "F30-39",
     "location": "Ogden, UT",
     "rank": 81.8,
-    "ageRank": 80.4,
+    "ageRank": 85.7,
     "results": 17,
     "bib": "",
     "finishes": 0
@@ -654,7 +654,7 @@
     "age": "F60-69",
     "location": "Jackson, WY",
     "rank": 81.5,
-    "ageRank": 94.2,
+    "ageRank": 95.1,
     "results": 237,
     "bib": "",
     "finishes": 0
@@ -676,7 +676,7 @@
     "age": "M30-39",
     "location": "Napa, CA",
     "rank": 81,
-    "ageRank": 90.9,
+    "ageRank": 90.1,
     "results": 7,
     "bib": "",
     "finishes": 0
@@ -687,7 +687,7 @@
     "age": "M40-49",
     "location": "Tallahassee, FL",
     "rank": 80.9,
-    "ageRank": 85.4,
+    "ageRank": 86.3,
     "results": 36,
     "bib": "",
     "finishes": 0
@@ -709,8 +709,19 @@
     "age": "M40-49",
     "location": "Columbia, MD",
     "rank": 80.7,
-    "ageRank": 83.8,
+    "ageRank": 82.8,
     "results": 20,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Vidal",
+    "age": "M40-49",
+    "location": "Cape Coral, FL",
+    "rank": 80.4,
+    "ageRank": 88.2,
+    "results": 43,
     "bib": "",
     "finishes": 0
   },
@@ -720,7 +731,7 @@
     "age": "M40-49",
     "location": "Katy, TX",
     "rank": 80.4,
-    "ageRank": 87.6,
+    "ageRank": 87.8,
     "results": 31,
     "bib": "",
     "finishes": 0
@@ -733,17 +744,6 @@
     "rank": 80.4,
     "ageRank": 87.8,
     "results": 12,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Lucas",
-    "lastName": "Vidal",
-    "age": "M40-49",
-    "location": "Cape Coral, FL",
-    "rank": 80.2,
-    "ageRank": 88.9,
-    "results": 42,
     "bib": "",
     "finishes": 0
   },
@@ -775,7 +775,7 @@
     "age": "F50-59",
     "location": "Fennville, MI",
     "rank": 79.3,
-    "ageRank": 90.2,
+    "ageRank": 90.6,
     "results": 99,
     "bib": "",
     "finishes": 0
@@ -808,7 +808,7 @@
     "age": "F50-59",
     "location": "Meadowbrook, PA",
     "rank": 78.9,
-    "ageRank": 84.9,
+    "ageRank": 84.7,
     "results": 36,
     "bib": "",
     "finishes": 0
@@ -951,7 +951,7 @@
     "age": "F40-49",
     "location": "Peoria, AZ",
     "rank": 76.9,
-    "ageRank": 81,
+    "ageRank": 82,
     "results": 19,
     "bib": "",
     "finishes": 0
@@ -1028,7 +1028,7 @@
     "age": "M40-49",
     "location": "California, MD",
     "rank": 76.2,
-    "ageRank": 76.1,
+    "ageRank": 78.8,
     "results": 60,
     "bib": "",
     "finishes": 0
@@ -1160,7 +1160,7 @@
     "age": "M30-39",
     "location": "FOLSOM, CA",
     "rank": 74.8,
-    "ageRank": 77.1,
+    "ageRank": 76.1,
     "results": 25,
     "bib": "",
     "finishes": 0
@@ -1182,7 +1182,7 @@
     "age": "F50-59",
     "location": "Canton, GA",
     "rank": 74.7,
-    "ageRank": 89,
+    "ageRank": 88.5,
     "results": 72,
     "bib": "",
     "finishes": 0
@@ -1193,7 +1193,7 @@
     "age": "F40-49",
     "location": "Ouray, CO",
     "rank": 74.6,
-    "ageRank": 78.9,
+    "ageRank": 81.8,
     "results": 40,
     "bib": "",
     "finishes": 0
@@ -1237,7 +1237,7 @@
     "age": "M50-59",
     "location": "Knoxville, TN",
     "rank": 74.3,
-    "ageRank": 82.7,
+    "ageRank": 84.2,
     "results": 24,
     "bib": "",
     "finishes": 0
@@ -1303,7 +1303,7 @@
     "age": "M40-49",
     "location": "Ouray, CO",
     "rank": 73.8,
-    "ageRank": 79.9,
+    "ageRank": 80.7,
     "results": 146,
     "bib": "",
     "finishes": 0
@@ -1413,7 +1413,7 @@
     "age": "M40-49",
     "location": "San Ysidro, CA",
     "rank": 72.6,
-    "ageRank": 76.8,
+    "ageRank": 74.5,
     "results": 34,
     "bib": "",
     "finishes": 0
@@ -1479,7 +1479,7 @@
     "age": "M30-39",
     "location": "Elizabethtown, KY",
     "rank": 71.8,
-    "ageRank": 75.6,
+    "ageRank": 75.5,
     "results": 25,
     "bib": "",
     "finishes": 0
@@ -1523,7 +1523,7 @@
     "age": "M50-59",
     "location": "Issaquah, WA",
     "rank": 71.6,
-    "ageRank": 81.5,
+    "ageRank": 82.4,
     "results": 123,
     "bib": "",
     "finishes": 0
@@ -1534,7 +1534,7 @@
     "age": "F50-59",
     "location": "Mill Valley, CA",
     "rank": 71.6,
-    "ageRank": 86.1,
+    "ageRank": 88.1,
     "results": 45,
     "bib": "",
     "finishes": 0
@@ -1545,7 +1545,7 @@
     "age": "M50-59",
     "location": "Santa Cruz, CA",
     "rank": 71.4,
-    "ageRank": 74.6,
+    "ageRank": 78.8,
     "results": 20,
     "bib": "",
     "finishes": 0
@@ -1567,7 +1567,7 @@
     "age": "M40-49",
     "location": "Cedar Park, TX",
     "rank": 71.1,
-    "ageRank": 74.1,
+    "ageRank": 76.2,
     "results": 53,
     "bib": "",
     "finishes": 0
@@ -1699,7 +1699,7 @@
     "age": "M40-49",
     "location": "Redlands, CA",
     "rank": 70.1,
-    "ageRank": 77,
+    "ageRank": 77.1,
     "results": 90,
     "bib": "",
     "finishes": 0
@@ -1930,7 +1930,7 @@
     "age": "M40-49",
     "location": "Phoenix, AL",
     "rank": 68.9,
-    "ageRank": 82.8,
+    "ageRank": 85,
     "results": 151,
     "bib": "",
     "finishes": 0
@@ -1985,7 +1985,7 @@
     "age": "F40-49",
     "location": "Flagstaff, AZ",
     "rank": 68.6,
-    "ageRank": 77.7,
+    "ageRank": 78.1,
     "results": 59,
     "bib": "",
     "finishes": 0
@@ -2084,7 +2084,7 @@
     "age": "F50-59",
     "location": "Lilburn, GA",
     "rank": 68,
-    "ageRank": 80.1,
+    "ageRank": 80.8,
     "results": 132,
     "bib": "",
     "finishes": 0
@@ -2106,7 +2106,7 @@
     "age": "F50-59",
     "location": "Sedona, AZ",
     "rank": 67.9,
-    "ageRank": 85,
+    "ageRank": 81.5,
     "results": 20,
     "bib": "",
     "finishes": 0
@@ -2139,7 +2139,7 @@
     "age": "M50-59",
     "location": "Dayton, OH",
     "rank": 67.7,
-    "ageRank": 77,
+    "ageRank": 78.2,
     "results": 75,
     "bib": "",
     "finishes": 0
@@ -2348,7 +2348,7 @@
     "age": "M50-59",
     "location": "Cerritos, CA",
     "rank": 65.9,
-    "ageRank": 80.1,
+    "ageRank": 80.5,
     "results": 24,
     "bib": "",
     "finishes": 0
@@ -2370,7 +2370,7 @@
     "age": "M40-49",
     "location": "LeChee, AZ",
     "rank": 65.8,
-    "ageRank": 72,
+    "ageRank": 69.4,
     "results": 25,
     "bib": "",
     "finishes": 0
@@ -2414,7 +2414,7 @@
     "age": "M60-69",
     "location": "Norman, OK",
     "rank": 65.7,
-    "ageRank": 81.6,
+    "ageRank": 85.3,
     "results": 45,
     "bib": "",
     "finishes": 0
@@ -2425,7 +2425,7 @@
     "age": "M40-49",
     "location": "Flowery Branch, GA",
     "rank": 65.6,
-    "ageRank": 73.8,
+    "ageRank": 76.1,
     "results": 10,
     "bib": "",
     "finishes": 0
@@ -2469,7 +2469,7 @@
     "age": "F50-59",
     "location": "Novato, CA",
     "rank": 65.3,
-    "ageRank": 76,
+    "ageRank": 75.3,
     "results": 30,
     "bib": "",
     "finishes": 0
@@ -2623,7 +2623,7 @@
     "age": "F40-49",
     "location": "Cheney, WA",
     "rank": 64,
-    "ageRank": 71.3,
+    "ageRank": 77.1,
     "results": 6,
     "bib": "",
     "finishes": 0
@@ -2722,7 +2722,7 @@
     "age": "F30-39",
     "location": "Northport, NY",
     "rank": 62.6,
-    "ageRank": 69.6,
+    "ageRank": 65.9,
     "results": 21,
     "bib": "",
     "finishes": 0
@@ -2832,7 +2832,7 @@
     "age": "M50-59",
     "location": "El cajon, CA",
     "rank": 61.3,
-    "ageRank": 77.5,
+    "ageRank": 79.2,
     "results": 14,
     "bib": "",
     "finishes": 0
@@ -2865,7 +2865,7 @@
     "age": "M20-29",
     "location": "Mesa, AZ",
     "rank": 60.7,
-    "ageRank": 66.5,
+    "ageRank": 69.8,
     "results": 11,
     "bib": "",
     "finishes": 0
@@ -2953,7 +2953,7 @@
     "age": "M40-49",
     "location": "Las Vegas, NV",
     "rank": 60.1,
-    "ageRank": 64.1,
+    "ageRank": 61.9,
     "results": 29,
     "bib": "",
     "finishes": 0
@@ -2975,7 +2975,7 @@
     "age": "M60-69",
     "location": "Rochester Hills, MI",
     "rank": 60,
-    "ageRank": 88.8,
+    "ageRank": 89.2,
     "results": 31,
     "bib": "",
     "finishes": 0
@@ -2997,7 +2997,7 @@
     "age": "F40-49",
     "location": "Flagstaff, AZ",
     "rank": 60,
-    "ageRank": 65.3,
+    "ageRank": 69.9,
     "results": 37,
     "bib": "",
     "finishes": 0
@@ -3129,7 +3129,7 @@
     "age": "M50-59",
     "location": "Bend, OR",
     "rank": 58.2,
-    "ageRank": 66.7,
+    "ageRank": 69,
     "results": 47,
     "bib": "",
     "finishes": 0
@@ -3140,8 +3140,19 @@
     "age": "M50-59",
     "location": "Tucson, AZ",
     "rank": 57.9,
-    "ageRank": 69.4,
+    "ageRank": 72.1,
     "results": 68,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Reardon",
+    "age": "M40-49",
+    "location": "Lewisville, NC",
+    "rank": 57.7,
+    "ageRank": 68.4,
+    "results": 26,
     "bib": "",
     "finishes": 0
   },
@@ -3157,23 +3168,12 @@
     "finishes": 0
   },
   {
-    "firstName": "Michael",
-    "lastName": "Reardon",
-    "age": "M40-49",
-    "location": "Lewisville, NC",
-    "rank": 57.6,
-    "ageRank": 68.4,
-    "results": 26,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Richard",
     "lastName": "Elkins Jr",
     "age": "M50-59",
     "location": "Georgetown, TX",
     "rank": 57.4,
-    "ageRank": 70.9,
+    "ageRank": 72.8,
     "results": 43,
     "bib": "",
     "finishes": 0
@@ -3184,7 +3184,7 @@
     "age": "F50-59",
     "location": "Queen Creek, AZ",
     "rank": 57.1,
-    "ageRank": 68.2,
+    "ageRank": 67.8,
     "results": 43,
     "bib": "",
     "finishes": 0
@@ -3206,7 +3206,7 @@
     "age": "M50-59",
     "location": "Las Vegas, NV",
     "rank": 57,
-    "ageRank": 70.1,
+    "ageRank": 70.7,
     "results": 11,
     "bib": "",
     "finishes": 0
@@ -3272,7 +3272,7 @@
     "age": "M40-49",
     "location": "Escondido, CA",
     "rank": 55.7,
-    "ageRank": 62.1,
+    "ageRank": 62,
     "results": 49,
     "bib": "",
     "finishes": 0
@@ -3283,7 +3283,7 @@
     "age": "F50-59",
     "location": "Sunnyvale, CA",
     "rank": 55.7,
-    "ageRank": 69,
+    "ageRank": 69.7,
     "results": 61,
     "bib": "",
     "finishes": 0
@@ -3316,7 +3316,7 @@
     "age": "M50-59",
     "location": "Avondale, AZ",
     "rank": 54.9,
-    "ageRank": 71.8,
+    "ageRank": 71.3,
     "results": 24,
     "bib": "",
     "finishes": 0
@@ -3437,7 +3437,7 @@
     "age": "M50-59",
     "location": "Peoria, AZ",
     "rank": 53.4,
-    "ageRank": 73.2,
+    "ageRank": 69.5,
     "results": 18,
     "bib": "",
     "finishes": 0
@@ -3459,7 +3459,7 @@
     "age": "M60-69",
     "location": "Redlands, CA",
     "rank": 53,
-    "ageRank": 71.5,
+    "ageRank": 71.2,
     "results": 44,
     "bib": "",
     "finishes": 0
@@ -3624,7 +3624,7 @@
     "age": "M50-59",
     "location": "Redmond, WA",
     "rank": 48,
-    "ageRank": 56.1,
+    "ageRank": 56.3,
     "results": 15,
     "bib": "",
     "finishes": 0
@@ -3635,7 +3635,7 @@
     "age": "M50-59",
     "location": "Lafayette, CA",
     "rank": 47.5,
-    "ageRank": 58.1,
+    "ageRank": 58.9,
     "results": 83,
     "bib": "",
     "finishes": 0

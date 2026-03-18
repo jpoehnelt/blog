@@ -66,17 +66,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Faustino",
-    "lastName": "Macuha",
-    "age": "M40-49",
-    "location": "Middleton, FL",
-    "rank": 75.4,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Amber",
     "lastName": "Orman",
     "age": "F40-49",
@@ -170,7 +159,7 @@
     "age": "M50-59",
     "location": "Brunswick, GA",
     "rank": 69.7,
-    "ageRank": 82.9,
+    "ageRank": 79.6,
     "results": 5,
     "bib": "",
     "finishes": 0
@@ -196,6 +185,17 @@
     "results": 16,
     "bib": "",
     "finishes": 2
+  },
+  {
+    "firstName": "Spencer",
+    "lastName": "Liebelt",
+    "age": "M30-39",
+    "location": "Debary, FL",
+    "rank": 66.8,
+    "ageRank": 74,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Sean",
@@ -433,8 +433,8 @@
     "lastName": "Van Den Bosch",
     "age": "F40-49",
     "location": "Dade City, FL",
-    "rank": 57.2,
-    "ageRank": 63.7,
+    "rank": 57.9,
+    "ageRank": 63.8,
     "results": 17,
     "bib": "",
     "finishes": 0
@@ -506,12 +506,23 @@
     "finishes": 0
   },
   {
+    "firstName": "Scott",
+    "lastName": "Brady",
+    "age": "M30-39",
+    "location": "Lakeland, FL",
+    "rank": 44.3,
+    "ageRank": 53.7,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "James",
     "lastName": "Mathis",
     "age": "M60-69",
     "location": "Candler, FL",
     "rank": 39,
-    "ageRank": 51.7,
+    "ageRank": 61.4,
     "results": 29,
     "bib": "",
     "finishes": 0
@@ -543,83 +554,6 @@
     "lastName": "Potter",
     "age": "M30-39",
     "location": "Orlando, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Melissa",
-    "lastName": "Gray",
-    "age": "F40-49",
-    "location": "Winter Park, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Max",
-    "lastName": "Von Briel",
-    "age": "M30-39",
-    "location": "Daytona beach, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Phillips",
-    "lastName": "Gordon",
-    "age": "M30-39",
-    "location": "Orlando, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nick",
-    "lastName": "Pardo",
-    "age": "M30-39",
-    "location": "Jacksonville Beach, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jessica",
-    "lastName": "Preston",
-    "age": "F30-39",
-    "location": "Fort Myers, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Luke",
-    "lastName": "Kline",
-    "age": "M20-29",
-    "location": "Saint Augustine, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jonathan",
-    "lastName": "Borroto",
-    "age": "M30-39",
-    "location": "Ocala, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -693,10 +627,76 @@
     "finishes": 0
   },
   {
-    "firstName": "Scott",
-    "lastName": "Brady",
+    "firstName": "Luke",
+    "lastName": "Kline",
+    "age": "M20-29",
+    "location": "Saint Augustine, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Melissa",
+    "lastName": "Gray",
+    "age": "F40-49",
+    "location": "Winter Park, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Max",
+    "lastName": "Von Briel",
     "age": "M30-39",
-    "location": "Lakeland, FL",
+    "location": "Daytona beach, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Phillips",
+    "lastName": "Gordon",
+    "age": "M30-39",
+    "location": "Orlando, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Pardo",
+    "age": "M30-39",
+    "location": "Jacksonville Beach, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Preston",
+    "age": "F30-39",
+    "location": "Fort Myers, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Borroto",
+    "age": "M30-39",
+    "location": "Ocala, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

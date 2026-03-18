@@ -93,7 +93,7 @@
     "age": "M40-49",
     "location": "Charlestown, RI",
     "rank": 80.5,
-    "ageRank": 85.4,
+    "ageRank": 88.9,
     "results": 35,
     "bib": "",
     "finishes": 0
@@ -104,7 +104,7 @@
     "age": "M40-49",
     "location": "Pittsburgh, PA",
     "rank": 78.8,
-    "ageRank": 86.8,
+    "ageRank": 87.4,
     "results": 292,
     "bib": "",
     "finishes": 0
@@ -115,7 +115,7 @@
     "age": "M30-39",
     "location": "Wallingford, CT",
     "rank": 78.8,
-    "ageRank": 84.2,
+    "ageRank": 84.5,
     "results": 64,
     "bib": "",
     "finishes": 1
@@ -126,7 +126,7 @@
     "age": "M40-49",
     "location": "Milford, CT",
     "rank": 78.6,
-    "ageRank": 83.1,
+    "ageRank": 89,
     "results": 20,
     "bib": "",
     "finishes": 0
@@ -170,7 +170,7 @@
     "age": "M30-39",
     "location": "Blandon, PA",
     "rank": 76.4,
-    "ageRank": 76.5,
+    "ageRank": 79.8,
     "results": 26,
     "bib": "",
     "finishes": 0
@@ -247,7 +247,7 @@
     "age": "F50-59",
     "location": "Bolton, CT",
     "rank": 92.8,
-    "ageRank": 95.1,
+    "ageRank": 95.8,
     "results": 163,
     "bib": "",
     "finishes": 0
@@ -280,7 +280,7 @@
     "age": "M40-49",
     "location": "Irvington, NY",
     "rank": 71.1,
-    "ageRank": 73.5,
+    "ageRank": 78.4,
     "results": 16,
     "bib": "",
     "finishes": 0
@@ -346,7 +346,7 @@
     "age": "M40-49",
     "location": "Holmdel, NJ",
     "rank": 67.5,
-    "ageRank": 74.6,
+    "ageRank": 72.4,
     "results": 32,
     "bib": "",
     "finishes": 0
@@ -445,7 +445,7 @@
     "age": "M50-59",
     "location": "Greenport, NY",
     "rank": 64.3,
-    "ageRank": 72.9,
+    "ageRank": 85.1,
     "results": 7,
     "bib": "",
     "finishes": 0
@@ -621,7 +621,7 @@
     "age": "M50-59",
     "location": "Cheshire, CT",
     "rank": 59.4,
-    "ageRank": 76.5,
+    "ageRank": 76.7,
     "results": 4,
     "bib": "",
     "finishes": 0
@@ -715,6 +715,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Greg",
+    "lastName": "Sans",
+    "age": "M30-39",
+    "location": "New Rochelle, NY",
+    "rank": 54.4,
+    "ageRank": 57.1,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Angela",
     "lastName": "Landry",
     "age": "F50-59",
@@ -757,6 +768,17 @@
     "results": 30,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Joel",
+    "lastName": "Jean-Langlois",
+    "age": "M30-39",
+    "location": "Montreal, QC",
+    "rank": 51.6,
+    "ageRank": 73.1,
+    "results": 13,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Tyler",
@@ -819,7 +841,7 @@
     "age": "M40-49",
     "location": "Malden, MA",
     "rank": 48.2,
-    "ageRank": 47.5,
+    "ageRank": 51.1,
     "results": 16,
     "bib": "",
     "finishes": 0
@@ -830,8 +852,19 @@
     "age": "M40-49",
     "location": "Saunderstown, RI",
     "rank": 48.1,
-    "ageRank": 53.8,
+    "ageRank": 67,
     "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Madison",
+    "lastName": "Reichert",
+    "age": "F20-29",
+    "location": "Floral Park, NY",
+    "rank": 62.2,
+    "ageRank": 62.2,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -957,17 +990,6 @@
     "finishes": 0
   },
   {
-    "firstName": "James",
-    "lastName": "Robitaille",
-    "age": "M20-29",
-    "location": "South Boston, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Ramond",
     "lastName": "King",
     "age": "M30-39",
@@ -1027,6 +1049,17 @@
     "lastName": "Fiondella",
     "age": "M30-39",
     "location": "Manchester, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "James",
+    "lastName": "Robitaille",
+    "age": "M20-29",
+    "location": "South Boston, MA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

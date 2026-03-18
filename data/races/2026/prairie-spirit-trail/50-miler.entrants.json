@@ -115,7 +115,7 @@
     "age": "F50-59",
     "location": "Brighton, CO",
     "rank": 79,
-    "ageRank": 89.7,
+    "ageRank": 90.5,
     "results": 111,
     "bib": "",
     "finishes": 0
@@ -214,7 +214,7 @@
     "age": "M40-49",
     "location": "SPRINGFIELD, MO",
     "rank": 60.6,
-    "ageRank": 57.4,
+    "ageRank": 66.9,
     "results": 8,
     "bib": "",
     "finishes": 0
@@ -247,7 +247,7 @@
     "age": "F50-59",
     "location": "Woodward, OK",
     "rank": 67.9,
-    "ageRank": 71.8,
+    "ageRank": 76,
     "results": 21,
     "bib": "",
     "finishes": 1
@@ -286,6 +286,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Michael",
+    "lastName": "Haviland",
+    "age": "M70+",
+    "location": "Ball Ground, GA",
+    "rank": 52.4,
+    "ageRank": 86.9,
+    "results": 181,
+    "bib": "",
+    "finishes": 4
+  },
+  {
     "firstName": "Kevin",
     "lastName": "McCormick",
     "age": "M40-49",
@@ -315,6 +326,61 @@
     "rank": 43.4,
     "ageRank": 56.9,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Julian",
+    "lastName": "Terreau",
+    "age": "M20-29",
+    "location": "Olathe, KS",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Tobin",
+    "lastName": "Widhalm",
+    "age": "M20-29",
+    "location": "Elkhorn, NE",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Daniels",
+    "age": "M30-39",
+    "location": "Bixby, OK",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jace",
+    "lastName": "Young",
+    "age": "M30-39",
+    "location": "Hays, KS",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Solvyr",
+    "lastName": "Asadi",
+    "age": "M30-39",
+    "location": "Boston, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -374,6 +440,28 @@
     "finishes": 0
   },
   {
+    "firstName": "Nicholas",
+    "lastName": "Lopez",
+    "age": "M30-39",
+    "location": "Lee's Summit, MO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Austin",
+    "lastName": "Cozadd",
+    "age": "M30-39",
+    "location": "Gardner, KS",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Josh",
     "lastName": "Vander Veen",
     "age": "M40-49",
@@ -400,83 +488,6 @@
     "lastName": "Mulford",
     "age": "M40-49",
     "location": "Lees Summit, MO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tobin",
-    "lastName": "Widhalm",
-    "age": "M20-29",
-    "location": "Elkhorn, NE",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Daniels",
-    "age": "M30-39",
-    "location": "Bixby, OK",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jace",
-    "lastName": "Young",
-    "age": "M30-39",
-    "location": "Hays, KS",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Solvyr",
-    "lastName": "Asadi",
-    "age": "M30-39",
-    "location": "Boston, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Julian",
-    "lastName": "Terreau",
-    "age": "M20-29",
-    "location": "Olathe, KS",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nicholas",
-    "lastName": "Lopez",
-    "age": "M30-39",
-    "location": "Lee's Summit, MO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Austin",
-    "lastName": "Cozadd",
-    "age": "M30-39",
-    "location": "Gardner, KS",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
