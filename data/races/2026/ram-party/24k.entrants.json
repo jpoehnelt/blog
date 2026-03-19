@@ -4,7 +4,7 @@
     "lastName": "Kent",
     "age": "M40-49",
     "location": "Bowie, MD",
-    "rank": 0,
+    "rank": 100,
     "ageRank": 100,
     "results": 2,
     "bib": "",
@@ -15,7 +15,7 @@
     "lastName": "Ralph",
     "age": "F30-39",
     "location": "Colorado Springs, CO",
-    "rank": 88.1,
+    "rank": 89.8,
     "ageRank": 100,
     "results": 7,
     "bib": "",
@@ -26,9 +26,20 @@
     "lastName": "Partridge",
     "age": "F50-59",
     "location": "Colorado Springs, CO",
-    "rank": 70.8,
+    "rank": 74.2,
     "ageRank": 90.1,
     "results": 18,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gina",
+    "lastName": "Puzo",
+    "age": "F40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 69.4,
+    "ageRank": 81.4,
+    "results": 6,
     "bib": "",
     "finishes": 0
   },
@@ -66,17 +77,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Gina",
-    "lastName": "Puzo",
-    "age": "F40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 65.7,
-    "ageRank": 81.4,
-    "results": 6,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Nicole",
     "lastName": "Thome",
     "age": "F50-59",
@@ -92,7 +92,7 @@
     "lastName": "Cawley",
     "age": "F60-69",
     "location": "Colorado Springs, CO",
-    "rank": 63.4,
+    "rank": 63.7,
     "ageRank": 87.1,
     "results": 21,
     "bib": "",
@@ -132,11 +132,22 @@
     "finishes": 0
   },
   {
+    "firstName": "Sheryl",
+    "lastName": "Hudson",
+    "age": "F60-69",
+    "location": "Colorado Springs, CO",
+    "rank": 60.8,
+    "ageRank": 80.7,
+    "results": 22,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Alexandra",
     "lastName": "Meyer",
     "age": "F30-39",
     "location": "Colorado Springs, CO",
-    "rank": 59,
+    "rank": 59.6,
     "ageRank": 61.6,
     "results": 6,
     "bib": "",
@@ -154,13 +165,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Sheryl",
-    "lastName": "Hudson",
+    "firstName": "Leann",
+    "lastName": "Fraka",
     "age": "F60-69",
     "location": "Colorado Springs, CO",
     "rank": 56.9,
-    "ageRank": 80.7,
-    "results": 22,
+    "ageRank": 60.9,
+    "results": 8,
     "bib": "",
     "finishes": 0
   },
@@ -183,17 +194,6 @@
     "rank": 51.9,
     "ageRank": 52.1,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Leann",
-    "lastName": "Fraka",
-    "age": "F60-69",
-    "location": "Colorado Springs, CO",
-    "rank": 49.6,
-    "ageRank": 60.9,
-    "results": 8,
     "bib": "",
     "finishes": 0
   },

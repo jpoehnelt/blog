@@ -37,7 +37,7 @@
     "lastName": "Kuhn",
     "age": "F40-49",
     "location": "Springfield, IL",
-    "rank": 81,
+    "rank": 80.7,
     "ageRank": 84.5,
     "results": 35,
     "bib": "",
@@ -55,6 +55,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Ann",
+    "lastName": "Lange",
+    "age": "F40-49",
+    "location": "Belleville, WI",
+    "rank": 72,
+    "ageRank": 80.9,
+    "results": 11,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Nicole",
     "lastName": "Correnti",
     "age": "F40-49",
@@ -66,22 +77,11 @@
     "finishes": 0
   },
   {
-    "firstName": "Ann",
-    "lastName": "Lange",
-    "age": "F40-49",
-    "location": "Belleville, WI",
-    "rank": 71.2,
-    "ageRank": 80.9,
-    "results": 11,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Amy",
     "lastName": "Knight",
     "age": "F30-39",
     "location": "Davenport, IA",
-    "rank": 69.4,
+    "rank": 70.8,
     "ageRank": 80.4,
     "results": 5,
     "bib": "",
@@ -121,6 +121,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Angie",
+    "lastName": "Mathews",
+    "age": "F40-49",
+    "location": "Monroe, WI",
+    "rank": 65.5,
+    "ageRank": 74,
+    "results": 10,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "David",
     "lastName": "Fischer",
     "age": "M60-69",
@@ -128,17 +139,6 @@
     "rank": 65,
     "ageRank": 87.7,
     "results": 35,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Angie",
-    "lastName": "Mathews",
-    "age": "F40-49",
-    "location": "Monroe, WI",
-    "rank": 63.7,
-    "ageRank": 74,
-    "results": 10,
     "bib": "",
     "finishes": 0
   },
@@ -213,7 +213,7 @@
     "lastName": "Lopez",
     "age": "M40-49",
     "location": "Elgin, IL",
-    "rank": 57.5,
+    "rank": 57.1,
     "ageRank": 65.4,
     "results": 4,
     "bib": "",
@@ -231,46 +231,46 @@
     "finishes": 0
   },
   {
-    "firstName": "Amy",
-    "lastName": "Frankel",
-    "age": "F50-59",
-    "location": "Aurora, IL",
-    "rank": 54.9,
-    "ageRank": 70.7,
-    "results": 12,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Douglas",
     "lastName": "Sabo",
     "age": "M50-59",
     "location": "Mchenry, IL",
-    "rank": 54.8,
+    "rank": 55.3,
     "ageRank": 76.6,
     "results": 15,
     "bib": "",
     "finishes": 2
   },
   {
-    "firstName": "Kristin",
-    "lastName": "Napora",
-    "age": "F40-49",
-    "location": "BELLEVILLE, WI",
-    "rank": 54.1,
-    "ageRank": 62.3,
-    "results": 27,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Janet",
     "lastName": "Perez",
     "age": "F50-59",
     "location": "Aurora, IL",
-    "rank": 53.7,
+    "rank": 54.8,
     "ageRank": 75.1,
     "results": 24,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Amy",
+    "lastName": "Frankel",
+    "age": "F50-59",
+    "location": "Aurora, IL",
+    "rank": 54.7,
+    "ageRank": 70.7,
+    "results": 12,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kristin",
+    "lastName": "Napora",
+    "age": "F40-49",
+    "location": "BELLEVILLE, WI",
+    "rank": 54.3,
+    "ageRank": 62.3,
+    "results": 27,
     "bib": "",
     "finishes": 0
   },
@@ -345,7 +345,7 @@
     "lastName": "Baker",
     "age": "F60-69",
     "location": "Oswego, IL",
-    "rank": 39.5,
+    "rank": 40.7,
     "ageRank": 69.3,
     "results": 17,
     "bib": "",

@@ -26,7 +26,7 @@
     "lastName": "Bonito",
     "age": "M40-49",
     "location": "Westmoreland, NH",
-    "rank": 90,
+    "rank": 90.3,
     "ageRank": 95.2,
     "results": 31,
     "bib": "",
@@ -42,6 +42,17 @@
     "results": 19,
     "bib": "",
     "finishes": 1
+  },
+  {
+    "firstName": "Adam",
+    "lastName": "Beer",
+    "age": "M30-39",
+    "location": "Ware, MA",
+    "rank": 85,
+    "ageRank": 81,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
   },
   {
     "firstName": "Sean",
@@ -99,6 +110,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Tom",
+    "lastName": "Starodaj",
+    "age": "M30-39",
+    "location": "Wallingford, CT",
+    "rank": 79.6,
+    "ageRank": 84.5,
+    "results": 64,
+    "bib": "",
+    "finishes": 1
+  },
+  {
     "firstName": "Chris",
     "lastName": "Pabian",
     "age": "M40-49",
@@ -106,28 +128,6 @@
     "rank": 78.8,
     "ageRank": 87.4,
     "results": 292,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tom",
-    "lastName": "Starodaj",
-    "age": "M30-39",
-    "location": "Wallingford, CT",
-    "rank": 78.8,
-    "ageRank": 84.5,
-    "results": 64,
-    "bib": "",
-    "finishes": 1
-  },
-  {
-    "firstName": "Charles",
-    "lastName": "Roche",
-    "age": "M40-49",
-    "location": "Milford, CT",
-    "rank": 78.6,
-    "ageRank": 89,
-    "results": 20,
     "bib": "",
     "finishes": 0
   },
@@ -154,11 +154,22 @@
     "finishes": 0
   },
   {
+    "firstName": "Charles",
+    "lastName": "Roche",
+    "age": "M40-49",
+    "location": "Milford, CT",
+    "rank": 78,
+    "ageRank": 89,
+    "results": 20,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Tobias",
     "lastName": "Tello",
     "age": "M20-29",
     "location": "Cheshire, CT",
-    "rank": 76.5,
+    "rank": 76.7,
     "ageRank": 96.6,
     "results": 50,
     "bib": "",
@@ -209,17 +220,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Patrick",
-    "lastName": "Kistner",
-    "age": "M30-39",
-    "location": "Portland, ME",
-    "rank": 74,
-    "ageRank": 80.6,
-    "results": 13,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Matthew",
     "lastName": "Swinbourn",
     "age": "M30-39",
@@ -264,13 +264,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Matt",
-    "lastName": "Twitchell",
+    "firstName": "Patrick",
+    "lastName": "Kistner",
     "age": "M30-39",
-    "location": "Windsor locks, CT",
-    "rank": 71.3,
-    "ageRank": 79.8,
-    "results": 10,
+    "location": "Portland, ME",
+    "rank": 71.4,
+    "ageRank": 80.6,
+    "results": 13,
     "bib": "",
     "finishes": 0
   },
@@ -297,13 +297,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Adam",
-    "lastName": "Beer",
+    "firstName": "Matt",
+    "lastName": "Twitchell",
     "age": "M30-39",
-    "location": "Ware, MA",
-    "rank": 69.9,
-    "ageRank": 81,
-    "results": 2,
+    "location": "Windsor locks, CT",
+    "rank": 69.8,
+    "ageRank": 79.8,
+    "results": 10,
     "bib": "",
     "finishes": 0
   },
@@ -345,7 +345,7 @@
     "lastName": "Morris",
     "age": "M40-49",
     "location": "Holmdel, NJ",
-    "rank": 67.5,
+    "rank": 67.2,
     "ageRank": 72.4,
     "results": 32,
     "bib": "",
@@ -620,7 +620,7 @@
     "lastName": "St. Martin",
     "age": "M50-59",
     "location": "Cheshire, CT",
-    "rank": 59.4,
+    "rank": 59.3,
     "ageRank": 76.7,
     "results": 4,
     "bib": "",
@@ -636,6 +636,17 @@
     "results": 20,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Joel",
+    "lastName": "Jean-Langlois",
+    "age": "M30-39",
+    "location": "Montreal, QC",
+    "rank": 57.5,
+    "ageRank": 73.1,
+    "results": 13,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Makena",
@@ -671,6 +682,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Zachery",
+    "lastName": "Teague",
+    "age": "M40-49",
+    "location": "Saunderstown, RI",
+    "rank": 56.5,
+    "ageRank": 67,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Tyler",
     "lastName": "Sheinberg",
     "age": "M30-39",
@@ -678,17 +700,6 @@
     "rank": 56.4,
     "ageRank": 54.7,
     "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Thomas",
-    "lastName": "Hutchinson",
-    "age": "M40-49",
-    "location": "brooklyn, CT",
-    "rank": 55.8,
-    "ageRank": 65.7,
-    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -770,15 +781,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Joel",
-    "lastName": "Jean-Langlois",
-    "age": "M30-39",
-    "location": "Montreal, QC",
-    "rank": 51.6,
-    "ageRank": 73.1,
-    "results": 13,
+    "firstName": "Thomas",
+    "lastName": "Hutchinson",
+    "age": "M40-49",
+    "location": "brooklyn, CT",
+    "rank": 52.7,
+    "ageRank": 65.7,
+    "results": 15,
     "bib": "",
-    "finishes": 1
+    "finishes": 0
   },
   {
     "firstName": "Tyler",
@@ -843,17 +854,6 @@
     "rank": 48.2,
     "ageRank": 51.1,
     "results": 16,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Zachery",
-    "lastName": "Teague",
-    "age": "M40-49",
-    "location": "Saunderstown, RI",
-    "rank": 48.1,
-    "ageRank": 67,
-    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -990,6 +990,17 @@
     "finishes": 0
   },
   {
+    "firstName": "James",
+    "lastName": "Robitaille",
+    "age": "M20-29",
+    "location": "South Boston, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Ramond",
     "lastName": "King",
     "age": "M30-39",
@@ -1049,17 +1060,6 @@
     "lastName": "Fiondella",
     "age": "M30-39",
     "location": "Manchester, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "James",
-    "lastName": "Robitaille",
-    "age": "M20-29",
-    "location": "South Boston, MA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

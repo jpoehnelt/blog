@@ -15,7 +15,7 @@
     "lastName": "Reed",
     "age": "F40-49",
     "location": "Sterling, MI",
-    "rank": 0,
+    "rank": 100,
     "ageRank": 0,
     "results": 3,
     "bib": "",
@@ -40,6 +40,17 @@
     "rank": 95.9,
     "ageRank": 95.9,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sada",
+    "lastName": "Crawford",
+    "age": "F60-69",
+    "location": "Charlevoix, MI",
+    "rank": 94.2,
+    "ageRank": 98.3,
+    "results": 34,
     "bib": "",
     "finishes": 0
   },
@@ -352,17 +363,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Luke",
-    "lastName": "Jones",
-    "age": "M30-39",
-    "location": "Grand Rapids, MI",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Seth",
     "lastName": "Jones",
     "age": "M30-39",
@@ -521,6 +521,17 @@
     "lastName": "Knochenhauer",
     "age": "M30-39",
     "location": "Spring Lake, MI",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nicholas",
+    "lastName": "Payne",
+    "age": "M30-39",
+    "location": "Jacksonville, FL",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

@@ -66,17 +66,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Josh",
-    "lastName": "Boltz",
-    "age": "M30-39",
-    "location": "Lakewood, CO",
-    "rank": 80.2,
-    "ageRank": 90.5,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Erin",
     "lastName": "St. John",
     "age": "F40-49",
@@ -84,6 +73,17 @@
     "rank": 80,
     "ageRank": 90.1,
     "results": 5,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Boltz",
+    "age": "M30-39",
+    "location": "Lakewood, CO",
+    "rank": 76.8,
+    "ageRank": 90.5,
+    "results": 4,
     "bib": "",
     "finishes": 0
   },
@@ -110,6 +110,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Noah",
+    "lastName": "Simcoff",
+    "age": "M30-39",
+    "location": "Boulder, CO",
+    "rank": 72.3,
+    "ageRank": 76.6,
+    "results": 33,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Miguel",
     "lastName": "Gonzalez",
     "age": "M30-39",
@@ -117,17 +128,6 @@
     "rank": 72.3,
     "ageRank": 77.1,
     "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Noah",
-    "lastName": "Simcoff",
-    "age": "M30-39",
-    "location": "Boulder, CO",
-    "rank": 72.1,
-    "ageRank": 76.6,
-    "results": 33,
     "bib": "",
     "finishes": 0
   },
@@ -165,6 +165,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Brandon",
+    "lastName": "Eleuterio",
+    "age": "M40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 69.5,
+    "ageRank": 77.7,
+    "results": 16,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Elise",
     "lastName": "Cameron",
     "age": "F20-29",
@@ -183,17 +194,6 @@
     "rank": 69.4,
     "ageRank": 69.4,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Brandon",
-    "lastName": "Eleuterio",
-    "age": "M40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 68.1,
-    "ageRank": 77.7,
-    "results": 16,
     "bib": "",
     "finishes": 0
   },
@@ -323,7 +323,7 @@
     "lastName": "Taylor-Romero",
     "age": "F40-49",
     "location": "Colorado Springs, CO",
-    "rank": 56.8,
+    "rank": 58,
     "ageRank": 65.6,
     "results": 175,
     "bib": "",
@@ -381,39 +381,6 @@
     "rank": 45.8,
     "ageRank": 53.2,
     "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jackson",
-    "lastName": "Beil",
-    "age": "M<20",
-    "location": "Danbury, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nickolas",
-    "lastName": "Grimm",
-    "age": "M20-29",
-    "location": "Cape Girardeu, MO",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Dj",
-    "lastName": "Beil",
-    "age": "M40-49",
-    "location": "Danbury, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
     "bib": "",
     "finishes": 0
   },
@@ -477,6 +444,28 @@
     "lastName": "Penoyer",
     "age": "F20-29",
     "location": "Denver, CO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jackson",
+    "lastName": "Beil",
+    "age": "M<20",
+    "location": "Danbury, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nickolas",
+    "lastName": "Grimm",
+    "age": "M20-29",
+    "location": "Cape Girardeu, MO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

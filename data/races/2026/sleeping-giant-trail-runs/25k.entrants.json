@@ -114,7 +114,7 @@
     "lastName": "Telke",
     "age": "F30-39",
     "location": "Bristol, CT",
-    "rank": 98.1,
+    "rank": 98.2,
     "ageRank": 98.8,
     "results": 21,
     "bib": "",
@@ -198,6 +198,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jeff",
+    "lastName": "Owens",
+    "age": "M50-59",
+    "location": "Fairfield, CT",
+    "rank": 71.9,
+    "ageRank": 83.5,
+    "results": 8,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Brian",
     "lastName": "Werstler",
     "age": "M40-49",
@@ -205,6 +216,17 @@
     "rank": 71.4,
     "ageRank": 77.4,
     "results": 6,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Merrifield",
+    "age": "M40-49",
+    "location": "Niantic, CT",
+    "rank": 71.1,
+    "ageRank": 76.7,
+    "results": 15,
     "bib": "",
     "finishes": 0
   },
@@ -466,7 +488,7 @@
     "lastName": "Waycott",
     "age": "M40-49",
     "location": "Wallingford, CT",
-    "rank": 60.9,
+    "rank": 61.1,
     "ageRank": 68.4,
     "results": 13,
     "bib": "",
@@ -499,7 +521,7 @@
     "lastName": "Ferrando",
     "age": "F50-59",
     "location": "Shelton, CT",
-    "rank": 0,
+    "rank": 78.2,
     "ageRank": 100,
     "results": 1,
     "bib": "",
@@ -671,6 +693,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Susan",
+    "lastName": "Haversat",
+    "age": "F60-69",
+    "location": "Windham, ME",
+    "rank": 72.5,
+    "ageRank": 95.6,
+    "results": 22,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Hannie",
     "lastName": "Balkunas",
     "age": "F30-39",
@@ -781,6 +814,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Rachael",
+    "lastName": "Flaxman",
+    "age": "F50-59",
+    "location": "Cape Elizabeth, ME",
+    "rank": 67.8,
+    "ageRank": 89,
+    "results": 18,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Jeanette",
     "lastName": "Wheatley",
     "age": "F30-39",
@@ -810,17 +854,6 @@
     "rank": 66.6,
     "ageRank": 66.6,
     "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Susan",
-    "lastName": "Haversat",
-    "age": "F60-69",
-    "location": "Windham, ME",
-    "rank": 66.4,
-    "ageRank": 95.6,
-    "results": 22,
     "bib": "",
     "finishes": 0
   },
@@ -878,17 +911,6 @@
     "results": 2,
     "bib": "",
     "finishes": 1
-  },
-  {
-    "firstName": "Rachael",
-    "lastName": "Flaxman",
-    "age": "F50-59",
-    "location": "Cape Elizabeth, ME",
-    "rank": 58.6,
-    "ageRank": 89,
-    "results": 18,
-    "bib": "",
-    "finishes": 0
   },
   {
     "firstName": "Stevan",
@@ -961,7 +983,7 @@
     "lastName": "Hanna",
     "age": "M50-59",
     "location": "Ledyard, CT",
-    "rank": 42.9,
+    "rank": 41.5,
     "ageRank": 58.6,
     "results": 23,
     "bib": "",
@@ -1016,28 +1038,6 @@
     "lastName": "Zaboski",
     "age": "M30-39",
     "location": "Wallingford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jacob",
-    "lastName": "Lester",
-    "age": "M20-29",
-    "location": "New York, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Mobilio",
-    "age": "M30-39",
-    "location": "Meriden, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1148,6 +1148,94 @@
     "lastName": "Gutowski",
     "age": "F40-49",
     "location": "WEST HAVEN, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Lester",
+    "age": "M20-29",
+    "location": "New York, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Mobilio",
+    "age": "M30-39",
+    "location": "Meriden, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Gathers",
+    "age": "M50-59",
+    "location": "Glastonbury, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Corey",
+    "lastName": "Burke",
+    "age": "M40-49",
+    "location": "West Hartford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Xavier",
+    "lastName": "Arroyo",
+    "age": "M20-29",
+    "location": "Amesbury, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sydney",
+    "lastName": "Pimentel",
+    "age": "F30-39",
+    "location": "New York City, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Korostoff-Larsson",
+    "age": "F20-29",
+    "location": "New York, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Regina",
+    "lastName": "Kulacz",
+    "age": "F30-39",
+    "location": "Oxford, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1276,83 +1364,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Sean",
-    "lastName": "McCurley",
-    "age": "M<20",
-    "location": "Fairfield, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Gathers",
-    "age": "M50-59",
-    "location": "Glastonbury, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Corey",
-    "lastName": "Burke",
-    "age": "M40-49",
-    "location": "West Hartford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Xavier",
-    "lastName": "Arroyo",
-    "age": "M20-29",
-    "location": "Amesbury, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sydney",
-    "lastName": "Pimentel",
-    "age": "F30-39",
-    "location": "New York City, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Olivia",
-    "lastName": "Korostoff-Larsson",
-    "age": "F20-29",
-    "location": "New York, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Regina",
-    "lastName": "Kulacz",
-    "age": "F30-39",
-    "location": "Oxford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Brett",
     "lastName": "Lohr",
     "age": "M40-49",
@@ -1368,6 +1379,17 @@
     "lastName": "Michalka",
     "age": "M20-29",
     "location": "branford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sean",
+    "lastName": "McCurley",
+    "age": "M<20",
+    "location": "Fairfield, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
