@@ -4,6 +4,7 @@
   import { RankingsMethodology } from "$lib/components/race";
   import RankResultsScatter from "$lib/components/race/RankResultsScatter.svelte";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+  import * as Table from "$lib/components/ui/table";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
     getCoreRowModel,
@@ -441,12 +442,12 @@
       <div
         class="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden"
       >
-        <table class="w-full">
-          <thead class="bg-stone-50 border-b border-stone-200">
+        <Table.Root class="w-full">
+          <Table.Header class="bg-stone-50 border-b border-stone-200">
             {#each table.getHeaderGroups() as headerGroup}
-              <tr>
+              <Table.Row>
                 {#each headerGroup.headers as header}
-                  <th
+                  <Table.Head
                     class="text-left px-6 py-4 {header.id === 'location'
                       ? 'hidden lg:table-cell'
                       : ''} {header.id === 'rankedEntrants'
@@ -524,16 +525,16 @@
                         />
                       </span>
                     {/if}
-                  </th>
+                  </Table.Head>
                 {/each}
-                <th class="px-6 py-4"></th>
-              </tr>
+                <Table.Head class="px-6 py-4"></Table.Head>
+              </Table.Row>
             {/each}
-          </thead>
-          <tbody class="divide-y divide-stone-100">
+          </Table.Header>
+          <Table.Body class="divide-y divide-stone-100">
             {#each table.getRowModel().rows as row}
-              <tr class="hover:bg-stone-50 transition-colors">
-                <td class="px-6 py-4">
+              <Table.Row class="hover:bg-stone-50 transition-colors">
+                <Table.Cell class="px-6 py-4">
                   <a
                     href={raceEventUrl({
                       year: row.original.year,
@@ -545,28 +546,28 @@
                   >
                     {row.original.fullTitle}
                   </a>
-                </td>
-                <td class="px-6 py-4 text-stone-500 text-sm"
-                  >{row.original.year}</td
+                </Table.Cell>
+                <Table.Cell class="px-6 py-4 text-stone-500 text-sm"
+                  >{row.original.year}</Table.Cell
                 >
-                <td
+                <Table.Cell
                   class="px-6 py-4 text-stone-500 text-sm hidden lg:table-cell"
-                  >{row.original.location}</td
+                  >{row.original.location}</Table.Cell
                 >
-                <td class="px-6 py-4 text-stone-500 text-sm"
+                <Table.Cell class="px-6 py-4 text-stone-500 text-sm"
                   >{new Date(row.original.date).toLocaleDateString(undefined, {
                     month: "short",
                     day: "numeric",
-                  })}</td
+                  })}</Table.Cell
                 >
-                <td class="px-6 py-4 text-center">
+                <Table.Cell class="px-6 py-4 text-center">
                   <span
                     class="inline-flex items-center gap-1 bg-orange-50 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold"
                   >
                     {row.original.competitiveness?.eliteCount ?? 0}
                   </span>
-                </td>
-                <td class="px-6 py-4 text-center">
+                </Table.Cell>
+                <Table.Cell class="px-6 py-4 text-center">
                   <span
                     class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold"
                   >
@@ -574,8 +575,8 @@
                       ? row.original.competitiveness.top20Rank.toFixed(1) + "%"
                       : "—"}
                   </span>
-                </td>
-                <td class="px-6 py-4 text-center hidden xl:table-cell">
+                </Table.Cell>
+                <Table.Cell class="px-6 py-4 text-center hidden xl:table-cell">
                   <span class="text-stone-500 text-sm">
                     {#if (row.original.competitiveness?.rankedEntrants ?? 0) > 0}
                       {(
@@ -587,8 +588,8 @@
                       —
                     {/if}
                   </span>
-                </td>
-                <td class="px-6 py-4 text-right">
+                </Table.Cell>
+                <Table.Cell class="px-6 py-4 text-right">
                   <a
                     href={raceEventUrl({
                       year: row.original.year,
@@ -600,11 +601,11 @@
                   >
                     View →
                   </a>
-                </td>
-              </tr>
+                </Table.Cell>
+              </Table.Row>
             {/each}
-          </tbody>
-        </table>
+          </Table.Body>
+        </Table.Root>
       </div>
     {:else}
       <div

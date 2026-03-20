@@ -8,6 +8,7 @@
   import RaceYearNav from "$lib/components/race/RaceYearNav.svelte";
   import { RankingsMethodology } from "$lib/components/race";
   import * as Breadcrumb from "$lib/components/ui/breadcrumb";
+  import * as Table from "$lib/components/ui/table";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table";
   import {
     getCoreRowModel,
@@ -388,12 +389,12 @@
         <div
           class="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden"
         >
-          <table class="w-full">
-            <thead class="bg-stone-50 border-b border-stone-200">
+          <Table.Root class="w-full">
+            <Table.Header class="bg-stone-50 border-b border-stone-200">
               {#each table.getHeaderGroups() as headerGroup}
-                <tr>
+                <Table.Row>
                   {#each headerGroup.headers as header}
-                    <th
+                    <Table.Head
                       class="text-left px-6 py-4 {header.id === 'location'
                         ? 'hidden sm:table-cell'
                         : ''} {header.id === 'averageRank' ||
@@ -466,16 +467,16 @@
                           />
                         </span>
                       {/if}
-                    </th>
+                    </Table.Head>
                   {/each}
-                  <th class="px-6 py-4"></th>
-                </tr>
+                  <Table.Head class="px-6 py-4"></Table.Head>
+                </Table.Row>
               {/each}
-            </thead>
-            <tbody class="divide-y divide-stone-100">
+            </Table.Header>
+            <Table.Body class="divide-y divide-stone-100">
               {#each table.getRowModel().rows as row}
-                <tr class="hover:bg-stone-50 transition-colors">
-                  <td class="px-6 py-4">
+                <Table.Row class="hover:bg-stone-50 transition-colors">
+                  <Table.Cell class="px-6 py-4">
                     <a
                       href={raceEventUrl({
                         year: row.original.year,
@@ -487,18 +488,18 @@
                     >
                       {row.original.title}
                     </a>
-                  </td>
-                  <td
+                  </Table.Cell>
+                  <Table.Cell
                     class="px-6 py-4 text-stone-500 text-sm hidden sm:table-cell"
-                    >{row.original.location}</td
+                    >{row.original.location}</Table.Cell
                   >
-                  <td class="px-6 py-4 text-stone-500 text-sm"
+                  <Table.Cell class="px-6 py-4 text-stone-500 text-sm"
                     >{new Date(row.original.date).toLocaleDateString(
                       undefined,
                       { month: "short", day: "numeric" },
-                    )}</td
+                    )}</Table.Cell
                   >
-                  <td class="px-6 py-4 text-center hidden md:table-cell">
+                  <Table.Cell class="px-6 py-4 text-center hidden md:table-cell">
                     {#if row.original.competitiveness}
                       <span
                         class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold"
@@ -508,8 +509,8 @@
                     {:else}
                       <span class="text-stone-300">—</span>
                     {/if}
-                  </td>
-                  <td class="px-6 py-4 text-center hidden md:table-cell">
+                  </Table.Cell>
+                  <Table.Cell class="px-6 py-4 text-center hidden md:table-cell">
                     {#if row.original.competitiveness?.eliteCount > 0}
                       <span
                         class="inline-flex items-center gap-1 bg-orange-50 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold"
@@ -519,8 +520,8 @@
                     {:else}
                       <span class="text-stone-300">—</span>
                     {/if}
-                  </td>
-                  <td class="px-6 py-4 text-right">
+                  </Table.Cell>
+                  <Table.Cell class="px-6 py-4 text-right">
                     <a
                       href={raceEventUrl({
                         year: row.original.year,
@@ -532,11 +533,11 @@
                     >
                       View →
                     </a>
-                  </td>
-                </tr>
+                  </Table.Cell>
+                </Table.Row>
               {/each}
-            </tbody>
-          </table>
+            </Table.Body>
+          </Table.Root>
         </div>
       {:else}
         <!-- Card Grid View -->
