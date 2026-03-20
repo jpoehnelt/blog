@@ -275,6 +275,17 @@
     "finishes": 3
   },
   {
+    "firstName": "Cory",
+    "lastName": "Johnson",
+    "age": "M20-29",
+    "location": "Greensboro, GA",
+    "rank": 60.5,
+    "ageRank": 62.5,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Alexey",
     "lastName": "Kim",
     "age": "M30-39",
@@ -451,54 +462,21 @@
     "finishes": 0
   },
   {
+    "firstName": "Dan",
+    "lastName": "Algert",
+    "age": "M40-49",
+    "location": "Braselton, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Carmen",
     "lastName": "Guadarrama",
     "age": "F30-39",
     "location": "Marietta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Daniel",
-    "lastName": "Haas",
-    "age": "M30-39",
-    "location": "Winder, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sean",
-    "lastName": "Fitzgerald",
-    "age": "M40-49",
-    "location": "Penacola, FL",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alexander",
-    "lastName": "Wright",
-    "age": "M20-29",
-    "location": "Augusta, GA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Robert",
-    "lastName": "McDowall",
-    "age": "M30-39",
-    "location": "Newnan, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -913,10 +891,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Gracie",
-    "lastName": "Defelice",
-    "age": "F<20",
-    "location": "Hahira, GA",
+    "firstName": "Daniel",
+    "lastName": "Haas",
+    "age": "M30-39",
+    "location": "Winder, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -924,10 +902,43 @@
     "finishes": 0
   },
   {
-    "firstName": "Dan",
-    "lastName": "Algert",
+    "firstName": "Sean",
+    "lastName": "Fitzgerald",
     "age": "M40-49",
-    "location": "Braselton, GA",
+    "location": "Penacola, FL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alexander",
+    "lastName": "Wright",
+    "age": "M20-29",
+    "location": "Augusta, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Robert",
+    "lastName": "McDowall",
+    "age": "M30-39",
+    "location": "Newnan, GA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Gracie",
+    "lastName": "Defelice",
+    "age": "F<20",
+    "location": "Hahira, GA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

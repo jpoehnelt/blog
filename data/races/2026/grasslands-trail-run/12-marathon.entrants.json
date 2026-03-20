@@ -11,17 +11,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Madden",
-    "lastName": "Smith",
-    "age": "M20-29",
-    "location": "dallas, TX",
-    "rank": 90.5,
-    "ageRank": 100,
-    "results": 1,
-    "bib": "620",
-    "finishes": 1
-  },
-  {
     "firstName": "Diana",
     "lastName": "Filtz",
     "age": "F30-39",
@@ -31,6 +20,17 @@
     "results": 30,
     "bib": "520",
     "finishes": 2
+  },
+  {
+    "firstName": "Madden",
+    "lastName": "Smith",
+    "age": "M20-29",
+    "location": "dallas, TX",
+    "rank": 90.5,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "620",
+    "finishes": 1
   },
   {
     "firstName": "Collin",
@@ -44,6 +44,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Jason",
+    "lastName": "Wyles",
+    "age": "M40-49",
+    "location": "Burleson, TX",
+    "rank": 89.4,
+    "ageRank": 100,
+    "results": 9,
+    "bib": "493",
+    "finishes": 1
+  },
+  {
     "firstName": "Kyle",
     "lastName": "Ranallo",
     "age": "M30-39",
@@ -52,6 +63,17 @@
     "ageRank": 91.9,
     "results": 1,
     "bib": "604",
+    "finishes": 0
+  },
+  {
+    "firstName": "Stacey",
+    "lastName": "Almeida",
+    "age": "F30-39",
+    "location": "Aubrey, TX",
+    "rank": 92.9,
+    "ageRank": 100,
+    "results": 1,
+    "bib": "458",
     "finishes": 0
   },
   {
@@ -66,14 +88,14 @@
     "finishes": 1
   },
   {
-    "firstName": "Stacey",
-    "lastName": "Almeida",
-    "age": "F30-39",
-    "location": "Aubrey, TX",
-    "rank": 92.9,
+    "firstName": "Nekita",
+    "lastName": "Hunter",
+    "age": "F50-59",
+    "location": "Dallas, TX",
+    "rank": 90.6,
     "ageRank": 100,
-    "results": 1,
-    "bib": "458",
+    "results": 4,
+    "bib": "543",
     "finishes": 0
   },
   {
@@ -110,17 +132,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Nekita",
-    "lastName": "Hunter",
-    "age": "F50-59",
-    "location": "Dallas, TX",
-    "rank": 90.6,
-    "ageRank": 100,
-    "results": 4,
-    "bib": "543",
-    "finishes": 0
-  },
-  {
     "firstName": "Mara",
     "lastName": "Pineau",
     "age": "F30-39",
@@ -129,28 +140,6 @@
     "ageRank": 100,
     "results": 1,
     "bib": "596",
-    "finishes": 0
-  },
-  {
-    "firstName": "Aaron",
-    "lastName": "Ferrell",
-    "age": "M50-59",
-    "location": "decatur, TX",
-    "rank": 80.4,
-    "ageRank": 90.6,
-    "results": 17,
-    "bib": "516",
-    "finishes": 6
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Allen",
-    "age": "M40-49",
-    "location": "Roanoke, TX",
-    "rank": 79.1,
-    "ageRank": 82.3,
-    "results": 2,
-    "bib": "457",
     "finishes": 0
   },
   {
@@ -165,15 +154,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Patrick",
-    "lastName": "Murray",
-    "age": "M60-69",
-    "location": "Sachse, TX",
-    "rank": 78.3,
-    "ageRank": 89.3,
-    "results": 3,
-    "bib": "582",
-    "finishes": 1
+    "firstName": "Aaron",
+    "lastName": "Ferrell",
+    "age": "M50-59",
+    "location": "decatur, TX",
+    "rank": 80.4,
+    "ageRank": 90.6,
+    "results": 17,
+    "bib": "516",
+    "finishes": 6
   },
   {
     "firstName": "Magaly",
@@ -187,14 +176,14 @@
     "finishes": 0
   },
   {
-    "firstName": "David",
-    "lastName": "Matthews",
-    "age": "M50-59",
-    "location": "Springtown, TX",
-    "rank": 77.6,
-    "ageRank": 88.8,
+    "firstName": "Mike",
+    "lastName": "Allen",
+    "age": "M40-49",
+    "location": "Roanoke, TX",
+    "rank": 79.1,
+    "ageRank": 82.3,
     "results": 2,
-    "bib": "567",
+    "bib": "457",
     "finishes": 0
   },
   {
@@ -209,15 +198,26 @@
     "finishes": 0
   },
   {
-    "firstName": "Brent",
-    "lastName": "Robertson",
-    "age": "M40-49",
-    "location": "Aledo, TX",
-    "rank": 75.5,
-    "ageRank": 80.1,
-    "results": 4,
-    "bib": "609",
+    "firstName": "Patrick",
+    "lastName": "Murray",
+    "age": "M60-69",
+    "location": "Sachse, TX",
+    "rank": 78.3,
+    "ageRank": 89.3,
+    "results": 3,
+    "bib": "582",
     "finishes": 1
+  },
+  {
+    "firstName": "David",
+    "lastName": "Matthews",
+    "age": "M50-59",
+    "location": "Springtown, TX",
+    "rank": 77.6,
+    "ageRank": 88.8,
+    "results": 2,
+    "bib": "567",
+    "finishes": 0
   },
   {
     "firstName": "Amy",
@@ -229,6 +229,28 @@
     "results": 54,
     "bib": "495",
     "finishes": 0
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Lane",
+    "age": "F50-59",
+    "location": "Jacksboro, TX",
+    "rank": 80.9,
+    "ageRank": 94.1,
+    "results": 4,
+    "bib": "552",
+    "finishes": 1
+  },
+  {
+    "firstName": "Brent",
+    "lastName": "Robertson",
+    "age": "M40-49",
+    "location": "Aledo, TX",
+    "rank": 75.5,
+    "ageRank": 80.1,
+    "results": 4,
+    "bib": "609",
+    "finishes": 1
   },
   {
     "firstName": "Stephen",
@@ -253,17 +275,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Sarah",
-    "lastName": "Lane",
-    "age": "F50-59",
-    "location": "Jacksboro, TX",
-    "rank": 80.9,
-    "ageRank": 94.1,
-    "results": 4,
-    "bib": "552",
-    "finishes": 1
-  },
-  {
     "firstName": "Steven",
     "lastName": "Pritt",
     "age": "M50-59",
@@ -273,6 +284,17 @@
     "results": 29,
     "bib": "597",
     "finishes": 5
+  },
+  {
+    "firstName": "Hayley",
+    "lastName": "Mitchell",
+    "age": "F30-39",
+    "location": "Flower Mound, TX",
+    "rank": 77.7,
+    "ageRank": 82,
+    "results": 4,
+    "bib": "578",
+    "finishes": 0
   },
   {
     "firstName": "Mark",
@@ -297,6 +319,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Sarah",
+    "lastName": "Kalosa",
+    "age": "F30-39",
+    "location": "Fort Worth, TX",
+    "rank": 76.2,
+    "ageRank": 76.2,
+    "results": 3,
+    "bib": "545",
+    "finishes": 0
+  },
+  {
     "firstName": "Mathew",
     "lastName": "Landis",
     "age": "M40-49",
@@ -305,17 +338,6 @@
     "ageRank": 82.8,
     "results": 7,
     "bib": "550",
-    "finishes": 0
-  },
-  {
-    "firstName": "Hayley",
-    "lastName": "Mitchell",
-    "age": "F30-39",
-    "location": "Flower Mound, TX",
-    "rank": 77.7,
-    "ageRank": 82,
-    "results": 4,
-    "bib": "578",
     "finishes": 0
   },
   {
@@ -330,28 +352,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Dane",
-    "lastName": "Conley",
-    "age": "M30-39",
-    "location": "FLOWER MOUND, TX",
-    "rank": 70,
-    "ageRank": 82.1,
-    "results": 10,
-    "bib": "496",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Kalosa",
-    "age": "F30-39",
-    "location": "Fort Worth, TX",
-    "rank": 76.2,
-    "ageRank": 76.2,
-    "results": 3,
-    "bib": "545",
-    "finishes": 0
-  },
-  {
     "firstName": "Jacquelyn",
     "lastName": "Meyer",
     "age": "F30-39",
@@ -363,14 +363,14 @@
     "finishes": 0
   },
   {
-    "firstName": "Jacob",
-    "lastName": "Worthy",
-    "age": "M20-29",
-    "location": "Fort Worth, TX",
-    "rank": 67.6,
-    "ageRank": 87.8,
-    "results": 5,
-    "bib": "654",
+    "firstName": "Dane",
+    "lastName": "Conley",
+    "age": "M30-39",
+    "location": "FLOWER MOUND, TX",
+    "rank": 70,
+    "ageRank": 82.1,
+    "results": 10,
+    "bib": "496",
     "finishes": 0
   },
   {
@@ -385,17 +385,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Ryan",
-    "lastName": "Landis",
-    "age": "M30-39",
-    "location": "Tyler, TX",
-    "rank": 66.8,
-    "ageRank": 72.3,
-    "results": 2,
-    "bib": "551",
-    "finishes": 0
-  },
-  {
     "firstName": "Emarieli Michelle",
     "lastName": "Passalacqua",
     "age": "F30-39",
@@ -407,6 +396,72 @@
     "finishes": 0
   },
   {
+    "firstName": "Jessica",
+    "lastName": "Allen",
+    "age": "F30-39",
+    "location": "Decatur, TX",
+    "rank": 72.6,
+    "ageRank": 76.5,
+    "results": 3,
+    "bib": "456",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Worthy",
+    "age": "M20-29",
+    "location": "Fort Worth, TX",
+    "rank": 67.6,
+    "ageRank": 87.8,
+    "results": 5,
+    "bib": "654",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ann",
+    "lastName": "McCarley",
+    "age": "F60-69",
+    "location": "Grapevine, TX",
+    "rank": 71.7,
+    "ageRank": 83.9,
+    "results": 33,
+    "bib": "569",
+    "finishes": 5
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Landis",
+    "age": "M30-39",
+    "location": "Tyler, TX",
+    "rank": 66.8,
+    "ageRank": 72.3,
+    "results": 2,
+    "bib": "551",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jordan",
+    "lastName": "Davidson",
+    "age": "F40-49",
+    "location": "Harker Heights, TX",
+    "rank": 71.5,
+    "ageRank": 84,
+    "results": 3,
+    "bib": "504",
+    "finishes": 0
+  },
+  {
+    "firstName": "Nicholle",
+    "lastName": "Vavra",
+    "age": "F30-39",
+    "location": "Venus, TX",
+    "rank": 71.4,
+    "ageRank": 73.9,
+    "results": 6,
+    "bib": "637",
+    "finishes": 0
+  },
+  {
     "firstName": "Drew",
     "lastName": "Meyer",
     "age": "M70+",
@@ -415,6 +470,17 @@
     "ageRank": 92.9,
     "results": 54,
     "bib": "575",
+    "finishes": 1
+  },
+  {
+    "firstName": "Frieda",
+    "lastName": "Buck",
+    "age": "F40-49",
+    "location": "Fort Worth, TX",
+    "rank": 71.3,
+    "ageRank": 77.9,
+    "results": 13,
+    "bib": "487",
     "finishes": 1
   },
   {
@@ -451,17 +517,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jessica",
-    "lastName": "Allen",
-    "age": "F30-39",
-    "location": "Decatur, TX",
-    "rank": 72.6,
-    "ageRank": 76.5,
-    "results": 3,
-    "bib": "456",
-    "finishes": 1
-  },
-  {
     "firstName": "Roman",
     "lastName": "Markin",
     "age": "M20-29",
@@ -470,50 +525,6 @@
     "ageRank": 82.6,
     "results": 1,
     "bib": "564",
-    "finishes": 1
-  },
-  {
-    "firstName": "Ann",
-    "lastName": "McCarley",
-    "age": "F60-69",
-    "location": "Grapevine, TX",
-    "rank": 71.7,
-    "ageRank": 83.9,
-    "results": 33,
-    "bib": "569",
-    "finishes": 5
-  },
-  {
-    "firstName": "Jordan",
-    "lastName": "Davidson",
-    "age": "F40-49",
-    "location": "Harker Heights, TX",
-    "rank": 71.5,
-    "ageRank": 84,
-    "results": 3,
-    "bib": "504",
-    "finishes": 0
-  },
-  {
-    "firstName": "Nicholle",
-    "lastName": "Vavra",
-    "age": "F30-39",
-    "location": "Venus, TX",
-    "rank": 71.4,
-    "ageRank": 73.9,
-    "results": 6,
-    "bib": "637",
-    "finishes": 0
-  },
-  {
-    "firstName": "Frieda",
-    "lastName": "Buck",
-    "age": "F40-49",
-    "location": "Fort Worth, TX",
-    "rank": 71.3,
-    "ageRank": 77.9,
-    "results": 13,
-    "bib": "487",
     "finishes": 1
   },
   {
@@ -528,17 +539,6 @@
     "finishes": 5
   },
   {
-    "firstName": "Rolando",
-    "lastName": "Negron",
-    "age": "M50-59",
-    "location": "Alachua, FL",
-    "rank": 64.3,
-    "ageRank": 78.3,
-    "results": 17,
-    "bib": "583",
-    "finishes": 0
-  },
-  {
     "firstName": "Antonia",
     "lastName": "Heredia",
     "age": "F40-49",
@@ -547,28 +547,6 @@
     "ageRank": 81.9,
     "results": 27,
     "bib": "535",
-    "finishes": 1
-  },
-  {
-    "firstName": "Tom",
-    "lastName": "Hosner",
-    "age": "M70+",
-    "location": "Argyle, TX",
-    "rank": 64.3,
-    "ageRank": 81.8,
-    "results": 98,
-    "bib": "541",
-    "finishes": 1
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Alemany",
-    "age": "M40-49",
-    "location": "Argyle, TX",
-    "rank": 64.2,
-    "ageRank": 65.3,
-    "results": 6,
-    "bib": "454",
     "finishes": 1
   },
   {
@@ -581,39 +559,6 @@
     "results": 13,
     "bib": "471",
     "finishes": 0
-  },
-  {
-    "firstName": "Tom",
-    "lastName": "Faulkenberry",
-    "age": "M40-49",
-    "location": "Stephenville, TX",
-    "rank": 64,
-    "ageRank": 69.3,
-    "results": 34,
-    "bib": "514",
-    "finishes": 2
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Custead",
-    "age": "M40-49",
-    "location": "BURLESON, TX",
-    "rank": 63.9,
-    "ageRank": 73.1,
-    "results": 9,
-    "bib": "502",
-    "finishes": 0
-  },
-  {
-    "firstName": "Michael",
-    "lastName": "Books",
-    "age": "M50-59",
-    "location": "Rockwall, TX",
-    "rank": 63.6,
-    "ageRank": 75.3,
-    "results": 8,
-    "bib": "480",
-    "finishes": 1
   },
   {
     "firstName": "Jennifer",
@@ -649,15 +594,26 @@
     "finishes": 0
   },
   {
-    "firstName": "Chris",
-    "lastName": "Marks",
+    "firstName": "Rolando",
+    "lastName": "Negron",
     "age": "M50-59",
-    "location": "Canadian, TX",
-    "rank": 62.8,
-    "ageRank": 73,
-    "results": 6,
-    "bib": "565",
+    "location": "Alachua, FL",
+    "rank": 64.3,
+    "ageRank": 78.3,
+    "results": 17,
+    "bib": "583",
     "finishes": 0
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Hosner",
+    "age": "M70+",
+    "location": "Argyle, TX",
+    "rank": 64.3,
+    "ageRank": 81.8,
+    "results": 98,
+    "bib": "541",
+    "finishes": 1
   },
   {
     "firstName": "Susan",
@@ -669,6 +625,50 @@
     "results": 40,
     "bib": "455",
     "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Alemany",
+    "age": "M40-49",
+    "location": "Argyle, TX",
+    "rank": 64.2,
+    "ageRank": 65.3,
+    "results": 6,
+    "bib": "454",
+    "finishes": 1
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Faulkenberry",
+    "age": "M40-49",
+    "location": "Stephenville, TX",
+    "rank": 64,
+    "ageRank": 69.3,
+    "results": 34,
+    "bib": "514",
+    "finishes": 2
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Custead",
+    "age": "M40-49",
+    "location": "BURLESON, TX",
+    "rank": 63.9,
+    "ageRank": 73.1,
+    "results": 9,
+    "bib": "502",
+    "finishes": 0
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Books",
+    "age": "M50-59",
+    "location": "Rockwall, TX",
+    "rank": 63.6,
+    "ageRank": 75.3,
+    "results": 8,
+    "bib": "480",
+    "finishes": 1
   },
   {
     "firstName": "Jennifer",
@@ -715,14 +715,14 @@
     "finishes": 0
   },
   {
-    "firstName": "Dave",
-    "lastName": "Goodrich",
-    "age": "M70+",
-    "location": "Poolville, TX",
-    "rank": 61.2,
-    "ageRank": 95.5,
-    "results": 11,
-    "bib": "530",
+    "firstName": "Chris",
+    "lastName": "Marks",
+    "age": "M50-59",
+    "location": "Canadian, TX",
+    "rank": 62.8,
+    "ageRank": 73,
+    "results": 6,
+    "bib": "565",
     "finishes": 0
   },
   {
@@ -781,28 +781,6 @@
     "finishes": 7
   },
   {
-    "firstName": "Robert",
-    "lastName": "Atkinson",
-    "age": "M40-49",
-    "location": "Mustang, OK",
-    "rank": 59.9,
-    "ageRank": 65.5,
-    "results": 7,
-    "bib": "463",
-    "finishes": 0
-  },
-  {
-    "firstName": "Blake",
-    "lastName": "Worsham",
-    "age": "M40-49",
-    "location": "Denton, TX",
-    "rank": 59.3,
-    "ageRank": 71.7,
-    "results": 2,
-    "bib": "653",
-    "finishes": 0
-  },
-  {
     "firstName": "Colleen",
     "lastName": "Filak",
     "age": "F60-69",
@@ -825,6 +803,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Robert",
+    "lastName": "Atkinson",
+    "age": "M40-49",
+    "location": "Mustang, OK",
+    "rank": 59.9,
+    "ageRank": 65.5,
+    "results": 7,
+    "bib": "463",
+    "finishes": 0
+  },
+  {
     "firstName": "Laura",
     "lastName": "Gietl",
     "age": "F50-59",
@@ -834,6 +823,17 @@
     "results": 73,
     "bib": "525",
     "finishes": 4
+  },
+  {
+    "firstName": "Blake",
+    "lastName": "Worsham",
+    "age": "M40-49",
+    "location": "Denton, TX",
+    "rank": 59.3,
+    "ageRank": 71.7,
+    "results": 2,
+    "bib": "653",
+    "finishes": 0
   },
   {
     "firstName": "Ana",
@@ -847,17 +847,6 @@
     "finishes": 1
   },
   {
-    "firstName": "Kevin",
-    "lastName": "Guzman",
-    "age": "M30-39",
-    "location": "Carrollton, TX",
-    "rank": 57.8,
-    "ageRank": 57.8,
-    "results": 1,
-    "bib": "532",
-    "finishes": 0
-  },
-  {
     "firstName": "Kerry",
     "lastName": "Markin",
     "age": "F40-49",
@@ -869,17 +858,6 @@
     "finishes": 2
   },
   {
-    "firstName": "Corey",
-    "lastName": "Bitting",
-    "age": "M40-49",
-    "location": "Justin, TX",
-    "rank": 57.5,
-    "ageRank": 62.7,
-    "results": 10,
-    "bib": "473",
-    "finishes": 0
-  },
-  {
     "firstName": "Kathy",
     "lastName": "Smith",
     "age": "F60-69",
@@ -889,17 +867,6 @@
     "results": 78,
     "bib": "619",
     "finishes": 4
-  },
-  {
-    "firstName": "Dan",
-    "lastName": "Turner",
-    "age": "M40-49",
-    "location": "Plano, TX",
-    "rank": 56.9,
-    "ageRank": 59,
-    "results": 2,
-    "bib": "634",
-    "finishes": 0
   },
   {
     "firstName": "Jennifer",
@@ -946,14 +913,14 @@
     "finishes": 0
   },
   {
-    "firstName": "Josh",
-    "lastName": "Hopewell",
-    "age": "M50-59",
-    "location": "Bonham, TX",
-    "rank": 56.6,
-    "ageRank": 68.5,
-    "results": 10,
-    "bib": "540",
+    "firstName": "Kevin",
+    "lastName": "Guzman",
+    "age": "M30-39",
+    "location": "Carrollton, TX",
+    "rank": 57.8,
+    "ageRank": 57.8,
+    "results": 1,
+    "bib": "532",
     "finishes": 0
   },
   {
@@ -979,6 +946,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Corey",
+    "lastName": "Bitting",
+    "age": "M40-49",
+    "location": "Justin, TX",
+    "rank": 57.5,
+    "ageRank": 62.7,
+    "results": 10,
+    "bib": "473",
+    "finishes": 0
+  },
+  {
     "firstName": "Mariella",
     "lastName": "Garza",
     "age": "F40-49",
@@ -998,6 +976,17 @@
     "ageRank": 71,
     "results": 9,
     "bib": "539",
+    "finishes": 0
+  },
+  {
+    "firstName": "Dan",
+    "lastName": "Turner",
+    "age": "M40-49",
+    "location": "Plano, TX",
+    "rank": 56.9,
+    "ageRank": 59,
+    "results": 2,
+    "bib": "634",
     "finishes": 0
   },
   {
@@ -1034,37 +1023,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Chris",
-    "lastName": "Markin",
+    "firstName": "Josh",
+    "lastName": "Hopewell",
     "age": "M50-59",
-    "location": "Springtown, TX",
-    "rank": 55.1,
-    "ageRank": 60.7,
-    "results": 4,
-    "bib": "561",
-    "finishes": 2
-  },
-  {
-    "firstName": "John",
-    "lastName": "Leighton",
-    "age": "M60-69",
-    "location": "Bedford, TX",
-    "rank": 55.1,
-    "ageRank": 73.1,
-    "results": 192,
-    "bib": "555",
+    "location": "Bonham, TX",
+    "rank": 56.6,
+    "ageRank": 68.5,
+    "results": 10,
+    "bib": "540",
     "finishes": 0
-  },
-  {
-    "firstName": "Scott",
-    "lastName": "Lawrence",
-    "age": "M50-59",
-    "location": "Krum, TX",
-    "rank": 54.9,
-    "ageRank": 70.1,
-    "results": 7,
-    "bib": "553",
-    "finishes": 1
   },
   {
     "firstName": "Sofia",
@@ -1100,17 +1067,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Randy",
-    "lastName": "Bradshaw",
-    "age": "M60-69",
-    "location": "Wylie, TX",
-    "rank": 54,
-    "ageRank": 76.5,
-    "results": 4,
-    "bib": "482",
-    "finishes": 0
-  },
-  {
     "firstName": "Amanda",
     "lastName": "Baumle",
     "age": "F50-59",
@@ -1119,6 +1075,28 @@
     "ageRank": 62.7,
     "results": 9,
     "bib": "468",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Markin",
+    "age": "M50-59",
+    "location": "Springtown, TX",
+    "rank": 55.1,
+    "ageRank": 60.7,
+    "results": 4,
+    "bib": "561",
+    "finishes": 2
+  },
+  {
+    "firstName": "John",
+    "lastName": "Leighton",
+    "age": "M60-69",
+    "location": "Bedford, TX",
+    "rank": 55.1,
+    "ageRank": 73.1,
+    "results": 192,
+    "bib": "555",
     "finishes": 0
   },
   {
@@ -1131,6 +1109,17 @@
     "results": 10,
     "bib": "486",
     "finishes": 0
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Lawrence",
+    "age": "M50-59",
+    "location": "Krum, TX",
+    "rank": 54.9,
+    "ageRank": 70.1,
+    "results": 7,
+    "bib": "553",
+    "finishes": 1
   },
   {
     "firstName": "Alease",
@@ -1155,14 +1144,14 @@
     "finishes": 0
   },
   {
-    "firstName": "Jeff",
-    "lastName": "Quesenberry",
-    "age": "M40-49",
-    "location": "Flint, TX",
-    "rank": 53,
-    "ageRank": 61,
-    "results": 8,
-    "bib": "598",
+    "firstName": "Randy",
+    "lastName": "Bradshaw",
+    "age": "M60-69",
+    "location": "Wylie, TX",
+    "rank": 54,
+    "ageRank": 76.5,
+    "results": 4,
+    "bib": "482",
     "finishes": 0
   },
   {
@@ -1221,58 +1210,14 @@
     "finishes": 1
   },
   {
-    "firstName": "Josh",
-    "lastName": "Willis",
-    "age": "M50-59",
-    "location": "Dallas, TX",
-    "rank": 51.7,
-    "ageRank": 54.8,
-    "results": 5,
-    "bib": "649",
-    "finishes": 3
-  },
-  {
-    "firstName": "Nathaniel",
-    "lastName": "Radabaugh",
-    "age": "M50-59",
-    "location": "Garland, TX",
-    "rank": 51.6,
-    "ageRank": 51.6,
-    "results": 1,
-    "bib": "600",
-    "finishes": 0
-  },
-  {
-    "firstName": "Tom",
-    "lastName": "Cheaney",
+    "firstName": "Jeff",
+    "lastName": "Quesenberry",
     "age": "M40-49",
-    "location": "Burkburnett, TX",
-    "rank": 51.4,
-    "ageRank": 54.3,
-    "results": 20,
-    "bib": "494",
-    "finishes": 0
-  },
-  {
-    "firstName": "Daniel",
-    "lastName": "Crane",
-    "age": "M70+",
-    "location": "Cane Hill, AR",
-    "rank": 51.3,
-    "ageRank": 83.3,
-    "results": 29,
-    "bib": "501",
-    "finishes": 1
-  },
-  {
-    "firstName": "John",
-    "lastName": "Carter",
-    "age": "M50-59",
-    "location": "Celina, TX",
-    "rank": 51.2,
-    "ageRank": 64.6,
-    "results": 1,
-    "bib": "490",
+    "location": "Flint, TX",
+    "rank": 53,
+    "ageRank": 61,
+    "results": 8,
+    "bib": "598",
     "finishes": 0
   },
   {
@@ -1306,6 +1251,50 @@
     "ageRank": 68.7,
     "results": 3,
     "bib": "527",
+    "finishes": 0
+  },
+  {
+    "firstName": "Josh",
+    "lastName": "Willis",
+    "age": "M50-59",
+    "location": "Dallas, TX",
+    "rank": 51.7,
+    "ageRank": 54.8,
+    "results": 5,
+    "bib": "649",
+    "finishes": 3
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Cheaney",
+    "age": "M40-49",
+    "location": "Burkburnett, TX",
+    "rank": 51.4,
+    "ageRank": 54.3,
+    "results": 20,
+    "bib": "494",
+    "finishes": 0
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Crane",
+    "age": "M70+",
+    "location": "Cane Hill, AR",
+    "rank": 51.3,
+    "ageRank": 83.3,
+    "results": 29,
+    "bib": "501",
+    "finishes": 1
+  },
+  {
+    "firstName": "John",
+    "lastName": "Carter",
+    "age": "M50-59",
+    "location": "Celina, TX",
+    "rank": 51.2,
+    "ageRank": 64.6,
+    "results": 1,
+    "bib": "490",
     "finishes": 0
   },
   {
@@ -1353,17 +1342,6 @@
     "finishes": 7
   },
   {
-    "firstName": "Steven",
-    "lastName": "Pewitt",
-    "age": "M50-59",
-    "location": "Burleson, TX",
-    "rank": 45.1,
-    "ageRank": 62.5,
-    "results": 2,
-    "bib": "591",
-    "finishes": 0
-  },
-  {
     "firstName": "Louise",
     "lastName": "Ferrill",
     "age": "F60-69",
@@ -1375,25 +1353,14 @@
     "finishes": 6
   },
   {
-    "firstName": "Tim",
-    "lastName": "Chapman",
+    "firstName": "Steven",
+    "lastName": "Pewitt",
     "age": "M50-59",
-    "location": "Flower mound, TX",
-    "rank": 44.6,
-    "ageRank": 58.6,
-    "results": 1,
-    "bib": "493",
-    "finishes": 0
-  },
-  {
-    "firstName": "Chris",
-    "lastName": "Giffert",
-    "age": "M50-59",
-    "location": "Grandview, TX",
-    "rank": 44.2,
-    "ageRank": 60.8,
+    "location": "Burleson, TX",
+    "rank": 45.1,
+    "ageRank": 62.5,
     "results": 2,
-    "bib": "526",
+    "bib": "591",
     "finishes": 0
   },
   {
@@ -1408,6 +1375,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Chris",
+    "lastName": "Giffert",
+    "age": "M50-59",
+    "location": "Grandview, TX",
+    "rank": 44.2,
+    "ageRank": 60.8,
+    "results": 2,
+    "bib": "526",
+    "finishes": 0
+  },
+  {
     "firstName": "Mike",
     "lastName": "Boone",
     "age": "M40-49",
@@ -1417,17 +1395,6 @@
     "results": 5,
     "bib": "481",
     "finishes": 0
-  },
-  {
-    "firstName": "Larry",
-    "lastName": "Chafin",
-    "age": "M60-69",
-    "location": "Saginaw, TX",
-    "rank": 41.3,
-    "ageRank": 62.6,
-    "results": 11,
-    "bib": "492",
-    "finishes": 1
   },
   {
     "firstName": "Jennifer",
@@ -1474,6 +1441,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Larry",
+    "lastName": "Chafin",
+    "age": "M60-69",
+    "location": "Saginaw, TX",
+    "rank": 41.3,
+    "ageRank": 62.6,
+    "results": 11,
+    "bib": "492",
+    "finishes": 1
+  },
+  {
     "firstName": "Jolene",
     "lastName": "Vinson",
     "age": "F60-69",
@@ -1516,17 +1494,6 @@
     "results": 1,
     "bib": "460",
     "finishes": 1
-  },
-  {
-    "firstName": "Kenna",
-    "lastName": "Philipp",
-    "age": "F20-29",
-    "location": "Rocksprings, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "592",
-    "finishes": 0
   },
   {
     "firstName": "Jeffrey",
@@ -1592,6 +1559,17 @@
     "ageRank": 0,
     "results": 0,
     "bib": "611",
+    "finishes": 0
+  },
+  {
+    "firstName": "Kenna",
+    "lastName": "Philipp",
+    "age": "F20-29",
+    "location": "Rocksprings, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "592",
     "finishes": 0
   },
   {
@@ -2002,17 +1980,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Nathan",
-    "lastName": "Radabaugh",
-    "age": "M50-59",
-    "location": "Garland, TX",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "599",
-    "finishes": 0
-  },
-  {
     "firstName": "Manoj",
     "lastName": "Agrawal",
     "age": "M50-59",
@@ -2054,6 +2021,17 @@
     "ageRank": 0,
     "results": 0,
     "bib": "655",
+    "finishes": 0
+  },
+  {
+    "firstName": "David",
+    "lastName": "Kiel",
+    "age": "M60-69",
+    "location": "Fort Worth, TX",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "530",
     "finishes": 0
   },
   {

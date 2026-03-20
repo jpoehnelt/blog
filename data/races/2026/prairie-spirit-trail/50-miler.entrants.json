@@ -22,17 +22,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Lisa",
-    "lastName": "Whitworth",
-    "age": "F50-59",
-    "location": "Tulsa, OK",
-    "rank": 90,
-    "ageRank": 0,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Brandon",
     "lastName": "Walker",
     "age": "M50-59",
@@ -44,35 +33,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Lorrie",
-    "lastName": "Tevebaugh",
+    "firstName": "Lisa",
+    "lastName": "Whitworth",
     "age": "F50-59",
-    "location": "Amarillo, TX",
-    "rank": 79.8,
-    "ageRank": 82.6,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Karen",
-    "lastName": "Smidt",
-    "age": "F50-59",
-    "location": "Brighton, CO",
-    "rank": 78.9,
-    "ageRank": 90.5,
-    "results": 111,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Katy",
-    "lastName": "Brown",
-    "age": "F40-49",
-    "location": "Elkhorn, NE",
-    "rank": 78.8,
-    "ageRank": 89.2,
-    "results": 7,
+    "location": "Tulsa, OK",
+    "rank": 90,
+    "ageRank": 0,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -110,15 +77,15 @@
     "finishes": 0
   },
   {
-    "firstName": "Molly",
-    "lastName": "Joseph",
-    "age": "F40-49",
-    "location": "Brandon, SD",
-    "rank": 74.5,
-    "ageRank": 87.4,
-    "results": 9,
+    "firstName": "Katie",
+    "lastName": "Sullivan",
+    "age": "F20-29",
+    "location": "Topeka, KS",
+    "rank": 84.9,
+    "ageRank": 94.2,
+    "results": 30,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Jeff",
@@ -154,6 +121,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Lorrie",
+    "lastName": "Tevebaugh",
+    "age": "F50-59",
+    "location": "Amarillo, TX",
+    "rank": 79.8,
+    "ageRank": 82.6,
+    "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Dillon",
     "lastName": "Kempkes",
     "age": "M20-29",
@@ -165,13 +143,24 @@
     "finishes": 0
   },
   {
-    "firstName": "Jennifer",
-    "lastName": "Stong",
+    "firstName": "Karen",
+    "lastName": "Smidt",
     "age": "F50-59",
-    "location": "Woodward, OK",
-    "rank": 67.9,
-    "ageRank": 76,
-    "results": 21,
+    "location": "Brighton, CO",
+    "rank": 78.9,
+    "ageRank": 90.5,
+    "results": 111,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Katy",
+    "lastName": "Brown",
+    "age": "F40-49",
+    "location": "Elkhorn, NE",
+    "rank": 78.8,
+    "ageRank": 89.2,
+    "results": 7,
     "bib": "",
     "finishes": 0
   },
@@ -209,13 +198,13 @@
     "finishes": 0
   },
   {
-    "firstName": "Jessica",
-    "lastName": "Martin",
-    "age": "F50-59",
-    "location": "Eddyville, IL",
-    "rank": 65.4,
-    "ageRank": 73.3,
-    "results": 5,
+    "firstName": "Molly",
+    "lastName": "Joseph",
+    "age": "F40-49",
+    "location": "Brandon, SD",
+    "rank": 74.5,
+    "ageRank": 87.4,
+    "results": 9,
     "bib": "",
     "finishes": 0
   },
@@ -228,7 +217,7 @@
     "ageRank": 75.8,
     "results": 12,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Jeff",
@@ -253,17 +242,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Melia",
-    "lastName": "Derrick",
-    "age": "F70+",
-    "location": "Brooklyn Park, MN",
-    "rank": 60,
-    "ageRank": 92.9,
-    "results": 7,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Aaron",
     "lastName": "Burlingame",
     "age": "M40-49",
@@ -272,7 +250,7 @@
     "ageRank": 68.2,
     "results": 32,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Curan",
@@ -282,6 +260,28 @@
     "rank": 59.7,
     "ageRank": 59.7,
     "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jennifer",
+    "lastName": "Stong",
+    "age": "F50-59",
+    "location": "Woodward, OK",
+    "rank": 67.9,
+    "ageRank": 76,
+    "results": 21,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Martin",
+    "age": "F50-59",
+    "location": "Eddyville, IL",
+    "rank": 65.4,
+    "ageRank": 73.3,
+    "results": 5,
     "bib": "",
     "finishes": 0
   },
@@ -304,6 +304,17 @@
     "rank": 52.7,
     "ageRank": 86.9,
     "results": 181,
+    "bib": "",
+    "finishes": 4
+  },
+  {
+    "firstName": "Melia",
+    "lastName": "Derrick",
+    "age": "F70+",
+    "location": "Brooklyn Park, MN",
+    "rank": 60,
+    "ageRank": 92.9,
+    "results": 7,
     "bib": "",
     "finishes": 0
   },
@@ -418,6 +429,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Julian",
+    "lastName": "Terreau",
+    "age": "M20-29",
+    "location": "Olathe, KS",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Tobin",
     "lastName": "Widhalm",
     "age": "M20-29",
@@ -451,17 +473,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Julian",
-    "lastName": "Terreau",
-    "age": "M20-29",
-    "location": "Olathe, KS",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Josh",
     "lastName": "Vander Veen",
     "age": "M40-49",
@@ -488,6 +499,28 @@
     "lastName": "Mulford",
     "age": "M40-49",
     "location": "Lees Summit, MO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Alee",
+    "lastName": "Harm",
+    "age": "F<20",
+    "location": "Independence, MO",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Hayle",
+    "lastName": "Harm",
+    "age": "F<20",
+    "location": "Independence, MO",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
