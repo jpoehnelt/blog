@@ -1,6 +1,7 @@
 <script lang="ts">
   import BrandIcon from "$lib/components/BrandIcon.svelte";
   import CodeToolbar from "$lib/components/CodeToolbar.svelte";
+  import ExpandButton from "$lib/components/ExpandButton.svelte";
   import { LANG_ICON_MAP } from "$lib/constants";
   import type { SimpleIcon } from "simple-icons";
 
@@ -112,12 +113,7 @@
       {#if collapsed}
         <div class="absolute bottom-full left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       {/if}
-      <button
-        onclick={() => { collapsed = !collapsed; }}
-        class="w-full py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 bg-zinc-50/80 hover:bg-zinc-100 border-t border-zinc-200 cursor-pointer transition-colors"
-      >
-        {collapsed ? 'Show more ↓' : 'Show less ↑'}
-      </button>
+      <ExpandButton bind:expanded={() => !collapsed, (v) => collapsed = !v} variant="full-width" />
     </div>
   {/if}
 </div>

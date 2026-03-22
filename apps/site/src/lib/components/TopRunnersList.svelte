@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Participant } from "@jpoehnelt/ultrasignup-scraper/types";
+  import ExpandButton from "$lib/components/ExpandButton.svelte";
 
   interface Props {
     list: Participant[];
@@ -92,15 +93,7 @@
 
   {#if list.length > 5}
     <div class="p-3 border-t border-stone-100 flex justify-center bg-stone-50/30">
-        <button 
-            onclick={() => isExpanded = !isExpanded}
-            class={`text-xs font-semibold ${theme === "blue" ? "text-blue-600 hover:text-blue-700" : "text-rose-600 hover:text-rose-700"} transition-colors flex items-center gap-1 bg-white border border-stone-200 rounded-full px-4 py-1.5 shadow-sm hover:shadow`}
-        >
-            {isExpanded ? "Show Less" : "Show More"}
-            <svg class="w-3 h-3 {isExpanded ? 'rotate-180' : ''} transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-        </button>
+        <ExpandButton bind:expanded={isExpanded} {theme} />
     </div>
   {/if}
 </div>
