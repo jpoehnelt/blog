@@ -242,17 +242,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Jacob",
-    "lastName": "Banta",
-    "age": "M30-39",
-    "location": "Mill Valley, CA",
-    "rank": 89.7,
-    "ageRank": 92.2,
-    "results": 28,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Luke",
     "lastName": "Jay",
     "age": "M40-49",
@@ -271,6 +260,17 @@
     "rank": 89.4,
     "ageRank": 95.8,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Banta",
+    "age": "M30-39",
+    "location": "Mill Valley, CA",
+    "rank": 89.3,
+    "ageRank": 92.2,
+    "results": 28,
     "bib": "",
     "finishes": 0
   },
@@ -700,17 +700,6 @@
     "rank": 91,
     "ageRank": 92,
     "results": 9,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Ben",
-    "lastName": "Wittkugel",
-    "age": "M30-39",
-    "location": "Portland, OR",
-    "rank": 77.9,
-    "ageRank": 77.9,
-    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -2365,17 +2354,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Julia",
-    "lastName": "Correll",
-    "age": "F40-49",
-    "location": "Tacoma, WA",
-    "rank": 72.6,
-    "ageRank": 82,
-    "results": 2,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Kim",
     "lastName": "Magi",
     "age": "F30-39",
@@ -2479,9 +2457,9 @@
     "lastName": "Santoro",
     "age": "M40-49",
     "location": "Daly City, CA",
-    "rank": 61,
-    "ageRank": 64.9,
-    "results": 2,
+    "rank": 66.3,
+    "ageRank": 73.2,
+    "results": 3,
     "bib": "",
     "finishes": 0
   },
@@ -4015,28 +3993,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Chris",
-    "lastName": "Burgess",
-    "age": "M30-39",
-    "location": "Eatonville, WA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jose",
-    "lastName": "Melendez",
-    "age": "M30-39",
-    "location": "Athol, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Genevieve",
     "lastName": "Faber",
     "age": "F20-29",
@@ -4217,6 +4173,39 @@
     "lastName": "Hicks",
     "age": "F30-39",
     "location": "Seaside, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Burgess",
+    "age": "M30-39",
+    "location": "Eatonville, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Claire",
+    "lastName": "McCarthy",
+    "age": "F20-29",
+    "location": "Tacoma, WA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jose",
+    "lastName": "Melendez",
+    "age": "M30-39",
+    "location": "Athol, ID",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4510,10 +4499,65 @@
     "finishes": 0
   },
   {
-    "firstName": "Caroline",
-    "lastName": "Harris",
+    "firstName": "Leo",
+    "lastName": "Velasco",
+    "age": "M30-39",
+    "location": "La Mesa, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Kovolisky",
+    "age": "M30-39",
+    "location": "Cranford, NJ",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sofia",
+    "lastName": "Congram",
     "age": "F20-29",
-    "location": "Bend, OR",
+    "location": "Concord, MA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sydney",
+    "lastName": "Gomez",
+    "age": "F30-39",
+    "location": "North Vancouver, BC",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Evan",
+    "lastName": "Graham",
+    "age": "M20-29",
+    "location": "Salem, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Danika",
+    "lastName": "Brandvold",
+    "age": "F30-39",
+    "location": "Rossland, BC",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4522,9 +4566,31 @@
   },
   {
     "firstName": "Will",
-    "lastName": "Dong",
+    "lastName": "T",
+    "age": "M30-39",
+    "location": "California, AL",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Loann",
+    "lastName": "Nghiem",
+    "age": "F40-49",
+    "location": "Garden Grove, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Paul",
+    "lastName": "Dentice",
     "age": "M40-49",
-    "location": "Oakland, CA",
+    "location": "Laguna Niguel, CA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4532,10 +4598,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Jeremi",
-    "lastName": "Bourgeois",
-    "age": "M30-39",
-    "location": "Palestine, TX",
+    "firstName": "Alexander",
+    "lastName": "Hayes",
+    "age": "M20-29",
+    "location": "Tolovana Park, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4543,10 +4609,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Josue",
-    "lastName": "Rodenas",
+    "firstName": "Greg",
+    "lastName": "Rafert",
     "age": "M40-49",
-    "location": "Portland, OR",
+    "location": "Victor, ID",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4554,20 +4620,9 @@
     "finishes": 0
   },
   {
-    "firstName": "Harrison",
-    "lastName": "Ring",
-    "age": "M30-39",
-    "location": "Redlands, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Joshua",
-    "lastName": "Reich",
-    "age": "M30-39",
+    "firstName": "Avery",
+    "lastName": "Heatherly",
+    "age": "X30-39",
     "location": "Portland, OR",
     "rank": 0,
     "ageRank": 0,
@@ -4664,21 +4719,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Danika",
-    "lastName": "Brandvold",
-    "age": "F30-39",
-    "location": "Rossland, BC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Claire",
-    "lastName": "McCarthy",
+    "firstName": "Caroline",
+    "lastName": "Harris",
     "age": "F20-29",
-    "location": "Tacoma, WA",
+    "location": "Bend, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4687,9 +4731,20 @@
   },
   {
     "firstName": "Will",
-    "lastName": "T",
+    "lastName": "Dong",
+    "age": "M40-49",
+    "location": "Oakland, CA",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jeremi",
+    "lastName": "Bourgeois",
     "age": "M30-39",
-    "location": "California, AL",
+    "location": "Palestine, TX",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4697,53 +4752,9 @@
     "finishes": 0
   },
   {
-    "firstName": "Loann",
-    "lastName": "Nghiem",
-    "age": "F40-49",
-    "location": "Garden Grove, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Paul",
-    "lastName": "Dentice",
+    "firstName": "Josue",
+    "lastName": "Rodenas",
     "age": "M40-49",
-    "location": "Laguna Niguel, CA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Alexander",
-    "lastName": "Hayes",
-    "age": "M20-29",
-    "location": "Tolovana Park, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Greg",
-    "lastName": "Rafert",
-    "age": "M40-49",
-    "location": "Victor, ID",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Avery",
-    "lastName": "Heatherly",
-    "age": "X30-39",
     "location": "Portland, OR",
     "rank": 0,
     "ageRank": 0,
@@ -4752,10 +4763,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Leo",
-    "lastName": "Velasco",
+    "firstName": "Harrison",
+    "lastName": "Ring",
     "age": "M30-39",
-    "location": "La Mesa, CA",
+    "location": "Redlands, CA",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4763,54 +4774,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Jacob",
-    "lastName": "Kovolisky",
+    "firstName": "Joshua",
+    "lastName": "Reich",
     "age": "M30-39",
-    "location": "Cranford, NJ",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sofia",
-    "lastName": "Congram",
-    "age": "F20-29",
-    "location": "Concord, MA",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sydney",
-    "lastName": "Gomez",
-    "age": "F30-39",
-    "location": "North Vancouver, BC",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Evan",
-    "lastName": "Graham",
-    "age": "M20-29",
-    "location": "Salem, OR",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sergio",
-    "lastName": "Martinez",
-    "age": "M30-39",
-    "location": "PORTLAND, OR",
+    "location": "Portland, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -4855,6 +4822,17 @@
     "lastName": "Tallon",
     "age": "M20-29",
     "location": "La grande, OR",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Sergio",
+    "lastName": "Martinez",
+    "age": "M30-39",
+    "location": "PORTLAND, OR",
     "rank": 0,
     "ageRank": 0,
     "results": 0,

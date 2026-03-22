@@ -11,28 +11,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Anne",
-    "lastName": "Crosby",
-    "age": "F40-49",
-    "location": "Boulder, CO",
-    "rank": 79.1,
-    "ageRank": 91.3,
-    "results": 1,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kelly",
-    "lastName": "Kellow",
-    "age": "F30-39",
-    "location": "Fort Collins, CO",
-    "rank": 71.6,
-    "ageRank": 75.8,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Josh",
     "lastName": "Kaestner",
     "age": "M30-39",
@@ -40,6 +18,17 @@
     "rank": 64.5,
     "ageRank": 71,
     "results": 2,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Anne",
+    "lastName": "Crosby",
+    "age": "F40-49",
+    "location": "Boulder, CO",
+    "rank": 79.1,
+    "ageRank": 91.3,
+    "results": 1,
     "bib": "",
     "finishes": 0
   },
@@ -55,17 +44,6 @@
     "finishes": 0
   },
   {
-    "firstName": "Karen",
-    "lastName": "Sullivan",
-    "age": "F60-69",
-    "location": "Castle Rock, CO",
-    "rank": 60.1,
-    "ageRank": 72.8,
-    "results": 4,
-    "bib": "",
-    "finishes": 0
-  },
-  {
     "firstName": "Brian",
     "lastName": "Weber",
     "age": "M30-39",
@@ -74,18 +52,7 @@
     "ageRank": 63.9,
     "results": 14,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Sammie",
-    "lastName": "Rowan",
-    "age": "F40-49",
-    "location": "Colorado Springs, CO",
-    "rank": 59.3,
-    "ageRank": 67.1,
-    "results": 25,
-    "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Benjamin",
@@ -107,18 +74,7 @@
     "ageRank": 63,
     "results": 36,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Kristen",
-    "lastName": "Marks",
-    "age": "F50-59",
-    "location": "Santa Fe, NM",
-    "rank": 58.7,
-    "ageRank": 79.4,
-    "results": 14,
-    "bib": "",
-    "finishes": 0
+    "finishes": 4
   },
   {
     "firstName": "Masaki",
@@ -132,6 +88,17 @@
     "finishes": 0
   },
   {
+    "firstName": "Kelly",
+    "lastName": "Kellow",
+    "age": "F30-39",
+    "location": "Fort Collins, CO",
+    "rank": 71.6,
+    "ageRank": 75.8,
+    "results": 4,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Bret",
     "lastName": "Roberts",
     "age": "M30-39",
@@ -140,18 +107,7 @@
     "ageRank": 57.2,
     "results": 1,
     "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Martha",
-    "lastName": "Zwonitzer",
-    "age": "F50-59",
-    "location": "Tulare, CA",
-    "rank": 57,
-    "ageRank": 60.2,
-    "results": 10,
-    "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Cameron",
@@ -162,7 +118,7 @@
     "ageRank": 53.6,
     "results": 1,
     "bib": "",
-    "finishes": 0
+    "finishes": 1
   },
   {
     "firstName": "Ed",
@@ -173,7 +129,7 @@
     "ageRank": 78.8,
     "results": 12,
     "bib": "",
-    "finishes": 0
+    "finishes": 3
   },
   {
     "firstName": "Logan",
@@ -185,6 +141,50 @@
     "results": 1,
     "bib": "",
     "finishes": 0
+  },
+  {
+    "firstName": "Karen",
+    "lastName": "Sullivan",
+    "age": "F60-69",
+    "location": "Castle Rock, CO",
+    "rank": 60.1,
+    "ageRank": 72.8,
+    "results": 4,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Sammie",
+    "lastName": "Rowan",
+    "age": "F40-49",
+    "location": "Colorado Springs, CO",
+    "rank": 59.3,
+    "ageRank": 67.1,
+    "results": 25,
+    "bib": "",
+    "finishes": 4
+  },
+  {
+    "firstName": "Kristen",
+    "lastName": "Marks",
+    "age": "F50-59",
+    "location": "Santa Fe, NM",
+    "rank": 58.7,
+    "ageRank": 79.4,
+    "results": 14,
+    "bib": "",
+    "finishes": 1
+  },
+  {
+    "firstName": "Martha",
+    "lastName": "Zwonitzer",
+    "age": "F50-59",
+    "location": "Tulare, CA",
+    "rank": 57,
+    "ageRank": 60.2,
+    "results": 10,
+    "bib": "",
+    "finishes": 1
   },
   {
     "firstName": "Rachel",
@@ -206,7 +206,7 @@
     "ageRank": 81.5,
     "results": 67,
     "bib": "",
-    "finishes": 0
+    "finishes": 6
   },
   {
     "firstName": "Daniela",
