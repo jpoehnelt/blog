@@ -10,13 +10,12 @@
   import * as Table from "$lib/components/ui/table";
   import { Input } from "$lib/components/ui/input";
   import { Button } from "$lib/components/ui/button";
+  import ExpandButton from "$lib/components/ExpandButton.svelte";
   import { cn } from "$lib/utils";
   import ArrowUp from "@lucide/svelte/icons/arrow-up";
   import ArrowDown from "@lucide/svelte/icons/arrow-down";
   import Minus from "@lucide/svelte/icons/minus";
   import Search from "@lucide/svelte/icons/search";
-  import ChevronDown from "@lucide/svelte/icons/chevron-down";
-  import ChevronUp from "@lucide/svelte/icons/chevron-up";
 
   interface WaitlistApplicant {
     name: string;
@@ -218,19 +217,7 @@
   
   {#if table.getRowModel().rows.length > 5}
     <div class="p-3 border-t border-stone-100 flex justify-center bg-stone-50/30">
-        <Button
-            variant="outline"
-            size="sm"
-            onclick={() => isExpanded = !isExpanded}
-            class="text-xs font-semibold text-slate-500 hover:text-orange-600 transition-colors flex items-center gap-1 rounded-full px-4 py-1.5 shadow-sm hover:shadow h-auto"
-        >
-            {isExpanded ? "Show Less" : "Show More"}
-            {#if isExpanded}
-                <ChevronUp class="w-3 h-3" />
-            {:else}
-                <ChevronDown class="w-3 h-3" />
-            {/if}
-        </Button>
+        <ExpandButton bind:expanded={isExpanded} theme="orange" />
     </div>
   {/if}
 </div>
