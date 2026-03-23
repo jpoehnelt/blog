@@ -121,6 +121,17 @@
     "finishes": 1
   },
   {
+    "firstName": "Jonathan",
+    "lastName": "Sterling",
+    "age": "M50-59",
+    "location": "North Granby, CT",
+    "rank": 75.5,
+    "ageRank": 75.5,
+    "results": 1,
+    "bib": "",
+    "finishes": 0
+  },
+  {
     "firstName": "Alex",
     "lastName": "Twombly",
     "age": "M40-49",
@@ -194,6 +205,17 @@
     "rank": 73.3,
     "ageRank": 0,
     "results": 2,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Weber",
+    "age": "M40-49",
+    "location": "Greentown, PA",
+    "rank": 72.7,
+    "ageRank": 80.2,
+    "results": 21,
     "bib": "",
     "finishes": 0
   },
@@ -1122,10 +1144,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Brendan",
-    "lastName": "O’Keefe",
-    "age": "M40-49",
-    "location": "Seal Cove, ME",
+    "firstName": "Julia",
+    "lastName": "Castner",
+    "age": "F30-39",
+    "location": "New Haven, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1133,10 +1155,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Julia",
-    "lastName": "Castner",
-    "age": "F30-39",
-    "location": "New Haven, CT",
+    "firstName": "Brendan",
+    "lastName": "O’Keefe",
+    "age": "M40-49",
+    "location": "Seal Cove, ME",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1155,10 +1177,32 @@
     "finishes": 0
   },
   {
-    "firstName": "Sean",
-    "lastName": "McCurley",
-    "age": "M<20",
-    "location": "Fairfield, CT",
+    "firstName": "Brian",
+    "lastName": "Zaboski",
+    "age": "M30-39",
+    "location": "Wallingford, CT",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Jacob",
+    "lastName": "Lester",
+    "age": "M20-29",
+    "location": "New York, NY",
+    "rank": 0,
+    "ageRank": 0,
+    "results": 0,
+    "bib": "",
+    "finishes": 0
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Mobilio",
+    "age": "M30-39",
+    "location": "Meriden, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
@@ -1232,32 +1276,10 @@
     "finishes": 0
   },
   {
-    "firstName": "Brian",
-    "lastName": "Zaboski",
-    "age": "M30-39",
-    "location": "Wallingford, CT",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Jacob",
-    "lastName": "Lester",
-    "age": "M20-29",
-    "location": "New York, NY",
-    "rank": 0,
-    "ageRank": 0,
-    "results": 0,
-    "bib": "",
-    "finishes": 0
-  },
-  {
-    "firstName": "Mike",
-    "lastName": "Mobilio",
-    "age": "M30-39",
-    "location": "Meriden, CT",
+    "firstName": "Sean",
+    "lastName": "McCurley",
+    "age": "M<20",
+    "location": "Fairfield, CT",
     "rank": 0,
     "ageRank": 0,
     "results": 0,
